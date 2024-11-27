@@ -16,7 +16,7 @@ Das folgende Bild veranschaulicht diesen Zusammenhang und zeigt, welche Komponen
 ![supply overview](/images/300_RCC5V_Supply_Overview.png "supply overview")   
 _Bild 1: &Uuml;bersicht &uuml;ber die Modulversorgung_   
 
-Um den Verdrahtungsaufwand klein zu halten, werden der Mikrocontroller und die RCC-Bl&ouml;cke &uuml;ber 6-polige Flachbandkabel versorgt. Die Pin-Belegung des 6-poligen Kabels zum Mikrocontroller ("DCC") und zu den RW-Bl&ouml;cken ("POWER") zeigt das folgende Bild:   
+Um den Verdrahtungsaufwand klein zu halten, werden der Mikrocontroller und die RCC-Bl&ouml;cke &uuml;ber 6-polige Flachbandkabel versorgt. Die Pin-Belegung des 6-poligen Kabels zum Mikrocontroller ("DCC") und zu den RCC-Bl&ouml;cken ("POWER") zeigt das folgende Bild:   
 ![connector_6pol](/images/100_6pol.png "connector_6pol")   
 _Bild 2: Pinbelegung der 6-poligen Wannenstecker_   
 
@@ -37,7 +37,7 @@ _Bild 3: Schaltung der 5V-, AC- und DCC-Versorgung_
 * Die Stecker J5 und J6 dienen nur der Vereinfachung: So muss man f&uuml;r die Aufnahme des DC-DC-Wandler-Boards nicht vier einzelne Buchsen aufl&ouml;ten, sondern kann zwei 8-polige Buchsenleisten verwenden.   
 
 ## 2.2 Die Netzteil-Tr&auml;gerplatine AC_5V_supply_6pol_DCC
-Die Netzteil-Platinie sieht so aus:   
+Die Netzteil-Platine sieht so aus:   
 ![AC_5V_supply_6pol_DCC](/images/pcb_f/PCB_F_AC_5V_supply_6pol_DCC.png "AC_5V_supply_6pol_DCC")   
 _Bild 4: Platine AC_5V_supply_6pol_DCC_   
 _*Platinengr&ouml;&szlig;e*_: 63,75 x 21,55 mm²   
@@ -61,10 +61,11 @@ __Best&uuml;ckung__
 5. Elko C1   
 6. Aufstecken des DC-DC-Step-Down-Wandlers LM2596   
 
-Falls der LM2596-Board an den Ecken noch keine Pins angel&ouml;tet hat: 4 einzelne Pins in die Enden von J5 und J6 stecken, das LM2596-Board aufstecken und die Pins verl&ouml;ten.   
+Falls am LM2596-Board an den Ecken noch keine Pins angel&ouml;tet sind:   
+4 einzelne Pins in die Enden von J5 und J6 stecken, das LM2596-Board aufstecken und die Pins verl&ouml;ten.   
 
 ## 2.3 Inbetriebnahme der Netzteil-Tr&auml;gerplatine AC_5V_supply_6pol_DCC
-_*Wichtig:*_ Bei der ersten Inbetriebnahme des DC-DC-Wandlerboards muss die Ausgangsspannung am Potenziometer mit Hilfe eines Voltmeters und eines Schraubendrehers auf 5 V eingestellt werden. Das Drehen der Schraube am Potenziometer (blauer Quarder) entgegen dem Uhrzeigersinn verkleinert dabei die Ausgangsspannung.   
+_*Wichtig:*_ Bei der ersten Inbetriebnahme des DC-DC-Wandler-Boards muss die Ausgangsspannung am Potenziometer mit Hilfe eines Voltmeters und eines Schraubendrehers auf 5 V eingestellt werden. Das Drehen der Schraube am Potenziometer (blauer Quarder) entgegen dem Uhrzeigersinn verkleinert dabei die Ausgangsspannung.   
 
 Anschluss des Trafos: Pin 4 und 6 am 6-poligen Wannenstecker J3 (POWER)   
 Anschluss des Voltmeters: Pin 1 und 3 am 6-poligen Wannenstecker J3 (POWER)   
@@ -80,9 +81,9 @@ _Bild 5: Einstellen der 5 V-Ausgangsspannung_
 
 # 3. Verbindung von Modulen   
 # 3.1 Allgemeines   
-Nach NEM908D erfolgt die Verbindung von Modelleisenbahn-Modulen mit Kabeln mit 25-poligen Sub-D-Buchsen und 25-poligen Sub-D-Steckern an den Modul-Seitenteilen. Da Module unterschiedlich lang sein k&ouml;nnen, gibt es f&uuml;r die Modul-Stecker zwei M&ouml;glichkeiten:   
+Nach NEM908D erfolgt die Verbindung von Modelleisenbahn-Modulen durch Kabel mit 25-poligen Sub-D-Buchsen. In den Modulen befinden sich daher 25-polige Sub-D-Stecker. Da Module unterschiedlich lang sein k&ouml;nnen, gibt es f&uuml;r die Modul-Stecker-Platinen zwei M&ouml;glichkeiten:   
 (1) Eine Platine mit zwei 25-poligen Steckern f&uuml;r kurze Module (z. B. 25cm oder 50 cm L&auml;nge).   
-(2) Platinen mit einem 25-poligen Stecker und einer 10-poligen Schraubklemmenleiste f&uuml;r lange Module (z.B. 75 cm oder 100 cm L&auml;nge).   
+(2) Zwei Platinen mit einem 25-poligen Stecker und einer 10-poligen Schraubklemmenleiste f&uuml;r lange Module (z.B. 75 cm oder 100 cm L&auml;nge).   
 
 Die Verbindungsplatinen sind so aufgebaut, dass die Netzteilplatine direkt aufgel&ouml;tet werden kann. 
 ![best&uuml;ckte Platine RW_5V_2SUB25](/images/300_RW_5V_2SUB25.png "best&uuml;ckte Platine RW_5V_2SUB25")   
@@ -111,6 +112,7 @@ __Best&uuml;ckung__
 
 ### Versionen
 * V1 (241029): OK   
+* V2 (241123): OK (Leiterbahnen zwischen Bauteil- und L&ouml;tseite getauscht)   
 
 # 3.3 Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (RW_5V_SUB25_10)
 Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm) auf einer Seite verwendet. Sie enth&auml;lt Anschl&uuml;sse f&uuml;r ein 5V-Netzteil und das DCC-Steuersignal sowie Schraubklemmen f&uuml;r den DCC-Fahrstrom (SS, NN und SN, NS), die Hilfsleitungen OA und OB und zus&auml;tzlich f&uuml;r alle Signale. Die Platine ist so aufgebaut, dass sie symmetrisch zu einer Verstrebung liegen kann.   
