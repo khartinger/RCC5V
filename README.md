@@ -22,7 +22,7 @@ __Manufacturing the system components__
 # Introduction   
 There are many ways to control points, uncouplers, disconnectable tracks etc. in model railroad construction. The simplest form is direct switching of the AC voltage.   
 
-![RW_5V_DirectSwitching](./images/300_RW_5V_DirectSwitching1.png "RW_5V_DirectSwitching")   
+![RW_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RW_5V_DirectSwitching")   
 _Figure 1: Direct switching of model railway components (turnout = turnout, uncoupler = uncoupler track, disconnectable track = disconnectable track)_   
 
 The disadvantages of this variant are that there is no feedback message regarding the switching status and automation is not possible.   
@@ -38,7 +38,7 @@ The overall railway (RW) system consists of six parts:
 5. __RW block__: The control element for _a_ model railroad component with local operating and display elements.   
 6. the __model railroad components__ such as turnouts, uncouplers and disconnectable tracks.   
 
-![RW_5V_BlockDiagram1x](./images/150_RW_5V_BlockDiagramm_1x_V2.png "RW_5V_BlockDiagram1x")   
+![RW_5V_BlockDiagram1x](./images/150_RCC5V_BlockDiagramm_1x_V2.png "RW_5V_BlockDiagram1x")   
 _Figure 2: Block diagram for switching railroad components with 5V_   
 
 By using the I2C-I/O-Expander-Boards it is possible to control several components:   
@@ -47,7 +47,7 @@ _Figure 3: Block diagram switching several railroad components with 5V_
 
 # Practical setup
 The following image shows the demo setup for controlling a three-way crossover:   
-![RW_5V_Demo_Setup](./images/480_RW_5V_DemoSetup.png “RW_5V_Demo_Setup”)   
+![RW_5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png “RW_5V_Demo_Setup”)   
 Figure 4: Demo setup of an RW-5V system   
 
 On the far left you can see the 25-pin connector with the 5V power supply (“SUPPLY”), behind it is the ESP32 with a 1.56 inch display (“&micro;C”). Two I2C-PCF8574 boards (“I2C”) are mounted in the front center, behind them the RW block. On the right you can see a three-way turnout with two Fleischmann 640000 turnout drives. The electrical connection of the modules is made using 6-pin ribbon cables and wires.   

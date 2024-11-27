@@ -22,7 +22,7 @@ __Herstellung der System-Komponenten__
 # Einleitung   
 Zur Ansteuerung von Weichen, Entkupplern, abschaltbaren Gleisen usw. gibt es im Modelleisenbahnbau viele M&ouml;glichkeiten. Die einfachste Form ist das direkte Schalten der Wechselspannung.   
 
-![RW_5V_DirectSwitching](./images/300_RW_5V_DirectSwitching1.png "RW_5V_DirectSwitching")   
+![RW_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RW_5V_DirectSwitching")   
 _Bild 1: Direktes Schalten von Modellbahnkomponenten (Turnout = Weiche, Uncoupler = Entkupplungsgleis, Disconnectable Track = abschaltbares Gleis)_   
 
 Nachteile dieser Variante sind, dass es keine R&uuml;ckmeldung bez&uuml;glich des Schaltzustandes gibt und auch eine Automatisierung nicht m&ouml;glich ist.   
@@ -38,7 +38,7 @@ Das Railway-(RW-) Gesamtsystem besteht aus sechs Teilen:
 5. __RW-Block__: Das Steuerelement f&uuml;r _eine_ Modellbahnkomponente mit lokalen Bedien- und Anzeige-Elementen.   
 6. Die __Modellbahnkomponenten__ wie Weichen, Entkuppler und abschaltbare Gleise.   
 
-![RW_5V_BlockDiagram1x](./images/150_RW_5V_BlockDiagramm_1x_V2.png "RW_5V_BlockDiagram1x")   
+![RW_5V_BlockDiagram1x](./images/150_RCC5V_BlockDiagramm_1x_V2.png "RW_5V_BlockDiagram1x")   
 _Bild 2: Blockschaltbild Schalten von Eisenbahnkomponenten mit 5V_   
 
 Durch die Verwendung der I2C-I/O-Expander-Boards ist es m&ouml;glich, mehrere Komponenten anzusteuern:   
@@ -47,7 +47,7 @@ _Bild 3: Blockschaltbild Schalten von mehreren Eisenbahnkomponenten mit 5V_
 
 # Praktischer Aufbau
 Das folgende Bild zeigt den Demo-Aufbau zur Ansteuerung einer Dreiwegweiche:   
-![RW_5V_Demo_Setup](./images/480_RW_5V_DemoSetup.png "RW_5V_Demo_Setup")   
+![RW_5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png "RW_5V_Demo_Setup")   
 _Bild 4: Demo-Aufbau eines RW-5V-Systems_   
 
 Ganz links erkennt man den 25-poligen Stecker mit dem 5V-Netzteil ("SUPPLY"), dahinter befindet sich der ESP32 mit einem 1,56 Zoll Display ("&micro;C"). Vorne in der Mitte sind zwei I2C-PCF8574-Boards aufgebaut ("I2C"), dahinter der RW-Block. Rechts sieht man eine Dreiwegweiche mit zwei Fleischmann-Weichenantrieben 640000. Die elektrische Verbindung der Baugruppen erfolgt durch 6-polige Flachbandkabel und Dr&auml;hte.   
