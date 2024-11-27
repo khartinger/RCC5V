@@ -19,6 +19,7 @@ __Informationen rund um das System__
 __Herstellung der System-Komponenten__   
 * [KiCad-Dateien der RCC-Komponenten](/kicad/LIESMICH.md)   
 * [Komponenten f&uuml;r die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
+* [ESP32-Shields](/fab/rcc2_esp32/LIESMICH.md)   
 * ...   
 
 Um die in diesem Repository vorgestellten Dinge optimal nutzen zu können, sind einige Vorkenntnisse von Vorteil:   
