@@ -47,7 +47,7 @@ _Figure 3: Block diagram switching several railroad components with 5V_
 
 # Practical setup
 The following image shows the demo setup for controlling a three-way crossover:   
-![RCC5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png “RCC5V_Demo_Setup”)   
+![RCC5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png "RCC5V_Demo_Setup")   
 Figure 4: Demo setup of an RCC-5V system   
 
 On the far left you can see the 25-pin connector with the 5V power supply (“SUPPLY”), behind it is the ESP32 with a 1.56 inch display (“&micro;C”). Two I2C-PCF8574 boards (“I2C”) are mounted in the front center, behind them the RCC block. On the right you can see a three-way turnout with two Fleischmann 640000 turnout drives. The electrical connection of the modules is made using 6-pin ribbon cables and wires.   
