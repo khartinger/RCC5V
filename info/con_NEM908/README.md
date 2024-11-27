@@ -14,8 +14,8 @@ A 10-pole cable (cross-section of the cable cores/strands min. 1 mm²) is theref
 # Electrical meaning of the lines
 Since, for example, pin 1 of a connector in the module is connected to pin 13 (and vice versa), a distinction must be made between the two connectors in the pin assignment. This is done by specifying whether the connector is mounted in the “west” (front left) or “east” (right) of the module:   
 
-![Wiring_NEM908D](./images/300_Wiring_NEM908D.png “Wiring_NEM908D”)   
-Figure 2: 25-pin Sub-D connector on the module with pin assignment   
+![Wiring_NEM908D](../../images/300_Wiring_NEM908D.png "Wiring_NEM908D")   
+_Figure 1: 25-pin Sub-D connector on the module with pin assignment_   
 
 ## Use of the cables
 NN ...... Northern rail of the northern track (DCC feed line)   
@@ -40,7 +40,7 @@ The following lines may already be connected to each other when feeding in (desi
 
 It is important that the correct pin assignment is used for the power supply (power supply AFTER east or AFTER west).   
 
-![wiring_25pol_plug-socket](./images/300_wiring_25pol_plug-socket.png “wiring_25pol_plug-socket”)   
-Figure 6: Electrical connection between modules according to NEM 908D_   
+![wiring_25pol_plug-socket](../../images/300_wiring_25pol_plug-socket.png "wiring_25pol_plug-socket")   
+_Figure 2: Electrical connection between modules according to NEM 908D_   
 
 [Back to top of page](#up)

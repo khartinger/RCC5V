@@ -14,7 +14,7 @@ Beim Zweischienensystem reicht als Verbindungskabel somit ein 10poliges Kabel (Q
 # Elektrische Bedeutung der Leitungen
 Da zB Pin 1 eines Steckers im Modul mit Pin 13 verbunden ist (und umgekehrt), muss bei der Pinbelegung zwischen den beiden Steckern unterschieden werden. Dies geschieht dadurch, dass man angibt, ob der Stecker im „Westen“ (von vorne links) oder „Osten“ (rechts) des Moduls montiert ist:   
 
-![Wiring_NEM908D](./images/300_Wiring_NEM908D.png "Wiring_NEM908D")   
+![Wiring_NEM908D](../../images/300_Wiring_NEM908D.png "Wiring_NEM908D")   
 _Bild 1: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
 
 ## Verwendung der Leitungen
@@ -40,7 +40,7 @@ Beim Einspeisen k&ouml;nnen bereits folgende Leitungen miteinander verbunden sei
 
 Wichtig ist, dass bei der Einspeisung mit der richtigen Pinbelegung eingespeist wird (Einspeisung NACH Ost bzw. NACH West).   
 
-![wiring_25pol_plug-socket](./images/300_wiring_25pol_plug-socket.png "wiring_25pol_plug-socket")   
+![wiring_25pol_plug-socket](../../images/300_wiring_25pol_plug-socket.png "wiring_25pol_plug-socket")   
 _Bild 2: Elektrische Verbindung zwischen Modulen nach NEM 908D_   
 
 [Zum Seitenanfang](#up)
