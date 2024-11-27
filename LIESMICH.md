@@ -17,6 +17,7 @@ __Informationen rund um das System__
 * ...   
 
 __Herstellung der System-Komponenten__   
+* [KiCad-Dateien der RCC-Komponenten](/kicad/LIESMICH.md)   
 * [Komponenten f&uuml;r die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
 * ...   
 

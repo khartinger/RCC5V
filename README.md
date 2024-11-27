@@ -17,6 +17,7 @@ __Information about the system__
 * ...   
 
 __Manufacturing the system components__   
+* [KiCad files of RCC components](/kicad/README.md)   
 * [Components for the power supply](/fab/rcc1_supply/README.md)   
 * ...   
 
