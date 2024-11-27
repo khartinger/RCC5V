@@ -16,7 +16,7 @@ __Information about the system__
 * ...   
 
 __Manufacturing the system components__   
-* [Components for the power supply](/fab/rw1_supply/README.md)   
+* [Components for the power supply](/fab/rcc1_supply/README.md)   
 * ...   
 
 # Introduction   

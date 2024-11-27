@@ -16,7 +16,7 @@ __Informationen rund um das System__
 * ...   
 
 __Herstellung der System-Komponenten__   
-* [Komponenten f&uuml;r die Stromversorgung](/fab/rw1_supply/LIESMICH.md)   
+* [Komponenten f&uuml;r die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
 * ...   
 
 # Einleitung   
