@@ -5,7 +5,8 @@ Letzte &Auml;nderung: 27.11.2024 <a name="up"></a><br>
 </td></tr></table>   
 
 # &Uuml;bersicht
-Dieses Repository besch&auml;ftigt sich mit der Herstellung und Verwendung von Komponenten zur Steuerung von Weichen, Entkupplern, abschaltbaren Gleisen etc. auf einer elektrischen Modelleisenbahn mittels DCC, MQTT oder manuell. In zahlreichen Kapiteln werden folgende Themen bearbeitet:   
+Dieses Repository besch&auml;ftigt sich mit der Herstellung und Verwendung von Komponenten zur Steuerung von Weichen, Entkupplern, abschaltbaren Gleisen etc. auf einer elektrischen Modelleisenbahn mittels DCC, MQTT oder manuell.   
+In zahlreichen Kapiteln werden folgende Themen bearbeitet:   
 
 __Verwendung des Systems__   
 * [Beispiel-Verdrahtung einer Weiche](/use/exampleTurnout2/LIESMICH.md)   
@@ -18,6 +19,12 @@ __Informationen rund um das System__
 __Herstellung der System-Komponenten__   
 * [Komponenten f&uuml;r die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
 * ...   
+
+Um die in diesem Repository vorgestellten Dinge optimal nutzen zu können, sind einige Vorkenntnisse von Vorteil:   
+* Löten und etwas handwerkliches Geschick   
+* Compilieren und Hochladen einer Datei auf den ESP32   
+* Verwendung des Open Source [Platinenlayoutprogramms KiCad](https://www.kicad.org/)   
+* Optional: Verwendung eines 3D-Druckers   
 
 # Einleitung   
 Zur Ansteuerung von Weichen, Entkupplern, abschaltbaren Gleisen usw. gibt es im Modelleisenbahnbau viele M&ouml;glichkeiten. Die einfachste Form ist das direkte Schalten der Wechselspannung.   

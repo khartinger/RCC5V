@@ -5,7 +5,8 @@ Last modified: 2024-11-27 <a name="up"></a><br>
 </td></tr></table>   
 
 # Overview
-This repository deals with the production and use of components for controlling turnouts, uncouplers, disconnectable tracks etc. on an electric model railroad using DCC, MQTT or manually. The following topics are covered in numerous chapters:   
+This repository deals with the production and use of components for controlling turnouts, uncouplers, disconnectable tracks etc. on an electric model railroad using DCC, MQTT or manually.   
+The following topics are covered in numerous chapters:   
 
 __Use of the system__   
 * [Example wiring of a turnout](/use/exampleTurnout2/README.md)   
@@ -18,6 +19,12 @@ __Information about the system__
 __Manufacturing the system components__   
 * [Components for the power supply](/fab/rcc1_supply/README.md)   
 * ...   
+
+In order to be able to use the things presented in this repository optimally, some previous knowledge is advantageous:   
+* Soldering and some manual dexterity   
+* Compiling and uploading a file to the ESP32   
+* Use of the open source [circuit board layout program KiCad](https://www.kicad.org/)   
+* Optional: Use of a 3D printer   
 
 # Introduction   
 There are many ways to control points, uncouplers, disconnectable tracks etc. in model railroad construction. The simplest form is direct switching of the AC voltage.   
