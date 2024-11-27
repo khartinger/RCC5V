@@ -42,7 +42,7 @@ Die Netzteil-Platine sieht so aus:
 _Bild 4: Platine AC_5V_supply_6pol_DCC_   
 _*Platinengr&ouml;&szlig;e*_: 63,75 x 21,55 mm²   
 
-__St&uuml;ckliste__   
+### St&uuml;ckliste   
 | Anzahl | Referenz   | Wert                   | Geh&auml;use            |   
 |--------|------------|------------------------|--------------------|   
 |    1   | R1         | Leistungswiderstand 4,7&Omega;/5W          | Resistor_THT:R_Axial_Power_L25.0mm_W6.4mm_P27.94mm |   
@@ -53,7 +53,7 @@ __St&uuml;ckliste__
 |    1   | U1         | DC-DC-Wandler-Board StepDown_LM2596 | _kh_library:DCDC_StepDown_LM2596_PinsOnly |   
 |    4   | U1         | 4 einzelne Pins               |   |   
 
-__Best&uuml;ckung__   
+### Best&uuml;ckung   
 1. Leistungswiderstand R1   
 2. Diode D1   
 3. Buchsenleisten J3, J5, J6   
@@ -89,8 +89,6 @@ Die Verbindungsplatinen sind so aufgebaut, dass die Netzteilplatine direkt aufge
 ![best&uuml;ckte Platine RW_5V_2SUB25](/images/300_RW_5V_2SUB25.png "best&uuml;ckte Platine RW_5V_2SUB25")   
 _Bild 6: Mit Netzteil best&uuml;ckte Verbindungsplatine mit zwei 25-poligen Steckern_   
 
-
-
 ## 3.2 Platine mit zwei 25-poligen Sub-D-Steckern und Netzteil (RW_5V_2SUB25)   
 Diese Platine wird zum Verbinden kurzer Module mit L&auml;ngen von 25 cm oder 50 cm verwendet. Sie enth&auml;lt Anschl&uuml;sse f&uuml;r ein 5V-Netzteil und das DCC-Steuersignal sowie Schraubklemmen f&uuml;r den DCC-Fahrstrom (SS, NN und SN, NS) und die Hilfsleitungen OA und OB. Die Platine ist so aufgebaut, dass sie beim Einbau in ein Modul symmetrisch zu einer Verstrebung liegen kann.   
 
@@ -98,14 +96,14 @@ Diese Platine wird zum Verbinden kurzer Module mit L&auml;ngen von 25 cm oder 50
 _Bild 7: Platine RW_5V_2SUB25_   
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
 
-__St&uuml;ckliste__   
-| Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
+### St&uuml;ckliste   
+| Anzahl | Referenz     | Wert                   | Geh&auml;use       |   
 |--------|--------------|------------------------|--------------------|   
 |    2   | J1, J2       | Sub-D-Stecker 25-polig (DB25_Plug) | _kh_library:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm |   
 |    3   | J7, J8, J9   | Schraubklemme 2-polig (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
 |    1   | J5, J6, U1   | 5V-Netzteil-Platine     | _kh_library:AC_5V_supply_6pol_PinsOnly |   
 
-__Best&uuml;ckung__   
+### Best&uuml;ckung   
 1. Schraubklemmen J7, J8, J9    
 2. Sub-D-Stecker J1   
 3. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6   
@@ -121,7 +119,7 @@ Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm)
 _Bild 8: Platine RW_5V_SUB25_10_   
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
 
-__St&uuml;ckliste__   
+### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
 |--------|--------------|------------------------|--------------------|   
 |    1   | J1           | Sub-D-Stecker 25-polig (DB25_Plug) | _kh_library:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm |   
@@ -129,7 +127,7 @@ __St&uuml;ckliste__
 |    1   | J7, J8, J9   | Schraubklemme 2-polig (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
 |    1   | J5, J6, U1   | 5V-Netzteil-Platine     | _kh_library:AC_5V_supply_6pol_PinsOnly |   
 
-__Best&uuml;ckung__   
+### Best&uuml;ckung   
 1. Schraubklemmen J2, J7, J8, J9    
 2. Sub-D-Stecker J1   
 3. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6   
@@ -144,18 +142,17 @@ Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm)
 _Bild 9: Platine CON_SubD_Screw10_   
 _*Platinengr&ouml;&szlig;e*_: 31 x 66 mm²   
 
-__St&uuml;ckliste__   
+### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
 |--------|--------------|------------------------|--------------------|   
 |    1   | J1           | Sub-D-Stecker 25-polig (DB25_Plug) | _kh_library:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm |   
 |    1   | J2           | Schraubklemme 10-polig oder 5x 2-polig |    |   
 
-__Best&uuml;ckung__   
+### Best&uuml;ckung   
 1. Schraubklemmen J2    
 2. Sub-D-Stecker J1   
 
 ### Versionen
 * V1 (241104): OK   
-
 
 [Zum Seitenanfang](#up)
