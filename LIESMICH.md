@@ -1,18 +1,50 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 27.11.2024 <a name="up"></a><br>   
+Letzte &Auml;nderung: 28.11.2024 <a name="up"></a><br>   
 <h1>Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
-# &Uuml;bersicht
+[Direkt zur Inhaltsübersicht zu diesem Repository](#x20)   
+
+# Einleitung
+Zur Ansteuerung von Weichen, Entkupplern, abschaltbaren Gleisen usw. gibt es im Modelleisenbahnbau viele M&ouml;glichkeiten.   
+Am einfachsten ist das Bedienen der Komponenten von Hand, dazu benötigt man nicht einmal Weichenantriebe. Bei weiter entfernten oder verteilten Komponenten wird es allerdings umständlich.   
+Dies führt zum Einsatz von magnetischen Antrieben, bei denen die Wechselspannung direkt geschaltet wird:   
+
+![RCC_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC_5V_DirectSwitching")   
+_Bild 1: Direktes Schalten von Modellbahnkomponenten (Turnout = Weiche, Uncoupler = Entkupplungsgleis, Disconnectable Track = abschaltbares Gleis)_   
+
+Nachteile dieser Variante sind, dass es keine R&uuml;ckmeldung bez&uuml;glich des Schaltzustandes gibt und eine Automatisierung nicht m&ouml;glich ist.   
+
+Diese Nachteile werden durch kommerzielle, digitale Steuerungssysteme gelöst, allerdings sind diese nicht gerade billig, daher ...   
+
+## Wie geht es besser?
+Wer gerne etwas selbst machen möchte, der ist hier richtig. Folgende Vorkenntnisse sind dabei von Vorteil:   
+* Löten und etwas handwerkliches Geschick   
+* Compilieren und Hochladen einer Datei auf den ESP32   
+* Verwendung des Open Source [Platinenlayoutprogramms KiCad](https://www.kicad.org/)   
+* Optional: Verwendung eines 3D-Druckers   
+
+Die in diesem Repository vorgestellte, kosteng&uuml;nstige Modellbahn-Komponenten-Steuerung RCC (Railway Component Control) ist für den Einsatz in Modelleisenbahn-Modulen gedacht und erm&ouml;glicht das Schalten von Modellbahnkomponenten auf drei unterschiedliche Arten:   
+* direkt auf dem Modul per Tastendruck   
+* über DCC   
+* per MQTT-Befehle über das WLAN   
+
+In der Standardausf&uuml;hrung stehen bis zu 32 digitale Aus- und Eing&auml;nge zur Verfügung, sodass maximal 16 Zweiwegweichen oder 10 Dreiwegweichen etc. angesteuert werden k&ouml;nnen. Diese Anzahl ist im Normalfall f&uuml;r Module ausreichend.   
+Eine Erweiterung des Systems ist grundsätzlich möglich und nur abhängig von den eingesetzten I²C-Bauteilen.   
+
+# Wie starte ich?
+Es ist sinnvoll, sich zuerst einen Überblick über den [Inhalt dieses Repository](#x20) und über [das RCC-System](#x30) zu verschaffen. Das RCC-System ist modular aufgebaut und besteht aus einer Reihe von Komponenten. Vor dem ersten Schalten einer Weiche müssen daher zuerst die benötigten Komponenten hergestellt werden. Wie man das praktisch macht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start)](/fab/rcc0_start) beschrieben.   
+
+[Zum Seitenanfang](#up)   
+<a name="x20"></a>   
+
+# Inhaltsübersicht zu diesem Repository
 Dieses Repository besch&auml;ftigt sich mit der Herstellung und Verwendung von Komponenten zur Steuerung von Weichen, Entkupplern, abschaltbaren Gleisen etc. auf einer elektrischen Modelleisenbahn mittels DCC, MQTT oder manuell.   
 In zahlreichen Kapiteln werden folgende Themen bearbeitet:   
 
-__Verwendung des Systems__   
-* [Beispiel-Verdrahtung einer Weiche](/use/exampleTurnout2/LIESMICH.md)   
-* ...   
-
 __Informationen rund um das System__   
+* [Wie starte ich das RCC-Projekt?](/fab/rcc0_start/LIESMICH.md)   
 * [Elektrische Verbindung von Eisenbahn-Modulen nach NEM 908D](/info/con_NEM908/LIESMICH.md)   
 * ...   
 
@@ -23,21 +55,16 @@ __Herstellung der System-Komponenten__
 * [Zusatzplatinen](/fab/rcc5_add_ons/LIESMICH.md)   
 * ...   
 
-Um die in diesem Repository vorgestellten Dinge optimal nutzen zu können, sind einige Vorkenntnisse von Vorteil:   
-* Löten und etwas handwerkliches Geschick   
-* Compilieren und Hochladen einer Datei auf den ESP32   
-* Verwendung des Open Source [Platinenlayoutprogramms KiCad](https://www.kicad.org/)   
-* Optional: Verwendung eines 3D-Druckers   
+__Software für den ESP32__   
+* [Demo-Software]()   
+* [Anpassung der Demo-Software an eigene Bedürfnisse]()   
 
-# Einleitung   
-Zur Ansteuerung von Weichen, Entkupplern, abschaltbaren Gleisen usw. gibt es im Modelleisenbahnbau viele M&ouml;glichkeiten. Die einfachste Form ist das direkte Schalten der Wechselspannung.   
+__Verwendung des Systems__   
+* [Beispiel-Verdrahtung einer Weiche](/use/exampleTurnout2/LIESMICH.md)   
+* ...   
 
-![RCC_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC_5V_DirectSwitching")   
-_Bild 1: Direktes Schalten von Modellbahnkomponenten (Turnout = Weiche, Uncoupler = Entkupplungsgleis, Disconnectable Track = abschaltbares Gleis)_   
-
-Nachteile dieser Variante sind, dass es keine R&uuml;ckmeldung bez&uuml;glich des Schaltzustandes gibt und auch eine Automatisierung nicht m&ouml;glich ist.   
-
-Die hier vorgestellte, kosteng&uuml;nstige L&ouml;sung erm&ouml;glicht das Schalten von Modellbahnkomponenten auf m&ouml;glichst viele Arten (per Hand oder &uuml;ber DCC oder &uuml;ber WLAN mit MQTT-Befehlen). In der Standardausf&uuml;hrung sind bis zu 32 digitale Aus- und Eing&auml;nge vorhanden, sodass maximal 16 Zweiwegweichen oder 10 Dreiwegweichen etc. angesteuert werden k&ouml;nnen. Diese Anzahl ist im Normalfall f&uuml;r Module ausreichend.   
+[Zum Seitenanfang](#up)
+<a name="x30"></a>   
 
 # Der Systembaufbau im &Uuml;berblick   
 Das Railway-Component-Control-(RCC-) Gesamtsystem besteht aus sechs Teilen:   
@@ -62,7 +89,10 @@ _Bild 4: Demo-Aufbau eines RCC-5V-Systems_
 
 Ganz links erkennt man den 25-poligen Stecker mit dem 5V-Netzteil ("SUPPLY"), dahinter befindet sich der ESP32 mit einem 1,56 Zoll Display ("&micro;C"). Vorne in der Mitte sind zwei I2C-PCF8574-Boards aufgebaut ("I2C"), dahinter der RCC-Block. Rechts sieht man eine Dreiwegweiche mit zwei Fleischmann-Weichenantrieben 640000. Die elektrische Verbindung der Baugruppen erfolgt durch 6-polige Flachbandkabel und Dr&auml;hte.   
 
-# Beispiel: Schalten einer Weiche mit dem RCC5V-System
+[Zum Seitenanfang](#up)
+<a name="x40"></a>   
+
+# Beispiel: Schaltplan zum Schalten einer Weiche mit dem RCC5V-System
 Das folgende Bild zeigt den elektrischen Schaltplan zur Ansteuerung einer Weiche mit DCC, MQTT oder manuell. Die hellgr&uuml;nen Rechtecke stellen in KiCad 8.0 entwickelte Platinen dar, die von [PCB Way](https://www.pcbway.com/) hergestellt wurden. Dazu installiert man in KiCad einfach das PlugIn von PCB Way und die &Uuml;bertragung der f&uuml;r die Produktion erforderlichen Daten erfolgt dann per Mausklick.   
 
 ![overall_circuit_diagram](./images/768_RCC5V_OverviewCircuitDiagram_241111.png "overall circuit diagram")   

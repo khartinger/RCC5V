@@ -1,18 +1,50 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2024-11-27 <a name="up"></a><br>   
+Last modified: 2024-11-28 <a name="up"></a><br>   
 <h1>Controlling model railroad components with DCC, MQTT and manually</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
+
+[Directly to the table of contents of this repository](#x20)   
+
+# Introduction
+There are many ways to control turnouts, uncouplers, disconnectable tracks, etc. in model railroad construction.   
+The easiest way is to operate the components by hand; you don't even need point machines for this. However, it becomes cumbersome with more distant or distributed components.   
+This leads to the use of magnetic drives in which the AC voltage is switched directly:   
+
+![RCC5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC5V_DirectSwitching")   
+_Figure 1: Direct switching of model railway components (turnout = turnout, uncoupler = uncoupler track, disconnectable track = disconnectable track)_   
+
+The disadvantages of this variant are that there is no feedback message regarding the switching status and automation is not possible.   
+
+These disadvantages are solved by commercial, digital control systems, but these are not exactly cheap, so ...   
+
+## How is it better?
+If you want to make something yourself, you've come to the right place. The following previous knowledge is an advantage:   
+* Soldering and some manual dexterity   
+* Compiling and uploading a file to the ESP32   
+* Use of the open source [circuit board layout program KiCad](https://www.kicad.org/)   
+* Optional: Use of a 3D printer   
+
+The low-cost RCC (Railway Component Control) model railroad component controller presented in this repository is intended for use in model railroad modules and enables the switching of model railroad components in three different ways:   
+* directly on the module by pressing a button   
+* via DCC   
+* via MQTT commands over the WLAN   
+
+In the standard version, up to 32 digital outputs and inputs are available, so that a maximum of 16 two-way turnouts or 10 three-way turnouts etc. can be controlled. This number is normally sufficient for modules.   
+An expansion of the system is generally possible and only depends on the I²C components used.   
+
+# How do I get started?
+It makes sense to first get an overview of the [content of this repository](#x20) and [the RCC system](#x30). The RCC system has a modular structure and consists of a number of components. Before switching a turnout for the first time, the required components must therefore first be produced. How to do this in practice is described in the chapter [“How do I start the RCC project?” (/fab/rcc0_start)](/fab/rcc0_start).   
+
+[To the top of the page](#up)   
+<a name="x20"></a>   
 
 # Overview
 This repository deals with the production and use of components for controlling turnouts, uncouplers, disconnectable tracks etc. on an electric model railroad using DCC, MQTT or manually.   
 The following topics are covered in numerous chapters:   
 
-__Use of the system__   
-* [Example wiring of a turnout](/use/exampleTurnout2/README.md)   
-* ...   
-
 __Information about the system__   
+*[How do I start the RCC project?](/fab/rcc0_start/README.md)   
 * [Electrical connection of railroad modules according to NEM 908D](/info/con_NEM908/README.md)   
 * ...   
 
@@ -23,21 +55,16 @@ __Manufacturing the system components__
 * [Additional boards](/fab/rcc5_add_ons/README.md)   
 * ...   
 
-In order to be able to use the things presented in this repository optimally, some previous knowledge is advantageous:   
-* Soldering and some manual dexterity   
-* Compiling and uploading a file to the ESP32   
-* Use of the open source [circuit board layout program KiCad](https://www.kicad.org/)   
-* Optional: Use of a 3D printer   
+__Software for the ESP32__   
+* [Demo software]()   
+* [Customize the demo software to your own needs]()   
 
-# Introduction   
-There are many ways to control points, uncouplers, disconnectable tracks etc. in model railroad construction. The simplest form is direct switching of the AC voltage.   
+__Use of the system__   
+* [Example wiring of a turnout](/use/exampleTurnout2/README.md)   
+* ...   
 
-![RCC5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC5V_DirectSwitching")   
-_Figure 1: Direct switching of model railway components (turnout = turnout, uncoupler = uncoupler track, disconnectable track = disconnectable track)_   
-
-The disadvantages of this variant are that there is no feedback message regarding the switching status and automation is not possible.   
-
-The low-cost solution presented here enables the switching of model railway components in as many ways as possible (by hand or via DCC or via WLAN with MQTT commands). In the standard version, up to 32 digital outputs and inputs are available, so that a maximum of 16 two-way points or 10 three-way points etc. can be controlled. This number is normally sufficient for modules.   
+[To the top of the page](#up)   
+<a name="x30"></a>   
 
 # The system structure at a glance   
 The overall railway component control (RCC) system consists of six parts:   
@@ -61,6 +88,9 @@ The following image shows the demo setup for controlling a three-way crossover:
 _Figure 4: Demo setup of an RCC-5V system_   
 
 On the far left you can see the 25-pin connector with the 5V power supply (“SUPPLY”), behind it is the ESP32 with a 1.56 inch display (“&micro;C”). Two I2C-PCF8574 boards (“I2C”) are mounted in the front center, behind them the RCC block. On the right you can see a three-way turnout with two Fleischmann 640000 turnout drives. The electrical connection of the modules is made using 6-pin ribbon cables and wires.   
+
+[To the top of the page](#up)
+<a name="x40"></a>   
 
 # Example: Switching a turnout with the RCC5V system
 The following picture shows the electrical circuit diagram for controlling a turnout with DCC, MQTT or manually. The light green rectangles represent circuit boards developed in KiCad 8.0 and manufactured by [PCB Way](https://www.pcbway.com/). To do this, simply install the PCB Way plug-in in KiCad and the data required for production is then transferred with a click of the mouse.   
