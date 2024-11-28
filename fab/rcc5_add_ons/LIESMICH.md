@@ -1,6 +1,6 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 28.11.2024 <a name="up"></a><br>   
-<h1>Zubehör</h1>
+<h1>Zusatzplatinen</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
