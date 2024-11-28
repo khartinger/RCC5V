@@ -89,7 +89,9 @@ Diese Platine erf&uuml;llt drei Aufgaben:
 
 ![DCC and power shield](/images/pcb_f/PCB_F_Shield_5V_DCC_6pol.png "DCC and power shield")   
 _Bild 8: Platine "Shield_5V_DCC_6pol_V2"_   
+
 _*Platinengr&ouml;&szlig;e*_: 26,2 x 28,5 mm²   
+_*Link zu den KiCad-Dateien*_: [/kicad/Shield_5V_DCC_6pol_V3](/kicad/Shield_5V_DCC_6pol_V3)   
 
 ![Shield_5V_DCC_6pol](/images/300_Shield_5V_DCC_6pol.png "Shield_5V_DCC_6pol")   
 _Bild 9: Die best&uuml;ckte Platine "Shield_5V_DCC_6pol" zum Anschluss von 5V-Spannungsversorgung, DCC-Signal und Taster_   
