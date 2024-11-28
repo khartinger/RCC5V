@@ -14,6 +14,7 @@ _Note:_ The sockets shown in yellow in _Fig. 1_ are those that are also used on 
 
 ## Functional principle
 The following figure shows the basic use of the inputs and outputs on the ESP32 processor:   
+
 ![ESP32 usage](/images/300_ESP32_use.png "ESP32 usage")   
 _Figure 2: Inputs and outputs used on the ESP32 D1 Mini_   
 
@@ -29,7 +30,7 @@ The functions are divided between two shields (for DCC and I²C), which are plug
 ![ESP32 with shields](/images/300_ESP32_with_shields.png "ESP32 with shields")   
 _Figure 3: ESP32 with shields plugged in_   
 
-On the lower shield you can see the connection for the button (sockets on the left) and the 6-pin plug for the “POWER” cable.   
+On the lower shield you can see the connection for the button (sockets on the left) and the 6-pin plug for the “DCC” cable.   
 On the upper shield you can see the four connectors for the IO-I²C bus at the front and the four sockets for the standard I²C bus to the display at the top center. The red board is the 3.3V/5V converter.   
 The shields are described in more detail below.   
 
@@ -117,6 +118,15 @@ _Figure 11: Components for the “Shield_5V_DCC_6pol” board_
 2. IC socket U2 (pay attention to polarity!)   
 3. diode D1   
 4. capacitors C1, C2   
-5. resistors
+5. resistors R1 to R4   
+6. socket strips U1   
+7. socket J1   
+
+_Don't forget_: Insert optocoupler U2 into the socket...   
+
+### Versions
+* V1 (241013): C2 only for 2.54 mm grid   
+* V2 (241108): With C2 at a distance of 5.08 mm through-hole plating instead of pin   
+* V3 (241123): OK   
 
 [To the top of the page](#up)   

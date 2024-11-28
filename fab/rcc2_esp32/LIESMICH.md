@@ -14,6 +14,7 @@ _Anmerkung:_ Die in _Bild 1_ gelb dargestellten Buchsen sind diejenigen, die auc
 
 ## Funktionsprinzip
 Das folgende Bild zeigt die prinzipielle Verwendung der Ein- und Ausg&auml;nge am ESP32-Prozessor:   
+
 ![ESP32 usage](/images/300_ESP32_use.png "ESP32 usage")   
 _Bild 2: Verwendete Ein- und Ausg&auml;nge am ESP32 D1 Mini_   
 
@@ -29,7 +30,7 @@ Die Funktionen werden auf zwei Shields (f&uuml;r DCC und I²C) aufgeteilt, die a
 ![ESP32 with shields](/images/300_ESP32_with_shields.png "ESP32 with shields")   
 _Bild 3: ESP32 mit aufgesteckten Shields_   
 
-Beim unteren Shield erkennt man den Anschluss f&uuml;r den Taster (Buchsen links) sowie den 6-poligen Stecker f&uuml;r das "POWER"-Kabel.   
+Beim unteren Shield erkennt man den Anschluss f&uuml;r den Taster (Buchsen links) sowie den 6-poligen Stecker f&uuml;r das "DCC"-Kabel.   
 Beim oberen Shield sieht man vorne die vier Stecker f&uuml;r den IO-I²C-Bus und oben in der Mitte die vier Buchsen f&uuml;r den Standard-I²C-Bus zum Display. Die rote Platine ist der 3,3V/5V-Wandler.   
 Nachfolgend werden die Shields genauer vorgestellt.   
 
@@ -44,7 +45,9 @@ Die Pinbelegung der Anschl&uuml;sse ist so gew&auml;hlt, dass sich ein Display b
 
 ![I2C shield](/images/pcb_f/PCB_F_Shield_I2C_5V_3V3_V2.png "I2C shield")   
 _Bild 4: Platine "Shield_I2C_5V_3V3" zum Anschluss zweier I2C-Busse_   
+
 _*Platinengr&ouml;&szlig;e*_: 26,2 x 28,5 mm²   
+_*Link zu den KiCad-Dateien*_: [/kicad/Shield_I2C_5V_3V3_V2](/kicad/Shield_I2C_5V_3V3_V2)   
 
 ![Shield_I2C_5V_3V3](/images/300_Shield_I2C_5V_3V3.png "Shield_I2C_5V_3V3")   
 _Bild 5: Die best&uuml;ckte Platine "Shield_I2C_5V_3V3"_   
