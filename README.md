@@ -20,6 +20,7 @@ __Manufacturing the system components__
 * [KiCad files of RCC components](/kicad/README.md)   
 * [Components for the power supply](/fab/rcc1_supply/README.md)   
 * [ESP32-Shields](/fab/rcc2_esp32/README.md)   
+* [Additional boards](/fab/rcc5_add_ons/README.md)   
 * ...   
 
 In order to be able to use the things presented in this repository optimally, some previous knowledge is advantageous:   
