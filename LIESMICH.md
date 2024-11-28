@@ -56,7 +56,7 @@ __Herstellung der System-Komponenten__
 * ...   
 
 __Software für den ESP32__   
-* [Demo-Software](/software/rcc_demo1)   
+* [Demo-Software](/software/rcc_demo1/LIESMICH.md)   
 * [Anpassung der Demo-Software an eigene Bedürfnisse]()   
 
 __Verwendung des Systems__   
