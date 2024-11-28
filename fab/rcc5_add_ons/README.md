@@ -101,7 +101,7 @@ _Figure 9: Circuit diagram of the “CON_6pol_6” board_
 ![Terminal for three-way turnout](/images/pcb_f/PCB_F_CON_6pol_6_V1.png "Terminal for three-way turnout")   
 _Figure 10: Connection terminal for three-way diverter switch_   
 
-_*Board size*_: 25 x 18 mm²   
+_*Board size*_: 41 x 18 mm²   
 _*Link to the KiCad files*_: [/kicad/CON_6pol_6_V1](/kicad/CON_6pol_6_V1)   
 
 ### Bill of materials

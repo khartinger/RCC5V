@@ -101,7 +101,7 @@ _Bild 9: Schaltplan der "CON_6pol_6"-Platine_
 ![Klemme f&uuml;r Dreiwegweiche](/images/pcb_f/PCB_F_CON_6pol_6_V1.png "Klemme f&uuml;r Dreiwegweiche")   
 _Bild 10: Anschlussklemme f&uuml;r Dreiwegweiche_   
 
-_*Platinengr&ouml;&szlig;e*_: 25 x 18 mm²   
+_*Platinengr&ouml;&szlig;e*_: 41 x 18 mm²   
 _*Link zu den KiCad-Dateien*_: [/kicad/CON_6pol_6_V1](/kicad/CON_6pol_6_V1)   
 
 ### Stückliste   
