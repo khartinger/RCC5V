@@ -40,7 +40,9 @@ _Figure 3: Circuit of the 5V, AC and DCC supply_
 The power supply board looks like this:   
 ![AC_5V_supply_6pol_DCC](/images/pcb_f/PCB_F_AC_5V_supply_6pol_DCC.png "AC_5V_supply_6pol_DCC")   
 _Figure 4: Circuit board AC_5V_supply_6pol_DCC_   
-Board size: 63.75 x 21.55 mm²   
+
+_*Board size*_: 63.75 x 21.55 mm²   
+_*Link to the KiCad files*_: [/kicad/AC_5V_6pol_DCC_V1](/kicad/AC_5V_6pol_DCC_V1)   
 
 ### Bill of materials   
 | Quantity | Reference | Value | Footprint |   
@@ -94,7 +96,9 @@ This board is used to connect short modules with lengths of 25 cm or 50 cm. It c
 
 ![PCB RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V1.png "PCB RW_5V_2SUB25")   
 _Figure 7: Circuit board RW_5V_2SUB25_   
+
 _*Board size*_: 80 x 66 mm²   
+_*Link to the KiCad files*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)   
 
 ### Bill of materials   
 | Quantity | Reference | Value | Footprint |   
@@ -117,7 +121,9 @@ This board is used for longer modules (lengths of 75 cm or 100 cm) on one side. 
 
 ![Platine RW_5V_SUB25_10](/images/pcb_f/PCB_F_RW_5V_SUB25_10_V1.png "RW_5V_SUB25_10")   
 _Figure 8: Circuit board RW_5V_SUB25_10_   
+
 _*Board size*_: 80 x 66 mm²   
+_*Link to the KiCad files*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1)   
 
 ### Bill of Materials   
 | Quantity | Reference | Value | Footprint |   
@@ -140,7 +146,9 @@ This circuit board is used for longer modules (lengths of 75 cm or 100 cm) on on
 
 ![Board CON_SubD_Screw10](/images/pcb_f/PCB_F_CON_SubD_Screw10_V1.png "CON_SubD_Screw10")   
 _Figure 9: Board CON_SubD_Screw10_   
+
 _*Board size*_: 31 x 66 mm²   
+_*Link to the KiCad files*_: [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Screw10_V1)   
 
 ### Bill of materials   
 | Quantity | Reference | Value | Footprint |   

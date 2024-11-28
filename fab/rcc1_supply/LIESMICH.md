@@ -40,7 +40,9 @@ _Bild 3: Schaltung der 5V-, AC- und DCC-Versorgung_
 Die Netzteil-Platine sieht so aus:   
 ![AC_5V_supply_6pol_DCC](/images/pcb_f/PCB_F_AC_5V_supply_6pol_DCC.png "AC_5V_supply_6pol_DCC")   
 _Bild 4: Platine AC_5V_supply_6pol_DCC_   
+
 _*Platinengr&ouml;&szlig;e*_: 63,75 x 21,55 mm²   
+_*Link zu den KiCad-Dateien*_: [/kicad/AC_5V_6pol_DCC_V1](/kicad/AC_5V_6pol_DCC_V1)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz   | Wert                   | Geh&auml;use            |   
@@ -94,7 +96,9 @@ Diese Platine wird zum Verbinden kurzer Module mit L&auml;ngen von 25 cm oder 50
 
 ![Platine RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V1.png "Platine RW_5V_2SUB25")   
 _Bild 7: Platine RW_5V_2SUB25_   
+
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
+_*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use       |   
@@ -117,7 +121,9 @@ Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm)
 
 ![Platine RW_5V_SUB25_10](/images/pcb_f/PCB_F_RW_5V_SUB25_10_V1.png "RW_5V_SUB25_10")   
 _Bild 8: Platine RW_5V_SUB25_10_   
+
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
+_*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -140,7 +146,9 @@ Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm)
 
 ![Platine CON_SubD_Screw10](/images/pcb_f/PCB_F_CON_SubD_Screw10_V1.png "CON_SubD_Screw10")   
 _Bild 9: Platine CON_SubD_Screw10_   
+
 _*Platinengr&ouml;&szlig;e*_: 31 x 66 mm²   
+_*Link zu den KiCad-Dateien*_: [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Screw10_V1)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
