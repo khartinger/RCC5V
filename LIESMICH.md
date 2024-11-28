@@ -66,7 +66,7 @@ __Verwendung des Systems__
 [Zum Seitenanfang](#up)
 <a name="x30"></a>   
 
-# Der Systembaufbau im &Uuml;berblick   
+# Das RCC-System im &Uuml;berblick   
 Das Railway-Component-Control-(RCC-) Gesamtsystem besteht aus sechs Teilen:   
 1. __FEED-IN__ (Einspeisung): Einspeisung ins System mit DCC und Versorgungsspannung (hier Wechselspannung) durch externe Komponenten.   
 2. __SUPPLY__ (Modulversorgung): Der 25-polige Stecker mit 5V-Stromversorgung sowie dem AC- und DCC-Anschluss.   

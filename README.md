@@ -66,7 +66,7 @@ __Use of the system__
 [To the top of the page](#up)   
 <a name="x30"></a>   
 
-# The system structure at a glance   
+# The RCC-system at a glance   
 The overall railway component control (RCC) system consists of six parts:   
 1. __FEED-IN__ (power supply): Feeding into the system with DCC and supply voltage (here AC voltage) by external components.   
 2. __SUPPLY__ (module supply): The 25-pin plug with 5V power supply as well as the AC and DCC connection.   
@@ -92,7 +92,7 @@ On the far left you can see the 25-pin connector with the 5V power supply (“SU
 [To the top of the page](#up)
 <a name="x40"></a>   
 
-# Example: Switching a turnout with the RCC5V system
+# Example: Circuit diagram for switching a turnout with the RCC5V system
 The following picture shows the electrical circuit diagram for controlling a turnout with DCC, MQTT or manually. The light green rectangles represent circuit boards developed in KiCad 8.0 and manufactured by [PCB Way](https://www.pcbway.com/). To do this, simply install the PCB Way plug-in in KiCad and the data required for production is then transferred with a click of the mouse.   
 
 ![overall_circuit_diagram](./images/768_RCC5V_OverviewCircuitDiagram_241111.png "overall circuit diagram")   
