@@ -85,15 +85,22 @@ Möchte man die Leiterplatten dagegen zB von der Firma PCBWay fertigen lassen, i
 
 # Grundausstattung an Bauteilen   
 Für die Herstellung der RCC-Komponenten werden sowohl mechanische als auch elektronische Bauteile benötigt. Im folgenden werden vor allem Links zu Amazon und AliExpress angeführt, obwohl es gerade bei diesen Verkaufsplattformen des öfteren vorkommt, dass die angeführten Seiten von Lieferanten nach einiger Zeit oft nicht mehr verfügbar sind.   
-Viele der Bauteile, wie zB Schrauben, werden in größeren Gebinden verkauft, hier reicht es oft, ein Stück zu kaufen.  
+Viele der Bauteile, wie zB Schrauben, werden in größeren Gebinden verkauft, hier reicht es oft, ein Stück zu kaufen.   
+Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gültig.   
 
 ## Mechanische Bauteile
 
-| Anzahl | Stück | Bezeichnung | Quelle |   
-| ------ | ----- | ----------- | ------ |   
-|    
+| Anzahl | Stück/Pkg | Bezeichnung | Quelle | ca. Euro |   
+| ------ | --------- | ----------- | ------ | -------- |   
+|    1   |    60   | Abstandshalter M2x10+3mm Sechskant Messing M&auml;nnlich Weiblich | [https://www.amazon.de/gp/product/B0BXDHL2YP/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.de/gp/product/B0BXDHL2YP/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |  12,91 € |   
+|    1   |   200   | Sechskantmuttern M2x0,4 mm | [https://www.amazon.de/sourcing-map-Kohlenstoff-Hexagonal-Silbert%C3%B6ne/dp/B07J3CNWNH?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=XV7AI5VJHRNO&dib=eyJ2IjoiMSJ9.MHtsj7g4rQQHzcEBoDSBTefFXlBpLiPak-77Ew8DQdnch54LTfQom_Svg_2BIso3QxatpAXNGjuD_TT8uikaPVO2vq_IzIqDBOCyX_QfxDATecIY9QkDAz6IUOnvZA_RSCDw_3kbhgHFVZ1MLUZNX6gsIAtxGrU_nRcfKAt-VyjIQrtZtglmInq7OQayV2_GSyy3EAzNJhSf2FRx0JTuB3SJDEX1nLEjR_1xIk_G5d-xxm34Aa2N-QFYcTqkUv6zk1FQvrPmimDPScbvLf-zL8ezOEqI5DSUhTjka0Lap6o.uVzu6mRNlGns069q_PKQHMF7v7nZeAUiJ6ZofHofMrY&dib_tag=se&keywords=Mutter+M2&nsdOptOutParam=true&qid=1732790211&sprefix=mutter+m2%2Caps%2C137&sr=8-5](https://www.amazon.de/sourcing-map-Kohlenstoff-Hexagonal-Silbert%C3%B6ne/dp/B07J3CNWNH?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=XV7AI5VJHRNO&dib=eyJ2IjoiMSJ9.MHtsj7g4rQQHzcEBoDSBTefFXlBpLiPak-77Ew8DQdnch54LTfQom_Svg_2BIso3QxatpAXNGjuD_TT8uikaPVO2vq_IzIqDBOCyX_QfxDATecIY9QkDAz6IUOnvZA_RSCDw_3kbhgHFVZ1MLUZNX6gsIAtxGrU_nRcfKAt-VyjIQrtZtglmInq7OQayV2_GSyy3EAzNJhSf2FRx0JTuB3SJDEX1nLEjR_1xIk_G5d-xxm34Aa2N-QFYcTqkUv6zk1FQvrPmimDPScbvLf-zL8ezOEqI5DSUhTjka0Lap6o.uVzu6mRNlGns069q_PKQHMF7v7nZeAUiJ6ZofHofMrY&dib_tag=se&keywords=Mutter+M2&nsdOptOutParam=true&qid=1732790211&sprefix=mutter+m2%2Caps%2C137&sr=8-5) |   7,04 € |   
+|    1   |   100   | Selbstbohrende Schrauben M2,6 x 8 Edelstahl 304 Schwarzes Zink Plattiert Selbstschneidend Kreuzschlitz Pan Kopf | [https://www.amazon.de/dp/B0CR8CBDTX?psc=1&smid=A14R2UVD1VQLGA&ref_=chk_typ_imgToDp](https://www.amazon.de/dp/B0CR8CBDTX?psc=1&smid=A14R2UVD1VQLGA&ref_=chk_typ_imgToDp) |   7,75 € |   
 
 ## Elektrische Bauteile
+
+| Anzahl | Stück/Pkg | Bezeichnung | Quelle | ca. Euro |   
+| ------ | --------- | ----------- | ------ | -------- |   
+|    1   |   100   | 8-polige Buchsenleiste mit kurzen Kontakten | [https://www.aliexpress.com/item/32723472575.html?spm=a2g0o.order_list.order_list_main.4.f9f31802e55QVF](https://www.aliexpress.com/item/32723472575.html?spm=a2g0o.order_list.order_list_main.4.f9f31802e55QVF) |   8,37 € |  
 
 
 
