@@ -1,10 +1,11 @@
 <a href="./README.md">==> English version</a>   
 Letzte &Auml;nderung: 28.11.2024 <a name="up"></a>   
-<h1>ESP32: Test der Steuerung von Modelleisenbahn-Schaltboxen per DCC, MQTT oder von Hand</h1>   
+<h1>ESP32: Test von Modelleisenbahn-Schaltboxen per DCC, MQTT oder händisch</h1>   
 
 # Ziel
-Dieses Programm f&uuml;r einen ESP32 dient zum Testen von verschiedenen selbst gebauten Modelleisenbahn-Schaltblöcken. Die Blöcke über die I/O-Pins zweier I²C-PCF8574-I/O-Expander angesteuert, wobei der PCF8574 mit der I2C-Adresse 0x20 (IO-Expander #0) zur Ansteuerung und der PCF8574 mit der I2C-Adresse 0x21 (IO-Expander #1) für die Rückmeldung dient. Die IO-Pins zur Ansteuerung und zur Rückmeldung haben jeweils die gleiche Pin-Nummer.   
+Dieses Programm f&uuml;r einen ESP32 dient zum Testen von verschiedenen, selbst gebauten Modelleisenbahn-Schaltblöcken. Die Blöcke werden über die I/O-Pins zweier I²C-PCF8574-I/O-Expander angesteuert, wobei der PCF8574 mit der I2C-Adresse 0x20 (IO-Expander #0) zur Ansteuerung und der PCF8574 mit der I2C-Adresse 0x21 (IO-Expander #1) für die Rückmeldung dient. Die IO-Pins zur Ansteuerung und zur Rückmeldung haben jeweils die gleiche Pin-Nummer.   
 
+Folgende Blöcke sind in der Software definiert:  
 1. DCC 11, IO-Expander Pin 0: Entkuppler   
 2. DCC 21, IO-Expander Pin 1,2: Zweiwegweiche (mit Endabschaltung)   
 3. DCC 31,32, IO-Expander Pin 3,4,5: Dreiwegweiche (mit Endabschaltung)   
@@ -13,9 +14,9 @@ Dieses Programm f&uuml;r einen ESP32 dient zum Testen von verschiedenen selbst g
 
 Der Schaltzustand der Komponenten wird auf einem 1,54"-OLED-Display angezeigt.   
 
-Mit Hilfe eines Tasters am Pin D6 (IO19) kann man die einzelnen Seiten der Informationsanzeige oder das Suchen nach dem WLAN überspringen.   
+Mit Hilfe eines Tasters am Pin IO19 (D6) kann man die einzelnen Seiten der Informationsanzeige oder das Suchen nach dem WLAN überspringen.   
 
-Dr&uuml;ckt man w&auml;hrend des Programmlaufs den Taster f&uuml;r eine Sekunde, wird ein Reset ausgel&ouml;st. Dies kann zB dazu verwendet werden, um beim erneuten Hochfahren das WLAN zu aktivieren.   
+Dr&uuml;ckt man w&auml;hrend des Programmlaufs den Taster an IO19 f&uuml;r eine Sekunde, wird ein Reset ausgel&ouml;st. Dies kann zB dazu verwendet werden, um beim erneuten Hochfahren das WLAN zu aktivieren.   
 
 Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigenschaften, werden in einer Konfigurationsdatei `dcc_config.h` gespeichert.   
 
@@ -24,20 +25,44 @@ Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigen
 1. ESP32 D1 mini   
 2. 1x Selbstbau-Board "Shield_I2C_5V_3V3": Anschluss für die beiden I2C-Busse   
 3. 1x Selbstbau-Board "Shield_5V_DCC_6pol": Stromversorgung mit 5V, DCC-Signal und Anschluss für Taster an Pin D6 (IO19)   
-4. 1x OLED-Display mit SSD1309 controller (zB 1,54" oder 2,4" Displays mit 128x64 Pixel Aufl&ouml;sung)   
+4. 1x OLED-Display mit SSD1309 controller (zB 1,54" oder 2,4" Display mit 128x64 Pixel Aufl&ouml;sung)   
 5. 2x I²C-Expander-Boards PCF8574 mit den (7-Bit-)Adressen 0x20 und 0x21   
 6. Taster am Pin D6 (IO19) mit Pullup-Widerstand (zB 10 kOhm) nach 3,3V (oder ein Draht)   
 
 ## Elektrische Bauteile
-Die elektrischen Bauteile sind abhängig davon, was man testen will.    
-__Beispiel Dreiwegweiche:___
-1. Eine Dreiweg-Weiche mit Endabschaltung   
-2. Selbstbau-Block "RW_5V_W3" bestehend aus den beiden Platinen `RW_5V_W3_STRG` und `RW_5V_W3_LED` zur Ansteuerung der Weiche mit 5V   
+Die benötigten elektrischen Bauteile sind abhängig davon, was man testen will.    
+__Beispiel Zweiwegweiche:__   
+1. Eine Zweiweg-Weiche mit Endabschaltung   
+2. Selbstbau-Block "RW_5V_W2" bestehend aus den beiden Platinen `RW_5V_W2_STRG` und `RW_5V_W2_LED` und den LEDs zur Ansteuerung der Weiche mit 5V   
 3. Ein Trafo mit 16V Wechselspannung (V+, V-)   
-4. Eine DCC-Quelle zum Senden von Weichenbefehlen (zB Roco MultiMAUS mit Digitalverst&auml;rker 10764 und Netzteil 10850)   
-5. Eine 5V-Stromversorgung   
+4. Eine 5V-Stromversorgung   
+5. Eine DCC-Quelle zum Senden von Weichenbefehlen (zB Roco MultiMAUS mit Digitalverst&auml;rker 10764 und Netzteil 10850)   
+6. Ein WLAN-Server (zB Raspberry Pi) mit installiertem MQTT-Broker   
 
-Werden der Trafo (Punkt 3.) und die DCC-Quelle (Punkt 5.) an einen 25-poligen Stecker nach NEM908D angeschlossen, so kann die Selbstbau-Platine "Connector_SubD_Screw_5Vsupply_DCC" (mit aufgesteckter Platine "AC_5V_supply_6pol_DCC" und LM2596-DC-DC-Wandler zur Erzeugung der 5V-Spannung) zur Versorgung des Test-Aufbaus verwendet werden. (Siehe Bild 1)   
+Sind der Trafo (Punkt 3.) und die DCC-Quelle (Punkt 5.) an einem 25-poligen Kabel nach NEM908D angeschlossen, so kann die Selbstbau-Platine "CON_SubD_Screw10_V1" (mit aufgesteckter Platine "AC_5V_6pol_DCC_V1" und LM2596-DC-DC-Wandler zur Erzeugung der 5V-Spannung) zur Versorgung des Test-Aufbaus verwendet werden. (Siehe Bild 1)   
+
+## Verkabelung
+1. Anstecken von zwei Drähten (oder einem Taster) an den IO19-Anschlüssen des Shields "Shield_5V_DCC_6pol"   
+2. Zusammenstecken der beiden I²C-Expander-Boards PCF8574 mit den (7-Bit-)Adressen 0x20 und 0x21   
+3. Verbinden der I²C-Expander-Boards mit der 4-poligen Stiftleiste am "Shield_I2C_5V_3V3" mit vier Kabeln   
+4. Verbinden des 6-poligen Steckers des "Shield_5V_DCC_6pol"-Shields mit dem DCC-Stecker an der "CON_SubD_Screw10_V1"-Platine   
+5. Verbinden des 6-poligen Power-Steckers des "RW_5V_W2"-Blocks mit dem "POWER"-Stecker an der "CON_SubD_Screw10_V1"-Platine   
+6. Verbinden der Weichendrähte mit den Klemmen auf der "CON_6pol_3"-Platine   
+7. Verbinden der "CON_6pol_3"-Platine mit dem 6-poligen Ausgang des "RW_5V_W2"-Blocks   
+8. Verbinden des 10-poligen Steckers des "RW_5V_W2"-Blocks mit der "CON_10pol_PIN"-Platine   
+9. Verbinden "CON_10pol_PIN"-Pin 1 (IN1) mit PCF8574-0-Pin 2 (OUT)   
+10. Verbinden "CON_10pol_PIN"-Pin 2 (IN2) mit PCF8574-0-Pin 3 (OUT)   
+11. Verbinden "CON_10pol_PIN"-Pin 7 (OUT1) mit PCF8574-1-Pin 2 (IN)   
+12. Verbinden "CON_10pol_PIN"-Pin 8 (OUT2) mit PCF8574-1-Pin 3 (IN)   
+13. Anstecken des 25-poligen Kabels an die "CON_SubD_Screw10_V1"-Platine
+
+# Erforderliche Software
+
+
+# Test 
+## Direktes Schalten
+## DCC
+## MQTT
 
 
 ********************************
