@@ -8,7 +8,7 @@ Letzte &Auml;nderung: 28.11.2024 <a name="up"></a><br>
 Wenn ich mich dazu entschlossen habe, selbst die Steuerung meiner Modellbahn-Komponenten zu bauen, ist dazu etwas Zeit und Geld erforderlich. Es müssen sowohl Hardware- als auch 
 Software-Voraussetzungen geschaffen werden.   
 ### Hardware
-Für den Bau der RCC-Komponenten sind [Leiterplatten](#x20) ist eine Art ["Grundausstattung an Bauteilen"](#x30) erforderlich. Wie man dazu kommt, ist weiter unten beschrieben.   
+Für den Bau der RCC-Komponenten sind [Leiterplatten](#x20) und eine Art ["Grundausstattung an Bauteilen"](#x30) erforderlich. Wie man dazu kommt, ist weiter unten beschrieben.   
 ### Software
 An Software wird das Open Source [Layoutprogramm KiCad](https://www.kicad.org/) mit dem Plug-in "PCBWay" und Visual Studio Code mit dem Plugin "PlatformIO" benötigt.   
 Mit Hilfe von KiCad können die Leiterplatten-Layouts an eigene Bedürfnisse angepasst bzw. einfach durch professionelle Leiterplattenhersteller wie zB die Firma PCBWay hergestellt werden.   
@@ -86,7 +86,7 @@ Möchte man die Leiterplatten dagegen zB von der Firma PCBWay fertigen lassen, i
 # Grundausstattung an Bauteilen   
 Für die Herstellung der RCC-Komponenten werden sowohl mechanische als auch elektronische Bauteile benötigt. Im folgenden werden vor allem Links zu Amazon und AliExpress angeführt, obwohl es gerade bei diesen Verkaufsplattformen des öfteren vorkommt, dass die angeführten Seiten von Lieferanten nach einiger Zeit oft nicht mehr verfügbar sind.   
 Viele der Bauteile, wie zB Schrauben, werden in größeren Gebinden verkauft, hier reicht es oft, ein Stück zu kaufen.   
-Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gültig.   
+Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gültig (ohne Black Friday etc.).   
 
 ## Mechanische Bauteile
 
@@ -100,7 +100,10 @@ Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gü
 
 | Anzahl | Stück/Pkg | Bezeichnung | Quelle | ca. Euro |   
 | ------ | --------- | ----------- | ------ | -------- |   
-|    1   |   100   | 8-polige Buchsenleiste mit kurzen Kontakten | [https://www.aliexpress.com/item/32723472575.html?spm=a2g0o.order_list.order_list_main.4.f9f31802e55QVF](https://www.aliexpress.com/item/32723472575.html?spm=a2g0o.order_list.order_list_main.4.f9f31802e55QVF) |   8,37 € |  
+|    1   |   100   | 8-polige Buchsenleiste mit kurzen Kontakten | [https://www.aliexpress.com/item/32723472575.html?spm=a2g0o.order_list.order_list_main.4.f9f31802e55QVF](https://www.aliexpress.com/item/32723472575.html?spm=a2g0o.order_list.order_list_main.4.f9f31802e55QVF) |   8,37 € |   
+|    1   | 10 | Wannenstecker 6-polig (2x3), senkrecht | [https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   6,05 € |   
+
+|    1   | 10 | Wannenstecker 10-polig (2x5), senkrecht | [https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   6,15 € |   
 
 
 

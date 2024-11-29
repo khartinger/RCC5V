@@ -34,7 +34,7 @@ In der Standardausf&uuml;hrung stehen bis zu 32 digitale Aus- und Eing&auml;nge 
 Eine Erweiterung des Systems ist grundsätzlich möglich und nur abhängig von den eingesetzten I²C-Bauteilen.   
 
 # Wie starte ich?
-Es ist sinnvoll, sich zuerst einen Überblick über den [Inhalt dieses Repository](#x20) und über [das RCC-System](#x30) zu verschaffen. Das RCC-System ist modular aufgebaut und besteht aus einer Reihe von Komponenten. Vor dem ersten Schalten einer Weiche müssen daher zuerst die benötigten Komponenten hergestellt werden. Wie man das praktisch macht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start)](/fab/rcc0_start) beschrieben.   
+Es ist sinnvoll, sich zuerst einen Überblick über den [Inhalt dieses Repository](#x20) und über [das RCC-System](#x30) zu verschaffen. Das RCC-System ist modular aufgebaut und besteht aus einer Reihe von Komponenten. Vor dem ersten Schalten einer Weiche müssen daher zuerst die benötigten Komponenten hergestellt werden. Wie man das praktisch macht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
