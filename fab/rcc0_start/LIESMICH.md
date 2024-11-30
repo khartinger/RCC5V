@@ -25,6 +25,7 @@ Welche Leiterplatten man benötigt, ist naturgemäß abhängig vom Anwendungsfal
 Immer erforderlich sind die beiden Shields für den ESP32,   
 * [/kicad/Shield_5V_DCC_6pol_V3](/kicad/Shield_5V_DCC_6pol_V3)   
 * [/kicad/Shield_I2C_5V_3V3_V2](/kicad/Shield_I2C_5V_3V3_V2)   
+
 und die Gleichrichterplatine zur Erzeugung der 5V:   
 * [/kicad/AC_5V_6pol_DCC_V1](/kicad/AC_5V_6pol_DCC_V1)   
 
@@ -40,6 +41,7 @@ Die Hilfsplatinen zum Anschließen der Weiche(n) und der Ein- und Ausgänge der 
 Hier muss man zwischen der Versorgung mit oder ohne ein 25-poliges Kabel und über die Länge des Moduls unterscheiden.   
 Für kurze Module (bis 50 cm) mit 25-poligem Kabel:
 * [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)   
+
 Für lange Module (länger als 50 cm) mit 25-poligem Kabel:
 * [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1)   
 * [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Screw10_V1)   
@@ -117,11 +119,12 @@ Fassung mit gedrehten Buchsen 8-polig
 ## Elektronische Bauteile
 ESP32
 
-## Fertige Zukaufteile
-| Anzahl | Stück/Pkg | Bezeichnung | ca. Euro | Quelle |   
-| ------ | --------- | ----------- | ------ | -------- |   
-|  1     |     5     | DC-DC-Wandler-Board StepDown_LM2596 | 9,56 | [https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title](https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title) |    
-|  1     |     1     | 5V-3V Dual Channel I2C IIC Logic-Level-Converter Modul Bi-Directional |  0,28 | [https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu](https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu) |   
+
+## Zukaufteile
+| Bild | Anzahl | Stück /Pkg | Bezeichnung | ca. Euro | Quelle |   
+|:---- |:------:|:----------:|:----------- | --------:|:------ |   
+| ![DC-DC-Converter](/images/parts/96_dc_dc_converter.png "DC-DC-Converter") | 1 | 5 | DC-DC-Wandler-Board StepDown_LM2596 | 9,56 | [Amazon](https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title) |    
+| ![I2C-Logic-Level-Converter](/images/parts/96_i2c_logic_level_converter.png "I2C-Logic-Level-Converter") | 1 | 1 | 5V-3V Dual Channel I2C IIC Logic-Level-Converter Modul Bi-Directional | 0,28 | [AliExpress](https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu) |   
 
 ## Sonstiges
 | Anzahl | Stück/Pkg | Bezeichnung | Quelle | ca. Euro |   
