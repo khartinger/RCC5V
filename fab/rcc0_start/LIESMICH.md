@@ -128,6 +128,8 @@ ESP32
 | ------ | --------- | ----------- | ------ | -------- |   
 |    1   |     1     | Lötzinn, Bleifreies Lot mit Kolophonium Kern (Sn99 Ag0,3 Cu0,7/0,6mm,50g) | [https://www.amazon.de/dp/B07Z7JQ4SX?ref=ppx_yo2ov_dt_b_fed_asin_title](https://www.amazon.de/dp/B07Z7JQ4SX?ref=ppx_yo2ov_dt_b_fed_asin_title) | 11,09 |   
 
+Flachbandkabel
+
 # Fertigen der Komponenten
 Hat man - nach einiger Wartezeit - sowohl die Leiterplatten als auch die Bauteile zur Verfügung, geht es an das Herstellen der Komponenten:   
 * [Komponenten für die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   

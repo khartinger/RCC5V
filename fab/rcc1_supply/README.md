@@ -4,7 +4,7 @@ Last modified: 2024-11-27 <a name="up"></a><br>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
-#1 Introduction   
+# 1. Introduction   
 The module supply (“SUPPLY”) provides the electrical means so that trains can run and points etc. can be switched on a railroad module. Each module requires three things for this:   
 
 1. a supply voltage (AC voltage) for switching the railroad components (AC)   
@@ -22,7 +22,7 @@ _Figure 2: Pin assignment of the 6-pin connector_
 
 <a name="x20"></a>   
 
-# 2 Generation of the 5V voltage   
+# 2. Generation of the 5V voltage   
 ## 2.1 Circuit   
 The 5V voltage is generated separately on each module from the supply voltage. To do this, the AC voltage is rectified, smoothed and converted down to 5V using an LM2596 DC-DC converter [(can be ordered from Amazon, for example)](https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title).   
 The rectification and provision of the voltages via 6-pin cables is carried out via a single circuit board with the following circuit:   
@@ -116,7 +116,7 @@ _*Link to the KiCad files*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)
 * V1 (241029): OK   
 * V2 (241123): OK (tracks swapped between component and power supply side)   
 
-# 3.3 PCB with 25-pin D-sub connector, screw terminals and power supply unit (RW_5V_SUB25_10)
+## 3.3 PCB with 25-pin D-sub connector, screw terminals and power supply unit (RW_5V_SUB25_10)
 This board is used for longer modules (lengths of 75 cm or 100 cm) on one side. It contains connections for a 5V power supply unit and the DCC control signal as well as screw terminals for the DCC traction current (SS, NN and SN, NS), the auxiliary lines OA and OB and additionally for all signals. The board is designed so that it can be positioned symmetrically to a strut.   
 
 ![Platine RW_5V_SUB25_10](/images/pcb_f/PCB_F_RW_5V_SUB25_10_V1.png "RW_5V_SUB25_10")   
@@ -141,7 +141,7 @@ _*Link to the KiCad files*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1
 ### Versions
 * V1 (241104): OK   
 
-# 3.4 PCB with 25-pin D-sub connector and screw terminals (CON_SubD_Screw10)
+## 3.4 PCB with 25-pin D-sub connector and screw terminals (CON_SubD_Screw10)
 This circuit board is used for longer modules (lengths of 75 cm or 100 cm) on one of the two sides (east or west). It only leads out the connections of the Sub-D connector to screw terminals.   
 
 ![Board CON_SubD_Screw10](/images/pcb_f/PCB_F_CON_SubD_Screw10_V1.png "CON_SubD_Screw10")   
