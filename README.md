@@ -44,7 +44,7 @@ This repository deals with the production and use of components for controlling 
 The following topics are covered in numerous chapters:   
 
 __Information about the system__   
-*[How do I start the RCC project?](/fab/rcc0_start/README.md)   
+* [How do I start the RCC project?](/fab/rcc0_start/README.md)   
 * [Electrical connection of railroad modules according to NEM 908D](/info/con_NEM908/README.md)   
 * ...   
 
