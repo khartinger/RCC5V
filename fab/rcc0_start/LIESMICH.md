@@ -118,10 +118,10 @@ Fassung mit gedrehten Buchsen 8-polig
 ESP32
 
 ## Fertige Zukaufteile
-| Anzahl | Stück/Pkg | Bezeichnung | Quelle | ca. Euro |   
+| Anzahl | Stück/Pkg | Bezeichnung | ca. Euro | Quelle |   
 | ------ | --------- | ----------- | ------ | -------- |   
-|  1     |     5     | DC-DC-Wandler-Board StepDown_LM2596 | [https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title](https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title) | 9,56 |   
-|  1     |     1     | 5V-3V Dual Channel I2C IIC Logic-Level-Converter Modul Bi-Directional | [https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu](https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu) | 0,28 |   
+|  1     |     5     | DC-DC-Wandler-Board StepDown_LM2596 | 9,56 | [https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title](https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title) |    
+|  1     |     1     | 5V-3V Dual Channel I2C IIC Logic-Level-Converter Modul Bi-Directional |  0,28 | [https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu](https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu) |   
 
 ## Sonstiges
 | Anzahl | Stück/Pkg | Bezeichnung | Quelle | ca. Euro |   
