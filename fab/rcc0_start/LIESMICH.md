@@ -127,11 +127,12 @@ ESP32
 | ![I2C-Logic-Level-Converter](/images/parts/96_i2c_logic_level_converter.png "I2C-Logic-Level-Converter") | 1 | 1 | 5V-3V Dual Channel I2C IIC Logic-Level-Converter Modul Bi-Directional | 0,28 | [AliExpress](https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu) |   
 
 ## Sonstiges
-| Anzahl | Stück/Pkg | Bezeichnung | Quelle | ca. Euro |   
-| ------ | --------- | ----------- | ------ | -------- |   
-|    1   |     1     | Lötzinn, Bleifreies Lot mit Kolophonium Kern (Sn99 Ag0,3 Cu0,7/0,6mm,50g) | [https://www.amazon.de/dp/B07Z7JQ4SX?ref=ppx_yo2ov_dt_b_fed_asin_title](https://www.amazon.de/dp/B07Z7JQ4SX?ref=ppx_yo2ov_dt_b_fed_asin_title) | 11,09 |   
+| Bild | Anzahl | Stück /Pkg | Bezeichnung | ca. Euro | Quelle |   
+|:---- |:------:|:----------:|:----------- | --------:|:------ |   
+| ![solder wire](/images/parts/300_solderwire1.png "solder wire ")  | 1 | 1 | Lötzinn, Bleifreies Lot mit Kolophonium Kern (Sn99 Ag0,3 Cu0,7/0,8mm,50g) | 11,09 | [Amazon](https://www.amazon.de/dp/B07Z7JQ4SX?ref=ppx_yo2ov_dt_b_fed_asin_title) |   
+| ![Flat Ribbon Cable 6pol](/images/parts/300_flatRibbonCable_6pol.png "Flat Ribbon Cable 6pol")  | 1 | 5m | Flachbandkabel 6-polig, farbig | 4,80 | [AliExpress](https://de.aliexpress.com/item/1005005382567357.html?spm=a2g0o.order_list.order_list_main.236.63df5c5fSSD4mY&gatewayAdapt=glo2deu) |   
+| ![Flat Ribbon Cable 10pol](/images/parts/300_flatRibbonCable_10pol.png "Flat Ribbon Cable 10pol") | 1 | 5m | Flachbandkabel 10-polig, farbig | 5,82 | [AliExpress](https://de.aliexpress.com/item/1005005382567357.html?spm=a2g0o.order_list.order_list_main.236.63df5c5fSSD4mY&gatewayAdapt=glo2deu) |   
 
-Flachbandkabel
 
 # Fertigen der Komponenten
 Hat man - nach einiger Wartezeit - sowohl die Leiterplatten als auch die Bauteile zur Verfügung, geht es an das Herstellen der Komponenten:   
