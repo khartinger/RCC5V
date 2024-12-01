@@ -566,7 +566,7 @@ Auf die _*Lötseite*_ löten:
 _Nicht vergessen_: Optokoppler U1, U2 in die Fassung stecken...   
 
 ### Versionen
-* V1 (240930): OK
+* V1 (241124): OK
 
 ## 5.2 LED-Anzeige für zweipoligen Umschalter
 Diese Platine dient zur Bedienung der Schaltplatine "RW_5V_DPDT_STRG".   
@@ -619,11 +619,14 @@ An J3-Pin3 liegt IN+ und an J3-Pin4 liegt IN- an.
 J3-Pin5 und J3-Pin6 offen.   
 5. Drücken des mittleren Schalters (für lokales Schalten):   
 Unterer Schalter nicht gedrückt: An J3-Pin3 liegt IN+ und an J3-Pin4 liegt IN- an, J3-Pin5 und J3-Pin6 offen.   
-Unterer Schalter gedrückt: An J3-Pin5 liegt IN+ und an J3-Pin6 liegt IN- an. J3-Pin3 und J4-Pin6 offen.      
+Unterer Schalter gedrückt: An J3-Pin5 liegt IN+ und an J3-Pin6 liegt IN- an. J3-Pin3 und J4-Pin6 offen.   
+6. Mittlerer Schalter ungedrückt: Steuerung über DCC.   
+Mit dem Demoprogamm kann mit der DCC-Adresse 41 der Umschalter betätigt werden.   
+
 ![Pinbelegung_DPDT-J5](/images/200_J5_pins_DPDT.png "Pinbelegung DPDT-J5")   
 _Bild 40: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
 
 ### Versionen
-* V1 (2411..): OK   
+* V1 (241124): OK   
 
 [Zum Seitenanfang](#up)   
