@@ -51,9 +51,9 @@ __Information about the system__
 __Manufacturing the system components__   
 * [KiCad files of RCC components](/kicad/README.md)   
 * [Components for the power supply](/fab/rcc1_supply/README.md)   
-* [ESP32-Shields](/fab/rcc2_esp32/README.md)   
-* [Additional boards](/fab/rcc5_add_ons/README.md)   
-* ...   
+* [Manufacturing of the ESP32-Shields](/fab/rcc2_esp32/README.md)   
+* [Manufacturing of the switching blocks](/fab/rcc4_block/README.md)   
+* [Manufacturing of additional boards](/fab/rcc5_add_ons/README.md)   
 
 __Software for the ESP32__   
 * [Demo software](/software/rcc_demo1/README.md)   

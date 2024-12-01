@@ -22,7 +22,7 @@ Visual Studio Code ist erforderlich, um die Steuersoftware an die eigenen Bedür
 Welche Leiterplatten man benötigt, ist naturgemäß abhängig vom Anwendungsfall. Einige Platinen benötigt man aber auf jeden Fall.   
 
 ### Immer erforderliche Platinen
-Immer erforderlich sind die beiden Shields für den ESP32,   
+Immer erforderlich sind die beiden Shields für den ESP32   
 * [/kicad/Shield_5V_DCC_6pol_V3](/kicad/Shield_5V_DCC_6pol_V3)   
 * [/kicad/Shield_I2C_5V_3V3_V2](/kicad/Shield_I2C_5V_3V3_V2)   
 

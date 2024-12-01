@@ -51,13 +51,13 @@ __Informationen rund um das System__
 __Herstellung der System-Komponenten__   
 * [KiCad-Dateien der RCC-Komponenten](/kicad/LIESMICH.md)   
 * [Komponenten f&uuml;r die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
-* [ESP32-Shields](/fab/rcc2_esp32/LIESMICH.md)   
-* [Zusatzplatinen](/fab/rcc5_add_ons/LIESMICH.md)   
-* ...   
+* [Herstellung der ESP32-Shields](/fab/rcc2_esp32/LIESMICH.md)   
+* [Herstellung von Schaltbl&ouml;cken](/fab/rcc4_block/LIESMICH.md)   
+* [Herstellung der Zusatzplatinen](/fab/rcc5_add_ons/LIESMICH.md)   
 
 __Software für den ESP32__   
 * [Demo-Software](/software/rcc_demo1/LIESMICH.md)   
-* [Anpassung der Demo-Software an eigene Bedürfnisse]()   
+* [Anpassung der Demo-Software an eigene Bed&uuml;rfnisse]()   
 
 __Verwendung des Systems__   
 * [Beispiel-Verdrahtung einer Weiche](/use/exampleTurnout2/LIESMICH.md)   
