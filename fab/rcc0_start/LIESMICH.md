@@ -91,6 +91,8 @@ Viele der Bauteile, wie zB Schrauben, werden in größeren Gebinden verkauft, hi
 Die unten angegebenen Mengen reichen für den Bau _eines_ Moduls mit mehreren Blöcken.   
 Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gültig (ohne Black Friday etc.).   
 
+# ... ToDo: Liste noch nicht vollständig...   
+
 ## Mechanische Bauteile
 
 | Bild | Anzahl | Stück /Pkg | Bezeichnung | ca. Euro | Quelle |   
