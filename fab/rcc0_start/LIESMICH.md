@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 28.11.2024 <a name="up"></a><br>   
+Letzte &Auml;nderung: 2.12.2024 <a name="up"></a><br>   
 <h1>Wie starte ich das RCC-Projekt?</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
