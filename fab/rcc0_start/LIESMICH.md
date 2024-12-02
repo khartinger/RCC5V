@@ -99,18 +99,23 @@ Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gü
 | ![hexagon_nut](/images/parts/200_hexagon_nut_M2.png "hexagon_nut")  | 1 | 200 | Sechskantmuttern M2x0,4 mm | 7,04 | [Amazon](https://www.amazon.de/sourcing-map-Kohlenstoff-Hexagonal-Silbert%C3%B6ne/dp/B07J3CNWNH?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=XV7AI5VJHRNO&dib=eyJ2IjoiMSJ9.MHtsj7g4rQQHzcEBoDSBTefFXlBpLiPak-77Ew8DQdnch54LTfQom_Svg_2BIso3QxatpAXNGjuD_TT8uikaPVO2vq_IzIqDBOCyX_QfxDATecIY9QkDAz6IUOnvZA_RSCDw_3kbhgHFVZ1MLUZNX6gsIAtxGrU_nRcfKAt-VyjIQrtZtglmInq7OQayV2_GSyy3EAzNJhSf2FRx0JTuB3SJDEX1nLEjR_1xIk_G5d-xxm34Aa2N-QFYcTqkUv6zk1FQvrPmimDPScbvLf-zL8ezOEqI5DSUhTjka0Lap6o.uVzu6mRNlGns069q_PKQHMF7v7nZeAUiJ6ZofHofMrY&dib_tag=se&keywords=Mutter+M2&nsdOptOutParam=true&qid=1732790211&sprefix=mutter+m2%2Caps%2C137&sr=8-5) |   
 | ![cross-head_screw](/images/parts/200_cross-head_screw_M2x20.png "cross-head_screw") | 1 | 100 | M2 x 20 Kreuzschlitz-Schrauben, 304 Edelstahl, metrische Maschinenschraube, Bolzen | 11,09 |[Amazon](https://www.amazon.de/dp/B07QH9KHMG?ref=ppx_yo2ov_dt_b_fed_asin_title) |   
 | ![self-drilling_screw_M2.6x8](/images/parts/200_self-drilling_screw_M2.6x8.png "self-drilling_screw_M2.6x8") | 1 | 100 | Selbstbohrende Schrauben M2,6 x 8 Edelstahl 304 Schwarzes Zink Plattiert Selbstschneidend Kreuzschlitz Pan Kopf | 7,75 |[Amazon](https://www.amazon.de/dp/B0CR8CBDTX?psc=1&smid=A14R2UVD1VQLGA&ref_=chk_typ_imgToDp) |   
-| ![LED holder](/images/parts/300_ledholder.png "LED holder") | 1 | 20 | LED-Fassung 3mm, Chrom-Messing, hervorstehende Lünette, 6 mm Durchmesser, Schraubplattenmontage | 12,98 | [AliExpress](https://de.aliexpress.com/item/1005007180033606.html?spm=a2g0o.order_list.order_list_main.33.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
+| ![LED holder](/images/parts/300_ledholder.png "LED holder") | 1 | 20 | LED-Fassung 3mm, Chrom-Messing, hervorstehende Lünette, 6 mm Durchmesser, Schraubplattenmontage | 12,98 | [AliExpress Daier_Store](https://de.aliexpress.com/item/1005007180033606.html?spm=a2g0o.order_list.order_list_main.33.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
+| ![switch_cap](/images/parts/300_switch_cap.png "switch_cap") | 1 | 7x10 | Knopf für Taster/Schalter 8x8mm, Länge 10mm, 7 verschieden Farben | 1,92 | [AliExpress Ali_CanHui](https://de.aliexpress.com/item/1005001524633998.html?spm=a2g0o.order_list.order_list_main.193.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
+|  | 1 | 100 | Knopf für Taster/Schalter 8x8mm, Länge 7mm, verschiedene Farben | 2,17 | [AliExpress TEJIATE_Store](https://de.aliexpress.com/item/4000504035520.html?spm=a2g0o.order_list.order_list_main.322.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 
 ## Elektrische Bauteile
 
 | Bild | Anzahl | Stück /Pkg | Bezeichnung | ca. Euro | Quelle |   
 |:---- |:------:|:----------:|:----------- | --------:|:------ |   
+| ![pushbutton_8x8](/images/parts/300_switch_8x8.png "pushbutton_8x8") | 1 | 10 | Microtaster 2x Um (DPDT), Unlock 8x8mm | 6,12 | [AliExpress BXV_computer chipset_Store](https://de.aliexpress.com/item/1005006962539948.html?spm=a2g0o.order_list.order_list_main.78.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
+| ![switch_8x8](/images/parts/300_switch_8x8.png "switch_8x8") | 1 | 10 | Microschalter 2x Um (DPDT), Locking 8x8mm | 6,02 | [AliExpress BXV_computer chipset_Store](https://de.aliexpress.com/item/1005006962539948.html?spm=a2g0o.order_list.order_list_main.78.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 | ![PCB_Screw_Connector_2P](/images/parts/300_PCB_Screw_Connector_2P.png "PCB_Screw_Connector_2P") | 1 | 50 | Schraubklemmen für Leiterplatte, 2-polig, schwarz oder blau, 5,0 mm | 12,36 |[AliExpress](https://de.aliexpress.com/item/1005007145396958.html?spm=a2g0o.order_list.order_list_main.102.f9f35c5fko3NNE&gatewayAdapt=glo2deu) |   
 | ![PCB_Screw_Connector_3P](/images/parts/300_PCB_Screw_Connector_3P.png "PCB_Screw_Connector_3P") | 1 | 50 <br> 30 | Schraubklemmen für Leiterplatte, 3-polig, schwarz oder blau, 5,0 mm |   15,16 <br> 7,04 |[AliExpress](https://de.aliexpress.com/item/1005007145396958.html?spm=a2g0o.order_list.order_list_main.102.f9f35c5fko3NNE&gatewayAdapt=glo2deu) <br> [Amazon](https://www.amazon.de/dp/B071GMT7ZZ?ref=ppx_yo2ov_dt_b_fed_asin_title) |   
 | ![socket_strip_short](/images/parts/300_socket_strip_short.png "socket_strip_short") | 1 | 10 | 8-polige Buchsenleiste mit kurzen Kontakten | 1,88 | [AliExpress](https://de.aliexpress.com/item/1005005488898046.html?spm=a2g0o.productlist.main.9.669btr3dtr3d6w&algo_pvid=65fd6970-3b51-4d0e-940c-e7cddb3caf78&aem_p4p_detail=202411290703446772873239296340000289000&algo_exp_id=65fd6970-3b51-4d0e-940c-e7cddb3caf78-4&pdp_npi=4%40dis%21EUR%211.88%211.60%21%21%211.94%211.65%21%40211b613917328926243906031e2cec%2112000033281493435%21sea%21AT%21738334575%21X&curPageLogUid=lXR8wevtzrac&utparam-url=scene%3Asearch%7Cquery_from%3A&search_p4p_id=202411290703446772873239296340000289000_4) |   
 | ![socket_strip_long](/images/parts/300_socket_strip_long.png "socket_strip_long") | 1 | 100 | 8-polige Buchsenleiste mit langen Kontakten (11 mm) | 8,37 |[AliExpress](https://www.aliexpress.com/item/32723472575.html?spm=a2g0o.order_list.order_list_main.4.f9f31802e55QVF) |   
+| ![socket_strip_long_yellow](/images/parts/300_socket_strip_long_yellow.png "socket_strip_long_yellow") | 1 | 10 | 8-polige (oder 10-polige) Buchsenleiste mit langen Kontakten, gelb | 3,95 |[AliExpress excellence electronic](https://de.aliexpress.com/item/4001180247614.html?spm=a2g0o.order_list.order_list_main.389.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 | ![pin_strip_0](/images/parts/200_pin_strip_0.png "pin_strip_0") | 1 | 10 | 40-polige Stiftleiste gerade 2,54 mm | 2,34 | [AliExpress](https://de.aliexpress.com/item/32973181162.html?spm=a2g0o.order_list.order_list_main.81.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
-| ![pin_header_90](/images/parts/300_pin_header_90.png "pin_header_90") | 1 | 10 | 40-polige Stiftleiste 90° abgewinkelt 2,54 mm | 2,34 | []() |   
+| ![pin_header_90](/images/parts/300_pin_header_90.png "pin_header_90") | 1 | 20 | 40-polige Stiftleiste rechtwinklig abgewinkelt (90°) 2,54 mm, __R1__ Type B6, extra langer Stift | 6,37 | [AliExpress E-Simpo Store](https://de.aliexpress.com/item/32887929634.html?spm=a2g0o.order_list.order_list_main.619.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 | ![socket strip 40pol](/images/parts/300_socket_strip_40.png "socket strip 40pol") | 1 | 5 | einreihige 40-polige Buchsenleiste mit gedrehten Kontakten 2,54 mm| 8,10 <br> 7,66 | [AliExpress](https://de.aliexpress.com/item/1005006755553448.html?spm=a2g0o.order_list.order_list_main.76.f9f35c5fKqYn54&gatewayAdapt=glo2deu) <br> [Amazon](https://www.amazon.de/Ticfox-Rundloch-Buchsenleiste-Einreihig-Connector/dp/B09JP7HT1W?crid=KCL2BL46EJ95&dib=eyJ2IjoiMSJ9.nbUkl4qyuinX7hE-a8LcquMPk1QLUzYjPJ70d4AkmiPUl3Ju3rnFtbvXyzVvBPyNHLa4AiL75eBADZROfXs_9sUf-s8_Y0LTKmp8s8TflpffgDAlN-drG5xkk9aniAwBS-8Ue4OEn6Ahh-IXpPQEn3iXIL40590cUrzxjgr_2uNbK3qrnCyUBx2Y4JAN7wNvjtpEUD5EIUEnkj13xEvOf7JBDHfgMeinlMuqTVtTVrDX_bMWm2QwsMGg6TuQ4VBFkQ2NHrysFJTldYEQq--_6Me0_rZWEiNiYln0h6QWm8I.QGfp3YQSldAnlv2GmR06YT6Y3Jlmb97lomWP6EsKcfo&dib_tag=se&keywords=buchsenleiste+2+54+trennbar&nsdOptOutParam=true&qid=1733129938&sprefix=buchsenleiste+2%2C54%2Caps%2C99&sr=8-6)|   
 | ![box_connector_6](/images/parts/300_box_connector_6.png "box_connector_6") | 2 | 10 <br> 20 | Wannenstecker 6-polig (2x3), senkrecht | 6,05 <br> 10,68 | [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) <br> [Amazon](https://www.amazon.de/dp/B0BGRMLJD7?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)|   
 | ![box_connector_10](/images/parts/300_box_connector_10.png "box_connector_10") | 1 | 10 <br> 20 | Wannenstecker 10-polig (2x5), senkrecht | 6,15 <br> 11,09 |[AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) <br> [Amazon](https://www.amazon.de/dp/B0BGRM9GZP?ref=ppx_yo2ov_dt_b_fed_asin_title) |    
@@ -123,29 +128,41 @@ Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gü
 
 ## Elektronische Bauteile
 
-| ![](/images/parts/) | 1 | 10 | part | 0,00 | [AliExpress]() |   
-
-| ![](/images/parts/) | 1 | 20 | Relais HFD4-3 DIP 3V | 23,46 | [AliExpress](https://de.aliexpress.com/item/1005005783041160.html?spm=a2g0o.order_list.order_list_main.398.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
-| ![](/images/parts/) | 1 | 20 | Relais HFD4-5 DIP 5V | 22,63 | [AliExpress](https://de.aliexpress.com/item/1005005783041160.html?spm=a2g0o.order_list.order_list_main.398.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
-
-
-
 | Bild | Anzahl | Stück /Pkg | Bezeichnung | ca. Euro | Quelle |   
 |:---- |:------:|:----------:|:----------- | --------:|:------ |   
 | ![](/images/parts/) | 1 | 1 | ESP32 D1 mini mit CH9102X drive Type-C | 12,05 | [AliExpress](https://de.aliexpress.com/item/1005005972627549.html?spm=a2g0o.order_list.order_list_main.408.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
 | ![](/images/parts/300_oled_154.png) | 1 | 1 | OLED-Display 1,54 Zoll, I2C __4 Pin__ weiß | 4,34 <br> 8,68 | [AliExpress](https://de.aliexpress.com/item/1005006193834348.html?spm=a2g0o.order_list.order_list_main.84.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) <br> [AliExpress](https://de.aliexpress.com/item/1005005901019407.html?spm=a2g0o.order_list.order_list_main.48.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
+| ![](/images/parts/) | 1 | 5 <br> 20 | Relais HFD4-3 DIP 3V | 6,85 <br> 23,46 | [AliExpress](https://de.aliexpress.com/item/1005007261952244.html?spm=a2g0o.order_list.order_list_main.42.40f55c5f5h69eX&gatewayAdapt=glo2deu) <br> [AliExpress](https://de.aliexpress.com/item/1005005783041160.html?spm=a2g0o.order_list.order_list_main.398.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
+| ![](/images/parts/) | 1 | 5 <br> 20 | Relais HFD4-5 DIP 5V | 6,85 <br> 22,63 | [AliExpress](https://de.aliexpress.com/item/1005007261952244.html?spm=a2g0o.order_list.order_list_main.42.40f55c5f5h69eX&gatewayAdapt=glo2deu) <br> [AliExpress](https://de.aliexpress.com/item/1005005783041160.html?spm=a2g0o.order_list.order_list_main.398.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
 | ![]() | 1 | 5 | LED rot 3mm, 2mA | 0,151 | [Reichelt](https://www.reichelt.com/at/de/shop/led-3-mm-bedrahtet-rot-5-mcd-60--led-3mm-2ma-rt-p21626.html?&nbc=1) |   
-| ![](/images/parts/) | 1 | 10 | LED gelb 3mm, 2mA | 0,151 | [Reichelt]() |   
-| ![](/images/parts/) | 1 | 10 | LED grün 3mm, 2mA | 0,151 | [Reichelt]() |   
-| ![](/images/parts/) | 1 | 1 | Leistungswiderstand 4,7 &Omega; 5W | 0,35 | [Reichelt](https://www.reichelt.com/at/de/shop/drahtwiderstand-axial-5-w-4-7-ohm-10--5w-axial-4-7-p2623.html?&nbc=1) |   
+| ![](/images/parts/) | 1 | 10 | LED gelb 3mm, 2mA | 0,151 | [Reichelt](https://www.reichelt.com/at/de/shop/produkt/led_3_mm_bedrahtet_gelb_3_2_mcd_60_-21628) |   
+| ![](/images/parts/) | 1 | 10 | LED grün 3mm, 2mA | 0,151 | [Reichelt](https://www.reichelt.com/at/de/shop/produkt/led_3_mm_bedrahtet_gruen_3_2_mcd_60_-21624) |   
 | ![](/images/parts/) | 1 | 10 | Optokoppler SFH 615A-4 | 2,11 | [AliExpress](https://de.aliexpress.com/item/1005002283822668.html?spm=a2g0o.productlist.main.3.13fa54d84iOUlM&algo_pvid=ac909257-2c57-4b00-a464-6fb49a4be321&algo_exp_id=ac909257-2c57-4b00-a464-6fb49a4be321-1&pdp_npi=4%40dis%21EUR%213.52%213.25%21%21%213.62%213.34%21%402103963717331344744951943e6b34%2112000019909239115%21sea%21AT%21738334575%21X&curPageLogUid=hq0KjQN0J1tm&utparam-url=scene%3Asearch%7Cquery_from%3A) |   
 | ![](/images/parts/) | 1 | 10 | Optokoppler 6N137 | 2,21 | [AliExpress](https://de.aliexpress.com/item/1005002002451701.html?spm=a2g0o.productlist.main.1.1696605ch0dlgy&algo_pvid=3ec1e43f-3a23-42c9-bcac-6014cf738371&algo_exp_id=3ec1e43f-3a23-42c9-bcac-6014cf738371-0&pdp_npi=4%40dis%21EUR%212.21%212.09%21%21%212.27%212.15%21%40211b80e117331343177752865ed8ce%2112000018375333251%21sea%21AT%21738334575%21X&curPageLogUid=xMxw72qv77ca&utparam-url=scene%3Asearch%7Cquery_from%3A) |   
+| ![](/images/parts/) | 1 | 10 | Transistor BC327-40 PNP | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Transistor BC337-40 NPN | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Diode 1N4148 | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Diode 1N4007 | 0,00 | [AliExpress]() |   
+| ![](/images/parts/300_Elko_1000u.png) | 1 | .. | Elko 1000 &micro;F/35 V 8x5mm | 0,00 | []() |   
+| !["Elko_33uF"](/images/parts/300_Elko_33u.png "Elko_33uF") | 1 | 20 | Elko 33 &micro;F/35 V 8x5mm | 10,44 | [AliExpress](https://de.aliexpress.com/item/1005003108572892.html?spm=a2g0o.order_list.order_list_main.211.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
+| ![](/images/parts/) | 1 | 10 | Kondensator 100 nF, 5,08 mm | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Kondensator 100 nF, 2,54 mm| 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Kondensator 10 nF | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Diode 1N4007 | 0,00 | [AliExpress]() |   
+| ![4R7_5W](/images/parts/300_4R7_5W.png "4R7_5W") | 1 | 1 <br> 10 | Leistungswiderstand 4,7 &Omega; 5W | 0,35 <br> 2,98| [Reichelt](https://www.reichelt.com/at/de/shop/drahtwiderstand-axial-5-w-4-7-ohm-10--5w-axial-4-7-p2623.html?&nbc=1) <br> [AliExpress](https://de.aliexpress.com/item/1005004616640910.html?spm=a2g0o.productlist.main.1.10d58y4x8y4x6S&algo_pvid=a9823d63-c49e-41d3-8c57-700b640bf9c2&algo_exp_id=a9823d63-c49e-41d3-8c57-700b640bf9c2-0&pdp_npi=4%40dis%21EUR%212.64%212.46%21%21%212.72%212.54%21%40211b804117331406294324080eea1e%2112000029844956729%21sea%21AT%21738334575%21X&curPageLogUid=7Tll2hH1GRLh&utparam-url=scene%3Asearch%7Cquery_from%3A) |   
+| ![](/images/parts/) | 1 | 10 | Widerstand 47 &Omega; | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Widerstand 100 &Omega; | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Widerstand 1 k&Omega; | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Widerstand 4,7 k&Omega; | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Widerstand 10 k&Omega; | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Widerstand 47 k&Omega; | 0,00 | [AliExpress]() |   
+| ![](/images/parts/) | 1 | 10 | Widerstand 100 k&Omega; | 0,00 | [AliExpress]() |   
 
 ## Zukaufteile
 | Bild | Anzahl | Stück /Pkg | Bezeichnung | ca. Euro | Quelle |   
 |:---- |:------:|:----------:|:----------- | --------:|:------ |   
 | ![DC-DC-Converter](/images/parts/300_dc_dc_converter1.png "DC-DC-Converter") | 1 | 5 | DC-DC-Wandler-Board StepDown_LM2596 | 9,56 | [Amazon](https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title) |    
-| ![I2C-Logic-Level-Converter](/images/parts/96_i2c_logic_level_converter.png "I2C-Logic-Level-Converter") | 1 | 1 | 5V-3V Dual Channel I2C IIC Logic-Level-Converter Modul Bi-Directional | 0,28 | [AliExpress](https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu) |   
+| ![I2C-Logic-Level-Converter](/images/parts/96_i2c_logic_level_converter.png "I2C-Logic-Level-Converter") | 1 | 1 <br> 5 | 5V-3V Dual Channel I2C IIC Logic-Level-Converter Modul Bi-Directional | 0,28 <br> 4,91 | [AliExpress diymore Alice1101983](https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu) <br> [AliExpress Shop1103484531](https://de.aliexpress.com/item/1005006695012358.html?spm=a2g0o.order_list.order_list_main.54.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 | ![PCF8574](/images/parts/300_PCF8574.png "PCF8574") | 1 | 10 | PCF8574 I/O-Expander-Platine | 8,87 | [AliExpress](https://de.aliexpress.com/item/1005006308901447.html?spm=a2g0o.order_list.order_list_main.384.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |    
 
 ## Sonstiges
@@ -154,6 +171,10 @@ Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gü
 | ![solder wire](/images/parts/300_solderwire1.png "solder wire ")  | 1 | 1 | Lötzinn, Bleifreies Lot mit Kolophonium Kern (Sn99 Ag0,3 Cu0,7/0,8mm,50g) | 11,09 | [Amazon](https://www.amazon.de/dp/B07Z7JQ4SX?ref=ppx_yo2ov_dt_b_fed_asin_title) |   
 | ![Flat Ribbon Cable 6pol](/images/parts/300_flatRibbonCable_6pol.png "Flat Ribbon Cable 6pol")  | 1 | 5m | Flachbandkabel 6-polig, farbig | 4,80 | [AliExpress](https://de.aliexpress.com/item/1005005382567357.html?spm=a2g0o.order_list.order_list_main.236.63df5c5fSSD4mY&gatewayAdapt=glo2deu) |   
 | ![Flat Ribbon Cable 10pol](/images/parts/300_flatRibbonCable_10pol.png "Flat Ribbon Cable 10pol") | 1 | 5m | Flachbandkabel 10-polig, farbig | 5,82 | [AliExpress](https://de.aliexpress.com/item/1005005382567357.html?spm=a2g0o.order_list.order_list_main.236.63df5c5fSSD4mY&gatewayAdapt=glo2deu) |   
+| ![](/images/parts/) | 1 | 40 | Dupont Line 10 cm, 40 Pin, Buchse auf Buchse (F-F 10cm 40pin) | 2,41 | [AliExpress](https://de.aliexpress.com/item/1005003641187997.html?spm=a2g0o.order_list.order_list_main.509.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
+| ![dupont_10cm_3kinds_120pin](/images/parts/300_dupont_10cm_3kinds_120pin.png "dupont_10cm_3kinds_120pin") | 1 | 120 | Dupont Line 10 cm, Stecker auf Stecker + Stecker auf Buchse + Buchse auf Buchse (10cm 3kinds 120pin) | 4,13 | [AliExpress](https://de.aliexpress.com/item/1005003641187997.html?spm=a2g0o.order_list.order_list_main.509.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
+
+| ![](/images/parts/) | 1 | 10 | part | 0,00 | [...]() |   
 
 ## Werkzeug
 Lötstation, kleine Spitzzange, kleiner Seitenschneider, kleiner Schraubendreher, Abbrechklingenmesser ("Stanley-Messer", Cutter-Messer), Schraubstock   
