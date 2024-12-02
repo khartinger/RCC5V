@@ -42,12 +42,18 @@ Zum Biegen kann man auch eine Schablone aus Karton vorbereiten, wobei man die LE
 ![LED biegen2](/images/200_LED_config2.png "LED biegen2")   
 _Bild 5: LED-Biegeschablone_   
 
+## 1.5 Vorgegebene Positionen auf der LED-Platine
+Auf allen LED-Platinen sind drei Positionen für Taster bzw. Schalter sowie sechs Positionen für LEDs vorgesehen:   
+![LED- und Schalterpositionen](/images/300_block_cover.png "LED- und Schalterpositionen")   
+_Bild 6: LED- und Schalterpositionen bei einem Block (von vorne gesehen)_   
 
-## 1.5 Löten von Tastern und Schaltern auf die Lötseite einer Platine
+Die Bezeichnungen für die LEDs (D1 bis D6) und die Taster oder Schalter (SW1 bis SW3) werden bei allen LED-Platinen gleich verwendet.   
+
+## 1.6 Löten von Tastern und Schaltern auf die Lötseite einer Platine
 Alle "LED"-Platinen enthalten Taster und Schalter, die zum Schluss auf die Lötseite der Platine gelötet werden. Damit sie beim Einlöten nicht herausfallen, kann man sie mit Klebeband fixieren und die Platine höher lagern, zum Beispiel kann man sie auf die Kanten eines schmalen Einsatzes eines [RAACO Sortimentkoffers Assorter 55 A9](https://www.reichelt.de/at/de/sortimentseinsatz-a9-1-39-x-47-x-55-mm-raaco-a9-1-p29322.html?r=1) legen.
 
 ![solder_button1](/images/200_solder_button1.png "solder_button1") ![solder_button2](/images/200_solder_button2.png "solder_button2")   
-_Bild 6: Löten von Tastern_   
+_Bild 7: Löten von Tastern_   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
@@ -55,22 +61,22 @@ _Bild 6: Löten von Tastern_
 # 2. Zweiwegweiche
 
 ## 2.1 Steuerung Zweiwegweiche   
-Diese Platine dient zum Schalten einer Zweiwegweiche (Richtung Gerade - Abzweig) von Hand oder über den I²C-Bus. Der Schaltvorgang erfolgt über zwei Relais (siehe Bild unten).   
+Diese Platine dient zum Schalten einer Zweiwegweiche (Richtung "Gerade" oder "Abzweig") von Hand oder über den I²C-Bus. Der Schaltvorgang erfolgt über zwei Relais (siehe Bild unten).   
 
 ![RW_5V_W2_STRG_circuit](/images/600_RW_5V_W2_STRG_circuit.png "RW_5V_W2_STRG_circuit")   
-_Bild 7: Schaltplan der "RW_5V_W2_STRG"-Platine_   
+_Bild 8: Schaltplan der "RW_5V_W2_STRG"-Platine_   
 
-Die Ansteuerung erfolgt entweder über über WSA und WSB (d.h. von extern) oder mit PBA und PBB (Taster auf der W2_LED-Platine).   
-* (1) PBA und PBB offen: Beide Relais im Ruhezustand. Die Weichenanschlüsse WA und WB sind nach WLA und WLB durchgeschaltet. Diese Leitungen führen zur LED-Anzeige und zeigen so den Schaltzustand der Weiche an.   
-* (2) PBA auf 0V, PBB offen: Transistor Q1 schaltet durch, beide Relais ziehen an. Der Weichenanschluss WB erhält die Schaltspannung V+ (WA offen).   
-* (3) PBA offen, PBB auf 0V: Transistor Q2 schaltet durch, nur Relais K3 zieht an. Der Weichenanschluss WA erhält die Schaltspannung V+ (WB offen).   
+Die Ansteuerung erfolgt entweder über die Leitungen WSA und WSB (d.h. von extern) oder mit PBA und PBB (Taster auf der W2_LED-Platine).   
+* (1) PBA und PBB offen: Beide Relais sind im Ruhezustand. Die Weichenanschlüsse WA und WB sind nach WLA und WLB durchgeschaltet. Diese Leitungen führen zur LED-Anzeige und zeigen so den Schaltzustand der Weiche an.   
+* (2) PBA auf 0V, PBB offen: Transistor Q1 schaltet durch, beide Relais ziehen an. Der Weichenanschluss WB erhält die Schaltspannung V+ (WA bleibt offen).   
+* (3) PBA offen, PBB auf 0V: Transistor Q2 schaltet durch, nur Relais K3 zieht an. Der Weichenanschluss WA erhält die Schaltspannung V+ (WB bleibt offen).   
 * (4) PBA auf 0V, PBB auf 0V: Dieser Zustand sollte nicht auftreten. Es schalten beide Transistoren durch und die Schaltung verhält sich wie bei (2).   
 
 ![Platine Ansteuerung Zweiwegweiche](/images/pcb_f/PCB_F_RW_5V_W2_STRG_V2.png "Platine Ansteuerung Zweiwegweiche")   
-_Bild 8: Platine zur Ansteuerung einer Zweiwegweiche_   
+_Bild 9: Platine zur Ansteuerung einer Zweiwegweiche_   
 
 ![RW_5V_W2_STRG](/images/300_RW_5V_W2_STRG_V2.png "RW_5V_W2_STRG")   
-_Bild 9: Bestückte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_   
+_Bild 10: Bestückte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_   
 
 
 ### Stückliste   
@@ -105,24 +111,25 @@ _Bild 9: Bestückte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_
 * V2 (241115): OK   
 
 ## 2.2 Zweiwegweiche: LED-Anzeige mit Taster
-Diese Platine dient zum Bedienen einer Zweiwegweiche (Richtung Gerade - Abzweig) und zur Anzeige der tatsächlichen Weichenstellung. Es sind alle Taster und LEDs verdrahtet, sodass man durch die richtige Wahl von zwei Tastern und zwei LEDs alle Schaltbilder    
+Diese Platine dient zum Bedienen einer Zweiwegweiche (je ein Taster für die Richtungswahl "Gerade" oder "Abzweig") und zur Anzeige der tatsächlichen Weichenstellung. Es sind alle Taster- und LED-Positionen verdrahtet, sodass man durch die richtige Wahl von zwei Tastern und zwei LEDs alle Schaltbilder    
 * linke Weiche nach links oben,   
 * linke Weiche nach rechts unten,   
 * rechte Weiche nach links unten und   
 * rechte Weiche nach rechs oben   
-- je nach Bedarf - darstellen kann.   
+darstellen kann.   
 
 ![RW_5V_W2_LED_circuit](/images/600_RW_5V_W2_LED_circuit.png "RW_5V_W2_LED_circuit")   
-_Bild 10: Schaltplan der "RW_5V_W2_LED"-Platine_   
+_Bild 11: Schaltplan der "RW_5V_W2_LED"-Platine_   
 
 ![RW_5V_W2_LED](/images/pcb_f/PCB_F_RW_5V_W2_LED_V1.png "RW_5V_W2_LED")   
-_Bild 11: Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 12: Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
 ![RW_5V_W2_LED_F](/images/300_RW_W2_LED_F.png "RW_5V_W2_LED_F")   
-_Bild 12: Bauteilseite der bestückten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 13: Bauteilseite der bestückten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
+Im folgenden Bild ist der Print für eine linke Weiche bestückt, die bei der Fahrt von links nach rechts entweder "Gerade" (grüne LED leuchtet) oder "Abzweig" befahren werden kann (gelbe LED leuchtet).   
 ![RW_5V_W2_LED_B](/images/300_RW_W2_LED_B.png "RW_5V_W2_LED_B")   
-_Bild 13: Lötseite der bestückten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 14: Lötseite der bestückten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung._   
 
 ### Stückliste   
 | Anzahl | Referenz          | Wert                | Gehäuse            |   
@@ -171,7 +178,7 @@ Auf die _*Lötseite*_ löten:
 6. Betätigen des Tasters SW1 oder SW3: Stellen der Weiche auf "Abzweig", die andere LED leuchtet.   
    
 ![Pinbelegung_W2-J5](/images/200_J5_pins_W2.png "Pinbelegung W2-J5")   
-_Bild 14: Pinbelegung des Steckers J5 von RW_5V_W2_STRG_   
+_Bild 15: Pinbelegung des Steckers J5 von RW_5V_W2_STRG_   
 
 ### Versionen
 * V1 (241104): OK
@@ -185,13 +192,13 @@ _Bild 14: Pinbelegung des Steckers J5 von RW_5V_W2_STRG_
 Diese Platine dient zum Schalten einer Dreiwegweiche (Richtung links - Mitte - rechts) von Hand oder über den I²C-Bus. Der Schaltvorgang erfolgt über Relais.   
 
 ![Platine Ansteuerung Dreiwegweiche](/images/pcb_f/PCB_F_RW_5V_W3_STRG_V3.png "Platine Ansteuerung Dreiwegweiche")   
-_Bild 15: Platine zur Ansteuerung einer Dreiwegweiche_   
+_Bild 16: Platine zur Ansteuerung einer Dreiwegweiche_   
 
 ![RW_5V_W3_STRG](/images/300_RW_5V_W3_STRG_V3.png "RW_5V_W3_STRG")   
-_Bild 16: Bestückte Platine "RW_5V_W3_STRG" zum Schalten der Weichen_   
+_Bild 17: Bestückte Platine "RW_5V_W3_STRG" zum Schalten der Weichen_   
 
 ![RW_5V_W3_STRG_circuit](/images/600_RW_5V_W3_STRG_circuit.png "RW_5V_W3_STRG_circuit")   
-_Bild 17: Schaltplan der "RW_5V_W3_STRG"-Platine_   
+_Bild 18: Schaltplan der "RW_5V_W3_STRG"-Platine_   
 
 ### Stückliste   
 | Anzahl | Referenz          | Wert                | Gehäuse            |   
@@ -228,13 +235,13 @@ _Bild 17: Schaltplan der "RW_5V_W3_STRG"-Platine_
 Diese Platine dient zum Bedienen einer Dreiwegweiche (Richtung links - Mitte - rechts) und zur Anzeige der tatsächlichen Weichenstellung.   
 
 ![RW_5V_W3_LED](/images/pcb_f/PCB_F_RW_5V_W3_LED_V3.png "RW_5V_W3_LED")   
-_Bild 18: Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 19: Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
 ![RW_5V_W3_LED_V3](/images/300_RW_5V_W3_LED.png "RW_5V_W3_LED")   
-_Bild 19: Bestückte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 20: Bestückte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
 ![RW_5V_W3_LED_circuit](/images/600_RW_5V_W3_LED_V4_circuit.png "RW_5V_W3_LED_circuit")   
-_Bild 20: Schaltplan der "RW_5V_W3_LED"-Platine_   
+_Bild 21: Schaltplan der "RW_5V_W3_LED"-Platine_   
 
 ### Stückliste   
 | Anzahl | Referenz          | Wert                | Gehäuse            |   
@@ -279,7 +286,7 @@ Auf die _*Lötseite*_ löten:
 7. Betätigen des Tasters SW3 (unten): Stellen der Weiche auf "rechts", die LED rechts unten (oder links oben) leuchtet.   
 
 ![Pinbelegung_W3-J5](/images/200_J5_pins_W3.png "Pinbelegung W3-J5")   
-_Bild 21: Pinbelegung des Steckers J5 von RW_5V_W3_STRG_   
+_Bild 22: Pinbelegung des Steckers J5 von RW_5V_W3_STRG_   
 
 ### Versionen
 * V1 (240930): Keine Aufnahmebohrungen, VCCi2c auf J2-Pin 1 herausgeführt, Keine Jumper zum Tauschen der Funktion von SW1 mit SW3.   
@@ -296,13 +303,13 @@ _Bild 21: Pinbelegung des Steckers J5 von RW_5V_W3_STRG_
 Diese Platine dient zum Schalten der Versorgungsspannung für den Entkuppler von Hand oder über den I²C-Bus. Der Schaltvorgang erfolgt über ein Relais.   
 
 ![RW_5V_1OUT_STRG](/images/pcb_f/PCB_F_RW_5V_1OUT_STRG_V1.png "RW_5V_1OUT_STRG_V1")   
-_Bild 22: Platine "RW_5V_1OUT_STRG" zum Betätigen eines Entkupplers_   
+_Bild 23: Platine "RW_5V_1OUT_STRG" zum Betätigen eines Entkupplers_   
 
 ![RW_5V_1OUT_STRG](/images/300_RW_5V_1OUT_STRG_V1.png "RW_5V_1OUT_STRG")   
-_Bild 23: Bestückte Platine "RW_5V_1OUT_STRG" zum Betätigen eines Entkupplers_   
+_Bild 24: Bestückte Platine "RW_5V_1OUT_STRG" zum Betätigen eines Entkupplers_   
 
 ![RW_5V_1OUT_STRG_circuit](/images/600_RW_5V_1OUT_STRG_circuit.png "RW_5V_1OUT_STRG_circuit")   
-_Bild 24: Schaltplan der "RW_5V_1OUT_STRG"-Platine_   
+_Bild 25: Schaltplan der "RW_5V_1OUT_STRG"-Platine_   
 
 ### Stückliste   
 | Anzahl | Referenz          | Wert                | Gehäuse            |   
@@ -349,14 +356,14 @@ Im Ruhezustand leuchtet die rote LED (D1).
 Drückt man den Taster, so leuchten die gelbe (D5) und grüne LED (D3) und J6-Pin 1 (S0) geht auf 0V.   
 
 ![RW_5V_1OUT_LED](/images//pcb_f/PCB_F_RW_5V_1OUT_LED_V2.png "RW_5V_1OUT_LED")   
-_Bild 25: Platine "RW_5V_1OUT_LED" zum Schalten und zur Anzeige des gedrückten Tasters_   
+_Bild 26: Platine "RW_5V_1OUT_LED" zum Schalten und zur Anzeige des gedrückten Tasters_   
 
 Das folgende Bild zeigt die bestückte Platine "RW_5V_1OUT_LED". Auf der Unterseite sieht man Teile der gelben und roten LED sowie des gelben Knopfes des Tasters.   
 ![pcb RW_5V_1OUT_LED](/images/300_RW_5V_1OUT_LED.png "pcb RW_5V_1OUT_LED")   
-_Bild 26: Die bestückte "RW_5V_1OUT_LED"-Platine_   
+_Bild 27: Die bestückte "RW_5V_1OUT_LED"-Platine_   
 
 ![RW_5V_1OUT_LED_circuit](/images/600_RW_5V_1OUT_LED_circuit.png "RW_5V_W3_1OUT_circuit")   
-_Bild 27: Schaltplan der "RW_5V_1OUT_LED"-Platine_   
+_Bild 28: Schaltplan der "RW_5V_1OUT_LED"-Platine_   
 
 ### Stückliste   
 | Anzahl | Referenz          | Wert                | Gehäuse            |   
@@ -397,7 +404,7 @@ Auf die _*Lötseite*_ löten:
 5. Betätigen des Tasters: der Entkuppler sollte arbeiten.   
 
 ![Pinbelegung_1OUT-J5](/images/200_J5_pins_1OUT.png "Pinbelegung 1OUT-J5")   
-_Bild 28: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_   
+_Bild 29: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_   
 
 ### Versionen
 * V1 (241022): spiegelverkehrte Anordnung der LEDs.   
@@ -412,13 +419,13 @@ _Bild 28: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_
 Diese Platine dient zum Ein- und Ausschalten des Fahrstroms für ein Gleis von Hand oder über den I²C-Bus. Der Schaltvorgang erfolgt über ein Relais.   
 
 ![Platine Fahrstrom-Abschaltung](/images/pcb_f/PCB_F_RW_5V_2IO_STRG_V1.png "Platine Fahrstrom-Abschaltung")   
-_Bild 29: Platine zum Schalten des Fahrstroms_   
+_Bild 30: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_STRG](/images/300_RW_5V_2IO_STRG_V1.png "RW_5V_2IO_STRG")   
-_Bild 30: Bestückte Platine "300_RW_5V_2IO_STRG" zum Schalten des Fahrstroms_   
+_Bild 31: Bestückte Platine "300_RW_5V_2IO_STRG" zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_STRG_circuit](/images/600_RW_5V_2IO_STRG_circuit.png "RW_5V_2IO_STRG_circuit")   
-_Bild 31: Schaltplan der "RW_5V_2IO_STRG"-Platine_   
+_Bild 32: Schaltplan der "RW_5V_2IO_STRG"-Platine_   
 
 __Stückliste__   
 | Anzahl | Referenz     | Wert                   | Gehäuse            |   
@@ -467,13 +474,13 @@ Im Ruhezustand (beide _*Schalter*_ nicht gedrückt) leuchtet die gelbe LED und e
 Wird der Schalter "AUS" betätigt, ist der Fahrstrom auf jeden Fall ausgeschaltet, bei "EIN" (ohne "AUS") ist der Fahrstrom eingeschaltet. Sind beide Schalter nicht betätigt, erfolgt die Steuerung über den I²C-Bus.   
 
 ![Platine 2-poliges Schalten](/images/pcb_f/PCB_F_RW_5V_2IO_LED_V2.png "Platine 2-poliges Schalten")   
-_Bild 32: Platine zum Schalten des Fahrstroms_   
+_Bild 33: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_LED](/images/300_RW_5V_2IO_LED.png "RW_5V_2IO_LED")   
-_Bild 33: Bestückte Platine "RW_5V_2IO_LED"_   
+_Bild 34: Bestückte Platine "RW_5V_2IO_LED"_   
 
 ![RW_5V_2IO_LED_circuit](/images/600_RW_5V_2IO_LED_circuit.png "RW_5V_2IO_LED_circuit")   
-_Bild 34: Schaltplan der "RW_5V_2IO_LED"-Platine_   
+_Bild 35: Schaltplan der "RW_5V_2IO_LED"-Platine_   
 
 ### Stückliste   
 | Anzahl | Referenz          | Wert                | Gehäuse            |   
@@ -517,7 +524,7 @@ Auf die _*Lötseite*_ löten:
 6. Funktionstest: wie oben beschrieben.   
 
 ![Pinbelegung_2IO-J5](/images/200_J5_pins_2IO.png "Pinbelegung 2IO-J5")   
-_Bild 35: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
+_Bild 36: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
 
 ### Versionen
 * V1 (241022): spiegelverkehrte Anordnung der LEDs.   
@@ -532,13 +539,13 @@ _Bild 35: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_
 Diese Platine dient zum zweipoligen Umschalten 2x Um (engl. Double Pole Double Throw, kurz DPDT) einer Spannung. Der Schaltvorgang erfolgt über ein Relais.   
 
 ![Platine DPDT](/images/pcb_f/PCB_F_RW_5V_DPDT_STRG_V1.png "Platine DPDT")   
-_Bild 36: Platine zum zweipoligen Umschalten einer Spannung_   
+_Bild 37: Platine zum zweipoligen Umschalten einer Spannung_   
 
 ![RW_5V_DPDT_STRG](/images/300_RW_5V_DPDT_STRG_V1.png "RW_5V_DPDT_STRG")   
-_Bild 37: Bestückte Platine "300_RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
+_Bild 38: Bestückte Platine "300_RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
 
 ![RW_5V_DPDT_STRG_circuit](/images/600_RW_5V_DPDT_STRG_circuit.png "RW_5V_DPDT_STRG_circuit")   
-_Bild 38: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
+_Bild 39: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
 
 __Stückliste__   
 | Anzahl | Referenz     | Wert                   | Gehäuse            |   
@@ -587,13 +594,13 @@ Im Ruhezustand (beide _*Schalter*_ nicht gedrückt) leuchtet die mittlere gelbe 
 Wird der mittlere Schalter gedrückt, erfolgt die Umschaltung über den unteren, lokalen Schalter. Im nicht gedrückten Zustand dind die Kontakte "IN" und "NC" (Normally Closed) verbunden, gedrückt sind "IN" und "NO" (Normally Open).   
 
 ![Platine 2-poliges Umschalten](/images/pcb_f/PCB_F_RW_5V_DPDT_LED_V1.png "Platine 2-poliges Umschalten")   
-_Bild 39: Bedien-Platine zum 2-poligen Umschalten_   
+_Bild 40: Bedien-Platine zum 2-poligen Umschalten_   
 
 ![RW_5V_DPDT_LED](/images/300_RW_5V_DPDT_LED.png "RW_5V_DPDT_LED")   
-_Bild 40: Bestückte Platine "RW_5V_DPDT_LED"_   
+_Bild 41: Bestückte Platine "RW_5V_DPDT_LED"_   
 
 ![RW_5V_DPDT_LED_circuit](/images/600_RW_5V_DPDT_LED_circuit.png "RW_5V_DPDT_LED_circuit")   
-_Bild 41: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
+_Bild 42: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
 
 ### Stückliste   
 | Anzahl | Referenz          | Wert                | Gehäuse            |   
@@ -637,7 +644,7 @@ Unterer Schalter gedrückt: An J3-Pin5 liegt IN+ und an J3-Pin6 liegt IN- an. J3
 Mit dem Demoprogamm kann mit der DCC-Adresse 41 der Umschalter betätigt werden.   
 
 ![Pinbelegung_DPDT-J5](/images/200_J5_pins_DPDT.png "Pinbelegung DPDT-J5")   
-_Bild 42: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
+_Bild 43: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
 
 ### Versionen
 * V1 (241124): OK   
