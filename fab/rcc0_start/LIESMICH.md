@@ -111,24 +111,42 @@ Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gü
 | ![socket_strip_long](/images/parts/300_socket_strip_long.png "socket_strip_long") | 1 | 100 | 8-polige Buchsenleiste mit langen Kontakten (11 mm) | 8,37 |[AliExpress](https://www.aliexpress.com/item/32723472575.html?spm=a2g0o.order_list.order_list_main.4.f9f31802e55QVF) |   
 | ![pin_strip_0](/images/parts/200_pin_strip_0.png "pin_strip_0") | 1 | 10 | 40-polige Stiftleiste gerade 2,54 mm | 2,34 | [AliExpress](https://de.aliexpress.com/item/32973181162.html?spm=a2g0o.order_list.order_list_main.81.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
 | ![pin_header_90](/images/parts/300_pin_header_90.png "pin_header_90") | 1 | 10 | 40-polige Stiftleiste 90° abgewinkelt 2,54 mm | 2,34 | []() |   
-| ![box_connector_6](/images/parts/300_box_connector_6.png "box_connector_6") | 1 | 10 <br> 20 | Wannenstecker 6-polig (2x3), senkrecht | 6,05 <br> 10,68 | [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) <br> [Amazon](https://www.amazon.de/dp/B0BGRMLJD7?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)|   
+| ![socket strip 40pol](/images/parts/300_socket_strip_40.png "socket strip 40pol") | 1 | 5 | einreihige 40-polige Buchsenleiste mit gedrehten Kontakten 2,54 mm| 8,10 <br> 7,66 | [AliExpress](https://de.aliexpress.com/item/1005006755553448.html?spm=a2g0o.order_list.order_list_main.76.f9f35c5fKqYn54&gatewayAdapt=glo2deu) <br> [Amazon](https://www.amazon.de/Ticfox-Rundloch-Buchsenleiste-Einreihig-Connector/dp/B09JP7HT1W?crid=KCL2BL46EJ95&dib=eyJ2IjoiMSJ9.nbUkl4qyuinX7hE-a8LcquMPk1QLUzYjPJ70d4AkmiPUl3Ju3rnFtbvXyzVvBPyNHLa4AiL75eBADZROfXs_9sUf-s8_Y0LTKmp8s8TflpffgDAlN-drG5xkk9aniAwBS-8Ue4OEn6Ahh-IXpPQEn3iXIL40590cUrzxjgr_2uNbK3qrnCyUBx2Y4JAN7wNvjtpEUD5EIUEnkj13xEvOf7JBDHfgMeinlMuqTVtTVrDX_bMWm2QwsMGg6TuQ4VBFkQ2NHrysFJTldYEQq--_6Me0_rZWEiNiYln0h6QWm8I.QGfp3YQSldAnlv2GmR06YT6Y3Jlmb97lomWP6EsKcfo&dib_tag=se&keywords=buchsenleiste+2+54+trennbar&nsdOptOutParam=true&qid=1733129938&sprefix=buchsenleiste+2%2C54%2Caps%2C99&sr=8-6)|   
+| ![box_connector_6](/images/parts/300_box_connector_6.png "box_connector_6") | 2 | 10 <br> 20 | Wannenstecker 6-polig (2x3), senkrecht | 6,05 <br> 10,68 | [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) <br> [Amazon](https://www.amazon.de/dp/B0BGRMLJD7?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)|   
 | ![box_connector_10](/images/parts/300_box_connector_10.png "box_connector_10") | 1 | 10 <br> 20 | Wannenstecker 10-polig (2x5), senkrecht | 6,15 <br> 11,09 |[AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) <br> [Amazon](https://www.amazon.de/dp/B0BGRM9GZP?ref=ppx_yo2ov_dt_b_fed_asin_title) |    
-| ![socket_ribbon_cablec_connector_6pol](/images/parts/300_socket_ribbon_cablec_connector_6a.png "socket_ribbon_cablec_connector_6pol") | 1 | 10 | IDC Buchsen-Stecker für Flachbandkabel 6-polig | 2,98 | [AliExpress](https://de.aliexpress.com/item/1005002804645942.html?spm=a2g0o.order_list.order_list_main.165.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
+| ![socket_ribbon_cablec_connector_6pol](/images/parts/300_socket_ribbon_cablec_connector_6a.png "socket_ribbon_cablec_connector_6pol") | 2 | 10 | IDC Buchsen-Stecker für Flachbandkabel 6-polig | 2,98 | [AliExpress](https://de.aliexpress.com/item/1005002804645942.html?spm=a2g0o.order_list.order_list_main.165.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
 | ![socket_ribbon_cablec_connector_10pol](/images/parts/300_socket_ribbon_cablec_connector_10.png "socket_ribbon_cablec_connector_10pol") | 1 | 10 | IDC Buchsen-Stecker für Flachbandkabel 10-polig | 2,86 | [AliExpress](https://de.aliexpress.com/item/1005002804645942.html?spm=a2g0o.order_list.order_list_main.165.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
+| ![subD-25_plug_90°](/images/parts/300_subD-25_plug_90.png "subD-25 plug 90°") | 1 | 5 | SubD-Stecker 25-polig, abgewinkelt | 4,49 | [AliExpress](https://de.aliexpress.com/item/1005003119025143.html?spm=a2g0o.order_list.order_list_main.177.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
+| ![IC4](/images/parts/300_IC4.png "IC4") | 1 | 50 | IC-Fassung 4-polig mit gedrehten Buchsen | 4,68 | [AliExpress](https://de.aliexpress.com/item/1005003652148420.html?spm=a2g0o.productlist.main.1.7c52I0v0I0v0cU&algo_pvid=944cbd2e-7acc-4457-9e4f-fbcceda1d0a0&algo_exp_id=944cbd2e-7acc-4457-9e4f-fbcceda1d0a0-0&pdp_npi=4%40dis%21EUR%214.68%214.35%21%21%214.81%214.47%21%40210385a817331341448998686eda30%2112000026657542931%21sea%21AT%21738334575%21X&curPageLogUid=wU9ZgQgX5eGi&utparam-url=scene%3Asearch%7Cquery_from%3A) |   
+| ![IC8](/images/parts/300_IC8.png "IC8") | 1 | 10 | IC-Fassung 8-polig mit gedrehten Buchsen | 1,89 | [AliExpress](https://de.aliexpress.com/item/1005007246586839.html?spm=a2g0o.order_list.order_list_main.195.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
 
-SubD-Stecker 25-polig, abgewinkelt
-Fassung mit gedrehten Buchsen 4-polig
-Fassung mit gedrehten Buchsen 8-polig
 
 ## Elektronische Bauteile
-ESP32
 
+| ![](/images/parts/) | 1 | 10 | part | 0,00 | [AliExpress]() |   
+
+| ![](/images/parts/) | 1 | 20 | Relais HFD4-3 DIP 3V | 23,46 | [AliExpress](https://de.aliexpress.com/item/1005005783041160.html?spm=a2g0o.order_list.order_list_main.398.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
+| ![](/images/parts/) | 1 | 20 | Relais HFD4-5 DIP 5V | 22,63 | [AliExpress](https://de.aliexpress.com/item/1005005783041160.html?spm=a2g0o.order_list.order_list_main.398.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
+
+
+
+| Bild | Anzahl | Stück /Pkg | Bezeichnung | ca. Euro | Quelle |   
+|:---- |:------:|:----------:|:----------- | --------:|:------ |   
+| ![](/images/parts/) | 1 | 1 | ESP32 D1 mini mit CH9102X drive Type-C | 12,05 | [AliExpress](https://de.aliexpress.com/item/1005005972627549.html?spm=a2g0o.order_list.order_list_main.408.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
+| ![](/images/parts/300_oled_154.png) | 1 | 1 | OLED-Display 1,54 Zoll, I2C __4 Pin__ weiß | 4,34 <br> 8,68 | [AliExpress](https://de.aliexpress.com/item/1005006193834348.html?spm=a2g0o.order_list.order_list_main.84.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) <br> [AliExpress](https://de.aliexpress.com/item/1005005901019407.html?spm=a2g0o.order_list.order_list_main.48.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |   
+| ![]() | 1 | 5 | LED rot 3mm, 2mA | 0,151 | [Reichelt](https://www.reichelt.com/at/de/shop/led-3-mm-bedrahtet-rot-5-mcd-60--led-3mm-2ma-rt-p21626.html?&nbc=1) |   
+| ![](/images/parts/) | 1 | 10 | LED gelb 3mm, 2mA | 0,151 | [Reichelt]() |   
+| ![](/images/parts/) | 1 | 10 | LED grün 3mm, 2mA | 0,151 | [Reichelt]() |   
+| ![](/images/parts/) | 1 | 1 | Leistungswiderstand 4,7 &Omega; 5W | 0,35 | [Reichelt](https://www.reichelt.com/at/de/shop/drahtwiderstand-axial-5-w-4-7-ohm-10--5w-axial-4-7-p2623.html?&nbc=1) |   
+| ![](/images/parts/) | 1 | 10 | Optokoppler SFH 615A-4 | 2,11 | [AliExpress](https://de.aliexpress.com/item/1005002283822668.html?spm=a2g0o.productlist.main.3.13fa54d84iOUlM&algo_pvid=ac909257-2c57-4b00-a464-6fb49a4be321&algo_exp_id=ac909257-2c57-4b00-a464-6fb49a4be321-1&pdp_npi=4%40dis%21EUR%213.52%213.25%21%21%213.62%213.34%21%402103963717331344744951943e6b34%2112000019909239115%21sea%21AT%21738334575%21X&curPageLogUid=hq0KjQN0J1tm&utparam-url=scene%3Asearch%7Cquery_from%3A) |   
+| ![](/images/parts/) | 1 | 10 | Optokoppler 6N137 | 2,21 | [AliExpress](https://de.aliexpress.com/item/1005002002451701.html?spm=a2g0o.productlist.main.1.1696605ch0dlgy&algo_pvid=3ec1e43f-3a23-42c9-bcac-6014cf738371&algo_exp_id=3ec1e43f-3a23-42c9-bcac-6014cf738371-0&pdp_npi=4%40dis%21EUR%212.21%212.09%21%21%212.27%212.15%21%40211b80e117331343177752865ed8ce%2112000018375333251%21sea%21AT%21738334575%21X&curPageLogUid=xMxw72qv77ca&utparam-url=scene%3Asearch%7Cquery_from%3A) |   
 
 ## Zukaufteile
 | Bild | Anzahl | Stück /Pkg | Bezeichnung | ca. Euro | Quelle |   
 |:---- |:------:|:----------:|:----------- | --------:|:------ |   
 | ![DC-DC-Converter](/images/parts/300_dc_dc_converter1.png "DC-DC-Converter") | 1 | 5 | DC-DC-Wandler-Board StepDown_LM2596 | 9,56 | [Amazon](https://www.amazon.de/dp/B0823P6PW6?ref=ppx_yo2ov_dt_b_fed_asin_title) |    
 | ![I2C-Logic-Level-Converter](/images/parts/96_i2c_logic_level_converter.png "I2C-Logic-Level-Converter") | 1 | 1 | 5V-3V Dual Channel I2C IIC Logic-Level-Converter Modul Bi-Directional | 0,28 | [AliExpress](https://de.aliexpress.com/item/32903662283.html?spm=a2g0o.order_list.order_list_main.25.681e5c5fkWDadk&gatewayAdapt=glo2deu) |   
+| ![PCF8574](/images/parts/300_PCF8574.png "PCF8574") | 1 | 10 | PCF8574 I/O-Expander-Platine | 8,87 | [AliExpress](https://de.aliexpress.com/item/1005006308901447.html?spm=a2g0o.order_list.order_list_main.384.f9f35c5fI5TZhl&gatewayAdapt=glo2deu) |    
 
 ## Sonstiges
 | Bild | Anzahl | Stück /Pkg | Bezeichnung | ca. Euro | Quelle |   
@@ -138,7 +156,7 @@ ESP32
 | ![Flat Ribbon Cable 10pol](/images/parts/300_flatRibbonCable_10pol.png "Flat Ribbon Cable 10pol") | 1 | 5m | Flachbandkabel 10-polig, farbig | 5,82 | [AliExpress](https://de.aliexpress.com/item/1005005382567357.html?spm=a2g0o.order_list.order_list_main.236.63df5c5fSSD4mY&gatewayAdapt=glo2deu) |   
 
 ## Werkzeug
-Lötstation, kleine Spitzzange, kleiner Seitenschneider, kleiner Schraubendreher, Abbrechklingenmesser ("Stanley-Messer", Cutter-Messer)
+Lötstation, kleine Spitzzange, kleiner Seitenschneider, kleiner Schraubendreher, Abbrechklingenmesser ("Stanley-Messer", Cutter-Messer), Schraubstock   
 
 
 # Fertigen der Komponenten
