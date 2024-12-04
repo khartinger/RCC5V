@@ -64,6 +64,12 @@ _Bild 6: Schaltplan der "Shield_I2C_5V_3V3"-Platine_
 |    2   | J3           | vierpolige Stiftleiste (gerade) |   |   
 |    2   | U1           | Buchsenleiste, 8-polig mit langen Kontakten |   |   
    
+
+### Vorbereitung
+* Herunterschneiden von vier Pins von einer (zB 40-poligen) 90° abgewinkelten Stiftleiste.   
+* Herunterschneiden von 4 Buchsen von einer 8-poligen Buchsenleiste.   
+* Aufstecken der 4-poligen Stiftleisten, welche meist mit dem Pegelwandler mitgeliefert werden, an den Pegelwandler (siehe Bild 7).   
+
 ![Shield_I2C_5V_3V3_comp](/images/300_Shield_I2C_5V_3V3_comp.png "Shield_I2C_5V_3V3_comp")   
 _Bild 7: Bauteile f&uuml;r die "Shield_I2C_5V_3V3"-Platine_   
 

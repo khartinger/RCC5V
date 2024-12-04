@@ -55,6 +55,9 @@ _*Link zu den KiCad-Dateien*_: [/kicad/AC_5V_6pol_DCC_V1](/kicad/AC_5V_6pol_DCC_
 |    1   | U1         | DC-DC-Wandler-Board StepDown_LM2596 | _kh_library:DCDC_StepDown_LM2596_PinsOnly |   
 |    4   | U1         | 4 einzelne Pins               |   |   
 
+### Vorbereitung   
+Von einer Stiftleiste vier einzelne Pins herunterschneiden.   
+
 ### Best&uuml;ckung   
 1. Leistungswiderstand R1   
 2. Diode D1   
@@ -129,7 +132,7 @@ _*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
 |--------|--------------|------------------------|--------------------|   
 |    1   | J1           | Sub-D-Stecker 25-polig (DB25_Plug) | _kh_library:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm |   
-|    1   | J2           | Schraubklemme 10-polig oder 5x 2-polig |    |   
+|    1   | J2           | Schraubklemme 5x 2-polig (= 10-polig) |    |   
 |    1   | J7, J8, J9   | Schraubklemme 2-polig (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
 |    1   | J5, J6, U1   | 5V-Netzteil-Platine     | _kh_library:AC_5V_supply_6pol_PinsOnly |   
 
@@ -154,7 +157,7 @@ _*Link zu den KiCad-Dateien*_: [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Scre
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
 |--------|--------------|------------------------|--------------------|   
 |    1   | J1           | Sub-D-Stecker 25-polig (DB25_Plug) | _kh_library:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm |   
-|    1   | J2           | Schraubklemme 10-polig oder 5x 2-polig |    |   
+|    1   | J2           | Schraubklemme 5x 2-polig (= 10-polig) |    |   
 
 ### Best&uuml;ckung   
 1. Schraubklemmen J2    
