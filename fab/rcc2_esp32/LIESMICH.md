@@ -5,7 +5,7 @@ Letzte &Auml;nderung: 28.11.2024 <a name="up"></a><br>
 </td></tr></table>   
 
 # 1. Einleitung   
-Zur Steuerung des RCC-Systems (Railway Component Control) wird ein "ESP32 D1 Mini" Multiprozessor mit 2 Kernen verwendet. Dieser hat gen&uuml;gend Kapazit&auml;t, um sowohl die Netzwerk-Kommunikation und die DCC-&Uuml;berwachung als auch zwei I²C-Busse st&ouml;rungsfrei zu betreiben.   
+Die Steuerung des RCC-Systems (Railway Component Control) erfolgt mit einem "ESP32 D1 Mini" Multiprozessor mit 2 Kernen. Dieser hat gen&uuml;gend Kapazit&auml;t, um sowohl die Netzwerk-Kommunikation und die DCC-&Uuml;berwachung als auch zwei I²C-Busse st&ouml;rungsfrei zu betreiben.   
 
 ![ESP32](/images/300_ESP32.png "ESP32")   
 _Bild 1: ESP32 D1 Mini mit aufgel&ouml;teten Buchsenleisten_   
