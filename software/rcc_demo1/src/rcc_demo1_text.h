@@ -3,7 +3,15 @@
 #ifndef RCC_DEMO1_TEXT_H
  #define RCC_DEMO1_TEXT_H
  #include <Arduino.h>                  // String, int32_t
- 
+ //-----------(index of) connection states----------------------
+ #define CON_UNKNOWN         0
+ #define CON_CONNECTING      1
+ #define CON_NO_WIFI         2
+ #define CON_NO_MQTT         3
+ #define CON_WIFI_OK         4
+ #define CON_MQTT_OK         5
+ #define CON_WIFI_NOT_USED   6
+
  #if LANGUAGE == 'd'
   // =========Deutsche Texte (German)===========================
   #define T_UNDEF0           "undefiniert_0?"

@@ -85,6 +85,7 @@
 String setRcompCmd(int iRcomp, int iCmdValue, String sReturn);
 String actOnCmdHardware(int iCmd_, int iOutPCF_, 
                         int outBitA_, int outBitB_, int more_);
+void showLine(int line_, String text_);
 void showLine6WaitMaxXXs(int iSec, String line6);
 
 //_______Global values and hardware_____________________________
@@ -93,8 +94,8 @@ void showLine6WaitMaxXXs(int iSec, String line6);
 
 //_______Global values for connection state_____________________
 bool     bUseWiFi=false;
-int      iConn=0;                          // WiFi unknown
-int      iConnOld=0;                       // WiFi unknown
+int      iConn=CON_UNKNOWN;                // WiFi unknown
+int      iConnOld=CON_UNKNOWN;             // WiFi unknown
 
 //_______Global values for updating the screen__________________
 #define  NO_GROUP       -1                  // no group to show
@@ -335,6 +336,7 @@ String simpleSet(String sTopic, String sPayload)
   p1="{\"topicbase\":\"";                   // start json
   p1+=client.getsTopicBase();               // read new base
   p1+="\"}";                                // end json
+  showLine(3, client.getsTopicBase());      // show on display
   return p1;                                // return new base
  }
  //-------------------------------------------------------------
@@ -507,6 +509,7 @@ void showInfolines() {
  int iPageMax=1+int((INFOLINES_NUM-1)/5);
  //-----------for all pages-------------------------------------
  for(int iPage=0; iPage<iPageMax; iPage++) {
+  if(DEBUG_99) { Serial.println("  Show Info Page "+String(1+iPage)); }
   int iStartline=iPage*5;
   int iEndline=iStartline+5;
   if(iEndline > INFOLINES_NUM) iEndline=INFOLINES_NUM;
@@ -827,6 +830,7 @@ void setup() {
  //------Serial, just for debug---------------------------------
  if(DEBUG_99) {
   Serial.begin(115200);
+  Serial.flush();
   Serial.println("\nsetup(): --Start--");
  }
  //------init railway commands----------------------------------
@@ -845,14 +849,11 @@ void setup() {
  screen_.useFontText();                     // write text
  screen_.setFontRefHeightText();            // (default)
  screen_.setFontPosTop();                   // font position
- //showLine(0, SCREEN_TITLE);                 // show title
- //showLine(SCREEN_LINE_MAX, VERSION_99_1);   // show version
- //delay(1000);
  //------show info lines, if defined----------------------------
  showLine(0, SCREEN_TITLE);                 // show title
  showInfolines();
  //------Init all 8-Bit I/O Expander PCF8574--------------------
- s2="Found";
+ s2="setup(): Found I2C device at ";
  bool bfirstComp=true;
  for(int i=0; i<IOEX_NUM; i++) {
   //aIOEx[i].setInvertOutput(true);
@@ -908,24 +909,38 @@ void setup() {
    bRet=client.connectingWiFi();             // try to connect
    screen_.screen15Dot(3);                   // line 3: waiting dot
    iUseWiFi--;
-   if(DEBUG_99) Serial.println("Waiting for WiFi: "+String(iUseWiFi));
+   if(DEBUG_99) Serial.println("  Waiting for WiFi: "+String(iUseWiFi));
   } while(!bRet && iUseWiFi>0);
   //.....END OF waiting for WiFi connection.....................
   if(iUseWiFi>0) {
+   if(DEBUG_99) Serial.println("setup(): FOUND WiFi " + client.getsSSID());
    //----WiFi ok (no timeout)-----------------------------------
-   iConn=4;                                  // WiFi OK
+   iConn=CON_WIFI_OK;                        // WiFi OK
    bUseWiFi=true;                            // use WiFi 
-   s2=client.getsTopicBase();
-   if(client.isMQTTConnected() || client.isMQTTConnectedNew()) {
-    iConn=5;                                 // MQTT OK
+   s2="{\"topicbase\":\""+client.getsTopicBase()+"\"}";
+   int iMqttReady=6;
+   do {
+    iMqttReady--;
+    if(DEBUG_99) Serial.println("  Waiting for MQTT: "+String(iMqttReady));
+    delay(500);
+    client.doLoop();                          // mqtt loop
+   } while (!client.isMQTTConnected() && !client.isMQTTConnectedNew() && iMqttReady>0);
+   if(iMqttReady>0)
+   {
     //----WiFi and MQTT OK: publish start info-------------------
-    client.publish_P("info/start/setup",s2.c_str(),false);
+    iConn=CON_MQTT_OK;                      // MQTT OK
     //client.bAllowMQTTStartInfo(false);     //NO mqtt (re)start info
-    if(DEBUG_99) Serial.println(s2);
+    if(DEBUG_99) Serial.println("setup(): Connected to MQTT-broker: "+s2);
+    client.publish_P("rcc/start/mqtt",s2.c_str(),false);
+   }
+   else
+   {
+    iConn=CON_NO_MQTT;                      // WiFi yes, MQTT no
    }
   } else {
    //----WiFi timeout-------------------------------------------
-   iConn=2;                                  // NO WiFi
+   if(DEBUG_99) Serial.println("setup(): WiFi " + client.getsSSID() + "NOT FOUND!");
+   iConn=CON_NO_WIFI;                        // NO WiFi
    bUseWiFi=false;                           // don´t use WiFi
    s2=T_NO_MQTT;                             // No control via MQTT
    s2=s2.substring(0,SCREEN_LINE_LEN);       // max. 21 character
@@ -936,7 +951,7 @@ void setup() {
  }
 #else
  //------Dont use WiFi anyway-----------------------------------
- iConn=2;                                  // NO WiFi
+ iConn=CON_NO_WIFI;                        // NO WiFi
  s1=T_NO_MQTT;
  s1=s1.substring(0,SCREEN_LINE_LEN);       // max. 21 character
  showLine(2, s1);
@@ -945,7 +960,7 @@ void setup() {
 
  //------DCC: register pin and callback routine-----------------
  DccAccessoryDecoder.begin(PIN_DCC, onAccessoryPacket);
- if(DEBUG_99) Serial.println("DccAccessoryDecoder OK");
+ if(DEBUG_99) Serial.println("setup(): DccAccessoryDecoder OK");
  //------Finish setup-------------------------------------------
  int iTemp=updateInputValues();
  if(DEBUG_99) Serial.println("setup(): --Finished--\n");
@@ -1039,12 +1054,12 @@ void loop() {
  if(bUseWiFi) {
   client.doLoop();                          // mqtt loop
   //=====(4) do, depending on the network access, ...===========
-  if(client.isWiFiConnectedNew())    iConn=4;// "WiFi OK   ";
-  if(client.isMQTTConnectedNew())    iConn=5;// "MQTT OK   ";
-  if(client.isMQTTDisconnectedNew()) iConn=3;// "-No MQTT--";
-  if(client.isWiFiDisconnectedNew()) iConn=2;// "-No WiFi--";
+  if(client.isWiFiConnectedNew())    iConn=CON_WIFI_OK;// "WiFi OK   ";
+  if(client.isMQTTConnectedNew())    iConn=CON_MQTT_OK;// "MQTT OK   ";
+  if(client.isMQTTDisconnectedNew()) iConn=CON_NO_MQTT;// "-No MQTT--";
+  if(client.isWiFiDisconnectedNew()) iConn=CON_NO_WIFI;// "-No WiFi--";
  } else {
-  iConn=6;                                  // "unused WiFi"
+  iConn=CON_WIFI_NOT_USED;                  // "unused WiFi"
  }
  //------show WLAN-/MQTT-connection status----------------------
  if(iConn!=iConnOld) {

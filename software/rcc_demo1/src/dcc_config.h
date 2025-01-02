@@ -5,6 +5,7 @@
 // Created by Karl Hartinger, November 14, 2024
 // Changes:
 // 2024-11-28 Change program name
+// 2025-01-02 Change TOPIC_BASE
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -13,8 +14,8 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_99     "2024-11-28 rcc_demo1"
-#define  VERSION_99_1   "Version 2024-11-28"
+#define  VERSION_99     "2025-01-02 rcc_demo1"
+#define  VERSION_99_1   "Version 2025-01-02"
 
 #define  INFOLINES_SEC  20             // time to show one page
 
@@ -23,7 +24,7 @@
 #define  _SSID_         "Raspi11"
 #define  _PASS_         "12345678"
 #define  _HOST_         "10.1.1.1"
-#define  TOPIC_BASE     "rcc_demo1"
+#define  TOPIC_BASE     "rcc/demo1"
 #define  TOPIC_GET      "?,help,version,ip,topicbase,eeprom,byname,bydcc"
 #define  TOPIC_SET      "topicbase,eeprom0"
 #define  TOPIC_SUB      ""
@@ -69,7 +70,7 @@ struct strRcomp {
 };
 
 //_______Railroad commands______________________________________
-// railway components:  type,name,dcc,
+// railway components:  type,name (max 3 char),dcc,
 //                      pIOEx-out-index,outBitA,outBitB, 
 //                      pIOEx-in-index inBitA inBitB
 //                      msOn,msOff
