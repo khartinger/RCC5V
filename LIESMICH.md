@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 2.1.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 3.1.2025 <a name="up"></a><br>   
 <h1>Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -8,15 +8,15 @@ Letzte &Auml;nderung: 2.1.2025 <a name="up"></a><br>
 
 # Einleitung
 Im Modelleisenbahnbau gibt es viele M&ouml;glichkeiten, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern.   
-Am einfachsten ist Bedienung der Komponenten von Hand. In diesem Fall ben&ouml;tigt man nicht einmal Weichenantriebe. Allerdings wird es bei weiter entfernten oder verteilten Komponenten umst&auml;ndlich.   
-Daher kommen meist doch magnetische Antriebe zum Einsatz, bei denen die Wechselspannung direkt geschaltet wird:   
+Die simpelste M&ouml;glichkeit ist Bedienung der Komponenten von Hand. In diesem Fall ben&ouml;tigt man nicht einmal Weichenantriebe. Allerdings wird diese Betriebsart bei weiter entfernten oder verteilten Komponenten schnell umst&auml;ndlich.   
+Aus diesem Grund werden zum Schalten der Komponenten &uuml;blicherweise magnetische Antriebe verwendet. Dabei wird im einfachsten Fall die Wechselspannung direkt geschaltet:   
 
 ![RCC_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC_5V_DirectSwitching")   
 _Bild 1: Direktes Schalten von Modellbahnkomponenten   
 (Turnout = Weiche, Uncoupler = Entkupplungsgleis, Disconnectable Track = abschaltbares Gleis)_   
 
-Das direkte Schalten der Wechselspannung hat aber Nachteile: Es gibt keine R&uuml;ckmeldung bez&uuml;glich des Schaltzustandes und eine Automatisierung ist nicht m&ouml;glich.   
-Diese Nachteile werden durch kommerzielle, digitale Steuerungssysteme beseitigt. Das ist allerdings auch mit nicht unerheblichen Kosten verbunden. Daher bietet sich ein Selbstbau an, der au&szlig;erdem zus&auml;tzliche M&ouml;glichkeiten und Flexibilit&auml;t bringt.   
+Das direkte Schalten der Wechselspannung hat aber Nachteile: Es gibt keine R&uuml;ckmeldung &uuml;ber den tats&auml;chlichen Schaltzustand und das automatische Schalten mehrerer Komponenten ist nicht m&ouml;glich.   
+Diese Nachteile k&ouml;nnen durch kommerzielle, digitale Steuerungssysteme beseitigt werden. Leider ist das meist mit nicht unerheblichen Kosten verbunden. Aus diesem Grund bietet sich ein Selbstbau an, der au&szlig;erdem zus&auml;tzliche M&ouml;glichkeiten und Flexibilit&auml;t bringt.   
 
 ## Wie geht es besser?
 Wer gerne selbst etwas baut, ist hier genau richtig. Die vorgestellte, kosteng&uuml;nstige Modellbahn-Komponenten-Steuerung RCC (Railway Component Control) erm&ouml;glicht das Schalten von Modellbahn-Komponenten auf drei unterschiedliche Arten:   
