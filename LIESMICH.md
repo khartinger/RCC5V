@@ -16,7 +16,7 @@ _Bild 1: Direktes Schalten von Modellbahnkomponenten
 (Turnout = Weiche, Uncoupler = Entkupplungsgleis, Disconnectable Track = abschaltbares Gleis)_   
 
 Das direkte Schalten der Wechselspannung hat aber Nachteile: Es gibt keine R&uuml;ckmeldung bez&uuml;glich des Schaltzustandes und eine Automatisierung ist nicht m&ouml;glich.   
-Diese Nachteile werden durch kommerzielle, digitale Steuerungssysteme beseitigt. Das ist allerdings auch mit nicht unerheblichen Kosten verbunden. Daher bietet sich ein Selbstbau an, der außerdem zusätzliche Möglichkeiten und Flexibilität bringt.   
+Diese Nachteile werden durch kommerzielle, digitale Steuerungssysteme beseitigt. Das ist allerdings auch mit nicht unerheblichen Kosten verbunden. Daher bietet sich ein Selbstbau an, der au&szlig;erdem zus&auml;tzliche M&ouml;glichkeiten und Flexibilit&auml;t bringt.   
 
 ## Wie geht es besser?
 Wer gerne selbst etwas baut, ist hier genau richtig. Die vorgestellte, kosteng&uuml;nstige Modellbahn-Komponenten-Steuerung RCC (Railway Component Control) erm&ouml;glicht das Schalten von Modellbahn-Komponenten auf drei unterschiedliche Arten:   
@@ -27,17 +27,17 @@ Wer gerne selbst etwas baut, ist hier genau richtig. Die vorgestellte, kosteng&u
 In der Standardausf&uuml;hrung stehen bis zu 32 digitale Aus- und Eing&auml;nge zur Verf&uuml;gung. Damit k&ouml;nnen maximal 16 Zweiwegweichen oder 10 Dreiwegweichen etc. angesteuert werden. Diese Anzahl ist im Normalfall f&uuml;r Module ausreichend.   
 Eine Erweiterung des Systems ist grunds&auml;tzlich m&ouml;glich und nur abh&auml;ngig von den eingesetzten I²C-IO-Expandern.   
 
-Zum erfolgreichen Einsatz des RCC-Systems sind einige Fähigkeiten sind von Vorteil:   
+Zum erfolgreichen Einsatz des RCC-Systems sind einige F&auml;higkeiten sind von Vorteil:   
 * L&ouml;ten und etwas handwerkliches Geschick   
 * Compilieren und Hochladen einer Datei auf einen Mikrocontroller ESP32   
 * Grundlegende Kenntnisse im Umgang mit dem Open Source [Platinenlayoutprogramm KiCad](https://www.kicad.org/)   
-
+* Grundlegende Kenntnisse zu MQTT, wenn MQTT zur Steuerung verwendet werden soll   
 
 # Was ist zu tun?
 1. Zuerst sollte man sich einen &Uuml;berblick &uuml;ber den [Inhalt dieses Repository](#x20) und &uuml;ber [das RCC-System](#x30) verschaffen. Dies erfolgt weiter unten in dieser Anleitung.   
-2. Ist das RCC-System die richtige Wahl, erfolgt die Definition der Anforderungen an das eigene System: Welche Komponenten werden benötigt, wie viele von jeder Art und mit welcher DCC-Adresse.   
+2. Ist das RCC-System die richtige Wahl, erfolgt die Definition der Anforderungen an das eigene System: Welche Komponenten werden ben&ouml;tigt, wie viele von jeder Art und mit welcher DCC-Adresse.   
 _Beispiel Demo-Programm_: 1x Entkuppler mit DCC-Adresse 11, 1x Zweiwegweiche (DCC 21), 1x Dreiwegweiche (DCC 31 und 32) 1x Fahrstrom (DCC 41) und 1x Blinklicht (DCC 51).   
-3. Als Nächstes erfolgt das Fertigen der erforderlichen Komponenten. Wie das geht ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
+3. Als N&auml;chstes erfolgt das Fertigen der erforderlichen Komponenten. Wie das geht ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
 4. Danach erfolgt die Anpassung des Demo-Programms an das eigene System und die Programmierung des Mikrocontrollers ESP32. Dies ist in Kapitel [...]() beschrieben.   
 5. Zum Abschluss erfolgt die Verdrahtung aller Komponenten und der Test des Gesamtsystems.   
 
@@ -45,13 +45,12 @@ _Beispiel Demo-Programm_: 1x Entkuppler mit DCC-Adresse 11, 1x Zweiwegweiche (DC
 <a name="x20"></a>   
 
 # Inhalts&uuml;bersicht zu diesem Repository
-In diesem Repository geht es um die Herstellung und Verwendung von Komponenten zur Steuerung von Weichen, Entkupplern, abschaltbaren Gleisen und mehr auf einer elektrischen Modelleisenbahn. Die Steuerung erfolgt mit DCC, MQTT oder manuell.   
-Es werden folgende Themen behandelt:   
+Dieses Repository befasst sich mit der Herstellung und Verwendung von Komponenten zur Steuerung von Weichen, Entkupplern, abschaltbaren Gleisen und mehr auf einer elektrischen Modelleisenbahn. Die Steuerung kann manuell, mit DCC oder mit MQTT-Nachrichten erfolgen.   
+In verschiedenen Unterverzeichnissen werden folgende Themen behandelt:   
 
 __Informationen rund um das System__   
 * [Wie starte ich das RCC-Projekt?](/fab/rcc0_start/LIESMICH.md)   
 * [Elektrische Verbindung von Eisenbahn-Modulen nach NEM 908D](/info/con_NEM908/LIESMICH.md)   
-* ...   
 
 __Herstellung der System-Komponenten__   
 * [KiCad-Dateien der RCC-Komponenten](/kicad/LIESMICH.md)   
@@ -61,9 +60,11 @@ __Herstellung der System-Komponenten__
 * [Herstellung der Zusatzplatinen](/fab/rcc5_add_ons/LIESMICH.md)   
 
 __Software f&uuml;r den ESP32__   
-* [MQTT-Befehle zur Steuerung der Komponenten]()   
+* [MQTT-Befehle zur Steuerung der Komponenten](/software/mqtt/LIESMICH.md)   
 * [Demo-Software](/software/rcc_demo1/LIESMICH.md)   
 * [Anpassung der Demo-Software an eigene Bed&uuml;rfnisse]()   
+* [Aufbau der Demo-Software im Detail]()   
+* [Automatisches Ausf&uuml;hren von MQTT-Befehlsfolgen]()   
 
 __Anwendungsbeispiele__   
 * [Beispiel-Verdrahtung einer Weiche](/use/exampleTurnout2/LIESMICH.md)   
@@ -73,7 +74,7 @@ __Anwendungsbeispiele__
 <a name="x30"></a>   
 
 # Das RCC-System im &Uuml;berblick   
-Das RCC-System ist modular aufgebaut und besteht aus einer Reihe von Komponenten. Diese müssen vor dem ersten Schalten einer Weiche hergestellt werden. Wie das geht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
+Das RCC-System ist modular aufgebaut und besteht aus einer Reihe von Komponenten. Diese m&uuml;ssen vor dem ersten Schalten einer Weiche hergestellt werden. Wie das geht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
 
 Das Railway-Component-Control-(RCC-) Gesamtsystem besteht aus sechs Teilen:   
 1. __FEED-IN__ (Einspeisung): Einspeisung ins System mit DCC und Versorgungsspannung (hier Wechselspannung) durch externe Komponenten.   
