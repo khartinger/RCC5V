@@ -5,7 +5,7 @@
 // Created by Karl Hartinger, November 14, 2024
 // Changes:
 // 2024-11-28 Change program name
-// 2025-01-02 Change TOPIC_BASE
+// 2025-01-03 Change TOPIC_BASE
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -14,8 +14,8 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_99     "2025-01-02 rcc_demo1"
-#define  VERSION_99_1   "Version 2025-01-02"
+#define  VERSION_99     "2025-01-03 rcc_demo1"
+#define  VERSION_99_1   "Version 2025-01-03"
 
 #define  INFOLINES_SEC  20             // time to show one page
 

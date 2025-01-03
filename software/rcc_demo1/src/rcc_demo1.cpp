@@ -64,7 +64,8 @@
 // Created by Karl Hartinger, November 02, 2024
 // Changes:
 // 2024-11-14 2-way-turnout number 1=stright <-> 2=curved changed
-// 2024-11-28 change program name
+// 2024-11-28 Change program name
+// 2025-01_03 Change TOPIC_BASE, add #define CON_...
 // Released into the public domain.
 
 // #include <Arduino.h>
@@ -123,7 +124,6 @@ Screen154 screen_;
 #define  CMD_BIT2_OFF   6    // bits BA = 11
 #define  CMD_BLINK      7    // start blink light
 #define  CMD_BLINK_END  8    // stopp blink light
-
 
 //.......All properties of a railroad command...................
 // command: 0=out, 1=stright, 2=curved, 3=undefined (switching)
@@ -917,21 +917,23 @@ void setup() {
    //----WiFi ok (no timeout)-----------------------------------
    iConn=CON_WIFI_OK;                        // WiFi OK
    bUseWiFi=true;                            // use WiFi 
-   s2="{\"topicbase\":\""+client.getsTopicBase()+"\"}";
-   int iMqttReady=6;
-   do {
+   client.doLoop();                          // mqtt loop
+   s2=client.getsTopicBase();                // get topic base
+   int iMqttReady=6;                         // try max. 3 secs
+   while (!client.isMQTTConnected() && !client.isMQTTConnectedNew() && iMqttReady>0)
+   {
     iMqttReady--;
     if(DEBUG_99) Serial.println("  Waiting for MQTT: "+String(iMqttReady));
     delay(500);
     client.doLoop();                          // mqtt loop
-   } while (!client.isMQTTConnected() && !client.isMQTTConnectedNew() && iMqttReady>0);
+   };
    if(iMqttReady>0)
    {
     //----WiFi and MQTT OK: publish start info-------------------
     iConn=CON_MQTT_OK;                      // MQTT OK
     //client.bAllowMQTTStartInfo(false);     //NO mqtt (re)start info
     if(DEBUG_99) Serial.println("setup(): Connected to MQTT-broker: "+s2);
-    client.publish_P("rcc/start/mqtt",s2.c_str(),false);
+    client.publish_P("rcc/start/mqtt",("{\"topicbase\":\""+s2+"\"}").c_str(),false);
    }
    else
    {
