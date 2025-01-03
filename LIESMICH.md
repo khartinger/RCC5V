@@ -34,8 +34,9 @@ Zum erfolgreichen Einsatz des RCC-Systems sind einige F&auml;higkeiten sind von 
 * Grundlegende Kenntnisse zu MQTT, wenn MQTT zur Steuerung verwendet werden soll   
 
 # Was ist zu tun?
-1. Zuerst sollte man sich einen &Uuml;berblick &uuml;ber den [Inhalt dieses Repository](#x20) und &uuml;ber [das RCC-System](#x30) verschaffen. Dies erfolgt weiter unten in dieser Anleitung.   
-2. Ist das RCC-System die richtige Wahl, erfolgt die Definition der Anforderungen an das eigene System: Welche Komponenten werden ben&ouml;tigt, wie viele von jeder Art und mit welcher DCC-Adresse.   
+1. Zuerst sollte man sich einen &Uuml;berblick &uuml;ber den [Inhalt dieses Repository](#x20) und &uuml;ber [das RCC-System](#x30) verschaffen. Diesen erm&ouml;glichen die weiter unten stehenden Kapitel in dieser Anleitung.   
+2. Ist das RCC-System die richtige Wahl, erfolgt die Definition der Anforderungen an das eigene System:   
+Welche Komponenten werden ben&ouml;tigt, wie viele von jeder Art und mit welcher DCC-Adresse.   
 _Beispiel Demo-Programm_: 1x Entkuppler mit DCC-Adresse 11, 1x Zweiwegweiche (DCC 21), 1x Dreiwegweiche (DCC 31 und 32) 1x Fahrstrom (DCC 41) und 1x Blinklicht (DCC 51).   
 3. Als N&auml;chstes erfolgt das Fertigen der erforderlichen Komponenten. Wie das geht ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
 4. Danach erfolgt die Anpassung des Demo-Programms an das eigene System und die Programmierung des Mikrocontrollers ESP32. Dies ist in Kapitel [...]() beschrieben.   
@@ -74,11 +75,11 @@ __Anwendungsbeispiele__
 <a name="x30"></a>   
 
 # Das RCC-System im &Uuml;berblick   
-Das RCC-System ist modular aufgebaut und besteht aus einer Reihe von Komponenten. Diese m&uuml;ssen vor dem ersten Schalten einer Weiche hergestellt werden. Wie das geht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
+Das RCC-System ist modular aufgebaut und besteht aus einer Reihe von Bausteinen bzw. Bl&ouml;cken. Diese m&uuml;ssen vor dem ersten Schalten einer Weiche hergestellt werden. Wie das geht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
 
 Das Railway-Component-Control-(RCC-) Gesamtsystem besteht aus sechs Teilen:   
-1. __FEED-IN__ (Einspeisung): Einspeisung ins System mit DCC und Versorgungsspannung (hier Wechselspannung) durch externe Komponenten.   
-2. __SUPPLY__ (Modulversorgung): Der 25-polige Stecker mit 5V-Stromversorgung sowie dem AC- und DCC-Anschluss.   
+1. __FEED-IN__ (Einspeisung): Erzeugung und Bereitstellung der Versorgungsspannung (hier Wechselspannung) und der DCC-Signale f&uuml;r das RCC-System durch externe Komponenten.   
+2. __SUPPLY__ (Modulversorgung): Dem 25-poligen Stecker nach NEM908 wird die Wechselspannung, der Fahrstrom und das DCC-Signal zum Schalten der Magnetartikel entnommen und eine eigene 5V-Gleichspannung erzeugt.   
 3. __&micro;C__ (Mikrocontroller): Der Mikrocontroller, ausgestattet mit zus&auml;tzlichen Shields, dient zur Steuerung des Moduls. Es wird ein ESP32 verwendet, der auch die Kommunikation mit dem MQTT-Broker &uuml;bernimmt.  
 4. __I2C__: Verbindung zwischen dem Mikrocontroller und den Bedienbl&ouml;cken (RCC-Bl&ouml;cken). Dazu werden I2C-I/O-Expander-Boards mit PCF8574 verwendet.   
 5. __RCC-Block__: Das Steuerelement f&uuml;r _eine_ Modellbahnkomponente mit lokalen Bedien- und Anzeige-Elementen.   
