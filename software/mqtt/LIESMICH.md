@@ -34,7 +34,7 @@ Grunds&auml;tzlich ist der Aufbau von MQTT-Nachrichten frei w&auml;hlbar. F&uuml
 _Beispiele_: `rcc/m01` oder `rcc/demo1`   
 3. Als dritter Teil des Topics steht die Aktion, die ausgef&uuml;hrt werden soll. Dabei unterscheidet man zwischen set- und get-Aktionen:   
 `/set/...` Setzt den Wert einer Komponente, die im 4. Teil des Topics angegeben wird.   
-`/get` Gibt in der Payload an, welche information geholt werden soll.   
+`/get` Gibt in der Payload an, welche Information geholt werden soll.   
 4. Nur bei set-Befehlen: Name oder DCC-Adresse der Komponente, die angesprochen wird.    
 
 ### Beispiele
@@ -46,8 +46,8 @@ get: ?|help|version|ip|topicbase|eeprom|byname|bydcc|UC|11|T2|21|T3L|31|T3R|32|D
 set: topicbase|eeprom0|UC|11|T2|21|T3L|31|T3R|32|DT|41|BL|51|
 sub:
 pub:
-MQTT: ../set/w1 -m 1|g|G OR -m 0|A|a|B|b (set by name)
-      ../set/11 -m 1|g|G OR -m 0|A|a|B|b (set by dcc address)
+MQTT: ../set/T2 -m 1|g|G OR -m 0|A|a|B|b (set by name)
+      ../set/21 -m 1|g|G OR -m 0|A|a|B|b (set by dcc address)
       ../get -m byname|bydcc (values of all components)
 ```   
 2. Setzen der Weiche `T2` mit der DCC-Adresse `21` auf Modul `demo1` auf "Gerade" (1):   
