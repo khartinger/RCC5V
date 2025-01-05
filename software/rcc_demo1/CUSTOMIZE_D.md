@@ -1,7 +1,7 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 3.1.2025 <a name="up"></a><br>   
 <h1>Anpassen des Demo-Programms an eigene Bedürfnisse</h1>
-<a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
+<a href="/software/rcc_demo1/CUSTOMIZE_E.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # Einleitung
