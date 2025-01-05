@@ -62,8 +62,8 @@ __Manufacturing the system components__
 
 __Software for the ESP32__   
 * [MQTT commands for controlling the components](/software/mqtt/README.md)   
-* [Demo software](/software/rcc_demo1/README.md)   
-* [Customize the demo software to your own needs]()   
+* [Overview of the demo software](/software/rcc_demo1/README.md)   
+* [Customize the demo software to your own needs](/software/rcc_demo1/CUSTOMIZE_E.md)   
 * [Structure of the demo software in detail]()   
 * [Automatic execution of MQTT command sequences]()   
 
