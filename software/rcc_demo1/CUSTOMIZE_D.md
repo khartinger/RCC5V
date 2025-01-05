@@ -21,6 +21,7 @@ In der Konfigurationsdatei `dcc_config.h` werden alle wesentlichen Projekteigens
 * die Anzahl der I²C-I/O-Expander, ihre Namen, Adressen und Startwerte   
 * die Anzahl der Eisenbahnkomponenten und deren Typ, Name, DCC-Adresse, Expander-Nummer und -Pinbelegung sowie Schaltzeiten   
 
+## Beispiel Demo-Programm dcc_demo1
 Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in der Konfigurationsdatei abgebildet werden. F&uuml;r das Demo-Programm `dcc_demo1` wird von folgender Verdrahtung ausgegangen:   
 * 2x I²C-Expander mit den Namen `pcf8574_out` (7-Bit-Adresse 0x20) und `pcf8574_in` (7-Bit-Adresse 0x21)., d.h. je ein Expanderboard f&uuml;r Ausg&auml;nge und ein Expanderboard f&uuml;r Eing&auml;nge   
 * 1x Entkuppler (Name "UC", DCC-Adresse 11) an Pin 0 der I²C-Expander   
@@ -33,8 +34,7 @@ Das folgende _Bild 1_ veranschaulicht nochmals diese Daten.
 ![circuit_rcc_demo1](../../images/480_rcc_demo1_i2c_circuit.png "circuit_rcc_demo1")   
 _Bild 1: Verdrahtung des Beispiels `rcc_demo1_`_   
 
-## Beispiel
-Das folgende Beispiel zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeilennummern__. Danach wird erkl&auml;rt, welche Zeilen angepasst werden m&uuml;ssen.   
+Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeilennummern__. Danach wird erkl&auml;rt, welche Zeilen angepasst werden m&uuml;ssen.   
 ```   
 1	//_____dcc_config.h______________________________khartinger_____
 2	// Configure file for ESP32 railroad DCC decoder program
