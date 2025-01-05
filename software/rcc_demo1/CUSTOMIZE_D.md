@@ -5,7 +5,7 @@ Letzte &Auml;nderung: 5.1.2025 <a name="up"></a><br>
 </td></tr></table>   
 
 # Einleitung
-F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src\dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `rcc_demo1.text.h`](#x30) anzupassen.   
+F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src/dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `src/rcc_demo1.text.h`](#x30) anzupassen.   
 Das Steuerprogramm `rcc_demo1.cpp` muss im Normalfall nicht ver&auml;ndert werden. Falls man die Steuerung erweitern m&ouml;chte, so findet man eine detaillierte Beschreibung der Demo-Software unter [/software/rcc_demo1/DETAILS_D.md](/software/rcc_demo1/DETAILS_D.md).   
 
 <a name="x20"></a>   
@@ -21,7 +21,7 @@ In der Konfigurationsdatei `dcc_config.h` werden alle wesentlichen Projekteigens
 * die Anzahl der I²C-I/O-Expander, ihre Namen, Adressen und Startwerte   
 * die Anzahl der Eisenbahnkomponenten und deren Typ, Name, DCC-Adresse, Expander-Nummer und -Pinbelegung sowie Schaltzeiten   
 
-## Beispiel Demo-Programm dcc_demo1
+## Beispiel Demo-Programm "dcc_demo1"   
 Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in der Konfigurationsdatei abgebildet werden. F&uuml;r das Demo-Programm `dcc_demo1` wird von folgender Verdrahtung ausgegangen:   
 * 2x I²C-Expander mit den Namen `pcf8574_out` (7-Bit-Adresse 0x20) und `pcf8574_in` (7-Bit-Adresse 0x21)., d.h. je ein Expanderboard f&uuml;r Ausg&auml;nge und ein Expanderboard f&uuml;r Eing&auml;nge   
 * 1x Entkuppler (Name "UC", DCC-Adresse 11) an Pin 0 der I²C-Expander   
@@ -31,10 +31,12 @@ Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in de
 * 1x Blinklicht (Name "BL", DCC-Adresse 51) an Pin 7 der I²C-Expander   
 
 Das folgende _Bild 1_ veranschaulicht nochmals diese Daten.   
+
 ![circuit_rcc_demo1](../../images/480_rcc_demo1_i2c_circuit.png "circuit_rcc_demo1")   
-_Bild 1: Verdrahtung des Beispiels `rcc_demo1_`_   
+_Bild 1: Verdrahtung des Beispiels `rcc_demo1`_   
 
 Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeilennummern__. Danach wird erkl&auml;rt, welche Zeilen angepasst werden m&uuml;ssen.   
+
 ```   
 1	//_____dcc_config.h______________________________khartinger_____
 2	// Configure file for ESP32 railroad DCC decoder program
@@ -147,13 +149,13 @@ Die folgende Tabelle erkl&auml;rt die Bedeutung der einzelnen Zeilen in der Demo
 | 20      |  3  | Anzahl Sekunden, wie lange jede Info-Seite beim Start angezeigt werden soll (zB 20 Sekunden). |   
 | 23      |  2  | Soll ein Netzwerk (WLAN) verwendet werden? <br> true = ja, false = nein |   
 | 24 - 26 |  2  | Wenn ein Netzwerk verwendet wird: Name und Passwort des WLAN sowie IP des Rechners, auf dem der MQTT-Broker l&auml;uft. |   
-| 27      | __1__ | Das Basis-Topic unter dem der Mikrocontroller MQTT-Nachrichten sendet oder empf&auml;ngt. |   
+| 27      | __1__ | Das Basis-Topic, unter dem der Mikrocontroller MQTT-Nachrichten sendet oder empf&auml;ngt. |   
 | 28      |  x  | Alle GET-Nachrichten, auf die der Mikrocontroller antwortet. |   
 | 29      |  x  | Alle SET-Nachrichten, auf die der Mikrocontroller reagiert. |   
-| 34      |  2  | Titelzeile auf der OLED-Anzeige. |   
-| 39      |  x  | Offset der DCC-Adressen, je nach DCC-Sendeger&auml;t (Wert kann 4 oder 0 sein). |   
+| 34      |  2  | Titel auf der OLED-Anzeige. |   
+| 39      |  3  | Offset der DCC-Adressen, je nach DCC-Sendeger&auml;t (Wert kann 4 oder 0 sein). |   
 | 42      | __1__ | Anzahl der eingesetzten I²C-I/O-Expander-Boards PCF8574 (2, 4, 6 oder 8).   |   
-| 43 - 44 |  2  | Je ein Objekt f&uuml;r jedes PCF8574-Board mit I²C-Busnummer (1), 7-Bit-I²C-Adresse (0c20, ...) und Startwert (meist 0xFF). |   
+| 43 - 44 |  2  | Je ein Objekt f&uuml;r jedes PCF8574-Board mit I²C-Busnummer (1), 7-Bit-I²C-Adresse (0x20, ...) und Startwert (meist 0xFF). |   
 | 45      | __1__ | `*pIOEx[]` = Pointer-Array mit den Adressen der PCF8574-Board-Objekten (nicht auf das &-Zeichen vor den Namen vergessen!). |   
 | 47 - 70 |  x  | Definitionen f&uuml;r die Eisenbahn-Komponenten. Sie befinden sich nur zum An- bzw. Nachschauen in dieser Datei. |   
 | 72 - 89 | __1__ | Definition von Strukturen f&uuml;r jede einzelne Eisenbahn-Komponente. Der Aufbau jeder Zeile entspricht der Struktur von Zeile 58 bis 70.   |   
@@ -164,7 +166,7 @@ Die folgende Tabelle erkl&auml;rt die Bedeutung der einzelnen Zeilen in der Demo
 
 # Die Textdatei dcc_demo1_text.h
 Die Datei `dcc_demo1_text.h` enth&auml;lt Texte in deutscher und englischer Sprache f&uuml;r die OLED-Anzeige.   
-Anzupassen sind die Zeilen, die sich in Zeile 30 bis 47 (Deutsch) und 70 bis 85 (Englisch) befinden. Dabei werden jeweils 5 Zeilen f&uuml;r 20 Sekunden (`INFOLINES_SEC`) angezeigt.   
+Anzupassen sind die Texte, die sich in den Zeilen 30 bis 47 (Deutsch) und 70 bis 85 (Englisch) befinden. Dabei werden jeweils 5 Zeilen f&uuml;r 20 Sekunden (`INFOLINES_SEC`) angezeigt.   
 Die Texte k&ouml;nnen auch gel&ouml;scht werden, dann ist die Konstante `INFOLINES_NUM` auf 0 zu setzen:   
 ```   
 #define  INFOLINES_NUM     0
