@@ -163,7 +163,11 @@ Die folgende Tabelle erklärt die Bedeutung der einzelnen Zeilen in der Demo-Kon
 <a name="x30"></a>   
 
 # Die Textdatei dcc_demo1_text.h
-
-# ...ToDo... 
+Die Datei `dcc_demo1_text.h` enthält Texte in deutscher und englischer Sprache für die OLED-Anzeige.   
+Anzupassen sind die Zeilen, die sich in Zeile 30 bis 47 (Deutsch) und 70 bis 85 (Englisch) befinden. Dabei werden jeweils 5 Zeilen für 20 Sekunden (`INFOLINES_SEC`) angezeigt.   
+Die Texte können auch gelöscht werden, dann ist die Konstante `INFOLINES_NUM` auf 0 zu setzen:   
+```   
+#define  INFOLINES_NUM     0
+```   
 
 [Zum Seitenanfang](#up)
