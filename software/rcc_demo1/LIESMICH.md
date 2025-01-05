@@ -1,6 +1,8 @@
-<a href="./README.md">==> English version</a>   
-Letzte &Auml;nderung: 28.11.2024 <a name="up"></a>   
-<h1>ESP32: Test von Modelleisenbahn-Schaltboxen per DCC, MQTT oder händisch</h1>   
+<table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
+Letzte &Auml;nderung: 5.1.2025 <a name="up"></a><br>   
+<h1>Überblick über die Demo-Software zum Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
+<a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
+</td></tr></table>   
 
 # Ziel
 Dieses Programm f&uuml;r einen ESP32 dient zum Testen von verschiedenen, selbst gebauten Modelleisenbahn-Schaltblöcken. Die Blöcke werden über die I/O-Pins zweier I²C-PCF8574-I/O-Expander angesteuert, wobei der PCF8574 mit der I2C-Adresse 0x20 (IO-Expander #0) zur Ansteuerung und der PCF8574 mit der I2C-Adresse 0x21 (IO-Expander #1) für die Rückmeldung dient. Die IO-Pins zur Ansteuerung und zur Rückmeldung haben jeweils die gleiche Pin-Nummer.   

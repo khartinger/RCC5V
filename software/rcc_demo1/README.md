@@ -1,6 +1,6 @@
 <a href="./LIESMICH.md">==> Deutsche Version</a>   
 Last update: November 28, 2024 <a name="up"></a>   
-<h1>ESP32: Testing the control of model railroad switch boxes via DCC, MQTT or manually</h1>   
+<h1>Overview of the demo software for controlling model railroad components with DCC, MQTT and manually</h1>   
 
 # Aim
 This program for an ESP32 is used to test various self-built model railroad switching blocks. The blocks are controlled via the I/O pins of two I²C PCF8574 I/O expanders, whereby the PCF8574 with the I2C address 0x20 (IO expander #0) is used for control and the PCF8574 with the I2C address 0x21 (IO expander #1) for feedback. The IO pins for control and feedback each have the same pin number.   
