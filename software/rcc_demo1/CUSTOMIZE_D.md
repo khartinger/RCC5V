@@ -1,28 +1,28 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 5.1.2025 <a name="up"></a><br>   
-<h1>Anpassen des Demo-Programms an eigene Bedürfnisse</h1>
+<h1>Anpassen des Demo-Programms an eigene Bed&uuml;rfnisse</h1>
 <a href="/software/rcc_demo1/CUSTOMIZE_E.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # Einleitung
-Für viele Einsätze des RCC-Systems reicht es, in der [Konfigurationsdatei `src\dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `rcc_demo1.text.h`](#x30) anzupassen.   
-Das Steuerprogramm `rcc_demo1.cpp` muss im Normalfall nicht verändert werden. Falls man die Steuerung erweitern möchte, so findet man eine detaillierte Beschreibung der Demo-Software unter [software/rcc_demo1/DETAILS_D.md](software/rcc_demo1/DETAILS_D.md).   
+F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src\dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `rcc_demo1.text.h`](#x30) anzupassen.   
+Das Steuerprogramm `rcc_demo1.cpp` muss im Normalfall nicht ver&auml;ndert werden. Falls man die Steuerung erweitern m&ouml;chte, so findet man eine detaillierte Beschreibung der Demo-Software unter [/software/rcc_demo1/DETAILS_D.md](/software/rcc_demo1/DETAILS_D.md).   
 
 <a name="x20"></a>   
 
 # Die Konfigurationsdatei dcc_config.h
 ## Übersicht
 In der Konfigurationsdatei `dcc_config.h` werden alle wesentlichen Projekteigenschaften definiert wie   
-* Versionsbezeichnung des Programms (zB das Datum der letzten Änderung)   
+* Versionsbezeichnung des Programms (zB das Datum der letzten &Auml;nderung)   
 * Informationen zum verwendeten Netzwerk (WLAN)   
 * implementierte MQTT GET- und SET-Nachrichten   
 * Eigenschaften des verwendeten Displays   
-* ein möglicher Offset für DCC-Adressen   
+* ein m&ouml;glicher Offset f&uuml;r DCC-Adressen   
 * die Anzahl der I²C-I/O-Expander, ihre Namen, Adressen und Startwerte   
 * die Anzahl der Eisenbahnkomponenten und deren Typ, Name, DCC-Adresse, Expander-Nummer und -Pinbelegung sowie Schaltzeiten   
 
-Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in der Konfigurationsdatei abgebildet werden. Für das Demo-Programm `dcc_demo1` wird von folgender Verdrahtung ausgegangen:   
-* 2x I²C-Expander mit den Namen `pcf8574_out` (7-Bit-Adresse 0x20) und `pcf8574_in` (7-Bit-Adresse 0x21)., d.h. je ein Expanderboard für Ausgänge und ein Expanderboard für Eingänge   
+Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in der Konfigurationsdatei abgebildet werden. F&uuml;r das Demo-Programm `dcc_demo1` wird von folgender Verdrahtung ausgegangen:   
+* 2x I²C-Expander mit den Namen `pcf8574_out` (7-Bit-Adresse 0x20) und `pcf8574_in` (7-Bit-Adresse 0x21)., d.h. je ein Expanderboard f&uuml;r Ausg&auml;nge und ein Expanderboard f&uuml;r Eing&auml;nge   
 * 1x Entkuppler (Name "UC", DCC-Adresse 11) an Pin 0 der I²C-Expander   
 * 1x Zweiwegweiche (Name "T2", DCC-Adresse 21) an Pin 1 und 2 der I²C-Expander   
 * 1x Dreiwegweiche (zwei Antriebe mit den Namen "T3L" und "T3R", DCC-Adresse 31 und 32) an Pin 3, 4 und 5 der I²C-Expander   
@@ -34,7 +34,7 @@ Das folgende _Bild 1_ veranschaulicht nochmals diese Daten.
 _Bild 1: Verdrahtung des Beispiels `rcc_demo1_`_   
 
 ## Beispiel
-Das folgende Beispiel zeigt die Konfigurationsdatei für das Demo-Programm __mit Zeilennummern__. Danach wird erklärt, welche Zeilen angepasst werden müssen.   
+Das folgende Beispiel zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeilennummern__. Danach wird erkl&auml;rt, welche Zeilen angepasst werden m&uuml;ssen.   
 ```   
 1	//_____dcc_config.h______________________________khartinger_____
 2	// Configure file for ESP32 railroad DCC decoder program
@@ -135,37 +135,37 @@ Das folgende Beispiel zeigt die Konfigurationsdatei für das Demo-Programm __mit
 ```   
 
 ## Erforderliche Anpassungen in der Datei dcc_config.h
-Die folgende Tabelle erklärt die Bedeutung der einzelnen Zeilen in der Demo-Konfigurationsdatei `dcc_config.h`. Die Spalte `Chg` (change = &auml;ndern) gibt an, ob die Zeile(n) geändert werden sollen oder nicht:   
- 1 = unbedingt ändern bzw. anpassen   
+Die folgende Tabelle erkl&auml;rt die Bedeutung der einzelnen Zeilen in der Demo-Konfigurationsdatei `dcc_config.h`. Die Spalte `Chg` (change = &auml;ndern) gibt an, ob die Zeile(n) ge&auml;ndert werden sollen oder nicht:   
+ 1 = unbedingt &auml;ndern bzw. anpassen   
  2 = Zeile sollte angepasst werden   
- 3 = Zeile kann geändert werden   
- x = Zeile(n) nicht ändern   
+ 3 = Zeile kann ge&auml;ndert werden   
+ x = Zeile(n) nicht &auml;ndern   
 
 | Zeile   | Chg | Bedeutung |   
 |:-------:|:---:|-----------|   
-| 17, 18  |  2  | Versionsnummer/Änderungsdatum der Datei. |   
+| 17, 18  |  2  | Versionsnummer/&Auml;nderungsdatum der Datei. |   
 | 20      |  3  | Anzahl Sekunden, wie lange jede Info-Seite beim Start angezeigt werden soll (zB 20 Sekunden). |   
 | 23      |  2  | Soll ein Netzwerk (WLAN) verwendet werden? <br> true = ja, false = nein |   
-| 24 - 26 |  2  | Wenn ein Netzwerk verwendet wird: Name und Passwort des WLAN sowie IP des Rechners, auf dem der MQTT-Broker läuft. |   
-| 27      | __1__ | Das Basis-Topic unter dem der Mikrocontroller MQTT-Nachrichten sendet oder empfängt. |   
+| 24 - 26 |  2  | Wenn ein Netzwerk verwendet wird: Name und Passwort des WLAN sowie IP des Rechners, auf dem der MQTT-Broker l&auml;uft. |   
+| 27      | __1__ | Das Basis-Topic unter dem der Mikrocontroller MQTT-Nachrichten sendet oder empf&auml;ngt. |   
 | 28      |  x  | Alle GET-Nachrichten, auf die der Mikrocontroller antwortet. |   
 | 29      |  x  | Alle SET-Nachrichten, auf die der Mikrocontroller reagiert. |   
 | 34      |  2  | Titelzeile auf der OLED-Anzeige. |   
-| 39      |  x  | Offset der DCC-Adressen, je nach DCC-Sendegerät (Wert kann 4 oder 0 sein). |   
+| 39      |  x  | Offset der DCC-Adressen, je nach DCC-Sendeger&auml;t (Wert kann 4 oder 0 sein). |   
 | 42      | __1__ | Anzahl der eingesetzten I²C-I/O-Expander-Boards PCF8574 (2, 4, 6 oder 8).   |   
-| 43 - 44 |  2  | Je ein Objekt für jedes PCF8574-Board mit I²C-Busnummer (1), 7-Bit-I²C-Adresse (0c20, ...) und Startwert (meist 0xFF). |   
+| 43 - 44 |  2  | Je ein Objekt f&uuml;r jedes PCF8574-Board mit I²C-Busnummer (1), 7-Bit-I²C-Adresse (0c20, ...) und Startwert (meist 0xFF). |   
 | 45      | __1__ | `*pIOEx[]` = Pointer-Array mit den Adressen der PCF8574-Board-Objekten (nicht auf das &-Zeichen vor den Namen vergessen!). |   
-| 47 - 70 |  x  | Definitionen für die Eisenbahn-Komponenten. Sie befinden sich nur zum An- bzw. Nachschauen in dieser Datei. |   
-| 72 - 89 | __1__ | Definition von Strukturen für jede einzelne Eisenbahn-Komponente. Der Aufbau jeder Zeile entspricht der Struktur von Zeile 58 bis 70.   |   
+| 47 - 70 |  x  | Definitionen f&uuml;r die Eisenbahn-Komponenten. Sie befinden sich nur zum An- bzw. Nachschauen in dieser Datei. |   
+| 72 - 89 | __1__ | Definition von Strukturen f&uuml;r jede einzelne Eisenbahn-Komponente. Der Aufbau jeder Zeile entspricht der Struktur von Zeile 58 bis 70.   |   
 | 92      | __1__ | Anzahl der Eisenbahn-Komponenten. |   
 | 93 - 95 | __1__ | `aRcomp[]` = Array mit den Strukturen der einzelnen Eisenbahn-Komponenten. |   
 
 <a name="x30"></a>   
 
 # Die Textdatei dcc_demo1_text.h
-Die Datei `dcc_demo1_text.h` enthält Texte in deutscher und englischer Sprache für die OLED-Anzeige.   
-Anzupassen sind die Zeilen, die sich in Zeile 30 bis 47 (Deutsch) und 70 bis 85 (Englisch) befinden. Dabei werden jeweils 5 Zeilen für 20 Sekunden (`INFOLINES_SEC`) angezeigt.   
-Die Texte können auch gelöscht werden, dann ist die Konstante `INFOLINES_NUM` auf 0 zu setzen:   
+Die Datei `dcc_demo1_text.h` enth&auml;lt Texte in deutscher und englischer Sprache f&uuml;r die OLED-Anzeige.   
+Anzupassen sind die Zeilen, die sich in Zeile 30 bis 47 (Deutsch) und 70 bis 85 (Englisch) befinden. Dabei werden jeweils 5 Zeilen f&uuml;r 20 Sekunden (`INFOLINES_SEC`) angezeigt.   
+Die Texte k&ouml;nnen auch gel&ouml;scht werden, dann ist die Konstante `INFOLINES_NUM` auf 0 zu setzen:   
 ```   
 #define  INFOLINES_NUM     0
 ```   
