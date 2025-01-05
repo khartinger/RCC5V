@@ -1,4 +1,4 @@
-<table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
+<table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 5.1.2025 <a name="up"></a><br>   
 <h1>Überblick über die Demo-Software zum Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
