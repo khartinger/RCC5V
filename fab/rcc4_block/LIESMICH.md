@@ -135,8 +135,8 @@ _Bild 14: Lötseite der bestückten Platine "RW_5V_W2_LED" zum Schalten und zur 
 | Anzahl | Referenz          | Wert                | Gehäuse            |   
 |--------|-------------------|---------------------|--------------------|   
 |    1   | D2 oder D5        | LED grün 2 mA       | LED_THT:LED_D3.0mm |   
-|    1   | D1 oder D3 oder D4 oder D6 (1) | LED gelb   | LED_THT:LED_D3.0mm |   
-|    6   | D1,D2,D3,D4,D5,D6 (1) | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" für LEDs |   
+|    1   | D1 oder D3 oder D4 oder D6 (1) | LED gelb 2 mA  | LED_THT:LED_D3.0mm |   
+|    6   | D1,D2,D3,D4,D5,D6 (1) | Buchsenleiste 2-polig mit gedrehten Kontakten (Pins) | "Fassung" für LEDs |   
 |    2   | J1,J2             | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh     |   
 |    4   | Q1,Q2,Q3,Q4       | Transistor BC337-40 | _kh_library:TO-92_Inline_Wide_custom |   
 |    2   | R6, <br> R12           | 47 &Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical <br> _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
@@ -282,7 +282,7 @@ Auf die _*Lötseite*_ löten:
 2. Aufsetzen des Prints _RW_5V_W3_LED_ auf die Steuerungsplatine _RW_5V_W3_STRG_.   
 3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_W3_STRG_.   
 4. Anschluss der beiden Weichenantriebe der Dreiwegweiche an Pin 1-3-5 bzw. Pin 2-4-6 von J5 der Steuerungplatine _RW_5V_W3_STRG_ (siehe Bild 22 unten).   
-5. Betätigen des Tasters SW2 (Print-Mitte): Stellen der Weiche auf "Gerade", die mittlere LED links (oder rechts leuchtet.   
+5. Betätigen des Tasters SW2 (Print-Mitte): Stellen der Weiche auf "Gerade", die mittlere LED links (oder rechts) leuchtet.   
 6. Betätigen des Tasters SW1 (oben): Stellen der Weiche auf "links", die LED rechts oben (oder links unten) leuchtet.   
 7. Betätigen des Tasters SW3 (unten): Stellen der Weiche auf "rechts", die LED rechts unten (oder links oben) leuchtet.   
 
