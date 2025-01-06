@@ -177,17 +177,16 @@ Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 gü
 | ![](/images/parts/) | 1 | 40 | Dupont Line 10 cm, 40 Pin, Buchse auf Buchse (F-F 10cm 40pin) | 2,41 | [AliExpress](https://de.aliexpress.com/item/1005003641187997.html?spm=a2g0o.order_list.order_list_main.509.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 | ![dupont_10cm_3kinds_120pin](/images/parts/300_dupont_10cm_3kinds_120pin.png "dupont_10cm_3kinds_120pin") | 1 | 120 | Dupont Line 10 cm, Stecker auf Stecker + Stecker auf Buchse + Buchse auf Buchse (10cm 3kinds 120pin) | 4,13 | [AliExpress](https://de.aliexpress.com/item/1005003641187997.html?spm=a2g0o.order_list.order_list_main.509.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 
-| ![](/images/parts/) | 1 | 10 | part | 0,00 | [...]() |   
 
 ## Werkzeug
-Lötstation, kleine Spitzzange, kleiner Seitenschneider, kleiner Schraubendreher, Abbrechklingenmesser ("Stanley-Messer", Cutter-Messer), Schraubstock   
+Lötstation, kleine Spitzzange, kleiner Seitenschneider, kleiner Schraubendreher, Abbrechklingenmesser ("Stanley-Messer", Cutter-Messer), Schraubstock.   
 
 
 # Fertigen der Komponenten
-Hat man - nach einiger Wartezeit - sowohl die Leiterplatten als auch die Bauteile zur Verfügung, geht es an das Herstellen der Komponenten:   
-* [Komponenten für die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
-* [Erweiterungen (Shields) für den ESP32](/fab/rcc2_esp32/LIESMICH.md)   
-* [RCC Blocks](/fab/rcc4_block/LIESMICH.md)   
-* [Zusatzplatinen](/fab/rcc5_add_ons/LIESMICH.md)   
+Hat man - nach einiger Wartezeit - sowohl die Leiterplatten als auch die Bauteile zur Verfügung, geht es an das Herstellen der Komponenten. Das ist auf folgenden Seiten beschrieben:   
+* [Komponenten für die Stromversorgung: `/fab/rcc1_supply/LIESMICH.md`](/fab/rcc1_supply/LIESMICH.md)   
+* [Erweiterungen (Shields) für den ESP32: `/fab/rcc2_esp32/LIESMICH.md`](/fab/rcc2_esp32/LIESMICH.md)   
+* [RCC Blocks: `/fab/rcc4_block/LIESMICH.md`](/fab/rcc4_block/LIESMICH.md)   
+* [Zusatzplatinen: `/fab/rcc5_add_ons/LIESMICH.md`](/fab/rcc5_add_ons/LIESMICH.md)   
 
 [Zum Seitenanfang](#up)   

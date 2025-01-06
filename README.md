@@ -52,13 +52,14 @@ The following topics are covered in various subdirectories:
 __Information about the system__   
 * [How do I start the RCC project?](/fab/rcc0_start/README.md)   
 * [Electrical connection of railroad modules according to NEM 908D](/info/con_NEM908/README.md)   
+* [Drill holes and covers for the front of the module](/info/frontpanel/README.md)   
 
 __Manufacturing the system components__   
-* [KiCad files of RCC components](/kicad/README.md)   
 * [Components for the power supply](/fab/rcc1_supply/README.md)   
 * [Manufacturing of the ESP32-Shields](/fab/rcc2_esp32/README.md)   
 * [Manufacturing of the switching blocks](/fab/rcc4_block/README.md)   
 * [Manufacturing of additional boards](/fab/rcc5_add_ons/README.md)   
+* [KiCad files of RCC components](/kicad/README.md)   
 
 __Software for the ESP32__   
 * [MQTT commands for controlling the components](/software/mqtt/README.md)   
@@ -93,11 +94,15 @@ By using the I2C-I/O-Expander-Boards it is possible to control several component
 _Figure 3: Block diagram switching several railroad components with 5V_   
 
 # Practical setup
-The following image shows the demo setup for controlling a three-way crossover:   
+The following figure shows an example of the modules required to control a three-way turnout:   
 ![RCC5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png "RCC5V_Demo_Setup")   
-_Figure 4: Demo setup of an RCC-5V system_   
+_Figure 4: Demo setup of an RCC-5V system: the individual parts_   
 
 On the far left you can see the 25-pin connector with the 5V power supply (“SUPPLY”), behind it is the ESP32 with a 1.56 inch display (“&micro;C”). Two I2C-PCF8574 boards (“I2C”) are mounted in the front center, behind them the RCC block. On the right you can see a three-way turnout with two Fleischmann 640000 turnout drives. The electrical connection of the modules is made using 6-pin ribbon cables and wires.   
+
+The following image shows an example of a possible front view of a module:   
+![Example front view](./images/480_front_view_module.png "Example front view")   
+_Figure 5: Example of module front view (= operating side)_   
 
 [To the top of the page](#up)
 <a name="x40"></a>   
@@ -106,7 +111,7 @@ On the far left you can see the 25-pin connector with the 5V power supply (“SU
 The following picture shows the electrical circuit diagram for controlling a turnout with DCC, MQTT or manually. The light green rectangles represent circuit boards developed in KiCad 8.0 and manufactured by [PCB Way](https://www.pcbway.com/). To do this, simply install the PCB Way plug-in in KiCad and the data required for production is then transferred with a click of the mouse.   
 
 ![overall_circuit_diagram](./images/768_RCC5V_OverviewCircuitDiagram_241111.png "overall circuit diagram")   
-_Figure 5: Overall circuit diagram of the RCC-5V system_   
+_Figure 6: Overall circuit diagram of the RCC-5V system_   
 
 The upper third of the picture shows the supply of the DCC signal and the AC voltage (“FEED-IN”). The DCC signal for the traction current and the digital switching of the points is generated here with an old Roco-Multimaus, a 230V/18V/2.9A transformer [(e.g. BV00/026 from Conrad)](https://www.conrad.at/de/p/bv00-026-hochleistungstransformator-230-v-404288.html?refresh=true) is used for the AC voltage supply.   
 

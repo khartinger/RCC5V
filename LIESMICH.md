@@ -52,13 +52,14 @@ In verschiedenen Unterverzeichnissen werden folgende Themen behandelt:
 __Informationen rund um das System__   
 * [Wie starte ich das RCC-Projekt?](/fab/rcc0_start/LIESMICH.md)   
 * [Elektrische Verbindung von Eisenbahn-Modulen nach NEM 908D](/info/con_NEM908/LIESMICH.md)   
+* [Bohrungen und Abdeckungen f&uuml;r die Modul-Frontseite](/info/frontpanel/LIESMICH.md)   
 
 __Herstellung der System-Komponenten__   
-* [KiCad-Dateien der RCC-Komponenten](/kicad/LIESMICH.md)   
 * [Komponenten f&uuml;r die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
 * [Herstellung der ESP32-Shields](/fab/rcc2_esp32/LIESMICH.md)   
 * [Herstellung von Schaltbl&ouml;cken](/fab/rcc4_block/LIESMICH.md)   
 * [Herstellung der Zusatzplatinen](/fab/rcc5_add_ons/LIESMICH.md)   
+* [KiCad-Dateien der RCC-Komponenten](/kicad/LIESMICH.md)   
 
 __Software f&uuml;r den ESP32__   
 * [MQTT-Befehle zur Steuerung der Komponenten](/software/mqtt/LIESMICH.md)   
@@ -93,11 +94,15 @@ Durch die Verwendung der I2C-I/O-Expander-Boards ist es m&ouml;glich, mehrere Ko
 _Bild 3: Blockschaltbild Schalten von mehreren Eisenbahnkomponenten mit 5V_   
 
 # Praktischer Aufbau
-Das folgende Bild zeigt den Demo-Aufbau zur Ansteuerung einer Dreiwegweiche:   
+Das folgende Bild zeigt beispielhaft die Baugruppen, die zur Ansteuerung einer Dreiwegweiche erforderlich sind:   
 ![RCC5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png "RCC5V_Demo_Setup")   
-_Bild 4: Demo-Aufbau eines RCC-5V-Systems_   
+_Bild 4: Demo-Aufbau eines RCC-5V-Systems: die einzelnen Teile_   
 
 Ganz links erkennt man den 25-poligen Stecker mit dem 5V-Netzteil ("SUPPLY"), dahinter befindet sich der ESP32 mit einem 1,56 Zoll Display ("&micro;C"). Vorne in der Mitte sind zwei I2C-PCF8574-Boards aufgebaut ("I2C"), dahinter der RCC-Block. Rechts sieht man eine Dreiwegweiche mit zwei Fleischmann-Weichenantrieben 640000. Die elektrische Verbindung der Baugruppen erfolgt durch 6-polige Flachbandkabel und Dr&auml;hte.   
+
+Ein Beispiel für eine mögliche Frontansicht eines Moduls zeigt das folgende Bild:   
+![Beispiel Frontansicht](./images/480_front_view_module.png "Beispiel Frontansicht")   
+_Bild 5: Beispiel Modul-Frontansicht (= Bedienungsseite)_   
 
 [Zum Seitenanfang](#up)
 <a name="x40"></a>   
@@ -106,7 +111,7 @@ Ganz links erkennt man den 25-poligen Stecker mit dem 5V-Netzteil ("SUPPLY"), da
 Das folgende Bild zeigt den elektrischen Schaltplan zur Ansteuerung einer Weiche mit DCC, MQTT oder manuell. Die hellgr&uuml;nen Rechtecke stellen in KiCad 8.0 entwickelte Platinen dar, die von [PCB Way](https://www.pcbway.com/) hergestellt wurden. Dazu installiert man in KiCad einfach das PlugIn von PCB Way und die &Uuml;bertragung der f&uuml;r die Produktion erforderlichen Daten erfolgt dann per Mausklick.   
 
 ![overall_circuit_diagram](./images/768_RCC5V_OverviewCircuitDiagram_241111.png "overall circuit diagram")   
-_Bild 5: Gesamtschaltung des RCC-5V-Systems_   
+_Bild 6: Gesamtschaltung des RCC-5V-Systems_   
 
 Das obere Drittel des Bildes zeigt die Einspeisung des DCC-Signals und der Wechselspannung ("FEED-IN"). Das DCC-Signal f&uuml;r den Fahrstrom und das digitale Schalten der Weichen wird hier mit einer alten Roco-Multimaus erzeugt, zur Wechselspannungsversorgung dient ein 230V/18V/2,9A Trafo [(z.B. BV00/026 von Conrad)](https://www.conrad.at/de/p/bv00-026-hochleistungstransformator-230-v-404288.html?refresh=true).   
 
