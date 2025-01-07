@@ -18,7 +18,7 @@ Für die Bedien- und Anzeigeelemente sind insgesamt 9 Positionen vorgesehen. Dab
 ## Anordnung der Schaltblöcke
 Schaltblöcke haben eine Größe von 41 x 41 mm² bei einer Tiefe von ca. 39 mm. Bei einem angenommenen Abstand von 9 mm zwischen den Blöcken ergibt sich ein __Schaltblockabstand von 50 mm__.   
 Geht man von einer Frontplattenhöhe von 60 mm und Stärke der eingelegten Gleisträgerplatte von 10 mm aus, so ergibt sich eine Einbauhöhe von 50 mm. Als Abstand des Schaltblocks zum unteren Rand wird 5,5 mm (5,43 mm) angenommen.   
-Da viele Bauteile auf den Platinen im 1/10-Zoll-Raster plaziert sind, sind die Bohrpositionen keine ganzen Zahlen im Millimeter-System. Daher werden die Bohrpositionen gerundet, wie das Bild 2 zeigt. Die exakten Werte können zB den [STRG-Dateien der KiCad-Zeichnungen](/kicad/RW_5V_W3_STRG_V4/RW_5V_W3_STRG_V4.kicad_pcb) oder einer [Excel-Tabelle](/info/z_details/RW_Koordinaten_241124.xls) entnommen werden.   
+Da viele Bauteile auf den Platinen im 1/10-Zoll-Raster plaziert sind, sind die Bohrpositionen keine ganzen Zahlen im Millimeter-System. Daher werden die Bohrpositionen gerundet, wie das Bild 2 zeigt. Die exakten Werte können zB den [STRG-Dateien der KiCad-Zeichnungen](/kicad/RW_5V_W3_STRG_V4) oder einer [Excel-Tabelle](/info/z_details/RW_Koordinaten_241124.xls) entnommen werden.   
 ![]()   
 _Bild 2: Bohrpositionen für die LEDs und Taster bzw. Schalter_
 
