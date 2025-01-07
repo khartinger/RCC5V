@@ -21,7 +21,7 @@ As components are often placed on the PCBs in 1/10-inch increments, the drilling
 ![panel_drill_positions1](/images/300_panel_drill_positions1.png "panel_drill_positions1")   
 _Figure 2: Drilling positions for the LEDs and buttons or switches_
 
-Drill diameter:__   
+__Drill diameter:__   
 LEDs: 5.6 mm   
 Buttons and switches: approx. 7 mm   
 
