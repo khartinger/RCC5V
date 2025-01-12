@@ -18,7 +18,7 @@ Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 
 | IP-Adresse Broker (Host) | 10.1.1.1 |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 
-# Inhaltsverszeichnis   
+# Inhaltsverzeichnis   
 * [1. Vorbereitung - Einkauf](#x10)   
 * [2. Bau des Modul-Rahmens](#x20)   
 * [3. Aufbau des Gleisplans](#x30)   
@@ -106,7 +106,7 @@ Zum Bau des Moduls wird noch folgendes benötigt:
 |      1     |        | [Amazon](https://www.amazon.de/dp/B07S188DRJ?ref=ppx_yo2ov_dt_b_product_details&th=1) | Selbstklebende Korkplatte 1 mm dick, 30 x 21 cm² |   
 |     28     |   |   | Senkkopfschrauben mit Kreuzschlitz 3,0 x 30mm |   
 
-Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu ist folgendes erforderlich:   
+Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu benötigt man:   
 | St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
 |:----------:|:------:|:-----------|:-----------------|   
 |      1     | 4002364114016 | Albrecht   | Yacht- und Bootslack, farblos, hochglänzend |   
@@ -116,12 +116,12 @@ Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu 
 
 ## 1.5 Elektronische RCC-Komponenten
 ### 1.5.1 Steuerung
-Für die Steuerung wird der ESP32 mit den Zusatzplatinen und dem 1,54"-OLED-Display benötigt. Der Zusammenbau ist auf   
-[`https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md`](https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md)   
+Für die Steuerung wird der ESP32 mit den beiden Zusatzplatinen (I²C, DCC) und dem 1,54"-OLED-Display verwendet. Der Zusammenbau ist auf   
+[`https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md`](/fab/rcc2_esp32/LIESMICH.md)   
 beschrieben.   
 
 ### 1.5.2 25-polige Stecker
-Für den Anschluss der 25-poligen Stecker und die Stromversorgung werden folgende bestückte Leiterplatten benötigt:   
+Für den Anschluss der 25-poligen Stecker und für die Stromversorgung werden folgende bestückte Leiterplatten benötigt:   
 * 1x [Netzteil-Platine AC_5V_supply_6pol_DCC](/fab/rcc1_supply/LIESMICH.md#x20)   
 * 1x [Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (RW_5V_SUB25_10)](/fab/rcc1_supply/LIESMICH.md#x33)   
 * 1x [Platine mit 25-poligem Sub-D-Stecker und Schraubklemmen (CON_SubD_Screw10)](/fab/rcc1_supply/LIESMICH.md#x34)   
