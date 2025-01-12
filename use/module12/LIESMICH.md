@@ -116,7 +116,7 @@ Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu 
 
 ## 1.5 Steuermodule und Leitungen
 Für die Ansteuerung der Schaltkomponenten werden folgende Schaltblöcke benötigt:   
-* 1x [Block Dreiwegweiche (W3)](/fab/rcc4_block/LIESMICH.md/x30)   
+* 1x [Block Dreiwegweiche (W3)](/fab/rcc4_block/LIESMICH.md#x30)   
 
 
 
