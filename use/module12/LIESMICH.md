@@ -11,7 +11,7 @@ Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 
 |----------------|----------------------------------------------------|   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit und ohne Schotterbett |   
 | Gleisbild      | 1x Dreiwegweiche, 2x Zweiwegweiche, 1x Entkuppler, 3x abschaltbarer Gleisabschnitt |   
-| Elektrischer Anschluss | 2x 15poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
+| Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
 | Fahrstrom     | Analog oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | * Händisch direkt an der Modulvorderseite <br> * über DCC <br> * durch MQTT-Nachrichten (über WLAN) |   
 | Bedienelemente | 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 3x Fahrstrom (Block 2IO, DCC 125, 126 und 127) |   
@@ -114,11 +114,33 @@ Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu 
 |      2     |   |   | Paar Einmal-Handschuhe         |   
 |      1     |   |   | Schleifpapier Körnung 240      |   
 
-## 1.5 Steuermodule und Leitungen
+## 1.5 Elektronische RCC-Komponenten
+### 1.5.1 Steuerung
+Für die Steuerung wird der ESP32 mit den Zusatzplatinen und dem 1,54"-OLED-Display benötigt. Der Zusammenbau ist auf   
+[`https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md`](https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md)   
+beschrieben.   
+
+### 1.5.2 25-polige Stecker
+Für den Anschluss der 25-poligen Stecker und die Stromversorgung werden folgende bestückte Leiterplatten benötigt:   
+* 1x [Netzteil-Platine AC_5V_supply_6pol_DCC](/fab/rcc1_supply/LIESMICH.md#x20)   
+* 1x [Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (RW_5V_SUB25_10)](/fab/rcc1_supply/LIESMICH.md#x33)   
+* 1x [Platine mit 25-poligem Sub-D-Stecker und Schraubklemmen (CON_SubD_Screw10)](/fab/rcc1_supply/LIESMICH.md#x34)   
+
+Die bestückte Netzteil-Platine muss auf die Trägerplatine `RW_5V_SUB25_10` montiert werden.   
+
+### 1.5.3 Ansteuerung der Schaltkomponenten
 Für die Ansteuerung der Schaltkomponenten werden folgende Schaltblöcke benötigt:   
 * 1x [Block Dreiwegweiche (W3)](/fab/rcc4_block/LIESMICH.md#x30)   
+* 2x [Block Zweiwegweiche (W2)](/fab/rcc4_block/LIESMICH.md#x20)   
+* 1x [Block Entkuppler (1OUT)](/fab/rcc4_block/LIESMICH.md#x40)   
+* 3x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
 
+### 1.5.4 Verdrahtung
+Zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen:   
+...ToDo...
 
+__Drähte und Leitungen__   
+...ToDo...
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   

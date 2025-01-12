@@ -94,6 +94,8 @@ Die Verbindungsplatinen sind so aufgebaut, dass die Netzteilplatine direkt aufge
 ![best&uuml;ckte Platine RW_5V_2SUB25](/images/300_RW_5V_2SUB25.png "best&uuml;ckte Platine RW_5V_2SUB25")   
 _Bild 6: Mit Netzteil best&uuml;ckte Verbindungsplatine mit zwei 25-poligen Steckern_   
 
+<a name="x32"></a>   
+
 ## 3.2 Platine mit zwei 25-poligen Sub-D-Steckern und Netzteil (RW_5V_2SUB25)   
 Diese Platine wird zum Verbinden kurzer Module mit L&auml;ngen von 25 cm oder 50 cm verwendet. Sie enth&auml;lt Anschl&uuml;sse f&uuml;r ein 5V-Netzteil und das DCC-Steuersignal sowie Schraubklemmen f&uuml;r den DCC-Fahrstrom (SS, NN und SN, NS) und die Hilfsleitungen OA und OB. Die Platine ist so aufgebaut, dass sie beim Einbau in ein Modul symmetrisch zu einer Verstrebung liegen kann.   
 
@@ -119,6 +121,8 @@ _*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)
 * V1 (241029): OK   
 * V2 (241123): OK (Leiterbahnen zwischen Bauteil- und L&ouml;tseite getauscht)   
 
+<a name="x33"></a>   
+
 # 3.3 Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (RW_5V_SUB25_10)
 Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm) auf einer Seite verwendet. Sie enth&auml;lt Anschl&uuml;sse f&uuml;r ein 5V-Netzteil und das DCC-Steuersignal sowie Schraubklemmen f&uuml;r den DCC-Fahrstrom (SS, NN und SN, NS), die Hilfsleitungen OA und OB und zus&auml;tzlich f&uuml;r alle Signale. Die Platine ist so aufgebaut, dass sie symmetrisch zu einer Verstrebung liegen kann.   
 
@@ -143,6 +147,8 @@ _*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_
 
 ### Versionen
 * V1 (241104): OK   
+
+<a name="x34"></a>   
 
 # 3.4 Platine mit 25-poligem Sub-D-Stecker und Schraubklemmen (CON_SubD_Screw10)
 Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm) auf einer der beiden Seiten (Ost oder West) verwendet. Sie f&uuml;hrt lediglich die Anschl&uuml;sse des Sub-D-Steckers auf Schraubklemmen heraus.   
