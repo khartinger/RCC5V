@@ -124,7 +124,7 @@ Für die Steuerung wird der ESP32 mit den beiden Zusatzplatinen (I²C, DCC) und 
 [`https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md`](/fab/rcc2_esp32/LIESMICH.md)   
 beschrieben.   
 
-### 1.5.2 25-polige Stecker
+### 1.5.2 Anschluss der 25-poligen Stecker
 Für den Anschluss der 25-poligen Stecker und für die Stromversorgung werden folgende bestückte Leiterplatten benötigt:   
 * 1x [Netzteil-Platine AC_5V_supply_6pol_DCC](/fab/rcc1_supply/LIESMICH.md#x20)   
 * 1x [Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (RW_5V_SUB25_10)](/fab/rcc1_supply/LIESMICH.md#x33)   
@@ -150,6 +150,46 @@ __Drähte und Leitungen__
 <a name="x20"></a>   
 
 # 2. Bau des Modul-Rahmens   
+## 2.1 Einleitung
+Zuerst den Modul-Rahmen zu erstellen hat zwei Vorteile:   
+1. Der Test, ob die Grundplatte in den Rahmen passt, kann mit der leeren Grundplatte durchgeführt werden. Falls die Grundplatte zu groß ist, kann sie einfach zugeschnitten oder zugeschliffen werden.   
+2. Beim Aufkleben der Gleise auf die Grundplatte sind an den Modulübergängen (Ost und West) bereits die Seitenteile mit den Gleisausnehmungen vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
+
+## 2.2 Materialbedarf
+Das 100 x 25 cm² große Modul besteht aus zwei Teilen:   
+* Rahmen mit Querverstrebungen   
+* Grundplatte   
+
+![Modul-Rahmen](./images/300_module_frame.png "Modul-Rahmen")   
+_Bild 4: Rahmen außen (Ra1 bis Ra4) mit Querverstrebung innen (Ri1, Ri2, Ri3)_
+
+## 2.3 Seitenteile Ra1, Ra3 (West, Ost)
+Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnkörper-Profil jedoch der NEM122 entspricht:   
+
+![Modul_OstWest_1_Mitte.png](./images/300_OstWest_1_Mitte.png "Modul_OstWest_1_Mitte")   
+_Bild 5: N_Modul_2012: Seitenteil Ost, West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
+
+Die vier 8mm-Bohrungen dienen zum Verbinden von Modulen durch 8 mm-Flügelschrauben und Flügelmuttern.   
+Die linken und rechten vier 2 mm-Bohrungen dienen zum Anschrauben der Nord- und Südwand. Sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
+Die oberen zwei 2mm-Bohrungen dienen zum Fixieren der Gelände-Grundplatte (falls erforderlich). Auch sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
+Die 60x20 mm²-Ausnehmung dient zum Durchführen des 25-poligen Sub-D-Steckers.   
+Mit besonderer Vorsicht ist die Ausnehmung für das Gleis zu fertigen. Mit einer Laubsäge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile erweitert. Dabei ist immer wieder zu probieren, ob ein Fleischmann-Schotterbett-Gleis schon gerade (klemmend) hineinpasst und auch mittig ist.   
+
+## 2.4 Rahmenteil Ra2 (Nord)
+Der Rahmenteil „Nord“ enthält dreimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden später die Querverstrebungen verschraubt.   
+
+![Modul_Nord_980mm](./images/300_Nord_980mm.png "Modul_Nord_980mm")   
+_Bild 6: Seitenteil Nord Ra2_   
+
+## 2.5 Seitenteil Ra4 (Süd)
+Der Rahmenteil Süd enthält die Bohrungen für alle Steuerblöcke und die Querverstrebungen.   
+![]()   
+_Bild 7: Rahmenteil Süd Ra4_   
+
+## 2.6 Querverstrebung Ri1 bis Ri3
+Die Querverstrebungen enthalten Durchbrüche für Kabel.   
+![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
+_Bild 8: Querverstrebungen Ri1 bis Ri3_
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
