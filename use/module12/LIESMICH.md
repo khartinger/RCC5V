@@ -4,6 +4,8 @@ Letzte &Auml;nderung: 12.1.2025 <a name="up"></a><br>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
+[Direkter Sprung zur Inhalts&uuml;bersicht](#x05)   
+
 # Übersicht
 Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 „Ausweichstelle und Abstellgleis“. Das Modul soll folgende Eigenschaften besitzen:   
 
@@ -17,6 +19,8 @@ Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 
 | Bedienelemente | 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 3x Fahrstrom (Block 2IO, DCC 125, 126 und 127) |   
 | IP-Adresse Broker (Host) | 10.1.1.1 |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
+
+<a name="x05"></a>   
 
 # Inhaltsverzeichnis   
 * [1. Vorbereitung - Einkauf](#x10)   
