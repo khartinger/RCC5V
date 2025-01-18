@@ -188,6 +188,7 @@ _Bild 7: Rahmenteil Süd Ra4_
 
 ## 2.6 Querverstrebung Ri1 bis Ri3
 Die Querverstrebungen enthalten Durchbrüche für Kabel.   
+
 ![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
 _Bild 8: Querverstrebungen Ri1 bis Ri3_
 

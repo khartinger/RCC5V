@@ -14,8 +14,8 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_99     "2025-01-03 rcc_demo1"
-#define  VERSION_99_1   "Version 2025-01-03"
+#define  VERSION_99     "2025-01-18 rcc_demo1"
+#define  VERSION_99_1   "Version 2025-01-18"
 
 #define  INFOLINES_SEC  20             // time to show one page
 
@@ -78,15 +78,17 @@ struct strRcomp {
 // ------uncoupler (Entkuppler)---------------------------------
 #define  RCOMP_1        RC_TYPE_UC,"UC", 11, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 1500,0
 // ------two way turnout (Zweiwegweiche = Standardweiche)-------
-// Two expander pins B A to control 2way turnout (active low!)
+// Two expander pins A B to control 2way turnout (active low!)
+// A=0: curved, B=0: stright
 #define  RCOMP_2        RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
 //-------three way turnout (Dreiwegweiche)----------------------
+// A=0: curved, B=0: stright (@ 3 pin: middle pin=0V -> stright)
 #define  RCOMP_3L       RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
 #define  RCOMP_3R       RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
 //-------disconnectable track (Fahrstrom)-----------------------
 #define  RCOMP_4        RC_TYPE_DT,"DT", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
 //-------blink light (Blinklicht)-------------------------------
-#define  RCOMP_5        RC_TYPE_BL,"BL", 51, EX0,PIN7,NO_PIN, EX1,PIN7,NO_PIN, 500,500
+#define  RCOMP_5        RC_TYPE_BL,"BL", 51, EX0,PIN7,NO_PIN, EX1,NO_PIN,NO_PIN, 500,500
 
 //.......Array of all railway components........................
 #define  RCOMP_NUM      6

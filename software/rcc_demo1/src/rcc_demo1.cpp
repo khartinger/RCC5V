@@ -65,7 +65,8 @@
 // Changes:
 // 2024-11-14 2-way-turnout number 1=stright <-> 2=curved changed
 // 2024-11-28 Change program name
-// 2025-01_03 Change TOPIC_BASE, add #define CON_...
+// 2025-01-03 Change TOPIC_BASE, add #define CON_...
+// 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
 // Released into the public domain.
 
 // #include <Arduino.h>
@@ -442,38 +443,48 @@ void prepareScreenLine4to6(int iRcompGroup) {
   //-----railway component name max. 3 chars + blank = 4 chars--
   aScreenText[3]+=(aRcomp[iRc].name.substring(0,3)+"    ").substring(0,4);
   //-----generate symbol or value (line 5 of screen)------------
-  if(aRcomp[iRc].type==RC_TYPE_TO || aRcomp[iRc].type==RC_TYPE_T3){ // turnout
-   switch(aRcmd[iRc].inValue) {
-    case 0: if(aRcomp[iRc].type==RC_TYPE_T3) aScreenText[4]+="__  ";
-            else aScreenText[4]+="0?  ";
-            break;                          // BA=00
-    case 1:  aScreenText[4]+="__  ";  break; // BA=01 (stright)
-    case 2:  aScreenText[4]+="_/  ";  break; // BA=10 (curved)
+  if(aRcomp[iRc].type==RC_TYPE_T3) { // 3-way-turnout RC_TYPE_T3
+   switch(aRcmd[iRc].inValue) { 
+    case 0:  aScreenText[4]+="__  ";  break;  // BA=00
+    case 1:  aScreenText[4]+="_/  ";  break; // BA=01 (stright)
+    case 2:  aScreenText[4]+="__  ";  break; // BA=10 (curved)
     case 3:  aScreenText[4]+="1?  ";  break; // BA=11
     default: aScreenText[4]+="??  ";  break; // ?? impossible
    } // END OF switch
-  } else { //......not RC_TYPE_TO or RC_TYPE_T3.................
-   if(aRcomp[iRc].type==RC_TYPE_DT) { // discon track (fahrstrom)
-    aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
-   } else { //.....not RC_TYPE_DT...............................
-    if(aRcomp[iRc].type==RC_TYPE_UC) {
+  } // END OF 3-way-turnout RC_TYPE_T3
+  else
+  { // .-.-.-.not RC_TYPE_T3.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+   if(aRcomp[iRc].type==RC_TYPE_TO){ // 2-way-turnout
+    switch(aRcmd[iRc].inValue) {
+     case 0:  aScreenText[4]+="0?  ";  break; // BA=00
+     case 1:  aScreenText[4]+="__  ";  break; // BA=01 (stright)
+     case 2:  aScreenText[4]+="_/  ";  break; // BA=10 (curved)
+     case 3:  aScreenText[4]+="1?  ";  break; // BA=11
+     default: aScreenText[4]+="??  ";  break; // ?? impossible
+    } // END OF switch
+   } else { //......not RC_TYPE_TO or RC_TYPE_T3.................
+    if(aRcomp[iRc].type==RC_TYPE_DT) { // discon track (fahrstrom)
      aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
-    } else { //....not RC_TYPE_UC...............................
-     if(aRcomp[iRc].type==RC_TYPE_BL) {
-      if(aRcmd[iRc].iCmd==CMD_BLINK)
-      {
-       aScreenText[4]+="run ";
-      } else {
-       aScreenText[4]+="--- ";
-      }
-      //aRcmd[iRc].inValue ? aScreenText[4]+="1_0 " : aScreenText[4]+="0_1 ";
-      //aScreenText[4]+="0|1 ";
-     } else { //...not RC_TYPE_BL...............................
-      aScreenText[4]+=(" "+String(aRcmd[iRc].inValue)+"   ").substring(0,4);
-     } // END OF not RC_TYPE_BL
-    } // END OF not RC_TYPE_UC
-   } // END OF not RC_TYPE_DT
-  } // END OF not RC_TYPE_TO ot RC_TYPE_T3
+    } else { //.....not RC_TYPE_DT...............................
+     if(aRcomp[iRc].type==RC_TYPE_UC) {
+      aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
+     } else { //....not RC_TYPE_UC...............................
+      if(aRcomp[iRc].type==RC_TYPE_BL) {
+       if(aRcmd[iRc].iCmd==CMD_BLINK)
+       {
+        aScreenText[4]+="run ";
+       } else {
+        aScreenText[4]+="--- ";
+       }
+       //aRcmd[iRc].inValue ? aScreenText[4]+="1_0 " : aScreenText[4]+="0_1 ";
+       //aScreenText[4]+="0|1 ";
+      } else { //...not RC_TYPE_BL...............................
+       aScreenText[4]+=(" "+String(aRcmd[iRc].inValue)+"   ").substring(0,4);
+      } // END OF not RC_TYPE_BL
+     } // END OF not RC_TYPE_UC
+    } // END OF not RC_TYPE_DT
+   } // END OF not RC_TYPE_TO
+  } // END OF not RC_TYPE_T3
   //-----dcc number of railway element--------------------------
   aScreenText[5]+=(String(aRcomp[iRc].dcc)+"    ").substring(0,4);
  } // END OF for max. 5 elements
@@ -826,7 +837,7 @@ String actOnCmdHardware(int iCmd_, int iOutPCF_,
 void setup() {
  bool bRet;
  int button_;
- String s1="", s2="", s3="";
+ String s1="", s2="", s3="", s2oled="";
  //------Serial, just for debug---------------------------------
  if(DEBUG_99) {
   Serial.begin(115200);
@@ -854,6 +865,7 @@ void setup() {
  showInfolines();
  //------Init all 8-Bit I/O Expander PCF8574--------------------
  s2="setup(): Found I2C device at ";
+ s2oled="I2C found ";
  bool bfirstComp=true;
  for(int i=0; i<IOEX_NUM; i++) {
   //aIOEx[i].setInvertOutput(true);
@@ -873,9 +885,10 @@ void setup() {
   }
   bfirstComp=false;
   s2+=" 0x"+s1;                             // add address to found
+  s2oled+=" 0x"+s1;                         // add address to found
   (*pIOEx[i]).setByte(0xFF);
-  showLine(5,s2);                           // show found addresses
-  if(DEBUG_99) { Serial.println(s2); }
+  showLine(5,s2oled);                       // show found addresses
+  if(DEBUG_99) { Serial.println(s2); }      // show found addresses
  }
  showLine(4, "");                           // clear "search"-line
 

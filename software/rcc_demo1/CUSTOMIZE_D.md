@@ -119,21 +119,23 @@ Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeile
 79	#define  RCOMP_1        RC_TYPE_UC,"UC", 11, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 1500,0
 80	// ------two way turnout (Zweiwegweiche = Standardweiche)-------
 81	// Two expander pins B A to control 2way turnout (active low!)
-82	#define  RCOMP_2        RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
-83	//-------three way turnout (Dreiwegweiche)----------------------
-84	#define  RCOMP_3L       RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
-85	#define  RCOMP_3R       RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
-86	//-------disconnectable track (Fahrstrom)-----------------------
-87	#define  RCOMP_4        RC_TYPE_DT,"DT", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
-88	//-------blink light (Blinklicht)-------------------------------
-89	#define  RCOMP_5        RC_TYPE_BL,"BL", 51, EX0,PIN7,NO_PIN, EX1,PIN7,NO_PIN, 500,500
-90	
-91	//.......Array of all railway components........................
-92	#define  RCOMP_NUM      6
-93	strRcomp aRcomp[RCOMP_NUM] = {
-94	 {RCOMP_1},{RCOMP_2},{RCOMP_3L},{RCOMP_3R},{RCOMP_4},{RCOMP_5}
-95	};
-96	#endif
+82	// A=0: curved, B=0: stright
+83	#define  RCOMP_2        RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
+84	//-------three way turnout (Dreiwegweiche)----------------------
+85	// A=0: curved, B=0: stright (@ 3 pin: middle pin=0V -> stright)
+86	#define  RCOMP_3L       RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
+87	#define  RCOMP_3R       RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
+88	//-------disconnectable track (Fahrstrom)-----------------------
+89	#define  RCOMP_4        RC_TYPE_DT,"DT", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
+90	//-------blink light (Blinklicht)-------------------------------
+91	#define  RCOMP_5        RC_TYPE_BL,"BL", 51, EX0,PIN7,NO_PIN, EX1,PIN7,NO_PIN, 500,500
+92	
+93	//.......Array of all railway components........................
+94	#define  RCOMP_NUM      6
+95	strRcomp aRcomp[RCOMP_NUM] = {
+96	 {RCOMP_1},{RCOMP_2},{RCOMP_3L},{RCOMP_3R},{RCOMP_4},{RCOMP_5}
+97	};
+98	#endif
 ```   
 
 ## Erforderliche Anpassungen in der Datei dcc_config.h
@@ -159,8 +161,8 @@ Die folgende Tabelle erkl&auml;rt die Bedeutung der einzelnen Zeilen in der Demo
 | 45      | __1__ | `*pIOEx[]` = Pointer-Array mit den Adressen der PCF8574-Board-Objekten (nicht auf das &-Zeichen vor den Namen vergessen!). |   
 | 47 - 70 |  x  | Definitionen f&uuml;r die Eisenbahn-Komponenten. Sie befinden sich nur zum An- bzw. Nachschauen in dieser Datei. |   
 | 72 - 89 | __1__ | Definition von Strukturen f&uuml;r jede einzelne Eisenbahn-Komponente. Der Aufbau jeder Zeile entspricht der Struktur von Zeile 58 bis 70.   |   
-| 92      | __1__ | Anzahl der Eisenbahn-Komponenten. |   
-| 93 - 95 | __1__ | `aRcomp[]` = Array mit den Strukturen der einzelnen Eisenbahn-Komponenten. |   
+| 94      | __1__ | Anzahl der Eisenbahn-Komponenten. |   
+| 95 - 97 | __1__ | `aRcomp[]` = Array mit den Strukturen der einzelnen Eisenbahn-Komponenten. |   
 
 <a name="x30"></a>   
 
