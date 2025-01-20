@@ -103,6 +103,7 @@ Diese Platine wird zum Verbinden kurzer Module mit L&auml;ngen von 25 cm oder 50
 _Bild 7: Platine RW_5V_2SUB25_   
 
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
+_*Montagebohrungen*_: 2,5 mm, Abstand 70 mm x 60 mm   
 _*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)   
 
 ### St&uuml;ckliste   
@@ -120,6 +121,7 @@ _*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)
 ### Versionen
 * V1 (241029): OK   
 * V2 (241123): OK (Leiterbahnen zwischen Bauteil- und L&ouml;tseite getauscht)   
+* V3 (250120): OK (J10 erg&auml;nzt)   
 
 <a name="x33"></a>   
 
@@ -130,6 +132,7 @@ Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm)
 _Bild 8: Platine RW_5V_SUB25_10_   
 
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
+_*Montagebohrungen*_: 2,5 mm, Abstand 70 mm x 60 mm   
 _*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1)   
 
 ### St&uuml;ckliste   
@@ -147,6 +150,7 @@ _*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_
 
 ### Versionen
 * V1 (241104): OK   
+* V2 (250120): OK (J10 erg&auml;nzt)   
 
 <a name="x34"></a>   
 
@@ -157,6 +161,7 @@ Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm)
 _Bild 9: Platine CON_SubD_Screw10_   
 
 _*Platinengr&ouml;&szlig;e*_: 31 x 66 mm²   
+_*Montagebohrungen*_: 2,5 mm, Abstand 21 mm x 60 mm   
 _*Link zu den KiCad-Dateien*_: [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Screw10_V1)   
 
 ### St&uuml;ckliste   

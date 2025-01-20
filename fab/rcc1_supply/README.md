@@ -55,6 +55,9 @@ _*Link to the KiCad files*_: [/kicad/AC_5V_6pol_DCC_V1](/kicad/AC_5V_6pol_DCC_V1
 | 1 | U1 | DC-DC converter board StepDown_LM2596 | _kh_library:DCDC_StepDown_LM2596_PinsOnly |   
 | 4 | U1 | 4 single pins | |   
 
+### Preparation   
+Cut four individual pins from a pin header.   
+
 ### Assembly   
 1. power resistor R1   
 2. diode D1   
@@ -100,6 +103,7 @@ This board is used to connect short modules with lengths of 25 cm or 50 cm. It c
 _Figure 7: Circuit board RW_5V_2SUB25_   
 
 _*Board size*_: 80 x 66 mm²   
+_*Mounting holes*_: 2.5 mm, distance 70 mm x 60 mm   
 _*Link to the KiCad files*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)   
 
 ### Bill of materials   
@@ -117,6 +121,7 @@ _*Link to the KiCad files*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)
 ### Versions
 * V1 (241029): OK   
 * V2 (241123): OK (tracks swapped between component and power supply side)   
+* V3 (250120): OK (J10 supplemented)   
 
 <a name="x33"></a>   
 
@@ -127,6 +132,7 @@ This board is used for longer modules (lengths of 75 cm or 100 cm) on one side. 
 _Figure 8: Circuit board RW_5V_SUB25_10_   
 
 _*Board size*_: 80 x 66 mm²   
+_*Mounting holes*_: 2.5 mm, distance 70 mm x 60 mm   
 _*Link to the KiCad files*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1)   
 
 ### Bill of Materials   
@@ -144,6 +150,7 @@ _*Link to the KiCad files*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1
 
 ### Versions
 * V1 (241104): OK   
+* V2 (250120): OK (J10 supplemented)   
 
 <a name="x34"></a>   
 
@@ -154,6 +161,7 @@ This circuit board is used for longer modules (lengths of 75 cm or 100 cm) on on
 _Figure 9: Board CON_SubD_Screw10_   
 
 _*Board size*_: 31 x 66 mm²   
+_*Mounting holes*_: 2.5 mm, distance 21 mm x 60 mm   
 _*Link to the KiCad files*_: [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Screw10_V1)   
 
 ### Bill of materials   
