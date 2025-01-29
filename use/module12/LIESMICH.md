@@ -143,6 +143,7 @@ Die bestückte Netzteil-Platine muss auf die Trägerplatine `RW_5V_SUB25_10` mon
 
 ### 1.4.3 Ansteuerung der Schaltkomponenten
 Für die Ansteuerung der Schaltkomponenten werden folgende Schaltblöcke benötigt:   
+* 7x [Halterung für Schaltblöcke](/fab/rcc5_add_ons/LIESMICH.md#x20)   
 * 1x [Block Dreiwegweiche (W3)](/fab/rcc4_block/LIESMICH.md#x30)   
 * 2x [Block Zweiwegweiche (W2)](/fab/rcc4_block/LIESMICH.md#x20)   
 * 1x [Block Entkuppler (1OUT)](/fab/rcc4_block/LIESMICH.md#x40)   
@@ -193,7 +194,7 @@ Der Rahmenteil „Nord“ enthält lediglich dreimal zwei Bohrungen mit 2 mm Dur
 _Bild 6: Seitenteil Nord Ra2_   
 
 ## 2.4 Seitenteil Ra4 (Süd)
-Der Rahmenteil Süd enthält die Bohrungen für alle Steuerblöcke und die Querverstrebungen.   
+Der Rahmenteil Süd ist am aufwändigsten zu fertigen, da er die Bohrungen für alle Steuerblöcke und für alle Querverstrebungen enthält.   
 Das Schaltbild der Dreiwegweiche W3 zeigt nach rechts (6 Bohrungen), das der ersten Zweiwegweiche W2 nach links unten (4 Bohrungen) und das des Entkupplers 1OUT nach rechts (4 Bohrungen). Es folgen die drei Schaltbilder für die Fahrstromabschaltung 2IO (7 Bohrungen) und das Schaltbild der zweiten Zweiwegweiche W2 nach rechts oben (4 Bohrungen).   
 
 ![Modul_Süd_980mm](./images/300_Sued_980mm.png "Modul_Süd_980mm")   
@@ -206,13 +207,15 @@ _Bild 8: Maße für die LED- und Taster-Bohrungen_
 
 Der Bohrdurchmesser für die LED-Fassungen beträgt 5,6 mm, der für die Taster ca. 7 mm.   
 
-Die Aussparnugen für die OLED-Anzeige und den dazugehörigen Taster sind abhängig davon, ob man die Bauteile einzeln montiert oder einen 3D-Druck-Rahmen verwendet. Bei getrennter Montage benötigt man eine rechteckförmige Aussparung der Größe 20 x 38 mm² und eine 11,6 mm-Bohrung.   
+Die Aussparungen für die OLED-Anzeige und den dazugehörigen Taster sind abhängig davon, ob man die Bauteile einzeln montiert oder einen 3D-Druck-Rahmen verwendet. Bei getrennter Montage benötigt man eine rechteckförmige Aussparung der Größe 20 x 38 mm² und eine 11,6 mm-Bohrung.   
 ![OLED_Button_single](./images/300_OLED_Button_single.png "OLED_Button_single")   
 _Bild 9: Maße für die getrennte Montage der OLED-Anzeige und des Tasters_   
 
 Bei Verwendung eines 3D-gedruckten Rahmens benötigt man eine rechteckförmige Aussparung der Größe 80 x 43 mm².   
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
 _Bild 10: Maße für den Rahmen der OLED-Anzeige mit Taster_   
+
+Nach dem Bohren aller LED- und Taster-Bohrungen sollte man gleich die Halterungen für die Steuerblöcke montieren und testen, ob die Bohrungen für die Steuerblöcke passen.   
 
 ## 2.5 Querverstrebung Ri1 bis Ri3
 Die Querverstrebungen enthalten verschiedene Durchbrüche für Kabel und zwei Bohrungen für die Halterung der 25-poligen Sub-D-Stecker.   

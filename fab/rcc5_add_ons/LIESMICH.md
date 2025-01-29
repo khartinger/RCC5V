@@ -7,6 +7,8 @@ Letzte &Auml;nderung: 28.11.2024 <a name="up"></a><br>
 # 1. Einleitung   
 Die hier beschriebenen Erg&auml;nzungsplatinen dienen zB als Halterung oder f&uuml;r das Umsetzen von Flachbandkabeln mit IDC-Steckverbindern auf Pins bzw. Schraubklemmen.   
 
+<a name="x20"></a>   
+
 # 2. Blockbefestigungsplatine   
 Die Blockbefestigungsplatine wird auf den Rahmen eines Eisenbahnmoduls geschraubt und 
 dient zur Befestigung eines Schaltblocks (f&uuml;r Weichen, Entkuppler, Fahrstromschalter). Sie enth&auml;lt Bohrungen f&uuml;r LEDs und Taster/Schalter, damit diese durch den Rahmen des Moduls hin zur Bedienseite durchgesteckt werden k&ouml;nnen.   
