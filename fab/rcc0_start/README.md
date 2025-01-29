@@ -93,6 +93,7 @@ Many of the components, such as screws, are sold in larger packs, so it is usual
 The quantities given below are sufficient to build _one_ module with several blocks.   
 The prices given are for information only and were valid in December 2024 (without Black Friday etc.).   
 
+<a name="x31"></a>   
 ## Mechanical components
 
 | Image | Quantity | Parts/Pack | Description | approx. Euro | Source |   
@@ -106,6 +107,7 @@ The prices given are for information only and were valid in December 2024 (witho
 | ![switch_cap](/images/parts/300_switch_cap.png "switch_cap") | 1 | 7x10 | Knob for button/switch 8x8mm, length 10mm, 7 different colors | 1.92 | [AliExpress Ali_CanHui](https://de.aliexpress.com/item/1005001524633998.html?spm=a2g0o.order_list.order_list_main.193.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 | | 1 | 100 | Knob for button/switch 8x8mm, length 7mm, different colors | 2,17 | [AliExpress TEJIATE_Store](https://de.aliexpress.com/item/4000504035520.html?spm=a2g0o.order_list.order_list_main.322.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 
+<a name="x32"></a>   
 ## Electrical components
 
 | Image | Quantity | Parts/Pack | Description | approx. Euro | Source |   
@@ -130,6 +132,7 @@ The prices given are for information only and were valid in December 2024 (witho
 | ![IC4](/images/parts/300_IC4.png "IC4") | 1 | 50 | IC socket 4-pin with turned sockets | 4,68 | [AliExpress](https://de.aliexpress.com/item/1005003652148420.html?spm=a2g0o.productlist.main.1.7c52I0v0I0v0cU&algo_pvid=944cbd2e-7acc-4457-9e4f-fbcceda1d0a0&algo_exp_id=944cbd2e-7acc-4457-9e4f-fbcceda1d0a0-0&pdp_npi=4%40dis%21EUR%214.68%214.35%21%21%214.81%214.47%21%40210385a817331341448998686eda30%2112000026657542931%21sea%21AT%21738334575%21X&curPageLogUid=wU9ZgQgX5eGi&utparam-url=scene%3Asearch%7Cquery_from%3A) |   
 | ![IC8](/images/parts/300_IC8.png "IC8") | 1 | 10 | IC socket 8-pin with turned sockets | 1,89 | [AliExpress](https://de.aliexpress.com/item/1005007246586839.html?spm=a2g0o.order_list.order_list_main.195.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
 
+<a name="x33"></a>   
 ## Electronic components
 
 | Image | Quantity | Parts/Pack | Description | approx. Euro | Source |   

@@ -16,10 +16,9 @@ Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
 | Fahrstrom     | Analog oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | * Händisch direkt an der Modulvorderseite <br> * über DCC <br> * durch MQTT-Nachrichten (über WLAN) |   
-| Bedienelemente | 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 3x Fahrstrom (Block 2IO, DCC 125, 126 und 127) |   
-| IP-Adresse Broker (Host) | 10.1.1.1 |   
+| Bedienelemente | 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 3x Fahrstrom (Block 2IO, DCC 125, 126 und 127) |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
-
+| MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
 <a name="x05"></a>   
 
 # Inhaltsverzeichnis   
@@ -31,7 +30,7 @@ Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
 
-# 1. Vorbereitung - Einkauf
+# 1. Vorbereitung und Einkauf
 ## 1.1 Entwurf des Gleisplans
 ### 1.1.1 Allgemeines zu Gleisplänen
 Beim Erstellen eines Gleisplans sind zwei Dinge zu beachten: das Lichtraumprofil und die Höhe des Gleisaufbaus. Das Lichtraumprofil gibt an, wieviel Platz (vor allem von langen Waggons) neben dem Gleis benötigt wird und ist bei engen Radien wichtig. Die Höhe des Gleisaufbaus (Bahnkörper) ist bei mehrstöckigen Anlagen oder Tunnels wichtig.   
@@ -56,7 +55,8 @@ Der folgende Gleisplan wurde mit dem Programm [AnyRail](https://www.anyrail.com/
 ![M12 Gleisplan](./images/300_m12_gleisplan.png "M12 Gleisplan")   
 _Bild 3: Gleisplan_   
 
-Das 2. Gleis von links ist ein Gleis ohne Schotterbett mit der Länge 17,2 mm (22207). Die übrigen kurzen Gleise sind Gerade (9104) mit der Länge 27,75 mm. (Im Plan nicht gut lesbar.)   
+Dunkelgraue Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
+Das 2. Gleis von links ist ein Gleis ohne Schotterbett mit der Länge 17,2 mm (22207). Die übrigen kurzen Gleise sind Gerade (9104) mit der Länge 27,75 mm. (Im Plan schlecht lesbar.)   
 Eine Besonderheit stellt das Gleis 9136 mit dem Kommentar "R4 9 Schwellen" dar: Hier wird ein Gleis 9136 zuerst links mit der Weiche verbunden und danach bei einem Winkel von 6,14° (= 9 Schwellen) "abgeschnitten".   
 
 ## 1.2 Schienenkauf - Stückliste
@@ -83,7 +83,13 @@ Zum Bau des Moduls werden folgende Gleise und Zubehör benötigt:
    
 Gesamtkosten 2025: ca. 435 Euro   
 
-## 1.3 Holzkauf für Modul 100 x 25 cm²
+## 1.3 Rahmen
+### 1.3.1 Modulrahmen
+Der 100 x 25 cm² große Modulrahmen ist 6 cm hoch und besteht aus zwei Seitenteilen ("Ost" und "West"), zwei Längsteilen ("Nord" und "Süd") sowie drei Querstreben. Die Geländeplatte wird in den Rahmen eingelegt.   
+Die Teile des Rahmens können entweder aus Holz hergestellt oder mit dem 3D-Drucker gedruckt werden. Auch eine gemischte Bauweise ist möglich, zB Seitenteile und Querstreben 3D-Drucken, Längsteile aus Holz.   
+
+
+### 1.3.2 Holzkauf für Modul 100 x 25 cm²
 Das Holz besorgt man sich am besten bei einem Baumarkt und lässt es gleich auf die folgenden Größen zuschneiden:   
 
 __Pappelsperrholz 10 mm__   
@@ -99,9 +105,12 @@ __Pappelsperrholz 5 mm (oder 4 mm)__
 |:-----:|:-------------:|:----------|   
 |   1   | 980 x 250 mm² | Bahndamm  |   
 
-Eventuell als zusätzliche Auflager für die Grundplatte: 4 kleine Holzstücken 10 x 10 x 50 mm³.   
+__Kleinteile__   
+20x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend (Fa. Spax 4 003530 021251)   
+4x Pappelsperrholz 10 mm stark, 70 x 35 mm² für die Halterungen der Sub-D-Stecker.   
+4x kleine Holzstücken 10 x 10 x 50 mm³ als zusätzliche Auflager für die Grundplatte.   
 
-## 1.4 Verbrauchsmaterial
+## 1.3.3 Verbrauchsmaterial
 Zum Bau des Moduls wird noch folgendes benötigt:   
 | St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
 |:----------:|:------:|:-----------|:-----------------|   
@@ -118,13 +127,13 @@ Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu 
 |      2     |   |   | Paar Einmal-Handschuhe         |   
 |      1     |   |   | Schleifpapier Körnung 240      |   
 
-## 1.5 Elektronische RCC-Komponenten
-### 1.5.1 Steuerung
+## 1.4 Elektronische RCC-Komponenten
+### 1.4.1 Steuerung
 Für die Steuerung wird der ESP32 mit den beiden Zusatzplatinen (I²C, DCC) und dem 1,54"-OLED-Display verwendet. Der Zusammenbau ist auf   
 [`https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md`](/fab/rcc2_esp32/LIESMICH.md)   
 beschrieben.   
 
-### 1.5.2 Anschluss der 25-poligen Stecker
+### 1.4.2 Anschluss der 25-poligen Stecker
 Für den Anschluss der 25-poligen Stecker und für die Stromversorgung werden folgende bestückte Leiterplatten benötigt:   
 * 1x [Netzteil-Platine AC_5V_supply_6pol_DCC](/fab/rcc1_supply/LIESMICH.md#x20)   
 * 1x [Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (RW_5V_SUB25_10)](/fab/rcc1_supply/LIESMICH.md#x33)   
@@ -132,14 +141,17 @@ Für den Anschluss der 25-poligen Stecker und für die Stromversorgung werden fo
 
 Die bestückte Netzteil-Platine muss auf die Trägerplatine `RW_5V_SUB25_10` montiert werden.   
 
-### 1.5.3 Ansteuerung der Schaltkomponenten
+### 1.4.3 Ansteuerung der Schaltkomponenten
 Für die Ansteuerung der Schaltkomponenten werden folgende Schaltblöcke benötigt:   
 * 1x [Block Dreiwegweiche (W3)](/fab/rcc4_block/LIESMICH.md#x30)   
 * 2x [Block Zweiwegweiche (W2)](/fab/rcc4_block/LIESMICH.md#x20)   
 * 1x [Block Entkuppler (1OUT)](/fab/rcc4_block/LIESMICH.md#x40)   
 * 3x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
 
-### 1.5.4 Verdrahtung
+### 1.4.4 I²C-Expander
+* 4x [PCF8574 I/O-Expander](/fab/rcc0_start/LIESMICH.md#34)   
+
+### 1.4.5 Verdrahtung
 Zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen:   
 ...ToDo...
 
@@ -151,8 +163,8 @@ __Drähte und Leitungen__
 
 # 2. Bau des Modul-Rahmens   
 ## 2.1 Einleitung
-Zuerst den Modul-Rahmen zu erstellen hat zwei Vorteile:   
-1. Der Test, ob die Grundplatte in den Rahmen passt, kann mit der leeren Grundplatte durchgeführt werden. Falls die Grundplatte zu groß ist, kann sie einfach zugeschnitten oder zugeschliffen werden.   
+Jedes Modul besteht aus einem Rahmen und der Grundplatte. Zuerst sollte man den Modul-Rahmen erstellen. Das hat zwei Vorteile:   
+1. Der Test, ob die Grundplatte in den Rahmen passt, kann mit der leeren Grundplatte erfolgen. Falls die Grundplatte zu groß ist, kann sie einfach zugeschnitten oder zugeschliffen werden.   
 2. Beim Aufkleben der Gleise auf die Grundplatte sind an den Modulübergängen (Ost und West) bereits die Seitenteile mit den Gleisausnehmungen vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
 
 ## 2.2 Materialbedarf
@@ -161,30 +173,32 @@ Das 100 x 25 cm² große Modul besteht aus zwei Teilen:
 * Grundplatte   
 
 ![Modul-Rahmen](./images/300_module_frame.png "Modul-Rahmen")   
-_Bild 4: Rahmen außen (Ra1 bis Ra4) mit Querverstrebung innen (Ri1, Ri2, Ri3)_
+_Bild 4: AnyRail-Darstellung des Rahmens außen (Ra1 bis Ra4) mit Querverstrebungen innen (Ri1, Ri2, Ri3)_
 
 ## 2.3 Seitenteile Ra1, Ra3 (West, Ost)
 Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnkörper-Profil jedoch der NEM122 entspricht:   
 
 ![Modul_OstWest_1_Mitte.png](./images/300_OstWest_1_Mitte.png "Modul_OstWest_1_Mitte")   
-_Bild 5: N_Modul_2012: Seitenteil Ost, West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
+_Bild 5: Maße für die Seitenteile Ost und West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
 
-Die vier 8mm-Bohrungen dienen zum Verbinden von Modulen durch 8 mm-Flügelschrauben und Flügelmuttern.   
+Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Flügelschrauben und Flügelmuttern.   
 Die linken und rechten vier 2 mm-Bohrungen dienen zum Anschrauben der Nord- und Südwand. Sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 Die oberen zwei 2mm-Bohrungen dienen zum Fixieren der Gelände-Grundplatte (falls erforderlich). Auch sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 Die 60x20 mm²-Ausnehmung dient zum Durchführen des 25-poligen Sub-D-Steckers.   
 Mit besonderer Vorsicht ist die Ausnehmung für das Gleis zu fertigen. Mit einer Laubsäge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile erweitert. Dabei ist immer wieder zu probieren, ob ein Fleischmann-Schotterbett-Gleis schon gerade (klemmend) hineinpasst und auch mittig ist.   
 
 ## 2.4 Rahmenteil Ra2 (Nord)
-Der Rahmenteil „Nord“ enthält dreimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden später die Querverstrebungen verschraubt.   
+Der Rahmenteil „Nord“ enthält dreimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden die Querverstrebungen verschraubt.   
 
 ![Modul_Nord_980mm](./images/300_Nord_980mm.png "Modul_Nord_980mm")   
 _Bild 6: Seitenteil Nord Ra2_   
 
 ## 2.5 Seitenteil Ra4 (Süd)
 Der Rahmenteil Süd enthält die Bohrungen für alle Steuerblöcke und die Querverstrebungen.   
-![]()   
-_Bild 7: Rahmenteil Süd Ra4_   
+Das Schaltbild der Dreiwegweiche W3 zeigt nach rechts (6 Bohrungen), das der ersten Zweiwegweiche W2 nach links unten (4 Bohrungen) und das des Entkupplers 1OUT nach rechts (4 Bohrungen). Es folgen die drei Schaltbilder für die Fahrstromabschaltung 2IO (7 Bohrungen) und das Schaltbild der zweiten Zweiwegweiche W2 nach rechts oben (4 Bohrungen).   
+
+![Modul_Süd_980mm](./images/300_Sued_980mm.png "Modul_Süd_980mm")   
+_Bild 7: Maße für den Rahmenteil Süd (Ra4)_   
 
 ## 2.6 Querverstrebung Ri1 bis Ri3
 Die Querverstrebungen enthalten Durchbrüche für Kabel.   
@@ -194,6 +208,9 @@ _Bild 8: Querverstrebungen Ri1 bis Ri3_
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
+
+## 2.7 Zusammenbau des Rahmens
+
 
 # 3. Aufbau des Gleisplans   
 
