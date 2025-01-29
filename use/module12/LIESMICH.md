@@ -163,20 +163,19 @@ __Drähte und Leitungen__
 
 # 2. Bau des Modul-Rahmens   
 ## 2.1 Einleitung
-Jedes Modul besteht aus einem Rahmen und der Grundplatte. Zuerst sollte man den Modul-Rahmen erstellen. Das hat zwei Vorteile:   
+Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, die die Gleise und Landschaft enthält. Zuerst sollte man den Modul-Rahmen erstellen. Das hat zwei Vorteile:   
 1. Der Test, ob die Grundplatte in den Rahmen passt, kann mit der leeren Grundplatte erfolgen. Falls die Grundplatte zu groß ist, kann sie einfach zugeschnitten oder zugeschliffen werden.   
 2. Beim Aufkleben der Gleise auf die Grundplatte sind an den Modulübergängen (Ost und West) bereits die Seitenteile mit den Gleisausnehmungen vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
 
-## 2.2 Materialbedarf
-Das 100 x 25 cm² große Modul besteht aus zwei Teilen:   
-* Rahmen mit Querverstrebungen   
-* Grundplatte   
+Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 
 ![Modul-Rahmen](./images/300_module_frame.png "Modul-Rahmen")   
-_Bild 4: AnyRail-Darstellung des Rahmens außen (Ra1 bis Ra4) mit Querverstrebungen innen (Ri1, Ri2, Ri3)_
+_Bild 4: AnyRail-Darstellung des Rahmengrundrisses mit den Außenteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1, Ri2, Ri3)_
 
-## 2.3 Seitenteile Ra1, Ra3 (West, Ost)
-Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnkörper-Profil jedoch der NEM122 entspricht:   
+Die einzelnen Teile des Rahmens müssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
+
+## 2.2 Seitenteile Ra1, Ra3 (West, Ost)
+Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnkörper-Profil aber der NEM122 entspricht:   
 
 ![Modul_OstWest_1_Mitte.png](./images/300_OstWest_1_Mitte.png "Modul_OstWest_1_Mitte")   
 _Bild 5: Maße für die Seitenteile Ost und West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
@@ -185,32 +184,48 @@ Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Flügelschrauben
 Die linken und rechten vier 2 mm-Bohrungen dienen zum Anschrauben der Nord- und Südwand. Sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 Die oberen zwei 2mm-Bohrungen dienen zum Fixieren der Gelände-Grundplatte (falls erforderlich). Auch sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 Die 60x20 mm²-Ausnehmung dient zum Durchführen des 25-poligen Sub-D-Steckers.   
-Mit besonderer Vorsicht ist die Ausnehmung für das Gleis zu fertigen. Mit einer Laubsäge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile erweitert. Dabei ist immer wieder zu probieren, ob ein Fleischmann-Schotterbett-Gleis schon gerade (klemmend) hineinpasst und auch mittig ist.   
+Mit besonderer Vorsicht ist die Ausnehmung für das Gleis zu fertigen. Mit einer Laubsäge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile so lange erweitert, bis ein Fleischmann-Schotterbett-Gleis gerade (klemmend) hineinpasst und auch mittig positioniert ist.   
 
-## 2.4 Rahmenteil Ra2 (Nord)
-Der Rahmenteil „Nord“ enthält dreimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden die Querverstrebungen verschraubt.   
+## 2.3 Rahmenteil Ra2 (Nord)
+Der Rahmenteil „Nord“ enthält lediglich dreimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden die Querverstrebungen verschraubt.   
 
 ![Modul_Nord_980mm](./images/300_Nord_980mm.png "Modul_Nord_980mm")   
 _Bild 6: Seitenteil Nord Ra2_   
 
-## 2.5 Seitenteil Ra4 (Süd)
+## 2.4 Seitenteil Ra4 (Süd)
 Der Rahmenteil Süd enthält die Bohrungen für alle Steuerblöcke und die Querverstrebungen.   
 Das Schaltbild der Dreiwegweiche W3 zeigt nach rechts (6 Bohrungen), das der ersten Zweiwegweiche W2 nach links unten (4 Bohrungen) und das des Entkupplers 1OUT nach rechts (4 Bohrungen). Es folgen die drei Schaltbilder für die Fahrstromabschaltung 2IO (7 Bohrungen) und das Schaltbild der zweiten Zweiwegweiche W2 nach rechts oben (4 Bohrungen).   
 
 ![Modul_Süd_980mm](./images/300_Sued_980mm.png "Modul_Süd_980mm")   
 _Bild 7: Maße für den Rahmenteil Süd (Ra4)_   
 
-## 2.6 Querverstrebung Ri1 bis Ri3
-Die Querverstrebungen enthalten Durchbrüche für Kabel.   
+Die genaue Lage der Bohrungen zeigt das folgende Bild:   
+
+![Bohrposition LEDs und Taster](./images/300_drill_position_LED_button.png "Bohrposition LEDs und Taster")   
+_Bild 8: Maße für die LED- und Taster-Bohrungen_   
+
+Der Bohrdurchmesser für die LED-Fassungen beträgt 5,6 mm, der für die Taster ca. 7 mm.   
+
+Die Aussparnugen für die OLED-Anzeige und den dazugehörigen Taster sind abhängig davon, ob man die Bauteile einzeln montiert oder einen 3D-Druck-Rahmen verwendet. Bei getrennter Montage benötigt man eine rechteckförmige Aussparung der Größe 20 x 38 mm² und eine 11,6 mm-Bohrung.   
+![OLED_Button_single](./images/300_OLED_Button_single.png "OLED_Button_single")   
+_Bild 9: Maße für die getrennte Montage der OLED-Anzeige und des Tasters_   
+
+Bei Verwendung eines 3D-gedruckten Rahmens benötigt man eine rechteckförmige Aussparung der Größe 80 x 43 mm².   
+![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
+_Bild 10: Maße für den Rahmen der OLED-Anzeige mit Taster_   
+
+## 2.5 Querverstrebung Ri1 bis Ri3
+Die Querverstrebungen enthalten verschiedene Durchbrüche für Kabel und zwei Bohrungen für die Halterung der 25-poligen Sub-D-Stecker.   
 
 ![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
-_Bild 8: Querverstrebungen Ri1 bis Ri3_
+_Bild 11: Querverstrebungen Ri1 bis Ri3_
+
+## 2.6 Zusammenbau des Rahmens
+Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser zusammengeschraubt werden.   
+
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
-
-## 2.7 Zusammenbau des Rahmens
-
 
 # 3. Aufbau des Gleisplans   
 
