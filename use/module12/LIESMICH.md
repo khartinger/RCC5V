@@ -198,28 +198,41 @@ Der Rahmenteil „Nord“ enthält lediglich dreimal zwei Bohrungen mit 2 mm Dur
 _Bild 6: Seitenteil Nord Ra2_   
 
 ## 2.4 Seitenteil Ra4 (Süd)
-Der Rahmenteil Süd ist am aufwändigsten zu fertigen, da er die Bohrungen für alle Steuerblöcke und für alle Querverstrebungen enthält.   
-Das Schaltbild der Dreiwegweiche W3 zeigt nach rechts (6 Bohrungen), das der ersten Zweiwegweiche W2 nach links unten (4 Bohrungen) und das des Entkupplers 1OUT nach rechts (4 Bohrungen). Es folgen die drei Schaltbilder für die Fahrstromabschaltung 2IO (7 Bohrungen) und das Schaltbild der zweiten Zweiwegweiche W2 nach rechts oben (4 Bohrungen).   
+Der Rahmenteil Süd ist am aufwändigsten zu fertigen, da er das Display, einen Taster und die Bohrungen für alle Steuerblöcke und für alle Querverstrebungen enthält. Das folgende Bild gibt einen Überblick über die erforderlichen Bohrungen.   
 
 ![Modul_Süd_980mm](./images/300_Sued_980mm.png "Modul_Süd_980mm")   
 _Bild 7: Maße für den Rahmenteil Süd (Ra4)_   
 
-Die genaue Lage aller Bohrungen für einen Schaltblock zeigt das folgende Bild, wobei je nach Schaltblock-Typ nur die entsprechenden Bohrungen benötigt werden (!):   
-
-![Bohrposition LEDs und Taster](./images/300_drill_position_LED_button.png "Bohrposition LEDs und Taster")   
-_Bild 8: Maße für die LED- und Taster-Bohrungen_   
-
-Der Bohrdurchmesser für die LED-Fassungen beträgt 5,6 mm, der für die Taster ca. 7 mm.   
-
+__OLED-Anzeige__   
 Die Aussparungen für die OLED-Anzeige und den dazugehörigen Taster sind abhängig davon, ob man die Bauteile einzeln montiert oder einen 3D-Druck-Rahmen verwendet. Bei getrennter Montage benötigt man eine rechteckförmige Aussparung der Größe 20 x 38 mm² und eine 11,6 mm-Bohrung.   
 ![OLED_Button_single](./images/300_OLED_Button_single.png "OLED_Button_single")   
-_Bild 9: Maße für die getrennte Montage der OLED-Anzeige und des Tasters_   
+_Bild 8: Maße für die getrennte Montage der OLED-Anzeige und des Tasters_   
 
 Bei Verwendung eines 3D-gedruckten Rahmens benötigt man eine rechteckförmige Aussparung der Größe 80 x 43 mm².   
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
-_Bild 10: Maße für den Rahmen der OLED-Anzeige mit Taster_   
+_Bild 9: Maße für den Rahmen der OLED-Anzeige mit Taster_   
 
-Möchte man die Bedienelemente beschriften, so sind die Cover nach dem Bohren aller LED- und Taster-Bohrungen auszudrucken, auszuschneiden und aufzukleben. Anschließend sind die LED-Fassungen einzupressen. Schließlich kann man die Halterungen der für die Steuerblöcke montieren und testen, ob die Bohrungen für die Steuerblöcke passen. Der Abstand der Blöcke von der Unterseite des Rahmens beträgt 5,5 mm.   
+__Steuerblöcke__   
+Je nach Art des Steuerelementes werden unterschiedliche Bohrungen benötigt. So zeigt das Schaltbild der Dreiwegweiche W3 nach rechts (6 Bohrungen), das der ersten Zweiwegweiche W2 nach links unten (4 Bohrungen) und das des Entkupplers 1OUT nach rechts (4 Bohrungen). Es folgen die drei Schaltbilder für die Fahrstromabschaltung 2IO (7 Bohrungen) und das Schaltbild der zweiten Zweiwegweiche W2 nach rechts oben (4 Bohrungen).   
+Die genaue Lage aller Bohrungen für einen Schaltblock zeigt das folgende Bild, wobei je nach Schaltblock-Typ nur die entsprechenden Bohrungen benötigt werden (!):   
+
+![Bohrposition LEDs und Taster](./images/300_drill_position_LED_button.png "Bohrposition LEDs und Taster")   
+_Bild 10: Maße für die LED- und Taster-Bohrungen_   
+
+Der Bohrdurchmesser für die LED-Fassungen beträgt 5,6 mm, der für die Taster ca. 7 mm.   
+
+__Beschriftung__   
+Die Beschriftung der Modul 12-Steuerelemente kann zB folgendermaßen aussehen:   
+![Beschriftung Bedienungselemente](./images/300_M12_cover.png "Beschriftung Bedienungselemente")   
+_Bild 11: Beschriftung der Bedienungselemente für Modul 12_   
+
+Diese Abdeckungen (Cover) sind nach dem Bohren aller LED- und Taster-Bohrungen auszudrucken, auszuschneiden und aufzukleben.   
+
+__LED-Fassungen__   
+Anschließend sind die LED-Fassungen einzupressen.   
+
+__Halterungen für Steuerblöcke__   
+Schließlich kann man die Halterungen der für die Steuerblöcke montieren und testen, ob die Bohrungen für die Steuerblöcke passen. Der Abstand der Blöcke von der Unterseite des Rahmens beträgt 5,5 mm.   
 
 Die Position der Schrauben für die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgendermaßen festgelegt:   
 ![Schraubposition für Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition für Blockhalter")   
