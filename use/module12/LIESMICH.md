@@ -149,6 +149,8 @@ Für die Ansteuerung der Schaltkomponenten werden folgende Schaltblöcke benöti
 * 1x [Block Entkuppler (1OUT)](/fab/rcc4_block/LIESMICH.md#x40)   
 * 3x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
 
+Weiters werden 25 LED-Fassungen benötigt.   
+
 ### 1.4.4 I²C-Expander
 * 4x [PCF8574 I/O-Expander](/fab/rcc0_start/LIESMICH.md#34)   
 
@@ -217,7 +219,7 @@ Bei Verwendung eines 3D-gedruckten Rahmens benötigt man eine rechteckförmige A
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
 _Bild 10: Maße für den Rahmen der OLED-Anzeige mit Taster_   
 
-Nach dem Bohren aller LED- und Taster-Bohrungen sollte man gleich die Halterungen für die Steuerblöcke montieren und testen, ob die Bohrungen für die Steuerblöcke passen. Der Abstand der Blöcke von der Unterseite des Rahmens beträgt 5,5 mm.   
+Möchte man die Bedienelemente beschriften, so sind die Cover nach dem Bohren aller LED- und Taster-Bohrungen auszudrucken, auszuschneiden und aufzukleben. Anschließend sind die LED-Fassungen einzupressen. Schließlich kann man die Halterungen der für die Steuerblöcke montieren und testen, ob die Bohrungen für die Steuerblöcke passen. Der Abstand der Blöcke von der Unterseite des Rahmens beträgt 5,5 mm.   
 
 Die Position der Schrauben für die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgendermaßen festgelegt:   
 ![Schraubposition für Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition für Blockhalter")   
