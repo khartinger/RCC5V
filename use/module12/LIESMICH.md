@@ -106,7 +106,7 @@ __Pappelsperrholz 5 mm (oder 4 mm)__
 |   1   | 980 x 250 mm² | Bahndamm  |   
 
 __Kleinteile__   
-20x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend (Fa. Spax 4 003530 021251)   
+20x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend (zB Fa. Spax 4 003530 021251)   
 4x Pappelsperrholz 10 mm stark, 70 x 35 mm² für die Halterungen der Sub-D-Stecker.   
 4x kleine Holzstücken 10 x 10 x 50 mm³ als zusätzliche Auflager für die Grundplatte.   
 
@@ -181,14 +181,16 @@ Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei da
 ![Modul_OstWest_1_Mitte.png](./images/300_OstWest_1_Mitte.png "Modul_OstWest_1_Mitte")   
 _Bild 5: Maße für die Seitenteile Ost und West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
 
-Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Flügelschrauben und Flügelmuttern.   
-Die linken und rechten vier 2 mm-Bohrungen dienen zum Anschrauben der Nord- und Südwand. Sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
-Die oberen zwei 2mm-Bohrungen dienen zum Fixieren der Gelände-Grundplatte (falls erforderlich). Auch sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
-Die 60x20 mm²-Ausnehmung dient zum Durchführen des 25-poligen Sub-D-Steckers.   
+* Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 250 x 70 mm²   
+* Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Flügelschrauben und Flügelmuttern.   
+* Die linken und rechten vier 2 mm-Bohrungen dienen zum Anschrauben der Nord- und Südwand. Sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
+* Die oberen zwei 2mm-Bohrungen dienen zum Fixieren der Gelände-Grundplatte (falls erforderlich). Auch sie müssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
+* Die 60x20 mm²-Ausnehmung dient zum Durchführen des 25-poligen Sub-D-Steckers.   
+
 Mit besonderer Vorsicht ist die Ausnehmung für das Gleis zu fertigen. Mit einer Laubsäge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile so lange erweitert, bis ein Fleischmann-Schotterbett-Gleis gerade (klemmend) hineinpasst und auch mittig positioniert ist.   
 
 ## 2.3 Rahmenteil Ra2 (Nord)
-Der Rahmenteil „Nord“ enthält lediglich dreimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden die Querverstrebungen verschraubt.   
+Der Rahmenteil „Nord“ enthält lediglich dreimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden innen die Querverstrebungen verschraubt.   
 
 ![Modul_Nord_980mm](./images/300_Nord_980mm.png "Modul_Nord_980mm")   
 _Bild 6: Seitenteil Nord Ra2_   
@@ -200,7 +202,7 @@ Das Schaltbild der Dreiwegweiche W3 zeigt nach rechts (6 Bohrungen), das der ers
 ![Modul_Süd_980mm](./images/300_Sued_980mm.png "Modul_Süd_980mm")   
 _Bild 7: Maße für den Rahmenteil Süd (Ra4)_   
 
-Die genaue Lage der Bohrungen zeigt das folgende Bild:   
+Die genaue Lage aller Bohrungen für einen Schaltblock zeigt das folgende Bild, wobei je nach Schaltblock-Typ nur die entsprechenden Bohrungen benötigt werden (!):   
 
 ![Bohrposition LEDs und Taster](./images/300_drill_position_LED_button.png "Bohrposition LEDs und Taster")   
 _Bild 8: Maße für die LED- und Taster-Bohrungen_   
@@ -215,13 +217,19 @@ Bei Verwendung eines 3D-gedruckten Rahmens benötigt man eine rechteckförmige A
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
 _Bild 10: Maße für den Rahmen der OLED-Anzeige mit Taster_   
 
-Nach dem Bohren aller LED- und Taster-Bohrungen sollte man gleich die Halterungen für die Steuerblöcke montieren und testen, ob die Bohrungen für die Steuerblöcke passen.   
+Nach dem Bohren aller LED- und Taster-Bohrungen sollte man gleich die Halterungen für die Steuerblöcke montieren und testen, ob die Bohrungen für die Steuerblöcke passen. Der Abstand der Blöcke von der Unterseite des Rahmens beträgt 5,5 mm.   
+
+Die Position der Schrauben für die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgendermaßen festgelegt:   
+![Schraubposition für Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition für Blockhalter")   
+_Bild 11: Position der Schrauben für die Steuerblock-Halterungen_   
+
+
 
 ## 2.5 Querverstrebung Ri1 bis Ri3
 Die Querverstrebungen enthalten verschiedene Durchbrüche für Kabel und zwei Bohrungen für die Halterung der 25-poligen Sub-D-Stecker.   
 
 ![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
-_Bild 11: Querverstrebungen Ri1 bis Ri3_
+_Bild 12: Querverstrebungen Ri1 bis Ri3_
 
 ## 2.6 Zusammenbau des Rahmens
 Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser zusammengeschraubt werden.   
