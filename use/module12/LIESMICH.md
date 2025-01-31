@@ -197,7 +197,7 @@ Der Rahmenteil „Nord“ enthält lediglich dreimal zwei Bohrungen mit 2 mm Dur
 ![Modul_Nord_980mm](./images/300_Nord_980mm.png "Modul_Nord_980mm")   
 _Bild 6: Seitenteil Nord Ra2_   
 
-## 2.4 Seitenteil Ra4 (Süd)
+## 2.4 Rahmenteil Ra4 (Süd)
 Der Rahmenteil Süd ist am aufwändigsten zu fertigen, da er das Display, einen Taster und die Bohrungen für alle Steuerblöcke und für alle Querverstrebungen enthält. Das folgende Bild gibt einen Überblick über die erforderlichen Bohrungen.   
 
 ![Modul_Süd_980mm](./images/300_Sued_980mm.png "Modul_Süd_980mm")   
@@ -213,7 +213,7 @@ Bei Verwendung eines 3D-gedruckten Rahmens benötigt man eine rechteckförmige A
 _Bild 9: Maße für den Rahmen der OLED-Anzeige mit Taster_   
 
 __Steuerblöcke__   
-Je nach Art des Steuerelementes werden unterschiedliche Bohrungen benötigt. So zeigt das Schaltbild der Dreiwegweiche W3 nach rechts (6 Bohrungen), das der ersten Zweiwegweiche W2 nach links unten (4 Bohrungen) und das des Entkupplers 1OUT nach rechts (4 Bohrungen). Es folgen die drei Schaltbilder für die Fahrstromabschaltung 2IO (7 Bohrungen) und das Schaltbild der zweiten Zweiwegweiche W2 nach rechts oben (4 Bohrungen).   
+Je nach Art des Steuerelementes werden unterschiedliche Bohrungen benötigt. So zeigt das Symbol der Dreiwegweiche W3 nach rechts (6 Bohrungen), das der ersten Zweiwegweiche W2 nach links unten (4 Bohrungen) und das des Entkupplers 1OUT nach rechts (4 Bohrungen). Es folgen die drei Schaltsymbole für die Fahrstromabschaltung 2IO (7 Bohrungen) und das Schaltbild der zweiten Zweiwegweiche W2 nach rechts oben (4 Bohrungen).   
 Die genaue Lage aller Bohrungen für einen Schaltblock zeigt das folgende Bild, wobei je nach Schaltblock-Typ nur die entsprechenden Bohrungen benötigt werden (!):   
 
 ![Bohrposition LEDs und Taster](./images/300_drill_position_LED_button.png "Bohrposition LEDs und Taster")   
@@ -221,34 +221,42 @@ _Bild 10: Maße für die LED- und Taster-Bohrungen_
 
 Der Bohrdurchmesser für die LED-Fassungen beträgt 5,6 mm, der für die Taster ca. 7 mm.   
 
-__Beschriftung__   
-Die Beschriftung der Modul 12-Steuerelemente kann zB folgendermaßen aussehen:   
+Das einzelne Anzeichnen der Positionen der Bohrungen benötigt viel Zeit und genaues Arbeiten. Daher macht es Sinn, für die Schaltblöcke Abdeckungen (Beschriftungen) zu entwerfen, diese auf Etikettenpapier auszudrucken und auf das Holz aufzukleben (Abstand zum unteren Rand 8 mm). Damit ist das Bohren wesentlich einfacher. Die Beschriftungen können entweder beibehalten oder entfernt werden, wenn man sie nicht möchte. Falls die Beschriftungen zu stark durch das Bohren beschädigt wurden, kann man sie auch durch neue ersetzen....   
+
+Das folgende Bild zeigt die 40 x 42 mm großen Abdeckungen.   
+ 
 ![Beschriftung Bedienungselemente](./images/300_M12_cover.png "Beschriftung Bedienungselemente")   
 _Bild 11: Beschriftung der Bedienungselemente für Modul 12_   
 
-Diese Abdeckungen (Cover) sind nach dem Bohren aller LED- und Taster-Bohrungen auszudrucken, auszuschneiden und aufzukleben.   
-
 __LED-Fassungen__   
-Anschließend sind die LED-Fassungen einzupressen.   
+Nach dem Bohren sind die Bohrungen zu reinigen und die LED-Fassungen einzupressen.   
 
 __Halterungen für Steuerblöcke__   
-Schließlich kann man die Halterungen der für die Steuerblöcke montieren und testen, ob die Bohrungen für die Steuerblöcke passen. Der Abstand der Blöcke von der Unterseite des Rahmens beträgt 5,5 mm.   
+Als Nächstes kann man die Halterungen für die Steuerblöcke mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Blöcke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
 
 Die Position der Schrauben für die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgendermaßen festgelegt:   
 ![Schraubposition für Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition für Blockhalter")   
-_Bild 11: Position der Schrauben für die Steuerblock-Halterungen_   
+_Bild 12: Position der Schrauben für die Steuerblock-Halterungen_   
 
+Den fertigen Rahmenteil Süd zeigen die folgenden Bilder   
+![Rahmenteil Süd Forderseite](./images/300_Frame_South_front.png "Rahmenteil Süd Forderseite")   
+_Bild 13: Rahmenteil Süd Forderseite_   
+
+![Rahmenteil Süd Rückseite](./images/300_Frame_South_back.png "Rahmenteil Süd Rückseite")   
+_Bild 14: Rahmenteil Süd Rückseite_   
 
 
 ## 2.5 Querverstrebung Ri1 bis Ri3
 Die Querverstrebungen enthalten verschiedene Durchbrüche für Kabel und zwei Bohrungen für die Halterung der 25-poligen Sub-D-Stecker.   
 
 ![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
-_Bild 12: Querverstrebungen Ri1 bis Ri3_
+_Bild 15: Querverstrebungen Ri1 bis Ri3_
 
 ## 2.6 Zusammenbau des Rahmens
 Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser zusammengeschraubt werden.   
 
+![](./images/300_M12_frame_bottom_view.png)   
+_Bild 16: Zusammengeschraubter Rahmen, Ansicht von unten_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
