@@ -19,6 +19,7 @@ Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 
 | Bedienelemente | 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 3x Fahrstrom (Block 2IO, DCC 125, 126 und 127) |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 | MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
+
 <a name="x05"></a>   
 
 # Inhaltsverzeichnis   
@@ -26,24 +27,31 @@ Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 
 * [2. Bau des Modul-Rahmens](#x20)   
 * [3. Aufbau des Gleisplans](#x30)   
 
-
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
 
 # 1. Vorbereitung und Einkauf
 ## 1.1 Entwurf des Gleisplans
 ### 1.1.1 Allgemeines zu Gleisplänen
-Beim Erstellen eines Gleisplans sind zwei Dinge zu beachten: das Lichtraumprofil und die Höhe des Gleisaufbaus. Das Lichtraumprofil gibt an, wieviel Platz (vor allem von langen Waggons) neben dem Gleis benötigt wird und ist bei engen Radien wichtig. Die Höhe des Gleisaufbaus (Bahnkörper) ist bei mehrstöckigen Anlagen oder Tunnels wichtig.   
+Beim Erstellen eines Gleisplans sind zwei Dinge zu beachten: das Lichtraumprofil und die Höhe des Gleisaufbaus.   
+Das __Lichtraumprofil__ gibt an, wieviel Platz (vor allem von langen Waggons) neben dem Gleis benötigt wird und ist bei engen Radien wichtig.   
 Für den Radius R2 benötigt man eine Gesamt-Gleisbreite von 27 + 2 · 7 = 41 mm.   
 ![Lichtraumprofil](./images/300_lichtraumprofil.png "Lichtraumprofil")   
 _Bild 1: Lichtraumprofil_   
 
-Der Bahnkörper wird aus 5 mm Sperrholz und 3 mm Schaumstoff der Fa. Noch (95962 Gleisbett-Rolle N) hergestellt und mit Gleisschotter der Firma Fleischmann (9479) verfeinert.   
+Die __Höhe des Gleisaufbaus__ (Bahnkörper) ist für die Landschaftsgestaltung und bei mehrstöckigen Anlagen oder Tunnels wichtig. Man kann verschiedene Ebenen unterscheiden.   
+* E0 . . . . . Oberkante der Basisplatte (= 6 cm über einer Tischplatte). Auf dieser Ebene werden der Bahndamm und, darauf aufbauend, das Schotterbett aufgesetzt.   
+* E5 . . . . . Oberkante des Bahndamms. Auf dieser Ebene setzt das Schotterbett auf.   
+* E8 . . . . . Auf dieser Ebene liegt das Modellgleis. Hier werden auch Modell-Bahnsteige und Bahnhöfe platziert. In der Realität gibt es diese Ebene eigentlich nicht, da sie mitten in der Höhe des Schotterbettes liegt.   
+* E10 . . . . . Oberkante des Schotterbettes bzw. Unterkante des Gleises.   
+* E12 . . . . . Oberkante des Gleises. Straßen für Bahnübersetzungen sollten dieses Niveau haben, wobei Bahnübergang-Bausätze oft eine Art "Rampe" bzw. Auffahrt haben, weil die Bausätze üblicherweise auf Ebene E8 platziert werden.   
+
 ![Aufbau Bahnk&ouml;rper](./images/300_aufbau_bahnkoerper.png "Aufbau Bahnk&ouml;rper")   
 _Bild 2: Aufbau des Bahnkörpers_   
 
-Sollte 5 mm Sperrholz nicht zur Verfügung stehen, kann man auch 4 mm Sperrholz nehmen und unterhalb ein Millimeter dicken, selbst klebenden Kork hinaufkleben.   
-Wenn man die __Breite des Bahndamms__ (Planum) mit 40 mm (oben) bzw. __50 mm__ (unten) annimmt, so ist das Lichtraumprofil in der Breite automatisch erfüllt.   
+Im Modell wird der Bahnkörper aus 5 mm Sperrholz und 3 mm Schaumstoff der Fa. Noch (95962 Gleisbett-Rolle N) hergestellt und mit Gleisschotter der Firma Fleischmann (9479) verfeinert. Mit einer Höhe von 4 mm (genauer 4,1 mm) für das Fleischmann-Gleis mit Schotterbett ergibt sich eine Gesamthöhe von 12,1 mm.   
+Sollte 5 mm Sperrholz nicht zur Verfügung stehen, kann man auch 4 mm starkes Sperrholz verwenden und auf die Unterseite einen ein Millimeter dicken, selbst klebenden Kork hinaufkleben.   
+Wenn man die __Breite des Bahndamms__ (Planum) mit 40 mm (oben) bzw. __50 mm__ (unten) annimmt, so ist das Lichtraumprofil für R2 in der Breite automatisch erfüllt.   
 __Mindesthöhe im Tunnel__: 46 mm (Höhe ab Schwellenunterkante) + 3 mm (Schotterbett) + 5 mm (Bahndamm) = __54 mm__ ab der Grundplatte.   
 
 ### 1.1.2 Entwurf des Gleisplans
