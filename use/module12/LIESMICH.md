@@ -246,7 +246,7 @@ Die Position der Schrauben für die Steuerblock-Halterungen auf der Innenseite d
 ![Schraubposition für Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition für Blockhalter")   
 _Bild 12: Position der Schrauben für die Steuerblock-Halterungen_   
 
-Den fertigen Rahmenteil Süd zeigen die folgenden Bilder   
+Den fertigen Rahmenteil Süd (ohne Fahrstromabschaltung Gleis 1A) zeigen die folgenden Bilder   
 ![Rahmenteil Süd Forderseite](./images/300_Frame_South_front.png "Rahmenteil Süd Forderseite")   
 _Bild 13: Rahmenteil Süd Forderseite_   
 
@@ -270,11 +270,39 @@ _Bild 16: Zusammengeschraubter Rahmen, Ansicht von unten_
 <a name="x30"></a>   
 
 # 3. Aufbau des Gleisplans   
-## 3.1 
 
+## 3.1 Stellprobe   
+Der Probeaufbau erfolgt auf der 5 mm (bzw. 4 mm) Sperrholzplatte. Dazu wird der Gleisplan im Maßstab 1:1 auf diese gezeichnet. Das kann entweder durch Ausdruck des Gleisplans im Maßstab 1:1 und übertragen auf das Sperrholz erfolgen (zB mit Kohlepapier), oder durch Übertragen der Koordinaten auf das Sperrholz und Zeichnen des Gleisplans.   
+Danach werden die Gleise entsprechend der Stückliste isoliert und zusammengesteckt und eine erste Probefahrt durchgeführt.   
+Beim Probeaufbau sollten auch alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufgestellt werden, damit man weiß, wie der Bahnkörper (die 5 mm bzw. 4 mm Platte) zugeschnitten werden muss.   
 
+## 3.2 Zuschneiden und Aufkleben des Bahndamms auf die Grundplatte   
+War die Stellprobe erfolgreich, folgen Überlegungen zu den einzelnen Geländehöhen.   
+* An beiden Seiten des Moduls (Ost und West) ist die Geländehöhe null (E0). Ausgenommen davon ist der Bahndamm und das Schotterbett des Gleises, das in den Modul führt.   
+* Das Schotterbett liegt auf der Ebene E5 (= 5 mm Sperrholz). Der Übergang zu Ebene E0 erfolgt über Schrägen mit 45 Grad.   
+* Die Fleischmann-Gleise liegen auf Niveau E8. Dazu wird auf das 5 mm-Sperrholz das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Der Schaumstoff dämpft auch etwas das Fahrgeräusch (Schallschutz).   
+* Bahnhofsgebäude, Bahnsteige oder Verladerampen stehen normalerweise auf Niveau E8. An diesen Stellen sollte man das 5 mm-Sperrholz ausschneiden und gleich 8 mm hohes Sperrholz einsetzen und nicht die Höhe schichtweise aufzubauen.   
+* Straßen, die die Gleise überqueren, haben als Oberkante E12.   
 
+Hat man entschieden, wo welche Sperrholz-Höhen eingesetzt werden, schneidet man die entsprechenden Platten zu und klebt sie auf die Grundplatte. Dazu sollte sich die Grundplatte im Rahmen befinden, damit man den Gleisanschluss am linken und rechten Rand genau herstellen kann.   
+
+Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, müssen noch Aussparungen ausgeschnitten werden.   
+
+![Maße der Aussparung für Unterflurantrieb](./images/300_turnout_cutout_right.png "Maße der Aussparung für Unterflurantrieb")   
+_Bild 17: Maße der Aussparung für einen Unterflurantrieb._   
+
+Die folgenden beiden Bilder zeigen die verschiedenen Ebenen des Geländes und die Aussparungen für die Weichen. Links vorne und rechts hinten ist das Niveau E0, in der Mitte und hinten ist 8 mm hohes Sperrholz (E8).   
+![Bahndamm2](./images/300_Bahndamm2.png "Bahndamm2")   
+![Bahndamm](./images/300_Bahndamm.png "Bahndamm")   
+_Bild 18: Verschiedene Modul-Ebenen_
 
 # ...ToDo... ================================   
+
+## 3.3 Bettungskörper (Schotterbett)
+
+## 3.4 Gleisbauarbeiten
+
+
+
 
 [Zum Seitenanfang](#up)

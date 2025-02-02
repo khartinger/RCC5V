@@ -6,5 +6,7 @@ Last modified: 2025-01-12 <a name="up"></a><br>
 
 # ...ToDo...
 
+<a href="LIESMICH.md">See German Version ;)</a>   
+
 [To the top of the page](#up)   
 <a name="x20"></a>   
