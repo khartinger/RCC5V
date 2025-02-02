@@ -151,13 +151,13 @@ Die bestückte Netzteil-Platine muss auf die Trägerplatine `RW_5V_SUB25_10` mon
 
 ### 1.4.3 Ansteuerung der Schaltkomponenten
 Für die Ansteuerung der Schaltkomponenten werden folgende Schaltblöcke benötigt:   
-* 7x [Halterung für Schaltblöcke](/fab/rcc5_add_ons/LIESMICH.md#x20)   
+* 8x [Halterung für Schaltblöcke](/fab/rcc5_add_ons/LIESMICH.md#x20)   
 * 1x [Block Dreiwegweiche (W3)](/fab/rcc4_block/LIESMICH.md#x30)   
 * 2x [Block Zweiwegweiche (W2)](/fab/rcc4_block/LIESMICH.md#x20)   
 * 1x [Block Entkuppler (1OUT)](/fab/rcc4_block/LIESMICH.md#x40)   
-* 3x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
+* 4x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
 
-Weiters werden 25 LED-Fassungen benötigt.   
+Weiters werden 30 LED-Fassungen benötigt.   
 
 ### 1.4.4 I²C-Expander
 * 4x [PCF8574 I/O-Expander](/fab/rcc0_start/LIESMICH.md#34)   
@@ -270,7 +270,7 @@ _Bild 16: Zusammengeschraubter Rahmen, Ansicht von unten_
 <a name="x30"></a>   
 
 # 3. Aufbau des Gleisplans   
-
+## 3.1 
 
 
 
