@@ -464,7 +464,7 @@ __Stückliste__
 Auf die _*Lötseite*_ löten:   
 10. Stiftleisten J1 und J2 NACH UNTEN anlöten!   
 
-_Nicht vergessen_: Optokoppler U1 in die Fassung stecken...   
+_Nicht vergessen_: Optokoppler U1 richtig herum in die Fassung stecken...   
 
 ### Versionen
 * V1 (240930): OK
@@ -499,8 +499,8 @@ _Bild 35: Bestückte Platine "RW_5V_2IO_LED"_
 |    2   | SW1,SW2           | _*Schalter*_ SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
    
 ### Vorbereitung   
-1. Von einer langen, einreihigen Buchsenleiste 4x 2-polige Stücke abtrennen (für D1 bis D6).   
-2. Die LED-Anschlüsse entsprechend Bild xx abschneiden und biegen.   
+1. Von einer langen, einreihigen Buchsenleiste 5x 2-polige Stücke abtrennen (für D1, D3 bis D6).   
+2. Die LED-Anschlüsse entsprechend Bild 4 abschneiden und biegen.   
 
 ### Bestückung   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D4, D5, D6) auf die _Lötseite_ des Prints löten.   
@@ -584,7 +584,7 @@ __Stückliste__
 Auf die _*Lötseite*_ löten:   
 10. Stiftleisten J1 und J2 NACH UNTEN anlöten!   
 
-_Nicht vergessen_: Optokoppler U1, U2 in die Fassung stecken...   
+_Nicht vergessen_: Optokoppler U1, U2 richtig herum in die Fassung stecken...   
 
 ### Versionen
 * V1 (241124): OK
