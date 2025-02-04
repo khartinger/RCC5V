@@ -296,9 +296,25 @@ Die folgenden beiden Bilder zeigen die verschiedenen Ebenen des Geländes und di
 ![Bahndamm](./images/300_Bahndamm.png "Bahndamm")   
 _Bild 18: Verschiedene Modul-Ebenen_
 
+## 3.3 Bettungskörper (Schotterbett)
+Im nächsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Dies erfolgt nicht nur an Stellen, wo später ein Gleis verläuft, sondern auch an Stellen, die das gleiche Niveau haben sollen, zB zwischen den Gleisen oder dort, wo später der Antrieb für den Entkuppler hinkommt.   
+Danach bohrt man mit einem 4 mm Bohrer die Löcher für die Fahrstromzuführung. Wenn man eine 1:1 Vorlage des Gleisbildes ausgedruckt hat, so kann diese als Bohrschablone dienen.   
+Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen für die Weichenantriebe und die Bohrungen für die Fahrstromzuführung.   
+
+![Schotterbett](./images/300_Schotterbett1.png "Schotterbett")   
+_Bild 19: Rohfassung des Schotterbettes_   
+
+## 3.4 Vorbereitung der Verdrahtung
+Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden. Für ein leichteres Arbeiten entfernt man die Grundplatte vom Rahmen und montiert die Schaltblöcke. Dazu steckt man einen Schaltblock in die Schaltblock-Halterung und schraubt ihn mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
+![Schaltblockmontage](./images/300_Schaltblockmontage.png "Schaltblockmontage")   
+_Bild 20: Anschrauben der Schaltblöcke_   
+
+Weiters montiert man auf die erste und dritte Querstrebe die Halterung für die Sub-D-Stecker.   
+Sollte eine Fahrstromzuführung genau unter einer Halterung liegen, so muss man die Stromzuführung nochmals bohren....   
+
 # ...ToDo... ================================   
 
-## 3.3 Bettungskörper (Schotterbett)
+
 
 ## 3.4 Gleisbauarbeiten
 
