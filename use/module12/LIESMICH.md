@@ -305,16 +305,31 @@ Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen für die We
 _Bild 19: Rohfassung des Schotterbettes_   
 
 ## 3.4 Vorbereitung der Verdrahtung
+__Montage der Schaltblöcke__   
 Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden. Für ein leichteres Arbeiten entfernt man die Grundplatte vom Rahmen und montiert die Schaltblöcke. Dazu steckt man einen Schaltblock in die Schaltblock-Halterung und schraubt ihn mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
 ![Schaltblockmontage](./images/300_Schaltblockmontage.png "Schaltblockmontage")   
 _Bild 20: Anschrauben der Schaltblöcke_   
 
-Weiters montiert man auf die erste und dritte Querstrebe die Halterung für die Sub-D-Stecker.   
-Sollte eine Fahrstromzuführung genau unter einer Halterung liegen, so muss man die Stromzuführung nochmals bohren....   
+Weiters montiert man auf die erste und dritte Querstrebe die Halterung für die Sub-D-Stecker. Sollte dabei eine Fahrstromzuführung genau unter einer Halterung liegen, so muss man die Stromzuführung nochmals bohren....   
+
+__Montage der Klemmen__   
+Um die Verkabelung des Moduls übersichtlich zu gestalten, werden 2x2 Längslinien (Abstand 1,5 cm)gezeichnet, die genau durch die Durchführungen der Querverbinder führen. In diesem Bereich werden die Kabel geführt.   
+Allgemein gilt: I²C-Komponenten werden in der Nähe der Schaltblöcke montiert, Fahrstromkomponenten auf der gegenüberliegenden Längsseite und Weichenanschlüsse in der Nähe der Weichen.   
+Das folgende Bild zeigt die montierten Klemmen.   
+
+![M12_Verdrahtung_1](./images/300_M12_Verdrahtung1.png "M12_Verdrahtung_1")   
+_Bild 21: Klemmen für die Verdrahtung_   
+
+_Im Detail_:    
+1. Alle Prints werden mit M2 x 10 mm Schrauben, Lüsterklemmen mit M 2,6 x 12 mm Schrauben angeschraubt.   
+2. Die Gleise der Ein- und Ausfahrt eines Moduls werden immer direkt mit dem Fahrstrom verbunden. Mit dem Stromverteiler-Print `CON_2pol_141_V1` stehen zusätzliche Klemmen für die Fahrstromverteilung zur Verfügung (Grüner Balken unten im 2. Segment von links)   
+3. Die Prints 2x `CON_1xIO_V1` und 1x `CON_2xIO_V1` dienen dem Schalten des Fahrstroms (gemeinsam mit den Schaltblöcken `2IO`) (unten im Bild 21).   
+4. Je vier Prints `CON_10pol_PIN_V2` im Segment 2 und 3 stellen die Ein- und Ausgangspins der 10-poligen Schaltblock-Ausgänge für die I²C-Verdrahtung zur Verfügung.   
+5. Im Segment 2 und 3 sind je zwei PCF 8574-I/O-Prints montiert (einer für die Ausgangs- und einer für die Eingangssignale).   
+6. Der Anschluss der Weichen und des Entkupplers erfolgt an Prints 3x `CON_6pol_3_V1` bzw. 1x `CON_6pol_6_V1` (für Dreiwegweiche).   
+
 
 # ...ToDo... ================================   
-
-
 
 ## 3.4 Gleisbauarbeiten
 
