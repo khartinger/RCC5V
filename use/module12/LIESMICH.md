@@ -413,8 +413,36 @@ _Bild 24: Verdrahtung Stromversorgung_
 
 ## 4.3 Verdrahtung I²C-Bus
 1. Verbinden der 10-poligen Stecker der Schaltblöcke mit den 10-poligen Steckern der Platinen `CON_10pol_PIN`.   
+
 2. Segment 2: Verbinden der Stiftleisten mit 10 cm langen Leitungen female-female:    
-* 
+   * I/O-Expander 0x20 - Pin 0 <---> Block DCC 129, Pin 1 - IN   
+   * I/O-Expander 0x20 - Pin 1 <---> Block DCC 121/122, Pin 1 - IN   
+   * I/O-Expander 0x20 - Pin 2 <---> Block DCC 121/122, Pin 2 - IN   
+   * I/O-Expander 0x20 - Pin 3 <---> Block DCC 121/122, Pin 3 - IN   
+   * I/O-Expander 0x20 - Pin 4 <---> Block DCC 123, Pin 1 - IN   
+   * I/O-Expander 0x20 - Pin 5 <---> Block DCC 123, Pin 2 - IN   
+   * I/O-Expander 0x20 - Pin 6 <---> Block DCC 124, Pin 1 - IN   
+   -------   
+   * I/O-Expander 0x21 - Pin 0 <---> Block DCC 129, Pin 1 - OUT   
+   * I/O-Expander 0x21 - Pin 1 <---> Block DCC 121/122, Pin 1 - OUT   
+   * I/O-Expander 0x21 - Pin 2 <---> Block DCC 121/122, Pin 2 - OUT   
+   * I/O-Expander 0x21 - Pin 3 <---> Block DCC 121/122, Pin 3 - OUT   
+   * I/O-Expander 0x21 - Pin 4 <---> Block DCC 123, Pin 1 - OUT   
+   * I/O-Expander 0x21 - Pin 5 <---> Block DCC 123, Pin 2 - OUT   
+   * I/O-Expander 0x21 - Pin 6 <---> Block DCC 124, Pin 1 - OUT   
+
+3. Segment 3: Verbinden der Stiftleisten mit 10 cm langen Leitungen female-female:    
+   * I/O-Expander 0x22 - Pin 0 <---> Block DCC 128, Pin 1 - IN   
+   * I/O-Expander 0x22 - Pin 1 <---> Block DCC 128, Pin 2 - IN   
+   * I/O-Expander 0x22 - Pin 2 <---> Block DCC 127, Pin 1 - IN   
+   * I/O-Expander 0x22 - Pin 3 <---> Block DCC 126, Pin 1 - IN   
+   * I/O-Expander 0x22 - Pin 4 <---> Block DCC 125, Pin 1 - IN   
+   -------   
+   * I/O-Expander 0x23 - Pin 0 <---> Block DCC 128, Pin 1 - OUT   
+   * I/O-Expander 0x23 - Pin 1 <---> Block DCC 128, Pin 2 - OUT   
+   * I/O-Expander 0x23 - Pin 2 <---> Block DCC 127, Pin 1 - OUT   
+   * I/O-Expander 0x23 - Pin 3 <---> Block DCC 126, Pin 1 - OUT   
+   * I/O-Expander 0x23 - Pin 4 <---> Block DCC 125, Pin 1 - OUT   
 
 
 # ...ToDo... ================================   
