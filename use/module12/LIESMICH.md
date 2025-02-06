@@ -4,7 +4,7 @@ Letzte &Auml;nderung: 12.1.2025 <a name="up"></a><br>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
-[Direkter Sprung zur Inhalts&uuml;bersicht](#x05)   
+[Hier geht es direkt zur Inhalts&uuml;bersicht](#x05)   
 
 # Übersicht
 Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 „Ausweichstelle und Abstellgleis“. Das Modul soll folgende Eigenschaften besitzen:   
@@ -26,6 +26,7 @@ Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 
 * [1. Vorbereitung - Einkauf](#x10)   
 * [2. Bau des Modul-Rahmens](#x20)   
 * [3. Aufbau des Gleisplans](#x30)   
+* [4. Elektrische Verdrahtung des Moduls](#x40)   
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
@@ -205,6 +206,8 @@ Der Rahmenteil „Nord“ enthält lediglich dreimal zwei Bohrungen mit 2 mm Dur
 ![Modul_Nord_980mm](./images/300_Nord_980mm.png "Modul_Nord_980mm")   
 _Bild 6: Seitenteil Nord Ra2_   
 
+<a name="x24"></a>   
+
 ## 2.4 Rahmenteil Ra4 (Süd)
 Der Rahmenteil Süd ist am aufwändigsten zu fertigen, da er das Display, einen Taster und die Bohrungen für alle Steuerblöcke und für alle Querverstrebungen enthält. Das folgende Bild gibt einen Überblick über die erforderlichen Bohrungen.   
 
@@ -273,8 +276,10 @@ _Bild 16: Zusammengeschraubter Rahmen, Ansicht von unten_
 
 ## 3.1 Stellprobe   
 Der Probeaufbau erfolgt auf der 5 mm (bzw. 4 mm) Sperrholzplatte. Dazu wird der Gleisplan im Maßstab 1:1 auf diese gezeichnet. Das kann entweder durch Ausdruck des Gleisplans im Maßstab 1:1 und übertragen auf das Sperrholz erfolgen (zB mit Kohlepapier), oder durch Übertragen der Koordinaten auf das Sperrholz und Zeichnen des Gleisplans.   
-Danach werden die Gleise entsprechend der Stückliste isoliert und zusammengesteckt und eine erste Probefahrt durchgeführt.   
+Entsprechend dem Gleisplanentwurf müssen die Trennstellen in jeweils beiden Schienensträngen hergestellt werden. Dazu werden Fleischmann 9403 Isolier-Schienenverbinder verwendet. Die bisherigen Gleisverbinder werden entfernt und durch die Isolier-Schienenverbinder ersetzt.   
+Danach werden die Gleise entsprechend dem Gleisbild zusammengesteckt.   
 Beim Probeaufbau sollten auch alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufgestellt werden, damit man weiß, wie der Bahnkörper (die 5 mm bzw. 4 mm Platte) zugeschnitten werden muss.   
+Schließlich wird mit dem längsten Waggon händisch eine Probefahrt durchgeführt und kontrolliert, ob alle Radien, Übergänge etc. passen und keine Gebäude im Wege stehen.   
 
 ## 3.2 Zuschneiden und Aufkleben des Bahndamms auf die Grundplatte   
 War die Stellprobe erfolgreich, folgen Überlegungen zu den einzelnen Geländehöhen.   
@@ -291,47 +296,130 @@ Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, müssen noch Au
 ![Maße der Aussparung für Unterflurantrieb](./images/300_turnout_cutout_right.png "Maße der Aussparung für Unterflurantrieb")   
 _Bild 17: Maße der Aussparung für einen Unterflurantrieb._   
 
-Die folgenden beiden Bilder zeigen die verschiedenen Ebenen des Geländes und die Aussparungen für die Weichen. Links vorne und rechts hinten ist das Niveau E0, in der Mitte und hinten ist 8 mm hohes Sperrholz (E8).   
+Die folgenden beiden Bilder zeigen die verschiedenen Ebenen des Geländes und die Aussparungen für die Weichen. Links vorne und rechts hinten ist das Niveau E0, in der Mitte und hinten (im Bild oben) ist 8 mm hohes Sperrholz (E8).   
 ![Bahndamm2](./images/300_Bahndamm2.png "Bahndamm2")   
 ![Bahndamm](./images/300_Bahndamm.png "Bahndamm")   
 _Bild 18: Verschiedene Modul-Ebenen_
 
 ## 3.3 Bettungskörper (Schotterbett)
 Im nächsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Dies erfolgt nicht nur an Stellen, wo später ein Gleis verläuft, sondern auch an Stellen, die das gleiche Niveau haben sollen, zB zwischen den Gleisen oder dort, wo später der Antrieb für den Entkuppler hinkommt.   
-Danach bohrt man mit einem 4 mm Bohrer die Löcher für die Fahrstromzuführung. Wenn man eine 1:1 Vorlage des Gleisbildes ausgedruckt hat, so kann diese als Bohrschablone dienen.   
+Danach bohrt man mit einem 4 mm Bohrer die Löcher für die Fahrstromzuführung. Wenn man eine 1:1 Vorlage des Gleisbildes ausgedruckt hat, so kann man diese als Bohrschablone verwenden.   
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen für die Weichenantriebe und die Bohrungen für die Fahrstromzuführung.   
 
 ![Schotterbett](./images/300_Schotterbett1.png "Schotterbett")   
-_Bild 19: Rohfassung des Schotterbettes_   
+_Bild 19: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen für Fahrstrom und Weichenausschnitten_   
 
 ## 3.4 Vorbereitung der Verdrahtung
-__Montage der Schaltblöcke__   
-Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden. Für ein leichteres Arbeiten entfernt man die Grundplatte vom Rahmen und montiert die Schaltblöcke. Dazu steckt man einen Schaltblock in die Schaltblock-Halterung und schraubt ihn mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
+### Montage der Schaltblöcke   
+Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht beschädigt werden). Für ein leichteres Arbeiten entfernt man zuerst die Grundplatte vom Rahmen und montiert die Schaltblöcke. Dazu steckt man einen Schaltblock in die Schaltblock-Halterung und schraubt ihn mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
 ![Schaltblockmontage](./images/300_Schaltblockmontage.png "Schaltblockmontage")   
 _Bild 20: Anschrauben der Schaltblöcke_   
 
 Weiters montiert man auf die erste und dritte Querstrebe die Halterung für die Sub-D-Stecker. Sollte dabei eine Fahrstromzuführung genau unter einer Halterung liegen, so muss man die Stromzuführung nochmals bohren....   
 
-__Montage der Klemmen__   
-Um die Verkabelung des Moduls übersichtlich zu gestalten, werden 2x2 Längslinien (Abstand 1,5 cm)gezeichnet, die genau durch die Durchführungen der Querverbinder führen. In diesem Bereich werden die Kabel geführt.   
-Allgemein gilt: I²C-Komponenten werden in der Nähe der Schaltblöcke montiert, Fahrstromkomponenten auf der gegenüberliegenden Längsseite und Weichenanschlüsse in der Nähe der Weichen.   
+### Montage der Anzeige und des Mikrocontrollers   
+Die OLED-Anzeige und den Mikrocontroller, wie bei [Rahmenteil Ra4 (Süd)](#x24) beschrieben, in den Rahmen einsetzen.   
+
+## Montage der I²C-I/O-Expanderplatinen
+1. Segment 2: Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
+2. Segment 3: Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x22 und 0x23 mit Hilfe der Jumper.   
+
+### Montage der Klemmen   
+Um die Verkabelung des Moduls übersichtlich zu gestalten, werden 2x2 Längslinien (Abstand vom Rand 4 cm und 5,5 cm) gezeichnet, die genau durch die Durchführungen der Querverbinder führen. In diesem Bereich werden die Kabel geführt. Nun setzt man die Grundplatte wieder in den Rahmen ein.   
+Für die Platzierung der Klemmen gilt allgemein:   
+* I²C-Komponenten (zB die Prints mit 10-poligem Wannenstecker) werden in der Nähe der Schaltblöcke montiert (im folgenden Bild oben zu sehen),
+* Fahrstromkomponenten (zB Prints mit 6-poligem Wannenstecker) auf der den Schaltblöcken gegenüberliegenden Längsseite ("hinten", im Bild unten) und 
+* Weichenanschlüsse in der Nähe der Weichen.   
+
 Das folgende Bild zeigt die montierten Klemmen.   
 
 ![M12_Verdrahtung_1](./images/300_M12_Verdrahtung1.png "M12_Verdrahtung_1")   
 _Bild 21: Klemmen für die Verdrahtung_   
 
-_Im Detail_:    
-1. Alle Prints werden mit M2 x 10 mm Schrauben, Lüsterklemmen mit M 2,6 x 12 mm Schrauben angeschraubt.   
-2. Die Gleise der Ein- und Ausfahrt eines Moduls werden immer direkt mit dem Fahrstrom verbunden. Mit dem Stromverteiler-Print `CON_2pol_141_V1` stehen zusätzliche Klemmen für die Fahrstromverteilung zur Verfügung (Grüner Balken unten im 2. Segment von links)   
-3. Die Prints 2x `CON_1xIO_V1` und 1x `CON_2xIO_V1` dienen dem Schalten des Fahrstroms (gemeinsam mit den Schaltblöcken `2IO`) (unten im Bild 21).   
-4. Je vier Prints `CON_10pol_PIN_V2` im Segment 2 und 3 stellen die Ein- und Ausgangspins der 10-poligen Schaltblock-Ausgänge für die I²C-Verdrahtung zur Verfügung.   
-5. Im Segment 2 und 3 sind je zwei PCF 8574-I/O-Prints montiert (einer für die Ausgangs- und einer für die Eingangssignale).   
-6. Der Anschluss der Weichen und des Entkupplers erfolgt an Prints 3x `CON_6pol_3_V1` bzw. 1x `CON_6pol_6_V1` (für Dreiwegweiche).   
+_Montage der Klemmen etc. im Detail_:    
+1. Beschriften der Bohrungen für die Fahrstromzuführung:   
+   Segment 1: GW-1, GW-2,G1A-1   
+   Segment 2: E1, G2-1, G1-1   
+   Segment 3: G1-2, G2-2, G3-1   
+   Segment 4: GO-1, GO-2   
+2. Alle Prints werden mit M2 x 10 mm Schrauben, Lüsterklemmen mit M2,6 x 12 mm Schrauben angeschraubt.   
+3. Die Gleise der Ein- und Ausfahrt eines Moduls werden immer direkt mit dem Fahrstrom verbunden. Mit dem Stromverteiler-Print `CON_2pol_141_V1` stehen zusätzliche Klemmen für die Fahrstromverteilung zur Verfügung (Grüner Balken unten im 2. Segment von links)   
+4. Die Prints 2x `CON_1xIO_V1` und 1x `CON_2xIO_V1` dienen dem Schalten des Fahrstroms (gemeinsam mit den Schaltblöcken `2IO`) (unten im Bild 21).   
+5. Je vier Prints `CON_10pol_PIN_V2` im Segment 2 und 3 stellen die Ein- und Ausgangspins der 10-poligen Schaltblock-Ausgänge für die I²C-Verdrahtung zur Verfügung.   
+6. Im Segment 2 und 3 sind je zwei PCF 8574-I/O-Prints montiert (einer für die Ausgangs- und einer für die Eingangssignale).   
+7. Der Anschluss der Weichen und des Entkupplers erfolgt an Prints 3x `CON_6pol_3_V1` bzw. 1x `CON_6pol_6_V1` (für Dreiwegweiche).   
+
+## 3.5 Gleisbau
+### Anbringen der Stromversorgung am Gleis   
+Zur Stromversorgung kann man Fleischmann 22217 Anschlußkabel 2pol. Spur N verwenden oder man lötet selbst Drähte an die Gleisverbinder. Dies geht für Fleischmann-Schotterbett-Gleise sehr gut, während die Verbinder von Gleisen ohne Schotterbett praktisch nicht lötbar sind.   
+Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht mit 0,32 mm² (22awg) für die nördliche Schiene und einen roten Draht für die südliche Schiene. Der Draht wird beidseitig ca. 6 mm abisoliert und für den Gleisverbinder-Anschluss hakenförmig gebogen, mit einer kleinen Zange etwas flachgedrückt und verzinnt.   
+Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung über dem Gleisverbinder heraus (damit man leichter löten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten die kleine Plastikverbindung über dem Gleisverbinder, der rechts oben entfernt ist.   
+
+![Loeten_Gleisanschluss1](./images/300_Loeten_Gleisanschluss1.png "Loeten_Gleisanschluss1")   
+_Bild 22: Vorbereitung des Anlötens einer Stromzuführung._   
+
+### Gleise aufkleben   
+#### Vorbereitung der Weichen   
+Um den Antrieb als Unterflurantrieb zu verwenden, muss man den Schalthebel der Weiche herausziehen und um 180° gedreht wieder einstecken. Danach kann der Antrieb mit der Oberseite nach unten aufgesteckt werden.   
+#### Vorbereitung Stromzuführung   
+Verwendet man die Stromzuführungskabel Fleischmann 22217, so muss man immer oberhalb der Kontaktstelle eine Bohrung setzen (4 mm), um die Kabel nach unten durchführen zu können.   
+Bei selbst gelöteten Stromzuführungen muss jeweils direkt unter jedem Gleisverbinder eine Bohrung gesetzt werden.   
+#### Vorbereitung Entkupplungsgleis   
+Für den Antrieb des Entkupplungsgleises 9112 (oder 22212) muss ebenfalls eine 4 mm-Bohrung gesetzt werden.   
+#### Gleise aufkleben   
+Alle Kabel in die Bohrungen einfädeln und nach unten ziehen, bis die Gleise etwa 5 bis 10 cm Abstand zur zukünftigen Position haben. Die Grundplatte etwas schräg stellen, damit die Kabel nicht geknickt werden.   
+Alle Bereiche markieren, auf die kein Leim aufgetragen werden darf (oder mit Klebeband abdecken):   
+* Weichenantrieb   
+* Entkupplungsgleis   
+* Ausgleichsgleise am linken und rechten Rand (Ost und West)   
+
+Das Gleisbett mit Leim versehen. Dabei ist zu beachten, dass im Bereich der Weiche und des Entkupplungsgleises möglichst wenig Leim (oder gar kein Leim) aufgebracht wird, damit kein Leim in die Antriebe gelangt und diese verklebt!   
+Da die Ausgleichsgleise zur Anpassung von Abständen an den Modulgrenzen dienen, darf in diesem Bereich ebenfalls KEIN Leim aufgebracht werden!   
+Danach die Gleise fertig zusammenstecken und vorsichtig an den Kabeln ziehen, bis die Gleise auf dem Leim liegen.   
+Da die beiden Ausgleichsgleise am linken und rechten Rand im Betrieb mechanisch in Längsrichtung beansprucht werden, sollten sie mit je einem Gleisnagel zusätzlich fixiert werden. Dabei muss der Gleisnagel an der vom Rand entfernten Gleisseite eingeschlagen werden.   
+
+Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgendermaßen aus:   
+![Montiertes Gleis](./images/300_Gleis_montiert1.png "Montiertes Gleis")   
+_Bild 23: Rahmen mit Grundplatte und Gleisen._   
+
+[Zum Seitenanfang](#up)   
+<a name="x40"></a>   
+
+# 4. Elektrische Verdrahtung des Moduls   
+
+## 4.1 Verdrahtung der Stromversorgung und des Fahrstroms
+1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltblöcken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 9 montierten Pfostenverbindern.   
+2. Verbinden aller Fahrstromanschlüsse mit den entsprechenden Klemmen.   
+3. Verbinden des Fahrstroms (NN, SS) von der Versorgungsplatine `RW_5V_SUB25_10` zu den Platinen `CON_2pol_141`, `CON_1xIO`, `CON_2xIO` sowie den Lüsterklemmen GW (Gleis West) und GO (Gleis Ost).   
+4. Verbinden der Anschlüsse der beiden Weichenantriebe der Dreiwegweiche mit der Platine `CON_6pol_6` (linke Weiche = Antrieb näher zu den Schaltblöcken = Pin 1 und 3, Masse an Pin 2).   
+5. Verbinden der Anschlüsse der beiden Zweiweg-Weichenantriebe mit den Platinen `CON_6pol_3` (Masse = schwarzes Kabel an Pin 2).   
+6. Verbinden der Anschlüsse des Entkupplers mit der Platine `CON_6pol_3`.   
+
+![Verdrahtung 1](./images/300_Verdrahtung1.png "Verdrahtung 1")   
+_Bild 24: Verdrahtung Stromversorgung_   
+
+### Erster Test der Verdrahtung   
+1. Anstecken eines 25-poligen Steckers mit Fahrstrom- und Wechselstromversorgung.   
+2. Test der Ansteuerung der Dreiwegweiche Links-Mitte und Mitte-Rechts. Falls ein Fehler auftritt: Anschlüsse 1 und 3 vertauschen.   
+2. Test der Ansteuerung der Zweiwegweichen. Stimmt die Anzeige-LED für Gerade und Abzweig? Schaltet die Weiche entsprechend dem Taster auf "Gerade" oder "Abzweig"? Falls nicht: Anschlüsse 1 und 3 vertauschen.   
+3. Arbeitet der Entkuppler?   
+4. Stimmen alle LED-Anzeigen mit der entsprechenden Hardware überein?   
+5. Fahrstrom Gleis 1, 2, 3 und 1A mit den grünen Tastern einschalten, Probefahrt mit einer Lokomotive über alle Gleise.   
+
+## 4.2 Vorbereitung Mikrocontroller
+1. Verbinden des Anschlusses "DCC" der Versorgungsplatine `RW_5V_SUB25_10` mit dem Mikrocontroller über ein ca. 30 cm langes, 6-poliges Kabel.   
+2. Verbinden des Mikrocontrollers mit den I²C-PCF8574-I/O-Expanderplatinen mit 20 cm langen, 4-poligen Kabeln mit male-female-Steckern.   
+3. Programmierung des Mikrocontrollers mit der Software `rcc_module12_V1`.   
+
+## 4.3 Verdrahtung I²C-Bus
+1. Verbinden der 10-poligen Stecker der Schaltblöcke mit den 10-poligen Steckern der Platinen `CON_10pol_PIN`.   
+2. Segment 2: Verbinden der Stiftleisten mit 10 cm langen Leitungen female-female:    
+* 
 
 
 # ...ToDo... ================================   
 
-## 3.4 Gleisbauarbeiten
+
 
 
 
