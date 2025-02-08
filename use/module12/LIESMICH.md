@@ -27,6 +27,7 @@ Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 
 * [2. Bau des Modul-Rahmens](#x20)   
 * [3. Aufbau des Gleisplans](#x30)   
 * [4. Elektrische Verdrahtung des Moduls](#x40)   
+* [5. Probebetrieb](#x50)   
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
@@ -388,18 +389,20 @@ _Bild 23: Rahmen mit Grundplatte und Gleisen._
 # 4. Elektrische Verdrahtung des Moduls   
 
 ## 4.1 Verdrahtung der Stromversorgung und des Fahrstroms
-1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltblöcken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 9 montierten Pfostenverbindern.   
+1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltblöcken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 10 montierten Pfostenverbindern. Der erste Pfostenverbinder dient zum Anschluss an die Versorgungsplatine, der Pfostenverbinder am Ende der Leitung dient einem eventuell erforderlichem Verlängern des Flachbandkabels bzw. zum Anschluss eines 100 nF-Kondensators zwischen V+ und V-. Der Stecker ist im _Bild 24_ rechts oben noch nicht angebracht...    
 2. Verbinden aller Fahrstromanschlüsse mit den entsprechenden Klemmen.   
 3. Verbinden des Fahrstroms (NN, SS) von der Versorgungsplatine `RW_5V_SUB25_10` zu den Platinen `CON_2pol_141`, `CON_1xIO`, `CON_2xIO` sowie den Lüsterklemmen GW (Gleis West) und GO (Gleis Ost).   
 4. Verbinden der Anschlüsse der beiden Weichenantriebe der Dreiwegweiche mit der Platine `CON_6pol_6` (linke Weiche = Antrieb näher zu den Schaltblöcken = Pin 1 und 3, Masse an Pin 2).   
 5. Verbinden der Anschlüsse der beiden Zweiweg-Weichenantriebe mit den Platinen `CON_6pol_3` (Masse = schwarzes Kabel an Pin 2).   
 6. Verbinden der Anschlüsse des Entkupplers mit der Platine `CON_6pol_3`.   
+_Wichtig_: Da der Entkuppler Störspannungen erzeugt, muss ein 100 nF-Kondensator parallel zu den Klemmen V+ und V- geschaltet werden.   
 
 ![Verdrahtung 1](./images/300_Verdrahtung1.png "Verdrahtung 1")   
 _Bild 24: Verdrahtung Stromversorgung_   
 
 ### Erster Test der Verdrahtung   
-1. Anstecken eines 25-poligen Steckers mit Fahrstrom- und Wechselstromversorgung.   
+Mit der bisherigen Verdrahtung ist es bereits möglich, einen händischen Betrieb durchzuführen. Dabei kann vor allem der richtige Anschluss der Weichen und die Funktion aller Stromzuführungen (Lötstellen) getestet werden.   
+1. Anstecken eines 25-poligen Steckers mit Fahrstrom- und Wechselstromversorgung: Die LEDs der Schaltblöcke sollten leuchten.   
 2. Test der Ansteuerung der Dreiwegweiche Links-Mitte und Mitte-Rechts. Falls ein Fehler auftritt: Anschlüsse 1 und 3 vertauschen.   
 2. Test der Ansteuerung der Zweiwegweichen. Stimmt die Anzeige-LED für Gerade und Abzweig? Schaltet die Weiche entsprechend dem Taster auf "Gerade" oder "Abzweig"? Falls nicht: Anschlüsse 1 und 3 vertauschen.   
 3. Arbeitet der Entkuppler?   
@@ -412,9 +415,11 @@ _Bild 24: Verdrahtung Stromversorgung_
 3. Programmierung des Mikrocontrollers mit der Software `rcc_module12_V1`.   
 
 ## 4.3 Verdrahtung I²C-Bus
-1. Verbinden der 10-poligen Stecker der Schaltblöcke mit den 10-poligen Steckern der Platinen `CON_10pol_PIN`.   
+1. Verbinden der acht 10-poligen Stecker der Schaltblöcke mit den 10-poligen Steckern der Platinen `CON_10pol_PIN`.   
 
-2. Segment 2: Verbinden der Stiftleisten mit 10 cm langen Leitungen female-female:    
+2. Herstellung der Verbindungen zwischen den Stiftleisten der `CON_10pol_PIN`-Platinen und den I²C-PCF8574-I/O-Expanderplatinen mit 10 cm langen Leitungen female-female.    
+
+Im Segment 2:   
    * I/O-Expander 0x20 - Pin 0 <---> Block DCC 129, Pin 1 - IN   
    * I/O-Expander 0x20 - Pin 1 <---> Block DCC 121/122, Pin 1 - IN   
    * I/O-Expander 0x20 - Pin 2 <---> Block DCC 121/122, Pin 2 - IN   
@@ -431,7 +436,7 @@ _Bild 24: Verdrahtung Stromversorgung_
    * I/O-Expander 0x21 - Pin 5 <---> Block DCC 123, Pin 2 - OUT   
    * I/O-Expander 0x21 - Pin 6 <---> Block DCC 124, Pin 1 - OUT   
 
-3. Segment 3: Verbinden der Stiftleisten mit 10 cm langen Leitungen female-female:    
+Im Segment 3:   
    * I/O-Expander 0x22 - Pin 0 <---> Block DCC 128, Pin 1 - IN   
    * I/O-Expander 0x22 - Pin 1 <---> Block DCC 128, Pin 2 - IN   
    * I/O-Expander 0x22 - Pin 2 <---> Block DCC 127, Pin 1 - IN   
@@ -444,12 +449,70 @@ _Bild 24: Verdrahtung Stromversorgung_
    * I/O-Expander 0x23 - Pin 3 <---> Block DCC 126, Pin 1 - OUT   
    * I/O-Expander 0x23 - Pin 4 <---> Block DCC 125, Pin 1 - OUT   
 
+## 4.4 Modulverbindung
+Damit Module aneinandergereiht werden können müssen noch die je 10 Schraubklemmen bei den 25-poligen Steckern mit einander verbunden werden. Dazu kann zB 10-poliges Kabel verwendet werden.   
 
-# ...ToDo... ================================   
+[Zum Seitenanfang](#up)   
+<a name="x50"></a>   
 
+# 5. Probebetrieb
+## 5.1 Modul-Start
+1. MQTT-Server starten.   
+2. Einen Laptop oder PC mit dem Netzwerk des MQTT-Servers verbinden und die Software `mosquitto_sub` in einem Kommando-Fesnster mit diesem Kommando starten:   
+   `mosquitto_sub -h 10.1.1.1 -t rcc/# -v`   
+3. Anstecken eines 25-poligen Steckers mit Fahrstrom- und Wechselstromversorgung: Die LEDs der Schaltblöcke sollten entspechend der Hardware-Stellung richtig leuchten.   
+4. Die Info-Seiten auf dem OLED mit dem neben liegenden Taster weiterschalten. Wenn alles funktioniert, erscheint auf dem OLED-Display folgende Anzeige:   
+```   
+  RCC Module 12     
+MQTT OK    Raspi11  
+rcc/module12        
+G1A TWL TWR T1  E1  
+Aus __  __  _/  Aus 
+129 121 122 123 124 
+```   
 
+Die Anzeige der Stellung der Weichen 121 bis 123 ist abhängig von der tatsächlichen Stellung der Weichen. Die Anzeige wechselt alle 5 Sekunden weiter.   
 
+5. Im Kommandofenster am Laptop erscheint die Startmeldung des Moduls:   
+`rcc/start/mqtt {"topicbase":"rcc/module12"}`   
 
+## 5.2 Test mit MQTT
+Ein zweites Kommando-Fenster am Laptop öffnen und folgendes eingeben:   
+`mosquitto_pub -h 10.1.1.1 -t rcc/module12/get -m ?`   
+Im ersten Kommando-Fenster werden die möglichen Befehle angezeigt:   
+```   
+rcc/module12/get ?
+rcc/module12/ret/?
+get: ?|help|version|ip|topicbase|eeprom|byname|bydcc|G1A|129|TWL|121|TWR|122|T1|123|E1|124|G1|125|G2|126|G3|127|T2|128|
+set: topicbase|eeprom0|G1A|129|TWL|121|TWR|122|T1|123|E1|124|G1|125|G2|126|G3|127|T2|128|
+sub:
+pub:
+MQTT: ../set/w1 -m 1|g|G OR -m 0|A|a|B|b (set by name)
+      ../set/11 -m 1|g|G OR -m 0|A|a|B|b (set by dcc address)
+      ../get -m byname|bydcc (values of all components)
+```   
+
+### Beispiele für Schaltbefehle  
+Schalten der Weiche DCC 123 auf Gerade:   
+`mosquitto_pub -h 10.1.1.1 -t rcc/module12/set/123 -m 1`   
+
+Schalten der Weiche DCC 123 mit Namen T1 auf Abzweig (Bogen):   
+`mosquitto_pub -h 10.1.1.1 -t rcc/module12/set/T1 -m 0`   
+
+Einschalten des Fahrstroms im Gleis 2 (Durchfahrsgleis, DCC-Adresse 126):   
+`mosquitto_pub -h 10.1.1.1 -t rcc/module12/set/126 -m 1`   
+Die Anzeige geht von "Aus" (LED rot) auf "Ein" (LED grün), sofern nicht einer der beiden Taster gedrückt ist.   
+
+Einschalten des Entkupplers (DCC 124):   
+`mosquitto_pub -h 10.1.1.1 -t rcc/module12/set/124 -m 1`   
+Der Entkuppler wird für 1,5 Sekunden eingeschaltet.   
+
+## 5.3 Test mit DCC
+Je nach DCC-Eingabegerät können die gleichen Aktionen wie mit MQTT durchgeführt werden.   
+### Beispiel Roco Multi-Maus
+* Weichensteuerung wählen (Taste Lok/Weiche) ![Taste_Lok_Weiche](./images/50_taste_lok_weiche.png)   
+* DCC-Adresse 123 eingeben ![Anzeige_W0123](./images/50_anzeige_W0123.png)   
+* Mit den Pfeiltasten die Weiche schalten ![Pfeiltasten](./images/50_taste_pfeil.png)   
 
 
 [Zum Seitenanfang](#up)
