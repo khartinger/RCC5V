@@ -514,5 +514,4 @@ Je nach DCC-Eingabegerät können die gleichen Aktionen wie mit MQTT durchgefüh
 * DCC-Adresse 123 eingeben ![Anzeige_W0123](./images/50_anzeige_W0123.png)   
 * Mit den Pfeiltasten die Weiche schalten ![Pfeiltasten](./images/50_taste_pfeil.png)   
 
-
 [Zum Seitenanfang](#up)
