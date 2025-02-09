@@ -7,23 +7,23 @@ Letzte &Auml;nderung: 12.1.2025 <a name="up"></a><br>
 [Hier geht es direkt zur Inhalts&uuml;bersicht](#x05)   
 
 # Übersicht
-Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 „Ausweichstelle und Abstellgleis“. Das Bild zeigt das technisch fertige Modul ohne Landschaftsgestaltung.  
+Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen N-Spur-Gleis-Moduls M12 „Ausweichstelle und Abstellgleis“. Das Bild zeigt das technisch fertige Modul ohne Landschaftsgestaltung. An der Forderfront erkennt man die Bedien- und Anzeigeelemente für den Handbetrieb.   
 
 ![Modul M12](./images/300_Gleis_montiert1.png "Modul M12")   
 _Bild 1: Rahmen mit Grundplatte und Gleisen._   
 
-Das Modul soll diese Eigenschaften besitzen:   
-
+## Eigenschaften des Moduls
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit und ohne Schotterbett |   
 | Gleisbild      | 1x Dreiwegweiche, 2x Zweiwegweiche, 1x Entkuppler, 4x abschaltbarer Gleisabschnitt |   
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
-| Fahrstrom     | Analog oder DCC-Betrieb |   
+| Fahrstrom     | Analog- oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | * Händisch direkt an der Modulvorderseite <br> * über DCC <br> * durch MQTT-Nachrichten (über WLAN) |   
-| Bedienelemente mit Rückmeldung| 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 3x Fahrstrom (Block 2IO, DCC 125, 126 und 127) |   
+| Bedienelemente mit Rückmeldung| 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 4x Fahrstrom (Block 2IO, DCC 125, 126, 127 und 129) |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 | MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
+| Sonstiges | * Einfaches Verbinden mit anderen Modulen durch ausziehbare Gleise an den Segment-Enden |   
 
 <a name="x05"></a>   
 
@@ -41,7 +41,7 @@ Das Modul soll diese Eigenschaften besitzen:
 ## 1.1 Entwurf des Gleisplans
 ### 1.1.1 Allgemeines zu Gleisplänen
 Beim Erstellen eines Gleisplans sind zwei Dinge zu beachten: das Lichtraumprofil und die Höhe des Gleisaufbaus.   
-Das __Lichtraumprofil__ gibt an, wieviel Platz (vor allem von langen Waggons) neben dem Gleis benötigt wird und ist bei engen Radien wichtig.   
+Das __Lichtraumprofil__ gibt an, wieviel Platz (vor allem von langen Waggons) neben dem Gleis benötigt wird. Dies ist vor allem bei engen Radien wichtig.   
 Für den Radius R2 benötigt man eine Gesamt-Gleisbreite von 27 + 2 · 7 = 41 mm.   
 ![Lichtraumprofil](./images/300_lichtraumprofil.png "Lichtraumprofil")   
 _Bild 2: Lichtraumprofil_   
@@ -108,7 +108,7 @@ Die Teile des Rahmens können entweder aus Holz hergestellt oder mit dem 3D-Druc
 Das Holz besorgt man sich am besten bei einem Baumarkt und lässt es gleich auf die folgenden Größen zuschneiden:   
 
 __Pappelsperrholz 10 mm__   
-| St&uuml;ck | Abmessung     | Kurz     | Verwendung             |   
+| St&uuml;ck | Abmessung     | Kurzbezeichnung | Verwendung             |   
 |:-----:|:-------------:|:--------:|:-----------------------|   
 |   1   | 980 x 230 mm² |     -    | Gelände-Grundplatte    |   
 |   2   | 980 x 60 mm²  | Ra2, Ra4 | Rahmen außen Nord, Süd |   
@@ -121,9 +121,13 @@ __Pappelsperrholz 5 mm (oder 4 mm)__
 |   1   | 980 x 250 mm² | Bahndamm  |   
 
 __Kleinteile__   
-20x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend (zB Fa. Spax 4 003530 021251)   
 4x Pappelsperrholz 10 mm stark, 70 x 35 mm² für die Halterungen der Sub-D-Stecker.   
 4x kleine Holzstücken 10 x 10 x 50 mm³ als zusätzliche Auflager für die Grundplatte.   
+20x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend (zB Fa. Spax 4 003530 021251)   
+8x Schraube M 2,5 x 16 mm Kreuzschlitz, Senkkopf   
+8x Sechskantmutter M 2,5 mm   
+4x Schraube M 3 x 35 mm Kreutschlitz, Halbrundkopf   
+4x Sechskantmutter M 3 mm   
 
 ## 1.3.3 Verbrauchsmaterial
 Zum Bau des Moduls wird noch folgendes benötigt:   
@@ -285,11 +289,23 @@ Die Querverstrebungen enthalten verschiedene Durchbrüche für Kabel und zwei Bo
 ![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
 _Bild 16: Querverstrebungen Ri1 bis Ri3_
 
-## 2.6 Zusammenbau des Rahmens
+## 2.6 Halterung für Sub-D-Stecker
+Die Halterung für einen SUB-D-Stecker besteht aus zwei U-förmigen Teilen, die links und rechts an einer Querstrebe angeschraubt werden. Die Teile können sowohl aus Holz als auch mit 3D-Druck hergestellt werden. Für den Modul M12 werden zwei Halterungen benötigt.   
+
+![Sub-D-Halterung](./images/300_bracket_sub-d.png "Sub-D-Halterung")   
+_Bild 17: Maße der Halterung_   
+
+In jeden U-förmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,6 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatine.   
+Die beiden U-förmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm Sechskantmutter gegeneinander an einer Querstrebe verschraubt.   
+
+![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
+_Bild 18: Teile der Sub-D-Halterung_   
+
+## 2.7 Zusammenbau des Rahmens
 Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser zusammengeschraubt werden.   
 
 ![](./images/300_M12_frame_bottom_view.png)   
-_Bild 17: Zusammengeschraubter Rahmen, Ansicht von unten_   
+_Bild 19: Zusammengeschraubter Rahmen, Ansicht von unten_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
@@ -316,12 +332,12 @@ Hat man entschieden, wo welche Sperrholz-Höhen eingesetzt werden, schneidet man
 Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, müssen noch Aussparungen ausgeschnitten werden.   
 
 ![Maße der Aussparung für Unterflurantrieb](./images/300_turnout_cutout_right.png "Maße der Aussparung für Unterflurantrieb")   
-_Bild 18: Maße der Aussparung für einen Unterflurantrieb._   
+_Bild 20: Maße der Aussparung für einen Unterflurantrieb._   
 
 Die folgenden beiden Bilder zeigen die verschiedenen Ebenen des Geländes und die Aussparungen für die Weichen. Links vorne und rechts hinten ist das Niveau E0, in der Mitte und hinten (im Bild oben) ist 8 mm hohes Sperrholz (E8).   
 ![Bahndamm2](./images/300_Bahndamm2.png "Bahndamm2")   
 ![Bahndamm](./images/300_Bahndamm.png "Bahndamm")   
-_Bild 19: Verschiedene Modul-Ebenen_
+_Bild 21: Verschiedene Modul-Ebenen_
 
 ## 3.3 Bettungskörper (Schotterbett)
 Im nächsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Dies erfolgt nicht nur an Stellen, wo später ein Gleis verläuft, sondern auch an Stellen, die das gleiche Niveau haben sollen, zB zwischen den Gleisen oder dort, wo später der Antrieb für den Entkuppler hinkommt.   
@@ -329,13 +345,13 @@ Danach bohrt man mit einem 4 mm Bohrer die Löcher für die Fahrstromzuführung.
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen für die Weichenantriebe und die Bohrungen für die Fahrstromzuführung.   
 
 ![Schotterbett](./images/300_Schotterbett1.png "Schotterbett")   
-_Bild 20: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen für Fahrstrom und Weichenausschnitten_   
+_Bild 22: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen für Fahrstrom und Weichenausschnitten_   
 
 ## 3.4 Vorbereitung der Verdrahtung
 ### Montage der Schaltblöcke   
 Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht beschädigt werden). Für ein leichteres Arbeiten entfernt man zuerst die Grundplatte vom Rahmen und montiert die Schaltblöcke. Dazu steckt man einen Schaltblock in die Schaltblock-Halterung und schraubt ihn mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
 ![Schaltblockmontage](./images/300_Schaltblockmontage.png "Schaltblockmontage")   
-_Bild 21: Anschrauben der Schaltblöcke_   
+_Bild 23: Anschrauben der Schaltblöcke_   
 
 Weiters montiert man auf die erste und dritte Querstrebe die Halterung für die Sub-D-Stecker. Sollte dabei eine Fahrstromzuführung genau unter einer Halterung liegen, so muss man die Stromzuführung nochmals bohren....   
 
@@ -346,19 +362,19 @@ Die OLED-Anzeige und den Mikrocontroller, wie bei [Rahmenteil Ra4 (Süd)](#x24) 
 1. Segment 2: Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
 2. Segment 3: Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x22 und 0x23 mit Hilfe der Jumper.   
 
-### Montage der Klemmen   
+### Montage der Schraubklemmen   
 Um die Verkabelung des Moduls übersichtlich zu gestalten, werden 2x2 Längslinien (Abstand vom Rand 4 cm und 5,5 cm) gezeichnet, die genau durch die Durchführungen der Querverbinder führen. In diesem Bereich werden die Kabel geführt. Nun setzt man die Grundplatte wieder in den Rahmen ein.   
 Für die Platzierung der Klemmen gilt allgemein:   
-* I²C-Komponenten (zB die Prints mit 10-poligem Wannenstecker) werden in der Nähe der Schaltblöcke montiert (im folgenden Bild oben zu sehen),
+* I²C-Komponenten (zB die Prints mit 10-poligem Wannenstecker) werden in der Nähe der Schaltblöcke montiert (im folgenden Bild oben zu sehen). Die Montage sollte aber nicht zu Nahe an den Schaltblöcken erfolgen, damit man im Fehlerfall die Schaltblöcke noch leicht abschrauben kann.   
 * Fahrstromkomponenten (zB Prints mit 6-poligem Wannenstecker) auf der den Schaltblöcken gegenüberliegenden Längsseite ("hinten", im Bild unten) und 
 * Weichenanschlüsse in der Nähe der Weichen.   
 
 Das folgende Bild zeigt die montierten Klemmen.   
 
 ![M12_Verdrahtung_1](./images/300_M12_Verdrahtung1.png "M12_Verdrahtung_1")   
-_Bild 22: Klemmen für die Verdrahtung_   
+_Bild 24: Schraubklemmen für die Verdrahtung_   
 
-_Montage der Klemmen etc. im Detail_:    
+#### Montage der Schraubklemmen etc. im Detail    
 1. Beschriften der Bohrungen für die Fahrstromzuführung:   
    Segment 1: GW-1, GW-2,G1A-1   
    Segment 2: E1, G2-1, G1-1   
@@ -378,7 +394,7 @@ Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht mit 0,
 Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung über dem Gleisverbinder heraus (damit man leichter löten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten die kleine Plastikverbindung über dem Gleisverbinder, der rechts oben entfernt ist.   
 
 ![Loeten_Gleisanschluss1](./images/300_Loeten_Gleisanschluss1.png "Loeten_Gleisanschluss1")   
-_Bild 23: Vorbereitung des Anlötens einer Stromzuführung._   
+_Bild 25: Vorbereitung des Anlötens einer Stromzuführung._   
 
 ### Gleise aufkleben   
 #### Vorbereitung der Weichen   
@@ -402,7 +418,7 @@ Da die beiden Ausgleichsgleise am linken und rechten Rand im Betrieb mechanisch 
 
 Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgendermaßen aus:   
 ![Montiertes Gleis](./images/300_Gleis_montiert1.png "Montiertes Gleis")   
-_Bild 24: Rahmen mit Grundplatte und Gleisen._   
+_Bild 26: Rahmen mit Grundplatte und Gleisen._   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -412,7 +428,7 @@ _Bild 24: Rahmen mit Grundplatte und Gleisen._
 ## 4.1 Verdrahtung der Stromversorgung und des Fahrstroms
 1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltblöcken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 10 montierten Pfostenverbindern. Der erste Pfostenverbinder dient zum Anschluss an die Versorgungsplatine, der Pfostenverbinder am Ende der Leitung dient einem eventuell erforderlichem Verlängern des Flachbandkabels bzw. zum Anschluss von 100 nF-Kondensatoren zwischen V+ und V- sowie 5V und 0V. (Der Stecker ist im _Bild 27_ rechts oben noch nicht angebracht...)   
 ![Abschlusskondensatoren](./images/300_powerline_2xC.png "Abschlusskondensatoren")   
-_Bild 25: Abschlusskondensatoren am Ende des POWER-Kabels_   
+_Bild 27: Abschlusskondensatoren am Ende des POWER-Kabels_   
 
 2. Verbinden aller Fahrstromanschlüsse mit den entsprechenden Klemmen.   
 3. Verbinden des Fahrstroms (NN, SS) von der Versorgungsplatine `RW_5V_SUB25_10` zu den Platinen `CON_2pol_141`, `CON_1xIO`, `CON_2xIO` sowie den Lüsterklemmen GW (Gleis West) und GO (Gleis Ost).   
@@ -421,12 +437,12 @@ _Bild 25: Abschlusskondensatoren am Ende des POWER-Kabels_
 6. Verbinden der Anschlüsse des Entkupplers mit der Platine `CON_6pol_3`.   
 _Wichtig_: Da der Entkuppler Störspannungen erzeugt, muss ein 100 nF-Kondensator parallel zu den Klemmen V+ und V- geschaltet werden.   
 ![Entstörkondensator](./images/300_uncoupler_C.png "Entstörkondensator")   
-_Bild 26: Entstörkondensator am Entkuppler_   
+_Bild 28: Entstörkondensator am Entkuppler_   
 
 Die Verdrahtung der Stromversorgung im Überblick:   
 
 ![Verdrahtung 1](./images/300_Verdrahtung1.png "Verdrahtung 1")   
-_Bild 27: Verdrahtung Stromversorgung_   
+_Bild 29: Verdrahtung Stromversorgung_   
 
 ### Erster Test der Verdrahtung   
 Mit der bisherigen Verdrahtung ist es bereits möglich, einen händischen Betrieb durchzuführen. Dabei kann vor allem der richtige Anschluss der Weichen und die Funktion aller Stromzuführungen (Lötstellen) getestet werden.   
@@ -480,11 +496,11 @@ Im Segment 3:
 ## 4.4 Modulverbindung
 Damit Module aneinandergereiht werden können müssen noch die 10 Schraubklemmen bei den 25-poligen Steckern miteinander verbunden werden. Dazu kann zB 10-poliges Kabel verwendet werden.   
 
-![Stecker West](/images/300_con10_west.png "Stecker West")   
-_Bild 28: Verdrahtung Stecker West_   
+![Stecker West](./images/300_con10_west.png "Stecker West")   
+_Bild 30: Verdrahtung Stecker West_   
 
-![Stecker Ost](/images/300_con10_east.png "Stecker Ost")   
-_Bild 29: Verdrahtung Stecker Ost_   
+![Stecker Ost](./images/300_con10_east.png "Stecker Ost")   
+_Bild 31: Verdrahtung Stecker Ost_   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
