@@ -175,12 +175,12 @@ Weiters werden 30 LED-Fassungen benötigt.
 
 ### 1.4.5 Verdrahtung
 Zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen:   
-* 1x [`CON_2pol_141` Fahrstromverteiler]()   
-* 2x [`CON_1xIO` Fahrstromschalter]()   
-* 1x [`CON_2xIO` Fahrstromschalter]()   
-* 8x [`CON_10pol_PIN` oder `CON_10pol_2x4` Umsetzer 10-poliges Kabel auf Stifte]()   
-* 3x [`CON_6pol_3` 6-poliger Stecker auf drei Schraubklemmen]()   
-* 2x [`CON_6pol_6` 6-poliger Stecker auf sechs Schraubklemmen]()   
+* 1x [`CON_2pol_141` Fahrstromverteiler](/fab/rcc5_add_ons/LIESMICH.md#x60)   
+* 2x [`CON_1xIO` Fahrstromschalter einfach](/fab/rcc5_add_ons/LIESMICH.md#x70)   
+* 1x [`CON_2xIO` Fahrstromschalter doppelt](/fab/rcc5_add_ons/LIESMICH.md#x80)   
+* 8x [`CON_10pol_PIN` oder `CON_10pol_2x4` Umsetzer 10-poliges Kabel auf Stifte](/fab/rcc5_add_ons/LIESMICH.md#x30)   
+* 3x [`CON_6pol_3` 6-poliger Stecker auf drei Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x40)   
+* 2x [`CON_6pol_6` 6-poliger Stecker auf sechs Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x50)   
 
 __Drähte, Leitungen und Stecker__   
 * ca. 4 m Volldraht 22awg (0,32 mm²) rot   

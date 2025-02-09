@@ -119,3 +119,19 @@ _Anmerkung_: Statt der beiden 3-poligen Schraubklemmen k&ouml;nnen auch drei 2-p
 2. Schraubklemmen J6, J7   
 
 [Zum Seitenanfang](#up)   
+<a name="x60"></a>   
+
+# 6. `CON_2pol_141` Fahrstromverteiler
+
+
+[Zum Seitenanfang](#up)   
+<a name="x70"></a>   
+
+# 7. `CON_1xIO` Fahrstromschalter einfach
+
+[Zum Seitenanfang](#up)   
+<a name="x80"></a>   
+
+# 8. `CON_2xIO` Fahrstromschalter doppelt
+
+[Zum Seitenanfang](#up)   
