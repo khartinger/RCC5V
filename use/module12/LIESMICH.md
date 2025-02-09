@@ -7,16 +7,21 @@ Letzte &Auml;nderung: 12.1.2025 <a name="up"></a><br>
 [Hier geht es direkt zur Inhalts&uuml;bersicht](#x05)   
 
 # Übersicht
-Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 „Ausweichstelle und Abstellgleis“. Das Modul soll folgende Eigenschaften besitzen:   
+Diese Anleitung beschreibt den Bau eines 100 x 25 cm² großen Gleis-Moduls M12 „Ausweichstelle und Abstellgleis“. Das Bild zeigt das technisch fertige Modul ohne Landschaftsgestaltung.  
+
+![Modul M12](./images/300_Gleis_montiert1.png "Modul M12")   
+_Bild 1: Rahmen mit Grundplatte und Gleisen._   
+
+Das Modul soll diese Eigenschaften besitzen:   
 
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit und ohne Schotterbett |   
-| Gleisbild      | 1x Dreiwegweiche, 2x Zweiwegweiche, 1x Entkuppler, 3x abschaltbarer Gleisabschnitt |   
+| Gleisbild      | 1x Dreiwegweiche, 2x Zweiwegweiche, 1x Entkuppler, 4x abschaltbarer Gleisabschnitt |   
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
 | Fahrstrom     | Analog oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | * Händisch direkt an der Modulvorderseite <br> * über DCC <br> * durch MQTT-Nachrichten (über WLAN) |   
-| Bedienelemente | 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 3x Fahrstrom (Block 2IO, DCC 125, 126 und 127) |   
+| Bedienelemente mit Rückmeldung| 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 3x Fahrstrom (Block 2IO, DCC 125, 126 und 127) |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 | MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
 
@@ -39,7 +44,7 @@ Beim Erstellen eines Gleisplans sind zwei Dinge zu beachten: das Lichtraumprofil
 Das __Lichtraumprofil__ gibt an, wieviel Platz (vor allem von langen Waggons) neben dem Gleis benötigt wird und ist bei engen Radien wichtig.   
 Für den Radius R2 benötigt man eine Gesamt-Gleisbreite von 27 + 2 · 7 = 41 mm.   
 ![Lichtraumprofil](./images/300_lichtraumprofil.png "Lichtraumprofil")   
-_Bild 1: Lichtraumprofil_   
+_Bild 2: Lichtraumprofil_   
 
 Die __Höhe des Gleisaufbaus__ (Bahnkörper) ist für die Landschaftsgestaltung und bei mehrstöckigen Anlagen oder Tunnels wichtig. Man kann verschiedene Ebenen unterscheiden.   
 * E0 . . . . . Oberkante der Basisplatte (= 6 cm über einer Tischplatte). Auf dieser Ebene werden der Bahndamm und, darauf aufbauend, das Schotterbett aufgesetzt.   
@@ -49,7 +54,7 @@ Die __Höhe des Gleisaufbaus__ (Bahnkörper) ist für die Landschaftsgestaltung 
 * E12 . . . . . Oberkante des Gleises. Straßen für Bahnübersetzungen sollten dieses Niveau haben, wobei Bahnübergang-Bausätze oft eine Art "Rampe" bzw. Auffahrt haben, weil die Bausätze üblicherweise auf Ebene E8 platziert werden.   
 
 ![Aufbau Bahnk&ouml;rper](./images/300_aufbau_bahnkoerper.png "Aufbau Bahnk&ouml;rper")   
-_Bild 2: Aufbau des Bahnkörpers_   
+_Bild 3: Aufbau des Bahnkörpers_   
 
 Im Modell wird der Bahnkörper aus 5 mm Sperrholz und 3 mm Schaumstoff der Fa. Noch (95962 Gleisbett-Rolle N) hergestellt und mit Gleisschotter der Firma Fleischmann (9479) verfeinert. Mit einer Höhe von 4 mm (genauer 4,1 mm) für das Fleischmann-Gleis mit Schotterbett ergibt sich eine Gesamthöhe von 12,1 mm.   
 Sollte 5 mm Sperrholz nicht zur Verfügung stehen, kann man auch 4 mm starkes Sperrholz verwenden und auf die Unterseite einen ein Millimeter dicken, selbst klebenden Kork hinaufkleben.   
@@ -63,7 +68,7 @@ Der Entwurf des Gleisplans erfolgt in zwei Schritten:
 
 Der folgende Gleisplan wurde mit dem Programm [AnyRail](https://www.anyrail.com/) gezeichnet.   
 ![M12 Gleisplan](./images/300_m12_gleisplan.png "M12 Gleisplan")   
-_Bild 3: Gleisplan_   
+_Bild 4: Gleisplan_   
 
 Dunkelgraue Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
 Das 2. Gleis von links ist ein Gleis ohne Schotterbett mit der Länge 17,2 mm (22207). Die übrigen kurzen Gleise sind Gerade (9104) mit der Länge 27,75 mm. (Im Plan schlecht lesbar.)   
@@ -166,10 +171,26 @@ Weiters werden 30 LED-Fassungen benötigt.
 
 ### 1.4.5 Verdrahtung
 Zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen:   
-...ToDo...
+* 1x [`CON_2pol_141` Fahrstromverteiler]()   
+* 2x [`CON_1xIO` Fahrstromschalter]()   
+* 1x [`CON_2xIO` Fahrstromschalter]()   
+* 8x [`CON_10pol_PIN` oder `CON_10pol_2x4` Umsetzer 10-poliges Kabel auf Stifte]()   
+* 3x [`CON_6pol_3` 6-poliger Stecker auf drei Schraubklemmen]()   
+* 2x [`CON_6pol_6` 6-poliger Stecker auf sechs Schraubklemmen]()   
 
-__Drähte und Leitungen__   
-...ToDo...
+__Drähte, Leitungen und Stecker__   
+* ca. 4 m Volldraht 22awg (0,32 mm²) rot   
+* ca. 4 m Volldraht 22awg (0,32 mm²) braun   
+* ca. 3 m Flachbandkabel 6-polig   
+* ca. 2 m Flachbandkabel 10-polig   
+* ca. 60 cm 10-poliges Kabel 10 x 1 mm²   
+* 4x 10-poliges Flachbandkabel mit Buchsen Female-Female 10 cm lang (Dupont Jumper Wire Cable)   
+* 1x 10-poliges Flachbandkabel mit Buchsen Female-Female 15 cm lang (Dupont Jumper Wire Cable)   
+* 2x vier Kabel Male-Female 30 cm lang (orange, gelb, grün, blau)   
+-----   
+* 28x IDC Buchsen-Stecker für Flachbandkabel 6-polig   
+* 16x IDC Buchsen-Stecker für Flachbandkabel 10-polig   
+* 8x Lüsterklemmen   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
@@ -183,7 +204,7 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 
 ![Modul-Rahmen](./images/300_module_frame.png "Modul-Rahmen")   
-_Bild 4: AnyRail-Darstellung des Rahmengrundrisses mit den Außenteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1, Ri2, Ri3)_
+_Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Außenteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1, Ri2, Ri3)_
 
 Die einzelnen Teile des Rahmens müssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
 
@@ -191,7 +212,7 @@ Die einzelnen Teile des Rahmens müssen vor dem Zusammenbau entspechend den nach
 Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnkörper-Profil aber der NEM122 entspricht:   
 
 ![Modul_OstWest_1_Mitte.png](./images/300_OstWest_1_Mitte.png "Modul_OstWest_1_Mitte")   
-_Bild 5: Maße für die Seitenteile Ost und West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
+_Bild 6: Maße für die Seitenteile Ost und West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
 
 * Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 250 x 70 mm²   
 * Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Flügelschrauben und Flügelmuttern.   
@@ -205,7 +226,7 @@ Mit besonderer Vorsicht ist die Ausnehmung für das Gleis zu fertigen. Mit einer
 Der Rahmenteil „Nord“ enthält lediglich dreimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden innen die Querverstrebungen verschraubt.   
 
 ![Modul_Nord_980mm](./images/300_Nord_980mm.png "Modul_Nord_980mm")   
-_Bild 6: Seitenteil Nord Ra2_   
+_Bild 7: Seitenteil Nord Ra2_   
 
 <a name="x24"></a>   
 
@@ -213,23 +234,23 @@ _Bild 6: Seitenteil Nord Ra2_
 Der Rahmenteil Süd ist am aufwändigsten zu fertigen, da er das Display, einen Taster und die Bohrungen für alle Steuerblöcke und für alle Querverstrebungen enthält. Das folgende Bild gibt einen Überblick über die erforderlichen Bohrungen.   
 
 ![Modul_Süd_980mm](./images/300_Sued_980mm.png "Modul_Süd_980mm")   
-_Bild 7: Maße für den Rahmenteil Süd (Ra4)_   
+_Bild 8: Maße für den Rahmenteil Süd (Ra4)_   
 
 __OLED-Anzeige__   
 Die Aussparungen für die OLED-Anzeige und den dazugehörigen Taster sind abhängig davon, ob man die Bauteile einzeln montiert oder einen 3D-Druck-Rahmen verwendet. Bei getrennter Montage benötigt man eine rechteckförmige Aussparung der Größe 20 x 38 mm² und eine 11,6 mm-Bohrung.   
 ![OLED_Button_single](./images/300_OLED_Button_single.png "OLED_Button_single")   
-_Bild 8: Maße für die getrennte Montage der OLED-Anzeige und des Tasters_   
+_Bild 9: Maße für die getrennte Montage der OLED-Anzeige und des Tasters_   
 
 Bei Verwendung eines 3D-gedruckten Rahmens benötigt man eine rechteckförmige Aussparung der Größe 80 x 43 mm².   
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
-_Bild 9: Maße für den Rahmen der OLED-Anzeige mit Taster_   
+_Bild 10: Maße für den Rahmen der OLED-Anzeige mit Taster_   
 
 __Steuerblöcke__   
 Je nach Art des Steuerelementes werden unterschiedliche Bohrungen benötigt. So zeigt das Symbol der Dreiwegweiche W3 nach rechts (6 Bohrungen), das der ersten Zweiwegweiche W2 nach links unten (4 Bohrungen) und das des Entkupplers 1OUT nach rechts (4 Bohrungen). Es folgen die drei Schaltsymbole für die Fahrstromabschaltung 2IO (7 Bohrungen) und das Schaltbild der zweiten Zweiwegweiche W2 nach rechts oben (4 Bohrungen).   
 Die genaue Lage aller Bohrungen für einen Schaltblock zeigt das folgende Bild, wobei je nach Schaltblock-Typ nur die entsprechenden Bohrungen benötigt werden (!):   
 
 ![Bohrposition LEDs und Taster](./images/300_drill_position_LED_button.png "Bohrposition LEDs und Taster")   
-_Bild 10: Maße für die LED- und Taster-Bohrungen_   
+_Bild 11: Maße für die LED- und Taster-Bohrungen_   
 
 Der Bohrdurchmesser für die LED-Fassungen beträgt 5,6 mm, der für die Taster ca. 7 mm.   
 
@@ -238,7 +259,7 @@ Das einzelne Anzeichnen der Positionen der Bohrungen benötigt viel Zeit und gen
 Das folgende Bild zeigt die 40 x 42 mm großen Abdeckungen.   
  
 ![Beschriftung Bedienungselemente](./images/300_M12_cover.png "Beschriftung Bedienungselemente")   
-_Bild 11: Beschriftung der Bedienungselemente für Modul 12_   
+_Bild 12: Beschriftung der Bedienungselemente für Modul 12_   
 
 __LED-Fassungen__   
 Nach dem Bohren sind die Bohrungen zu reinigen und die LED-Fassungen einzupressen.   
@@ -248,27 +269,27 @@ Als Nächstes kann man die Halterungen für die Steuerblöcke mit 2,6 x 8 mm Sch
 
 Die Position der Schrauben für die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgendermaßen festgelegt:   
 ![Schraubposition für Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition für Blockhalter")   
-_Bild 12: Position der Schrauben für die Steuerblock-Halterungen_   
+_Bild 13: Position der Schrauben für die Steuerblock-Halterungen_   
 
 Den fertigen Rahmenteil Süd (ohne Fahrstromabschaltung Gleis 1A) zeigen die folgenden Bilder   
 ![Rahmenteil Süd Forderseite](./images/300_Frame_South_front.png "Rahmenteil Süd Forderseite")   
-_Bild 13: Rahmenteil Süd Forderseite_   
+_Bild 14: Rahmenteil Süd Forderseite_   
 
 ![Rahmenteil Süd Rückseite](./images/300_Frame_South_back.png "Rahmenteil Süd Rückseite")   
-_Bild 14: Rahmenteil Süd Rückseite_   
+_Bild 15: Rahmenteil Süd Rückseite_   
 
 
 ## 2.5 Querverstrebung Ri1 bis Ri3
 Die Querverstrebungen enthalten verschiedene Durchbrüche für Kabel und zwei Bohrungen für die Halterung der 25-poligen Sub-D-Stecker.   
 
 ![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
-_Bild 15: Querverstrebungen Ri1 bis Ri3_
+_Bild 16: Querverstrebungen Ri1 bis Ri3_
 
 ## 2.6 Zusammenbau des Rahmens
 Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser zusammengeschraubt werden.   
 
 ![](./images/300_M12_frame_bottom_view.png)   
-_Bild 16: Zusammengeschraubter Rahmen, Ansicht von unten_   
+_Bild 17: Zusammengeschraubter Rahmen, Ansicht von unten_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
@@ -295,12 +316,12 @@ Hat man entschieden, wo welche Sperrholz-Höhen eingesetzt werden, schneidet man
 Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, müssen noch Aussparungen ausgeschnitten werden.   
 
 ![Maße der Aussparung für Unterflurantrieb](./images/300_turnout_cutout_right.png "Maße der Aussparung für Unterflurantrieb")   
-_Bild 17: Maße der Aussparung für einen Unterflurantrieb._   
+_Bild 18: Maße der Aussparung für einen Unterflurantrieb._   
 
 Die folgenden beiden Bilder zeigen die verschiedenen Ebenen des Geländes und die Aussparungen für die Weichen. Links vorne und rechts hinten ist das Niveau E0, in der Mitte und hinten (im Bild oben) ist 8 mm hohes Sperrholz (E8).   
 ![Bahndamm2](./images/300_Bahndamm2.png "Bahndamm2")   
 ![Bahndamm](./images/300_Bahndamm.png "Bahndamm")   
-_Bild 18: Verschiedene Modul-Ebenen_
+_Bild 19: Verschiedene Modul-Ebenen_
 
 ## 3.3 Bettungskörper (Schotterbett)
 Im nächsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Dies erfolgt nicht nur an Stellen, wo später ein Gleis verläuft, sondern auch an Stellen, die das gleiche Niveau haben sollen, zB zwischen den Gleisen oder dort, wo später der Antrieb für den Entkuppler hinkommt.   
@@ -308,13 +329,13 @@ Danach bohrt man mit einem 4 mm Bohrer die Löcher für die Fahrstromzuführung.
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen für die Weichenantriebe und die Bohrungen für die Fahrstromzuführung.   
 
 ![Schotterbett](./images/300_Schotterbett1.png "Schotterbett")   
-_Bild 19: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen für Fahrstrom und Weichenausschnitten_   
+_Bild 20: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen für Fahrstrom und Weichenausschnitten_   
 
 ## 3.4 Vorbereitung der Verdrahtung
 ### Montage der Schaltblöcke   
 Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht beschädigt werden). Für ein leichteres Arbeiten entfernt man zuerst die Grundplatte vom Rahmen und montiert die Schaltblöcke. Dazu steckt man einen Schaltblock in die Schaltblock-Halterung und schraubt ihn mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
 ![Schaltblockmontage](./images/300_Schaltblockmontage.png "Schaltblockmontage")   
-_Bild 20: Anschrauben der Schaltblöcke_   
+_Bild 21: Anschrauben der Schaltblöcke_   
 
 Weiters montiert man auf die erste und dritte Querstrebe die Halterung für die Sub-D-Stecker. Sollte dabei eine Fahrstromzuführung genau unter einer Halterung liegen, so muss man die Stromzuführung nochmals bohren....   
 
@@ -335,7 +356,7 @@ Für die Platzierung der Klemmen gilt allgemein:
 Das folgende Bild zeigt die montierten Klemmen.   
 
 ![M12_Verdrahtung_1](./images/300_M12_Verdrahtung1.png "M12_Verdrahtung_1")   
-_Bild 21: Klemmen für die Verdrahtung_   
+_Bild 22: Klemmen für die Verdrahtung_   
 
 _Montage der Klemmen etc. im Detail_:    
 1. Beschriften der Bohrungen für die Fahrstromzuführung:   
@@ -357,7 +378,7 @@ Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht mit 0,
 Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung über dem Gleisverbinder heraus (damit man leichter löten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten die kleine Plastikverbindung über dem Gleisverbinder, der rechts oben entfernt ist.   
 
 ![Loeten_Gleisanschluss1](./images/300_Loeten_Gleisanschluss1.png "Loeten_Gleisanschluss1")   
-_Bild 22: Vorbereitung des Anlötens einer Stromzuführung._   
+_Bild 23: Vorbereitung des Anlötens einer Stromzuführung._   
 
 ### Gleise aufkleben   
 #### Vorbereitung der Weichen   
@@ -381,7 +402,7 @@ Da die beiden Ausgleichsgleise am linken und rechten Rand im Betrieb mechanisch 
 
 Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgendermaßen aus:   
 ![Montiertes Gleis](./images/300_Gleis_montiert1.png "Montiertes Gleis")   
-_Bild 23: Rahmen mit Grundplatte und Gleisen._   
+_Bild 24: Rahmen mit Grundplatte und Gleisen._   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -389,16 +410,23 @@ _Bild 23: Rahmen mit Grundplatte und Gleisen._
 # 4. Elektrische Verdrahtung des Moduls   
 
 ## 4.1 Verdrahtung der Stromversorgung und des Fahrstroms
-1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltblöcken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 10 montierten Pfostenverbindern. Der erste Pfostenverbinder dient zum Anschluss an die Versorgungsplatine, der Pfostenverbinder am Ende der Leitung dient einem eventuell erforderlichem Verlängern des Flachbandkabels bzw. zum Anschluss eines 100 nF-Kondensators zwischen V+ und V-. Der Stecker ist im _Bild 24_ rechts oben noch nicht angebracht...    
+1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltblöcken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 10 montierten Pfostenverbindern. Der erste Pfostenverbinder dient zum Anschluss an die Versorgungsplatine, der Pfostenverbinder am Ende der Leitung dient einem eventuell erforderlichem Verlängern des Flachbandkabels bzw. zum Anschluss von 100 nF-Kondensatoren zwischen V+ und V- sowie 5V und 0V. (Der Stecker ist im _Bild 27_ rechts oben noch nicht angebracht...)   
+![Abschlusskondensatoren](./images/300_powerline_2xC.png "Abschlusskondensatoren")   
+_Bild 25: Abschlusskondensatoren am Ende des POWER-Kabels_   
+
 2. Verbinden aller Fahrstromanschlüsse mit den entsprechenden Klemmen.   
 3. Verbinden des Fahrstroms (NN, SS) von der Versorgungsplatine `RW_5V_SUB25_10` zu den Platinen `CON_2pol_141`, `CON_1xIO`, `CON_2xIO` sowie den Lüsterklemmen GW (Gleis West) und GO (Gleis Ost).   
 4. Verbinden der Anschlüsse der beiden Weichenantriebe der Dreiwegweiche mit der Platine `CON_6pol_6` (linke Weiche = Antrieb näher zu den Schaltblöcken = Pin 1 und 3, Masse an Pin 2).   
 5. Verbinden der Anschlüsse der beiden Zweiweg-Weichenantriebe mit den Platinen `CON_6pol_3` (Masse = schwarzes Kabel an Pin 2).   
 6. Verbinden der Anschlüsse des Entkupplers mit der Platine `CON_6pol_3`.   
 _Wichtig_: Da der Entkuppler Störspannungen erzeugt, muss ein 100 nF-Kondensator parallel zu den Klemmen V+ und V- geschaltet werden.   
+![Entstörkondensator](./images/300_uncoupler_C.png "Entstörkondensator")   
+_Bild 26: Entstörkondensator am Entkuppler_   
+
+Die Verdrahtung der Stromversorgung im Überblick:   
 
 ![Verdrahtung 1](./images/300_Verdrahtung1.png "Verdrahtung 1")   
-_Bild 24: Verdrahtung Stromversorgung_   
+_Bild 27: Verdrahtung Stromversorgung_   
 
 ### Erster Test der Verdrahtung   
 Mit der bisherigen Verdrahtung ist es bereits möglich, einen händischen Betrieb durchzuführen. Dabei kann vor allem der richtige Anschluss der Weichen und die Funktion aller Stromzuführungen (Lötstellen) getestet werden.   
@@ -450,7 +478,13 @@ Im Segment 3:
    * I/O-Expander 0x23 - Pin 4 <---> Block DCC 125, Pin 1 - OUT   
 
 ## 4.4 Modulverbindung
-Damit Module aneinandergereiht werden können müssen noch die je 10 Schraubklemmen bei den 25-poligen Steckern mit einander verbunden werden. Dazu kann zB 10-poliges Kabel verwendet werden.   
+Damit Module aneinandergereiht werden können müssen noch die 10 Schraubklemmen bei den 25-poligen Steckern miteinander verbunden werden. Dazu kann zB 10-poliges Kabel verwendet werden.   
+
+![Stecker West](/images/300_con10_west.png "Stecker West")   
+_Bild 28: Verdrahtung Stecker West_   
+
+![Stecker Ost](/images/300_con10_east.png "Stecker Ost")   
+_Bild 29: Verdrahtung Stecker Ost_   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
