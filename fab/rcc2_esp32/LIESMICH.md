@@ -59,7 +59,7 @@ Die Pinbelegung der Anschl&uuml;sse ist so gew&auml;hlt, dass sich ein Display b
 _Bild 5: Platine "Shield_I2C_5V_3V3" zum Anschluss zweier I2C-Busse_   
 
 _*Platinengr&ouml;&szlig;e*_: 26,2 x 28,5 mm²   
-_*Link zu den KiCad-Dateien*_: [/kicad/Shield_I2C_5V_3V3_V2](/kicad/Shield_I2C_5V_3V3_V2)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/Shield_I2C_5V_3V3_V2](/fab/kicad/Shield_I2C_5V_3V3_V2)   
 
 ![Shield_I2C_5V_3V3](/images/300_Shield_I2C_5V_3V3.png "Shield_I2C_5V_3V3")   
 _Bild 6: Die best&uuml;ckte Platine "Shield_I2C_5V_3V3"_   
@@ -109,7 +109,7 @@ Diese Platine erf&uuml;llt drei Aufgaben:
 _Bild 9: Platine "Shield_5V_DCC_6pol_V2"_   
 
 _*Platinengr&ouml;&szlig;e*_: 26,2 x 28,5 mm²   
-_*Link zu den KiCad-Dateien*_: [/kicad/Shield_5V_DCC_6pol_V3](/kicad/Shield_5V_DCC_6pol_V3)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/Shield_5V_DCC_6pol_V3](/fab/kicad/Shield_5V_DCC_6pol_V3)   
 
 ![Shield_5V_DCC_6pol](/images/300_Shield_5V_DCC_6pol.png "Shield_5V_DCC_6pol")   
 _Bild 10: Die best&uuml;ckte Platine "Shield_5V_DCC_6pol" zum Anschluss von 5V-Spannungsversorgung, DCC-Signal und Taster_   
@@ -164,7 +164,7 @@ Die Pinbelegung der Anschl&uuml;sse ist so gew&auml;hlt, dass sich das Display b
 _Bild 13: Platine "Shield_I2C_5V_3V3_big" zum Anschluss des 5V- und OLED-I2C-Bus_   
 
 _*Platinengr&ouml;&szlig;e*_: 58 x 39 mm²   
-_*Link zu den KiCad-Dateien*_: [/kicad/Shield_I2C_5V_3V3_big_V2](/kicad/Shield_I2C_5V_3V3_big_V2)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/Shield_I2C_5V_3V3_big_V2](/fab/kicad/Shield_I2C_5V_3V3_big_V2)   
 
 ![Shield_I2C_5V_3V3_big](/images/300_Shield_I2C_5V_3V3_big.png "Shield_I2C_5V_3V3_big")   
 _Bild 14: Die best&uuml;ckte Platine "Shield_I2C_5V_3V3_big"_   

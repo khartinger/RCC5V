@@ -23,7 +23,7 @@ Schaltbl&ouml;cke haben eine Gr&ouml;&szlig;e von 41 x 41 mm² bei einer Tiefe v
 Geht man von einer Frontplattenh&ouml;he von 60 mm und St&auml;rke der eingelegten Gleistr&auml;gerplatte von 10 mm aus, so ergibt sich eine Einbauh&ouml;he von 50 mm. Als Abstand eines Schaltblocks zum unteren Rand der Frontplatte wird 5,5 mm (5,43 mm) angenommen.   
 
 # Bohrpositionen   
-Da Bauteile auf den Platinen oft im 1/10-Zoll-Raster plaziert sind, sind die Bohrpositionen keine ganzen Zahlen im Millimeter-System. Daher werden die Bohrpositionen gerundet, wie das Bild 2 zeigt. Die exakten Werte k&ouml;nnen zB aus dem Layout einer KiCad-Datei (zB [RW_5V_W3_STRG_V4.kicad_pcb - in KiCad &ouml;ffnen](/kicad/RW_5V_W3_STRG_V4)) oder einer [Excel-Tabelle](/info/z_details/RW_Koordinaten_241124.xls) entnommen werden.   
+Da Bauteile auf den Platinen oft im 1/10-Zoll-Raster plaziert sind, sind die Bohrpositionen keine ganzen Zahlen im Millimeter-System. Daher werden die Bohrpositionen gerundet, wie das Bild 2 zeigt. Die exakten Werte k&ouml;nnen zB aus dem Layout einer KiCad-Datei (zB [RW_5V_W3_STRG_V4.kicad_pcb - in KiCad &ouml;ffnen](/fab/kicad/RW_5V_W3_STRG_V4)) oder einer [Excel-Tabelle](/info/z_details/RW_Koordinaten_241124.xls) entnommen werden.   
 
 ![panel_drill_positions1](/images/300_panel_drill_positions1.png "panel_drill_positions1")   
 _Bild 2: Bohrpositionen f&uuml;r die LEDs und Taster bzw. Schalter_

@@ -18,7 +18,7 @@ _Figure 1: Mounting boards for switching blocks mounted on a 3D-printed frame_
 _Figure 2: Mounting board for switching blocks_   
 
 _*Board size*_: 41 x 41 mm²   
-_*Link to the KiCad files*_: [/kicad/SRW_LEER_LED_V1](/kicad/RW_LEER_LED_V1)   
+_*Link to the KiCad files*_: [/fab/kicad/SRW_LEER_LED_V1](/fab/kicad/RW_LEER_LED_V1)   
 
 ### Parts list   
 | Quantity | Reference | Value | Note |   
@@ -45,7 +45,7 @@ _Figure 3: The assembled “CON_10pol_PIN” board, once with a straight connect
 _Figure 4: Pins for I²C IO pins_   
 
 _*Board size*_: 33 x 15 mm²   
-_*Link to the KiCad files*_: [/kicad/CON_10pol_PIN_V2](/kicad/CON_10pol_PIN_V2)   
+_*Link to the KiCad files*_: [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10pol_PIN_V2)   
 
 ### Bill of materials
 | Quantity | Reference | Value | Note, Footprint |   
@@ -74,7 +74,7 @@ _Figure 6: Circuit diagram of the “CON_6pol_3” board_
 _Figure 7: Circuit board connection terminal for two-way turnout_   
 
 _*Board size*_: 25 x 18 mm²   
-_*Link to the KiCad files*_: [/kicad/CON_6pol_3_V1](/kicad/CON_6pol_3_V1)   
+_*Link to the KiCad files*_: [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_V1)   
 
 ### Bill of materials
 | Quantity | Reference | Value | Note, Footprint |   
@@ -102,7 +102,7 @@ _Figure 9: Circuit diagram of the “CON_6pol_6” board_
 _Figure 10: Connection terminal for three-way diverter switch_   
 
 _*Board size*_: 41 x 18 mm²   
-_*Link to the KiCad files*_: [/kicad/CON_6pol_6_V1](/kicad/CON_6pol_6_V1)   
+_*Link to the KiCad files*_: [/fab/kicad/CON_6pol_6_V1](/fab/kicad/CON_6pol_6_V1)   
 
 ### Bill of materials
 | Quantity | Reference | Value | Note, Footprint |   

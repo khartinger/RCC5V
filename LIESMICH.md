@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 3.1.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 12.2.2025 <a name="up"></a><br>   
 <h1>Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -7,8 +7,8 @@ Letzte &Auml;nderung: 3.1.2025 <a name="up"></a><br>
 [Direkter Sprung zur Inhalts&uuml;bersicht von diesem Repository](#x20)   
 
 # Einleitung
-Im Modelleisenbahnbau gibt es viele M&ouml;glichkeiten, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern.   
-Die simpelste M&ouml;glichkeit ist Bedienung der Komponenten von Hand. In diesem Fall ben&ouml;tigt man nicht einmal Weichenantriebe. Allerdings wird diese Betriebsart bei weiter entfernten oder verteilten Komponenten schnell umst&auml;ndlich.   
+Das Schalten von Weichen ist bei Modellbahnen eine wichtige Sache. Wer will nicht die Möglichkeit haben, das auf verschiedene Arten zu machen? Es gibt viele Mittel und Wege, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern.   
+Die einfachste Methode ist, das alles von Hand zu machen. In dem Fall braucht man nicht einmal Weichenantriebe. Aber bei weiter entfernten oder verteilten Komponenten wird diese Betriebsart schnell umständlich.   
 Aus diesem Grund werden zum Schalten der Komponenten &uuml;blicherweise magnetische Antriebe verwendet. Dabei wird im einfachsten Fall die Wechselspannung direkt geschaltet:   
 
 ![RCC_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC_5V_DirectSwitching")   
@@ -50,7 +50,7 @@ Dieses Repository befasst sich mit der Herstellung und Verwendung von Komponente
 In verschiedenen Unterverzeichnissen werden folgende Themen behandelt:   
 
 __Informationen rund um das System__   
-* [Wie starte ich das RCC-Projekt?](/fab/rcc0_start/LIESMICH.md)   
+* [Wie beginne ich mit dem RCC-Projekt?](/fab/rcc0_start/LIESMICH.md)   
 * [Elektrische Verbindung von Eisenbahn-Modulen nach NEM 908D](/info/con_NEM908/LIESMICH.md)   
 * [Bohrungen und Abdeckungen f&uuml;r die Modul-Frontseite](/info/frontpanel/LIESMICH.md)   
 
@@ -59,7 +59,7 @@ __Herstellung der System-Komponenten__
 * [Herstellung der ESP32-Shields](/fab/rcc2_esp32/LIESMICH.md)   
 * [Herstellung von Schaltbl&ouml;cken](/fab/rcc4_block/LIESMICH.md)   
 * [Herstellung der Zusatzplatinen](/fab/rcc5_add_ons/LIESMICH.md)   
-* [KiCad-Dateien der RCC-Komponenten](/kicad/LIESMICH.md)   
+* [KiCad-Dateien der RCC-Komponenten](/fab/kicad/LIESMICH.md)   
 
 __Software f&uuml;r den ESP32__   
 * [MQTT-Befehle zur Steuerung der Komponenten](/software/mqtt/LIESMICH.md)   
@@ -69,8 +69,8 @@ __Software f&uuml;r den ESP32__
 * [Automatisches Ausf&uuml;hren von MQTT-Befehlsfolgen]()   
 
 __Anwendungsbeispiele__   
-* [Beispiel-Verdrahtung einer Weiche](/use/exampleTurnout2/LIESMICH.md)   
-* [Bau des Moduls #12: "Ausweichstelle und Abstellgleis"](/use/module12/LIESMICH.md)   
+* [Beispiel-Verdrahtung einer Weiche](/examples/exampleTurnout2/LIESMICH.md)   
+* [Bau des Moduls #12: "Ausweichstelle und Abstellgleis"](/examples/module12/LIESMICH.md)   
 
 [Zum Seitenanfang](#up)
 <a name="x30"></a>   

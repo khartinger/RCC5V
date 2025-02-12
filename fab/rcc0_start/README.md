@@ -22,19 +22,19 @@ Which PCBs you need naturally depends on the application. However, some PCBs are
 
 ### Always required circuit boards
 The two shields for the ESP32 are always required   
-* [/kicad/Shield_5V_DCC_6pol_V3](/kicad/Shield_5V_DCC_6pol_V3)   
-* [/kicad/Shield_I2C_5V_3V3_V2](/kicad/Shield_I2C_5V_3V3_V2)   
+* [/fab/kicad/Shield_5V_DCC_6pol_V3](/fab/kicad/Shield_5V_DCC_6pol_V3)   
+* [/fab/kicad/Shield_I2C_5V_3V3_V2](/fab/kicad/Shield_I2C_5V_3V3_V2)   
 
 and the rectifier board for generating the 5V:   
-* [/kicad/AC_5V_6pol_DCC_V1](/kicad/AC_5V_6pol_DCC_V1)   
+* [/fab/kicad/AC_5V_6pol_DCC_V1](/fab/kicad/AC_5V_6pol_DCC_V1)   
 
 The mounting board is also useful:   
-* [/kicad/RW_LEER_LED_V1](/kicad/RW_LEER_LED_V1)   
+* [/fab/kicad/RW_LEER_LED_V1](/fab/kicad/RW_LEER_LED_V1)   
 
 The auxiliary boards for connecting the switch(es) and the inputs and outputs of the PCF8574 are practical, but could also be bypassed by connecting the lines directly to the blocks.
-* [/kicad/CON_10pol_PIN_V2](/kicad/CON_10pol_PIN_V2)   
-* [/kicad/CON_6pol_3_V1](/kicad/CON_6pol_3_V1) for two-way switch   
-* [/kicad/CON_6pol_6_V1](/kicad/CON_6pol_6_V1) for three-way switch   
+* [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10pol_PIN_V2)   
+* [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_V1) for two-way switch   
+* [/fab/kicad/CON_6pol_6_V1](/fab/kicad/CON_6pol_6_V1) for three-way switch   
 
 ### Power or module supply
 A distinction is made here,   
@@ -42,11 +42,11 @@ A distinction is made here,
 * how long the module is.   
 
 For short modules (up to 50 cm) with 25-pin cable:
-* [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)   
+* [/fab/kicad/RW_5V_2SUB25_V2](/fab/kicad/RW_5V_2SUB25_V2)   
 
 For long modules (longer than 50 cm) with 25-pin cable:
-* [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1)   
-* [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Screw10_V1)   
+* [/fab/kicad/RW_5V_SUB25_10_V1](/fab/kicad/RW_5V_SUB25_10_V1)   
+* [/fab/kicad/CON_SubD_Screw10_V1](/fab/kicad/CON_SubD_Screw10_V1)   
 
 If you do not use 25-pin SubD connectors, the AC voltage can be connected directly to the rectifier board and the DCC signal directly to the DCC connector of the "Shield_5V_DCC_6pol_V3” board.   
 
@@ -54,26 +54,26 @@ If you do not use 25-pin SubD connectors, the AC voltage can be connected direct
 RCC blocks always consist of two circuit boards: one for the controller (CTRL) and one for the buttons, switches and LED display (LED).   
 
 If you want to switch __two-way switches__, you need the boards   
-* [/kicad/RW_5V_W2_STRG_V2](/kicad/RW_5V_W2_STRG_V2)   
-* [/kicad/RW_5V_W2_LED_V2](/kicad/RW_5V_W2_LED_V2)   
+* [/fab/kicad/RW_5V_W2_STRG_V2](/fab/kicad/RW_5V_W2_STRG_V2)   
+* [/fab/kicad/RW_5V_W2_LED_V2](/fab/kicad/RW_5V_W2_LED_V2)   
 
 If you want to switch __three-way switches__, you need the boards   
-* [/kicad/RW_5V_W3_STRG_V4](/kicad/RW_5V_W3_STRG_V4)   
-* [/kicad/RW_5V_W3_LED_V4](/kicad/RW_5V_W3_LED_V4)   
+* [/fab/kicad/RW_5V_W3_STRG_V4](/fab/kicad/RW_5V_W3_STRG_V4)   
+* [/fab/kicad/RW_5V_W3_LED_V4](/fab/kicad/RW_5V_W3_LED_V4)   
 
 If you want to switch tracks on and off, you need the boards   
-* [/kicad/RW_5V_2IO_STRG_V1](/kicad/RW_5V_2IO_STRG_V1)   
-* [/kicad/RW_5V_2IO_LED_V2](/kicad/RW_5V_2IO_LED_V2)   
+* [/fab/kicad/RW_5V_2IO_STRG_V1](/fab/kicad/RW_5V_2IO_STRG_V1)   
+* [/fab/kicad/RW_5V_2IO_LED_V2](/fab/kicad/RW_5V_2IO_LED_V2)   
 
 If you want to operate decouplers, you need the boards   
-* [/kicad/RW_5V_1OUT_STRG_V1](/kicad/RW_5V_1OUT_STRG_V1)   
-* [/kicad/RW_5V_1OUT_LED_V2](/kicad/RW_5V_1OUT_LED_V2)   
+* [/fab/kicad/RW_5V_1OUT_STRG_V1](/fab/kicad/RW_5V_1OUT_STRG_V1)   
+* [/fab/kicad/RW_5V_1OUT_LED_V2](/fab/kicad/RW_5V_1OUT_LED_V2)   
 
 ## Procedure for creating the printed circuit boards
 The following procedure makes sense:   
 1. install the open source [layout program KiCad](https://www.kicad.org/) with the "PCBWay” plug-in.   
 2. create the required PCBs   
-The KiCad files [required to produce the PCB](/kicad) are available for each component in the /kicad directory. The PCBs are double-sided, plated through and designed with screen printing on both sides. If you want to manufacture the PCBs yourself, appropriate adjustments are required.   
+The KiCad files [required to produce the PCB](/fab/kicad) are available for each component in the /fab/kicad directory. The PCBs are double-sided, plated through and designed with screen printing on both sides. If you want to manufacture the PCBs yourself, appropriate adjustments are required.   
 If, on the other hand, you want to have the PCBs manufactured by PCBWay, for example, the following procedure makes sense:   
 
 1. load the KiCad project into KiCad (get it from the /kikad directory)   

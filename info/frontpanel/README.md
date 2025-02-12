@@ -23,7 +23,7 @@ Switching blocks have a size of 41 x 41 mm² with a depth of approx. 39 mm. Assu
 Assuming a front panel height of 60 mm and a thickness of the inserted track support plate of 10 mm, this results in an installation height of 50 mm. A distance of 5.5 mm (5.43 mm) is assumed between a switching block and the lower edge.   
 
 # Drilling positions   
-As components are often placed on the PCBs in 1/10-inch increments, the drilling positions are not whole numbers in the millimeter system. The drilling positions are therefore rounded, as shown in Fig. 2. The exact values can be taken from the layout of a KiCad file (e.g. [RW_5V_W3_STRG_V4.kicad_pcb - open in KiCad](/kicad/RW_5V_W3_STRG_V4)) or an [Excel spreadsheet](/info/z_details/RW_Koordinaten_241124.xls).   
+As components are often placed on the PCBs in 1/10-inch increments, the drilling positions are not whole numbers in the millimeter system. The drilling positions are therefore rounded, as shown in Fig. 2. The exact values can be taken from the layout of a KiCad file (e.g. [RW_5V_W3_STRG_V4.kicad_pcb - open in KiCad](/fab/kicad/RW_5V_W3_STRG_V4)) or an [Excel spreadsheet](/info/z_details/RW_Koordinaten_241124.xls).   
 
 ![panel_drill_positions1](/images/300_panel_drill_positions1.png "panel_drill_positions1")   
 _Figure 2: Drilling positions for the LEDs and buttons or switches_

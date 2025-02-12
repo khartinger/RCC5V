@@ -42,7 +42,7 @@ The power supply board looks like this:
 _Figure 4: Circuit board AC_5V_supply_6pol_DCC_   
 
 _*Board size*_: 63.75 x 21.55 mm²   
-_*Link to the KiCad files*_: [/kicad/AC_5V_6pol_DCC_V1](/kicad/AC_5V_6pol_DCC_V1)   
+_*Link to the KiCad files*_: [/fab/kicad/AC_5V_6pol_DCC_V1](/fab/kicad/AC_5V_6pol_DCC_V1)   
 
 ### Bill of materials   
 | Quantity | Reference | Value | Footprint |   
@@ -104,7 +104,7 @@ _Figure 7: Circuit board RW_5V_2SUB25_
 
 _*Board size*_: 80 x 66 mm²   
 _*Mounting holes*_: 2.5 mm, distance 70 mm x 60 mm   
-_*Link to the KiCad files*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)   
+_*Link to the KiCad files*_: [/fab/kicad/RW_5V_2SUB25_V2](/fab/kicad/RW_5V_2SUB25_V2)   
 
 ### Bill of materials   
 | Quantity | Reference | Value | Footprint |   
@@ -133,7 +133,7 @@ _Figure 8: Circuit board RW_5V_SUB25_10_
 
 _*Board size*_: 80 x 66 mm²   
 _*Mounting holes*_: 2.5 mm, distance 70 mm x 60 mm   
-_*Link to the KiCad files*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1)   
+_*Link to the KiCad files*_: [/fab/kicad/RW_5V_SUB25_10_V1](/fab/kicad/RW_5V_SUB25_10_V1)   
 
 ### Bill of Materials   
 | Quantity | Reference | Value | Footprint |   
@@ -162,7 +162,7 @@ _Figure 9: Board CON_SubD_Screw10_
 
 _*Board size*_: 31 x 66 mm²   
 _*Mounting holes*_: 2.5 mm, distance 21 mm x 60 mm   
-_*Link to the KiCad files*_: [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Screw10_V1)   
+_*Link to the KiCad files*_: [/fab/kicad/CON_SubD_Screw10_V1](/fab/kicad/CON_SubD_Screw10_V1)   
 
 ### Bill of materials   
 | Quantity | Reference | Value | Footprint |   

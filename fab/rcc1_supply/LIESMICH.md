@@ -42,7 +42,7 @@ Die Netzteil-Platine sieht so aus:
 _Bild 4: Platine AC_5V_supply_6pol_DCC_   
 
 _*Platinengr&ouml;&szlig;e*_: 63,75 x 21,55 mm²   
-_*Link zu den KiCad-Dateien*_: [/kicad/AC_5V_6pol_DCC_V1](/kicad/AC_5V_6pol_DCC_V1)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/AC_5V_6pol_DCC_V1](/fab/kicad/AC_5V_6pol_DCC_V1)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz   | Wert                   | Geh&auml;use            |   
@@ -104,7 +104,7 @@ _Bild 7: Platine RW_5V_2SUB25_
 
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
 _*Montagebohrungen*_: 2,5 mm, Abstand 70 mm x 60 mm   
-_*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_2SUB25_V2](/fab/kicad/RW_5V_2SUB25_V2)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use       |   
@@ -133,7 +133,7 @@ _Bild 8: Platine RW_5V_SUB25_10_
 
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
 _*Montagebohrungen*_: 2,5 mm, Abstand 70 mm x 60 mm   
-_*Link zu den KiCad-Dateien*_: [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_SUB25_10_V1](/fab/kicad/RW_5V_SUB25_10_V1)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -162,7 +162,7 @@ _Bild 9: Platine CON_SubD_Screw10_
 
 _*Platinengr&ouml;&szlig;e*_: 31 x 66 mm²   
 _*Montagebohrungen*_: 2,5 mm, Abstand 21 mm x 60 mm   
-_*Link zu den KiCad-Dateien*_: [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Screw10_V1)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_SubD_Screw10_V1](/fab/kicad/CON_SubD_Screw10_V1)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   

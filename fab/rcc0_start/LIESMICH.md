@@ -22,19 +22,19 @@ Welche Leiterplatten man benötigt, ist naturgemäß abhängig vom Anwendungsfal
 
 ### Immer erforderliche Platinen
 Immer erforderlich sind die beiden Shields für den ESP32   
-* [/kicad/Shield_5V_DCC_6pol_V3](/kicad/Shield_5V_DCC_6pol_V3)   
-* [/kicad/Shield_I2C_5V_3V3_V2](/kicad/Shield_I2C_5V_3V3_V2)   
+* [/fab/kicad/Shield_5V_DCC_6pol_V3](/fab/kicad/Shield_5V_DCC_6pol_V3)   
+* [/fab/kicad/Shield_I2C_5V_3V3_V2](/fab/kicad/Shield_I2C_5V_3V3_V2)   
 
 und die Gleichrichterplatine zur Erzeugung der 5V:   
-* [/kicad/AC_5V_6pol_DCC_V1](/kicad/AC_5V_6pol_DCC_V1)   
+* [/fab/kicad/AC_5V_6pol_DCC_V1](/fab/kicad/AC_5V_6pol_DCC_V1)   
 
 Weiters sinnvoll ist die Halterungsplatine:   
-* [/kicad/RW_LEER_LED_V1](/kicad/RW_LEER_LED_V1)   
+* [/fab/kicad/RW_LEER_LED_V1](/fab/kicad/RW_LEER_LED_V1)   
 
 Die Hilfsplatinen zum Anschließen der Weiche(n) und der Ein- und Ausgänge der PCF8574 sind praktisch, könnten aber auch durch das direkte Anstecken der Leitungen an den Blöcken umgangen werden.
-* [/kicad/CON_10pol_PIN_V2](/kicad/CON_10pol_PIN_V2)   
-* [/kicad/CON_6pol_3_V1](/kicad/CON_6pol_3_V1) für Zwei-Weg-Weiche   
-* [/kicad/CON_6pol_6_V1](/kicad/CON_6pol_6_V1) für Drei-Weg-Weiche   
+* [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10pol_PIN_V2)   
+* [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_V1) für Zwei-Weg-Weiche   
+* [/fab/kicad/CON_6pol_6_V1](/fab/kicad/CON_6pol_6_V1) für Drei-Weg-Weiche   
 
 ### Strom- bzw. Modulversorgung
 Hier unterscheidet man,   
@@ -42,11 +42,11 @@ Hier unterscheidet man,
 * wie lange das Modul ist.   
 
 Für kurze Module (bis 50 cm) mit 25-poligem Kabel:
-* [/kicad/RW_5V_2SUB25_V2](/kicad/RW_5V_2SUB25_V2)   
+* [/fab/kicad/RW_5V_2SUB25_V2](/fab/kicad/RW_5V_2SUB25_V2)   
 
 Für lange Module (länger als 50 cm) mit 25-poligem Kabel:
-* [/kicad/RW_5V_SUB25_10_V1](/kicad/RW_5V_SUB25_10_V1)   
-* [/kicad/CON_SubD_Screw10_V1](/kicad/CON_SubD_Screw10_V1)   
+* [/fab/kicad/RW_5V_SUB25_10_V1](/fab/kicad/RW_5V_SUB25_10_V1)   
+* [/fab/kicad/CON_SubD_Screw10_V1](/fab/kicad/CON_SubD_Screw10_V1)   
 
 Verwendet man keine 25-poligen SubD-Stecker, kann die Wechselspannung direkt an die Gleichrichterplatine und das DCC-Signal direkt an den DCC-Stecker der "Shield_5V_DCC_6pol_V3"-Platine angeschlossen werden.   
 
@@ -54,26 +54,26 @@ Verwendet man keine 25-poligen SubD-Stecker, kann die Wechselspannung direkt an 
 RCC-Blöcke bestehen immer aus zwei Platinen: eine für die Steuerung (STRG) und eine für die Taster, Schalter und LED-Anzeige (LED).   
 
 Möchte man __Zwei-Weg-Weichen__ schalten, so benötigt man die Platinen   
-* [/kicad/RW_5V_W2_STRG_V2](/kicad/RW_5V_W2_STRG_V2)   
-* [/kicad/RW_5V_W2_LED_V2](/kicad/RW_5V_W2_LED_V2)   
+* [/fab/kicad/RW_5V_W2_STRG_V2](/fab/kicad/RW_5V_W2_STRG_V2)   
+* [/fab/kicad/RW_5V_W2_LED_V2](/fab/kicad/RW_5V_W2_LED_V2)   
 
 Möchte man __Drei-Weg-Weichen__ schalten, so benötigt man die Platinen   
-* [/kicad/RW_5V_W3_STRG_V4](/kicad/RW_5V_W3_STRG_V4)   
-* [/kicad/RW_5V_W3_LED_V4](/kicad/RW_5V_W3_LED_V4)   
+* [/fab/kicad/RW_5V_W3_STRG_V4](/fab/kicad/RW_5V_W3_STRG_V4)   
+* [/fab/kicad/RW_5V_W3_LED_V4](/fab/kicad/RW_5V_W3_LED_V4)   
 
 Möchte man Gleise ein- und abschalten, so benötigt man die Platinen   
-* [/kicad/RW_5V_2IO_STRG_V1](/kicad/RW_5V_2IO_STRG_V1)   
-* [/kicad/RW_5V_2IO_LED_V2](/kicad/RW_5V_2IO_LED_V2)   
+* [/fab/kicad/RW_5V_2IO_STRG_V1](/fab/kicad/RW_5V_2IO_STRG_V1)   
+* [/fab/kicad/RW_5V_2IO_LED_V2](/fab/kicad/RW_5V_2IO_LED_V2)   
 
 Möchte man Entkuppler betreiben, so benötigt man die Platinen   
-* [/kicad/RW_5V_1OUT_STRG_V1](/kicad/RW_5V_1OUT_STRG_V1)   
-* [/kicad/RW_5V_1OUT_LED_V2](/kicad/RW_5V_1OUT_LED_V2)   
+* [/fab/kicad/RW_5V_1OUT_STRG_V1](/fab/kicad/RW_5V_1OUT_STRG_V1)   
+* [/fab/kicad/RW_5V_1OUT_LED_V2](/fab/kicad/RW_5V_1OUT_LED_V2)   
 
 ## Vorgangsweise zur Erstellung der Leiterplatten
 Folgende Vorgangsweise ist sinnvoll:   
 1. Installation des Open Source [Layoutprogramm KiCad](https://www.kicad.org/) mit dem Plug-in "PCBWay".   
 2. Herstellen der benötigten Leiterplatten   
-Für jede Komponente gibt es im Verzeichnis /kicad die zur Herstellung der Leiterplatte [erforderlichen KiCad-Dateien](/kicad). Die Leiterplatten sind zweiseitig, durchkontaktiert und mit Siebdruck auf beiden Seiten entworfen. Möchte man die Leiterplatten selbst herstellen, sind entsprechende Anpassungen erforderlich.   
+Für jede Komponente gibt es im Verzeichnis /fab/kicad die zur Herstellung der Leiterplatte [erforderlichen KiCad-Dateien](/fab/kicad). Die Leiterplatten sind zweiseitig, durchkontaktiert und mit Siebdruck auf beiden Seiten entworfen. Möchte man die Leiterplatten selbst herstellen, sind entsprechende Anpassungen erforderlich.   
 Möchte man die Leiterplatten dagegen zB von der Firma PCBWay fertigen lassen, ist folgende Vorgangsweise sinnvoll:   
 
 1. Laden des KiCad-Projekts in KiCad (aus dem Verzeichnis /kikad holen)   

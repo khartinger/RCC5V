@@ -47,7 +47,7 @@ The pin assignment of the connections is selected so that a display or the IO ex
 _Figure 4: “Shield_I2C_5V_3V3” board for connecting two I2C buses_   
 
 _*Board size*_: 26.2 x 28.5 mm²   
-_*Link to the KiCad files*_: [/kicad/Shield_I2C_5V_3V3_V2](/kicad/Shield_I2C_5V_3V3_V2)   
+_*Link to the KiCad files*_: [/fab/kicad/Shield_I2C_5V_3V3_V2](/fab/kicad/Shield_I2C_5V_3V3_V2)   
 
 ![Shield_I2C_5V_3V3](/images/300_Shield_I2C_5V_3V3.png "Shield_I2C_5V_3V3")   
 _Figure 5: The assembled circuit board “Shield_I2C_5V_3V3”._   
@@ -91,7 +91,7 @@ This board fulfills three tasks:
 _Figure 8: “Shield_5V_DCC_6pol_V2” circuit board_   
 
 _*Board size*_: 26,2 x 28,5 mm²   
-_*Link to the KiCad files*_: [/kicad/Shield_5V_DCC_6pol_V3](/kicad/Shield_5V_DCC_6pol_V3)   
+_*Link to the KiCad files*_: [/fab/kicad/Shield_5V_DCC_6pol_V3](/fab/kicad/Shield_5V_DCC_6pol_V3)   
 
 ![Shield_5V_DCC_6pol](/images/300_Shield_5V_DCC_6pol.png "Shield_5V_DCC_6pol")   
 _Figure 9: The assembled “Shield_5V_DCC_6pol” circuit board for connecting the 5V power supply, DCC signal and button_   

@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-01-03 <a name="up"></a><br>   
+Last modified: 2025-02-12 <a name="up"></a><br>   
 <h1>Controlling model railroad components with DCC, MQTT and manually</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -7,8 +7,9 @@ Last modified: 2025-01-03 <a name="up"></a><br>
 [Directly to the table of contents of this repository](#x20)   
 
 # Introduction
-There are many ways to control points, uncouplers, disconnectable tracks and other components in model railroad construction.   
-The simplest way is to operate the components by hand. In this case, you do not even need point machines. However, this operating mode quickly becomes cumbersome with more distant or distributed components.   
+Switching points is an important part of model railroading. Who doesn't want to be able to do this in different ways? There are many ways to control turnouts, uncouplers, disconnectable tracks and other components.   
+The simplest method is to do it all by hand. In this case, you don't even need point machines. But with more distant or distributed components, this mode of operation quickly becomes cumbersome.   
+
 For this reason, magnetic drives are usually used to switch the components. In the simplest case, the AC voltage is switched directly:   
 
 ![RCC5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC5V_DirectSwitching")   
@@ -50,7 +51,7 @@ This repository deals with the production and use of components for controlling 
 The following topics are covered in various subdirectories:   
 
 __Information about the system__   
-* [How do I start the RCC project?](/fab/rcc0_start/README.md)   
+* [How do I begin the RCC project?](/fab/rcc0_start/README.md)   
 * [Electrical connection of railroad modules according to NEM 908D](/info/con_NEM908/README.md)   
 * [Drill holes and covers for the front of the module](/info/frontpanel/README.md)   
 
@@ -59,7 +60,7 @@ __Manufacturing the system components__
 * [Manufacturing of the ESP32-Shields](/fab/rcc2_esp32/README.md)   
 * [Manufacturing of the switching blocks](/fab/rcc4_block/README.md)   
 * [Manufacturing of additional boards](/fab/rcc5_add_ons/README.md)   
-* [KiCad files of RCC components](/kicad/README.md)   
+* [KiCad files of RCC components](/fab/kicad/README.md)   
 
 __Software for the ESP32__   
 * [MQTT commands for controlling the components](/software/mqtt/README.md)   
@@ -69,8 +70,8 @@ __Software for the ESP32__
 * [Automatic execution of MQTT command sequences]()   
 
 __Use of the system__   
-* [Example wiring of a turnout](/use/exampleTurnout2/README.md)   
-* [Construction of the “passing loop and siding” module #12](/use/module12/README.md)   
+* [Example wiring of a turnout](/examples/exampleTurnout2/README.md)   
+* [Construction of the “passing loop and siding” module #12](/examples/module12/README.md)   
 
 [To the top of the page](#up)   
 <a name="x30"></a>   

@@ -20,7 +20,7 @@ _Bild 1: Auf einem 3D-gedruckten Rahmen montierte Befestigungsplatinen f&uuml;r 
 _Bild 2: Befestigungsplatine f&uuml;r Schaltbl&ouml;cke_   
 
 _*Platinengr&ouml;&szlig;e*_: 41 x 41 mm²   
-_*Link zu den KiCad-Dateien*_: [/kicad/SRW_LEER_LED_V1](/kicad/RW_LEER_LED_V1)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/SRW_LEER_LED_V1](/fab/kicad/RW_LEER_LED_V1)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz       | Wert                   | Anmerkung          |   
@@ -47,7 +47,7 @@ _Bild 3: Die best&uuml;ckte "CON_10pol_PIN"-Platine, einmal mit geradem und einm
 _Bild 4: Stifte f&uuml;r I²C-IO-Pins_   
 
 _*Platinengr&ouml;&szlig;e*_: 33 x 15 mm²   
-_*Link zu den KiCad-Dateien*_: [/kicad/CON_10pol_PIN_V2](/kicad/CON_10pol_PIN_V2)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10pol_PIN_V2)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz  | Wert              | Geh&auml;use            |   
@@ -76,7 +76,7 @@ _Bild 6: Schaltplan der "CON_6pol_3"-Platine_
 _Bild 7: Platine Anschlussklemme f&uuml;r Zweiwegweiche_   
 
 _*Platinengr&ouml;&szlig;e*_: 25 x 18 mm²   
-_*Link zu den KiCad-Dateien*_: [/kicad/CON_6pol_3_V1](/kicad/CON_6pol_3_V1)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_V1)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz  | Wert              | Geh&auml;use            |   
@@ -104,7 +104,7 @@ _Bild 9: Schaltplan der "CON_6pol_6"-Platine_
 _Bild 10: Anschlussklemme f&uuml;r Dreiwegweiche_   
 
 _*Platinengr&ouml;&szlig;e*_: 41 x 18 mm²   
-_*Link zu den KiCad-Dateien*_: [/kicad/CON_6pol_6_V1](/kicad/CON_6pol_6_V1)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_6pol_6_V1](/fab/kicad/CON_6pol_6_V1)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz  | Wert              | Geh&auml;use            |   
