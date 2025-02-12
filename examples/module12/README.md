@@ -1,12 +1,19 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-01-12 <a name="up"></a><br>   
+Last modified: 2025-02-12 <a name="up"></a><br>   
 <h1>Construction of module 12 “passing siding and siding”</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # ...ToDo...
-
 <a href="LIESMICH.md">This page is currently only available in German.</a>   
+
+[Click here to go directly to the content overview](#x05)   
+
+
+
+
+
+
 
 [To the top of the page](#up)   
 <a name="x20"></a>   

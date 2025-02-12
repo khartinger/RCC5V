@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 12.1.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 12.2.2025 <a name="up"></a><br>   
 <h1>Bau des Moduls 12 "Ausweichstelle und Abstellgleis"</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -494,13 +494,20 @@ Im Segment 3:
    * I/O-Expander 0x23 - Pin 4 <---> Block DCC 125, Pin 1 - OUT   
 
 ## 4.4 Modulverbindung
-Damit Module aneinandergereiht werden können müssen noch die 10 Schraubklemmen bei den 25-poligen Steckern miteinander verbunden werden. Dazu kann zB 10-poliges Kabel verwendet werden.   
+Damit Module aneinandergereiht werden können müssen noch die 10 Schraubklemmen bei den 25-poligen Steckern miteinander verbunden werden.   
+Nach NEM908D erfolgt dies so, dass die Leitungen elektrisch ausgekreuzt, aber physikalisch gerade durchverbunden werden. Das bedeutet, dass sich zB der Fahrstrom des Gleises NN auf dem West-Stecker auf dem Pin 1 und auf dem Ost-Stecker auf dem Pin 13 befindet!   
+![Wiring_NEM908D](/images/300_Wiring_NEM908D.png "Wiring_NEM908D")   
+_Bild 30: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
+
+[Siehe auch `/info/con_NEM908/LIESMICH.md`](/info/con_NEM908/LIESMICH.md)   
+
+Für die Verbindung der Pins kann zB 10-poliges Kabel verwendet werden.   
 
 ![Stecker West](./images/300_con10_west.png "Stecker West")   
-_Bild 30: Verdrahtung Stecker West_   
+_Bild 31: Verdrahtung Stecker West_   
 
 ![Stecker Ost](./images/300_con10_east.png "Stecker Ost")   
-_Bild 31: Verdrahtung Stecker Ost_   
+_Bild 32: Verdrahtung Stecker Ost_   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   

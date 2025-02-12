@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2024-11-27 <a name="up"></a><br>   
+Last modified: 2025-02-12 <a name="up"></a><br>   
 <h1>Electrical connection of railroad modules according to NEM 908D</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -8,7 +8,8 @@ Last modified: 2024-11-27 <a name="up"></a><br>
 The electrical connection of model railroad modules can be made according to [NEM 908D](https://www.morop.eu/downloads/nem/de/nem908D_d.pdf), for example. A distinction is made between the wiring and the electrical meaning of the lines.
 
 # Wiring
-Connectors of type SUB D 25 (to DIN 41652) are used for the connection. Cables have sockets at both ends and modules have plugs at both ends. To simplify wiring, both the cables and the plugs in the modules are crossed out, i.e. pin 1 is connected to pin 13, pin 3 to pin 11 etc. up to pin 6 to pin 8 and pin 7 to pin 7 (pin 2 and pin 12 [for center conductor systems] - as well as all pins 14 to 25 are not connected).   
+Connectors of type SUB D 25 (to DIN 41652) are used for the connection. Cables have sockets at both ends and modules have plugs at both ends. To simplify __mechanical__ wiring, both the cables and the plugs in the modules are crossed out, i.e. pin 1 is connected to pin 13, pin 3 to pin 11 etc. up to pin 6 to pin 8 and pin 7 to pin 7 (pin 2 and pin 12 [for center conductor systems] - as well as all pins 14 to 25 are not connected).   
+This means that the cables are connected directly from one plug to the other plug, which is rotated by 180°.   
 A 10-pole cable (cross-section of the cable cores/strands min. 1 mm²) is therefore sufficient as a connecting cable for the two-rail system.   
 
 # Electrical meaning of the lines
