@@ -1,7 +1,7 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 3.1.2025 <a name="up"></a><br>   
-<h1>Details zum Demo-Programm rcc_demo1</h1>
-<a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
+<h1>Das Demo-Programm rcc_demo1 im Detail</h1>
+<a href="DETAILS_E.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # Einleitung

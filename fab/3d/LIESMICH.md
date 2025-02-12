@@ -5,7 +5,7 @@ Letzte &Auml;nderung: 12.2.2025 <a name="up"></a><br>
 </td></tr></table>   
 
 # Einleitung
-Dieses Verzeichnis enthält 3mf-Dateien für verschiedene Bauteile von Eisenbahnmodulen.   
+Dieses Verzeichnis enth&auml;lt 3mf-Dateien f&uuml;r verschiedene Bauteile von Eisenbahnmodulen.   
 
 # Modulseite (Ost, West)
 __Datei__: ModulSeite_250209.3mf   
@@ -18,14 +18,14 @@ __Datei__: Querverstrebung_250209.3mf
 _Bild 2: Querverstebung in einem 25 cm breiten Modul_   
 
 # Sub-D-Stecker-Halterung
-Die Halterung für den Sub-D-Stecker besteht aus zwei U-förmigen Teilen.   
+Die Halterung f&uuml;r den Sub-D-Stecker besteht aus zwei U-f&ouml;rmigen Teilen.   
 __Datei__: Bracket_sub-D_250209.3mf   
 ![Halterung Sub-D-Stecker](/images/3d/300_Halterung_sub-d.png "Halterung Sub-D-Stecker")   
-_Bild 3: Halterung für Sub-D-Stecker_   
+_Bild 3: Halterung f&uuml;r Sub-D-Stecker_   
 
 # OLED- und Taster-Einsatz
 __Datei__: OLED-Mount_250209.3mf   
 ![OLED- und Taster-Einsatz](/images/3d/300_OLED-Mount.png "OLED- und Taster-Einsatz")   
-_Bild 4: Halterung für die OLED-Anzeige und den Taster_   
+_Bild 4: Halterung f&uuml;r die OLED-Anzeige und den Taster_   
 
 [Zum Seitenanfang](#up)

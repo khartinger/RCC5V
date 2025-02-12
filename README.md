@@ -9,7 +9,6 @@ Last modified: 2025-02-12 <a name="up"></a><br>
 # Introduction
 Switching points is an important part of model railroading. Who doesn't want to be able to do this in different ways? There are many ways to control turnouts, uncouplers, disconnectable tracks and other components.   
 The simplest method is to do it all by hand. In this case, you don't even need point machines. But with more distant or distributed components, this mode of operation quickly becomes cumbersome.   
-
 For this reason, magnetic drives are usually used to switch the components. In the simplest case, the AC voltage is switched directly:   
 
 ![RCC5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC5V_DirectSwitching")   
@@ -38,7 +37,8 @@ Some skills are advantageous for the successful use of the RCC system:
 1. you should first get an overview of the [contents of this repository](#x20) and [the RCC system](#x30). This is provided in the chapters below in this manual.   
 2. If the RCC system is the right choice, the requirements for your own system have to be defined:   
 Which components are needed, how many of each type and with which DCC address.   
-_Example demo program_: 1x uncoupler with DCC address 11, 1x two-way turnout (DCC 21), 1x three-way turnout (DCC 31 and 32), 1x traction current (DCC 41) and 1x flashing light (DCC 51).   
+_Example demo program_:   
+1x uncoupler with DCC address 11, 1x two-way turnout (DCC 21), 1x three-way turnout (DCC 31 and 32), 1x traction current (DCC 41) and 1x flashing light (DCC 51).   
 3. the next step is to manufacture the required components. How to do this is described in the chapter [“How do I start the RCC project?” (/fab/rcc0_start/README.md)](/fab/rcc0_start/README.md).   
 4. the demo program is then adapted to your own system and the ESP32 microcontroller is programmed. This is described in chapter [...]().   
 5. Finally, all components are wired and the entire system is tested.   
@@ -56,7 +56,7 @@ __Information about the system__
 * [Drill holes and covers for the front of the module](/info/frontpanel/README.md)   
 
 __Manufacturing the system components__   
-* [Components for the power supply](/fab/rcc1_supply/README.md)   
+* [Manufacturing of Components for the power supply](/fab/rcc1_supply/README.md)   
 * [Manufacturing of the ESP32-Shields](/fab/rcc2_esp32/README.md)   
 * [Manufacturing of the switching blocks](/fab/rcc4_block/README.md)   
 * [Manufacturing of additional boards](/fab/rcc5_add_ons/README.md)   
@@ -66,8 +66,8 @@ __Software for the ESP32__
 * [MQTT commands for controlling the components](/software/mqtt/README.md)   
 * [Overview of the demo software](/software/rcc_demo1/README.md)   
 * [Customize the demo software to your own needs](/software/rcc_demo1/CUSTOMIZE_E.md)   
-* [Structure of the demo software in detail]()   
-* [Automatic execution of MQTT command sequences]()   
+* [Structure of the demo software in detail](/software/rcc_demo1/DETAILS_E.md)   
+* [Automatic execution of MQTT command sequences](/software/mqtt/README.md#x30)   
 
 __Use of the system__   
 * [Example wiring of a turnout](/examples/exampleTurnout2/README.md)   

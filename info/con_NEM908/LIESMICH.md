@@ -8,7 +8,7 @@ Last modified: 2025-02-12 <a name="up"></a><br>
 Die elektrische Verbindung von Modellbahn-Modulen kann zB nach [NEM 908D](https://www.morop.eu/downloads/nem/de/nem908D_d.pdf) erfolgen. Dabei unterscheidet man zwischen der Verdrahtung und der elektrischen Bedeutung der Leitungen.
 
 # Verdrahtung
-Zur Verbindung werden Steckerverbinder vom Typ SUB D 25 (nach DIN 41652) verwendet. Kabel haben an beiden Enden Buchsen und Module an beiden Seiten Stecker. Um die __mechanische__ Verdrahtung einfach zu gestalten, werden sowohl die Kabel als auch die Stecker in den Modulen ausgekreuzt, d.h. Pin 1 WEST ist mit Pin 13 OST verbunden, Pin 3 WEST mit Pin 11 OST usw. bis Pin 6 mit Pin 8 und Pin 7 mit Pin 7. (Pin 2 und Pin 12 [f&uuml;r Mittelleitersysteme] - sowie alle Pins 14 bis 25 sind nicht belegt).   
+Zur Verbindung werden Steckerverbinder vom Typ SUB D 25 (nach DIN 41652) verwendet. Kabel haben an beiden Enden Buchsen und Module an beiden Seiten Stecker. Um die __mechanische__ Verdrahtung einfach zu halten, werden sowohl die Kabel als auch die Stecker in den Modulen ausgekreuzt, d.h. Pin 1 WEST ist mit Pin 13 OST verbunden, Pin 3 WEST mit Pin 11 OST usw. bis Pin 6 mit Pin 8 und Pin 7 mit Pin 7. (Pin 2 und Pin 12 [f&uuml;r Mittelleitersysteme] - sowie alle Pins 14 bis 25 sind nicht belegt).   
 Dies bedeutet, dass die Leitungen direkt von einem Stecker zum um 180° gedrehten anderen Stecker durchverbunden werden.   
 Beim Zweischienensystem reicht als Verbindungskabel somit ein 10poliges Kabel (Querschnitt der Kabeladern/Litze min. 1 mm²).   
 

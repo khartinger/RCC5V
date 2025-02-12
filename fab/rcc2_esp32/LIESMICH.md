@@ -38,7 +38,7 @@ Beim oberen Shield sieht man vorne die vier Stecker f&uuml;r den IO-I²C-Bus und
 In nachfolgenden Kapiteln werden die Shields genauer vorgestellt.   
 
 ### Erweitertes I²C-Shield
-Druckt man mit einem 3D-Drucker eine Halterung für das OLED-Display und den Taster, so kann man damit eine Einheit aus Anzeige und Mikrocontroller erzeugen:   
+Druckt man mit einem 3D-Drucker eine Halterung f&uuml;r das OLED-Display und den Taster, so kann man damit eine Einheit aus Anzeige und Mikrocontroller erzeugen:   
 
 ![OLED und ESP32](/images/300_OLED_ESP32.png "OLED und ESP32")   
 _Bild 4: OLED-Fassung mit I²C- und DCC-Shield sowie ESP32 (von unten nach oben)_   
@@ -192,10 +192,10 @@ _Bild 16: Bauteile f&uuml;r die "Shield_I2C_5V_3V3_big"-Platine_
 
 ### Best&uuml;ckung   
 1. Die beiden 4poligen Stiftleisten in die Konverter- und I2C-Platine stecken und beidseitig auf die Bauteilseite des Prints verl&ouml;ten (Konverter-Platine: Bauteile nach unten, auf richtige Polung der 3V/5V-Seite achten)   
-2. 8-polige Stiftleisten Stiftleisten U1 nach unten (auf Lötseite)   
-3. 4-polige Stiftleisten J5 und J6 nach unten (auf Lötseite), auf senkrechte Ausrichtung achten!   
-4. 4-polige Buchsenleiste J4 auf die Bauteilseite löten, auf senkrechte Ausrichtung achten!   
-5. Abstandsbolzen M2x10+3mm auf die Lötseite schrauben   
+2. 8-polige Stiftleisten Stiftleisten U1 nach unten (auf L&ouml;tseite)   
+3. 4-polige Stiftleisten J5 und J6 nach unten (auf L&ouml;tseite), auf senkrechte Ausrichtung achten!   
+4. 4-polige Buchsenleiste J4 auf die Bauteilseite l&ouml;ten, auf senkrechte Ausrichtung achten!   
+5. Abstandsbolzen M2x10+3mm auf die L&ouml;tseite schrauben   
 
 ### Versionen
 * V1 (240116/250116): Schlechte Platzaufteilung   

@@ -7,8 +7,8 @@ Letzte &Auml;nderung: 12.2.2025 <a name="up"></a><br>
 [Direkter Sprung zur Inhalts&uuml;bersicht von diesem Repository](#x20)   
 
 # Einleitung
-Das Schalten von Weichen ist bei Modellbahnen eine wichtige Sache. Wer will nicht die Möglichkeit haben, das auf verschiedene Arten zu machen? Es gibt viele Mittel und Wege, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern.   
-Die einfachste Methode ist, das alles von Hand zu machen. In dem Fall braucht man nicht einmal Weichenantriebe. Aber bei weiter entfernten oder verteilten Komponenten wird diese Betriebsart schnell umständlich.   
+Das Schalten von Weichen ist bei Modellbahnen eine wichtige Sache. Wer will nicht die M&ouml;glichkeit haben, das auf verschiedene Arten zu machen? Es gibt viele Mittel und Wege, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern.   
+Die einfachste Methode ist, das alles von Hand zu machen. In dem Fall braucht man nicht einmal Weichenantriebe. Aber bei weiter entfernten oder verteilten Komponenten wird diese Betriebsart schnell umst&auml;ndlich.   
 Aus diesem Grund werden zum Schalten der Komponenten &uuml;blicherweise magnetische Antriebe verwendet. Dabei wird im einfachsten Fall die Wechselspannung direkt geschaltet:   
 
 ![RCC_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC_5V_DirectSwitching")   
@@ -37,7 +37,8 @@ Zum erfolgreichen Einsatz des RCC-Systems sind einige F&auml;higkeiten sind von 
 1. Zuerst sollte man sich einen &Uuml;berblick &uuml;ber den [Inhalt dieses Repository](#x20) und &uuml;ber [das RCC-System](#x30) verschaffen. Diesen erm&ouml;glichen die weiter unten stehenden Kapitel in dieser Anleitung.   
 2. Ist das RCC-System die richtige Wahl, erfolgt die Definition der Anforderungen an das eigene System:   
 Welche Komponenten werden ben&ouml;tigt, wie viele von jeder Art und mit welcher DCC-Adresse.   
-_Beispiel Demo-Programm_: 1x Entkuppler mit DCC-Adresse 11, 1x Zweiwegweiche (DCC 21), 1x Dreiwegweiche (DCC 31 und 32) 1x Fahrstrom (DCC 41) und 1x Blinklicht (DCC 51).   
+_Beispiel Demo-Programm_:   
+1x Entkuppler mit DCC-Adresse 11, 1x Zweiwegweiche (DCC 21), 1x Dreiwegweiche (DCC 31 und 32) 1x Fahrstrom (DCC 41) und 1x Blinklicht (DCC 51).   
 3. Als N&auml;chstes erfolgt das Fertigen der erforderlichen Komponenten. Wie das geht ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
 4. Danach erfolgt die Anpassung des Demo-Programms an das eigene System und die Programmierung des Mikrocontrollers ESP32. Dies ist in Kapitel [...]() beschrieben.   
 5. Zum Abschluss erfolgt die Verdrahtung aller Komponenten und der Test des Gesamtsystems.   
@@ -55,7 +56,7 @@ __Informationen rund um das System__
 * [Bohrungen und Abdeckungen f&uuml;r die Modul-Frontseite](/info/frontpanel/LIESMICH.md)   
 
 __Herstellung der System-Komponenten__   
-* [Komponenten f&uuml;r die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
+* [Herstellung der Komponenten f&uuml;r die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
 * [Herstellung der ESP32-Shields](/fab/rcc2_esp32/LIESMICH.md)   
 * [Herstellung von Schaltbl&ouml;cken](/fab/rcc4_block/LIESMICH.md)   
 * [Herstellung der Zusatzplatinen](/fab/rcc5_add_ons/LIESMICH.md)   
@@ -63,10 +64,10 @@ __Herstellung der System-Komponenten__
 
 __Software f&uuml;r den ESP32__   
 * [MQTT-Befehle zur Steuerung der Komponenten](/software/mqtt/LIESMICH.md)   
-* [&Uuml;berblick über die Demo-Software](/software/rcc_demo1/LIESMICH.md)   
+* [&Uuml;berblick &uuml;ber die Demo-Software](/software/rcc_demo1/LIESMICH.md)   
 * [Anpassung der Demo-Software an eigene Bed&uuml;rfnisse](/software/rcc_demo1/CUSTOMIZE_D.md)   
-* [Aufbau der Demo-Software im Detail]()   
-* [Automatisches Ausf&uuml;hren von MQTT-Befehlsfolgen]()   
+* [Aufbau der Demo-Software im Detail](/software/rcc_demo1/DETAILS_D.md)   
+* [Automatisches Ausf&uuml;hren von MQTT-Befehlsfolgen](/software/mqtt/LIESMICH.md#x30)   
 
 __Anwendungsbeispiele__   
 * [Beispiel-Verdrahtung einer Weiche](/examples/exampleTurnout2/LIESMICH.md)   
@@ -100,7 +101,7 @@ _Bild 4: Demo-Aufbau eines RCC-5V-Systems: die einzelnen Teile_
 
 Ganz links erkennt man den 25-poligen Stecker mit dem 5V-Netzteil ("SUPPLY"), dahinter befindet sich der ESP32 mit einem 1,56 Zoll Display ("&micro;C"). Vorne in der Mitte sind zwei I2C-PCF8574-Boards aufgebaut ("I2C"), dahinter der RCC-Block. Rechts sieht man eine Dreiwegweiche mit zwei Fleischmann-Weichenantrieben 640000. Die elektrische Verbindung der Baugruppen erfolgt durch 6-polige Flachbandkabel und Dr&auml;hte.   
 
-Ein Beispiel für eine mögliche Frontansicht eines Moduls zeigt das folgende Bild:   
+Ein Beispiel f&uuml;r eine m&ouml;gliche Frontansicht eines Moduls zeigt das folgende Bild:   
 ![Beispiel Frontansicht](./images/480_front_view_module.png "Beispiel Frontansicht")   
 _Bild 5: Beispiel Modul-Frontansicht (= Bedienungsseite)_   
 

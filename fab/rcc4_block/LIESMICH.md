@@ -5,55 +5,55 @@ Letzte &Auml;nderung: 2.12.2024 <a name="up"></a><br>
 </td></tr></table>   
 
 # 1. Einleitung
-## 1.1 Übersicht
-Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Blöcken - das Bestücken folgender Blöcke beschrieben:   
+## 1.1 &Uuml;bersicht
+Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das Best&uuml;cken folgender Bl&ouml;cke beschrieben:   
 * [Block Zweiwegweiche (W2)](#x20)   
 * [Block Dreiwegweiche (W3)](#x30)   
 * [Block Entkuppler (1OUT)](#x40)   
 * [Block Abschaltbares Gleis (2IO)](#x50)   
 * [Block Zweifachumschalter (DPDT)](#x60)   
 
-## 1.2 Aufbau von Blöcken
-Schaltblöcke bestehen immer aus einer Steuerungs-(STRG-) und einer Anzeige-(LED-)Platine, die zusammengesteckt werden. Die Steuerungsplatine hat dazu zwei 8-polige Stiftleisten (nach unten gerichtet), die Anzeigeplatine 8-polige Buchsenleisten mit langen Kontakten (nach oben).   
-![Zusammenstecken der Blockhälften](/images/300_assemble_block_parts.png "Zusammenstecken der Blockhälften")   
+## 1.2 Aufbau von Bl&ouml;cken
+Schaltbl&ouml;cke bestehen immer aus einer Steuerungs-(STRG-) und einer Anzeige-(LED-)Platine, die zusammengesteckt werden. Die Steuerungsplatine hat dazu zwei 8-polige Stiftleisten (nach unten gerichtet), die Anzeigeplatine 8-polige Buchsenleisten mit langen Kontakten (nach oben).   
+![Zusammenstecken der Blockh&auml;lften](/images/300_assemble_block_parts.png "Zusammenstecken der Blockh&auml;lften")   
 _Bild 1: Zusammenstecken der Blockteile "Steuerung" (links) und "Anzeige" (rechts)_   
 
-## 1.3 Pinbelegung der Blöcke
-Die Stecker für die Ein- und Ausgänge sind bei allen Schaltblöcken gleich angeordnet:   
-* J3: 6-poliger Flachbandstecker für die Stromversorgung (senkrecht)   
+## 1.3 Pinbelegung der Bl&ouml;cke
+Die Stecker f&uuml;r die Ein- und Ausg&auml;nge sind bei allen Schaltbl&ouml;cken gleich angeordnet:   
+* J3: 6-poliger Flachbandstecker f&uuml;r die Stromversorgung (senkrecht)   
 * J4: 10-poliger Flachbandstecker zur Verbindung mit dem I²C-IO-Expandern   
 * J5: 6-poliger Flachbandstecker zur Ansteuerung der Eisenbahn-Komponenten (Weichen etc.)   
 ![pinlayout_connectors](/images/300_pin_STRG.png "pinlayout_connectors")   
 _Bild 2: Pinbelegung der STRG-Stecker_   
 
-Die Belegung des Steckers J5 ist abhängig vom Schaltblock:   
+Die Belegung des Steckers J5 ist abh&auml;ngig vom Schaltblock:   
 ![Pinlayout_J5_all](/images/200_J5_pinlayout_all2.png "Pinlayout_J5_all")   
 _Bild 3: Pinbelegung der STRG-Stecker_   
 
 ## 1.4 Vorbereitung von LEDs
-Damit Fertigungstoleranzen leicht ausgeglichen werden können, werden die LEDs nicht direkt auf die erforderliche Länge geschnitten, sondern eine Art "Feder" eingebaut. Dazu wird folgende Vorgangsweise empfohlen:   
-1. Den Anoden- (Plus-) Anschlussdraht (längerer Draht) mit rotem Permanentstift markieren.   
-2. Die Anschlussdrähte der LEDs auf 25 mm Länge abschneiden.   
+Damit Fertigungstoleranzen leicht ausgeglichen werden k&ouml;nnen, werden die LEDs nicht direkt auf die erforderliche L&auml;nge geschnitten, sondern eine Art "Feder" eingebaut. Dazu wird folgende Vorgangsweise empfohlen:   
+1. Den Anoden- (Plus-) Anschlussdraht (l&auml;ngerer Draht) mit rotem Permanentstift markieren.   
+2. Die Anschlussdr&auml;hte der LEDs auf 25 mm L&auml;nge abschneiden.   
 3. Jeden Anschluss mit 19 bis 20 mm Schrumpfschlauch (Durchmesser 1 mm) isolieren.   
 4. Nach folgender Zeichung biegen:   
 ![LED biegen](/images/200_LED_config.png "LED biegen")   
-_Bild 4: Anpassen der LEDs für die Montage_   
+_Bild 4: Anpassen der LEDs f&uuml;r die Montage_   
 Zum Biegen kann man auch eine Schablone aus Karton vorbereiten, wobei man die LED am Rand des Kartons anlegt und den Anschlussdraht nach Schema biegt:   
 ![LED biegen2](/images/200_LED_config2.png "LED biegen2")   
 _Bild 5: LED-Biegeschablone_   
 
 ## 1.5 Vorgegebene Positionen auf der LED-Platine
-Auf allen LED-Platinen sind drei Positionen für Taster bzw. Schalter sowie sechs Positionen für LEDs vorgesehen:   
+Auf allen LED-Platinen sind drei Positionen f&uuml;r Taster bzw. Schalter sowie sechs Positionen f&uuml;r LEDs vorgesehen:   
 ![LED- und Schalterpositionen](/images/300_block_cover.png "LED- und Schalterpositionen")   
 _Bild 6: LED- und Schalterpositionen bei einem Block (von vorne gesehen)_   
 
-Die Bezeichnungen für die LEDs (D1 bis D6) und die Taster oder Schalter (SW1 bis SW3) werden bei allen LED-Platinen gleich verwendet.   
+Die Bezeichnungen f&uuml;r die LEDs (D1 bis D6) und die Taster oder Schalter (SW1 bis SW3) werden bei allen LED-Platinen gleich verwendet.   
 
-## 1.6 Löten von Tastern und Schaltern auf die Lötseite einer Platine
-Alle "LED"-Platinen enthalten Taster und Schalter, die zum Schluss auf die Lötseite der Platine gelötet werden. Damit sie beim Einlöten nicht herausfallen, kann man sie mit Klebeband fixieren und die Platine höher lagern, zum Beispiel kann man sie auf die Kanten eines schmalen Einsatzes eines [RAACO Sortimentkoffers Assorter 55 A9](https://www.reichelt.de/at/de/sortimentseinsatz-a9-1-39-x-47-x-55-mm-raaco-a9-1-p29322.html?r=1) legen.
+## 1.6 L&ouml;ten von Tastern und Schaltern auf die L&ouml;tseite einer Platine
+Alle "LED"-Platinen enthalten Taster und Schalter, die zum Schluss auf die L&ouml;tseite der Platine gel&ouml;tet werden. Damit sie beim Einl&ouml;ten nicht herausfallen, kann man sie mit Klebeband fixieren und die Platine h&ouml;her lagern, zum Beispiel kann man sie auf die Kanten eines schmalen Einsatzes eines [RAACO Sortimentkoffers Assorter 55 A9](https://www.reichelt.de/at/de/sortimentseinsatz-a9-1-39-x-47-x-55-mm-raaco-a9-1-p29322.html?r=1) legen.
 
 ![solder_button1](/images/200_solder_button1.png "solder_button1") ![solder_button2](/images/200_solder_button2.png "solder_button2")   
-_Bild 7: Löten von Tastern_   
+_Bild 7: L&ouml;ten von Tastern_   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
@@ -61,26 +61,26 @@ _Bild 7: Löten von Tastern_
 # 2. Zweiwegweiche
 
 ## 2.1 Steuerung Zweiwegweiche   
-Diese Platine dient zum Schalten einer Zweiwegweiche (Richtung "Gerade" oder "Abzweig") von Hand oder über den I²C-Bus. Der Schaltvorgang erfolgt über zwei Relais (siehe Bild unten).   
+Diese Platine dient zum Schalten einer Zweiwegweiche (Richtung "Gerade" oder "Abzweig") von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt &uuml;ber zwei Relais (siehe Bild unten).   
 
 ![RW_5V_W2_STRG_circuit](/images/600_RW_5V_W2_STRG_circuit.png "RW_5V_W2_STRG_circuit")   
 _Bild 8: Schaltplan der "RW_5V_W2_STRG"-Platine_   
 
-Die Ansteuerung erfolgt entweder über die Leitungen WSA und WSB (d.h. von extern) oder mit PBA und PBB (Taster auf der W2_LED-Platine).   
-* (1) PBA und PBB offen: Beide Relais sind im Ruhezustand. Die Weichenanschlüsse WA und WB sind nach WLA und WLB durchgeschaltet. Diese Leitungen führen zur LED-Anzeige und zeigen so den Schaltzustand der Weiche an.   
-* (2) PBA auf 0V, PBB offen: Transistor Q1 schaltet durch, beide Relais ziehen an. Der Weichenanschluss WB erhält die Schaltspannung V+ (WA bleibt offen).   
-* (3) PBA offen, PBB auf 0V: Transistor Q2 schaltet durch, nur Relais K3 zieht an. Der Weichenanschluss WA erhält die Schaltspannung V+ (WB bleibt offen).   
-* (4) PBA auf 0V, PBB auf 0V: Dieser Zustand sollte nicht auftreten. Es schalten beide Transistoren durch und die Schaltung verhält sich wie bei (2).   
+Die Ansteuerung erfolgt entweder &uuml;ber die Leitungen WSA und WSB (d.h. von extern) oder mit PBA und PBB (Taster auf der W2_LED-Platine).   
+* (1) PBA und PBB offen: Beide Relais sind im Ruhezustand. Die Weichenanschl&uuml;sse WA und WB sind nach WLA und WLB durchgeschaltet. Diese Leitungen f&uuml;hren zur LED-Anzeige und zeigen so den Schaltzustand der Weiche an.   
+* (2) PBA auf 0V, PBB offen: Transistor Q1 schaltet durch, beide Relais ziehen an. Der Weichenanschluss WB erh&auml;lt die Schaltspannung V+ (WA bleibt offen).   
+* (3) PBA offen, PBB auf 0V: Transistor Q2 schaltet durch, nur Relais K3 zieht an. Der Weichenanschluss WA erh&auml;lt die Schaltspannung V+ (WB bleibt offen).   
+* (4) PBA auf 0V, PBB auf 0V: Dieser Zustand sollte nicht auftreten. Es schalten beide Transistoren durch und die Schaltung verh&auml;lt sich wie bei (2).   
 
 ![Platine Ansteuerung Zweiwegweiche](/images/pcb_f/PCB_F_RW_5V_W2_STRG_V2.png "Platine Ansteuerung Zweiwegweiche")   
 _Bild 9: Platine zur Ansteuerung einer Zweiwegweiche_   
 
 ![RW_5V_W2_STRG](/images/300_RW_5V_W2_STRG_V2.png "RW_5V_W2_STRG")   
-_Bild 10: Bestückte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_   
+_Bild 10: Best&uuml;ckte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_   
 
 
-### Stückliste   
-| Anzahl | Referenz          | Wert                | Gehäuse            |   
+### St&uuml;ckliste   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
 |    1   | C1                | 100 nF              | _kh_library:C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
 |    8   | D1,D3,<br>D6,D7,D11,D12,D14,D15 | Diode 1N4148 | _kh_library:D_DO-35_SOD27_P5.08mm_Vertical_AnodeUp_kh <br>_kh_library:D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp_kh |   
@@ -94,24 +94,24 @@ _Bild 10: Bestückte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_
 |    2   | R1,R3             | 100 k&Omega;      | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
    
 
-### Bestückung   
+### Best&uuml;ckung   
 1. Diode D1 und D3   
 2. Relais K1, K3   
 3. Restliche Dioden D6 bis D15   
 4. Transistoren Q1, Q2   
-5. Widerstände R8, R9   
-6. Widerstände R2, R4   
-7. Widerstände R1, R3   
+5. Widerst&auml;nde R8, R9   
+6. Widerst&auml;nde R2, R4   
+7. Widerst&auml;nde R1, R3   
 8. Kondensator C1   
 9. Wannenstecker J1 bis J3   
-10. Stiftleisten J1 und J2 NACH UNTEN anlöten!   
+10. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
 
 ### Versionen
 * V1 (241103): OK   
 * V2 (241115): OK   
 
 ## 2.2 Zweiwegweiche: LED-Anzeige mit Taster
-Diese Platine dient zum Bedienen einer Zweiwegweiche (je ein Taster für die Richtungswahl "Gerade" oder "Abzweig") und zur Anzeige der tatsächlichen Weichenstellung. Es sind alle Taster- und LED-Positionen verdrahtet, sodass man durch die richtige Wahl von zwei Tastern und zwei LEDs alle Schaltbilder    
+Diese Platine dient zum Bedienen einer Zweiwegweiche (je ein Taster f&uuml;r die Richtungswahl "Gerade" oder "Abzweig") und zur Anzeige der tats&auml;chlichen Weichenstellung. Es sind alle Taster- und LED-Positionen verdrahtet, sodass man durch die richtige Wahl von zwei Tastern und zwei LEDs alle Schaltbilder    
 * linke Weiche nach links oben,   
 * linke Weiche nach rechts unten,   
 * rechte Weiche nach links unten und   
@@ -125,18 +125,18 @@ _Bild 11: Schaltplan der "RW_5V_W2_LED"-Platine_
 _Bild 12: Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
 ![RW_5V_W2_LED_F](/images/300_RW_W2_LED_F.png "RW_5V_W2_LED_F")   
-_Bild 13: Bauteilseite der bestückten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 13: Bauteilseite der best&uuml;ckten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
-Im folgenden Bild ist der Print für eine linke Weiche bestückt, die bei der Fahrt von links nach rechts entweder "Gerade" (grüne LED leuchtet) oder "Abzweig" befahren werden kann (gelbe LED leuchtet).   
+Im folgenden Bild ist der Print f&uuml;r eine linke Weiche best&uuml;ckt, die bei der Fahrt von links nach rechts entweder "Gerade" (gr&uuml;ne LED leuchtet) oder "Abzweig" befahren werden kann (gelbe LED leuchtet).   
 ![RW_5V_W2_LED_B](/images/300_RW_W2_LED_B.png "RW_5V_W2_LED_B")   
-_Bild 14: Lötseite der bestückten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung._   
+_Bild 14: L&ouml;tseite der best&uuml;ckten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung._   
 
-### Stückliste   
-| Anzahl | Referenz          | Wert                | Gehäuse            |   
+### St&uuml;ckliste   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
-|    1   | D2 oder D5        | LED grün 2 mA       | LED_THT:LED_D3.0mm |   
+|    1   | D2 oder D5        | LED gr&uuml;n 2 mA       | LED_THT:LED_D3.0mm |   
 |    1   | D1 oder D3 oder D4 oder D6 (1) | LED gelb 2 mA  | LED_THT:LED_D3.0mm |   
-|    6   | D1,D2,D3,D4,D5,D6 (1) | Buchsenleiste 2-polig mit gedrehten Kontakten (Pins) | "Fassung" für LEDs |   
+|    6   | D1,D2,D3,D4,D5,D6 (1) | Buchsenleiste 2-polig mit gedrehten Kontakten (Pins) | "Fassung" f&uuml;r LEDs |   
 |    2   | J1,J2             | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh     |   
 |    4   | Q1,Q2,Q3,Q4       | Transistor BC337-40 | _kh_library:TO-92_Inline_Wide_custom |   
 |    2   | R6, <br> R12           | 47 &Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical <br> _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
@@ -148,34 +148,34 @@ _Bild 14: Lötseite der bestückten Platine "RW_5V_W2_LED" zum Schalten und zur 
 |    1   | SW2               | Taster SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
 |    1   | SW1 oder SW3 (2)  | Taster SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
 
-(1) Es ist sinnvoll, die 2-poligen Buchsenleisten an alle 6 LED-Positionen zu löten, auch wenn im Betrieb  nur zwei LEDs eingesetzt werden. Weiters ist das Einlöten aller Bauteile so einfacher ;)   
+(1) Es ist sinnvoll, die 2-poligen Buchsenleisten an alle 6 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb  nur zwei LEDs eingesetzt werden. Weiters ist das Einl&ouml;ten aller Bauteile so einfacher ;)   
 
-(2) Nur den Taster einlöten, der benötigt wird:   
-    * Für oben: Taster SW1 mit LED D1 oder D4   
-    * Für unten: Taster SW3 mit LED D3 oder D6   
+(2) Nur den Taster einl&ouml;ten, der ben&ouml;tigt wird:   
+    * F&uuml;r oben: Taster SW1 mit LED D1 oder D4   
+    * F&uuml;r unten: Taster SW3 mit LED D3 oder D6   
    
 
-### Bestückung   
-1. Die zweipoligen Buchsenleisten (D1 bis D6) mit gedrehten Pins auf die _Lötseite_ des Prints löten.   
+### Best&uuml;ckung   
+1. Die zweipoligen Buchsenleisten (D1 bis D6) mit gedrehten Pins auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
-Auf die _*Bauteilseite*_ löten:   
+Auf die _*Bauteilseite*_ l&ouml;ten:   
 
 2. Transistoren Q1 bis Q4   
-3. Alle Widerstände   
+3. Alle Widerst&auml;nde   
 4. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
 5. Stiftleisten 2x2 Pins J3, J4   
 
-Auf die _*Lötseite*_ löten:   
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 
 6. Taster SW1 bis SW3   
    
 ### Test   
-1. Einstecken der LEDs. Die rot markierte Anode ist der Pluspol und wird immer nach außen zum Leiterplattenrand hin in die Fassung gesteckt.   
+1. Einstecken der LEDs. Die rot markierte Anode ist der Pluspol und wird immer nach au&szlig;en zum Leiterplattenrand hin in die Fassung gesteckt.   
 2. Aufsetzen des Prints _RW_5V_W2_LED_ auf die Steuerungsplatine _RW_5V_W2_STRG_.   
 3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_W2_STRG_.   
 4. Anschluss der Zweiwegweiche an Pin 1, Pin 3 und Pin 5 von J5 der Steuerungplatine _RW_5V_W2_STRG_ (siehe Bild 15 unten).   
-5. Betätigen des Tasters SW2 (Print-Mitte): Stellen der Weiche auf "Gerade", LED 2 oder LED 5 leuchtet.   
-6. Betätigen des Tasters SW1 oder SW3: Stellen der Weiche auf "Abzweig", die andere LED leuchtet.   
+5. Bet&auml;tigen des Tasters SW2 (Print-Mitte): Stellen der Weiche auf "Gerade", LED 2 oder LED 5 leuchtet.   
+6. Bet&auml;tigen des Tasters SW1 oder SW3: Stellen der Weiche auf "Abzweig", die andere LED leuchtet.   
    
 ![Pinbelegung_W2-J5](/images/200_J5_pins_W2.png "Pinbelegung W2-J5")   
 _Bild 15: Pinbelegung des Steckers J5 von RW_5V_W2_STRG_   
@@ -189,7 +189,7 @@ _Bild 15: Pinbelegung des Steckers J5 von RW_5V_W2_STRG_
 # 3. Dreiwegweiche
 
 ## 3.1 Steuerung Dreiwegweiche   
-Diese Platine dient zum Schalten einer Dreiwegweiche (Richtung links - Mitte - rechts) von Hand oder über den I²C-Bus. Der Schaltvorgang erfolgt über Relais.   
+Diese Platine dient zum Schalten einer Dreiwegweiche (Richtung links - Mitte - rechts) von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt &uuml;ber Relais.   
 
 ![RW_5V_W3_STRG_circuit](/images/600_RW_5V_W3_STRG_circuit.png "RW_5V_W3_STRG_circuit")   
 _Bild 16: Schaltplan der "RW_5V_W3_STRG"-Platine_   
@@ -198,10 +198,10 @@ _Bild 16: Schaltplan der "RW_5V_W3_STRG"-Platine_
 _Bild 17: Platine zur Ansteuerung einer Dreiwegweiche_   
 
 ![RW_5V_W3_STRG](/images/300_RW_5V_W3_STRG_V3.png "RW_5V_W3_STRG")   
-_Bild 18: Bestückte Platine "RW_5V_W3_STRG" zum Schalten der Weichen_   
+_Bild 18: Best&uuml;ckte Platine "RW_5V_W3_STRG" zum Schalten der Weichen_   
 
-### Stückliste   
-| Anzahl | Referenz          | Wert                | Gehäuse            |   
+### St&uuml;ckliste   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
 |    1   | C1                | 100 nF              | _kh_library:C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
 |   14   | D1,D2,D3,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15 | Diode 1N4148 | _kh_library:D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp_kh |   
@@ -215,25 +215,25 @@ _Bild 18: Bestückte Platine "RW_5V_W3_STRG" zum Schalten der Weichen_
 |    3   | R1,R3,R5          | 100 k&Omega;      | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
    
 
-### Bestückung   
+### Best&uuml;ckung   
 1. Relais K1 bis K4   
 2. Dioden D1 bis D15   
 3. Transistoren Q1, Q2, Q3   
-4. Widerstände R7, R8, R9   
-5. Widerstände R2, R4, R6   
-6. Widerstände R1, R3, R5   
+4. Widerst&auml;nde R7, R8, R9   
+5. Widerst&auml;nde R2, R4, R6   
+6. Widerst&auml;nde R1, R3, R5   
 7. Kondensator C1   
 8. Wannenstecker J1 bis J3   
-9. Stiftleisten J1 und J2 NACH UNTEN anlöten!   
+9. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
 
 ### Versionen
-* V1 (240930): Keine Aufnahmebohrungen, Leiterbahn (Netz) WL+ mit V+ verbunden, Widerstände R2, R4 und R6 haben 15k&Omega; (neu 10 k&Omega;).   
-* V2 (241011): Bezeichnung GND (wird durch 0V ersetzt), Haltebohrungen alt, Lage der Wannenstecker J1 bis J3 falsch, kein 100 nF-Kondensator für die Versorgungsspannung, keine Schutzschaltung (R7, R8, R9, D13, D14, D15), falls beim Microcontroller die Versorgungsspannung ausfällt.   
+* V1 (240930): Keine Aufnahmebohrungen, Leiterbahn (Netz) WL+ mit V+ verbunden, Widerst&auml;nde R2, R4 und R6 haben 15k&Omega; (neu 10 k&Omega;).   
+* V2 (241011): Bezeichnung GND (wird durch 0V ersetzt), Haltebohrungen alt, Lage der Wannenstecker J1 bis J3 falsch, kein 100 nF-Kondensator f&uuml;r die Versorgungsspannung, keine Schutzschaltung (R7, R8, R9, D13, D14, D15), falls beim Microcontroller die Versorgungsspannung ausf&auml;llt.   
 * V3 (241021): OK   
 * V4 (241024): OK   
 
 ## 3.2 Dreiwegweiche: LED-Anzeige mit Taster
-Diese Platine dient zum Bedienen einer Dreiwegweiche (Richtung links - Mitte - rechts) und zur Anzeige der tatsächlichen Weichenstellung.   
+Diese Platine dient zum Bedienen einer Dreiwegweiche (Richtung links - Mitte - rechts) und zur Anzeige der tats&auml;chlichen Weichenstellung.   
 
 ![RW_5V_W3_LED_circuit](/images/600_RW_5V_W3_LED_V4_circuit.png "RW_5V_W3_LED_circuit")   
 _Bild 19: Schaltplan der "RW_5V_W3_LED"-Platine_   
@@ -242,13 +242,13 @@ _Bild 19: Schaltplan der "RW_5V_W3_LED"-Platine_
 _Bild 20: Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
 ![RW_5V_W3_LED_V3](/images/300_RW_5V_W3_LED.png "RW_5V_W3_LED")   
-_Bild 21: Bestückte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 21: Best&uuml;ckte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
-### Stückliste   
-| Anzahl | Referenz          | Wert                | Gehäuse            |   
+### St&uuml;ckliste   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
-|    3   | D1,D2,D3 (1)      | LED grün 2 mA       | LED_THT:LED_D3.0mm |   
-|    6   | D1,D2,D3 (D4,D5,D6) | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" für LEDs |   
+|    3   | D1,D2,D3 (1)      | LED gr&uuml;n 2 mA       | LED_THT:LED_D3.0mm |   
+|    6   | D1,D2,D3 (D4,D5,D6) | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs |   
 |    2   | J1,J2             | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh     |   
 |    2   | J3,J4             | Stiftleiste 2polig  | _kh_library:PinSocket_1x02_P2.54mm_Vertical_kh |   
 |    2   | (J3, J4)          | Jumper              |   |   
@@ -261,38 +261,38 @@ _Bild 21: Bestückte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Wei
 |    3   | R4,R16 <br> R10   | 100 k&Omega;     | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical <br> _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 |    3   | SW1,SW2,SW3       | Taster SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
    
-(1) Es ist sinnvoll, die 2-poligen Buchsenleisten an alle 6 LED-Positionen zu löten, auch wenn im Betrieb  nur drei LEDs eingesetzt werden, je nachdem, ob die Anzeige links oder rechts von den Schaltern sein soll.   
+(1) Es ist sinnvoll, die 2-poligen Buchsenleisten an alle 6 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb  nur drei LEDs eingesetzt werden, je nachdem, ob die Anzeige links oder rechts von den Schaltern sein soll.   
    
-### Bestückung   
-1. Die zweipoligen Buchsenleisten (D1 bis D3 und/oder D4 bis D6) mit gedrehten Pins auf die _Lötseite_ des Prints löten.   
+### Best&uuml;ckung   
+1. Die zweipoligen Buchsenleisten (D1 bis D3 und/oder D4 bis D6) mit gedrehten Pins auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
-Auf die _*Bauteilseite*_ löten:   
+Auf die _*Bauteilseite*_ l&ouml;ten:   
 
 2. Transistoren Q1 bis Q6   
-3. Alle Widerstände   
+3. Alle Widerst&auml;nde   
 4. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
 5. Stiftleisten 2x2 Pins J3, J4   
 
-Auf die _*Lötseite*_ löten:   
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 
 6. Taster SW1 bis SW3   
    
 ### Test   
-1. Einstecken der LEDs, rot markierte Anode = Pluspol zeigt immer nach außen zum Leiterplattenrand.   
+1. Einstecken der LEDs, rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
 2. Aufsetzen des Prints _RW_5V_W3_LED_ auf die Steuerungsplatine _RW_5V_W3_STRG_.   
 3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_W3_STRG_.   
 4. Anschluss der beiden Weichenantriebe der Dreiwegweiche an Pin 1-3-5 bzw. Pin 2-4-6 von J5 der Steuerungplatine _RW_5V_W3_STRG_ (siehe Bild 22 unten).   
-5. Betätigen des Tasters SW2 (Print-Mitte): Stellen der Weiche auf "Gerade", die mittlere LED links (oder rechts) leuchtet.   
-6. Betätigen des Tasters SW1 (oben): Stellen der Weiche auf "links", die LED rechts oben (oder links unten) leuchtet.   
-7. Betätigen des Tasters SW3 (unten): Stellen der Weiche auf "rechts", die LED rechts unten (oder links oben) leuchtet.   
+5. Bet&auml;tigen des Tasters SW2 (Print-Mitte): Stellen der Weiche auf "Gerade", die mittlere LED links (oder rechts) leuchtet.   
+6. Bet&auml;tigen des Tasters SW1 (oben): Stellen der Weiche auf "links", die LED rechts oben (oder links unten) leuchtet.   
+7. Bet&auml;tigen des Tasters SW3 (unten): Stellen der Weiche auf "rechts", die LED rechts unten (oder links oben) leuchtet.   
 
 ![Pinbelegung_W3-J5](/images/200_J5_pins_W3.png "Pinbelegung W3-J5")   
 _Bild 22: Pinbelegung des Steckers J5 von RW_5V_W3_STRG_   
 
 ### Versionen
-* V1 (240930): Keine Aufnahmebohrungen, VCCi2c auf J2-Pin 1 herausgeführt, Keine Jumper zum Tauschen der Funktion von SW1 mit SW3.   
+* V1 (240930): Keine Aufnahmebohrungen, VCCi2c auf J2-Pin 1 herausgef&uuml;hrt, Keine Jumper zum Tauschen der Funktion von SW1 mit SW3.   
 * V2 (241011): Bezeichnung GND (wird durch 0V ersetzt), Haltebohrungen neu    
-* V3 (241018): Bestückungsdruck: Widerstandswerte bei R5, R6 vertauscht, Versionsnummer V2 statt V3   
+* V3 (241018): Best&uuml;ckungsdruck: Widerstandswerte bei R5, R6 vertauscht, Versionsnummer V2 statt V3   
 * V4 (241124): OK   
 
 [Zum Seitenanfang](#up)   
@@ -301,19 +301,19 @@ _Bild 22: Pinbelegung des Steckers J5 von RW_5V_W3_STRG_
 # 4. Entkuppler (1OUT)   
 
 ## 4.1 Steuerung des Entkupplers   
-Diese Platine dient zum Schalten der Versorgungsspannung für den Entkuppler von Hand oder über den I²C-Bus. Der Schaltvorgang erfolgt über ein Relais, die Rückmeldung erfolgt über einen Optokoppler.   
+Diese Platine dient zum Schalten der Versorgungsspannung f&uuml;r den Entkuppler von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber einen Optokoppler.   
 
 ![RW_5V_1OUT_STRG_circuit](/images/600_RW_5V_1OUT_STRG_circuit.png "RW_5V_1OUT_STRG_circuit")   
 _Bild 23: Schaltplan der "RW_5V_1OUT_STRG"-Platine_   
 
 ![RW_5V_1OUT_STRG](/images/pcb_f/PCB_F_RW_5V_1OUT_STRG_V1.png "RW_5V_1OUT_STRG_V1")   
-_Bild 24: Platine "RW_5V_1OUT_STRG" zum Betätigen eines Entkupplers_   
+_Bild 24: Platine "RW_5V_1OUT_STRG" zum Bet&auml;tigen eines Entkupplers_   
 
 ![RW_5V_1OUT_STRG](/images/300_RW_5V_1OUT_STRG_V1.png "RW_5V_1OUT_STRG")   
-_Bild 25: Bestückte Platine "RW_5V_1OUT_STRG" zum Betätigen eines Entkupplers_   
+_Bild 25: Best&uuml;ckte Platine "RW_5V_1OUT_STRG" zum Bet&auml;tigen eines Entkupplers_   
 
-### Stückliste   
-| Anzahl | Referenz          | Wert                | Gehäuse            |   
+### St&uuml;ckliste   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
 |    1   | C1                | Elko 33 &micro;F/35V       | Capacitor_THT:CP_Radial_D8.0mm_P2.50mm |   
 |    1   | C2                | Kondensator 100 nF  | _kh_library:C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
@@ -334,7 +334,7 @@ _Bild 25: Bestückte Platine "RW_5V_1OUT_STRG" zum Betätigen eines Entkupplers_
 |    1   | R1                | 100 k&Omega; | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
    
 
-### Bestückung   
+### Best&uuml;ckung   
 1. IC-Fassung   
 2. Relais K1   
 3. Dioden D2 bis D5   
@@ -342,11 +342,11 @@ _Bild 25: Bestückte Platine "RW_5V_1OUT_STRG" zum Betätigen eines Entkupplers_
 5. Kondensator C1   
 6. Kondensator C2   
 7. Diode D1   
-8. Alle Widerstände   
+8. Alle Widerst&auml;nde   
 9. Wannenstecker J1 bis J3   
 
-Auf die _*Lötseite*_ löten:   
-10. Stiftleisten J1 und J2 NACH UNTEN anlöten!   
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
+10. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
 
 ### Versionen
 * V1 (240930): OK
@@ -354,25 +354,25 @@ Auf die _*Lötseite*_ löten:
 ## 4.2 LED-Anzeige mit Taster zur Entkuppler-Bedienung
 Diese Platine dient zur Bedienung der Schaltplatine "RW_5V_1OUT_STRG".   
 Im Ruhezustand leuchtet die rote LED (D1).   
-Drückt man den Taster, so leuchten die gelbe (D5) und grüne LED (D3) und J6-Pin 1 (S0) geht auf 0V.   
+Dr&uuml;ckt man den Taster, so leuchten die gelbe (D5) und gr&uuml;ne LED (D3) und J6-Pin 1 (S0) geht auf 0V.   
 
 ![RW_5V_1OUT_LED_circuit](/images/600_RW_5V_1OUT_LED_circuit.png "RW_5V_W3_1OUT_circuit")   
 _Bild 26: Schaltplan der "RW_5V_1OUT_LED"-Platine_   
 
 ![RW_5V_1OUT_LED](/images//pcb_f/PCB_F_RW_5V_1OUT_LED_V2.png "RW_5V_1OUT_LED")   
-_Bild 27: Platine "RW_5V_1OUT_LED" zum Schalten und zur Anzeige des gedrückten Tasters_   
+_Bild 27: Platine "RW_5V_1OUT_LED" zum Schalten und zur Anzeige des gedr&uuml;ckten Tasters_   
 
-Das folgende Bild zeigt die bestückte Platine "RW_5V_1OUT_LED". Auf der Unterseite sieht man Teile der gelben und roten LED sowie des gelben Knopfes des Tasters.   
+Das folgende Bild zeigt die best&uuml;ckte Platine "RW_5V_1OUT_LED". Auf der Unterseite sieht man Teile der gelben und roten LED sowie des gelben Knopfes des Tasters.   
 ![pcb RW_5V_1OUT_LED](/images/300_RW_5V_1OUT_LED.png "pcb RW_5V_1OUT_LED")   
-_Bild 28: Die bestückte "RW_5V_1OUT_LED"-Platine_   
+_Bild 28: Die best&uuml;ckte "RW_5V_1OUT_LED"-Platine_   
 
-### Stückliste   
-| Anzahl | Referenz          | Wert                | Gehäuse            |   
+### St&uuml;ckliste   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
 |    1   | D1                | LED rot  2 mA       | LED_THT:LED_D3.0mm |   
-|    1   | D3                | LED grün 2 mA       | LED_THT:LED_D3.0mm |   
+|    1   | D3                | LED gr&uuml;n 2 mA       | LED_THT:LED_D3.0mm |   
 |    1   | D5                | LED gelb 2 mA       | LED_THT:LED_D3.0mm |   
-|    3   | D1,D3,D5          | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" für LEDs  |   
+|    3   | D1,D3,D5          | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs  |   
 |    2   | J1,J2             | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh |   
 |    1   | Q1                | Transistor BC337-4  | _kh_library:TO-92_Inline_Wide_custom |   
 |    2   | R2,R7             | 47 &Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
@@ -382,27 +382,27 @@ _Bild 28: Die bestückte "RW_5V_1OUT_LED"-Platine_
 |    1   | SW2               | Taster SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
    
 
-### Bestückung   
-1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D2, D4, D6) auf die _Lötseite_ des Prints löten.   
+### Best&uuml;ckung   
+1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D2, D4, D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
-Auf die _*Bauteilseite*_ löten:   
+Auf die _*Bauteilseite*_ l&ouml;ten:   
 
 2. Widerstand R5 (liegend)   
 3. Transistor Q1   
-4. Alle anderen Widerstände   
+4. Alle anderen Widerst&auml;nde   
 5. Buchsenleisten J1 und J2   
 
-Auf die _*Lötseite*_ löten:   
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 
 6. Taster SW2   
    
 
 ### Test   
-1. Einstecken der LEDs, die rot markierte Anode = Pluspol zeigt immer nach außen zum Leiterplattenrand.   
+1. Einstecken der LEDs, die rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
 2. Aufsetzen des Prints _RW_5V_1OUT_LED_ auf die Steuerungsplatine _RW_5V_1OUT_STRG_.   
 3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_1OUT_STRG_.   
 4. Anschluss des Entkupplers an Pin 3 und Pin 5 von J5 der Steuerungplatine _RW_5V_1OUT_STRG_.   
-5. Betätigen des Tasters: der Entkuppler sollte arbeiten.   
+5. Bet&auml;tigen des Tasters: der Entkuppler sollte arbeiten.   
 
 ![Pinbelegung_1OUT-J5](/images/200_J5_pins_1OUT.png "Pinbelegung 1OUT-J5")   
 _Bild 29: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_   
@@ -417,7 +417,7 @@ _Bild 29: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_
 # 5. Abschaltbares Gleis (2IO)   
 
 ## 5.1 Steuerung der Fahrstrom-Abschaltung   
-Diese Platine dient zum Ein- und Ausschalten des Fahrstroms für ein Gleis von Hand oder über den I²C-Bus. Der Schaltvorgang erfolgt über ein Relais, die Rückmeldung erfolgt über einen Optokoppler.   
+Diese Platine dient zum Ein- und Ausschalten des Fahrstroms f&uuml;r ein Gleis von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber einen Optokoppler.   
 
 ![RW_5V_2IO_STRG_circuit](/images/600_RW_5V_2IO_STRG_circuit.png "RW_5V_2IO_STRG_circuit")   
 _Bild 30: Schaltplan der "RW_5V_2IO_STRG"-Platine_   
@@ -426,10 +426,10 @@ _Bild 30: Schaltplan der "RW_5V_2IO_STRG"-Platine_
 _Bild 31: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_STRG](/images/300_RW_5V_2IO_STRG_V1.png "RW_5V_2IO_STRG")   
-_Bild 32: Bestückte Platine "300_RW_5V_2IO_STRG" zum Schalten des Fahrstroms_   
+_Bild 32: Best&uuml;ckte Platine "300_RW_5V_2IO_STRG" zum Schalten des Fahrstroms_   
 
-__Stückliste__   
-| Anzahl | Referenz     | Wert                   | Gehäuse            |   
+__St&uuml;ckliste__   
+| Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
 |--------|--------------|------------------------|--------------------|   
 |    1   | C1           | Elko 33 &micro;F/35V   | Capacitor_THT:CP_Radial_D8.0mm_P2.50mm |   
 |    1   | C2           | Kondensator 100 nF     | _kh_library:C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
@@ -450,7 +450,7 @@ __Stückliste__
 |    1   | R1           | 100 k&Omega;           | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
    
 
-### Bestückung   
+### Best&uuml;ckung   
 1. IC-Fassung 4-polig (oder 2x Buchsenleiste mit 2 Pins)   
 2. Relais K1   
 3. Dioden D2 bis D4   
@@ -458,11 +458,11 @@ __Stückliste__
 5. Kondensator C1   
 6. Kondensator C2   
 7. Diode D1   
-8. Alle Widerstände   
+8. Alle Widerst&auml;nde   
 9. Wannenstecker J1 bis J3   
 
-Auf die _*Lötseite*_ löten:   
-10. Stiftleisten J1 und J2 NACH UNTEN anlöten!   
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
+10. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
 
 _Nicht vergessen_: Optokoppler U1 richtig herum in die Fassung stecken...   
 
@@ -471,8 +471,8 @@ _Nicht vergessen_: Optokoppler U1 richtig herum in die Fassung stecken...
 
 ## 5.2 LED-Anzeige mit zwei Schaltern
 Diese Platine dient zum Bedienen der Schaltplatine "RW_5V_2IO_STRG".   
-Im Ruhezustand (beide _*Schalter*_ nicht gedrückt) leuchtet die gelbe LED und entweder die rote oder grüne LED, je nachdem, ob der Fahrstrom über DCC oder MQTT aus- oder eingeschaltet ist.   
-Wird der Schalter "AUS" betätigt, ist der Fahrstrom auf jeden Fall ausgeschaltet, bei "EIN" (ohne "AUS") ist der Fahrstrom eingeschaltet. Sind beide Schalter nicht betätigt, erfolgt die Steuerung über den I²C-Bus.   
+Im Ruhezustand (beide _*Schalter*_ nicht gedr&uuml;ckt) leuchtet die gelbe LED und entweder die rote oder gr&uuml;ne LED, je nachdem, ob der Fahrstrom &uuml;ber DCC oder MQTT aus- oder eingeschaltet ist.   
+Wird der Schalter "AUS" bet&auml;tigt, ist der Fahrstrom auf jeden Fall ausgeschaltet, bei "EIN" (ohne "AUS") ist der Fahrstrom eingeschaltet. Sind beide Schalter nicht bet&auml;tigt, erfolgt die Steuerung &uuml;ber den I²C-Bus.   
 
 ![RW_5V_2IO_LED_circuit](/images/600_RW_5V_2IO_LED_circuit.png "RW_5V_2IO_LED_circuit")   
 _Bild 33: Schaltplan der "RW_5V_2IO_LED"-Platine_   
@@ -481,15 +481,15 @@ _Bild 33: Schaltplan der "RW_5V_2IO_LED"-Platine_
 _Bild 34: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_LED](/images/300_RW_5V_2IO_LED.png "RW_5V_2IO_LED")   
-_Bild 35: Bestückte Platine "RW_5V_2IO_LED"_   
+_Bild 35: Best&uuml;ckte Platine "RW_5V_2IO_LED"_   
 
-### Stückliste   
-| Anzahl | Referenz          | Wert                | Gehäuse            |   
+### St&uuml;ckliste   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
 |    1   | D1                | LED rot  2 mA       | LED_THT:LED_D3.0mm |   
-|    1   | D3                | LED grün 2 mA       | LED_THT:LED_D3.0mm |   
+|    1   | D3                | LED gr&uuml;n 2 mA       | LED_THT:LED_D3.0mm |   
 |    3   | D4,D5,D6          | LED gelb 2 mA       | LED_THT:LED_D3.0mm |   
-|    5   | D1,D3,D4,D5,D6    | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" für LEDs  |   
+|    5   | D1,D3,D4,D5,D6    | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs  |   
 |    2   | J1,J2             | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh |   
 |    1   | Q1                | Transistor BC337-4  | _kh_library:TO-92_Inline_Wide_custom |   
 |    1   | R8                | 47 &Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
@@ -499,25 +499,25 @@ _Bild 35: Bestückte Platine "RW_5V_2IO_LED"_
 |    2   | SW1,SW2           | _*Schalter*_ SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
    
 ### Vorbereitung   
-1. Von einer langen, einreihigen Buchsenleiste 5x 2-polige Stücke abtrennen (für D1, D3 bis D6).   
-2. Die LED-Anschlüsse entsprechend Bild 4 abschneiden und biegen.   
+1. Von einer langen, einreihigen Buchsenleiste 5x 2-polige St&uuml;cke abtrennen (f&uuml;r D1, D3 bis D6).   
+2. Die LED-Anschl&uuml;sse entsprechend Bild 4 abschneiden und biegen.   
 
-### Bestückung   
-1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D4, D5, D6) auf die _Lötseite_ des Prints löten.   
+### Best&uuml;ckung   
+1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D4, D5, D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
-Auf die _*Bauteilseite*_ löten:   
+Auf die _*Bauteilseite*_ l&ouml;ten:   
 
 2. Widerstand R8 (liegend)   
 3. Transistor Q1   
-4. Die restlichen Widerstände   
+4. Die restlichen Widerst&auml;nde   
 5. Buchsenleisten J1 und J2   
 
-Auf die _*Lötseite*_ löten:   
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 
 6. __SCHALTER__ SW1, SW2   
    
 ### Test   
-1. Einstecken der LEDs, Anode = Pluspol = rot markiert immer nach außen zum Leiterplattenrand.   
+1. Einstecken der LEDs, Anode = Pluspol = rot markiert immer nach au&szlig;en zum Leiterplattenrand.   
 2. Aufsetzen des Prints _RW_5V_2IO_LED_ auf die Steuerungsplatine _RW_5V_2IO_STRG_.   
 3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_2IO_STRG_.   
 4. Anschluss der Gleisversorgung an J5-Pin 1 (DCC+) und J5-Pin 2 (DCC-) der Steuerungplatine _RW_5V_2IO_STRG_.   
@@ -537,7 +537,7 @@ _Bild 36: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_
 # 6. Zweipoliger Umschalter (DPDT)   
 
 ## 6.1 Steuerung des zweipoligen Umschalters   
-Diese Platine dient zum zweipoligen Umschalten 2x Um (engl. Double Pole Double Throw, kurz DPDT) einer Spannung. Der Schaltvorgang erfolgt über ein Relais, die Rückmeldung erfolgt über zwei Optokoppler (je einer für den Zustand NC = normally closed und NO = normally open).   
+Diese Platine dient zum zweipoligen Umschalten 2x Um (engl. Double Pole Double Throw, kurz DPDT) einer Spannung. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber zwei Optokoppler (je einer f&uuml;r den Zustand NC = normally closed und NO = normally open).   
 
 ![RW_5V_DPDT_STRG_circuit](/images/600_RW_5V_DPDT_STRG_circuit.png "RW_5V_DPDT_STRG_circuit")   
 _Bild 37: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
@@ -546,10 +546,10 @@ _Bild 37: Schaltplan der "RW_5V_DPDT_STRG"-Platine_
 _Bild 38: Platine zum zweipoligen Umschalten einer Spannung_   
 
 ![RW_5V_DPDT_STRG](/images/300_RW_5V_DPDT_STRG_V1.png "RW_5V_DPDT_STRG")   
-_Bild 39: Bestückte Platine "300_RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
+_Bild 39: Best&uuml;ckte Platine "300_RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
 
-__Stückliste__   
-| Anzahl | Referenz     | Wert                   | Gehäuse            |   
+__St&uuml;ckliste__   
+| Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
 |:------:|:-------------|:-----------------------|:-------------------|   
 |    2   | C1, C3       | Elko 33 &micro;F/35V   | Capacitor_THT:CP_Radial_D8.0mm_P2.50mm |   
 |    1   | C2           | Kondensator 100 nF     | _kh_library:C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
@@ -570,7 +570,7 @@ __Stückliste__
 |    1   | R1           | 100 k&Omega;           | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
    
 
-### Bestückung   
+### Best&uuml;ckung   
 1. IC-Fassungen 4-polig U1, U2 (oder 2x Buchsenleiste mit 2 Pins)   
 2. Relais K1   
 3. Dioden D2, D3, D4, D6   
@@ -578,21 +578,21 @@ __Stückliste__
 5. Kondensator C1, C3   
 6. Kondensator C2   
 7. Diode D1, D5   
-8. Alle Widerstände   
+8. Alle Widerst&auml;nde   
 9. Wannenstecker J1 bis J3   
 
-Auf die _*Lötseite*_ löten:   
-10. Stiftleisten J1 und J2 NACH UNTEN anlöten!   
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
+10. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
 
 _Nicht vergessen_: Optokoppler U1, U2 richtig herum in die Fassung stecken...   
 
 ### Versionen
 * V1 (241124): OK
 
-## 6.2 LED-Anzeige für zweipoligen Umschalter
+## 6.2 LED-Anzeige f&uuml;r zweipoligen Umschalter
 Diese Platine dient zum Bedienen der Schaltplatine "RW_5V_DPDT_STRG".   
-Im Ruhezustand (beide __*Schalter*__ nicht gedrückt) leuchtet die mittlere, gelbe LED und entweder die rote oder grüne LED, je nachdem, ob der Umschalter über DCC oder MQTT aus- oder eingeschaltet ist (Remote-Betrieb).   
-Wird der mittlere Schalter gedrückt, erfolgt die Umschaltung über den unteren, lokalen Schalter. Im nicht gedrückten Zustand dind die Kontakte "IN" und "NC" (Normally Closed) verbunden, gedrückt sind "IN" und "NO" (Normally Open).   
+Im Ruhezustand (beide __*Schalter*__ nicht gedr&uuml;ckt) leuchtet die mittlere, gelbe LED und entweder die rote oder gr&uuml;ne LED, je nachdem, ob der Umschalter &uuml;ber DCC oder MQTT aus- oder eingeschaltet ist (Remote-Betrieb).   
+Wird der mittlere Schalter gedr&uuml;ckt, erfolgt die Umschaltung &uuml;ber den unteren, lokalen Schalter. Im nicht gedr&uuml;ckten Zustand dind die Kontakte "IN" und "NC" (Normally Closed) verbunden, gedr&uuml;ckt sind "IN" und "NO" (Normally Open).   
 
 ![RW_5V_DPDT_LED_circuit](/images/600_RW_5V_DPDT_LED_circuit.png "RW_5V_DPDT_LED_circuit")   
 _Bild 40: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
@@ -601,48 +601,48 @@ _Bild 40: Schaltplan der "RW_5V_DPDT_LED"-Platine_
 _Bild 41: Bedien-Platine zum 2-poligen Umschalten_   
 
 ![RW_5V_DPDT_LED](/images/300_DPDT_LED_front.png "RW_5V_DPDT_LED") ![RW_5V_DPDT_LED](/images/300_DPDT_LED_back.png "RW_5V_DPDT_LED")     
-_Bild 42: Bestückte Platine "RW_5V_DPDT_LED" (front und back)_   
+_Bild 42: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
 
-### Stückliste   
-| Anzahl | Referenz          | Wert                | Gehäuse            |   
+### St&uuml;ckliste   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
-|    2   | D1, D3            | LED grün 2 mA       | LED_THT:LED_D3.0mm |   
+|    2   | D1, D3            | LED gr&uuml;n 2 mA       | LED_THT:LED_D3.0mm |   
 |    2   | D5, D6            | LED gelb 2 mA       | LED_THT:LED_D3.0mm |   
-|    4   | D1, D3, D5, D6    | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" für LEDs  |   
+|    4   | D1, D3, D5, D6    | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs  |   
 |    2   | J1, J2            | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh |   
 |    3   | R2, R4, R5        | 1 k&Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 |    2   | R1, R3            | 10 k&Omega;         | _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 |    2   | SW1,SW2           | _*Schalter*_ SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
    
 ### Vorbereitung   
-1. Von einer langen, einreihigen Buchsenleiste 4x 2-polige Stücke abtrennen (für D1, D3, D5, D6).   
-2. Die LED-Anschlüsse entsprechend Bild xx abschneiden und biegen.   
+1. Von einer langen, einreihigen Buchsenleiste 4x 2-polige St&uuml;cke abtrennen (f&uuml;r D1, D3, D5, D6).   
+2. Die LED-Anschl&uuml;sse entsprechend Bild xx abschneiden und biegen.   
 
-### Bestückung   
-1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D5, D6) auf die _Lötseite_ des Prints löten.   
+### Best&uuml;ckung   
+1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D5, D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
-Auf die _*Bauteilseite*_ löten:   
+Auf die _*Bauteilseite*_ l&ouml;ten:   
 
 2. Widerstand R2, R4 (liegend)   
-3. Die restlichen Widerstände R1, R3, R5   
+3. Die restlichen Widerst&auml;nde R1, R3, R5   
 4. Buchsenleisten J1 und J2   
 
-Auf die _*Lötseite*_ löten:   
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 
 6. __SCHALTER__ SW1, SW2   
    
 ### Test   
-1. Einstecken der LEDs, die rot markierte Anode = Pluspol zeigt immer nach außen zum Leiterplattenrand.   
+1. Einstecken der LEDs, die rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
 2. Aufsetzen des Prints _RW_5V_DPDT_LED_ auf die Steuerungsplatine _RW_5V_DPDT_STRG_.   
 3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_DPDT_STRG_.   
 4. Anschluss der Eingangsspannung IN+ an J5-Pin 1 und IN- J5-Pin 2 der Steuerungplatine _RW_5V_DPDT_STRG_:   
 An J3-Pin3 liegt IN+ und an J3-Pin4 liegt IN- an.   
 J3-Pin5 und J3-Pin6 offen.   
-5. Drücken des mittleren Schalters (für lokales Schalten):   
-Unterer Schalter nicht gedrückt: An J3-Pin3 liegt IN+ und an J3-Pin4 liegt IN- an, J3-Pin5 und J3-Pin6 offen.   
-Unterer Schalter gedrückt: An J3-Pin5 liegt IN+ und an J3-Pin6 liegt IN- an. J3-Pin3 und J4-Pin6 offen.   
-6. Mittlerer Schalter ungedrückt: Steuerung über DCC.   
-Mit dem Demoprogamm kann mit der DCC-Adresse 41 der Umschalter betätigt werden.   
+5. Dr&uuml;cken des mittleren Schalters (f&uuml;r lokales Schalten):   
+Unterer Schalter nicht gedr&uuml;ckt: An J3-Pin3 liegt IN+ und an J3-Pin4 liegt IN- an, J3-Pin5 und J3-Pin6 offen.   
+Unterer Schalter gedr&uuml;ckt: An J3-Pin5 liegt IN+ und an J3-Pin6 liegt IN- an. J3-Pin3 und J4-Pin6 offen.   
+6. Mittlerer Schalter ungedr&uuml;ckt: Steuerung &uuml;ber DCC.   
+Mit dem Demoprogamm kann mit der DCC-Adresse 41 der Umschalter bet&auml;tigt werden.   
 
 ![Pinbelegung_DPDT-J5](/images/200_J5_pins_DPDT.png "Pinbelegung DPDT-J5")   
 _Bild 43: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
