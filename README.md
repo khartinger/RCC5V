@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-02-12 <a name="up"></a><br>   
+Last modified: 2025-02-15 <a name="up"></a><br>   
 <h1>Controlling model railroad components with DCC, MQTT and manually</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -8,7 +8,11 @@ Last modified: 2025-02-12 <a name="up"></a><br>
 
 # Introduction
 Switching points is an important part of model railroading. Who doesn't want to be able to do this in different ways? There are many ways to control turnouts, uncouplers, disconnectable tracks and other components.   
-The simplest method is to do it all by hand. In this case, you don't even need point machines. But with more distant or distributed components, this mode of operation quickly becomes cumbersome.   
+The following image of an RCC controller shows an elegant example with information display, switching and LED feedback.   
+![Example RCC controller](./images/600_M12_OLED_Blocks2.png "Example RCC controller")   
+_Figure 1: Example user interface RCC control unit_   
+
+The simplest method of switching is, of course, to do it all by hand. In this case, you don't even need point machines. But with more distant or distributed components, this mode of operation quickly becomes cumbersome.   
 For this reason, magnetic drives are usually used to switch the components. In the simplest case, the AC voltage is switched directly:   
 
 ![RCC5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC5V_DirectSwitching")   

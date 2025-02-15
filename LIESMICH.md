@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 12.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 15.2.2025 <a name="up"></a><br>   
 <h1>Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -8,7 +8,11 @@ Letzte &Auml;nderung: 12.2.2025 <a name="up"></a><br>
 
 # Einleitung
 Das Schalten von Weichen ist bei Modellbahnen eine wichtige Sache. Wer will nicht die M&ouml;glichkeit haben, das auf verschiedene Arten zu machen? Es gibt viele Mittel und Wege, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern.   
-Die einfachste Methode ist, das alles von Hand zu machen. In dem Fall braucht man nicht einmal Weichenantriebe. Aber bei weiter entfernten oder verteilten Komponenten wird diese Betriebsart schnell umst&auml;ndlich.   
+Das folgende Bild einer RCC-Steuerung zeigt ein elegantes Beispiel mit Informationsanzeige, Schalten und LED-R&uuml;ckmeldung.   
+![Beispiel RCC-Steuerung](./images/600_M12_OLED_Blocks2.png "Beispiel RCC-Steuerung")   
+_Bild 1: Beispiel User-Interface RCC-Steuerung_   
+
+Die einfachste Methode des Schaltens ist nat&uuml;rlich, das alles von Hand zu machen. In dem Fall braucht man nicht einmal Weichenantriebe. Aber bei weiter entfernten oder verteilten Komponenten wird diese Betriebsart schnell umst&auml;ndlich.   
 Aus diesem Grund werden zum Schalten der Komponenten &uuml;blicherweise magnetische Antriebe verwendet. Dabei wird im einfachsten Fall die Wechselspannung direkt geschaltet:   
 
 ![RCC_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC_5V_DirectSwitching")   
