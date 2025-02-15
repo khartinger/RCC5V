@@ -16,7 +16,7 @@ The simplest method of switching is, of course, to do it all by hand. In this ca
 For this reason, magnetic drives are usually used to switch the components. In the simplest case, the AC voltage is switched directly:   
 
 ![RCC5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC5V_DirectSwitching")   
-_Figure 1: Direct switching of model railway components   
+_Figure 2: Direct switching of model railway components   
 (turnout = turnout, uncoupler = uncoupler track, disconnectable track = disconnectable track)_   
 
 However, direct switching of the AC voltage has disadvantages: There is no feedback on the actual switching status and automatic switching of several components is not possible.   
@@ -92,22 +92,22 @@ The overall Railway Component Control (RCC) system consists of six parts:
 6. the __model railroad components__ such as turnouts, uncouplers and disconnectable tracks.   
 
 ![RCC5V_BlockDiagram1x](./images/150_RCC5V_BlockDiagramm_1x_V2.png "RCC5V_BlockDiagram1x")   
-_Figure 2: Block diagram for switching railroad components with 5V_   
+_Figure 3: Block diagram for switching railroad components with 5V_   
 
 By using the I2C-I/O-Expander-Boards it is possible to control several components:   
 ![RCC5V_BlockDiagram3x](./images/300_RCC5V_BlockDiagramm_3x_V2.png "RCC5V_BlockDiagram3x")   
-_Figure 3: Block diagram switching several railroad components with 5V_   
+_Figure 4: Block diagram switching several railroad components with 5V_   
 
 # Practical setup
 The following figure shows an example of the modules required to control a three-way turnout:   
 ![RCC5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png "RCC5V_Demo_Setup")   
-_Figure 4: Demo setup of an RCC-5V system: the individual parts_   
+_Figure 5: Demo setup of an RCC-5V system: the individual parts_   
 
 On the far left you can see the 25-pin connector with the 5V power supply (“SUPPLY”), behind it is the ESP32 with a 1.56 inch display (“&micro;C”). Two I2C-PCF8574 boards (“I2C”) are mounted in the front center, behind them the RCC block. On the right you can see a three-way turnout with two Fleischmann 640000 turnout drives. The electrical connection of the modules is made using 6-pin ribbon cables and wires.   
 
 The following image shows an example of a possible front view of a module:   
 ![Example front view](./images/480_front_view_module.png "Example front view")   
-_Figure 5: Example of module front view (= operating side)_   
+_Figure 6: Example of module front view (= operating side)_   
 
 [To the top of the page](#up)
 <a name="x40"></a>   
@@ -116,7 +116,7 @@ _Figure 5: Example of module front view (= operating side)_
 The following picture shows the electrical circuit diagram for controlling a turnout with DCC, MQTT or manually. The light green rectangles represent circuit boards developed in KiCad 8.0 and manufactured by [PCB Way](https://www.pcbway.com/). To do this, simply install the PCB Way plug-in in KiCad and the data required for production is then transferred with a click of the mouse.   
 
 ![overall_circuit_diagram](./images/768_RCC5V_OverviewCircuitDiagram_241111.png "overall circuit diagram")   
-_Figure 6: Overall circuit diagram of the RCC-5V system_   
+_Figure 7 Overall circuit diagram of the RCC-5V system_   
 
 The upper third of the picture shows the supply of the DCC signal and the AC voltage (“FEED-IN”). The DCC signal for the traction current and the digital switching of the points is generated here with an old Roco-Multimaus, a 230V/18V/2.9A transformer [(e.g. BV00/026 from Conrad)](https://www.conrad.at/de/p/bv00-026-hochleistungstransformator-230-v-404288.html?refresh=true) is used for the AC voltage supply.   
 

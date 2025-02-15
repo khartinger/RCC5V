@@ -16,7 +16,7 @@ Die einfachste Methode des Schaltens ist nat&uuml;rlich, das alles von Hand zu m
 Aus diesem Grund werden zum Schalten der Komponenten &uuml;blicherweise magnetische Antriebe verwendet. Dabei wird im einfachsten Fall die Wechselspannung direkt geschaltet:   
 
 ![RCC_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC_5V_DirectSwitching")   
-_Bild 1: Direktes Schalten von Modellbahnkomponenten   
+_Bild 2: Direktes Schalten von Modellbahnkomponenten   
 (Turnout = Weiche, Uncoupler = Entkupplungsgleis, Disconnectable Track = abschaltbares Gleis)_   
 
 Das direkte Schalten der Wechselspannung hat aber Nachteile: Es gibt keine R&uuml;ckmeldung &uuml;ber den tats&auml;chlichen Schaltzustand und das automatische Schalten mehrerer Komponenten ist nicht m&ouml;glich.   
@@ -92,22 +92,22 @@ Das Railway-Component-Control-(RCC-) Gesamtsystem besteht aus sechs Teilen:
 6. Die __Modellbahnkomponenten__ wie Weichen, Entkuppler und abschaltbare Gleise.   
 
 ![RCC5V_BlockDiagram1x](./images/150_RCC5V_BlockDiagramm_1x_V2.png "RCC5V_BlockDiagram1x")   
-_Bild 2: Blockschaltbild Schalten von Eisenbahnkomponenten mit 5V_   
+_Bild 3: Blockschaltbild Schalten von Eisenbahnkomponenten mit 5V_   
 
 Durch die Verwendung der I2C-I/O-Expander-Boards ist es m&ouml;glich, mehrere Komponenten anzusteuern:   
 ![RCC5V_BlockDiagram3x](./images/300_RCC5V_BlockDiagramm_3x_V2.png "RCC5V_BlockDiagram3x")   
-_Bild 3: Blockschaltbild Schalten von mehreren Eisenbahnkomponenten mit 5V_   
+_Bild 4: Blockschaltbild Schalten von mehreren Eisenbahnkomponenten mit 5V_   
 
 # Praktischer Aufbau
 Das folgende Bild zeigt beispielhaft die Baugruppen, die zur Ansteuerung einer Dreiwegweiche erforderlich sind:   
 ![RCC5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png "RCC5V_Demo_Setup")   
-_Bild 4: Demo-Aufbau eines RCC-5V-Systems: die einzelnen Teile_   
+_Bild 5: Demo-Aufbau eines RCC-5V-Systems: die einzelnen Teile_   
 
 Ganz links erkennt man den 25-poligen Stecker mit dem 5V-Netzteil ("SUPPLY"), dahinter befindet sich der ESP32 mit einem 1,56 Zoll Display ("&micro;C"). Vorne in der Mitte sind zwei I2C-PCF8574-Boards aufgebaut ("I2C"), dahinter der RCC-Block. Rechts sieht man eine Dreiwegweiche mit zwei Fleischmann-Weichenantrieben 640000. Die elektrische Verbindung der Baugruppen erfolgt durch 6-polige Flachbandkabel und Dr&auml;hte.   
 
 Ein Beispiel f&uuml;r eine m&ouml;gliche Frontansicht eines Moduls zeigt das folgende Bild:   
 ![Beispiel Frontansicht](./images/480_front_view_module.png "Beispiel Frontansicht")   
-_Bild 5: Beispiel Modul-Frontansicht (= Bedienungsseite)_   
+_Bild 6: Beispiel Modul-Frontansicht (= Bedienungsseite)_   
 
 [Zum Seitenanfang](#up)
 <a name="x40"></a>   
@@ -116,7 +116,7 @@ _Bild 5: Beispiel Modul-Frontansicht (= Bedienungsseite)_
 Das folgende Bild zeigt den elektrischen Schaltplan zur Ansteuerung einer Weiche mit DCC, MQTT oder manuell. Die hellgr&uuml;nen Rechtecke stellen in KiCad 8.0 entwickelte Platinen dar, die von [PCB Way](https://www.pcbway.com/) hergestellt wurden. Dazu installiert man in KiCad einfach das PlugIn von PCB Way und die &Uuml;bertragung der f&uuml;r die Produktion erforderlichen Daten erfolgt dann per Mausklick.   
 
 ![overall_circuit_diagram](./images/768_RCC5V_OverviewCircuitDiagram_241111.png "overall circuit diagram")   
-_Bild 6: Gesamtschaltung des RCC-5V-Systems_   
+_Bild 7: Gesamtschaltung des RCC-5V-Systems_   
 
 Das obere Drittel des Bildes zeigt die Einspeisung des DCC-Signals und der Wechselspannung ("FEED-IN"). Das DCC-Signal f&uuml;r den Fahrstrom und das digitale Schalten der Weichen wird hier mit einer alten Roco-Multimaus erzeugt, zur Wechselspannungsversorgung dient ein 230V/18V/2,9A Trafo [(z.B. BV00/026 von Conrad)](https://www.conrad.at/de/p/bv00-026-hochleistungstransformator-230-v-404288.html?refresh=true).   
 
