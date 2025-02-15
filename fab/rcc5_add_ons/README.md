@@ -1,11 +1,13 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2024-11-28 <a name="up"></a><br>   
+Last modified: 2025-02-15 <a name="up"></a><br>   
 <h1>Additional boards</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
 # 1. Introduction   
 The supplementary boards described here are used, for example, as a holder or for transferring ribbon cables with IDC connectors to pins or screw terminals.   
+
+<a name="x20"></a>   
 
 # 2 Block mounting board   
 The block mounting board is screwed onto the frame of a railroad module and 
@@ -110,8 +112,92 @@ _*Link to the KiCad files*_: [/fab/kicad/CON_6pol_6_V1](/fab/kicad/CON_6pol_6_V1
 |    1   | J5        | 6-pin connector (Box_02x03_P2.54_Vertical) | _kh_library:Box_02x03_P2.54mm_Vertical_kh <br> e.g. from  [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
 |    2   | J6, J7     | Screw terminal 3-pole (Screw_Terminal_01x03_P5) | _kh_library:Screw_Terminal_01x03_P5 <br> e.g. from [AliExpress](https://de.aliexpress.com/item/1005007145396958.html?spm=a2g0o.order_list.order_list_main.63.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
 
+Note: Instead of the two 3-pole screw terminals, three 2-pole terminals can also be used...   
+
 ### Assembly   
 1. tub connector J5   
 2. screw terminal J6, J7   
+
+[To the top of the page](#up)   
+<a name="x60"></a>   
+
+# 6. `CON_2pol_141` Traction current distributor
+This circuit board is used to distribute two-pole signals such as traction current.   
+
+![CON_2pol_141](/images/200_CON_2pol_141.png "CON_2pol_141")   
+_Figure 11: The assembled “CON_2pol_141” circuit board_   
+
+![CON_2pol_141_circuit](/images/200_CON_2pol_141_circuit.png "CON_2pol_141_circuit")   
+_Figure 12: Circuit diagram of the “CON_2pol_141” board_   
+
+![Print distribution of two-pole signals](/images/pcb_f/PCB_F_CON_2pol_141_V1.png "Print distribution of two-pole signals")   
+_Figure 13: Board for distributing two-pole signals_   
+
+_*Board size*_: 57 x 21 mm²   
+_*Link to the KiCad files*_: [/fab/kicad/CON_2pol_141_V1](/fab/kicad/CON_2pol_141_V1)   
+
+### Bill of materials
+| Quantity | Reference | Value | Note, Footprint |   
+|--------|-----------|-------------------|--------------------|   
+|    6   | J1,J2,J3,J4,J5,J6 | Screw terminal 3-pole (Screw_Terminal_01x03_P5) | _kh_library:Screw_Terminal_01x03_P5 <br> e.g. from [AliExpress](https://de.aliexpress.com/item/1005007145396958.html?spm=a2g0o.order_list.order_list_main.63.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+
+### Assembly   
+1. screw terminal J1 to J6   
+
+[To the top of the page](#up)   
+<a name="x70"></a>   
+
+# 7. `CON_1xIO` Traction current switch simple
+This circuit board simplifies the connection of a traction current switch. It conducts the traction current to the 2IO block and makes the switched current signal available on a two-pole screw terminal.   
+
+![CON_1xIO](/images/200_CON_1xIO.png "CON_1xIO")   
+_F_igure 14: The assembled “CON_1xIO” board_   
+
+![CON_1xIO_circuit](/images/200_CON_1xIO_circuit.png "CON_1xIO_circuit")   
+_Figure 15: Circuit diagram of the “CON_1xIO” board_   
+
+![Print traction current connection](/images/pcb_f/PCB_F_CON_1xIO_V1.png "Print traction current connection")   
+_Figure 16: Circuit board for connecting the switched traction current_   
+
+_*Board size*_: 32 x 21 mm²   
+_*Link to the KiCad files*_: [/fab/kicad/CON_1xIO_V1](/fab/kicad/CON_1xIO_V1)   
+
+### Bill of materials
+| Quantity | Reference | Value | Note, Footprint |   
+|--------|-----------|-------------------|--------------------|   
+|    1   | J1        | 6-pin connector (Box_02x03_P2.54_Vertical) | _kh_library:Box_02x03_P2.54mm_Vertical_kh <br> e.g. from  [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+|    3   | J3,J5,J6 | Screw terminal 3-pole (Screw_Terminal_01x03_P5) | _kh_library:Screw_Terminal_01x03_P5 <br> e.g. from [AliExpress](https://de.aliexpress.com/item/1005007145396958.html?spm=a2g0o.order_list.order_list_main.63.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+
+### Assembly   
+1. tub connector J1   
+2. screw terminal J3, J5, J6   
+
+[To the top of the page](#up)   
+<a name="x80"></a>   
+
+# 8. `CON_2xIO` Double traction current switch
+This circuit board simplifies the connection of traction current switches. It conducts the traction current to two 2IO blocks and makes the switched current signal available on two two-pole screw terminals.   
+
+![CON_2xIO](/images/200_CON_2xIO.png "CON_2xIO")   
+_Figure 17: The assembled “CON_2xIO” board_   
+
+![CON_2xIO_circuit](/images/200_CON_2xIO_circuit.png "CON_2xIO_circuit")   
+_Figure 18: Circuit diagram of the “CON_2xIO” board_   
+
+![Print 2x traction current connection](/images/pcb_f/PCB_F_CON_2xIO_V1.png "Print 2x traction current connection")   
+_Figure 19: Circuit board for connecting two switched traction currents_   
+
+_*Board size*_: 47 x 21 mm²   
+_*Link to the KiCad files*_: [/fab/kicad/CON_2xIO_V1](/fab/kicad/CON_2xIO_V1)   
+
+### Bill of materials
+| Quantity | Reference | Value | Note, Footprint |   
+|--------|-----------|-------------------|--------------------|   
+|    2   | J1, J2    | 6-pin connector (Box_02x03_P2.54_Vertical) | _kh_library:Box_02x03_P2.54mm_Vertical_kh <br> e.g. from  [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+|    4   | J3,J4,J5,J6 | Screw terminal 3-pole (Screw_Terminal_01x03_P5) | _kh_library:Screw_Terminal_01x03_P5 <br> e.g. from [AliExpress](https://de.aliexpress.com/item/1005007145396958.html?spm=a2g0o.order_list.order_list_main.63.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+
+### Assembly   
+1. tub connector J1, J2   
+2. screw terminal J3, J4, J5, J6   
 
 [To the top of the page](#up)   

@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 28.11.2024 <a name="up"></a><br>   
+Letzte &Auml;nderung: 15.02.2025 <a name="up"></a><br>   
 <h1>Zusatzplatinen</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -101,7 +101,7 @@ _Bild 8: Die best&uuml;ckte "CON_6pol_6"-Platine_
 _Bild 9: Schaltplan der "CON_6pol_6"-Platine_   
 
 ![Klemme f&uuml;r Dreiwegweiche](/images/pcb_f/PCB_F_CON_6pol_6_V1.png "Klemme f&uuml;r Dreiwegweiche")   
-_Bild 10: Anschlussklemme f&uuml;r Dreiwegweiche_   
+_Bild 10: Anschlussklemme f&uuml;r Dreiwegweiche - Platine_   
 
 _*Platinengr&ouml;&szlig;e*_: 41 x 18 mm²   
 _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_6pol_6_V1](/fab/kicad/CON_6pol_6_V1)   
@@ -122,16 +122,82 @@ _Anmerkung_: Statt der beiden 3-poligen Schraubklemmen k&ouml;nnen auch drei 2-p
 <a name="x60"></a>   
 
 # 6. `CON_2pol_141` Fahrstromverteiler
+Diese Platine dient zum Verteilen zweipoliger Signale wie zB des Fahrstroms.   
 
+![CON_2pol_141](/images/200_CON_2pol_141.png "CON_2pol_141")   
+_Bild 11: Die best&uuml;ckte "CON_2pol_141"-Platine_   
+
+![CON_2pol_141_circuit](/images/200_CON_2pol_141_circuit.png "CON_2pol_141_circuit")   
+_Bild 12: Schaltplan der "CON_2pol_141"-Platine_   
+
+![Print Verteilen zweipoliger Signale](/images/pcb_f/PCB_F_CON_2pol_141_V1.png "Print Verteilen zweipoliger Signale")   
+_Bild 13: Platine zum Verteilen zweipoliger Signale_   
+
+_*Platinengr&ouml;&szlig;e*_: 57 x 21 mm²   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_2pol_141_V1](/fab/kicad/CON_2pol_141_V1)   
+
+### St&uuml;ckliste   
+| Anzahl | Referenz  | Wert              | Geh&auml;use            |   
+|--------|-----------|-------------------|--------------------|   
+|    6   | J1,J2,J3,J4,J5,J6 | Schraubenklemme 2polig | _kh_library:Screw_Terminal_01x02_P5 |   
+
+### Best&uuml;ckung   
+1. Schraubklemmen J1 bis J6   
 
 [Zum Seitenanfang](#up)   
 <a name="x70"></a>   
 
 # 7. `CON_1xIO` Fahrstromschalter einfach
+Diese Platine vereinfacht den Anschluss eines Fahrstromschalters. Sie leitet den Fahrstrom zum 2IO-Block und stellt das geschaltete Stromsignal auf einer zweipoligen Schraubklemme zur Verf&uuml;gung.   
+
+![CON_1xIO](/images/200_CON_1xIO.png "CON_1xIO")   
+_Bild 14: Die best&uuml;ckte "CON_1xIO"-Platine_   
+
+![CON_1xIO_circuit](/images/200_CON_1xIO_circuit.png "CON_1xIO_circuit")   
+_Bild 15: Schaltplan der "CON_1xIO"-Platine_   
+
+![Print Fahrstromanschluss](/images/pcb_f/PCB_F_CON_1xIO_V1.png "Print Fahrstromanschluss")   
+_Bild 16: Platine zum Anschluss des geschalteten Fahrstroms_   
+
+_*Platinengr&ouml;&szlig;e*_: 32 x 21 mm²   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_1xIO_V1](/fab/kicad/CON_1xIO_V1)   
+
+### St&uuml;ckliste   
+| Anzahl | Referenz  | Wert              | Geh&auml;use            |   
+|--------|-----------|-------------------|--------------------|   
+|    1   | J1        | Wannenstecker 6-polig (Box_02x03_P2.54_Vertical) | _kh_library:Box_02x03_P2.54mm_Vertical_kh <br> zB von [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+|    3   | J3,J5,J6 | Schraubenklemme 2polig | _kh_library:Screw_Terminal_01x02_P5 |   
+
+### Best&uuml;ckung   
+1. Wannenstecker J1   
+2. Schraubklemmen J3, J5, J6   
 
 [Zum Seitenanfang](#up)   
 <a name="x80"></a>   
 
 # 8. `CON_2xIO` Fahrstromschalter doppelt
+Diese Platine vereinfacht den Anschluss von Fahrstromschaltern. Sie leitet den Fahrstrom zu zwei 2IO-Bl&ouml;cken und stellt das geschaltete Stromsignal auf zwei zweipoligen Schraubklemmen zur Verf&uuml;gung.   
+
+![CON_2xIO](/images/200_CON_2xIO.png "CON_2xIO")   
+_Bild 17: Die best&uuml;ckte "CON_2xIO"-Platine_   
+
+![CON_2xIO_circuit](/images/200_CON_2xIO_circuit.png "CON_2xIO_circuit")   
+_Bild 18: Schaltplan der "CON_2xIO"-Platine_   
+
+![Print 2x Fahrstromanschluss](/images/pcb_f/PCB_F_CON_2xIO_V1.png "Print 2x Fahrstromanschluss")   
+_Bild 19: Platine zum Anschluss zweier geschalteten Fahrstr&ouml;me_   
+
+_*Platinengr&ouml;&szlig;e*_: 47 x 21 mm²   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_2xIO_V1](/fab/kicad/CON_2xIO_V1)   
+
+### St&uuml;ckliste   
+| Anzahl | Referenz  | Wert              | Geh&auml;use            |   
+|--------|-----------|-------------------|--------------------|   
+|    2  | J1, J2        | Wannenstecker 6-polig (Box_02x03_P2.54_Vertical) | _kh_library:Box_02x03_P2.54mm_Vertical_kh <br> zB von [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+|    4   | J3,J4,J5,J6 | Schraubenklemme 2polig | _kh_library:Screw_Terminal_01x02_P5 |   
+
+### Best&uuml;ckung   
+1. Wannenstecker J1, J2   
+2. Schraubklemmen J3, J4, J5, J6   
 
 [Zum Seitenanfang](#up)   
