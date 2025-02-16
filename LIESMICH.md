@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 15.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 16.2.2025 <a name="up"></a><br>   
 <h1>Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -62,6 +62,7 @@ __Informationen rund um das System__
 __Herstellung der System-Komponenten__   
 * [Herstellung der Komponenten f&uuml;r die Stromversorgung](/fab/rcc1_supply/LIESMICH.md)   
 * [Herstellung der ESP32-Shields](/fab/rcc2_esp32/LIESMICH.md)   
+* [Herstellung von I²C-Platinen](/fab/rcc3_i2c/LIESMICH.md)   
 * [Herstellung von Schaltbl&ouml;cken](/fab/rcc4_block/LIESMICH.md)   
 * [Herstellung der Zusatzplatinen](/fab/rcc5_add_ons/LIESMICH.md)   
 * [KiCad-Dateien der RCC-Komponenten](/fab/kicad/LIESMICH.md)   

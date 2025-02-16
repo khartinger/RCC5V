@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-02-15 <a name="up"></a><br>   
+Last modified: 2025-02-16 <a name="up"></a><br>   
 <h1>Controlling model railroad components with DCC, MQTT and manually</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -62,6 +62,7 @@ __Information about the system__
 __Manufacturing the system components__   
 * [Manufacturing of Components for the power supply](/fab/rcc1_supply/README.md)   
 * [Manufacturing of the ESP32-Shields](/fab/rcc2_esp32/README.md)   
+* [Manufacturing of i2c boards](/fab/rcc3_i2c/README.md)   
 * [Manufacturing of the switching blocks](/fab/rcc4_block/README.md)   
 * [Manufacturing of additional boards](/fab/rcc5_add_ons/README.md)   
 * [KiCad files of RCC components](/fab/kicad/README.md)   
