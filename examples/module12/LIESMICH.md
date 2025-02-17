@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 12.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 17.2.2025 <a name="up"></a><br>   
 <h1>Bau des Moduls 12 "Ausweichstelle und Abstellgleis"</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -20,7 +20,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
 | Fahrstrom     | Analog- oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | * H&auml;ndisch direkt an der Modulvorderseite <br> * &uuml;ber DCC <br> * durch MQTT-Nachrichten (&uuml;ber WLAN) |   
-| Bedienelemente mit R&uuml;ckmeldung| 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 4x Fahrstrom (Block 2IO, DCC 125, 126, 127 und 129) |   
+| Bedienelemente mit R&uuml;ckmeldung | 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 4x Fahrstrom (Block 2IO, DCC 125, 126, 127 und 129) |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 | MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
 | Sonstiges | * Einfaches Verbinden mit anderen Modulen durch ausziehbare Gleise an den Segment-Enden |   
@@ -33,7 +33,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 * [3. Aufbau des Gleisplans](#x30)   
 * [4. Elektrische Verdrahtung des Moduls](#x40)   
 * [5. Probebetrieb](#x50)   
-* [6. Abschließende Arbeiten](#x60)   
+* [6. Abschlie&szlig;ende Arbeiten](#x60)   
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
@@ -103,7 +103,6 @@ Gesamtkosten 2025: ca. 435 Euro
 ### 1.3.1 Modulrahmen
 Der 100 x 25 cm² gro&szlig;e Modulrahmen ist 6 cm hoch und besteht aus zwei Seitenteilen ("Ost" und "West"), zwei L&auml;ngsteilen ("Nord" und "S&uuml;d") sowie drei Querstreben. Die Gel&auml;ndeplatte wird in den Rahmen eingelegt.   
 Die Teile des Rahmens k&ouml;nnen entweder aus Holz hergestellt oder mit dem 3D-Drucker gedruckt werden. Auch eine gemischte Bauweise ist m&ouml;glich, zB Seitenteile und Querstreben 3D-Drucken, L&auml;ngsteile aus Holz.   
-
 
 ### 1.3.2 Holzkauf f&uuml;r Modul 100 x 25 cm²
 Das Holz besorgt man sich am besten bei einem Baumarkt und l&auml;sst es gleich auf die folgenden Gr&ouml;&szlig;en zuschneiden:   
@@ -283,7 +282,6 @@ _Bild 14: Rahmenteil S&uuml;d Forderseite_
 ![Rahmenteil S&uuml;d R&uuml;ckseite](./images/300_Frame_South_back.png "Rahmenteil S&uuml;d R&uuml;ckseite")   
 _Bild 15: Rahmenteil S&uuml;d R&uuml;ckseite_   
 
-
 ## 2.5 Querverstrebung Ri1 bis Ri3
 Die Querverstrebungen enthalten verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
 
@@ -305,7 +303,7 @@ _Bild 18: Teile der Sub-D-Halterung_
 ## 2.7 Zusammenbau des Rahmens
 Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser zusammengeschraubt werden.   
 
-![](./images/300_M12_frame_bottom_view.png)   
+![Rahmen Ansicht von unten](./images/300_M12_frame_bottom_view.png "Rahmen Ansicht von unten")   
 _Bild 19: Zusammengeschraubter Rahmen, Ansicht von unten_   
 
 [Zum Seitenanfang](#up)   
@@ -575,18 +573,23 @@ Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT dur
 [Zum Seitenanfang](#up)   
 <a name="x60"></a>   
 
-# 6. Abschließende Arbeiten   
+# 6. Abschlie&szlig;ende Arbeiten   
 ## 6.1 Weichenabdeckungen   
-Für die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 20 und 21). Für die Landschaftsgestaltung müssen diese Ausschnitte zugedeckt werden. Dabei reichen die Weichenantriebe 1,5 mm über das Niveau E8 (Schaumstoff-Obergrenze):   
-* 0,5 mm Metallplatte auf der Weichenunterseite + 0,5 mm Metall-Haltenasen + 0,5 mm Höhenausgleich, falls die Weiche Oberflur montiert wird...   
-Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisabdeckung sowie eine 1 mm Folie darüber + eine 0,5 mm Folie über dem Antrieb verwendet werden.   
-Als Alternative ist auch 3D-gedruckte Abdeckungen möglich, wie sie im _Bild 33_ zu sehen sind.   
+F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 20 und 21). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M12 werden zwei verschiedene Arten von Abdeckungen ben&ouml;tigt:   
+* Drei flache Abdeckungen (ausgehend von Ebene E8)   
+* Eine hohe Abdeckung f&uuml;r den rechten Antrieb der Dreiweg-Weiche (d.h. ausgehend von der Grundplatte E0)   
+
+Bei den flachen Abdeckungen reichen die Weichenantriebe 1,5 mm &uuml;ber das Niveau E8 (Schaumstoff-Obergrenze):   
+* 0,5 mm Metallplatte auf der Weichenunterseite + 0,5 mm Metall-Haltenasen + 0,5 mm H&ouml;henausgleich, falls die Weiche Oberflur montiert wird...   
+Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisabdeckung sowie eine 1 mm Folie dar&uuml;ber + eine 0,5 mm Folie &uuml;ber dem Antrieb verwendet werden.   
+Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im _Bild 33_ zu sehen sind.   
 ![3D Weichenabdeckung](/images/300_3d_weichenabdeckung.png "3D Weichenabdeckung")   
 _Bild 33: 3D-Druck-Abdeckungen der Weichenaussparungen_   
-Die Stärke der Abdeckungen beträgt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisnägeln (0,7 mm Durchmesser). Die mittlere Abdeckung wurde mit einer Schere passend geschnitten.   
+
+Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisn&auml;geln (0,7 mm Durchmesser). Die mittlere Abdeckung wurde mit einer Schere passend geschnitten.   
 
 ## 6.2 Bodenabdeckung   
-Um die Verkabelung zu schützen, kann man auch Teile des Bodens mit durchsichtigen Folien (zB mit 1 mm Stärke) abdecken.   
+Um die Verkabelung zu sch&uuml;tzen, kann man auch Teile des Bodens mit durchsichtigen Folien (zB mit 1 mm St&auml;rke) abdecken.   
 
 ## 6.3 Modell-Hintergrundbild   
 Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sein.   
