@@ -41,7 +41,7 @@ Zum erfolgreichen Aufbau des RCC-Systems sind einige F&auml;higkeiten von Vortei
 1. Zuerst sollte man sich einen &Uuml;berblick &uuml;ber den [Inhalt dieses Repository](#x20) und &uuml;ber [das RCC-System](#x30) verschaffen. Dies ist m&ouml;glich durch die weiter unten stehenden Kapitel in dieser Anleitung.   
 2. Ist das RCC-System die richtige Wahl, m&uuml;ssen die Anforderungen an das eigene System definiert werden:   
 * Welche Art von Komponenten wird ben&ouml;tigt?   
-* Wie viele Stück von welcher Art?   
+* Wie viele St&uuml;ck von welcher Art?   
 * Welche DCC-Adresse soll welche Komponente haben?   
 _Beispiel Demo-Programm_:   
 1x Entkuppler mit DCC-Adresse 11, 1x Zweiwegweiche (DCC 21), 1x Dreiwegweiche (DCC 31 und 32) 1x Fahrstrom (DCC 41) und 1x Blinklicht (DCC 51).   
@@ -50,7 +50,7 @@ _Beispiel Demo-Programm_:
 /CUSTOMIZE_D.md`](/software/rcc_demo1/CUSTOMIZE_D.md) beschrieben.   
 5. Zum Abschluss erfolgt die Verdrahtung aller Komponenten und der Test des Gesamtsystems.   
 
-Eine große Hilfe kann auch die detaillierte Beschreibung des [Baues des Moduls #12: "Ausweichstelle und Abstellgleis"](/examples/module12/LIESMICH.md) sein.   
+Eine gro&szlig;e Hilfe kann auch die detaillierte Beschreibung des [Baues des Moduls #12: "Ausweichstelle und Abstellgleis"](/examples/module12/LIESMICH.md) sein.   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
