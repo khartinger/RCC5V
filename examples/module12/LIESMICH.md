@@ -33,6 +33,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 * [3. Aufbau des Gleisplans](#x30)   
 * [4. Elektrische Verdrahtung des Moduls](#x40)   
 * [5. Probebetrieb](#x50)   
+* [6. Abschließende Arbeiten](#x60)   
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
@@ -570,5 +571,24 @@ Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT dur
 * Weichensteuerung w&auml;hlen (Taste Lok/Weiche) ![Taste_Lok_Weiche](./images/50_taste_lok_weiche.png)   
 * DCC-Adresse 123 eingeben ![Anzeige_W0123](./images/50_anzeige_W0123.png)   
 * Mit den Pfeiltasten die Weiche schalten ![Pfeiltasten](./images/50_taste_pfeil.png)   
+
+[Zum Seitenanfang](#up)   
+<a name="x60"></a>   
+
+# 6. Abschließende Arbeiten   
+## 6.1 Weichenabdeckungen   
+Für die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 20 und 21). Für die Landschaftsgestaltung müssen diese Ausschnitte zugedeckt werden. Dabei reichen die Weichenantriebe 1,5 mm über das Niveau E8 (Schaumstoff-Obergrenze):   
+* 0,5 mm Metallplatte auf der Weichenunterseite + 0,5 mm Metall-Haltenasen + 0,5 mm Höhenausgleich, falls die Weiche Oberflur montiert wird...   
+Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisabdeckung sowie eine 1 mm Folie darüber + eine 0,5 mm Folie über dem Antrieb verwendet werden.   
+Als Alternative ist auch 3D-gedruckte Abdeckungen möglich, wie sie im _Bild 33_ zu sehen sind.   
+![3D Weichenabdeckung](/images/300_3d_weichenabdeckung.png "3D Weichenabdeckung")   
+_Bild 33: 3D-Druck-Abdeckungen der Weichenaussparungen_   
+Die Stärke der Abdeckungen beträgt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisnägeln (0,7 mm Durchmesser). Die mittlere Abdeckung wurde mit einer Schere passend geschnitten.   
+
+## 6.2 Bodenabdeckung   
+Um die Verkabelung zu schützen, kann man auch Teile des Bodens mit durchsichtigen Folien (zB mit 1 mm Stärke) abdecken.   
+
+## 6.3 Modell-Hintergrundbild   
+Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sein.   
 
 [Zum Seitenanfang](#up)

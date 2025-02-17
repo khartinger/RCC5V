@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-02-16 <a name="up"></a><br>   
+Last modified: 2025-02-17 <a name="up"></a><br>   
 <h1>Controlling model railroad components with DCC, MQTT and manually</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -8,7 +8,7 @@ Last modified: 2025-02-16 <a name="up"></a><br>
 
 # Introduction
 Switching points is an important part of model railroading. Who doesn't want to be able to do this in different ways? There are many ways to control turnouts, uncouplers, disconnectable tracks and other components.   
-The following image of an RCC controller shows an elegant example with information display, switching and LED feedback.   
+The following image of an RCC example (RCC = Railway-Component-Control) shows an elegant example with information display, switching and LED feedback.   
 ![Example RCC controller](./images/600_M12_OLED_Blocks2.png "Example RCC controller")   
 _Figure 1: Example user interface RCC control unit_   
 
@@ -40,12 +40,17 @@ Some skills are advantageous for the successful use of the RCC system:
 # How do I get started?
 1. you should first get an overview of the [contents of this repository](#x20) and [the RCC system](#x30). This is provided in the chapters below in this manual.   
 2. If the RCC system is the right choice, the requirements for your own system have to be defined:   
-Which components are needed, how many of each type and with which DCC address.   
+* Which components are needed?
+* How many of each type are needed?
+* Which DCC address for which device?   
 _Example demo program_:   
 1x uncoupler with DCC address 11, 1x two-way turnout (DCC 21), 1x three-way turnout (DCC 31 and 32), 1x traction current (DCC 41) and 1x flashing light (DCC 51).   
 3. the next step is to manufacture the required components. How to do this is described in the chapter [“How do I start the RCC project?” (/fab/rcc0_start/README.md)](/fab/rcc0_start/README.md).   
-4. the demo program is then adapted to your own system and the ESP32 microcontroller is programmed. This is described in chapter [...]().   
+4. the demo program is then adapted to your own system and the ESP32 microcontroller is programmed. This is described in chapter [`/software/rcc_demo1
+/CUSTOMIZE_E.md`](/software/rcc_demo1/CUSTOMIZE_E.md).   
 5. Finally, all components are wired and the entire system is tested.   
+
+The detailed description of the [construction of module #12: “passing loop and siding”](/examples/module12/LIESMICH.md) can also be a great help.   
 
 [To the top of the page](#up)   
 <a name="x20"></a>   
@@ -82,9 +87,8 @@ __Use of the system__
 <a name="x30"></a>   
 
 # The RCC-system at a glance   
-The RCC system has a modular structure and consists of a series of modules or blocks. These must be produced before a switch is switched for the first time. How to do this is described in the chapter [“How do I start the RCC project?” (/fab/rcc0_start/README.md)](/fab/rcc0_start/README.md).   
+The RCC system has a modular structure and mechanically consists of a series of modules or blocks. Logically, it consists of six parts:   
 
-The overall Railway Component Control (RCC) system consists of six parts:   
 1. __FEED-IN__ (power supply): Generation and provision of the supply voltage (here AC voltage) and the DCC signals for the RCC system by external components.   
 2. __SUPPLY__ (module supply): The AC voltage, the traction current and the DCC signal for switching the magnetic articles are taken from the 25-pin plug according to NEM908 and a separate 5V DC voltage is generated.   
 3. __&micro;C__ (microcontroller): The microcontroller, equipped with additional shields, is used to control the module. An ESP32 is used, which also handles communication with the MQTT broker.  
@@ -100,6 +104,7 @@ By using the I2C-I/O-Expander-Boards it is possible to control several component
 _Figure 4: Block diagram switching several railroad components with 5V_   
 
 # Practical setup
+Before e.g. the first switching of a turnout with RCC, some components must first be manufactured. How to do this is described in the chapter [“How do I start the RCC project?” (/fab/rcc0_start/README.md)](/fab/rcc0_start/README.md).   
 The following figure shows an example of the modules required to control a three-way turnout:   
 ![RCC5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png "RCC5V_Demo_Setup")   
 _Figure 5: Demo setup of an RCC-5V system: the individual parts_   

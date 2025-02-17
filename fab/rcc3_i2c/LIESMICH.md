@@ -5,12 +5,12 @@ Letzte &Auml;nderung: 16.2.2025 <a name="up"></a><br>
 </td></tr></table>   
 
 # 1. Einleitung   
-Die digitalen Ein- und Ausgänge werden von zugekauften I²C-PCF8574-I/O-Platinen zur Verfügung gestellt. Die hier beschriebenen Erg&auml;nzungsplatinen dienen zB als Halterung f&uuml;r die I²C-PCF8574-I/O-Platinen oder zur Anzeige eines Blinklichts.   
+Die digitalen Ein- und Ausg&auml;nge werden von zugekauften I²C-PCF8574-I/O-Platinen zur Verf&uuml;gung gestellt. Die hier beschriebenen Erg&auml;nzungsplatinen dienen zB als Halterung f&uuml;r die I²C-PCF8574-I/O-Platinen oder zur Anzeige eines Blinklichts.   
 
 <a name="x20"></a>   
 
 # 2. I²C-Halterung 20 mm   
-Auf den I²C-PCF8574-I/O-Platinen sind keine Befestigungsbohrungen vorgesehen. Die `CON_i2c_20mm`-Platine dient als 20 mm langes Zwischenstück zwischen zwei I²C-PCF8574-I/O-Platinen und hat eine Befestigungsbohrung.   
+Auf den I²C-PCF8574-I/O-Platinen sind keine Befestigungsbohrungen vorgesehen. Die `CON_i2c_20mm`-Platine dient als 20 mm langes Zwischenst&uuml;ck zwischen zwei I²C-PCF8574-I/O-Platinen und hat eine Befestigungsbohrung.   
 
 ![CON_i2c_20mm_V1](/images/200_CON_i2c_20mm_V1.png "CON_i2c_20mm_V1")   
 _Bild 1: Die best&uuml;ckte "CON_i2c_20mm"-Platine_   
@@ -33,14 +33,14 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_i2c_20mm_V1](/fab/kicad/CON_i2c_2
 ### Vorbereitung   
 Die langen Kontakte der 4-poligen Buchsenleiste um 90° abbiegen.   
 
-### Bestückung   
-Stift- und Buchsenleiste einstecken und anlöten.    
+### Best&uuml;ckung   
+Stift- und Buchsenleiste einstecken und anl&ouml;ten.    
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
 
 # 3. I²C-Halterung 40 mm   
-Auf den I²C-PCF8574-I/O-Platinen sind keine Befestigungsbohrungen vorgesehen. Die `CON_i2c_40mm`-Platine dient als 40 mm langes Zwischenstück zwischen zwei I²C-PCF8574-I/O-Platinen und hat zwei Befestigungsbohrungen.   
+Auf den I²C-PCF8574-I/O-Platinen sind keine Befestigungsbohrungen vorgesehen. Die `CON_i2c_40mm`-Platine dient als 40 mm langes Zwischenst&uuml;ck zwischen zwei I²C-PCF8574-I/O-Platinen und hat zwei Befestigungsbohrungen.   
 
 ![CON_i2c_40mm_V1](/images/200_CON_i2c_40mm_V1.png "CON_i2c_40mm_V1")   
 _Bild 4: Die best&uuml;ckte "CON_i2c_40mm"-Platine_   
@@ -63,14 +63,14 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_i2c_40mm_V1](/fab/kicad/CON_i2c_4
 ### Vorbereitung   
 Die langen Kontakte der 4-poligen Buchsenleiste um 90° abbiegen.   
 
-### Bestückung   
-Stift- und Buchsenleiste einstecken und anlöten.    
+### Best&uuml;ckung   
+Stift- und Buchsenleiste einstecken und anl&ouml;ten.    
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
 
 # 4. I2C-LED
-Diese Platine enthält eine LED mit Vorwiderstand und zwei Haltebohrungen. Die LED kann wahlweise auf Masse oder einen I²C-IO-Pin gelegt werden.   
+Diese Platine enth&auml;lt eine LED mit Vorwiderstand und zwei Haltebohrungen. Die LED kann wahlweise auf Masse oder einen I²C-IO-Pin gelegt werden.   
 
 ![CON_i2c_LED_V1](/images/200_CON_i2c_LED_V1.png "CON_i2c_LED_V1")   
 _Bild 7: Die best&uuml;ckte "CON_i2c_LED"-Platine_   
@@ -97,8 +97,8 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_i2c_LED_V1](/fab/kicad/CON_i2c_LE
 ### Vorbereitung   
 Die langen Kontakte der 4-poligen Buchsenleiste um 90° abbiegen.   
 
-### Bestückung   
-1. Stiftleiste J2 und Buchsenleiste J3 einstecken und anlöten   
+### Best&uuml;ckung   
+1. Stiftleiste J2 und Buchsenleiste J3 einstecken und anl&ouml;ten   
 2. rote LED D1   
 3. Widerstand R1   
 4. Stiftleiste J1   
@@ -132,8 +132,8 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_i2c_4x_V1](/fab/kicad/CON_i2c_4x_
 ### Vorbereitung   
 Die langen Kontakte der 4-poligen Buchsenleisten um 90° abbiegen.   
 
-### Bestückung   
-1. Stiftleiste J5, J6 und Buchsenleiste J7, J8 einstecken und anlöten   
+### Best&uuml;ckung   
+1. Stiftleiste J5, J6 und Buchsenleiste J7, J8 einstecken und anl&ouml;ten   
 2. Stiftleisten J1 bis J4   
 
 Stecken der Jumper je nach Bedarf.   

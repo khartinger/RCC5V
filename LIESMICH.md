@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 16.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 17.2.2025 <a name="up"></a><br>   
 <h1>Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -8,7 +8,7 @@ Letzte &Auml;nderung: 16.2.2025 <a name="up"></a><br>
 
 # Einleitung
 Das Schalten von Weichen ist bei Modellbahnen eine wichtige Sache. Wer will nicht die M&ouml;glichkeit haben, das auf verschiedene Arten zu machen? Es gibt viele Mittel und Wege, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern.   
-Das folgende Bild einer RCC-Steuerung zeigt ein elegantes Beispiel mit Informationsanzeige, Schalten und LED-R&uuml;ckmeldung.   
+Das folgende Bild einer RCC-Steuerung (RCC = Railway-Component-Control) zeigt ein elegantes Beispiel mit Informationsanzeige, Schalten und LED-R&uuml;ckmeldung.   
 ![Beispiel RCC-Steuerung](./images/600_M12_OLED_Blocks2.png "Beispiel RCC-Steuerung")   
 _Bild 1: Beispiel User-Interface RCC-Steuerung_   
 
@@ -31,21 +31,26 @@ Wer gerne selbst etwas baut, ist hier genau richtig. Die vorgestellte, kosteng&u
 In der Standardausf&uuml;hrung stehen bis zu 32 digitale Aus- und Eing&auml;nge zur Verf&uuml;gung. Damit k&ouml;nnen maximal 16 Zweiwegweichen oder 10 Dreiwegweichen etc. angesteuert werden. Diese Anzahl ist im Normalfall f&uuml;r Module ausreichend.   
 Eine Erweiterung des Systems ist grunds&auml;tzlich m&ouml;glich und nur abh&auml;ngig von den eingesetzten I²C-IO-Expandern.   
 
-Zum erfolgreichen Einsatz des RCC-Systems sind einige F&auml;higkeiten sind von Vorteil:   
-* L&ouml;ten und etwas handwerkliches Geschick   
+Zum erfolgreichen Aufbau des RCC-Systems sind einige F&auml;higkeiten von Vorteil:   
+* L&ouml;tkenntnisse und etwas handwerkliches Geschick   
 * Compilieren und Hochladen einer Datei auf einen Mikrocontroller ESP32   
 * Grundlegende Kenntnisse im Umgang mit dem Open Source [Platinenlayoutprogramm KiCad](https://www.kicad.org/)   
 * Grundlegende Kenntnisse zu MQTT, wenn MQTT zur Steuerung verwendet werden soll   
 
 # Was ist zu tun?
-1. Zuerst sollte man sich einen &Uuml;berblick &uuml;ber den [Inhalt dieses Repository](#x20) und &uuml;ber [das RCC-System](#x30) verschaffen. Diesen erm&ouml;glichen die weiter unten stehenden Kapitel in dieser Anleitung.   
-2. Ist das RCC-System die richtige Wahl, erfolgt die Definition der Anforderungen an das eigene System:   
-Welche Komponenten werden ben&ouml;tigt, wie viele von jeder Art und mit welcher DCC-Adresse.   
+1. Zuerst sollte man sich einen &Uuml;berblick &uuml;ber den [Inhalt dieses Repository](#x20) und &uuml;ber [das RCC-System](#x30) verschaffen. Dies ist m&ouml;glich durch die weiter unten stehenden Kapitel in dieser Anleitung.   
+2. Ist das RCC-System die richtige Wahl, m&uuml;ssen die Anforderungen an das eigene System definiert werden:   
+* Welche Art von Komponenten wird ben&ouml;tigt?   
+* Wie viele Stück von welcher Art?   
+* Welche DCC-Adresse soll welche Komponente haben?   
 _Beispiel Demo-Programm_:   
 1x Entkuppler mit DCC-Adresse 11, 1x Zweiwegweiche (DCC 21), 1x Dreiwegweiche (DCC 31 und 32) 1x Fahrstrom (DCC 41) und 1x Blinklicht (DCC 51).   
 3. Als N&auml;chstes erfolgt das Fertigen der erforderlichen Komponenten. Wie das geht ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
-4. Danach erfolgt die Anpassung des Demo-Programms an das eigene System und die Programmierung des Mikrocontrollers ESP32. Dies ist in Kapitel [...]() beschrieben.   
+4. Danach erfolgt die Anpassung des Demo-Programms an das eigene System und die Programmierung des Mikrocontrollers ESP32. Dies ist in Kapitel [`/software/rcc_demo1
+/CUSTOMIZE_D.md`](/software/rcc_demo1/CUSTOMIZE_D.md) beschrieben.   
 5. Zum Abschluss erfolgt die Verdrahtung aller Komponenten und der Test des Gesamtsystems.   
+
+Eine große Hilfe kann auch die detaillierte Beschreibung des [Baues des Moduls #12: "Ausweichstelle und Abstellgleis"](/examples/module12/LIESMICH.md) sein.   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
@@ -55,7 +60,7 @@ Dieses Repository befasst sich mit der Herstellung und Verwendung von Komponente
 In verschiedenen Unterverzeichnissen werden folgende Themen behandelt:   
 
 __Informationen rund um das System__   
-* [Wie beginne ich mit dem RCC-Projekt?](/fab/rcc0_start/LIESMICH.md)   
+* [Wie beginne ich das RCC-Projekt?](/fab/rcc0_start/LIESMICH.md)   
 * [Elektrische Verbindung von Eisenbahn-Modulen nach NEM 908D](/info/con_NEM908/LIESMICH.md)   
 * [Bohrungen und Abdeckungen f&uuml;r die Modul-Frontseite](/info/frontpanel/LIESMICH.md)   
 
@@ -82,9 +87,8 @@ __Anwendungsbeispiele__
 <a name="x30"></a>   
 
 # Das RCC-System im &Uuml;berblick   
-Das RCC-System ist modular aufgebaut und besteht aus einer Reihe von Bausteinen bzw. Bl&ouml;cken. Diese m&uuml;ssen vor dem ersten Schalten einer Weiche hergestellt werden. Wie das geht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
+Das RCC-System ist modular aufgebaut und besteht mechanisch aus einer Reihe von Bausteinen bzw. Bl&ouml;cken. Logisch besteht es aus sechs Teilen:   
 
-Das Railway-Component-Control-(RCC-) Gesamtsystem besteht aus sechs Teilen:   
 1. __FEED-IN__ (Einspeisung): Erzeugung und Bereitstellung der Versorgungsspannung (hier Wechselspannung) und der DCC-Signale f&uuml;r das RCC-System durch externe Komponenten.   
 2. __SUPPLY__ (Modulversorgung): Dem 25-poligen Stecker nach NEM908 wird die Wechselspannung, der Fahrstrom und das DCC-Signal zum Schalten der Magnetartikel entnommen und eine eigene 5V-Gleichspannung erzeugt.   
 3. __&micro;C__ (Mikrocontroller): Der Mikrocontroller, ausgestattet mit zus&auml;tzlichen Shields, dient zur Steuerung des Moduls. Es wird ein ESP32 verwendet, der auch die Kommunikation mit dem MQTT-Broker &uuml;bernimmt.  
@@ -100,6 +104,7 @@ Durch die Verwendung der I2C-I/O-Expander-Boards ist es m&ouml;glich, mehrere Ko
 _Bild 4: Blockschaltbild Schalten von mehreren Eisenbahnkomponenten mit 5V_   
 
 # Praktischer Aufbau
+Vor zB dem ersten Schalten einer Weiche mit RCC m&uuml;ssen zuerst einige Komponenten hergestellt werden. Wie das geht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
 Das folgende Bild zeigt beispielhaft die Baugruppen, die zur Ansteuerung einer Dreiwegweiche erforderlich sind:   
 ![RCC5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png "RCC5V_Demo_Setup")   
 _Bild 5: Demo-Aufbau eines RCC-5V-Systems: die einzelnen Teile_   
