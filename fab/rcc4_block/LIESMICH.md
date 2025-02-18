@@ -579,7 +579,7 @@ __St&uuml;ckliste__
 6. Kondensator C2   
 7. Diode D1, D5   
 8. Alle Widerst&auml;nde   
-9. Wannenstecker J1 bis J3   
+9. Wannenstecker J3 bis J5   
 
 Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 10. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
@@ -590,9 +590,13 @@ _Nicht vergessen_: Optokoppler U1, U2 richtig herum in die Fassung stecken...
 * V1 (241124): OK
 
 ## 6.2 LED-Anzeige f&uuml;r zweipoligen Umschalter
-Diese Platine dient zum Bedienen der Schaltplatine "RW_5V_DPDT_STRG".   
-Im Ruhezustand (beide __*Schalter*__ nicht gedr&uuml;ckt) leuchtet die mittlere, gelbe LED und entweder die rote oder gr&uuml;ne LED, je nachdem, ob der Umschalter &uuml;ber DCC oder MQTT aus- oder eingeschaltet ist (Remote-Betrieb).   
-Wird der mittlere Schalter gedr&uuml;ckt, erfolgt die Umschaltung &uuml;ber den unteren, lokalen Schalter. Im nicht gedr&uuml;ckten Zustand dind die Kontakte "IN" und "NC" (Normally Closed) verbunden, gedr&uuml;ckt sind "IN" und "NO" (Normally Open).   
+Diese Platine dient zum Ansteuern und Anzeigen der Zust&auml;nde der Schaltplatine "RW_5V_DPDT_STRG". Sie enth&auml;lt   
+* in der Mitte der Platine einen Schalter zum Umschalten zwischen Fernsteuerung (&uuml;ber DCC oder MQTT) und lokalem Betrieb (Schalter nicht gedr&uuml;ckt)   
+* unten Mitte einen Schalter zum Schalten des Relais bei lokalem Betrieb   
+* eine gelbe LED links Mitte zur Anzeige eines Remote-Betriebs (LED leuchtet)   
+* eine gelbe LED links unten zur Anzeige eines lokalen Betriebs (LED leuchtet)   
+* eine gr&uuml;ne LED links oben zur Anzeige einer Ausgangsspannung an den Pins NC (normally closed) J5-Pin 3 f&uuml;r Vout+ und J5-Pin 4 f&uuml;r Vout-
+* eine gr&uuml;ne LED links unten zur Anzeige einer Ausgangsspannung an den Pins NO (normally open) J5-Pin 5 f&uuml;r Vout+ und J5-Pin 6 f&uuml;r Vout-
 
 ![RW_5V_DPDT_LED_circuit](/images/600_RW_5V_DPDT_LED_circuit.png "RW_5V_DPDT_LED_circuit")   
 _Bild 40: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
@@ -631,21 +635,23 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 
 6. __SCHALTER__ SW1, SW2   
    
-### Test   
-1. Einstecken der LEDs, die rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
-2. Aufsetzen des Prints _RW_5V_DPDT_LED_ auf die Steuerungsplatine _RW_5V_DPDT_STRG_.   
-3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_DPDT_STRG_.   
-4. Anschluss der Eingangsspannung IN+ an J5-Pin 1 und IN- J5-Pin 2 der Steuerungplatine _RW_5V_DPDT_STRG_:   
-An J3-Pin3 liegt IN+ und an J3-Pin4 liegt IN- an.   
-J3-Pin5 und J3-Pin6 offen.   
-5. Dr&uuml;cken des mittleren Schalters (f&uuml;r lokales Schalten):   
-Unterer Schalter nicht gedr&uuml;ckt: An J3-Pin3 liegt IN+ und an J3-Pin4 liegt IN- an, J3-Pin5 und J3-Pin6 offen.   
-Unterer Schalter gedr&uuml;ckt: An J3-Pin5 liegt IN+ und an J3-Pin6 liegt IN- an. J3-Pin3 und J4-Pin6 offen.   
-6. Mittlerer Schalter ungedr&uuml;ckt: Steuerung &uuml;ber DCC.   
-Mit dem Demoprogamm kann mit der DCC-Adresse 41 der Umschalter bet&auml;tigt werden.   
 
+### Test   
+Die Eingangsspannung IN+ und IN- sowie die Ausgangsspannung NC ("Normally Closed") bzw. NO ("Normally Open") des DPDT-Blocks liegen am 6-poligen Stecker J5 von RW_5V_DPDT_STRG.   
 ![Pinbelegung_DPDT-J5](/images/200_J5_pins_DPDT.png "Pinbelegung DPDT-J5")   
 _Bild 43: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
+
+1. Einstecken der LEDs: Die rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
+2. Aufsetzen des Prints _RW_5V_DPDT_LED_ auf die Steuerungsplatine _RW_5V_DPDT_STRG_.   
+3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_DPDT_STRG_:   
+* Ist der __*mittlere Schalter*__ nicht gedr&uuml;ckt, so leuchtet die mittlere, gelbe LED = Remote-Betrieb.   
+* Ist der __*mittlere Schalter*__ gedr&uuml;ckt, so leuchtet die gelbe LED links unten = lokaler Betrieb.   
+4. Anschluss einer Eingangsspannung IN+ an J5-Pin 1 und IN- J5-Pin 2 der Steuerungplatine _RW_5V_DPDT_STRG_. Ist die Eingangsspannung gr&ouml;&szlig;er als ca. 2,5 V bis 3 V, so leuchtet eine der beiden gr&uuml;nen LEDs:   
+* Ist der mittlere Taster gedr&uuml;ckt ("Lokal") und der untere Taster offen, so ist das Ausgangsrelais in der Stellung NC ("Normally Closed"). Die Spannung IN+ liegt an Pin J5-3 und IN- an Pin J5-4 an und die obere gr&uuml;ne LED leuchtet. Pin J5-5 und J5-6 f&uuml;hren keine Spannung.   
+* Sind beide Taster gedr&uuml;ckt, so ist das Ausgangsrelais in der Stellung NO ("Normally Open"). Die Spannung IN+ liegt an Pin J5-5 und IN- an Pin J5-6 an und die untere gr&uuml;ne LED leuchtet. Pin J5-3 und J5-4 f&uuml;hren keine Spannung.   
+5. Mittlerer Schalter ungedr&uuml;ckt: Remote-Steuerung &uuml;ber DCC oder MQTT. Mit dem Demoprogamm kann mit der DCC-Adresse 41 (PCF8574-Pin 6) der Umschalter bet&auml;tigt werden und die gr&uuml;nen LEDs leuchten je nach Ausgangsspannung.   
+   
+_Anmerkung_: Leuchtet keine der beiden grünen LEDs, so liegt wahrscheinlich keine Eingangsspannung am 6-poligen Stecker J5.   
 
 ### Versionen
 * V1 (241124): OK   
