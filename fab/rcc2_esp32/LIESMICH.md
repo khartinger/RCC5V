@@ -7,8 +7,8 @@ Letzte &Auml;nderung: 20.2.2025 <a name="up"></a><br>
 # 1. Einleitung   
 Die Steuerung des RCC-Systems (Railway Component Control) erfolgt mit einem "ESP32 D1 Mini" Multiprozessor und Zusatzplatinen.   
 
-## Übersicht über die Zusatzplatinen
-Diese Seite beschreibt die Herstellung bzw. Bestückung folgender Zusatzplatinen:   
+## &Uuml;bersicht &uuml;ber die Zusatzplatinen
+Diese Seite beschreibt die Herstellung bzw. Best&uuml;ckung folgender Zusatzplatinen:   
 * [ESP32-Shield I²C-Bus (Shield_I2C_5V_3V3)](#x20)   
 * [ESP32-Shield 5V-Versorgung, Taster und DCC (Shield_5V_DCC_6pol)](#x30)   
 * [Das erweiterte I²C-Board `Shield_I2C_5V_3V3_big`](#x40)   
@@ -84,7 +84,6 @@ _Bild 7: Schaltplan der "Shield_I2C_5V_3V3"-Platine_
 |    1   | J3           | Pegelwandler Converter_2x_3V3_5V | 5V-3V 2-CH I2C IIC Logic-Level-Converter Modul Bi-Directional | _kh_library:Converter_2x_3V3_5V |   
 |    2   | J3           | vierpolige Stiftleiste (gerade) |   |   
 |    2   | U1           | Buchsenleiste, 8-polig mit langen Kontakten |   |   
-   
 
 ### Vorbereitung
 * Herunterschneiden von vier Pins von einer (zB 40-poligen) 90° abgewinkelten Stiftleiste.   
@@ -164,10 +163,11 @@ _Nicht vergessen_: Optokoppler U2 in die Fassung stecken...
 <a name="x40"></a>   
 
 # 4. Das erweiterte I²C-Board Shield_I2C_5V_3V3_big
-Diese Platine stellt zwei I2C-Busse zur Verf&uuml;gung:   
-* I2C-Bus 1 mit SCL1=IO22=D1 und SDA1=IO21=D2 und 3,3V zum direkten Anschluss eines 1,56"-OLED-Displays.   
-* I2C-Bus 2 mit SCL2=IO16=D4 und SDA2=IO17=D3 und 5V zum Anschluss der PCF8574-IO-Expander.   
-Die Pinbelegung der Anschl&uuml;sse ist so gew&auml;hlt, dass sich das Display bzw. die IO-Expander-Platinen leicht anschlie&szlig;en lassen (Pinbelegung I2C-1: SDA3-SCL3-3V3-GND und I2C-2: SCL5-SDA5-GND-5V).   
+Diese Platine stellt zwei I²C-Busse zur Verf&uuml;gung:   
+* __I2C-Bus Nr. 1__ mit SCL1=IO22=D1 und SDA1=IO21=D2 und 3,3V zum direkten Anschluss eines 1,56"-OLED-Displays.   
+* __I2C-Bus Nr. 2__ mit SCL2=IO16=D4 und SDA2=IO17=D3 und 5V zum Anschluss der PCF8574-IO-Expander-Platinen.   
+
+Die Reihenfolge der Pins bei den Anschl&uuml;ssen J4 bis J6 ist so gew&auml;hlt, dass sich das Display bzw. die IO-Expander-Platinen leicht anschlie&szlig;en lassen (Pinbelegung I2C-1: SDA3-SCL3-3V3-GND und I2C-2: SCL5-SDA5-GND-5V).   
 
 ![I2C shield](/images/pcb_f/PCB_F_Shield_I2C_5V_3V3_big_V2.png "I2C shield")   
 _Bild 13: Platine "Shield_I2C_5V_3V3_big" zum Anschluss des 5V- und OLED-I2C-Bus_   
@@ -184,23 +184,26 @@ _Bild 15: Schaltplan der "Shield_I2C_5V_3V3_big"-Platine_
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
 |--------|--------------|------------------------|--------------------|   
-|    2   | J5, J6 (J1)  | vierpolige Stiftleiste, 90° abgewinkelt (Conn_01x04_Pin) | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh |   
+|    2   | J5, J6 (J1)  | vierpolige, gerade Stiftleiste (Conn_01x04_Pin) | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh |   
 |    1   | J4 (J2)      | vierpolige Buchsenleiste mit kurzen Kontakten (Conn_01x04_Socket) | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh |   
 |    1   | J3           | Pegelwandler Converter_2x_3V3_5V | 5V-3V 2-CH I2C IIC Logic-Level-Converter Modul Bi-Directional | _kh_library:Converter_2x_3V3_5V |   
 |    2   | J3           | vierpolige Stiftleiste (gerade) |   |   
 |    2   | U1           | Stiftleiste, 8-polig |   |   
-   
+
+### Anmerkung
+Die Anschl&uuml;sse J1 und J2 werden normalerweise nicht best&uuml;ckt.   
 
 ### Vorbereitung
-* Herunterschneiden von zweimal vier Pins von einer (zB 40-poligen) 90° abgewinkelten Stiftleiste.   
-* Herunterschneiden von 4 Buchsen von einer 8-poligen Buchsenleiste.   
-* Aufstecken der 4-poligen Stiftleisten (gelb), welche meist mit dem Pegelwandler mitgeliefert werden, an den Pegelwandler.   
+* Herunterschneiden von zweimal vier Pins von einer (zB 40-poligen) geraden Stiftleiste.   
+* Herunterschneiden von 4 Buchsen von einer zB 8-poligen Buchsenleiste mit kurzen Kontakten.   
+* Aufstecken der beiden 4-poligen Stiftleisten (gelb), welche meist mit dem Pegelwandler mitgeliefert werden, auf die Pegelwandler-Platine.   
 
 ![Shield_I2C_5V_3V3_big_comp](/images/300_Shield_I2C_5V_3V3_big_comp.png "Shield_I2C_5V_3V3_big_comp")   
 _Bild 16: Bauteile f&uuml;r die "Shield_I2C_5V_3V3_big"-Platine_   
 
 ### Best&uuml;ckung   
-1. Die beiden 4poligen Stiftleisten in die Konverter- und I2C-Platine stecken und beidseitig auf die Bauteilseite des Prints verl&ouml;ten (Konverter-Platine: Bauteile nach unten, auf richtige Polung der 3V/5V-Seite achten)   
+1. Die beiden gelben 4-poligen Stiftleisten sowohl in die Konverter- als auch in in die I2C-Platine stecken und beidseitig auf der Bauteilseite des Prints verl&ouml;ten.  
+   __Wichtig__: Die Konverter-Platine so drehen, dass die Bauteile nach unten zeigen und die 3V- und 5V-Anschlüsse auf der jeweils richtigen Seite sind!   
 2. 8-polige Stiftleisten Stiftleisten U1 nach unten (auf L&ouml;tseite)   
 3. 4-polige Stiftleisten J5 und J6 nach unten (auf L&ouml;tseite), auf senkrechte Ausrichtung achten!   
 4. 4-polige Buchsenleiste J4 auf die Bauteilseite l&ouml;ten, auf senkrechte Ausrichtung achten!   
