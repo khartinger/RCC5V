@@ -1,11 +1,16 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-02-16 <a name="up"></a><br>   
+Last modified: 2025-02-20 <a name="up"></a><br>   
 <h1>Manufacturing of i2c boards</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
 # 1. Introduction   
-The digital inputs and outputs are provided by purchased I²C-PCF8574-I/O boards. The add-on boards described here are used, for example, as a holder for the I²C-PCF8574-I/O boards or to display a flashing light.   
+The [control blocks](/fab/rcc4_block) are connected to the [ESP32 microcontroller](/fab/rcc2_esp32) via the I/O pins of purchased I²C PCF8574 I/O boards. The additional boards described here are not absolutely necessary, but are helpful because the PCF8574 boards do not have any holes for mounting, for example.   
+The following prints are currently available:   
+* [I²C holder 20 mm](#x20)   
+* [I²C holder 40 mm](#x30)   
+* [I2C LED board](#x40)   
+* [I²C distributor](#x50)   
 
 <a name="x20"></a>   
 

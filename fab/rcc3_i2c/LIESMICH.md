@@ -1,11 +1,16 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 16.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 20.2.2025 <a name="up"></a><br>   
 <h1>Herstellung von I²C-Platinen</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # 1. Einleitung   
-Die digitalen Ein- und Ausg&auml;nge werden von zugekauften I²C-PCF8574-I/O-Platinen zur Verf&uuml;gung gestellt. Die hier beschriebenen Erg&auml;nzungsplatinen dienen zB als Halterung f&uuml;r die I²C-PCF8574-I/O-Platinen oder zur Anzeige eines Blinklichts.   
+Die Anbindung der [Steuerblöcke](/fab/rcc4_block) an den [ESP32-Mikrocontroller](/fab/rcc2_esp32) erfolgt über die I/O-Pins von zugekauften I²C-PCF8574-I/O-Platinen. Die hier beschriebenen Zusatzplatinen sind nicht unbedingt erforderlich, aber hilfreich, weil die PCF8574-Platinen zB keine Bohrungen für eine Befestigung haben.   
+Folgende Prints sind derzeit verfügbar:   
+* [I²C-Halterung 20 mm](#x20)   
+* [I²C-Halterung 40 mm](#x30)   
+* [I2C-LED-Platine](#x40)   
+* [I²C-Verteiler](#x50)   
 
 <a name="x20"></a>   
 
@@ -69,7 +74,7 @@ Stift- und Buchsenleiste einstecken und anl&ouml;ten.
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
 
-# 4. I2C-LED
+# 4. I2C-LED-Platine
 Diese Platine enth&auml;lt eine LED mit Vorwiderstand und zwei Haltebohrungen. Die LED kann wahlweise auf Masse oder einen I²C-IO-Pin gelegt werden.   
 
 ![CON_i2c_LED_V1](/images/200_CON_i2c_LED_V1.png "CON_i2c_LED_V1")   

@@ -1,18 +1,27 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2024-11-28 <a name="up"></a><br>   
+Last modified: 2025-02-20 <a name="up"></a><br>   
 <h1>ESP32 Shields</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
 # 1. Introduction   
-An “ESP32 D1 Mini” multiprocessor with 2 cores is used to control the RCC system (Railway Component Control). This has sufficient capacity to operate both the network communication and the DCC monitoring as well as two I²C buses without interference.   
+The RCC system (Railway Component Control) is controlled by an “ESP32 D1 Mini” multiprocessor and additional boards.   
+
+## Overview of the additional boards
+This page describes the production and assembly of the following additional boards:   
+* [ESP32-Shield I²C-Bus (Shield_I2C_5V_3V3)](#x20)   
+* [ESP32-Shield 5V supply, button and DCC (Shield_5V_DCC_6pol)](#x30)   
+* [The extended I²C board `Shield_I2C_5V_3V3_big`](#x40)   
+
+## The ESP32 processor
+The ESP32 has two cores and therefore enough power to operate network communication and DCC monitoring as well as two I²C buses without interference.   
 
 ![ESP32](/images/300_ESP32.png "ESP32")   
 _Figure 1: ESP32 D1 Mini with listed socket connectors_   
 
 _Note:_ The sockets shown in yellow in _Fig. 1_ are those that are also used on the D1 mini (with processor ESP 8266).   
 
-## Functional principle
+## Functional principle of the microcontroller circuit
 The following figure shows the basic use of the inputs and outputs on the ESP32 processor:   
 
 ![ESP32 usage](/images/300_ESP32_use.png "ESP32 usage")   

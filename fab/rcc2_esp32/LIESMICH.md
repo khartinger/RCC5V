@@ -1,18 +1,27 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 28.11.2024 <a name="up"></a><br>   
+Letzte &Auml;nderung: 20.2.2025 <a name="up"></a><br>   
 <h1>Erweiterungen (Shields) f&uuml;r den ESP32</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # 1. Einleitung   
-Die Steuerung des RCC-Systems (Railway Component Control) erfolgt mit einem "ESP32 D1 Mini" Multiprozessor mit 2 Kernen. Dieser hat gen&uuml;gend Kapazit&auml;t, um sowohl die Netzwerk-Kommunikation und die DCC-&Uuml;berwachung als auch zwei I²C-Busse st&ouml;rungsfrei zu betreiben.   
+Die Steuerung des RCC-Systems (Railway Component Control) erfolgt mit einem "ESP32 D1 Mini" Multiprozessor und Zusatzplatinen.   
+
+## Übersicht über die Zusatzplatinen
+Diese Seite beschreibt die Herstellung bzw. Bestückung folgender Zusatzplatinen:   
+* [ESP32-Shield I²C-Bus (Shield_I2C_5V_3V3)](#x20)   
+* [ESP32-Shield 5V-Versorgung, Taster und DCC (Shield_5V_DCC_6pol)](#x30)   
+* [Das erweiterte I²C-Board `Shield_I2C_5V_3V3_big`](#x40)   
+
+## Der Prozessor ESP32
+Der ESP32 hat zwei Kerne und damit gen&uuml;gend Leistung, um sowohl die Netzwerk-Kommunikation und die DCC-&Uuml;berwachung als auch zwei I²C-Busse st&ouml;rungsfrei zu betreiben.   
 
 ![ESP32](/images/300_ESP32.png "ESP32")   
 _Bild 1: ESP32 D1 Mini mit aufgel&ouml;teten Buchsenleisten_   
 
 _Anmerkung:_ Die in _Bild 1_ gelb dargestellten Buchsen sind diejenigen, die auch beim D1 mini (mit Prozessor ESP 8266) verwendet werden.   
 
-## Funktionsprinzip
+## Funktionsprinzip der Mikrocontroller-Schaltung
 Das folgende Bild zeigt die prinzipielle Verwendung der Ein- und Ausg&auml;nge am ESP32-Prozessor:   
 
 ![ESP32 usage](/images/300_ESP32_use.png "ESP32 usage")   
