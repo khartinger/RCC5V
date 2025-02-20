@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 2.12.2024 <a name="up"></a><br>   
+Letzte &Auml;nderung: 20.2.2025 <a name="up"></a><br>   
 <h1>Herstellung von RCC Schaltbl&ouml;cken</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -147,13 +147,19 @@ _Bild 14: L&ouml;tseite der best&uuml;ckten Platine "RW_5V_W2_LED" zum Schalten 
 |    2   | R4 <br> R10       | 100 k&Omega;     | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical <br> _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 |    1   | SW2               | Taster SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
 |    1   | SW1 oder SW3 (2)  | Taster SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
+|    2   | SW2, SW1 oder SW3 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe gr&uuml;n, gelb |    
 
+### Anmerkungen
 (1) Es ist sinnvoll, die 2-poligen Buchsenleisten an alle 6 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb  nur zwei LEDs eingesetzt werden. Weiters ist das Einl&ouml;ten aller Bauteile so einfacher ;)   
 
 (2) Nur den Taster einl&ouml;ten, der ben&ouml;tigt wird:   
-    * F&uuml;r oben: Taster SW1 mit LED D1 oder D4   
-    * F&uuml;r unten: Taster SW3 mit LED D3 oder D6   
-   
+    * F&uuml;r oben (= rechte Weiche nach links oder linke Weiche nach rechts): Taster SW1 mit LED D1 oder D4   
+    * F&uuml;r unten (= rechte Weiche nach rechts oder linke Weiche nach links): Taster SW3 mit LED D3 oder D6   
+
+## Vorbereitung
+1. Von einer langen, einreihigen Buchsenleiste 6x 2-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D6).   
+2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+3. 10 mm-Tasterkn&ouml;pfe SW1/SW3 (gelb), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten (D1 bis D6) mit gedrehten Pins auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -260,9 +266,16 @@ _Bild 21: Best&uuml;ckte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der
 |    3   | R2,R8,R14         | 47 k&Omega;      | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 |    3   | R4,R16 <br> R10   | 100 k&Omega;     | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical <br> _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 |    3   | SW1,SW2,SW3       | Taster SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
-   
+|    3   | SW1,SW2,SW3 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe 2x gr&uuml;n, 1x gelb |    
+
+### Anmerkungen
 (1) Es ist sinnvoll, die 2-poligen Buchsenleisten an alle 6 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb  nur drei LEDs eingesetzt werden, je nachdem, ob die Anzeige links oder rechts von den Schaltern sein soll.   
    
+## Vorbereitung
+1. Von einer langen, einreihigen Buchsenleiste 6x 2-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D6).   
+2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+3. 10 mm-Tasterkn&ouml;pfe SW1, SW3 (gelb), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
+
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten (D1 bis D3 und/oder D4 bis D6) mit gedrehten Pins auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
@@ -380,10 +393,15 @@ _Bild 28: Die best&uuml;ckte "RW_5V_1OUT_LED"-Platine_
 |    1   | R4                | 10 k&Omega;         | _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 |    1   | R6                | 100 k&Omega;        | _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 |    1   | SW2               | Taster SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
-   
+|    1   | SW2 | Knopf f&uuml;r Taster 8x8mm, L&auml;nge 10mm, Farbe wei&szlig; |    
+
+## Vorbereitung
+1. Von einer langen, einreihigen Buchsenleiste 3x 2-polige St&uuml;cke abtrennen (f&uuml;r D1, D3, D5).   
+2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+3. 10 mm-Tasterknopf SW2 (wei&szlig;) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ### Best&uuml;ckung   
-1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D2, D4, D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
+1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D5) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
 Auf die _*Bauteilseite*_ l&ouml;ten:   
 
@@ -497,10 +515,12 @@ _Bild 35: Best&uuml;ckte Platine "RW_5V_2IO_LED"_
 |    1   | R2                | 10 k&Omega;         | _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 |    1   | R7                | 100 k&Omega;        | _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 |    2   | SW1,SW2           | _*Schalter*_ SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
-   
+|    2   | SW1,SW2           | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe rot, gr&uuml;n |    
+
 ### Vorbereitung   
 1. Von einer langen, einreihigen Buchsenleiste 5x 2-polige St&uuml;cke abtrennen (f&uuml;r D1, D3 bis D6).   
-2. Die LED-Anschl&uuml;sse entsprechend Bild 4 abschneiden und biegen.   
+2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+3. 10 mm-Tasterkn&ouml;pfe SW1 (rot), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D4, D5, D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -598,14 +618,14 @@ Diese Platine dient zum Ansteuern und Anzeigen der Zust&auml;nde der Schaltplati
 * eine gr&uuml;ne LED links oben zur Anzeige einer Ausgangsspannung an den Pins NC (normally closed) J5-Pin 3 f&uuml;r Vout+ und J5-Pin 4 f&uuml;r Vout-
 * eine gr&uuml;ne LED links unten zur Anzeige einer Ausgangsspannung an den Pins NO (normally open) J5-Pin 5 f&uuml;r Vout+ und J5-Pin 6 f&uuml;r Vout-
 
+![RW_5V_DPDT_LED](/images/300_DPDT_LED_front.png "RW_5V_DPDT_LED") ![RW_5V_DPDT_LED](/images/300_DPDT_LED_back.png "RW_5V_DPDT_LED")     
+_Bild 40: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
+
 ![RW_5V_DPDT_LED_circuit](/images/600_RW_5V_DPDT_LED_circuit.png "RW_5V_DPDT_LED_circuit")   
-_Bild 40: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
+_Bild 41: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
 
 ![Platine 2-poliges Umschalten](/images/pcb_f/PCB_F_RW_5V_DPDT_LED_V1.png "Platine 2-poliges Umschalten")   
-_Bild 41: Bedien-Platine zum 2-poligen Umschalten_   
-
-![RW_5V_DPDT_LED](/images/300_DPDT_LED_front.png "RW_5V_DPDT_LED") ![RW_5V_DPDT_LED](/images/300_DPDT_LED_back.png "RW_5V_DPDT_LED")     
-_Bild 42: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
+_Bild 42: Bedien-Platine zum 2-poligen Umschalten_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -617,10 +637,12 @@ _Bild 42: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_
 |    3   | R2, R4, R5        | 1 k&Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 |    2   | R1, R3            | 10 k&Omega;         | _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 |    2   | SW1,SW2           | _*Schalter*_ SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
+|    2   | SW1,SW2           | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe schwarz, gelb |    
    
 ### Vorbereitung   
 1. Von einer langen, einreihigen Buchsenleiste 4x 2-polige St&uuml;cke abtrennen (f&uuml;r D1, D3, D5, D6).   
-2. Die LED-Anschl&uuml;sse entsprechend Bild xx abschneiden und biegen.   
+2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+3. 10 mm-Tasterkn&ouml;pfe SW1, SW2 eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D5, D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -651,7 +673,7 @@ _Bild 43: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_
 * Sind beide Taster gedr&uuml;ckt, so ist das Ausgangsrelais in der Stellung NO ("Normally Open"). Die Spannung IN+ liegt an Pin J5-5 und IN- an Pin J5-6 an und die untere gr&uuml;ne LED leuchtet. Pin J5-3 und J5-4 f&uuml;hren keine Spannung.   
 5. Mittlerer Schalter ungedr&uuml;ckt: Remote-Steuerung &uuml;ber DCC oder MQTT. Mit dem Demoprogamm kann mit der DCC-Adresse 41 (PCF8574-Pin 6) der Umschalter bet&auml;tigt werden und die gr&uuml;nen LEDs leuchten je nach Ausgangsspannung.   
    
-_Anmerkung_: Leuchtet keine der beiden grünen LEDs, so liegt wahrscheinlich keine Eingangsspannung am 6-poligen Stecker J5.   
+_Anmerkung_: Leuchtet keine der beiden gr&uuml;nen LEDs, so liegt wahrscheinlich keine Eingangsspannung am 6-poligen Stecker J5.   
 
 ### Versionen
 * V1 (241124): OK   
