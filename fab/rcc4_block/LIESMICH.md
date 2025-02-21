@@ -30,6 +30,8 @@ Die Belegung des Steckers J5 ist abh&auml;ngig vom Schaltblock:
 ![Pinlayout_J5_all](/images/200_J5_pinlayout_all2.png "Pinlayout_J5_all")   
 _Bild 3: Pinbelegung der STRG-Stecker_   
 
+<a name="x14"></a>   
+
 ## 1.4 Vorbereitung von LEDs
 Damit Fertigungstoleranzen leicht ausgeglichen werden k&ouml;nnen, werden die LEDs nicht direkt auf die erforderliche L&auml;nge geschnitten, sondern eine Art "Feder" eingebaut. Dazu wird folgende Vorgangsweise empfohlen:   
 1. Den Anoden- (Plus-) Anschlussdraht (l&auml;ngerer Draht) mit rotem Permanentstift markieren.   
@@ -48,6 +50,8 @@ Auf allen LED-Platinen sind drei Positionen f&uuml;r Taster bzw. Schalter sowie 
 _Bild 6: LED- und Schalterpositionen bei einem Block (von vorne gesehen)_   
 
 Die Bezeichnungen f&uuml;r die LEDs (D1 bis D6) und die Taster oder Schalter (SW1 bis SW3) werden bei allen LED-Platinen gleich verwendet.   
+
+<a name="x16"></a>   
 
 ## 1.6 L&ouml;ten von Tastern und Schaltern auf die L&ouml;tseite einer Platine
 Alle "LED"-Platinen enthalten Taster und Schalter, die zum Schluss auf die L&ouml;tseite der Platine gel&ouml;tet werden. Damit sie beim Einl&ouml;ten nicht herausfallen, kann man sie mit Klebeband fixieren und die Platine h&ouml;her lagern, zum Beispiel kann man sie auf die Kanten eines schmalen Einsatzes eines [RAACO Sortimentkoffers Assorter 55 A9](https://www.reichelt.de/at/de/sortimentseinsatz-a9-1-39-x-47-x-55-mm-raaco-a9-1-p29322.html?r=1) legen.
@@ -522,7 +526,7 @@ _Bild 36: Best&uuml;ckte Platine "RW_5V_2IO_LED"_
 
 ### Vorbereitung   
 1. Von einer langen, einreihigen Buchsenleiste 5x 2-polige St&uuml;cke abtrennen (f&uuml;r D1, D3 bis D6).   
-2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
 3. 10 mm-Tasterkn&ouml;pfe SW1 (rot), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs und Widerstände.   
@@ -536,12 +540,13 @@ Auf die _*Bauteilseite*_ l&ouml;ten:
 
 2. Widerstand R8 (liegend)   
 3. Transistor Q1   
-4. Die restlichen Widerst&auml;nde   
-5. Buchsenleisten J1 und J2   
+4. Die Widerstände R2 (10 k&Omega;) und R7 (100 k&Omega;)   
+5. Die restlichen Widerst&auml;nde (1 k&Omega;)   
+6. Buchsenleisten J1 und J2   
 
 Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 
-6. __SCHALTER__ SW1, SW2   
+7. __SCHALTER__ SW1, SW2 (Anleitung [siehe Kapitel 1.6](#x16))   
    
 ### Test   
 1. Einstecken der LEDs, Anode = Pluspol = rot markiert immer nach au&szlig;en zum Leiterplattenrand.   
