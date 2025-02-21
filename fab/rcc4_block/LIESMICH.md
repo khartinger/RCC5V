@@ -496,7 +496,7 @@ _Nicht vergessen_: Optokoppler U1 richtig herum in die Fassung stecken...
 
 <a name="x52"></a>   
 
-## 5.2 LED-Anzeige für Fahrstromabschaltung (2IO)
+## 5.2 LED-Anzeige f&uuml;r Fahrstromabschaltung (2IO)
 Diese Platine dient zum Bedienen der Schaltplatine "RW_5V_2IO_STRG".   
 Im Ruhezustand (beide _*Schalter*_ nicht gedr&uuml;ckt) leuchtet die gelbe LED und entweder die rote oder gr&uuml;ne LED, je nachdem, ob der Fahrstrom &uuml;ber DCC oder MQTT aus- oder eingeschaltet ist.   
 Wird der Schalter "AUS" bet&auml;tigt, ist der Fahrstrom auf jeden Fall ausgeschaltet, bei "EIN" (ohne "AUS") ist der Fahrstrom eingeschaltet. Sind beide Schalter nicht bet&auml;tigt, erfolgt die Steuerung &uuml;ber den I²C-Bus.   
@@ -531,7 +531,7 @@ _Bild 36: Best&uuml;ckte Platine "RW_5V_2IO_LED"_
 2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
 3. 10 mm-Tasterkn&ouml;pfe SW1 (rot), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
-Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs und Widerstände.   
+Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs und Widerst&auml;nde.   
 ![RW_5V_2IO_LED_parts](/images/300_RW_5V_2IO_LED_parts.png "RW_5V_2IO_LED_parts")   
 _Bild 37: Bauteile der "RW_5V_2IO_LED"-Platine_   
 
@@ -542,7 +542,7 @@ Auf die _*Bauteilseite*_ l&ouml;ten:
 
 2. Widerstand R8 (liegend)   
 3. Transistor Q1   
-4. Die Widerstände R2 (10 k&Omega;) und R7 (100 k&Omega;)   
+4. Die Widerst&auml;nde R2 (10 k&Omega;) und R7 (100 k&Omega;)   
 5. Die restlichen Widerst&auml;nde (1 k&Omega;)   
 6. Buchsenleisten J1 und J2   
 
@@ -554,8 +554,8 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 
 ## 5.3 Zusammenbau des 2IO-Blocks
 1. Aufstecken des Steuerungsprints `RW_5V_2IO_STRG` auf die Anzeigeplatine `RW_5V_2IO_LED`.   
-2. Einstecken der LEDs. Für alle LEDs gilt: Anode = Pluspol = rot markiert immer __nach au&szlig;en__ zum Leiterplattenrand.   
-3. Aufstecken der Schalter-Knöpfe.   
+2. Einstecken der LEDs. F&uuml;r alle LEDs gilt: Anode = Pluspol = rot markiert immer __nach au&szlig;en__ zum Leiterplattenrand.   
+3. Aufstecken der Schalter-Kn&ouml;pfe.   
 4. Falls vorhanden: Print `RW_LEER_LED` auf den Anzeigeprint stecken.   
 
 <a name="x54"></a>   
@@ -564,17 +564,32 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 Der Test kann auf zwei Arten erfolgen.   
 
 ### "Labor-Test" mit 5V
-Für diesen Test benötigt man ein 5V-Netzteil, 8 Stück einzelne Kabel Stecker auf Buchse sowie ein Voltmeter. Die Verkabelung entsprechend dem Bild durchführen, wobei die Buchsen der Leitungen direkt auf die Stifte der 6- bzw. 10-poligen Wannenstecker gesteckt werden können.   
+F&uuml;r diesen Test ben&ouml;tigt man ein 5V-Netzteil, 9 St&uuml;ck einzelne Kabel Stecker auf Buchse sowie ein Voltmeter. Die Verkabelung entsprechend dem Bild durchf&uuml;hren, wobei die Buchsen der Leitungen direkt auf die Stifte der 6- bzw. 10-poligen Wannenstecker gesteckt werden k&ouml;nnen.   
+_Zum Beispiel:_   
+* rot: 5 V vom Netzteil nach J3-1   
+* rot: 5 V vom Netzteil nach J5-1   
+* braun: 0 V vom Netzteil nach J3-3   
+* braun: 0 V vom Netzteil nach J5-2   
+* gr&uuml;n: OUT+ von J5-5 zum Voltmeter +   
+* blau: OUT- von J5-6 zum Voltmeter COM (-)   
+* wei&szlig;: S1 von J4-1 nach au&szlig;en   
+* schwarz: 0V von J4-5 nach au&szlig;en   
+* gelb: R1 von J4-7 zum Voltmeter COM (-)   
+
 ![2IO Testverkabelung](/images/300_2IO_test_wiring.png "2IO Testverkabelung") &nbsp; ![2IO Testverkabelung2](/images/300_2IO_test_wiring_img.png "2IO Testverkabelung2")   
 _Bild 38: Verkabelung zum Testen des 2IO-Blocks_   
 
-1. Beide Schalter entriegeln (nicht gedrückt).   
-2. Anlegen der 5V-Spannung: Die mittlere gelbe LED und die rote LED leuchten.   
-3. Den Remote-Set-Eingang S1 (Pin J4-1) mit 0V (Pin J4-5) verbinden: Das Relais schaltet, die rote LED erlischt, die grüne LED leuchtet.   
-4. Den roten Schalter betätigen: Die obere gelbe LED und die rote LED leuchten.   
-5. Den roten Schalter entriegeln, den grünen Schalter betätigen: Die untere gelbe LED und die grüne LED leuchten.   
+Statt der beiden eingezeichneten Voltmeter kann nat&uuml;rlich auch nur eines verwendet werden.   
 
-Weiters zeigt das obere Voltmeter ("zum Gleis") immer 5 V an, wenn die grüne LED leuchtet.   
+1. Beide Schalter entriegeln (nicht gedr&uuml;ckt).   
+2. Anlegen der 5V-Spannung: Die mittlere gelbe LED und die rote LED leuchten.   
+3. Den Remote-Set-Eingang S1 (Pin J4-1) mit 0V (Pin J4-5) verbinden: Das Relais schaltet, die rote LED erlischt, die gr&uuml;ne LED leuchtet.   
+4. Den roten Schalter bet&auml;tigen: Die obere gelbe LED und die rote LED leuchten.   
+5. Den roten Schalter entriegeln, den gr&uuml;nen Schalter bet&auml;tigen: Die untere gelbe LED und die gr&uuml;ne LED leuchten.   
+
+* Das obere Voltmeter ("zum Gleis") zeigt immer 5 V an, wenn die gr&uuml;ne LED leuchtet.   
+* Das R&uuml;ckmeldesignal R1 (Voltmeter "R&uuml;ckmeldung") zeigt immer 5 V an, wenn die gr&uuml;ne LED leuchtet.   
+Das bedeutet: Kein Ausgangssignal ergibt die R&uuml;ckmeldung R1 = 0 V.   
 
 ### Test unter realen Bedingungen
 3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_2IO_STRG_.   
