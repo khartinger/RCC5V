@@ -547,10 +547,30 @@ Auf die _*Bauteilseite*_ l&ouml;ten:
 Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 
 7. __SCHALTER__ SW1, SW2 (Anleitung [siehe Kapitel 1.6](#x16))   
-   
-### Test   
-1. Einstecken der LEDs, Anode = Pluspol = rot markiert immer nach au&szlig;en zum Leiterplattenrand.   
-2. Aufsetzen des Prints _RW_5V_2IO_LED_ auf die Steuerungsplatine _RW_5V_2IO_STRG_.   
+
+### Zusammenbau des 2IO-Blocks
+1. Aufstecken des Steuerungsprints `RW_5V_2IO_STRG` auf die Anzeigeplatine `RW_5V_2IO_LED`.   
+2. Einstecken der LEDs. Für alle LEDs gilt: Anode = Pluspol = rot markiert immer __nach au&szlig;en__ zum Leiterplattenrand.   
+3. Aufstecken der Schalter-Knöpfe.   
+4. Falls vorhanden: Print `RW_LEER_LED` auf den Anzeigeprint stecken.   
+
+### Test des 2IO-Blocks   
+Der Test kann auf zwei Arten erfolgen.   
+
+#### "Labor-Test" mit 5V
+Für diesen Test benötigt man ein 5V-Netzteil, 8 Stück einzelne Kabel Stecker auf Buchse sowie ein Voltmeter. Die Verkabelung entsprechend dem Bild durchführen, wobei die Buchsen der Leitungen direkt auf die Stifte der 6- bzw. 10-poligen Wannenstecker gesteckt werden können.   
+![2IO Testverkabelung](/images/300_2IO_test_wiring.png "2IO Testverkabelung")   
+_Bild 38: Test-Verkabelung 2IO-Block_   
+
+1. Beide Schalter entriegeln (nicht gedrückt).   
+2. Anlegen der 5V-Spannung: Die mittlere gelbe LED und die rote LED leuchten.   
+3. Den Remote-Set-Eingang S1 (Pin J4-1) mit 0V (Pin J4-5) verbinden: Das Relais schaltet, die rote LED erlischt, die grüne LED leuchtet.   
+4. Den roten Schalter betätigen: Die obere gelbe LED und die rote LED leuchten.   
+5. Den roten Schalter entriegeln, den grünen Schalter betätigen: Die untere gelbe LED und die grüne LED leuchten.   
+
+Weiters zeigt das obere Voltmeter ("zum Gleis") immer 5 V an, wenn die grüne LED leuchtet.   
+
+#### Test unter realen Bedingungen
 3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_2IO_STRG_.   
 4. Anschluss der Gleisversorgung an J5-Pin 1 (DCC+) und J5-Pin 2 (DCC-) der Steuerungplatine _RW_5V_2IO_STRG_.   
 5. Anschluss des zu schaltenden Gleises an J5-Pin 5 (DCCout+) und J5-Pin 6 (DCCout-).
