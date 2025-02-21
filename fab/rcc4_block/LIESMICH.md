@@ -474,11 +474,11 @@ _Bild 33: Bauteile der "RW_5V_2IO_STRG"-Platine_
 ### Best&uuml;ckung   
 1. IC-Fassung 4-polig (oder 2x Buchsenleiste mit 2 Pins)   
 2. Relais K1   
-3. Dioden D2 bis D4   
+3. Dioden D2 bis D4 (N4148)   
 4. Transistor Q1   
-5. Kondensator C1   
-6. Kondensator C2   
-7. Diode D1   
+5. Kondensator C1 (33 &micro;F)   
+6. Kondensator C2 (100 nF)   
+7. Diode D1 (1N4007)   
 8. Alle Widerst&auml;nde   
 9. Wannenstecker J1 bis J3   
 
