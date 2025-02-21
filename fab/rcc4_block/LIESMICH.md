@@ -565,8 +565,8 @@ Der Test kann auf zwei Arten erfolgen.
 
 ### "Labor-Test" mit 5V
 Für diesen Test benötigt man ein 5V-Netzteil, 8 Stück einzelne Kabel Stecker auf Buchse sowie ein Voltmeter. Die Verkabelung entsprechend dem Bild durchführen, wobei die Buchsen der Leitungen direkt auf die Stifte der 6- bzw. 10-poligen Wannenstecker gesteckt werden können.   
-![2IO Testverkabelung](/images/300_2IO_test_wiring.png "2IO Testverkabelung")   
-_Bild 38: Test-Verkabelung 2IO-Block_   
+![2IO Testverkabelung](/images/300_2IO_test_wiring.png "2IO Testverkabelung") &nbsp; ![2IO Testverkabelung2](/images/300_2IO_test_wiring_img.png "2IO Testverkabelung2")   
+_Bild 38: Verkabelung zum Testen des 2IO-Blocks_   
 
 1. Beide Schalter entriegeln (nicht gedrückt).   
 2. Anlegen der 5V-Spannung: Die mittlere gelbe LED und die rote LED leuchten.   
