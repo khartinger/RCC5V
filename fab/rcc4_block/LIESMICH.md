@@ -494,7 +494,9 @@ _Nicht vergessen_: Optokoppler U1 richtig herum in die Fassung stecken...
 ### Versionen
 * V1 (240930): OK
 
-## 5.2 LED-Anzeige mit zwei Schaltern
+<a name="x52"></a>   
+
+## 5.2 LED-Anzeige für Fahrstromabschaltung (2IO)
 Diese Platine dient zum Bedienen der Schaltplatine "RW_5V_2IO_STRG".   
 Im Ruhezustand (beide _*Schalter*_ nicht gedr&uuml;ckt) leuchtet die gelbe LED und entweder die rote oder gr&uuml;ne LED, je nachdem, ob der Fahrstrom &uuml;ber DCC oder MQTT aus- oder eingeschaltet ist.   
 Wird der Schalter "AUS" bet&auml;tigt, ist der Fahrstrom auf jeden Fall ausgeschaltet, bei "EIN" (ohne "AUS") ist der Fahrstrom eingeschaltet. Sind beide Schalter nicht bet&auml;tigt, erfolgt die Steuerung &uuml;ber den I²C-Bus.   
@@ -548,16 +550,20 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 
 7. __SCHALTER__ SW1, SW2 (Anleitung [siehe Kapitel 1.6](#x16))   
 
-### Zusammenbau des 2IO-Blocks
+<a name="x53"></a>   
+
+## 5.3 Zusammenbau des 2IO-Blocks
 1. Aufstecken des Steuerungsprints `RW_5V_2IO_STRG` auf die Anzeigeplatine `RW_5V_2IO_LED`.   
 2. Einstecken der LEDs. Für alle LEDs gilt: Anode = Pluspol = rot markiert immer __nach au&szlig;en__ zum Leiterplattenrand.   
 3. Aufstecken der Schalter-Knöpfe.   
 4. Falls vorhanden: Print `RW_LEER_LED` auf den Anzeigeprint stecken.   
 
-### Test des 2IO-Blocks   
+<a name="x54"></a>   
+
+## 5.4 Test des 2IO-Blocks   
 Der Test kann auf zwei Arten erfolgen.   
 
-#### "Labor-Test" mit 5V
+### "Labor-Test" mit 5V
 Für diesen Test benötigt man ein 5V-Netzteil, 8 Stück einzelne Kabel Stecker auf Buchse sowie ein Voltmeter. Die Verkabelung entsprechend dem Bild durchführen, wobei die Buchsen der Leitungen direkt auf die Stifte der 6- bzw. 10-poligen Wannenstecker gesteckt werden können.   
 ![2IO Testverkabelung](/images/300_2IO_test_wiring.png "2IO Testverkabelung")   
 _Bild 38: Test-Verkabelung 2IO-Block_   
@@ -570,7 +576,7 @@ _Bild 38: Test-Verkabelung 2IO-Block_
 
 Weiters zeigt das obere Voltmeter ("zum Gleis") immer 5 V an, wenn die grüne LED leuchtet.   
 
-#### Test unter realen Bedingungen
+### Test unter realen Bedingungen
 3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_2IO_STRG_.   
 4. Anschluss der Gleisversorgung an J5-Pin 1 (DCC+) und J5-Pin 2 (DCC-) der Steuerungplatine _RW_5V_2IO_STRG_.   
 5. Anschluss des zu schaltenden Gleises an J5-Pin 5 (DCCout+) und J5-Pin 6 (DCCout-).
