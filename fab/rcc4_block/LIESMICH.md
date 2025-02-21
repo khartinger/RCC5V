@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 20.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 21.2.2025 <a name="up"></a><br>   
 <h1>Herstellung von RCC Schaltbl&ouml;cken</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -468,6 +468,9 @@ __St&uuml;ckliste__
 |    1   | R1           | 100 k&Omega;           | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
    
 
+![RW_5V_2IO_STRG_parts](/images/300_RW_5V_2IO_STRG_parts.png "RW_5V_2IO_STRG_parts")   
+_Bild 33: Bauteile der "RW_5V_2IO_STRG"-Platine_   
+
 ### Best&uuml;ckung   
 1. IC-Fassung 4-polig (oder 2x Buchsenleiste mit 2 Pins)   
 2. Relais K1   
@@ -493,13 +496,13 @@ Im Ruhezustand (beide _*Schalter*_ nicht gedr&uuml;ckt) leuchtet die gelbe LED u
 Wird der Schalter "AUS" bet&auml;tigt, ist der Fahrstrom auf jeden Fall ausgeschaltet, bei "EIN" (ohne "AUS") ist der Fahrstrom eingeschaltet. Sind beide Schalter nicht bet&auml;tigt, erfolgt die Steuerung &uuml;ber den I²C-Bus.   
 
 ![RW_5V_2IO_LED_circuit](/images/600_RW_5V_2IO_LED_circuit.png "RW_5V_2IO_LED_circuit")   
-_Bild 33: Schaltplan der "RW_5V_2IO_LED"-Platine_   
+_Bild 34: Schaltplan der "RW_5V_2IO_LED"-Platine_   
 
 ![Platine 2-poliges Schalten](/images/pcb_f/PCB_F_RW_5V_2IO_LED_V2.png "Platine 2-poliges Schalten")   
-_Bild 34: Platine zum Schalten des Fahrstroms_   
+_Bild 35: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_LED](/images/300_RW_5V_2IO_LED.png "RW_5V_2IO_LED")   
-_Bild 35: Best&uuml;ckte Platine "RW_5V_2IO_LED"_   
+_Bild 36: Best&uuml;ckte Platine "RW_5V_2IO_LED"_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -545,7 +548,7 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 6. Funktionstest: wie oben beschrieben.   
 
 ![Pinbelegung_2IO-J5](/images/200_J5_pins_2IO.png "Pinbelegung 2IO-J5")   
-_Bild 36: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
+_Bild 37: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
 
 ### Versionen
 * V1 (241022): spiegelverkehrte Anordnung der LEDs.   
@@ -560,13 +563,13 @@ _Bild 36: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_
 Diese Platine dient zum zweipoligen Umschalten 2x Um (engl. Double Pole Double Throw, kurz DPDT) einer Spannung. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber zwei Optokoppler (je einer f&uuml;r den Zustand NC = normally closed und NO = normally open).   
 
 ![RW_5V_DPDT_STRG_circuit](/images/600_RW_5V_DPDT_STRG_circuit.png "RW_5V_DPDT_STRG_circuit")   
-_Bild 37: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
+_Bild 38: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
 
 ![Platine DPDT](/images/pcb_f/PCB_F_RW_5V_DPDT_STRG_V1.png "Platine DPDT")   
-_Bild 38: Platine zum zweipoligen Umschalten einer Spannung_   
+_Bild 39: Platine zum zweipoligen Umschalten einer Spannung_   
 
 ![RW_5V_DPDT_STRG](/images/300_RW_5V_DPDT_STRG_V1.png "RW_5V_DPDT_STRG")   
-_Bild 39: Best&uuml;ckte Platine "300_RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
+_Bild 40: Best&uuml;ckte Platine "300_RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -619,13 +622,13 @@ Diese Platine dient zum Ansteuern und Anzeigen der Zust&auml;nde der Schaltplati
 * eine gr&uuml;ne LED links unten zur Anzeige einer Ausgangsspannung an den Pins NO (normally open) J5-Pin 5 f&uuml;r Vout+ und J5-Pin 6 f&uuml;r Vout-
 
 ![RW_5V_DPDT_LED](/images/300_DPDT_LED_front.png "RW_5V_DPDT_LED") ![RW_5V_DPDT_LED](/images/300_DPDT_LED_back.png "RW_5V_DPDT_LED")     
-_Bild 40: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
+_Bild 41: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
 
 ![RW_5V_DPDT_LED_circuit](/images/600_RW_5V_DPDT_LED_circuit.png "RW_5V_DPDT_LED_circuit")   
-_Bild 41: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
+_Bild 42: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
 
 ![Platine 2-poliges Umschalten](/images/pcb_f/PCB_F_RW_5V_DPDT_LED_V1.png "Platine 2-poliges Umschalten")   
-_Bild 42: Bedien-Platine zum 2-poligen Umschalten_   
+_Bild 43: Bedien-Platine zum 2-poligen Umschalten_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -661,7 +664,7 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 ### Test   
 Die Eingangsspannung IN+ und IN- sowie die Ausgangsspannung NC ("Normally Closed") bzw. NO ("Normally Open") des DPDT-Blocks liegen am 6-poligen Stecker J5 von RW_5V_DPDT_STRG.   
 ![Pinbelegung_DPDT-J5](/images/200_J5_pins_DPDT.png "Pinbelegung DPDT-J5")   
-_Bild 43: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
+_Bild 44: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
 
 1. Einstecken der LEDs: Die rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
 2. Aufsetzen des Prints _RW_5V_DPDT_LED_ auf die Steuerungsplatine _RW_5V_DPDT_STRG_.   
