@@ -1,11 +1,11 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 20.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 22.2.2025 <a name="up"></a><br>   
 <h1>Erweiterungen (Shields) f&uuml;r den ESP32</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # 1. Einleitung   
-Die Steuerung des RCC-Systems (Railway Component Control) erfolgt mit einem "ESP32 D1 Mini" Multiprozessor und Zusatzplatinen.   
+Die Steuerung des RCC-Systems (Railway Component Control) erfolgt mit einem "ESP32 D1 Mini" Multiprozessor und Zusatzplatinen. Die Zusatzplatinen dienen dazu, das DCC-Signal und den Taster einzulesen sowie die I²C-Busse für das Display und die PCF85745-Ein-Ausgabe-Expander bereitzustellen.   
 
 ## &Uuml;bersicht &uuml;ber die Zusatzplatinen
 Diese Seite beschreibt die Herstellung bzw. Best&uuml;ckung folgender Zusatzplatinen:   

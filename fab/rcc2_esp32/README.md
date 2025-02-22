@@ -1,11 +1,11 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-02-20 <a name="up"></a><br>   
+Last modified: 2025-02-22 <a name="up"></a><br>   
 <h1>ESP32 Shields</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
 # 1. Introduction   
-The RCC system (Railway Component Control) is controlled by an “ESP32 D1 Mini” multiprocessor and additional boards.   
+The RCC system (Railway Component Control) is controlled by an “ESP32 D1 Mini” multiprocessor and additional boards. The additional boards are used to read in the DCC signal and the pushbutton and to provide the I²C buses for the display and the PCF85745 input/output expanders.   
 
 ## Overview of the additional boards
 This page describes the production and assembly of the following additional boards:   

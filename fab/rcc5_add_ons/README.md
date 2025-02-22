@@ -1,17 +1,24 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-02-15 <a name="up"></a><br>   
-<h1>Additional boards</h1>
+Last modified: 2025-02-22 <a name="up"></a><br>   
+<h1>Add-on boards for the RCC system</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
 # 1. Introduction   
-The supplementary boards described here are used, for example, as a holder or for transferring ribbon cables with IDC connectors to pins or screw terminals.   
+Supplementary boards are boards that are not absolutely necessary for the operation of the RCC system, but make handling or wiring easier and clearer. For example, you can either tap the I²C signals of a block directly at the 10-pin connector J4 or use a 10-pin ribbon cable and the extension board `CON_10pol_PIN`.   
+The following add-on boards are helpful and are described on this page:     
+* [Bracket for switch blocks (RW_LEER_LED)](#x20)   
+* [Traction current distributor (CON_2pol_141) ](#x30)   
+* [Distributor board from 6-pin cable to 3 screw terminals (CON_6pol_3)](#x40)   
+
+
+* [Distributor board from 10-pin cable to pins (CON_10pol_PIN)](#x00)   
+
 
 <a name="x20"></a>   
 
-# 2 Block mounting board   
-The block mounting board is screwed onto the frame of a railroad module and 
-is used to attach a switching block (for points, uncouplers, traction current switches). It contains holes for LEDs and buttons/switches so that these can be inserted through the frame of the module to the operating side.   
+# 2. Bracket for switch blocks (RW_LEER_LED)   
+The bracket for switch blocks (block mounting board) is screwed with M 2,6 x 10 screws onto the frame of a railroad module and is used to attach a switching block (for points, uncouplers, traction current switches). It contains holes for LEDs and buttons/switches so that these can be inserted through the frame of the module to the operating side.   
 
 ![Mounted mounting board](/images/300_RW_LEER_LED.png "Mounting board mounted")   
 _Figure 1: Mounting boards for switching blocks mounted on a 3D-printed frame_   
@@ -34,46 +41,53 @@ _*Link to the KiCad files*_: [/fab/kicad/SRW_LEER_LED_V1](/fab/kicad/RW_LEER_LED
 1. soldering the two 8-pin female headers (with short contacts) at J1 and J2.   
 2. fasten the four M2 HEX spacers M2x10+3mm with M2 nuts.   
 
+### Versions
+* V1 (241022): OK   
+
 [To the top of the page](#up)   
 <a name="x30"></a>   
 
-# 3. distributor board from 10-pin cable to pins   
-This board is used to connect the 10-pin switching block input/output cable to the PCF8574-IO expander pins. The pins are grouped into four input and four output signals. There are also two connections each for 5V and ground. These are not normally required. Both the vertical and the angled version can be used as a 10-pin connector.   
+# 3. Traction current distributor `CON_2pol_141` 
+This circuit board is used to distribute two-pole signals such as traction current.   
 
-![CON_10pol_PIN](/images/200_CON_10pol_PIN.png "CON_10pol_PIN")   
-_Figure 3: The assembled “CON_10pol_PIN” board, once with a straight connector and once with a 90° rotated connector_   
+![CON_2pol_141](/images/200_CON_2pol_141.png "CON_2pol_141")   
+_Figure 3: The assembled “CON_2pol_141” circuit board_   
 
-![Terminal for I²C IO pins](/images/pcb_f/PCB_F_CON_10pol_PIN_V2.png "Terminal for I²C IO pins")   
-_Figure 4: Pins for I²C IO pins_   
+![CON_2pol_141_circuit](/images/200_CON_2pol_141_circuit.png "CON_2pol_141_circuit")   
+_Figure 4: Circuit diagram of the “CON_2pol_141” board_   
 
-_*Board size*_: 33 x 15 mm²   
-_*Link to the KiCad files*_: [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10pol_PIN_V2)   
+![Print distribution of two-pole signals](/images/pcb_f/PCB_F_CON_2pol_141_V1.png "Print distribution of two-pole signals")   
+_Figure 5: Board for distributing two-pole signals_   
+
+_*Board size*_: 57 x 21 mm²   
+_*Link to the KiCad files*_: [/fab/kicad/CON_2pol_141_V1](/fab/kicad/CON_2pol_141_V1)   
 
 ### Bill of materials
 | Quantity | Reference | Value | Note, Footprint |   
 |--------|-----------|-------------------|--------------------|   
-| 1 | J1 | 10-pin connector (Box_02x05_P2.54_Vertical) | _kh_library:Box_02x05_P2.54mm_Vertical_kh <br> e.g. from [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
-| 2 | J2, J3 | pin header 4-pin (Conn_01x04) | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh |   
-| 2 | J4, J5 | 2-pin pin header (Conn_01x02) | _kh_library:PinSocket_1x02_P2.54mm_Vertical_kh |   
+|    6   | J1,J2,J3,J4,J5,J6 | Screw terminal 3-pole (Screw_Terminal_01x03_P5) | _kh_library:Screw_Terminal_01x03_P5 <br> e.g. from [AliExpress](https://de.aliexpress.com/item/1005007145396958.html?spm=a2g0o.order_list.order_list_main.63.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
 
 ### Assembly   
-1. pin headers J2 to J5   
-2. tub connector J1   
+1. screw terminal J1 to J6   
+
+### Versions
+* V1 (250117): OK   
 
 [To the top of the page](#up)   
 <a name="x40"></a>   
 
-# 4. distributor board from 6-pin cable to 3 screw terminals   
+# 4. Distributor board from 6-pin cable to 3 screw terminals (CON_6pol_3)   
 This board is used to connect a two-way crossover, so only pins 1, 3 and 5 are led out. The wires of the crossover can be screwed on directly, whereby the middle connection is the common return conductor.   
+In version 2, the tub connector has been reversed so that the ribbon cable does not have to be twisted. This also reverses the order of the screw terminal pins.   
 
-![CON_6pol_3](/images/200_CON_6pol_3a.png "CON_6pol_3")   
-_Figure 5: The assembled “CON_6pol_3” board_   
+![CON_6pol_3_V1](/images/200_CON_6pol_3_V1.png "CON_6pol_3_V1") &nbsp; ![CON_6pol_3_V2](/images/200_CON_6pol_3_V2.png "CON_6pol_3_V2")   
+_Figure 6: The assembled “CON_6pol_3” board V1 (left) and V2 (right)_   
 
-![CON_6pol_3_circuit](/images/200_CON_6pol_3_circuit.png "CON_6pol_3_circuit")   
-_Figure 6: Circuit diagram of the “CON_6pol_3” board_   
+![CON_6pol_3_circuit_V1](/images/200_CON_6pol_3_V1_circuit.png "CON_6pol_3_circuit_V1") &nbsp; ![CON_6pol_3_circuit_V2](/images/200_CON_6pol_3_V2_circuit.png "CON_6pol_3_circuit_V2")   
+_Figure 7: Circuit diagrams of the “CON_6pol_3” board_   
 
-![Terminal for two-way turnout](/images/pcb_f/PCB_F_CON_6pol_3_V1.png "Terminal for two-way turnout")   
-_Figure 7: Circuit board connection terminal for two-way turnout_   
+![Terminal for two-way turnout V1](/images/pcb_f/PCB_F_CON_6pol_3_V1.png "Terminal for two-way turnout V1") &nbsp; ![Terminal for two-way turnout V2](/images/pcb_f/PCB_F_CON_6pol_3_V2.png "Terminal for two-way turnout V2")   
+_Figure 8: Circuit board connection terminal for two-way turnout V1 (left) and V2 (right)_   
 
 _*Board size*_: 25 x 18 mm²   
 _*Link to the KiCad files*_: [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_V1)   
@@ -88,10 +102,14 @@ _*Link to the KiCad files*_: [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_V1
 1. tub connector J5   
 2. screw terminal J6   
 
+### Versions
+* V1 (241104): OK, suitable for 0° and 90° connectors, twist ribbon cable   
+* V2 (250208): OK   
+
 [To the top of the page](#up)   
 <a name="x50"></a>   
 
-# 5. distributor board from 6-pin cable to 6 screw terminals   
+# 5. distributor board from 6-pin cable to 6 screw terminals (CON_6pol_6)   
 This board is used, for example, to connect three-way turnouts, as these have two turnout drives. The pins are grouped: the first three pins (pin1, pin3, pin5) belong to the first turnout drive, the second three (pin2, pin4, pin6) to the second drive.   
 
 ![CON_6pol_6](/images/200_CON_6pol_6.png "CON_6pol_6")   
@@ -117,32 +135,6 @@ Note: Instead of the two 3-pole screw terminals, three 2-pole terminals can also
 ### Assembly   
 1. tub connector J5   
 2. screw terminal J6, J7   
-
-[To the top of the page](#up)   
-<a name="x60"></a>   
-
-# 6. `CON_2pol_141` Traction current distributor
-This circuit board is used to distribute two-pole signals such as traction current.   
-
-![CON_2pol_141](/images/200_CON_2pol_141.png "CON_2pol_141")   
-_Figure 11: The assembled “CON_2pol_141” circuit board_   
-
-![CON_2pol_141_circuit](/images/200_CON_2pol_141_circuit.png "CON_2pol_141_circuit")   
-_Figure 12: Circuit diagram of the “CON_2pol_141” board_   
-
-![Print distribution of two-pole signals](/images/pcb_f/PCB_F_CON_2pol_141_V1.png "Print distribution of two-pole signals")   
-_Figure 13: Board for distributing two-pole signals_   
-
-_*Board size*_: 57 x 21 mm²   
-_*Link to the KiCad files*_: [/fab/kicad/CON_2pol_141_V1](/fab/kicad/CON_2pol_141_V1)   
-
-### Bill of materials
-| Quantity | Reference | Value | Note, Footprint |   
-|--------|-----------|-------------------|--------------------|   
-|    6   | J1,J2,J3,J4,J5,J6 | Screw terminal 3-pole (Screw_Terminal_01x03_P5) | _kh_library:Screw_Terminal_01x03_P5 <br> e.g. from [AliExpress](https://de.aliexpress.com/item/1005007145396958.html?spm=a2g0o.order_list.order_list_main.63.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
-
-### Assembly   
-1. screw terminal J1 to J6   
 
 [To the top of the page](#up)   
 <a name="x70"></a>   
@@ -199,5 +191,34 @@ _*Link to the KiCad files*_: [/fab/kicad/CON_2xIO_V1](/fab/kicad/CON_2xIO_V1)
 ### Assembly   
 1. tub connector J1, J2   
 2. screw terminal J3, J4, J5, J6   
+
+
+
+# 4. Distributor board from 10-pin cable to pins (CON_10pol_PIN)   
+This board is used to connect the 10-pin switching block input/output cable to the PCF8574-IO expander pins. The pins are grouped into four input and four output signals. There are also two connections each for 5V and ground. These are not normally required. Both the vertical and the angled version can be used as a 10-pin connector.   
+
+![CON_10pol_PIN](/images/200_CON_10pol_PIN.png "CON_10pol_PIN")   
+_Figure 3: The assembled “CON_10pol_PIN” board, once with a straight connector and once with a 90° rotated connector_   
+
+![Terminal for I²C IO pins](/images/pcb_f/PCB_F_CON_10pol_PIN_V2.png "Terminal for I²C IO pins")   
+_Figure 4: Pins for I²C IO pins_   
+
+_*Board size*_: 33 x 15 mm²   
+_*Link to the KiCad files*_: [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10pol_PIN_V2)   
+
+### Bill of materials
+| Quantity | Reference | Value | Note, Footprint |   
+|--------|-----------|-------------------|--------------------|   
+| 1 | J1 | 10-pin connector (Box_02x05_P2.54_Vertical) | _kh_library:Box_02x05_P2.54mm_Vertical_kh <br> e.g. from [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+| 2 | J2, J3 | pin header 4-pin (Conn_01x04) | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh |   
+| 2 | J4, J5 | 2-pin pin header (Conn_01x02) | _kh_library:PinSocket_1x02_P2.54mm_Vertical_kh |   
+
+### Assembly   
+1. pin headers J2 to J5   
+2. tub connector J1   
+
+[To the top of the page](#up)   
+<a name="x40"></a>   
+
 
 [To the top of the page](#up)   
