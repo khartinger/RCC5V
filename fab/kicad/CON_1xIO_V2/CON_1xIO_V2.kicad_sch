@@ -568,6 +568,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 114.3) (xy 224.79 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0cf71034-e1ff-4a5e-9d68-789e69f04699")
+	)
+	(wire
+		(pts
 			(xy 234.95 125.73) (xy 232.41 125.73)
 		)
 		(stroke
@@ -608,7 +618,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 147.32) (xy 213.36 147.32)
+			(xy 219.71 144.78) (xy 213.36 144.78)
 		)
 		(stroke
 			(width 0)
@@ -628,27 +638,17 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 113.03) (xy 224.79 130.81)
+			(xy 222.25 114.3) (xy 222.25 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "70ff94de-949a-491a-a41a-fae23c14361f")
+		(uuid "6c86aa99-16d2-4834-b235-6cfa7745932b")
 	)
 	(wire
 		(pts
-			(xy 222.25 113.03) (xy 222.25 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c795d31-6360-45d4-ba0a-a9544a6786f6")
-	)
-	(wire
-		(pts
-			(xy 224.79 143.51) (xy 224.79 146.05)
+			(xy 224.79 143.51) (xy 224.79 144.78)
 		)
 		(stroke
 			(width 0)
@@ -658,7 +658,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 119.38) (xy 228.6 146.05)
+			(xy 228.6 120.65) (xy 228.6 144.78)
 		)
 		(stroke
 			(width 0)
@@ -698,7 +698,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 143.51) (xy 219.71 147.32)
+			(xy 219.71 143.51) (xy 219.71 144.78)
 		)
 		(stroke
 			(width 0)
@@ -728,7 +728,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 146.05) (xy 224.79 146.05)
+			(xy 228.6 144.78) (xy 224.79 144.78)
 		)
 		(stroke
 			(width 0)
@@ -738,7 +738,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 147.32) (xy 213.36 124.46)
+			(xy 213.36 144.78) (xy 213.36 124.46)
 		)
 		(stroke
 			(width 0)
@@ -748,13 +748,25 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 119.38) (xy 228.6 119.38)
+			(xy 222.25 120.65) (xy 228.6 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f99076ce-59c5-4f53-9689-04120db5e117")
+	)
+	(text "V2"
+		(exclude_from_sim no)
+		(at 207.01 137.922 0)
+		(effects
+			(font
+				(size 2.032 2.032)
+				(thickness 0.4064)
+				(bold yes)
+			)
+		)
+		(uuid "bfb2df8f-e26e-47f6-b240-66d5ae695329")
 	)
 	(label "C-"
 		(at 205.74 127 0)
@@ -777,7 +789,7 @@
 		(uuid "584dab45-eb94-4712-a80b-595cc36b1cba")
 	)
 	(label "C1+"
-		(at 222.25 118.11 90)
+		(at 222.25 119.38 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -787,7 +799,7 @@
 		(uuid "76ad8c55-1b45-42b0-8800-48713b23f277")
 	)
 	(label "C1-"
-		(at 224.79 118.11 90)
+		(at 224.79 119.38 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -862,7 +874,7 @@
 	)
 	(symbol
 		(lib_id "_kh_library:Screw_Terminal_01x02_P5")
-		(at 222.25 107.95 90)
+		(at 222.25 109.22 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -870,7 +882,7 @@
 		(dnp no)
 		(uuid "07b98ca9-ae91-4b86-b833-f11e5c35afb1")
 		(property "Reference" "J3"
-			(at 218.948 108.204 90)
+			(at 218.948 109.474 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -878,7 +890,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x02_P5"
-			(at 212.852 104.648 90)
+			(at 222.758 104.394 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -886,7 +898,7 @@
 			)
 		)
 		(property "Footprint" "_kh_library:Screw_Terminal_01x02_P5"
-			(at 222.758 97.028 90)
+			(at 222.758 98.298 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -895,7 +907,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 222.25 107.95 0)
+			(at 222.25 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -904,7 +916,7 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x02"
-			(at 223.52 99.314 90)
+			(at 223.52 100.584 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1077,7 +1089,7 @@
 			)
 		)
 		(property "Value" "Box_02x03_P2.54_Vertical"
-			(at 216.154 151.13 90)
+			(at 221.488 149.352 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1157,7 +1169,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x02_P5"
-			(at 245.11 125.476 90)
+			(at 246.126 125.476 90)
 			(effects
 				(font
 					(size 1.27 1.27)

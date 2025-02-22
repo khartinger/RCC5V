@@ -205,6 +205,100 @@
 				)
 			)
 		)
+		(symbol "Graphic:SYM_Arrow_Small"
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(property "Reference" "#SYM"
+				(at 0 1.524 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "SYM_Arrow_Small"
+				(at 0.254 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Filled arrow, 160mil"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Enable" "0"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "symbol arrow"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SYM_Arrow_Small_0_1"
+				(polyline
+					(pts
+						(xy 1.524 0) (xy -2.032 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 0) (xy 0.762 -0.508) (xy 0.762 0.508) (xy 2.032 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+		)
 		(symbol "_kh_library:Box_02x05_P2.54_Vertical"
 			(pin_names
 				(offset 1.016) hide)
@@ -672,7 +766,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 121.92) (xy 222.25 106.68)
+			(xy 222.25 121.92) (xy 222.25 118.11)
 		)
 		(stroke
 			(width 0)
@@ -682,7 +776,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 121.92) (xy 214.63 109.22)
+			(xy 214.63 121.92) (xy 214.63 119.38)
 		)
 		(stroke
 			(width 0)
@@ -692,7 +786,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 106.68) (xy 232.41 106.68)
+			(xy 222.25 118.11) (xy 232.41 118.11)
 		)
 		(stroke
 			(width 0)
@@ -702,7 +796,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 134.62) (xy 224.79 143.51)
+			(xy 224.79 134.62) (xy 224.79 135.89)
 		)
 		(stroke
 			(width 0)
@@ -712,7 +806,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 144.78) (xy 204.47 144.78)
+			(xy 214.63 137.16) (xy 204.47 137.16)
 		)
 		(stroke
 			(width 0)
@@ -722,7 +816,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 144.78) (xy 222.25 144.78)
+			(xy 229.87 137.16) (xy 222.25 137.16)
 		)
 		(stroke
 			(width 0)
@@ -732,7 +826,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 106.68) (xy 212.09 106.68)
+			(xy 217.17 118.11) (xy 212.09 118.11)
 		)
 		(stroke
 			(width 0)
@@ -742,7 +836,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 143.51) (xy 217.17 143.51)
+			(xy 209.55 135.89) (xy 217.17 135.89)
 		)
 		(stroke
 			(width 0)
@@ -752,7 +846,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 102.87) (xy 209.55 143.51)
+			(xy 209.55 111.76) (xy 209.55 135.89)
 		)
 		(stroke
 			(width 0)
@@ -762,7 +856,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 109.22) (xy 237.49 109.22)
+			(xy 224.79 119.38) (xy 237.49 119.38)
 		)
 		(stroke
 			(width 0)
@@ -772,7 +866,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 109.22) (xy 207.01 109.22)
+			(xy 214.63 119.38) (xy 207.01 119.38)
 		)
 		(stroke
 			(width 0)
@@ -782,7 +876,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 102.87) (xy 229.87 144.78)
+			(xy 229.87 111.76) (xy 229.87 137.16)
 		)
 		(stroke
 			(width 0)
@@ -792,7 +886,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 144.78) (xy 222.25 134.62)
+			(xy 222.25 137.16) (xy 222.25 134.62)
 		)
 		(stroke
 			(width 0)
@@ -802,7 +896,7 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 109.22) (xy 237.49 102.87)
+			(xy 237.49 119.38) (xy 237.49 111.76)
 		)
 		(stroke
 			(width 0)
@@ -812,7 +906,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 102.87) (xy 204.47 144.78)
+			(xy 204.47 111.76) (xy 204.47 137.16)
 		)
 		(stroke
 			(width 0)
@@ -822,7 +916,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 102.87) (xy 207.01 109.22)
+			(xy 207.01 111.76) (xy 207.01 119.38)
 		)
 		(stroke
 			(width 0)
@@ -832,7 +926,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 121.92) (xy 217.17 106.68)
+			(xy 217.17 121.92) (xy 217.17 118.11)
 		)
 		(stroke
 			(width 0)
@@ -842,7 +936,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 143.51) (xy 217.17 134.62)
+			(xy 217.17 135.89) (xy 217.17 134.62)
 		)
 		(stroke
 			(width 0)
@@ -852,7 +946,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 121.92) (xy 224.79 109.22)
+			(xy 224.79 121.92) (xy 224.79 119.38)
 		)
 		(stroke
 			(width 0)
@@ -862,7 +956,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 102.87) (xy 234.95 143.51)
+			(xy 234.95 111.76) (xy 234.95 135.89)
 		)
 		(stroke
 			(width 0)
@@ -872,7 +966,7 @@
 	)
 	(wire
 		(pts
-			(xy 212.09 106.68) (xy 212.09 102.87)
+			(xy 212.09 118.11) (xy 212.09 111.76)
 		)
 		(stroke
 			(width 0)
@@ -882,7 +976,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 134.62) (xy 214.63 144.78)
+			(xy 214.63 134.62) (xy 214.63 137.16)
 		)
 		(stroke
 			(width 0)
@@ -892,7 +986,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 106.68) (xy 232.41 102.87)
+			(xy 232.41 118.11) (xy 232.41 111.76)
 		)
 		(stroke
 			(width 0)
@@ -902,13 +996,37 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 143.51) (xy 234.95 143.51)
+			(xy 224.79 135.89) (xy 234.95 135.89)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "fa9a135c-b6eb-4394-91d8-654c15c26606")
+	)
+	(text "OUT"
+		(exclude_from_sim no)
+		(at 216.662 115.062 0)
+		(effects
+			(font
+				(size 2.032 2.032)
+				(thickness 0.4064)
+				(bold yes)
+			)
+		)
+		(uuid "39ea74c0-b952-473c-b9a3-7b920fc377ea")
+	)
+	(text "IN"
+		(exclude_from_sim no)
+		(at 225.044 114.808 0)
+		(effects
+			(font
+				(size 2.032 2.032)
+				(thickness 0.4064)
+				(bold yes)
+			)
+		)
+		(uuid "473541b7-7bf8-4853-9ea1-9cd12724b8aa")
 	)
 	(symbol
 		(lib_id "_kh_library:MountingHole")
@@ -1039,33 +1157,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x04")
-		(at 209.55 97.79 270)
-		(mirror x)
+		(lib_id "Graphic:SYM_Arrow_Small")
+		(at 204.47 114.3 90)
 		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(dnp no)
-		(uuid "636b6200-3775-4781-92e1-676631820bf7")
-		(property "Reference" "J3"
-			(at 208.28 92.71 90)
+		(fields_autoplaced yes)
+		(uuid "1a0d9012-52a1-4add-a19d-0cf0a0ed2a97")
+		(property "Reference" "#SYM8"
+			(at 202.946 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "Conn_01x04"
-			(at 208.026 94.996 90)
+		(property "Value" "SYM_Arrow_Small"
+			(at 205.74 114.046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "_kh_library:PinSocket_1x04_P2.54mm_Vertical_kh"
-			(at 209.55 97.79 0)
+		(property "Footprint" ""
+			(at 204.47 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1074,7 +1194,197 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 97.79 0)
+			(at 204.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Filled arrow, 160mil"
+			(at 204.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "CON_10pol_2x4_V1"
+				(path "/dbe2f342-9c5b-4954-9614-e7315eb1d78c"
+					(reference "#SYM8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Graphic:SYM_Arrow_Small")
+		(at 207.01 114.3 90)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "48e8b4be-afca-4aa9-909c-d667ed881e22")
+		(property "Reference" "#SYM6"
+			(at 205.486 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SYM_Arrow_Small"
+			(at 208.28 114.046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 207.01 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 207.01 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Filled arrow, 160mil"
+			(at 207.01 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "CON_10pol_2x4_V1"
+				(path "/dbe2f342-9c5b-4954-9614-e7315eb1d78c"
+					(reference "#SYM6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Graphic:SYM_Arrow_Small")
+		(at 234.95 114.3 270)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "493114f8-e62d-4b43-81df-03ebc4effdac")
+		(property "Reference" "#SYM3"
+			(at 236.474 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SYM_Arrow_Small"
+			(at 233.68 114.554 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 234.95 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Filled arrow, 160mil"
+			(at 234.95 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "CON_10pol_2x4_V1"
+				(path "/dbe2f342-9c5b-4954-9614-e7315eb1d78c"
+					(reference "#SYM3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 209.55 106.68 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "636b6200-3775-4781-92e1-676631820bf7")
+		(property "Reference" "J3"
+			(at 215.392 106.934 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x04"
+			(at 208.026 103.886 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "_kh_library:PinSocket_1x04_P2.54mm_Vertical_kh"
+			(at 209.55 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 209.55 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1083,7 +1393,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 209.55 97.79 0)
+			(at 209.55 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1113,33 +1423,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x04")
-		(at 234.95 97.79 270)
-		(mirror x)
+		(lib_id "Graphic:SYM_Arrow_Small")
+		(at 209.55 114.3 90)
 		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(dnp no)
-		(uuid "95e917dc-636f-4aa9-a34d-332218a970c0")
-		(property "Reference" "J2"
-			(at 233.68 92.71 90)
+		(fields_autoplaced yes)
+		(uuid "7e1d6831-7159-4e49-90f1-6410fd3ec156")
+		(property "Reference" "#SYM7"
+			(at 208.026 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "Conn_01x04"
-			(at 233.68 94.996 90)
+		(property "Value" "SYM_Arrow_Small"
+			(at 210.82 114.046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "_kh_library:PinSocket_1x04_P2.54mm_Vertical_kh"
-			(at 234.95 97.79 0)
+		(property "Footprint" ""
+			(at 209.55 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1148,7 +1460,133 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 234.95 97.79 0)
+			(at 209.55 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Filled arrow, 160mil"
+			(at 209.55 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "CON_10pol_2x4_V1"
+				(path "/dbe2f342-9c5b-4954-9614-e7315eb1d78c"
+					(reference "#SYM7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Graphic:SYM_Arrow_Small")
+		(at 212.09 114.3 90)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "80d8a429-767f-4c00-b6c4-e8cc47f85a8c")
+		(property "Reference" "#SYM5"
+			(at 210.566 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SYM_Arrow_Small"
+			(at 213.36 114.046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.09 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 212.09 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Filled arrow, 160mil"
+			(at 212.09 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "CON_10pol_2x4_V1"
+				(path "/dbe2f342-9c5b-4954-9614-e7315eb1d78c"
+					(reference "#SYM5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 234.95 106.68 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "95e917dc-636f-4aa9-a34d-332218a970c0")
+		(property "Reference" "J2"
+			(at 226.314 106.934 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x04"
+			(at 233.68 103.886 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "_kh_library:PinSocket_1x04_P2.54mm_Vertical_kh"
+			(at 234.95 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 234.95 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1157,7 +1595,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 234.95 97.79 0)
+			(at 234.95 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1251,6 +1689,134 @@
 		)
 	)
 	(symbol
+		(lib_id "Graphic:SYM_Arrow_Small")
+		(at 232.41 114.3 270)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a0c14dcc-a605-4e27-bd33-b44a532032aa")
+		(property "Reference" "#SYM2"
+			(at 233.934 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SYM_Arrow_Small"
+			(at 231.14 114.554 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 232.41 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 232.41 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Filled arrow, 160mil"
+			(at 232.41 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "CON_10pol_2x4_V1"
+				(path "/dbe2f342-9c5b-4954-9614-e7315eb1d78c"
+					(reference "#SYM2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Graphic:SYM_Arrow_Small")
+		(at 229.87 114.3 270)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a5e3e3bf-0a5e-4d6f-b158-f0c4181635c6")
+		(property "Reference" "#SYM1"
+			(at 231.394 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SYM_Arrow_Small"
+			(at 228.6 114.554 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 229.87 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Filled arrow, 160mil"
+			(at 229.87 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "CON_10pol_2x4_V1"
+				(path "/dbe2f342-9c5b-4954-9614-e7315eb1d78c"
+					(reference "#SYM1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "_kh_library:MountingHole")
 		(at 236.22 161.29 0)
 		(unit 1)
@@ -1315,6 +1881,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Graphic:SYM_Arrow_Small")
+		(at 237.49 114.3 270)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c64d4d34-0ae2-41c7-beb1-bf277077a784")
+		(property "Reference" "#SYM4"
+			(at 239.014 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SYM_Arrow_Small"
+			(at 236.22 114.554 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 237.49 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 237.49 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Filled arrow, 160mil"
+			(at 237.49 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "CON_10pol_2x4_V1"
+				(path "/dbe2f342-9c5b-4954-9614-e7315eb1d78c"
+					(reference "#SYM4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "_kh_library:Box_02x05_P2.54_Vertical")
 		(at 222.25 127 270)
 		(unit 1)
@@ -1333,7 +1963,7 @@
 			)
 		)
 		(property "Value" "Box_02x05_P2.54_Vertical"
-			(at 211.328 116.078 0)
+			(at 195.834 112.522 0)
 			(effects
 				(font
 					(size 1.27 1.27)
