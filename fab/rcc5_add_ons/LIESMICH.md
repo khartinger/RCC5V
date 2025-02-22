@@ -10,11 +10,12 @@ Folgende Erg&auml;nzungsplatinen sind hilfreich und werden auf dieser Seite besc
 * [Halterung für Schaltblöcke (RW_LEER_LED)](#x20)   
 * [Fahrstromverteiler (CON_2pol_141)](#x30)   
 * [Verteilerplatine von 6-poligem Kabel auf 3 Schraubklemmen (CON_6pol_3)](#x40)   
-
-
-* [Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_PIN)](#x00)   
-
-
+*[Verteilerplatine von 6-poligem Kabel auf 6 Schraubklemmen (CON_6pol_6)](#x50)   
+* [Fahrstromschalter einfach (CON_1xIO)](#x60)   
+* [Fahrstromschalter zweifach (CON_2xIO)](#x70)   
+* [Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_2x4)](#x80)   
+* [Alte Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_PIN)](#x90)   
+   
 <a name="x20"></a>   
 
 # 2. Halterung für Schaltblöcke (RW_LEER_LED)   
@@ -111,15 +112,16 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_
 
 # 5. Verteilerplatine von 6-poligem Kabel auf 6 Schraubklemmen (CON_6pol_6)   
 Diese Platine wird z.B. zum Anschluss von Dreiwegweichen verwendet, da diese &uuml;ber zwei Weichenantriebe verf&uuml;gen. Die Pins sind gruppiert: die ersten drei Pins (Pin1, Pin3, Pin5) geh&ouml;ren zum ersten Weichenantrieb, die zweiten drei (Pin2, Pin4, Pin6) zum zweiten Antrieb.   
+Bei der Version 2 wurde der Wannenstecker umgedreht, damit das Flachbandkabel nicht verdreht werden muss. Damit dreht sich auch die Reihenfolge der Schraubklemmen-Pins um.   
 
-![CON_6pol_6](/images/200_CON_6pol_6.png "CON_6pol_6")   
-_Bild 11: Die best&uuml;ckte "CON_6pol_6"-Platine_   
+![CON_6pol_6_V1](/images/200_CON_6pol_6_V1.png "CON_6pol_6_V1") &nbsp; ![CON_6pol_6_V2](/images/200_CON_6pol_6_V2.png "CON_6pol_6_V2")   
+_Bild 9: Die best&uuml;ckte "CON_6pol_6"-Platine V1 (links) und V2 (rechts)_   
 
-![CON_6pol_6_circuit](/images/200_CON_6pol_6_circuit.png "CON_6pol_6_circuit")   
-_Bild 12: Schaltplan der "CON_6pol_6"-Platine_   
+![CON_6pol_6_V1_circuit](/images/200_CON_6pol_6_V1_circuit.png "CON_6pol_6_V1_circuit") &nbsp; ![CON_6pol_6_V2_circuit](/images/200_CON_6pol_6_V2_circuit.png "CON_6pol_6_V2_circuit")   
+_Bild 10: Schaltpläne der "CON_6pol_6"-Platine_   
 
-![Klemme f&uuml;r Dreiwegweiche](/images/pcb_f/PCB_F_CON_6pol_6_V1.png "Klemme f&uuml;r Dreiwegweiche")   
-_Bild 13: Anschlussklemme f&uuml;r Dreiwegweiche - Platine_   
+![Klemme f&uuml;r Dreiwegweiche V1](/images/pcb_f/PCB_F_CON_6pol_6_V1.png "Klemme f&uuml;r Dreiwegweiche V1") &nbsp; ![Klemme f&uuml;r Dreiwegweiche V2](/images/pcb_f/PCB_F_CON_6pol_6_V2.png "Klemme f&uuml;r Dreiwegweiche V2")   
+_Bild 11: Platine Anschlussklemme f&uuml;r Dreiwegweiche, V1 (links) und V2 (rechts)_   
 
 _*Platinengr&ouml;&szlig;e*_: 41 x 18 mm²   
 _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_6pol_6_V1](/fab/kicad/CON_6pol_6_V1)   
@@ -136,20 +138,24 @@ _Anmerkung_: Statt der beiden 3-poligen Schraubklemmen k&ouml;nnen auch drei 2-p
 1. Wannenstecker J5   
 2. Schraubklemmen J6, J7   
 
+### Versionen
+* V1 (241104): OK, geeignet für 0° und 90°-Stecker, Flachbandkabel verdrehen   
+* V2 (250208): OK   
+
 [Zum Seitenanfang](#up)   
-<a name="x70"></a>   
+<a name="x60"></a>   
 
-# 7. `CON_1xIO` Fahrstromschalter einfach
-Diese Platine vereinfacht den Anschluss eines Fahrstromschalters. Sie leitet den Fahrstrom zum 2IO-Block und stellt das geschaltete Stromsignal auf einer zweipoligen Schraubklemme zur Verf&uuml;gung.   
+# 6. Fahrstromschalter einfach (CON_1xIO)
+Diese Platine vereinfacht den Anschluss eines Fahrstrom-Schaltblocks. Sie leitet den Fahrstrom zum 2IO-Block und stellt das geschaltete Fahrstromsignal an einer zweipoligen Schraubklemme zur Verf&uuml;gung.   
 
-![CON_1xIO](/images/200_CON_1xIO.png "CON_1xIO")   
-_Bild 14: Die best&uuml;ckte "CON_1xIO"-Platine_   
+![CON_1xIO_V1](/images/200_CON_1xIO_V1.png "CON_1xIO_V1") &nbsp; ![CON_1xIO_V2](/images/200_CON_1xIO_V2.png "CON_1xIO_V2")   
+_Bild 12: Die best&uuml;ckte "CON_1xIO"-Platine V1 (links) und V2 (rechts)_   
 
-![CON_1xIO_circuit](/images/200_CON_1xIO_circuit.png "CON_1xIO_circuit")   
-_Bild 15: Schaltplan der "CON_1xIO"-Platine_   
+![CON_1xIO_V1_circuit](/images/200_CON_1xIO_V1_circuit.png "CON_1xIO_V1_circuit")   
+_Bild 13: Schaltplan der "CON_1xIO"-Platine_   
 
-![Print Fahrstromanschluss](/images/pcb_f/PCB_F_CON_1xIO_V1.png "Print Fahrstromanschluss")   
-_Bild 16: Platine zum Anschluss des geschalteten Fahrstroms_   
+![Print Fahrstromanschluss V1](/images/pcb_f/PCB_F_CON_1xIO_V1.png "Print Fahrstromanschluss V1") &nbsp; ![Print Fahrstromanschluss V2](/images/pcb_f/PCB_F_CON_1xIO_V2.png "Print Fahrstromanschluss V2")    
+_Bild 14: Platine zum Anschluss des geschalteten Fahrstroms V1 (links) und V2 (rechts)_   
 
 _*Platinengr&ouml;&szlig;e*_: 32 x 21 mm²   
 _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_1xIO_V1](/fab/kicad/CON_1xIO_V1)   
@@ -164,23 +170,28 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_1xIO_V1](/fab/kicad/CON_1xIO_V1)
 1. Wannenstecker J1   
 2. Schraubklemmen J3, J5, J6   
 
-[Zum Seitenanfang](#up)   
-<a name="x80"></a>   
+### Versionen
+* V1 (250117): OK, geeignet für 0° und 90°-Stecker, Flachbandkabel verdrehen   
+* V2 (250208): OK   
 
-# 8. `CON_2xIO` Fahrstromschalter doppelt
+[Zum Seitenanfang](#up)   
+<a name="x70"></a>   
+
+# 7. Fahrstromschalter zweifach (CON_2xIO)   
 Diese Platine vereinfacht den Anschluss von Fahrstromschaltern. Sie leitet den Fahrstrom zu zwei 2IO-Bl&ouml;cken und stellt das geschaltete Stromsignal auf zwei zweipoligen Schraubklemmen zur Verf&uuml;gung.   
 
-![CON_2xIO](/images/200_CON_2xIO.png "CON_2xIO")   
-_Bild 17: Die best&uuml;ckte "CON_2xIO"-Platine_   
+![CON_2xIO_V1](/images/200_CON_2xIO_V1.png "CON_2xIO_V1") &nbsp; ![CON_2xIO_V2](/images/200_CON_2xIO_V2.png "CON_2xIO_V2")   
+_Bild 15: Die best&uuml;ckte "CON_2xIO"-Platine V1 (links) und V2 (rechts)_   
 
-![CON_2xIO_circuit](/images/200_CON_2xIO_circuit.png "CON_2xIO_circuit")   
-_Bild 18: Schaltplan der "CON_2xIO"-Platine_   
+![CON_2xIO_circuit_V1](/images/200_CON_2xIO_V1_circuit.png "CON_2xIO_circuit_V1")   
+_Bild 16: Schaltplan der "CON_2xIO"-Platine_   
 
-![Print 2x Fahrstromanschluss](/images/pcb_f/PCB_F_CON_2xIO_V1.png "Print 2x Fahrstromanschluss")   
-_Bild 19: Platine zum Anschluss zweier geschalteten Fahrstr&ouml;me_   
+![Print 2x Fahrstromanschluss V1](/images/pcb_f/PCB_F_CON_2xIO_V1.png "Print 2x Fahrstromanschluss V1") &nbsp; ![Print 2x Fahrstromanschluss V2](/images/pcb_f/PCB_F_CON_2xIO_V2.png "Print 2x Fahrstromanschluss V2")    
+_Bild 17: Platinen zum Anschluss zweier geschalteten Fahrstr&ouml;me_   
 
 _*Platinengr&ouml;&szlig;e*_: 47 x 21 mm²   
-_*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_2xIO_V1](/fab/kicad/CON_2xIO_V1)   
+_*Link zu den KiCad-Dateien*_: [Version 1 /fab/kicad/CON_2xIO_V1](/fab/kicad/CON_2xIO_V1)   
+   [Version 2 /fab/kicad/CON_2xIO_V2](/fab/kicad/CON_2xIO_V2)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz  | Wert              | Geh&auml;use            |   
@@ -192,18 +203,56 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_2xIO_V1](/fab/kicad/CON_2xIO_V1)
 1. Wannenstecker J1, J2   
 2. Schraubklemmen J3, J4, J5, J6   
 
+### Versionen
+* V1 (250117): OK, geeignet für 0° und 90°-Stecker, Flachbandkabel verdrehen   
+* V2 (250208): OK   
+
+[Zum Seitenanfang](#up)   
+<a name="x80"></a>   
+
+# 8. Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_2x4)   
+Diese Platine dient zum Umsetzen eines 10-poligen Flachbandkabels vom Schaltblock-Wannenstecker J4 auf Pins. Die Pins sind auf zwei Vierer-Gruppen aufgeteilt (Eingang und Ausgang), damit der Anschluss an die Pins der PCF8574-I/O-Expander leichter ist.   
+
+![CON_10pol_2x4_V1](/images/300_CON_10pol_2x4_V1.png "CON_10pol_2x4_V1")   
+_Bild 18: Die best&uuml;ckte Platine CON_10pol_2x4_   
+
+![CON_10pol_2x4_V1_circuit](/images/200_CON_10pol_2x4_V1_circuit.png "CON_10pol_2x4_V1_circuit")   
+_Bild 19: Schaltplan der "CON_2xIO"-Platine_   
+
+![Print zum Verteilen der Leitungen des 10-poligen Kabels V1](/images/pcb_f/PCB_F_CON_10pol_2x4_V1.png "Print zum Verteilen der Leitungen des 10-poligen Kabels V1")   
+_Bild 20: Platine zum Verteilen der Leitungen des 10-poligen Flachbandkabels von J4_   
+
+_*Platinengr&ouml;&szlig;e*_: 30 x 15 mm²   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_10pol_2x4_V1](/fab/kicad/CON_10pol_2x4_V1)   
+
+### St&uuml;ckliste   
+| Anzahl | Referenz  | Wert              | Geh&auml;use            |   
+|--------|-----------|-------------------|--------------------|   
+|    1   | J1        | Wannenstecker 10-polig (Box_02x05_P2.54_Vertical) | _kh_library:Box_02x05_P2.54mm_Vertical_kh <br> zB von [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+|    2   | J2, J3    | Stiftleiste 4-polig (Conn_01x04) | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh |   
+
+### Vorbereitung
+* Herunterschneiden von zweimal vier Pins von einer (zB 40-poligen) geraden Stiftleiste.   
+
+### Best&uuml;ckung   
+1. Stiftleisten J2, J3   
+2. Wannenstecker J1   
+
+### Versionen
+* V1 (250208): OK   
+
 [Zum Seitenanfang](#up)   
 <a name="x90"></a>   
 
-# 4. Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_PIN)   
+# 9. Alte Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_PIN)   
 Diese Platine dient zum Verbinden des 10-poligen Schaltblock-Ein-/Ausgang-Kabels mit den PCF8574-IO-Expander-Pins. Die Pins sind in je vier Eingangs- und Ausgangssignale gruppiert. Weiters sind je zwei Anschl&uuml;sse f&uuml;r 5V und Masse vorhanden. Diese werden im Normalfall nicht ben&ouml;tigt. Als 10-poliger Wannenstecker kann sowohl die senkrechte als auch die abgewinkelte Variante verwendet werden.   
 Statt dieser Platine sollte die Platine CON_10pol_2x4 verwendet werden, da bei dieser das 10-polige Kabel nicht verdreht werden muss.   
 
 ![CON_10pol_PIN](/images/200_CON_10pol_PIN.png "CON_10pol_PIN")   
-_Bild 6: Die best&uuml;ckte "CON_10pol_PIN"-Platine, einmal mit geradem und einmal mit 90° gedrehtem Stecker_   
+_Bild 21: Die best&uuml;ckte "CON_10pol_PIN"-Platine, einmal mit geradem und einmal mit 90° gedrehtem Stecker_   
 
 ![Klemme f&uuml;r I²C-IO-Pins](/images/pcb_f/PCB_F_CON_10pol_PIN_V2.png "Klemme f&uuml;r I²C-IO-Pins")   
-_Bild 7: Stifte f&uuml;r I²C-IO-Pins_   
+_Bild 22: Platine zum Verteilen der Leitungen des 10-poligen Flachbandkabels von J4 mit 5V/0V-Pins_   
 
 _*Platinengr&ouml;&szlig;e*_: 33 x 15 mm²   
 _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10pol_PIN_V2)   

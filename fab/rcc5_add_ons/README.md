@@ -10,10 +10,11 @@ The following add-on boards are helpful and are described on this page:
 * [Bracket for switch blocks (RW_LEER_LED)](#x20)   
 * [Traction current distributor (CON_2pol_141) ](#x30)   
 * [Distributor board from 6-pin cable to 3 screw terminals (CON_6pol_3)](#x40)   
-
-
-* [Distributor board from 10-pin cable to pins (CON_10pol_PIN)](#x00)   
-
+* [Distributor board from 6-pin cable to 6 screw terminals (CON_6pol_6)](#x50)   
+* [Traction current switch simple (CON_1xIO)](#x60)   
+* [Double traction current switch (CON_2xIO)](#x70)   
+* [Distributor board from 10-pin cable to pins (CON_10pol_2x4)](#x80)   
+* [Old distributor board from 10-pin cable to pins (CON_10pol_PIN)](#x90)   
 
 <a name="x20"></a>   
 
@@ -109,17 +110,18 @@ _*Link to the KiCad files*_: [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_V1
 [To the top of the page](#up)   
 <a name="x50"></a>   
 
-# 5. distributor board from 6-pin cable to 6 screw terminals (CON_6pol_6)   
+# 5. Distributor board from 6-pin cable to 6 screw terminals (CON_6pol_6)   
 This board is used, for example, to connect three-way turnouts, as these have two turnout drives. The pins are grouped: the first three pins (pin1, pin3, pin5) belong to the first turnout drive, the second three (pin2, pin4, pin6) to the second drive.   
+In version 2, the tub connector has been reversed so that the ribbon cable does not have to be twisted. This also reverses the order of the screw terminal pins.   
 
-![CON_6pol_6](/images/200_CON_6pol_6.png "CON_6pol_6")   
-_Figure 8: The assembled “CON_6pol_6” board_   
+![CON_6pol_6_V1](/images/200_CON_6pol_6_V1.png "CON_6pol_6_V1") &nbsp; ![CON_6pol_6_V2](/images/200_CON_6pol_6_V2.png "CON_6pol_6_V2")   
+_Figure 9: The assembled “CON_6pol_6” board V1 (left) and V2 (right)_   
 
-![CON_6pol_6_circuit](/images/200_CON_6pol_6_circuit.png "CON_6pol_6_circuit")   
-_Figure 9: Circuit diagram of the “CON_6pol_6” board_   
+![CON_6pol_6_V1_circuit](/images/200_CON_6pol_6_V1_circuit.png "CON_6pol_6_V1_circuit") &nbsp; ![CON_6pol_6_V2_circuit](/images/200_CON_6pol_6_V2_circuit.png "CON_6pol_6_V2_circuit")   
+_Figure 10: Circuit diagram of the “CON_6pol_6” board_   
 
-![Terminal for three-way turnout](/images/pcb_f/PCB_F_CON_6pol_6_V1.png "Terminal for three-way turnout")   
-_Figure 10: Connection terminal for three-way diverter switch_   
+![Terminal for three-way turnout V1](/images/pcb_f/PCB_F_CON_6pol_6_V1.png "Terminal for three-way turnout V1") &nbsp; ![Terminal for three-way turnout V2](/images/pcb_f/PCB_F_CON_6pol_6_V2.png "Terminal for three-way turnout V2")  
+_Figure 11: Circuit boards for connection terminal for three-way diverter switch, V1 (left) and V2 (right)_   
 
 _*Board size*_: 41 x 18 mm²   
 _*Link to the KiCad files*_: [/fab/kicad/CON_6pol_6_V1](/fab/kicad/CON_6pol_6_V1)   
@@ -136,20 +138,24 @@ Note: Instead of the two 3-pole screw terminals, three 2-pole terminals can also
 1. tub connector J5   
 2. screw terminal J6, J7   
 
-[To the top of the page](#up)   
-<a name="x70"></a>   
+### Versions
+* V1 (241104): OK, suitable for 0° and 90° connectors, twist ribbon cable   
+* V2 (250208): OK   
 
-# 7. `CON_1xIO` Traction current switch simple
+[To the top of the page](#up)   
+<a name="x60"></a>   
+
+# 6. Traction current switch simple (CON_1xIO)
 This circuit board simplifies the connection of a traction current switch. It conducts the traction current to the 2IO block and makes the switched current signal available on a two-pole screw terminal.   
 
-![CON_1xIO](/images/200_CON_1xIO.png "CON_1xIO")   
-_F_igure 14: The assembled “CON_1xIO” board_   
+![CON_1xIO_V1](/images/200_CON_1xIO_V1.png "CON_1xIO_V1")  &nbsp; ![CON_1xIO_V2](/images/200_CON_1xIO_V2.png "CON_1xIO_V2")   
+_Figure 12: The assembled “CON_1xIO” board V1 (left) and V2 (right)_   
 
-![CON_1xIO_circuit](/images/200_CON_1xIO_circuit.png "CON_1xIO_circuit")   
-_Figure 15: Circuit diagram of the “CON_1xIO” board_   
+![CON_1xIO_V1_circuit](/images/200_CON_1xIO_V1_circuit.png "CON_1xIO_V1_circuit")   
+_Figure 13: Circuit diagram of the “CON_1xIO” board_   
 
-![Print traction current connection](/images/pcb_f/PCB_F_CON_1xIO_V1.png "Print traction current connection")   
-_Figure 16: Circuit board for connecting the switched traction current_   
+![Print traction current connection V1](/images/pcb_f/PCB_F_CON_1xIO_V1.png "Print traction current connection V1") &nbsp; ![Print traction current connection V2](/images/pcb_f/PCB_F_CON_1xIO_V2.png "Print traction current connection V2")   
+_Figure 14: Circuit boards for connecting the switched traction current_   
 
 _*Board size*_: 32 x 21 mm²   
 _*Link to the KiCad files*_: [/fab/kicad/CON_1xIO_V1](/fab/kicad/CON_1xIO_V1)   
@@ -164,23 +170,28 @@ _*Link to the KiCad files*_: [/fab/kicad/CON_1xIO_V1](/fab/kicad/CON_1xIO_V1)
 1. tub connector J1   
 2. screw terminal J3, J5, J6   
 
-[To the top of the page](#up)   
-<a name="x80"></a>   
+### Versions
+* V1 (250117): OK, suitable for 0° and 90° connectors, twist ribbon cable   
+* V2 (250208): OK   
 
-# 8. `CON_2xIO` Double traction current switch
+[To the top of the page](#up)   
+<a name="x70"></a>   
+
+# 7. Traction current switch double (CON_2xIO)
 This circuit board simplifies the connection of traction current switches. It conducts the traction current to two 2IO blocks and makes the switched current signal available on two two-pole screw terminals.   
 
-![CON_2xIO](/images/200_CON_2xIO.png "CON_2xIO")   
-_Figure 17: The assembled “CON_2xIO” board_   
+![CON_2xIO_V1](/images/200_CON_2xIO_V1.png "CON_2xIO_V1") &nbsp; ![CON_2xIO_V2](/images/200_CON_2xIO_V2.png "CON_2xIO_V2")   
+_Figure 15: The assembled “CON_2xIO” board V1 (left) and V2 (right)_   
 
 ![CON_2xIO_circuit](/images/200_CON_2xIO_circuit.png "CON_2xIO_circuit")   
-_Figure 18: Circuit diagram of the “CON_2xIO” board_   
+_Figure 16: Circuit diagram of the “CON_2xIO” board_   
 
-![Print 2x traction current connection](/images/pcb_f/PCB_F_CON_2xIO_V1.png "Print 2x traction current connection")   
-_Figure 19: Circuit board for connecting two switched traction currents_   
+![Print 2x traction current connection V1](/images/pcb_f/PCB_F_CON_2xIO_V1.png "Print 2x traction current connection V1") &nbsp; ![Print 2x traction current connection V2](/images/pcb_f/PCB_F_CON_2xIO_V2.png "Print 2x traction current connection V2")   
+_Figure 17: Circuit boards for connecting two switched traction currents_   
 
 _*Board size*_: 47 x 21 mm²   
-_*Link to the KiCad files*_: [/fab/kicad/CON_2xIO_V1](/fab/kicad/CON_2xIO_V1)   
+_*Link to the KiCad files*_: [Version 1: /fab/kicad/CON_2xIO_V1](/fab/kicad/CON_2xIO_V1)   
+[Version 2: /fab/kicad/CON_2xIO_V2](/fab/kicad/CON_2xIO_V2)    
 
 ### Bill of materials
 | Quantity | Reference | Value | Note, Footprint |   
@@ -192,16 +203,56 @@ _*Link to the KiCad files*_: [/fab/kicad/CON_2xIO_V1](/fab/kicad/CON_2xIO_V1)
 1. tub connector J1, J2   
 2. screw terminal J3, J4, J5, J6   
 
+### Versions
+* V1 (250117): OK, suitable for 0° and 90° connectors, twist ribbon cable   
+* V2 (250208): OK   
 
+[To the top of the page](#up)   
+<a name="x80"></a>   
 
-# 4. Distributor board from 10-pin cable to pins (CON_10pol_PIN)   
-This board is used to connect the 10-pin switching block input/output cable to the PCF8574-IO expander pins. The pins are grouped into four input and four output signals. There are also two connections each for 5V and ground. These are not normally required. Both the vertical and the angled version can be used as a 10-pin connector.   
+# 8. Distributor board from 10-pin cable to pins (CON_10pol_2x4)   
+This board is used to convert a 10-pin ribbon cable from the J4 switch block connector to pins. The pins are divided into two groups of four (input and output) to make it easier to connect to the pins of the PCF8574 I/O expander.   
+
+![CON_10pol_2x4_V1](/images/300_CON_10pol_2x4_V1.png "CON_10pol_2x4_V1")   
+_Figure 18: The assembled CON_10pol_2x4_circuit board_   
+
+![CON_10pol_2x4_V1_circuit](/images/200_CON_10pol_2x4_V1_circuit.png "CON_10pol_2x4_V1_circuit")   
+_Figure 19: Circuit diagram of the “CON_2xIO” board_   
+
+![Print for distributing the lines of the 10-pin cable V1](/images/pcb_f/PCB_F_CON_10pol_2x4_V1.png "Print for distributing the lines of the 10-pin cable V1")   
+_Figure 20: Board for distributing the lines of the 10-pin ribbon cable from J4_   
+
+_*Board size*_: 30 x 15 mm²   
+_*Link to the KiCad files*_: [/fab/kicad/CON_10pol_2x4_V1](/fab/kicad/CON_10pol_2x4_V1)   
+
+### Bill of materials
+| Quantity | Reference | Value | Note, Footprint |   
+|--------|-----------|-------------------|--------------------|   
+| 1 | J1 | 10-pin connector (Box_02x05_P2.54_Vertical) | _kh_library:Box_02x05_P2.54mm_Vertical_kh <br> e.g. from [AliExpress](https://de.aliexpress.com/item/1005006804603387.html?spm=a2g0o.order_list.order_list_main.130.2dc65c5fS73c6M&gatewayAdapt=glo2deu) |   
+| 2 | J2, J3 | pin header 4-pin (Conn_01x04) | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh |   
+
+### Preparation
+* Cut four pins twice from a (e.g. 40-pin) straight pin header.   
+
+### Assembly   
+1. pin headers J2 to J5   
+2. tub connector J1   
+
+### Versions
+* V1 (250208): OK   
+
+[To the top of the page](#up)   
+<a name="x90"></a>   
+
+# 9. Old Distributor board from 10-pin cable to pins (CON_10pol_PIN)   
+This circuit board is used to connect the 10-pin switching block input/output cable to the PCF8574-IO expander pins. The pins are grouped into four input and four output signals. There are also two connections each for 5V and ground. These are not normally required. Both the vertical and the angled version can be used as a 10-pin connector.   
+The CON_10pol_2x4 board should be used instead of this board, as the 10-pin cable does not have to be twisted.   
 
 ![CON_10pol_PIN](/images/200_CON_10pol_PIN.png "CON_10pol_PIN")   
-_Figure 3: The assembled “CON_10pol_PIN” board, once with a straight connector and once with a 90° rotated connector_   
+_Figure 21: The assembled “CON_10pol_PIN” board, once with a straight connector and once with a 90° rotated connector_   
 
 ![Terminal for I²C IO pins](/images/pcb_f/PCB_F_CON_10pol_PIN_V2.png "Terminal for I²C IO pins")   
-_Figure 4: Pins for I²C IO pins_   
+_Figure 22: Board for distributing the lines of the 10-pin ribbon cable from J4 with 5V/0V-Pins_   
 
 _*Board size*_: 33 x 15 mm²   
 _*Link to the KiCad files*_: [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10pol_PIN_V2)   
@@ -216,9 +267,5 @@ _*Link to the KiCad files*_: [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10pol_
 ### Assembly   
 1. pin headers J2 to J5   
 2. tub connector J1   
-
-[To the top of the page](#up)   
-<a name="x40"></a>   
-
 
 [To the top of the page](#up)   
