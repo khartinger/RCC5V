@@ -451,7 +451,7 @@ _Zum Beispiel:_
 * gelb: R1 von J4-7 zum Voltmeter COM (-)   
 
 ![1OUT Testverkabelung](/images/300_1OUT_test_wiring.png "1OUT Testverkabelung") &nbsp; ![1OUT Testverkabelung2](/images/300_1OUT_test_wiring_img2.png "1OUT Testverkabelung2")   
-_Bild 31: Verkabelung zum Testen des 2IO-Blocks_   
+_Bild 31: Verkabelung zum Testen des 1OUT-Blocks_   
 
 Statt der beiden eingezeichneten Voltmeter kann nat&uuml;rlich auch nur eines verwendet werden.   
 
