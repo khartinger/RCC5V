@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 21.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 23.2.2025 <a name="up"></a><br>   
 <h1>Herstellung von RCC Schaltbl&ouml;cken</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -162,7 +162,7 @@ _Bild 14: L&ouml;tseite der best&uuml;ckten Platine "RW_5V_W2_LED" zum Schalten 
 
 ## Vorbereitung
 1. Von einer langen, einreihigen Buchsenleiste 6x 2-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D6).   
-2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
 3. 10 mm-Tasterkn&ouml;pfe SW1/SW3 (gelb), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ### Best&uuml;ckung   
@@ -277,7 +277,7 @@ _Bild 21: Best&uuml;ckte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der
    
 ## Vorbereitung
 1. Von einer langen, einreihigen Buchsenleiste 6x 2-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D6).   
-2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
 3. 10 mm-Tasterkn&ouml;pfe SW1, SW3 (gelb), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ### Best&uuml;ckung   
@@ -406,15 +406,18 @@ _Bild 29: Die best&uuml;ckte "RW_5V_1OUT_LED"-Platine_
 
 ## Vorbereitung
 1. Von einer langen, einreihigen Buchsenleiste 3x 2-polige St&uuml;cke abtrennen (f&uuml;r D1, D3, D5).   
-2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
 3. 10 mm-Tasterknopf SW2 (wei&szlig;) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
+
+![RW_5V_1IO_LED_parts](/images/300_RW_5V_1IO_LED_parts.png "RW_5V_1IO_LED_parts")   
+_Bild 30: Bauteile der "RW_5V_1IO_LED"-Platine_   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D5) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
 Auf die _*Bauteilseite*_ l&ouml;ten:   
 
-2. Widerstand R5 (liegend)   
+2. Widerstand R5 (1 k&Omega; liegend)   
 3. Transistor Q1   
 4. Alle anderen Widerst&auml;nde   
 5. Buchsenleisten J1 und J2   
@@ -423,16 +426,52 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 
 6. Taster SW2   
    
+<a name="x43"></a>   
 
-### Test   
-1. Einstecken der LEDs, die rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
-2. Aufsetzen des Prints _RW_5V_1OUT_LED_ auf die Steuerungsplatine _RW_5V_1OUT_STRG_.   
-3. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_1OUT_STRG_.   
-4. Anschluss des Entkupplers an Pin 3 und Pin 5 von J5 der Steuerungplatine _RW_5V_1OUT_STRG_.   
-5. Bet&auml;tigen des Tasters: der Entkuppler sollte arbeiten.   
+## 4.3 Zusammenbau des 1OUT-Blocks
+1. Aufstecken des Steuerungsprints `RW_5V_1OUT_STRG` auf die Anzeigeplatine `RW_5V_1OUT_LED`.   
+2. Einstecken der LEDs. F&uuml;r alle LEDs gilt: Anode = Pluspol = rot markiert immer __nach au&szlig;en__ zum Leiterplattenrand.   
+3. Aufstecken des Schalter-Knopfes.   
+4. Falls vorhanden: Print `RW_LEER_LED` auf den Anzeigeprint stecken.   
+
+### 4.4 Test des 1OUT-Blocks   
+Der Test kann auf zwei Arten erfolgen.   
+
+### "Labor-Test" mit 5V
+F&uuml;r diesen Test ben&ouml;tigt man ein 5V-Netzteil, 9 St&uuml;ck einzelne Kabel Stecker auf Buchse sowie ein Voltmeter. Die Verkabelung entsprechend dem Bild durchf&uuml;hren, wobei die Buchsen der Leitungen direkt auf die Stifte der 6- bzw. 10-poligen Wannenstecker gesteckt werden k&ouml;nnen.   
+_Zum Beispiel:_   
+* rot: 5 V vom Netzteil nach J3-1 (5V)   
+* rot: 5 V vom Netzteil nach J3-6 (V+)   
+* braun: 0 V vom Netzteil nach J3-3 (0V)   
+* braun: 0 V vom Netzteil nach J3-4 (V-)   
+* gr&uuml;n: OUT+ von J5-5 zum Voltmeter +   
+* blau: OUT- von J5-3 zum Voltmeter COM (-)   
+* wei&szlig;: S1 von J4-1 nach au&szlig;en   
+* schwarz: 0V von J4-5 nach au&szlig;en   
+* gelb: R1 von J4-7 zum Voltmeter COM (-)   
+
+![1OUT Testverkabelung](/images/300_1OUT_test_wiring.png "1OUT Testverkabelung") &nbsp; ![1OUT Testverkabelung2](/images/300_1OUT_test_wiring_img2.png "1OUT Testverkabelung2")   
+_Bild 31: Verkabelung zum Testen des 2IO-Blocks_   
+
+Statt der beiden eingezeichneten Voltmeter kann nat&uuml;rlich auch nur eines verwendet werden.   
+
+1. Anlegen der 5V-Spannung: Die obere, rote LED leuchtet.   
+2. Den Remote-Set-Eingang S1 (Pin J4-1) mit 0V (Pin J4-5) verbinden: Das Relais schaltet, die rote LED erlischt, die gr&uuml;ne LED leuchtet.   
+3. Den Taster bet&auml;tigen: Die gelbe LED und die grüne LED leuchten.   
+
+* Das obere Voltmeter ("zum Entkuppler") zeigt immer 5 V an, wenn die gr&uuml;ne LED leuchtet.   
+* Das R&uuml;ckmeldesignal R1 (Voltmeter "R&uuml;ckmeldung") zeigt immer 5 V an, wenn die gr&uuml;ne LED leuchtet.   
+Das bedeutet: Kein Ausgangssignal ergibt die R&uuml;ckmeldung R1 = 0 V.   
+
+__Im Fehlerfall__, falls die Versorgungs-(Wechsel-)spannung V+ ausfällt, leuchtet zwar die rote LED, aber beim Drücken des Tasters leuchten die gelbe und die rote LED. Die grüne LED leuchtet nicht, d.h., es gibt keine Spannung am Ausgang.   
+
+### Test unter realen Bedingungen
+1. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_1OUT_STRG_.   
+2. Anschluss des Entkupplers an J5-Pin 3 (OUT-) und J5-Pin 5 (OUT+).
+3. Bet&auml;tigen des Tasters: der Entkuppler sollte arbeiten.   
 
 ![Pinbelegung_1OUT-J5](/images/200_J5_pins_1OUT.png "Pinbelegung 1OUT-J5")   
-_Bild 30: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_   
+_Bild 32: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_   
 
 ### Versionen
 * V1 (241022): spiegelverkehrte Anordnung der LEDs.   
@@ -447,13 +486,13 @@ _Bild 30: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_
 Diese Platine dient zum Ein- und Ausschalten des Fahrstroms f&uuml;r ein Gleis von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber einen Optokoppler.   
 
 ![RW_5V_2IO_STRG_circuit](/images/600_RW_5V_2IO_STRG_circuit.png "RW_5V_2IO_STRG_circuit")   
-_Bild 31: Schaltplan der "RW_5V_2IO_STRG"-Platine_   
+_Bild 33: Schaltplan der "RW_5V_2IO_STRG"-Platine_   
 
 ![Platine Fahrstrom-Abschaltung](/images/pcb_f/PCB_F_RW_5V_2IO_STRG_V1.png "Platine Fahrstrom-Abschaltung")   
-_Bild 32: Platine zum Schalten des Fahrstroms_   
+_Bild 34: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_STRG](/images/300_RW_5V_2IO_STRG_V1.png "RW_5V_2IO_STRG")   
-_Bild 33: Best&uuml;ckte Platine "300_RW_5V_2IO_STRG" zum Schalten des Fahrstroms_   
+_Bild 35: Best&uuml;ckte Platine "300_RW_5V_2IO_STRG" zum Schalten des Fahrstroms_   
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -478,7 +517,7 @@ __St&uuml;ckliste__
    
 
 ![RW_5V_2IO_STRG_parts](/images/300_RW_5V_2IO_STRG_parts.png "RW_5V_2IO_STRG_parts")   
-_Bild 34: Bauteile der "RW_5V_2IO_STRG"-Platine_   
+_Bild 36: Bauteile der "RW_5V_2IO_STRG"-Platine_   
 
 ### Best&uuml;ckung   
 1. IC-Fassung 4-polig (oder 2x Buchsenleiste mit 2 Pins)   
@@ -507,13 +546,13 @@ Im Ruhezustand (beide _*Schalter*_ nicht gedr&uuml;ckt) leuchtet die gelbe LED u
 Wird der Schalter "AUS" bet&auml;tigt, ist der Fahrstrom auf jeden Fall ausgeschaltet, bei "EIN" (ohne "AUS") ist der Fahrstrom eingeschaltet. Sind beide Schalter nicht bet&auml;tigt, erfolgt die Steuerung &uuml;ber den I²C-Bus.   
 
 ![RW_5V_2IO_LED_circuit](/images/600_RW_5V_2IO_LED_circuit.png "RW_5V_2IO_LED_circuit")   
-_Bild 35: Schaltplan der "RW_5V_2IO_LED"-Platine_   
+_Bild 37: Schaltplan der "RW_5V_2IO_LED"-Platine_   
 
 ![Platine 2-poliges Schalten](/images/pcb_f/PCB_F_RW_5V_2IO_LED_V2.png "Platine 2-poliges Schalten")   
-_Bild 36: Platine zum Schalten des Fahrstroms_   
+_Bild 38: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_LED](/images/300_RW_5V_2IO_LED.png "RW_5V_2IO_LED")   
-_Bild 37: Best&uuml;ckte Platine "RW_5V_2IO_LED"_   
+_Bild 39: Best&uuml;ckte Platine "RW_5V_2IO_LED"_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -538,7 +577,7 @@ _Bild 37: Best&uuml;ckte Platine "RW_5V_2IO_LED"_
 
 Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs und Widerst&auml;nde.   
 ![RW_5V_2IO_LED_parts](/images/300_RW_5V_2IO_LED_parts.png "RW_5V_2IO_LED_parts")   
-_Bild 38: Bauteile der "RW_5V_2IO_LED"-Platine_   
+_Bild 40: Bauteile der "RW_5V_2IO_LED"-Platine_   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D4, D5, D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -582,7 +621,7 @@ _Zum Beispiel:_
 * gelb: R1 von J4-7 zum Voltmeter COM (-)   
 
 ![2IO Testverkabelung](/images/300_2IO_test_wiring.png "2IO Testverkabelung") &nbsp; ![2IO Testverkabelung2](/images/300_2IO_test_wiring_img.png "2IO Testverkabelung2")   
-_Bild 39: Verkabelung zum Testen des 2IO-Blocks_   
+_Bild 41: Verkabelung zum Testen des 2IO-Blocks_   
 
 Statt der beiden eingezeichneten Voltmeter kann nat&uuml;rlich auch nur eines verwendet werden.   
 
@@ -603,7 +642,7 @@ Das bedeutet: Kein Ausgangssignal ergibt die R&uuml;ckmeldung R1 = 0 V.
 4. Funktionstest: wie oben beschrieben.   
 
 ![Pinbelegung_2IO-J5](/images/200_J5_pins_2IO.png "Pinbelegung 2IO-J5")   
-_Bild 40: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
+_Bild 42: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
 
 ### Versionen
 * V1 (241022): spiegelverkehrte Anordnung der LEDs.   
@@ -618,13 +657,13 @@ _Bild 40: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_
 Diese Platine dient zum zweipoligen Umschalten 2x Um (engl. Double Pole Double Throw, kurz DPDT) einer Spannung. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber zwei Optokoppler (je einer f&uuml;r den Zustand NC = normally closed und NO = normally open).   
 
 ![RW_5V_DPDT_STRG_circuit](/images/600_RW_5V_DPDT_STRG_circuit.png "RW_5V_DPDT_STRG_circuit")   
-_Bild 41: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
+_Bild 43: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
 
 ![Platine DPDT](/images/pcb_f/PCB_F_RW_5V_DPDT_STRG_V1.png "Platine DPDT")   
-_Bild 42: Platine zum zweipoligen Umschalten einer Spannung_   
+_Bild 44: Platine zum zweipoligen Umschalten einer Spannung_   
 
 ![RW_5V_DPDT_STRG](/images/300_RW_5V_DPDT_STRG_V1.png "RW_5V_DPDT_STRG")   
-_Bild 43: Best&uuml;ckte Platine "300_RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
+_Bild 45: Best&uuml;ckte Platine "300_RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -677,13 +716,13 @@ Diese Platine dient zum Ansteuern und Anzeigen der Zust&auml;nde der Schaltplati
 * eine gr&uuml;ne LED links unten zur Anzeige einer Ausgangsspannung an den Pins NO (normally open) J5-Pin 5 f&uuml;r Vout+ und J5-Pin 6 f&uuml;r Vout-
 
 ![RW_5V_DPDT_LED](/images/300_DPDT_LED_front.png "RW_5V_DPDT_LED") ![RW_5V_DPDT_LED](/images/300_DPDT_LED_back.png "RW_5V_DPDT_LED")     
-_Bild 44: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
+_Bild 46: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
 
 ![RW_5V_DPDT_LED_circuit](/images/600_RW_5V_DPDT_LED_circuit.png "RW_5V_DPDT_LED_circuit")   
-_Bild 45: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
+_Bild 47: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
 
 ![Platine 2-poliges Umschalten](/images/pcb_f/PCB_F_RW_5V_DPDT_LED_V1.png "Platine 2-poliges Umschalten")   
-_Bild 46: Bedien-Platine zum 2-poligen Umschalten_   
+_Bild 48: Bedien-Platine zum 2-poligen Umschalten_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -699,7 +738,7 @@ _Bild 46: Bedien-Platine zum 2-poligen Umschalten_
    
 ### Vorbereitung   
 1. Von einer langen, einreihigen Buchsenleiste 4x 2-polige St&uuml;cke abtrennen (f&uuml;r D1, D3, D5, D6).   
-2. Die LED-Anschl&uuml;sse entsprechend Bild 4 und 5 abschneiden und biegen.   
+2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
 3. 10 mm-Tasterkn&ouml;pfe SW1, SW2 eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ### Best&uuml;ckung   
@@ -719,7 +758,7 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 ### Test   
 Die Eingangsspannung IN+ und IN- sowie die Ausgangsspannung NC ("Normally Closed") bzw. NO ("Normally Open") des DPDT-Blocks liegen am 6-poligen Stecker J5 von RW_5V_DPDT_STRG.   
 ![Pinbelegung_DPDT-J5](/images/200_J5_pins_DPDT.png "Pinbelegung DPDT-J5")   
-_Bild 47: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
+_Bild 49: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
 
 1. Einstecken der LEDs: Die rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
 2. Aufsetzen des Prints _RW_5V_DPDT_LED_ auf die Steuerungsplatine _RW_5V_DPDT_STRG_.   
