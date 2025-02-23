@@ -351,8 +351,8 @@ _Bild 25: Best&uuml;ckte Platine "RW_5V_1OUT_STRG" zum Bet&auml;tigen eines Entk
 |    1   | R1                | 100 k&Omega; | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
    
 
-![RW_5V_1IO_STRG_parts](/images/300_RW_5V_1IO_STRG_parts.png "RW_5V_1IO_STRG_parts")   
-_Bild 26: Bauteile der "RW_5V_1IO_STRG"-Platine (ein 4k7-Widerstand fehlt)_   
+![RW_5V_1OUT_STRG_parts](/images/300_RW_5V_1OUT_STRG_parts.png "RW_5V_1OUT_STRG_parts")   
+_Bild 26: Bauteile der "RW_5V_1OUT_STRG"-Platine (ein 4k7-Widerstand fehlt)_   
 
 ### Best&uuml;ckung   
 1. IC-Fassung U1 4-polig (oder 2x Buchsenleiste mit 2 Pins)   
@@ -409,8 +409,8 @@ _Bild 29: Die best&uuml;ckte "RW_5V_1OUT_LED"-Platine_
 2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
 3. 10 mm-Tasterknopf SW2 (wei&szlig;) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
-![RW_5V_1IO_LED_parts](/images/300_RW_5V_1IO_LED_parts.png "RW_5V_1IO_LED_parts")   
-_Bild 30: Bauteile der "RW_5V_1IO_LED"-Platine_   
+![RW_5V_1OUT_LED_parts](/images/300_RW_5V_1OUT_LED_parts.png "RW_5V_1OUT_LED_parts")   
+_Bild 30: Bauteile der "RW_5V_1OUT_LED"-Platine_   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D5) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -457,13 +457,13 @@ Statt der beiden eingezeichneten Voltmeter kann nat&uuml;rlich auch nur eines ve
 
 1. Anlegen der 5V-Spannung: Die obere, rote LED leuchtet.   
 2. Den Remote-Set-Eingang S1 (Pin J4-1) mit 0V (Pin J4-5) verbinden: Das Relais schaltet, die rote LED erlischt, die gr&uuml;ne LED leuchtet.   
-3. Den Taster bet&auml;tigen: Die gelbe LED und die grüne LED leuchten.   
+3. Den Taster bet&auml;tigen: Die gelbe LED und die gr&uuml;ne LED leuchten.   
 
 * Das obere Voltmeter ("zum Entkuppler") zeigt immer 5 V an, wenn die gr&uuml;ne LED leuchtet.   
 * Das R&uuml;ckmeldesignal R1 (Voltmeter "R&uuml;ckmeldung") zeigt immer 5 V an, wenn die gr&uuml;ne LED leuchtet.   
 Das bedeutet: Kein Ausgangssignal ergibt die R&uuml;ckmeldung R1 = 0 V.   
 
-__Im Fehlerfall__, falls die Versorgungs-(Wechsel-)spannung V+ ausfällt, leuchtet zwar die rote LED, aber beim Drücken des Tasters leuchten die gelbe und die rote LED. Die grüne LED leuchtet nicht, d.h., es gibt keine Spannung am Ausgang.   
+__Im Fehlerfall__, falls die Versorgungs-(Wechsel-)spannung V+ ausf&auml;llt, leuchtet zwar die rote LED, aber beim Dr&uuml;cken des Tasters leuchten die gelbe und die rote LED. Die gr&uuml;ne LED leuchtet nicht, d.h., es gibt keine Spannung am Ausgang.   
 
 ### Test unter realen Bedingungen
 1. Anschluss der 6-poligen Stromversorgung an J3 der Steuerungsplatine _RW_5V_1OUT_STRG_.   
