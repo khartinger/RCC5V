@@ -6,7 +6,7 @@ Letzte &Auml;nderung: 23.2.2025 <a name="up"></a><br>
 
 # 1. Einleitung
 ## 1.1 &Uuml;bersicht
-Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das Best&uuml;cken folgender Bl&ouml;cke beschrieben:   
+Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das Herstellen folgender Bl&ouml;cke beschrieben:   
 * [Block Zweiwegweiche (W2)](#x20)   
 * [Block Dreiwegweiche (W3)](#x30)   
 * [Block Entkuppler (1OUT)](#x40)   
@@ -14,7 +14,7 @@ Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das
 * [Block Zweifachumschalter (DPDT)](#x60)   
 
 ## 1.2 Aufbau von Bl&ouml;cken
-Schaltbl&ouml;cke bestehen immer aus einer Steuerungs-(STRG-) und einer Anzeige-(LED-)Platine, die zusammengesteckt werden. Die Steuerungsplatine hat dazu zwei 8-polige Stiftleisten (nach unten gerichtet), die Anzeigeplatine 8-polige Buchsenleisten mit langen Kontakten (nach oben).   
+Schaltbl&ouml;cke bestehen immer aus zwei Platinen: einer Steuerungs-(STRG-) und einer Anzeige-(LED-)Platine. Diese Platinen werden zusammengesteckt. Die Steuerungsplatine hat dazu zwei 8-polige Stiftleisten (nach unten gerichtet), die Anzeigeplatine 8-polige Buchsenleisten mit langen Kontakten (nach oben).   
 ![Zusammenstecken der Blockh&auml;lften](/images/300_assemble_block_parts.png "Zusammenstecken der Blockh&auml;lften")   
 _Bild 1: Zusammenstecken der Blockteile "Steuerung" (links) und "Anzeige" (rechts)_   
 
@@ -33,31 +33,38 @@ _Bild 3: Pinbelegung der STRG-Stecker_
 <a name="x14"></a>   
 
 ## 1.4 Vorbereitung von LEDs
-Damit Fertigungstoleranzen leicht ausgeglichen werden k&ouml;nnen, werden die LEDs nicht direkt auf die erforderliche L&auml;nge geschnitten, sondern eine Art "Feder" eingebaut. Dazu wird folgende Vorgangsweise empfohlen:   
+Die Anzeige des Zustandes jedes Blockes erfolgt durch LEDs. Damit Fertigungstoleranzen leicht ausgeglichen werden k&ouml;nnen, werden die LEDs nicht direkt auf die erforderliche L&auml;nge geschnitten, sondern eine Art "Feder" eingebaut. Dazu wird folgende Vorgangsweise empfohlen:   
 1. Den Anoden- (Plus-) Anschlussdraht (l&auml;ngerer Draht) mit rotem Permanentstift markieren.   
-2. Die Anschlussdr&auml;hte der LEDs auf 25 mm L&auml;nge abschneiden.   
-3. Jeden Anschluss mit 19 bis 20 mm Schrumpfschlauch (Durchmesser 1 mm) isolieren.   
+2. Jeden Anschluss mit 19 bis 20 mm Schrumpfschlauch (Durchmesser 1 mm) isolieren.   
+3. Die Anschlussdr&auml;hte der LEDs auf 25 mm L&auml;nge abschneiden.   
 4. Nach folgender Zeichung biegen:   
 ![LED biegen](/images/200_LED_config.png "LED biegen")   
 _Bild 4: Anpassen der LEDs f&uuml;r die Montage_   
+
 Zum Biegen kann man auch eine Schablone aus Karton vorbereiten, wobei man die LED am Rand des Kartons anlegt und den Anschlussdraht nach Schema biegt:   
 ![LED biegen2](/images/200_LED_config2.png "LED biegen2")   
 _Bild 5: LED-Biegeschablone_   
 
-## 1.5 Vorgegebene Positionen auf der LED-Platine
-Auf allen LED-Platinen sind drei Positionen f&uuml;r Taster bzw. Schalter sowie sechs Positionen f&uuml;r LEDs vorgesehen:   
+Das Bild zeigt die verschiedenen Stadien beim Vorbereiten der LEDs:   
+![LED_biegen_Schritte](/images/300_LED_biegen_Schritte.png "LED_biegen_Schritte")   
+_Bild 6: Die Arbeitsschritte beim Biegen der LEDs_   
+
+<a name="x15"></a>   
+
+## 1.5 Anordnung von LEDs und Tastern auf der LED-Platine
+Das Basis-Layout der LED-Platinen ist für alle Bl&ouml;cke gleich. Es sind drei Positionen f&uuml;r Taster bzw. Schalter sowie sechs Positionen f&uuml;r LEDs vorgesehen:   
 ![LED- und Schalterpositionen](/images/300_block_cover.png "LED- und Schalterpositionen")   
-_Bild 6: LED- und Schalterpositionen bei einem Block (von vorne gesehen)_   
+_Bild 7: LED- und Schalterpositionen bei einem Block (von vorne gesehen)_   
 
 Die Bezeichnungen f&uuml;r die LEDs (D1 bis D6) und die Taster oder Schalter (SW1 bis SW3) werden bei allen LED-Platinen gleich verwendet.   
 
 <a name="x16"></a>   
 
 ## 1.6 L&ouml;ten von Tastern und Schaltern auf die L&ouml;tseite einer Platine
-Alle "LED"-Platinen enthalten Taster und Schalter, die zum Schluss auf die L&ouml;tseite der Platine gel&ouml;tet werden. Damit sie beim Einl&ouml;ten nicht herausfallen, kann man sie mit Klebeband fixieren und die Platine h&ouml;her lagern, zum Beispiel kann man sie auf die Kanten eines schmalen Einsatzes eines [RAACO Sortimentkoffers Assorter 55 A9](https://www.reichelt.de/at/de/sortimentseinsatz-a9-1-39-x-47-x-55-mm-raaco-a9-1-p29322.html?r=1) legen.
+Alle "LED"-Platinen enthalten Taster und Schalter, die im letzten Arbeitsschritt auf die L&ouml;tseite der Platine gel&ouml;tet werden. Damit sie beim Einl&ouml;ten nicht herausfallen, kann man sie mit Klebeband fixieren und die Platine h&ouml;her lagern. Zum Beispiel kann man sie auf die Kanten eines schmalen Einsatzes eines [RAACO Sortimentkoffers Assorter 55 A9](https://www.reichelt.de/at/de/sortimentseinsatz-a9-1-39-x-47-x-55-mm-raaco-a9-1-p29322.html?r=1) legen.
 
 ![solder_button1](/images/200_solder_button1.png "solder_button1") ![solder_button2](/images/200_solder_button2.png "solder_button2")   
-_Bild 7: L&ouml;ten von Tastern_   
+_Bild 8: L&ouml;ten von Tastern_   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
@@ -65,10 +72,10 @@ _Bild 7: L&ouml;ten von Tastern_
 # 2. Zweiwegweiche
 
 ## 2.1 Steuerung Zweiwegweiche   
-Diese Platine dient zum Schalten einer Zweiwegweiche (Richtung "Gerade" oder "Abzweig") von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt &uuml;ber zwei Relais (siehe Bild unten).   
+Diese Platine dient zum Schalten einer Zweiwegweiche (Richtung "Gerade" oder "Abzweig") von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt durch zwei Relais (siehe Bild unten).   
 
 ![RW_5V_W2_STRG_circuit](/images/600_RW_5V_W2_STRG_circuit.png "RW_5V_W2_STRG_circuit")   
-_Bild 8: Schaltplan der "RW_5V_W2_STRG"-Platine_   
+_Bild 9: Schaltplan der "RW_5V_W2_STRG"-Platine_   
 
 Die Ansteuerung erfolgt entweder &uuml;ber die Leitungen WSA und WSB (d.h. von extern) oder mit PBA und PBB (Taster auf der W2_LED-Platine).   
 * (1) PBA und PBB offen: Beide Relais sind im Ruhezustand. Die Weichenanschl&uuml;sse WA und WB sind nach WLA und WLB durchgeschaltet. Diese Leitungen f&uuml;hren zur LED-Anzeige und zeigen so den Schaltzustand der Weiche an.   
@@ -77,11 +84,10 @@ Die Ansteuerung erfolgt entweder &uuml;ber die Leitungen WSA und WSB (d.h. von e
 * (4) PBA auf 0V, PBB auf 0V: Dieser Zustand sollte nicht auftreten. Es schalten beide Transistoren durch und die Schaltung verh&auml;lt sich wie bei (2).   
 
 ![Platine Ansteuerung Zweiwegweiche](/images/pcb_f/PCB_F_RW_5V_W2_STRG_V2.png "Platine Ansteuerung Zweiwegweiche")   
-_Bild 9: Platine zur Ansteuerung einer Zweiwegweiche_   
+_Bild 10: Platine zur Ansteuerung einer Zweiwegweiche_   
 
 ![RW_5V_W2_STRG](/images/300_RW_5V_W2_STRG_V2.png "RW_5V_W2_STRG")   
-_Bild 10: Best&uuml;ckte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_   
-
+_Bild 11: Best&uuml;ckte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -97,6 +103,9 @@ _Bild 10: Best&uuml;ckte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_
 |    2   | R2,R4             | 10 k&Omega;       | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 |    2   | R1,R3             | 100 k&Omega;      | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
    
+
+![RW_5V_W2_STRG_parts](/images/300_RW_5V_W2_STRG_parts.png "RW_5V_W2_STRG_parts")   
+_Bild 12: Bauteile der "RW_5V_W2_STRG"-Platine_   
 
 ### Best&uuml;ckung   
 1. Diode D1 und D3   
