@@ -27,7 +27,7 @@ Die Stecker f&uuml;r die Ein- und Ausg&auml;nge sind bei allen Schaltbl&ouml;cke
 ![pinlayout_connectors](/images/300_pin_STRG.png "pinlayout_connectors")   
 _Bild 2: Pinbelegung der STRG-Stecker_   
 
-Die genau Pin-Belegung der Stecker J4 (Fernsteuerung) und J5 (Eisenbahn-Komponenten) ist abh&auml;ngig von der Art des Schaltblocks:   
+Die genaue Pin-Belegung der Stecker J4 (Fernsteuerung) und J5 (Eisenbahn-Komponenten) ist abh&auml;ngig von der Art des Schaltblocks:   
 
 ![Pinlayout_J4_all](/images/200_J4_pinlayout_all2.png "Pinlayout_J4_all")   
 _Bild 3: Pinbelegung der STRG-Stecker J4 (Fernsteuerung)_   
@@ -81,12 +81,6 @@ Diese Platine dient zum Schalten einer Zweiwegweiche (Richtung "Gerade" oder "Ab
 
 ![RW_5V_W2_STRG_circuit](/images/600_RW_5V_W2_STRG_circuit.png "RW_5V_W2_STRG_circuit")   
 _Bild 10: Schaltplan der "RW_5V_W2_STRG"-Platine_   
-
-Die Ansteuerung erfolgt entweder &uuml;ber die Leitungen WSA und WSB (d.h. von extern) oder mit PBA und PBB (Taster auf der W2_LED-Platine).   
-* (1) PBA und PBB offen: Beide Relais sind im Ruhezustand. Die Weichenanschl&uuml;sse WA und WB sind nach WLA und WLB durchgeschaltet. Diese Leitungen f&uuml;hren zur LED-Anzeige und zeigen so den Schaltzustand der Weiche an.   
-* (2) PBA auf 0V, PBB offen: Transistor Q1 schaltet durch, beide Relais ziehen an. Der Weichenanschluss WB erh&auml;lt die Schaltspannung V+ (WA bleibt offen).   
-* (3) PBA offen, PBB auf 0V: Transistor Q2 schaltet durch, nur Relais K3 zieht an. Der Weichenanschluss WA erh&auml;lt die Schaltspannung V+ (WB bleibt offen).   
-* (4) PBA auf 0V, PBB auf 0V: Dieser Zustand sollte nicht auftreten. Es schalten beide Transistoren durch und die Schaltung verh&auml;lt sich wie bei (2).   
 
 ![Platine Ansteuerung Zweiwegweiche](/images/pcb_f/PCB_F_RW_5V_W2_STRG_V2.png "Platine Ansteuerung Zweiwegweiche")   
 _Bild 11: Platine zur Ansteuerung einer Zweiwegweiche_   
@@ -212,8 +206,8 @@ _Bild 19: Ersatzschaltbild Weichenantrieb_
 
 Das "Warten" auf den Schaltvorgang wird f&uuml;r die R&uuml;ckmeldung der Weichenstellung genutzt: In diesem Fall ist der Widerstand zwischen WA und W0 klein (nur der ohmsche Widerstand der Spule), der Widerstand zwischen WB und W0 unendlich.   
 Man unterscheidet daher zwei Zust&auml;nde:   
-1. der Schaltvorgang und    
-2. der Ruhezustand mit der Weichenr&uuml;ckmeldung.   
+1. den Schaltvorgang und    
+2. den Ruhezustand mit der Weichenr&uuml;ckmeldung.   
 
 ### "Labor-Test" mit 5V und ohne Weichenantrieb
 Das Testen der W2-Schaltblocks ohne Verwendung einer Weiche bzw. eines Weichenantriebs muss in zwei Phasen durchgef&uuml;hrt werden: Test des Schaltens (= Anlegen einer Spannung) und Test der R&uuml;ckmeldung (LED-Anzeige, R&uuml;ckmeldeleitungen).   
