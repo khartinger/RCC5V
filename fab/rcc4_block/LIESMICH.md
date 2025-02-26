@@ -123,11 +123,12 @@ _Bild 13: Bauteile der "RW_5V_W2_STRG"-Platine_
 * V2 (241115): OK   
 
 ## 2.2 Zweiwegweiche: LED-Anzeige mit Taster
-Diese Platine dient zum Bedienen einer Zweiwegweiche (je ein Taster f&uuml;r die Richtungswahl "Gerade" oder "Abzweig") und zur Anzeige der tats&auml;chlichen Weichenstellung. Es sind alle Taster- und LED-Positionen verdrahtet, sodass man durch die richtige Wahl von zwei Tastern und zwei LEDs alle Schaltbilder    
+Diese Platine dient zum Schalten einer Zweiwegweiche (mit je einem Taster f&uuml;r die Richtungswahl "Gerade" oder "Abzweig") und zur Anzeige der tats&auml;chlichen Weichenstellung. Es sind alle Taster- und LED-Positionen verdrahtet, sodass man durch die richtige Wahl von zwei Tastern und zwei LEDs alle Schaltbilder, n&auml;mlich   
 * linke Weiche nach links oben,   
 * linke Weiche nach rechts unten,   
 * rechte Weiche nach links unten und   
 * rechte Weiche nach rechs oben   
+
 darstellen kann.   
 
 ![RW_5V_W2_LED_circuit](/images/600_RW_5V_W2_LED_circuit.png "RW_5V_W2_LED_circuit")   
@@ -184,11 +185,10 @@ Auf die _*Bauteilseite*_ l&ouml;ten:
 2. Transistoren Q1 bis Q4   
 3. Alle Widerst&auml;nde   
 4. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
-5. Stiftleisten 2x2 Pins J3, J4   
 
 Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 
-6. Taster SW1 und SW2 ODER SW2 und SW3 (siehe Text in der Einleitung oben)   
+5. Taster SW1 und SW2 ODER SW2 und SW3 (siehe Text in der Einleitung oben)   
    
 <a name="x23"></a>   
 
