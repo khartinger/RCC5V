@@ -19,10 +19,11 @@ Schaltbl&ouml;cke bestehen immer aus zwei Platinen: einer Steuerungs-(STRG-) und
 _Bild 1: Zusammenstecken der Blockteile "Steuerung" (links) und "Anzeige" (rechts)_   
 
 ## 1.3 Pinbelegung der Bl&ouml;cke
-Die Stecker f&uuml;r die Ein- und Ausg&auml;nge sind bei allen Schaltbl&ouml;cken gleich angeordnet:   
+Die Stecker f&uuml;r die Ein- und Ausg&auml;nge sind bei allen Schaltbl&ouml;cken gleich:   
 * J3: 6-poliger Flachbandstecker f&uuml;r die Stromversorgung (senkrecht)   
 * J4: 10-poliger Flachbandstecker f&uuml;r die Steuer- bzw. R&uuml;ckmeldesignale zu den I²C-IO-Expandern (Fernsteuerung &uuml;ber DCC und MQTT)   
 * J5: 6-poliger Flachbandstecker zum Anschluss der Eisenbahn-Komponenten (Weichen etc.)   
+
 ![pinlayout_connectors](/images/300_pin_STRG.png "pinlayout_connectors")   
 _Bild 2: Pinbelegung der STRG-Stecker_   
 
