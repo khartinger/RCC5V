@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 26.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 3.3.2025 <a name="up"></a><br>   
 <h1>Herstellung von RCC Schaltbl&ouml;cken</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -66,7 +66,7 @@ Die Bezeichnungen f&uuml;r die LEDs (D1 bis D6) und die Taster oder Schalter (SW
 <a name="x16"></a>   
 
 ## 1.6 L&ouml;ten von Tastern und Schaltern auf die L&ouml;tseite einer Platine
-Alle "LED"-Platinen enthalten Taster und Schalter, die im letzten Arbeitsschritt auf die L&ouml;tseite der Platine gel&ouml;tet werden. Damit sie beim Einl&ouml;ten nicht herausfallen, kann man sie mit Klebeband fixieren und die Platine h&ouml;her lagern. Zum Beispiel kann man sie auf die Kanten eines schmalen Einsatzes eines [RAACO Sortimentkoffers Assorter 55 A9](https://www.reichelt.de/at/de/sortimentseinsatz-a9-1-39-x-47-x-55-mm-raaco-a9-1-p29322.html?r=1) legen.
+Alle "LED"-Platinen enthalten Taster und Schalter, die im letzten Arbeitsschritt auf die L&ouml;tseite der Platine gel&ouml;tet werden. Damit sie beim Einl&ouml;ten nicht herausfallen, kann man sie mit Klebeband oder Klebstoff fixieren und die Platine h&ouml;her lagern. Zum Beispiel kann man sie auf die Kanten eines schmalen Einsatzes eines [RAACO Sortimentkoffers Assorter 55 A9](https://www.reichelt.de/at/de/sortimentseinsatz-a9-1-39-x-47-x-55-mm-raaco-a9-1-p29322.html?r=1) legen.
 
 ![solder_button1](/images/200_solder_button1.png "solder_button1") ![solder_button2](/images/200_solder_button2.png "solder_button2")   
 _Bild 9: L&ouml;ten von Tastern_   
@@ -375,7 +375,7 @@ _Bild 30: Best&uuml;ckte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der
 |    3   | SW1,SW2,SW3 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe 2x gr&uuml;n, 1x gelb |    
 
 ### Anmerkungen
-(1) Es ist sinnvoll, die 2-poligen Buchsenleisten an alle 6 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb  nur drei LEDs eingesetzt werden, je nachdem, ob die Anzeige links oder rechts von den Schaltern sein soll.   
+(1) Es ist sinnvoll, die 2-poligen Buchsenleisten an alle 6 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb  nur drei LEDs eingesetzt werden, je nachdem, ob die Anzeige links oder rechts von den Tastern sein soll.   
    
 ## Vorbereitung
 1. Von einer langen, einreihigen Buchsenleiste 6x 2-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D6).   
@@ -447,14 +447,14 @@ _Bild 32: Verkabelung zum Testen des Schaltvorgangs eines W3-Blocks_
    * Die Spannung an J5-1 (WL) und J5-6 (WMR) ist 0 V   
    * Die Spannung an J5-2 (WR) und J5-5 (WML) und ist 5 V   
    ("Kreuzweise" 5V am Stecker J5)   
-5. Pin J4-1 (WSL) auf 0V (J4-5): Gleiches Verhalten wie beim Drücken des oberen, gelben Tasters ("Links"). Siehe Punkt 2.   
-6. Pin J4-2 (WSM) auf 0V (J4-5): Gleiches Verhalten wie beim Drücken des mittleren, grünen Tasters ("Mitte"). Siehe Punkt 3.   
-7. Pin J4-1 (WSR) auf 0V (J4-5): Gleiches Verhalten wie beim Drücken des unteren, gelben Tasters ("Rechts"). Siehe Punkt 4.   
+5. Pin J4-1 (WSL) auf 0V (J4-5): Gleiches Verhalten wie beim Dr&uuml;cken des oberen, gelben Tasters ("Links"). Siehe Punkt 2.   
+6. Pin J4-2 (WSM) auf 0V (J4-5): Gleiches Verhalten wie beim Dr&uuml;cken des mittleren, gr&uuml;nen Tasters ("Mitte"). Siehe Punkt 3.   
+7. Pin J4-1 (WSR) auf 0V (J4-5): Gleiches Verhalten wie beim Dr&uuml;cken des unteren, gelben Tasters ("Rechts"). Siehe Punkt 4.   
 
 #### Test der R&uuml;ckmeldung eines W2-Blocks
 * WL von J5-1 zum Voltmeter +   
 * V- von J5-3 zum Voltmeter COM (-)   
-_Beachte_: Zur korrekten Funktion müssen immer zwei der drei Anschlüsse WR, WL und WM am Stecker J5 (= WML + WMR) auf 0 V liegen. Zum Verteilen der 0 V kann zB auch ein Steckbrett verwendet werden...   
+_Beachte_: Zur korrekten Funktion m&uuml;ssen immer zwei der drei Anschl&uuml;sse WR, WL und WM am Stecker J5 (= WML + WMR) auf 0 V liegen. Zum Verteilen der 0 V kann zB auch ein Steckbrett verwendet werden...   
 
 ![W3 Testverkabelung R&uuml;ckmeldung](/images/300_W3_test_wiring_LED.png "W3 Testverkabelung R&uuml;ckmeldung")   
 _Bild 33: Verkabelung zum Testen der R&uuml;ckmeldung eines W3-Blocks_   
@@ -468,7 +468,7 @@ _Bild 33: Verkabelung zum Testen der R&uuml;ckmeldung eines W3-Blocks_
    * Die R&uuml;ckmeldeleitung J4-8 (WRM) liegt auf 0 V (0,7 V).   
    * Die R&uuml;ckmeldeleitung J4-9 (WRR) liegt auf 0 V (0,7 V).   
 3. J5-3 (V-) mit J5-2 (WR) und J5-1 (WL) verbinden:   
-   * Nur die mittlere, grüne LED leuchtet.   
+   * Nur die mittlere, gr&uuml;ne LED leuchtet.   
    * Die R&uuml;ckmeldeleitung J4-7 (WRL) liegt auf 0 V (0,7 V).   
    * Die R&uuml;ckmeldeleitung J4-8 (WRM) liegt auf 5 V.   
    * Die R&uuml;ckmeldeleitung J4-9 (WRR) liegt auf 0 V (0,7 V).   
