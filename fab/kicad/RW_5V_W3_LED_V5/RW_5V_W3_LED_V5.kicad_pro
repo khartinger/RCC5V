@@ -215,10 +215,6 @@
           "drill": 0.0
         },
         {
-          "diameter": 1.0,
-          "drill": 0.5
-        },
-        {
           "diameter": 1.2,
           "drill": 0.6
         }
@@ -455,7 +451,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "RW_5V_W2_LED_V2.kicad_pro",
+    "filename": "RW_5V_W3_LED_V5.kicad_pro",
     "version": 1
   },
   "net_settings": {
