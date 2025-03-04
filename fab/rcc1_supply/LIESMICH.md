@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 27.11.2024 <a name="up"></a><br>   
+Letzte &Auml;nderung: 4.3.2025 <a name="up"></a><br>   
 <h1>Komponenten f&uuml;r die Stromversorgung</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -50,10 +50,10 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/AC_5V_6pol_DCC_V1](/fab/kicad/AC_5V_6
 |    1   | R1         | Leistungswiderstand 4,7&Omega;/5W          | Resistor_THT:R_Axial_Power_L25.0mm_W6.4mm_P27.94mm |   
 |    1   | C1         | Elko 1000uF/35V        | _kh_library:CP_Radial_L20.0mm_D10.0mm_P5.08mm_Horizontal |   
 |    1   | D1         | Diode 1N4007           | _kh_library:D_DO-41_SOD81_P3.81mm_Vertical_AnodeUp_kh |   
-|    1   | J1, J2     | Wannenstecker 6-polig, stehend (Box_02x03_P2.54_Vertical_kh) | _kh_library:Box_02x03_P2.54mm_Vertical_kh |   
+|    2   | J1, J2     | Wannenstecker 6-polig, stehend (Box_02x03_P2.54_Vertical_kh) | _kh_library:Box_02x03_P2.54mm_Vertical_kh |   
 |    1   | J3, J5, J6 | Buchsenleiste 8-polig, lange Kontakte (Conn_01x08) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh |   
 |    1   | U1         | DC-DC-Wandler-Board StepDown_LM2596 | _kh_library:DCDC_StepDown_LM2596_PinsOnly |   
-|    4   | U1         | 4 einzelne Pins               |   |   
+|    4   | U1         | 4 einzelne Stifte |   |   
 
 ### Vorbereitung   
 Von einer Stiftleiste vier einzelne Pins herunterschneiden.   
