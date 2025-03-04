@@ -28,4 +28,9 @@ __Datei__: OLED-Mount_250209.3mf
 ![OLED- und Taster-Einsatz](/images/3d/300_OLED-Mount.png "OLED- und Taster-Einsatz")   
 _Bild 4: Halterung f&uuml;r die OLED-Anzeige und den Taster_   
 
+# Biegelehre f&uuml;r LEDs
+__Datei__: Biegelehre_LED_v4.3mf   
+![Biegelehre f&uuml;r LEDs](/images/3d/300_Biegelehre_LED.png "Biegelehre f&uuml;r LEDs")   
+_Bild 5: Biegelehre f&uuml;r LEDs_   
+
 [Zum Seitenanfang](#up)
