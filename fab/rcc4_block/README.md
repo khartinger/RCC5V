@@ -4,7 +4,9 @@ Last modified: 2025-02-18 <a name="up"></a><br>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
+<a href="LIESMICH.md">
 # Sorry! This page is only available in German :(   
+</a>   
 
 # ... To Do ...
 
