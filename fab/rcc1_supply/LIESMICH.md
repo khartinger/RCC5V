@@ -97,7 +97,7 @@ _Bild 6: Mit Netzteil best&uuml;ckte Verbindungsplatine mit zwei 25-poligen Stec
 ## 3.2 Platine mit zwei 25-poligen Sub-D-Steckern und Netzteil (RW_5V_2SUB25)   
 Diese Platine wird zum Verbinden kurzer Module mit L&auml;ngen von 25 cm oder 50 cm verwendet. Sie enth&auml;lt Anschl&uuml;sse f&uuml;r ein 5V-Netzteil und das DCC-Steuersignal sowie Schraubklemmen f&uuml;r den DCC-Fahrstrom (SS, NN und SN, NS) und die Hilfsleitungen OA und OB. Die Platine ist so aufgebaut, dass sie beim Einbau in ein Modul symmetrisch zu einer Verstrebung liegen kann.   
 
-![Platine RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V1.png "Platine RW_5V_2SUB25")   
+![Platine RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V3.png "Platine RW_5V_2SUB25")   
 _Bild 7: Platine RW_5V_2SUB25_   
 
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
@@ -112,14 +112,16 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_2SUB25_V2](/fab/kicad/RW_5V_2SU
 |    1   | J5, J6, U1   | 5V-Netzteil-Platine     | _kh_library:AC_5V_supply_6pol_PinsOnly |   
 
 ### Best&uuml;ckung   
-1. Schraubklemmen J7, J8, J9    
+1. Schraubklemmen J10, J7 und J8, J9 zusammenstecken und einl&ouml;ten    
 2. Sub-D-Stecker J1   
 3. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6   
+4. Sub-D-Stecker J2   
 
 ### Versionen
 * V1 (241029): OK   
 * V2 (241123): OK (Leiterbahnen zwischen Bauteil- und L&ouml;tseite getauscht)   
-* V3 (250120): OK (J10 erg&auml;nzt)   
+* V3 (250120): J10 erg&auml;nzt, Bohrungen f&uuml;r U1 zu klein   
+* V4 (250306): OK
 
 <a name="x33"></a>   
 
@@ -148,7 +150,8 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_SUB25_10_V1](/fab/kicad/RW_5V_S
 
 ### Versionen
 * V1 (241104): OK   
-* V2 (250120): OK (J10 erg&auml;nzt)   
+* V2 (250120): J10 erg&auml;nzt, Bohrungen f&uuml;r U1 zu klein   
+* V3 (250306): OK
 
 <a name="x34"></a>   
 

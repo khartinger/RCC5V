@@ -97,7 +97,7 @@ _Figure 6: Connection board equipped with power supply unit with two 25-pin conn
 ## 3.2 Board with two 25-pin D-sub connectors and power supply unit (RW_5V_2SUB25)   
 This board is used to connect short modules with lengths of 25 cm or 50 cm. It contains connections for a 5V power supply unit and the DCC control signal as well as screw terminals for the DCC traction current (SS, NN and SN, NS) and the auxiliary lines OA and OB. The circuit board is designed so that it can be positioned symmetrically to a strut when installed in a module.   
 
-![PCB RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V1.png "PCB RW_5V_2SUB25")   
+![PCB RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V3.png "PCB RW_5V_2SUB25")   
 _Figure 7: Circuit board RW_5V_2SUB25_   
 
 _*Board size*_: 80 x 66 mm²   
@@ -112,14 +112,16 @@ _*Link to the KiCad files*_: [/fab/kicad/RW_5V_2SUB25_V2](/fab/kicad/RW_5V_2SUB2
 | 1 | J5, J6, U1 | 5V power supply board | _kh_library:AC_5V_supply_6pol_PinsOnly |   
 
 ### Assembly   
-1. screw terminals J7, J8, J9    
+1. screw terminals J10, J7 and J8, J9 plug together and solder   
 2. sub-D connector J1   
 3. plugging and unplugging the 5V power supply board into J5 and J6   
+4. sub-D connector J2   
 
 ### Versions
 * V1 (241029): OK   
 * V2 (241123): OK (tracks swapped between component and power supply side)   
-* V3 (250120): OK (J10 supplemented)   
+* V3 (250120): J10 added, holes for U1 too small   
+* V4 (250306): OK
 
 <a name="x33"></a>   
 
@@ -148,7 +150,8 @@ _*Link to the KiCad files*_: [/fab/kicad/RW_5V_SUB25_10_V1](/fab/kicad/RW_5V_SUB
 
 ### Versions
 * V1 (241104): OK   
-* V2 (250120): OK (J10 supplemented)   
+* V2 (250120): J10 added, holes for U1 too small   
+* V3 (250306): OK
 
 <a name="x34"></a>   
 
