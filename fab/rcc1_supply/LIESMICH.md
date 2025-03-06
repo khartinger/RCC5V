@@ -53,10 +53,7 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/AC_5V_6pol_DCC_V1](/fab/kicad/AC_5V_6
 |    2   | J1, J2     | Wannenstecker 6-polig, stehend (Box_02x03_P2.54_Vertical_kh) | _kh_library:Box_02x03_P2.54mm_Vertical_kh |   
 |    1   | J3, J5, J6 | Buchsenleiste 8-polig, lange Kontakte (Conn_01x08) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh |   
 |    1   | U1         | DC-DC-Wandler-Board StepDown_LM2596 | _kh_library:DCDC_StepDown_LM2596_PinsOnly |   
-|    4   | U1         | 4 einzelne Stifte |   |   
-
-### Vorbereitung   
-Von einer Stiftleiste vier einzelne Pins herunterschneiden.   
+|    4   | U1         | Stiftleiste 4-polig, gerade (*) |   |   
 
 ### Best&uuml;ckung   
 1. Leistungswiderstand R1   
@@ -64,10 +61,11 @@ Von einer Stiftleiste vier einzelne Pins herunterschneiden.
 3. Buchsenleisten J3, J5, J6   
 4. Wannenstecker J1, J2   
 5. Elko C1   
-6. Aufstecken des DC-DC-Step-Down-Wandlers LM2596   
 
-Falls am LM2596-Board an den Ecken noch keine Pins angel&ouml;tet sind:   
-4 einzelne Pins in die Enden von J5 und J6 stecken, das LM2596-Board aufstecken und die Pins verl&ouml;ten.   
+(*) Falls am LM2596-Board an den Ecken noch keine Pins angel&ouml;tet sind:   
+* Von der Stiftleiste vier einzelne Pins herunterschneiden.   
+* 4 einzelne Pins in die Enden von J5 und J6 stecken, das LM2596-Board aufstecken und die Pins verl&ouml;ten.   
+6. Aufstecken des DC-DC-Step-Down-Wandlers LM2596   
 
 ## 2.3 Inbetriebnahme der Netzteil-Tr&auml;gerplatine AC_5V_supply_6pol_DCC
 _*Wichtig:*_ Bei der ersten Inbetriebnahme des DC-DC-Wandler-Boards muss die Ausgangsspannung am Potenziometer mit Hilfe eines Voltmeters und eines Schraubendrehers auf 5 V eingestellt werden. Das Drehen der Schraube am Potenziometer (blauer Quarder) entgegen dem Uhrzeigersinn verkleinert dabei die Ausgangsspannung.   
