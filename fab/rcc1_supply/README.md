@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-03-04 <a name="up"></a><br>   
+Last modified: 2025-03-06 <a name="up"></a><br>   
 <h1>Components for the power supply</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
@@ -55,19 +55,17 @@ _*Link to the KiCad files*_: [/fab/kicad/AC_5V_6pol_DCC_V1](/fab/kicad/AC_5V_6po
 | 1 | U1 | DC-DC converter board StepDown_LM2596 | _kh_library:DCDC_StepDown_LM2596_PinsOnly |   
 | 4 | U1 | 4 single pins | |   
 
-### Preparation   
-Cut four individual pins from a pin header.   
-
 ### Assembly   
 1. power resistor R1   
 2. diode D1   
 3. socket connectors J3, J5, J6   
 4. socket connectors J1, J2   
 5. electrolytic capacitor C1   
-6. plugging on the DC-DC step-down converter LM2596   
 
-If no pins have been connected to the corners of the LM2596 board:   
-Plug 4 individual pins into the ends of J5 and J6, attach the LM2596 board and extend the pins.   
+(*) If there are no pins connected to the corners of the LM2596 board:   
+* Cut four individual pins from the pin header.   
+* Insert 4 individual pins into the ends of J5 and J6, plug on the LM2596 board and leave the pins.   
+6. plugging on the DC-DC step-down converter LM2596   
 
 ## 2.3 Commissioning the power supply driver board AC_5V_supply_6pol_DCC
 _*Important:*_ When commissioning the DC-DC converter board for the first time, the output voltage on the potentiometer must be set to 5 V using a voltmeter and a screwdriver. Turning the screw on the potentiometer (blue quadrant) counterclockwise reduces the output voltage.   

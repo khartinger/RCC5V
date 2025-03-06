@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 4.3.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 6.3.2025 <a name="up"></a><br>   
 <h1>Komponenten f&uuml;r die Stromversorgung</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
