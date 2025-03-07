@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-02-22 <a name="up"></a><br>   
+Last modified: 2025-03-07 <a name="up"></a><br>   
 <h1>ESP32 Shields</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
@@ -194,7 +194,7 @@ _Figure 15: Circuit diagram of the “Shield_I2C_5V_3V3_big” board_
 The J1 and J2 connections are not normally equipped.   
 
 ### Preparation
-* Cut four pins twice from a (e.g. 40-pin) straight pin header.   
+* Split 8-pin pin header in the middle (= 2x 4 pins) or cut four pins twice from a (e.g. 40-pin) straight pin header.   
 * Cut down 4 sockets from an e.g. 8-pin socket strip with short contacts.   
 * Plug the two 4-pin pin headers (yellow), which are usually supplied with the level converter, onto the level converter board.   
 

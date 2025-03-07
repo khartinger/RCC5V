@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 22.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 7.3.2025 <a name="up"></a><br>   
 <h1>Erweiterungen (Shields) f&uuml;r den ESP32</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -194,7 +194,7 @@ _Bild 15: Schaltplan der "Shield_I2C_5V_3V3_big"-Platine_
 Die Anschl&uuml;sse J1 und J2 werden normalerweise nicht best&uuml;ckt.   
 
 ### Vorbereitung
-* Herunterschneiden von zweimal vier Pins von einer (zB 40-poligen) geraden Stiftleiste.   
+* 8-polige Stiftleiste in der Mitte teilen (= 2x 4 Pins) oder Herunterschneiden von zweimal vier Pins von einer (zB 40-poligen) geraden Stiftleiste.   
 * Herunterschneiden von 4 Buchsen von einer zB 8-poligen Buchsenleiste mit kurzen Kontakten.   
 * Aufstecken der beiden 4-poligen Stiftleisten (gelb), welche meist mit dem Pegelwandler mitgeliefert werden, auf die Pegelwandler-Platine.   
 
