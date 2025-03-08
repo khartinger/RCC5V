@@ -36,7 +36,7 @@ _*Link to the KiCad files*_: [/fab/kicad/SRW_LEER_LED_V1](/fab/kicad/RW_LEER_LED
 | 2 | J1, J2 | 8-pin socket connector with short contacts | e.g. for [AliExpress](https://www.aliexpress.com/item/32723472575.html?spm=a2g0o.order_list.order_list_main.4.f9f31802e55QVF) |   
 | 4 | H1, H2, H3, H4 | spacer M2x10+3mm hexagonal brass male female | e.g. at [Amazon](https://www.amazon.de/gp/product/B0BXDHL2YP/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |   
 | 4 | H1, H2, H3, H4 | Hexagon nuts M2x0.4 mm | e.g. at [Amazon](https://www.amazon.de/sourcing-map-Kohlenstoff-Hexagonal-Silbert%C3%B6ne/dp/B07J3CNWNH?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=XV7AI5VJHRNO&dib=eyJ2IjoiMSJ9.MHtsj7g4rQQHzcEBoDSBTefFXlBpLiPak-77Ew8DQdnch54LTfQom_Svg_2BIso3QxatpAXNGjuD_TT8uikaPVO2vq_IzIqDBOCyX_QfxDATecIY9QkDAz6IUOnvZA_RSCDw_3kbhgHFVZ1MLUZNX6gsIAtxGrU_nRcfKAt-VyjIQrtZtglmInq7OQayV2_GSyy3EAzNJhSf2FRx0JTuB3SJDEX1nLEjR_1xIk_G5d-xxm34Aa2N-QFYcTqkUv6zk1FQvrPmimDPScbvLf-zL8ezOEqI5DSUhTjka0Lap6o.uVzu6mRNlGns069q_PKQHMF7v7nZeAUiJ6ZofHofMrY&dib_tag=se&keywords=Mutter+M2&nsdOptOutParam=true&qid=1732790211&sprefix=mutter+m2%2Caps%2C137&sr=8-5) |   
-| 4 | S1, S2, S3, S4 | Self-drilling screws M2.6 x 8 stainless steel 304 Black zinc plated Self-tapping Phillips pan head | e.g. at [Amazon](https://www.amazon.de/dp/B0CR8CBDTX?psc=1&smid=A14R2UVD1VQLGA&ref_=chk_typ_imgToDp) |   
+| 4 | S1, S2, S3, S4 | Self-drilling screws M2.6 x 10 stainless steel 304 Black zinc plated Self-tapping Phillips pan head | e.g. at [Amazon](https://www.amazon.de/dp/B0CR8CBDTX?psc=1&smid=A14R2UVD1VQLGA&ref_=chk_typ_imgToDp) |   
 
 ### Assembly   
 1. soldering the two 8-pin female headers (with short contacts) at J1 and J2.   
