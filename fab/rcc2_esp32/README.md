@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-03-07 <a name="up"></a><br>   
+Last modified: 2025-03-08 <a name="up"></a><br>   
 <h1>ESP32 Shields</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
@@ -159,6 +159,19 @@ _Don't forget_: Insert optocoupler U2 into the socket...
 * V2 (241108): With C2 at a distance of 5.08 mm through-hole plating instead of pin   
 * V3 (241123): OK   
 
+### Shield_5V_DCC_6pol and OLED socket
+If the additional circuit board `Shield_5V_DCC_6pol` is used together with an OLED socket, the 12 mm stainless steel push-button should be mounted on it.   
+1. shorten the connecting cables of the push-button to approx. 9 cm.   
+2. cut two 1.5 cm long pieces of 2 mm heat-shrink tubing.   
+3. push the pieces of heat-shrink tubing all the way up onto the connecting cables.   
+4. cut 2 contacts from a socket strip with short contacts and tin them.   
+5. solder the connecting cables to the socket strip.   
+6. slide the heat-shrink tubing over the soldered joint and heat.   
+7. slide the push-button into the OLED socket and screw it in place. Tighten with a 14 mm open-end wrench.   
+
+[Stainless steel pushbutton](/images/300_pushbutton_parts.png "Stainless steel pushbutton")   
+_Figure 13: Components for the stainless steel pushbutton_   
+
 [To the top of the page](#up)   
 <a name="x40"></a>   
 
@@ -170,16 +183,16 @@ This board provides two I²C buses:
 The order of the pins for connections J4 to J6 is selected so that the display or the IO expander boards can be connected easily (pin assignment I2C-1: SDA3-SCL3-3V3-GND and I2C-2: SCL5-SDA5-GND-5V).   
 
 ![I2C shield](/images/pcb_f/PCB_F_Shield_I2C_5V_3V3_big_V2.png "I2C shield")   
-_Figure 13: “Shield_I2C_5V_3V3_big” board for connecting the 5V and OLED I2C bus_   
+_Figure 14: “Shield_I2C_5V_3V3_big” board for connecting the 5V and OLED I2C bus_   
 
 Board size: 58 x 39 mm²   
 _*Link to the KiCad files*_: [/fab/kicad/Shield_I2C_5V_3V3_big_V2](/fab/kicad/Shield_I2C_5V_3V3_big_V2)   
 
 ![Shield_I2C_5V_3V3_big](/images/300_Shield_I2C_5V_3V3_big.png "Shield_I2C_5V_3V3_big")   
-_Figure 14: The assembled circuit board “Shield_I2C_5V_3V3_big”_   
+_Figure 15: The assembled circuit board “Shield_I2C_5V_3V3_big”_   
 
 ![Shield_I2C_5V_3V3_big_circuit](/images/600_Shield_I2C_5V_3V3_big_circuit.png "Shield_I2C_5V_3V3_big_circuit")   
-_Figure 15: Circuit diagram of the “Shield_I2C_5V_3V3_big” board_   
+_Figure 16: Circuit diagram of the “Shield_I2C_5V_3V3_big” board_   
 
 ### Bill of materials   
 | number | reference | value | use |   
@@ -199,7 +212,7 @@ The J1 and J2 connections are not normally equipped.
 * Plug the two 4-pin pin headers (yellow), which are usually supplied with the level converter, onto the level converter board.   
 
 ![Shield_I2C_5V_3V3_big_comp](/images/300_Shield_I2C_5V_3V3_big_comp.png "Shield_I2C_5V_3V3_big_comp")   
-_Figure 16: Components for the “Shield_I2C_5V_3V3_big” board_   
+_Figure 17: Components for the “Shield_I2C_5V_3V3_big” board_   
 
 ### Assembly   
 1. plug the two yellow 4-pin headers into both the converter board and the I2C board and extend them on both sides of the component side of the print.  
@@ -217,10 +230,10 @@ _Figure 16: Components for the “Shield_I2C_5V_3V3_big” board_
 The “Shield_I2C_5V_3V3_big” board is plugged onto the pre-assembled OLED socket with the component side (socket).   
 
 ![OLED_mount](/images/300_OLED_mount.png "OLED_mount")   
-_Figure 17: pre-assembled OLED mount_   
+_Figure 18: pre-assembled OLED mount_   
 
 ![OLED_mount2](/images/300_OLED_mount_i2c_big.png "OLED_mount2")   
-_Figure 18: “Shield_I2C_5V_3V3_big” board plugged onto OLED mount_   
+_Figure 19: “Shield_I2C_5V_3V3_big” board plugged onto OLED mount_   
 
 The screw connection is made with M 2.6 x 8 mm screws.   
 

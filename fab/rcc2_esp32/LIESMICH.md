@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 7.3.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 8.3.2025 <a name="up"></a><br>   
 <h1>Erweiterungen (Shields) f&uuml;r den ESP32</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -159,6 +159,19 @@ _Nicht vergessen_: Optokoppler U2 in die Fassung stecken...
 * V2 (241108): Bei C2 im Abstand 5,08 mm Durchkontaktierung statt Pin   
 * V3 (241123): OK   
 
+### Shield_5V_DCC_6pol und OLED-Fassung
+Wird die Zusatzplatine `Shield_5V_DCC_6pol` gemeinsam mit einer OLED-Fassung verwendet, so sollte auf dieser gleich der 12 mm Drucktaster aus Edelstahl montiert werden.   
+1. Anschlussleitungen des Tasters auf ca. 9 cm kürzen.   
+2. Von einem 2 mm Schrumpfschlauch zwei 1,5 cm lange Stücke herunterschneiden.   
+3. Die Schrumpfschlauch-Stücke auf die Anschlussleitungen ganz hinauf schieben.   
+4. Von einer Buchsenleiste mit kurzen Kontakten 2 Kontakte herunterschneiden und verzinnen.   
+5. Die Anschlussleitungen an die Buchsenleiste löten.   
+6. Den Schrumpfschlauch über die Lötstelle schieben und erhitzen.   
+7. Den Taster in die OLED-Fassung schieben und verschrauben. Mit einem 14-er Maul-Schlüssel festziehen.   
+
+![Edelstahl-Taster](/images/300_pushbutton_parts.png "Edelstahl-Taster")   
+_Bild 13: Bauteile für den Edelstahl-Taster_   
+
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
 
@@ -170,16 +183,16 @@ Diese Platine stellt zwei I²C-Busse zur Verf&uuml;gung:
 Die Reihenfolge der Pins bei den Anschl&uuml;ssen J4 bis J6 ist so gew&auml;hlt, dass sich das Display bzw. die IO-Expander-Platinen leicht anschlie&szlig;en lassen (Pinbelegung I2C-1: SDA3-SCL3-3V3-GND und I2C-2: SCL5-SDA5-GND-5V).   
 
 ![I2C shield](/images/pcb_f/PCB_F_Shield_I2C_5V_3V3_big_V2.png "I2C shield")   
-_Bild 13: Platine "Shield_I2C_5V_3V3_big" zum Anschluss des 5V- und OLED-I2C-Bus_   
+_Bild 14: Platine "Shield_I2C_5V_3V3_big" zum Anschluss des 5V- und OLED-I2C-Bus_   
 
 _*Platinengr&ouml;&szlig;e*_: 58 x 39 mm²   
 _*Link zu den KiCad-Dateien*_: [/fab/kicad/Shield_I2C_5V_3V3_big_V2](/fab/kicad/Shield_I2C_5V_3V3_big_V2)   
 
 ![Shield_I2C_5V_3V3_big](/images/300_Shield_I2C_5V_3V3_big.png "Shield_I2C_5V_3V3_big")   
-_Bild 14: Die best&uuml;ckte Platine "Shield_I2C_5V_3V3_big"_   
+_Bild 15: Die best&uuml;ckte Platine "Shield_I2C_5V_3V3_big"_   
 
 ![Shield_I2C_5V_3V3_big_circuit](/images/600_Shield_I2C_5V_3V3_big_circuit.png "Shield_I2C_5V_3V3_big_circuit")   
-_Bild 15: Schaltplan der "Shield_I2C_5V_3V3_big"-Platine_   
+_Bild 16: Schaltplan der "Shield_I2C_5V_3V3_big"-Platine_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -199,7 +212,7 @@ Die Anschl&uuml;sse J1 und J2 werden normalerweise nicht best&uuml;ckt.
 * Aufstecken der beiden 4-poligen Stiftleisten (gelb), welche meist mit dem Pegelwandler mitgeliefert werden, auf die Pegelwandler-Platine.   
 
 ![Shield_I2C_5V_3V3_big_comp](/images/300_Shield_I2C_5V_3V3_big_comp.png "Shield_I2C_5V_3V3_big_comp")   
-_Bild 16: Bauteile f&uuml;r die "Shield_I2C_5V_3V3_big"-Platine_   
+_Bild 17: Bauteile f&uuml;r die "Shield_I2C_5V_3V3_big"-Platine_   
 
 ### Best&uuml;ckung   
 1. Die beiden gelben 4-poligen Stiftleisten sowohl in die Konverter- als auch in in die I2C-Platine stecken und beidseitig auf der Bauteilseite des Prints verl&ouml;ten.  
@@ -217,10 +230,10 @@ _Bild 16: Bauteile f&uuml;r die "Shield_I2C_5V_3V3_big"-Platine_
 Die "Shield_I2C_5V_3V3_big"-Platine wird mit der Bauteilseite (Buchse) auf die vormontierte OLED-Fassung aufgesteckt.   
 
 ![OLED_mount](/images/300_OLED_mount.png "OLED_mount")   
-_Bild 17: vormontierte OLED-Fassung_   
+_Bild 18: vormontierte OLED-Fassung_   
 
 ![OLED_mount2](/images/300_OLED_mount_i2c_big.png "OLED_mount2")   
-_Bild 18: "Shield_I2C_5V_3V3_big"-Platine auf OLED-Fassung aufgesteckt_   
+_Bild 19: "Shield_I2C_5V_3V3_big"-Platine auf OLED-Fassung aufgesteckt_   
 
 Die Verschraubung erfolgt mit M 2,6 x 8 mm Schrauben.   
 
