@@ -1,6 +1,6 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png
 "></img></td><td>
-Letzte &Auml;nderung: 12.3.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 13.3.2025 <a name="up"></a><br>   
 <h1>Umbau des Moduls 01 "Gleis 1 auf 2 mit Güterschuppen (2010)"</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -67,6 +67,27 @@ Die folgenden 40 x 42 mm großen Block-Beschriftungen auf Etikettenpapier auszud
 ![Modul M01 Beschriftung](./images/300_M01_cover.png "Modul M01 Beschriftung")   
 _Bild 3: Beschriftungen für die Steuerblöcke_   
 
+## 1.4 Neues Frontpanel (Rahmenteil Ra4 - Süd)
+1. 10 mm starkes Pappelsperrholz auf die Größe 230 x 60 mm² zuschneiden   
+2. Rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm² für die OLED-Anzeige mit 3-D-gedrucktem Rahmen ausschneiden:   
+![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
+_Bild 4: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
+
+3. Beschriftung für die Steuerblöcke aufkleben   
+Der Abstand zum unteren Rand beträgt 8 mm.   
+![Modul 01 S&uuml;d 480mm](./images/300_M01_Sued_480mm.png "Modul 01 S&uuml;d 480mm")   
+_Bild 5: Position der Beschriftung der Steuerblöcke_   
+
+4. Bohren:   
+* Für die Querverstrebung (innen): 2 mm Durchmesser   
+* Für Schalter bzw. Taster: 7 mm Durchmesser   
+* Für die LED-Fassungen: 5,6 mm Durchmesser   
+
+5. Auf der Rückseite (hinter den Beschriftungen) die Block-Halterungen mit je vier selbstbohrenden Schrauben M 2,6 x 10 mm anschrauben.   
+
+6. Schaltblöcke `2IO` und `W2` in die Block-Halterungen einsetzen und anschrauben (mit je vier Schrauben M 2 x 10 mm).  
+![Modul 01 Schaltbl&ouml;cke](./images/300_M01_mounted_switch_blocks.png "Modul 01 Schaltbl&ouml;cke")   
+_Bild 5: Montierte Schaltblöcke_   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
