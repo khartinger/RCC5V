@@ -296,10 +296,11 @@ strRcomp aRcomp[RCOMP_NUM] = {
 
 # 4. Elektrische Verdrahtung des Moduls
 ## 4.1 Modulverbindung und Stromversorgung
-Die Verbindung zu den anderen Modulen erfolgt mit der Platine "`RW_5V_2SUB25`" und aufgestecktem Netzteil.   
+Die Verbindung zu den anderen Modulen erfolgt mit der Platine "`RW_5V_2SUB25`" und aufgestecktem Netzteil. Nach der Montage einer 1 cm starken Halterung aus Holz wird die Platine auf diese aufgeschraubt.   
 
-## 4.2 Bedienpanel
-
+## 4.2 Bedienpanel und I²C-Bus
+1. Festschrauben des Bedienpanels auf den Rahmen.
+2. Verbindung de
 
 ## 4.3 Anschluss der Eisenbahn-Komponenten
 

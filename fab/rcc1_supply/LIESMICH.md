@@ -108,14 +108,15 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_2SUB25_V4](/fab/kicad/RW_5V_2SU
 | Anzahl | Referenz     | Wert                   | Geh&auml;use       |   
 |--------|--------------|------------------------|--------------------|   
 |    2   | J1, J2       | Sub-D-Stecker 25-polig (DB25_Plug) | _kh_library:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm |   
-|    3   | J7, J8, J9   | Schraubklemme 2-polig (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
+|    3   | J7, J8, J10  | Schraubklemme 2-polig schwarz (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
+|    1   | J9           | Schraubklemme 2-polig grün (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
 |    1   | J5, J6, U1   | 5V-Netzteil-Platine     | _kh_library:AC_5V_supply_6pol_PinsOnly |   
 
 ### Best&uuml;ckung   
 1. Schraubklemmen J10, J7 und J8, J9 zusammenstecken und einl&ouml;ten    
-2. Sub-D-Stecker J1   
+2. Sub-D-Stecker J2   
 3. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6   
-4. Sub-D-Stecker J2   
+4. Sub-D-Stecker J1   
 
 ### Versionen
 * V1 (241029): OK   

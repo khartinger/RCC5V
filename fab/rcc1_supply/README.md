@@ -108,14 +108,15 @@ _*Link to the KiCad files*_: [/fab/kicad/RW_5V_2SUB25_V4](/fab/kicad/RW_5V_2SUB2
 | Quantity | Reference | Value | Footprint |   
 |--------|--------------|------------------------|--------------------|   
 | 2 | J1, J2 | Sub-D connector 25-pin (DB25_Plug) | _kh_library:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm |   
-| 3 | J7, J8, J9 | Screw terminal 2-pole (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
+| 3 | J7, J8, J10 | Screw terminal 2-pole black (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
+| 1 | J9 | Screw terminal 2-pole green (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
 | 1 | J5, J6, U1 | 5V power supply board | _kh_library:AC_5V_supply_6pol_PinsOnly |   
 
 ### Assembly   
 1. screw terminals J10, J7 and J8, J9 plug together and solder   
-2. sub-D connector J1   
+2. sub-D connector J2   
 3. plugging and unplugging the 5V power supply board into J5 and J6   
-4. sub-D connector J2   
+4. sub-D connector J1   
 
 ### Versions
 * V1 (241029): OK   
