@@ -85,7 +85,9 @@ _Bild 5: Position der Beschriftung der Steuerblöcke_
 
 5. Auf der Rückseite (hinter den Beschriftungen) die Block-Halterungen mit je vier selbstbohrenden Schrauben M 2,6 x 10 mm anschrauben.   
 
-6. Schaltblöcke `2IO` und `W2` in die Block-Halterungen einsetzen und anschrauben (mit je vier Schrauben M 2 x 10 mm).  
+6. OLED-Block in die rechteckige Aussparung stecken   
+
+7. Schaltblöcke `2IO` und `W2` in die Block-Halterungen einsetzen und anschrauben (mit je vier Schrauben M 2 x 10 mm).   
 ![Modul 01 Schaltbl&ouml;cke](./images/300_M01_mounted_switch_blocks.png "Modul 01 Schaltbl&ouml;cke")   
 _Bild 5: Montierte Schaltblöcke_   
 
@@ -293,9 +295,13 @@ strRcomp aRcomp[RCOMP_NUM] = {
 <a name="x40"></a>   
 
 # 4. Elektrische Verdrahtung des Moduls
-## 4.1 Bedienpanel
+## 4.1 Modulverbindung und Stromversorgung
+Die Verbindung zu den anderen Modulen erfolgt mit der Platine "`RW_5V_2SUB25`" und aufgestecktem Netzteil.   
 
-## 4.2 Anschluss der Eisenbahn-Komponenten
+## 4.2 Bedienpanel
+
+
+## 4.3 Anschluss der Eisenbahn-Komponenten
 
 
 [Zum Seitenanfang](#up)   

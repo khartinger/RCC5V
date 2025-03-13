@@ -97,12 +97,12 @@ _Bild 6: Mit Netzteil best&uuml;ckte Verbindungsplatine mit zwei 25-poligen Stec
 ## 3.2 Platine mit zwei 25-poligen Sub-D-Steckern und Netzteil (RW_5V_2SUB25)   
 Diese Platine wird zum Verbinden kurzer Module mit L&auml;ngen von 25 cm oder 50 cm verwendet. Sie enth&auml;lt Anschl&uuml;sse f&uuml;r ein 5V-Netzteil und das DCC-Steuersignal sowie Schraubklemmen f&uuml;r den DCC-Fahrstrom (SS, NN und SN, NS) und die Hilfsleitungen OA und OB. Die Platine ist so aufgebaut, dass sie beim Einbau in ein Modul symmetrisch zu einer Verstrebung liegen kann.   
 
-![Platine RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V3.png "Platine RW_5V_2SUB25")   
+![Platine RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V4.png "Platine RW_5V_2SUB25")   
 _Bild 7: Platine RW_5V_2SUB25_   
 
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
 _*Montagebohrungen*_: 2,5 mm, Abstand 70 mm x 60 mm   
-_*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_2SUB25_V2](/fab/kicad/RW_5V_2SUB25_V2)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_2SUB25_V4](/fab/kicad/RW_5V_2SUB25_V4)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use       |   

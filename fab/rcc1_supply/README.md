@@ -97,12 +97,12 @@ _Figure 6: Connection board equipped with power supply unit with two 25-pin conn
 ## 3.2 Board with two 25-pin D-sub connectors and power supply unit (RW_5V_2SUB25)   
 This board is used to connect short modules with lengths of 25 cm or 50 cm. It contains connections for a 5V power supply unit and the DCC control signal as well as screw terminals for the DCC traction current (SS, NN and SN, NS) and the auxiliary lines OA and OB. The circuit board is designed so that it can be positioned symmetrically to a strut when installed in a module.   
 
-![PCB RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V3.png "PCB RW_5V_2SUB25")   
+![PCB RW_5V_2SUB25](/images/pcb_f/PCB_F_RW_5V_2SUB25_V4.png "PCB RW_5V_2SUB25")   
 _Figure 7: Circuit board RW_5V_2SUB25_   
 
 _*Board size*_: 80 x 66 mm²   
 _*Mounting holes*_: 2.5 mm, distance 70 mm x 60 mm   
-_*Link to the KiCad files*_: [/fab/kicad/RW_5V_2SUB25_V2](/fab/kicad/RW_5V_2SUB25_V2)   
+_*Link to the KiCad files*_: [/fab/kicad/RW_5V_2SUB25_V4](/fab/kicad/RW_5V_2SUB25_V4)   
 
 ### Bill of materials   
 | Quantity | Reference | Value | Footprint |   
