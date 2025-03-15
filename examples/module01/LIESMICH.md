@@ -48,18 +48,33 @@ Die bisherige DCC-Steuerung des Moduls erfolgte mit einem Uhlenbrock Schaltdecod
 4-poliges Umschaltrelais LZNQ403.   
 
 ## 1.2 Neue RCC-Komponenten bereitstellen
-Für die Steuerung werden die nachfolgenden Komponenten benötigt:   
+Für die Steuerung werden vier RCC-Komponenten benötigt:   
 * [SUB2525_NT: Modulverbinder mit 25-poligem Stecker auf beiden Seiten und Netzteil](/fab/rcc1_supply/LIESMICH.md)   
 * [uC_big: Mikrocontroller mit integrierter OLED-Anzeige](/fab/rcc2_esp32/LIESMICH.md)   
 * [2IO-Block für das abschaltbare Ladegleis](/fab/rcc4_block/LIESMICH.md#x50)   
 * [W2-Block zur Weichensteuerung](/fab/rcc4_block/LIESMICH.md#x20)   
+
+Weiters werden folgende fünf Zusatzplatinen benötigt:   
 * [CON_1xIO_V2: Board zum Anschluss der geschalteten Stromzuführung](/fab/rcc5_add_ons/LIESMICH.md#x60)   
 * [CON_6pol_3_V2: Board zum Anschluss der Weichenkabel](/fab/rcc5_add_ons/LIESMICH.md#x40)   
-* 2x PCF8574-I²C-I/O-Expander-Board   
+* [CON_6pol_6_V2: Board zum Anschluss von Entstörkondensatoren](/fab/rcc5_add_ons/LIESMICH.md#x50)   
 * [2x CON_i2c_20mm: Halterung für I²C-I/O-Expander](/fab/rcc3_i2c/LIESMICH.md#x20)   
-* .. Stk Verbindungsdrähte Länge 25 cm, Buchse-Buchse   
-* .. cm Flachband-Verbindungskabel 6-polig   
-* .. cm Flachband-Verbindungskabel 6-polig   
+
+Der Anschluss der digitalen Ein- und Ausgänge an den I²C-Bus erfolgt mit   
+* 2x PCF8574-I²C-I/O-Expander-Board   
+
+Die Verdrahtung erfolgt durch folgende Leitungen:   
+* 4-polige Verbindungsdrähte Länge 15 cm, Buchse-Buchse (uC_big - PCF8574-I²C-I/O-Expander-Board)   
+* 30 cm Flachband-Verbindungskabel 6-polig (uC_big - SUB2525_NT-DCC)   
+* 42 cm Flachband-Verbindungskabel 6-polig mit 4 Buchsen an den Enden und bei 15 cm und 33 cm (__*Power-Kabel*__ von SUB2525_NT-Power zu den Schalt-Blöcken [Stecker J3] und zu CON_6pol_6_V2) *)   
+* 18 cm Flachband-Verbindungskabel 6-polig (2IO-Block zu CON_1xIO_V2-Board)   
+* 10 cm Flachband-Verbindungskabel 6-polig (W2-Block zu CON_6pol_3_V2)   
+* 2 Stk Verbindungsdrähte Länge 15 cm, Buchse-Buchse (2IO-Block zu PCF8574-I²C-I/O-Expander-Board)   
+* 4 Stk Verbindungsdrähte Länge 25 cm, Buchse-Buchse (W2-Block zu PCF8574-I²C-I/O-Expander-Board)   
+
+*) __*Wichtig:*__ Kontrolle, ob alle Buchsen beim Power-Kabel in der richtigen Orientierung aufgepresst wurden. Eine falsch aufgepresste Buchse führt zur Zerstörung der Transistoren im Steuerteil des angeschlossenen Schaltblocks!!!   
+
+Die übrige Verkabelung ist Bestand.   
 
 ## 1.3 Block-Beschriftungen
 Die folgenden 40 x 42 mm großen Block-Beschriftungen auf Etikettenpapier auszudrucken und auf das Frontpanel kleben (Abstand zum unteren Rand 8 mm).   
@@ -299,11 +314,29 @@ strRcomp aRcomp[RCOMP_NUM] = {
 Die Verbindung zu den anderen Modulen erfolgt mit der Platine "`RW_5V_2SUB25`" und aufgestecktem Netzteil. Nach der Montage einer 1 cm starken Halterung aus Holz wird die Platine auf diese aufgeschraubt.   
 
 ## 4.2 Bedienpanel und I²C-Bus
-1. Festschrauben des Bedienpanels auf den Rahmen.
-2. Verbindung de
+1. Festschrauben des Bedienpanels (Forderfront) auf den Rahmen.   
+2. Einstecken der I²C-Halteplatinen (CON_i2c_20mm) von und nach den beiden PCF8574-I²C-I/O-Expander-Boards und festschrauben.   
+3. uC_big-I²C-Anschluss mit I²C-Halteplatine verbinden (4-polig).   
+4. DCC-Anschluss (6-polig) mit DCC-Anschluss der Platine "`RW_5V_2SUB25`" verbinden.   
+
+## 4.3 Anschluss der Steuerblöcke
+1. Power-Anschlüsse (J3) der Blöcke mit POWER-Anschluss der Platine "`RW_5V_2SUB25`" mittels 6-poligem Kabel verbinden.   
+2. Letzten Anschluss der Powerleitung mit Platine "`CON_6pol_6_V2`" verbinden.   
+3. Schaltblock W2 mit Platine "`CON_6pol_3_V2`" mittels 6-poligem Kabel verbinden.   
+4. Schaltblock 2IO mit Platine "`CON_1xIO_V2`" mittels 6-poligem Kabel verbinden.   
+
+## 4.4 Verdrahtung der Blöcke mit den I²C-I/O-Expandern
+Die Verdrahtung erfolgt gemäß Bild 4.   
 
 ## 4.3 Anschluss der Eisenbahn-Komponenten
+* Anschluss der Stromversorgung für das abschaltbare Gleis an Platine "`CON_1xIO_V2`" (mittlere Schraubklemme) anschließen.   
+* Anschluss der Weichenleitungen an Platine "`CON_6pol_3_V2`": Masse an der mittleren Schraubklemme.   
 
+## 4.5 Fertige Verkabelung
+Die folgenden beiden Bilder zeigen die fertige Verkabelung:   
+![Verkabelung neu 2](./images/300_M01_wiring2.png  "Verkabelnug neu 2")   
+![Verkabelung neu 3](./images/300_M01_wiring3.png  "Verkabelnug neu 3")   
+_Bild 5: Die fertige Verkabelung_   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   

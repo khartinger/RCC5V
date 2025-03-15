@@ -10,7 +10,7 @@ Folgende Erg&auml;nzungsplatinen sind hilfreich und werden auf dieser Seite besc
 * [Halterung für Schaltblöcke (RW_LEER_LED)](#x20)   
 * [Fahrstromverteiler (CON_2pol_141)](#x30)   
 * [Verteilerplatine von 6-poligem Kabel auf 3 Schraubklemmen (CON_6pol_3)](#x40)   
-*[Verteilerplatine von 6-poligem Kabel auf 6 Schraubklemmen (CON_6pol_6)](#x50)   
+* [Verteilerplatine von 6-poligem Kabel auf 6 Schraubklemmen (CON_6pol_6)](#x50)   
 * [Fahrstromschalter einfach (CON_1xIO)](#x60)   
 * [Fahrstromschalter zweifach (CON_2xIO)](#x70)   
 * [Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_2x4)](#x80)   
