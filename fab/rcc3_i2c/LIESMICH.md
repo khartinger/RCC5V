@@ -1,12 +1,17 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 20.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 16.3.2025 <a name="up"></a><br>   
 <h1>Herstellung von I²C-Platinen</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # 1. Einleitung   
-Die Anbindung der [Steuerblöcke](/fab/rcc4_block) an den [ESP32-Mikrocontroller](/fab/rcc2_esp32) erfolgt über die I/O-Pins von zugekauften I²C-PCF8574-I/O-Platinen. Die hier beschriebenen Zusatzplatinen sind nicht unbedingt erforderlich, aber hilfreich, weil die PCF8574-Platinen zB keine Bohrungen für eine Befestigung haben.   
-Folgende Prints sind derzeit verfügbar:   
+Die Anbindung der [Steuerbl&ouml;cke](/fab/rcc4_block) an den [ESP32-Mikrocontroller](/fab/rcc2_esp32) erfolgt &uuml;ber die I/O-Pins von zugekauften I²C-PCF8574-I/O-Platinen:   
+
+![I²C-PCF8574-I/O-Prints](/images/300_pcf8574_boards.png "I²C-PCF8574-I/O-Prints")   
+_Bild 1: I²C-PCF8574-I/O-Platinen_   
+
+Die hier beschriebenen Zusatzplatinen sind nicht unbedingt erforderlich, aber hilfreich, weil die PCF8574-Platinen zB keine Bohrungen f&uuml;r eine Befestigung haben.   
+Folgende Prints sind derzeit verf&uuml;gbar:   
 * [I²C-Halterung 20 mm](#x20)   
 * [I²C-Halterung 40 mm](#x30)   
 * [I2C-LED-Platine](#x40)   
@@ -18,13 +23,13 @@ Folgende Prints sind derzeit verfügbar:
 Auf den I²C-PCF8574-I/O-Platinen sind keine Befestigungsbohrungen vorgesehen. Die `CON_i2c_20mm`-Platine dient als 20 mm langes Zwischenst&uuml;ck zwischen zwei I²C-PCF8574-I/O-Platinen und hat eine Befestigungsbohrung.   
 
 ![CON_i2c_20mm_V1](/images/200_CON_i2c_20mm_V1.png "CON_i2c_20mm_V1")   
-_Bild 1: Die best&uuml;ckte "CON_i2c_20mm"-Platine_   
+_Bild 2: Die best&uuml;ckte "CON_i2c_20mm"-Platine_   
 
 ![CON_i2c_20mm_circuit](/images/200_CON_i2c_20mm_circuit.png "CON_i2c_20mm_circuit")   
-_Bild 2: Schaltplan der "CON_i2c_20mm"-Platine_   
+_Bild 3: Schaltplan der "CON_i2c_20mm"-Platine_   
 
 ![Print i2c Halterung 20 mm](/images/pcb_f/PCB_F_CON_i2c_20mm_V1.png "Print i2c Halterung 20 mm")   
-_Bild 3: Platine zum Festschrauben von I²C-Platinen_   
+_Bild 4: Platine zum Festschrauben von I²C-Platinen_   
 
 _*Platinengr&ouml;&szlig;e*_: 20 x 15 mm²   
 _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_i2c_20mm_V1](/fab/kicad/CON_i2c_20mm_V1)   
@@ -48,13 +53,13 @@ Stift- und Buchsenleiste einstecken und anl&ouml;ten.
 Auf den I²C-PCF8574-I/O-Platinen sind keine Befestigungsbohrungen vorgesehen. Die `CON_i2c_40mm`-Platine dient als 40 mm langes Zwischenst&uuml;ck zwischen zwei I²C-PCF8574-I/O-Platinen und hat zwei Befestigungsbohrungen.   
 
 ![CON_i2c_40mm_V1](/images/200_CON_i2c_40mm_V1.png "CON_i2c_40mm_V1")   
-_Bild 4: Die best&uuml;ckte "CON_i2c_40mm"-Platine_   
+_Bild 5: Die best&uuml;ckte "CON_i2c_40mm"-Platine_   
 
 ![CON_i2c_20mm_circuit](/images/200_CON_i2c_20mm_circuit.png "CON_i2c_20mm_circuit")   
-_Bild 5: Schaltplan der "CON_i2c_40mm"-Platine_   
+_Bild 6: Schaltplan der "CON_i2c_40mm"-Platine_   
 
 ![Print i2c Halterung 40 mm](/images/pcb_f/PCB_F_CON_i2c_40mm_V1.png "Print i2c Halterung 40 mm")   
-_Bild 6: Platine zum Festschrauben von I²C-Platinen_   
+_Bild 7: Platine zum Festschrauben von I²C-Platinen_   
 
 _*Platinengr&ouml;&szlig;e*_: 40 x 15 mm²   
 _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_i2c_40mm_V1](/fab/kicad/CON_i2c_40mm_V1)   
@@ -78,13 +83,13 @@ Stift- und Buchsenleiste einstecken und anl&ouml;ten.
 Diese Platine enth&auml;lt eine LED mit Vorwiderstand und zwei Haltebohrungen. Die LED kann wahlweise auf Masse oder einen I²C-IO-Pin gelegt werden.   
 
 ![CON_i2c_LED_V1](/images/200_CON_i2c_LED_V1.png "CON_i2c_LED_V1")   
-_Bild 7: Die best&uuml;ckte "CON_i2c_LED"-Platine_   
+_Bild 8: Die best&uuml;ckte "CON_i2c_LED"-Platine_   
 
 ![CON_i2c_LED_circuit](/images/200_CON_i2c_LED_circuit.png "CON_i2c_LED_circuit")   
-_Bild 8: Schaltplan der "CON_i2c_LED"-Platine_   
+_Bild 9: Schaltplan der "CON_i2c_LED"-Platine_   
 
 ![Print i2c LED](/images/pcb_f/PCB_F_CON_i2c_LED_V1.png "Print i2c LED")   
-_Bild 9: I²C-LED-Platine_   
+_Bild 10: I²C-LED-Platine_   
 
 _*Platinengr&ouml;&szlig;e*_: 30 x 15 mm²   
 _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_i2c_LED_V1](/fab/kicad/CON_i2c_LED_V1)   
@@ -115,13 +120,13 @@ Die langen Kontakte der 4-poligen Buchsenleiste um 90° abbiegen.
 Die I²C-Verteilerplatine dient zum Parallelschalten mehrerer I²C-IO-Platinen, falls es Platzprobleme gibt.   
 
 ![CON_i2c_4x_V1](/images/200_CON_i2c_4x_V1.png "CON_i2c_4x_V1")   
-_Bild 10: Die best&uuml;ckte "CON_i2c_4x"-Platine_   
+_Bild 11: Die best&uuml;ckte "CON_i2c_4x"-Platine_   
 
 ![CON_i2c_4x_circuit](/images/200_CON_i2c_4x_circuit.png "CON_i2c_4x_circuit")   
-_Bild 11: Schaltplan der "CON_i2c_4x"-Platine_   
+_Bild 12: Schaltplan der "CON_i2c_4x"-Platine_   
 
 ![Print i2c 4x](/images/pcb_f/PCB_F_CON_i2c_4x_V1.png "Print i2c 4x")   
-_Bild 12: 4x I²C-Platine_   
+_Bild 13: 4x I²C-Platine_   
 
 _*Platinengr&ouml;&szlig;e*_: 26 x 40 mm²   
 _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_i2c_4x_V1](/fab/kicad/CON_i2c_4x_V1)   

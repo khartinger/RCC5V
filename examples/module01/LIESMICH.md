@@ -1,23 +1,23 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png
 "></img></td><td>
-Letzte &Auml;nderung: 13.3.2025 <a name="up"></a><br>   
-<h1>Umbau des Moduls 01 "Gleis 1 auf 2 mit Güterschuppen (2010)"</h1>
+Letzte &Auml;nderung: 16.3.2025 <a name="up"></a><br>   
+<h1>Umbau des Moduls M01 "Gleis 1 auf 2 mit G&uuml;terschuppen (2010)"</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 [Link zur Inhalts&uuml;bersicht](#x05)   
 
 # Worum geht es hier?
-Diese Anleitung beschreibt das Umrüsten der elektrischen Steuerung eines 50 x 25 cm² gro&szlig;en N-Spur-Gleis-Moduls M01 „Gleis 1 auf 2 mit Güterschuppen“ auf das RCC-System. Die Bilder zeigen das Modul mit Landschaftsgestaltung und alter DCC-Steuerung. An der Forderfront sieht man ein altes Bedienelement f&uuml;r den Handbetrieb (im _Bild 1_ links unten).   
+Diese Anleitung beschreibt das Umr&uuml;sten der elektrischen Steuerung eines 50 x 25 cm² gro&szlig;en N-Spur-Gleis-Moduls M01 „Gleis 1 auf 2 mit G&uuml;terschuppen“ auf das RCC-System. Die Bilder zeigen das Modul mit Landschaftsgestaltung und alter DCC-Steuerung. An der Forderfront sieht man ein altes Bedienelement f&uuml;r den Handbetrieb (im _Bild 1_ links unten).   
 
 ![Modul M01 Landschaft](./images/300_M01_Landscape.png "Modul M01 Landschaft")   
 _Bild 1: Das Modul M01 mit Landschaft_   
 
 Die bisherige Bedienung des Moduls war entweder 
-* händisch (direkt am Modul über einen Ein-/Aus-Schalter und einen Dreifach-Schalter) oder über   
-* DCC-Befehle möglich.   
+* h&auml;ndisch (direkt am Modul &uuml;ber einen Ein-/Aus-Schalter und einen Dreifach-Schalter) oder &uuml;ber   
+* DCC-Befehle m&ouml;glich.   
 
-Die DCC-Steuerung bestand aus einem Uhlenbrock Schaltdecoder SD1 für das Ladegleis und einem Uhlenbrock Magnetartikeldecoder MD2 zur Weichenschaltung. Das Umschalten zwischen DCC- und händischem Schalten der Weiche mit Wechselstrom erfolgte über ein 4-poliges Umschaltrelais LZNQ403 (im _Bild 2_ rechts unten).   
+Die DCC-Steuerung bestand aus einem Uhlenbrock Schaltdecoder SD1 f&uuml;r das Ladegleis und einem Uhlenbrock Magnetartikeldecoder MD2 zur Weichenschaltung. Das Umschalten zwischen DCC- und h&auml;ndischem Schalten der Weiche mit Wechselstrom erfolgte &uuml;ber ein 4-poliges Umschaltrelais LZNQ403 (im _Bild 2_ rechts unten).   
 
 ![Modul M01 mit alter Steuerung](./images/300_M01_Control_old.png "Modul M01 mit alter Steuerung")   
 _Bild 2: Die alte Steuerung des Modules M01_   
@@ -26,21 +26,21 @@ _Bild 2: Die alte Steuerung des Modules M01_
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit Schotterbett          |   
-| Gleisbild      | 1x Zweiwegweiche, <br>1x abschaltbares Gleis        |   
-| Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
+| Gleisbild      | 2x Zweiwegweiche (mit einem Schalter)<br>1x abschaltbares Gleis        |   
+| Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker <br>(entsprechend NEM 908D, je 1x WEST und OST) |   
 | Fahrstrom     | Analog- oder DCC-Betrieb |   
-| Steuerung der Schaltkomponenten | * H&auml;ndisch direkt an der Modulvorderseite <br> * &uuml;ber DCC <br> * durch MQTT-Nachrichten (&uuml;ber WLAN) |   
+| Steuerung der Schaltkomponenten | * H&auml;ndisch direkt an der Modulvorderseite <br> * &uuml;ber DCC <br> * NEU: durch MQTT-Nachrichten (&uuml;ber WLAN) |   
 | Bedienelemente mit R&uuml;ckmeldung | 1x OLED-Display und Taster <br> 1x Zweiwegweiche (Block W2, DCC 12) <br> 1x Fahrstrom (Block 2IO, DCC 11) |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 | MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
-| Sonstiges | * Beide Weichen werden mit einem Schalter geschaltet (damit sind immer beide Weichen auf "Gerade" oder "Abzweig") |   
+| Sonstiges | * Beide Weichen werden mit einem Schalter bedient (damit sind beide Weichen immer gleichzeitig in Position "Gerade" oder "Abzweig") |   
 
 <a name="x05"></a>   
 
 # Inhaltsverzeichnis   
 * [1. Vorbereitung](#x10)   
 * [2. Abbau der alten Schaltung](#x20)   
-* [3. Software für den ESP32](#x30)   
+* [3. Software f&uuml;r den ESP32](#x30)   
 * [4. Elektrische Verdrahtung des Moduls](#x40)   
 * [5. Probebetrieb](#x50)   
 * [6. Abschlie&szlig;ende Arbeiten](#x60)   
@@ -51,71 +51,71 @@ _Bild 2: Die alte Steuerung des Modules M01_
 # 1. Vorbereitung
 
 ## 1.1 RCC-Komponenten bereitstellen
-Für die Steuerung werden vier RCC-Komponenten benötigt:   
+F&uuml;r die Steuerung werden vier __*RCC-Komponenten*__ ben&ouml;tigt:   
 * [SUB2525_NT: Modulverbinder mit 25-poligem Stecker auf beiden Seiten und Netzteil](/fab/rcc1_supply/LIESMICH.md)   
 * [uC_big: Mikrocontroller mit integrierter OLED-Anzeige](/fab/rcc2_esp32/LIESMICH.md)   
-* [2IO-Block für das abschaltbare Ladegleis](/fab/rcc4_block/LIESMICH.md#x50)   
+* [2IO-Block f&uuml;r das abschaltbare Ladegleis](/fab/rcc4_block/LIESMICH.md#x50)   
 * [W2-Block zur Weichensteuerung](/fab/rcc4_block/LIESMICH.md#x20)   
 
-Weiters werden folgende fünf Zusatzplatinen benötigt:   
-* [CON_1xIO_V2: Board zum Anschluss der geschalteten Stromzuführung](/fab/rcc5_add_ons/LIESMICH.md#x60)   
+Weiters werden folgende f&uuml;nf __*Zusatzplatinen*__ verwendet:   
+* [CON_1xIO_V2: Board zum Anschluss der geschalteten Stromzuf&uuml;hrung](/fab/rcc5_add_ons/LIESMICH.md#x60)   
 * [CON_6pol_3_V2: Board zum Anschluss der Weichenkabel](/fab/rcc5_add_ons/LIESMICH.md#x40)   
-* [CON_6pol_6_V2: Board zum Anschluss von Entstörkondensatoren](/fab/rcc5_add_ons/LIESMICH.md#x50)   
-* [2x CON_i2c_20mm: Halterung für I²C-I/O-Expander](/fab/rcc3_i2c/LIESMICH.md#x20)   
+* [CON_6pol_6_V2: Board zum Anschluss von Entst&ouml;rkondensatoren](/fab/rcc5_add_ons/LIESMICH.md#x50)   
+* [2x CON_i2c_20mm: Halterung f&uuml;r I²C-I/O-Expander](/fab/rcc3_i2c/LIESMICH.md#x20)   
 
-Der Anschluss der digitalen Ein- und Ausgänge an den I²C-Bus erfolgt mit   
-* 2x PCF8574-I²C-I/O-Expander-Board   
+Die __*Verbindung*__ zwischen dem Mikrocontroller und den Ein- und Ausg&auml;ngen am I²C-Bus erfolgt mit   
+* 2 St&uuml;ck [PCF8574-I²C-I/O-Expander-Boards](/fab/rcc3_i2c/LIESMICH.md)   
 
-Die Verdrahtung erfolgt durch folgende Leitungen:   
-* 4-polige Verbindungsdrähte Länge 15 cm, Buchse-Buchse (uC_big - PCF8574-I²C-I/O-Expander-Board)   
+Die __*Verdrahtung*__ erfolgt durch folgende Leitungen:   
+* 4-polige Verbindungsdr&auml;hte L&auml;nge 15 cm, Buchse-Buchse (uC_big - PCF8574-I²C-I/O-Expander-Board)   
 * 30 cm Flachband-Verbindungskabel 6-polig (uC_big - SUB2525_NT-DCC)   
-* 42 cm Flachband-Verbindungskabel 6-polig mit 4 Buchsen an den Enden und bei 15 cm und 33 cm (__*Power-Kabel*__ von SUB2525_NT-Power zu den Schalt-Blöcken [Stecker J3] und zu CON_6pol_6_V2) *)   
+* 42 cm Flachband-Verbindungskabel 6-polig mit 4 Buchsen an den Enden und bei 15 cm und 33 cm (__*Power-Kabel*__ von SUB2525_NT-Power zu den Schalt-Bl&ouml;cken [Stecker J3] und zu CON_6pol_6_V2) *)   
 * 18 cm Flachband-Verbindungskabel 6-polig (2IO-Block zu CON_1xIO_V2-Board)   
 * 10 cm Flachband-Verbindungskabel 6-polig (W2-Block zu CON_6pol_3_V2)   
-* 2 Stk Verbindungsdrähte Länge 15 cm, Buchse-Buchse (2IO-Block zu PCF8574-I²C-I/O-Expander-Board)   
-* 4 Stk Verbindungsdrähte Länge 25 cm, Buchse-Buchse (W2-Block zu PCF8574-I²C-I/O-Expander-Board)   
+* 2 Stk Verbindungsdr&auml;hte L&auml;nge 15 cm, Buchse-Buchse (2IO-Block zu PCF8574-I²C-I/O-Expander-Board)   
+* 4 Stk Verbindungsdr&auml;hte L&auml;nge 25 cm, Buchse-Buchse (W2-Block zu PCF8574-I²C-I/O-Expander-Board)   
 
-*) __*Wichtig:*__ Kontrolle, ob alle Buchsen beim Power-Kabel in der richtigen Orientierung aufgepresst wurden. Eine falsch aufgepresste Buchse führt zur Zerstörung der Transistoren im Steuerteil des angeschlossenen Schaltblocks!!!   
+*) __*Wichtig:*__ Kontrolle, ob alle Buchsen beim Power-Kabel in der richtigen Orientierung aufgepresst wurden. Eine falsch aufgepresste Buchse f&uuml;hrt zur Zerst&ouml;rung der Transistoren im Steuerteil des angeschlossenen Schaltblocks!!!   
 
-Die übrige Verkabelung ist Bestand.   
+Die &uuml;brige Verkabelung ist Bestand.   
 
 ## 1.2 Block-Beschriftungen
-Die folgenden 40 x 42 mm großen Block-Beschriftungen auf Etikettenpapier auszudrucken und auf das Frontpanel kleben (Abstand zum unteren Rand 8 mm).   
+Die folgenden 40 x 42 mm gro&szlig;en Block-Beschriftungen auf Etikettenpapier auszudrucken und auf das Frontpanel kleben (Abstand zum unteren Rand 8 mm).   
 
 ![Modul M01 Beschriftung](./images/300_M01_cover.png "Modul M01 Beschriftung")   
-_Bild 3: Beschriftungen für die Steuerblöcke_   
+_Bild 3: Beschriftungen f&uuml;r die Steuerbl&ouml;cke_   
 
-## 1.3 Neues Frontpanel (Rahmenteil Ra4 - Süd)
-1. 10 mm starkes Pappelsperrholz auf die Größe 230 x 60 mm² zuschneiden   
-2. Rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm² für die OLED-Anzeige mit 3-D-gedrucktem Rahmen ausschneiden:   
+## 1.3 Neues Frontpanel (Rahmenteil Ra4 - S&uuml;d)
+1. 10 mm starkes Pappelsperrholz auf die Gr&ouml;&szlig;e 230 x 60 mm² zuschneiden   
+2. Rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm² f&uuml;r die OLED-Anzeige mit 3-D-gedrucktem Rahmen ausschneiden:   
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
 _Bild 4: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
 
-3. Beschriftung für die Steuerblöcke aufkleben   
-Der Abstand zum unteren Rand beträgt 8 mm.   
+3. Beschriftung f&uuml;r die Steuerbl&ouml;cke aufkleben   
+Der Abstand zum unteren Rand betr&auml;gt 8 mm.   
 ![Modul 01 S&uuml;d 480mm](./images/300_M01_Sued_480mm.png "Modul 01 S&uuml;d 480mm")   
-_Bild 5: Position der Beschriftung der Steuerblöcke_   
+_Bild 5: Position der Beschriftung der Steuerbl&ouml;cke_   
 
 4. Bohren:   
-* Für die Querverstrebung (innen): 2 mm Durchmesser   
-* Für Schalter bzw. Taster: 7 mm Durchmesser   
-* Für die LED-Fassungen: 5,6 mm Durchmesser   
+* F&uuml;r die Querverstrebung (innen): 2 mm Durchmesser   
+* F&uuml;r Schalter bzw. Taster: 7 mm Durchmesser   
+* F&uuml;r die LED-Fassungen: 5,6 mm Durchmesser   
 
-5. Auf der Rückseite (hinter den Beschriftungen) die Block-Halterungen mit je vier selbstbohrenden Schrauben M 2,6 x 10 mm anschrauben.   
+5. Auf der R&uuml;ckseite (hinter den Beschriftungen) die Block-Halterungen mit je vier selbstbohrenden Schrauben M 2,6 x 10 mm anschrauben.   
 
 6. OLED-Block in die rechteckige Aussparung stecken   
 
-7. Schaltblöcke `2IO` und `W2` in die Block-Halterungen einsetzen und anschrauben (mit je vier Schrauben M 2 x 10 mm).   
+7. Schaltbl&ouml;cke `2IO` und `W2` in die Block-Halterungen einsetzen und anschrauben (mit je vier Schrauben M 2 x 10 mm).   
 ![Modul 01 Schaltbl&ouml;cke](./images/300_M01_mounted_switch_blocks.png "Modul 01 Schaltbl&ouml;cke")   
-_Bild 5: Montierte Schaltblöcke_   
+_Bild 5: Montierte Schaltbl&ouml;cke_   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
 
 # 2. Abbau der alten Steuerung
-Bei Abbau der alten Schaltung ist darauf zu achten, dass alle von den Gleisen und Weichen kommenden Leitungen möglichst nicht gekürzt oder zu kurz abgeschnitten werden.   
+Bei Abbau der alten Schaltung ist darauf zu achten, dass alle von den Gleisen und Weichen kommenden Leitungen m&ouml;glichst nicht gek&uuml;rzt oder zu kurz abgeschnitten werden.   
 1. Abschrauben des alten Frontpanels vom Modul   
-Falls das Panel zusätzlich zu den Schrauben verleimt ist: Entweder mit einer Stichsäge die Verleimung aufschneiden oder mit Hammer und Holzbrett durch Schlagen lösen.   
+Falls das Panel zus&auml;tzlich zu den Schrauben verleimt ist: Entweder mit einer Stichs&auml;ge die Verleimung aufschneiden oder mit Hammer und Holzbrett durch Schlagen l&ouml;sen.   
 2. Trennen der elektrischen Leitungen zwischen Panel und Modul   
 Leitungen losschrauben oder abzwicken (siehe _Bild 2_).
 3. Alle alten Komponenten aus dem Modul entfernen   
@@ -123,20 +123,20 @@ Leitungen losschrauben oder abzwicken (siehe _Bild 2_).
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
 
-# 3. Software für den ESP32
+# 3. Software f&uuml;r den ESP32
 ## 3.1 Planung der Verkabelung
-Für die Konfiguration der Software muss der Anschluss der Steuerblöcke an die I/O-Leitungen der I/O-Expander bekannt sein. 
-Für ein abschaltbares Gleis (Block 2IO) und eine Zweisegweiche (Block W2) müssen lediglich drei I/O-Leitungen an die I/O-Expander angeschlossen werden:   
+F&uuml;r die Konfiguration der Software muss der Anschluss der Steuerbl&ouml;cke an die I/O-Leitungen der I/O-Expander bekannt sein. 
+F&uuml;r ein abschaltbares Gleis (Block 2IO) und eine Zweisegweiche (Block W2) m&uuml;ssen lediglich drei I/O-Leitungen an die I/O-Expander angeschlossen werden:   
 * Abschaltbares Gleis: Pin 0   
 * Zweiwegweiche: Pin 1 und Pin 2   
 
-Die Verdrahtung zwischen den I/O-Boards und den Blöcken zeigt das folgende Bild.
+Die Verdrahtung zwischen den I/O-Boards und den Bl&ouml;cken zeigt das folgende Bild.
 
 ![Modul M01 Verkabelung](./images/600_M01_wiring1.png "Modul M01 Verkabelung")   
 _Bild 4: Verkabelung Modul M01_   
 
-## 3.2 Software für den ESP32
-Als Basis für die Steuersoftware im ESP32 dient die Demo-Software. Es müssen lediglich die Konfigurationsdateien angepasst werden. Eine detaillierte Beschreibung findet sich unter [/software/rcc_demo1/CUSTOMIZE_D.md](/software/rcc_demo1/CUSTOMIZE_D.md) bzw. [https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo1/CUSTOMIZE_D.md](https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo1/CUSTOMIZE_D.md)   
+## 3.2 Software f&uuml;r den ESP32
+Als Basis f&uuml;r die Steuersoftware im ESP32 dient die Demo-Software. Es m&uuml;ssen lediglich die Konfigurationsdateien angepasst werden. Eine detaillierte Beschreibung findet sich unter [/software/rcc_demo1/CUSTOMIZE_D.md](/software/rcc_demo1/CUSTOMIZE_D.md) bzw. [https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo1/CUSTOMIZE_D.md](https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo1/CUSTOMIZE_D.md)   
 
 1. Kopieren der Demo-Software (Stand 18.1.12025) in ein Verzeichnis `rcc_module01_V1`   
 2. Umbenennen `demo1` in `module01_V1`   
@@ -307,7 +307,7 @@ strRcomp aRcomp[RCOMP_NUM] = {
 #endif
 ```   
 
-5. ESP32 an den USB anschließen und die Software hochladen.   
+5. ESP32 an den USB anschlie&szlig;en und die Software hochladen.   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -322,17 +322,17 @@ Die Verbindung zu den anderen Modulen erfolgt mit der Platine "`RW_5V_2SUB25`" u
 3. uC_big-I²C-Anschluss mit I²C-Halteplatine verbinden (4-polig).   
 4. DCC-Anschluss (6-polig) mit DCC-Anschluss der Platine "`RW_5V_2SUB25`" verbinden.   
 
-## 4.3 Anschluss der Steuerblöcke
-1. Power-Anschlüsse (J3) der Blöcke mit POWER-Anschluss der Platine "`RW_5V_2SUB25`" mittels 6-poligem Kabel verbinden.   
+## 4.3 Anschluss der Steuerbl&ouml;cke
+1. Power-Anschl&uuml;sse (J3) der Bl&ouml;cke mit POWER-Anschluss der Platine "`RW_5V_2SUB25`" mittels 6-poligem Kabel verbinden.   
 2. Letzten Anschluss der Powerleitung mit Platine "`CON_6pol_6_V2`" verbinden.   
 3. Schaltblock W2 mit Platine "`CON_6pol_3_V2`" mittels 6-poligem Kabel verbinden.   
 4. Schaltblock 2IO mit Platine "`CON_1xIO_V2`" mittels 6-poligem Kabel verbinden.   
 
-## 4.4 Verdrahtung der Blöcke mit den I²C-I/O-Expandern
-Die Verdrahtung erfolgt gemäß Bild 4.   
+## 4.4 Verdrahtung der Bl&ouml;cke mit den I²C-I/O-Expandern
+Die Verdrahtung erfolgt gem&auml;&szlig; Bild 4.   
 
 ## 4.3 Anschluss der Eisenbahn-Komponenten
-* Anschluss der Stromversorgung für das abschaltbare Gleis an Platine "`CON_1xIO_V2`" (mittlere Schraubklemme) anschließen.   
+* Anschluss der Stromversorgung f&uuml;r das abschaltbare Gleis an Platine "`CON_1xIO_V2`" (mittlere Schraubklemme) anschlie&szlig;en.   
 * Anschluss der Weichenleitungen an Platine "`CON_6pol_3_V2`": Masse an der mittleren Schraubklemme.   
 
 ## 4.5 Fertige Verkabelung
@@ -350,7 +350,7 @@ _Bild 5: Die fertige Verkabelung_
 <a name="x60"></a>   
 
 # 6. Abschlie&szlig;ende Arbeiten
-Damit die Weichenzuleitungen und andere Leitungen beim Einstecken der 25-poligen Modulverbindungen nicht im Wege sind, werden sie mit einer 12 x 6 cm großen, 0,5 mm dicken, transparenten Kunststoffplatte abgedeckt.   
+Damit die Weichenzuleitungen und andere Leitungen beim Einstecken der 25-poligen Modulverbindungen nicht im Wege sind, werden sie mit einer 12 x 6 cm gro&szlig;en, 0,5 mm dicken, transparenten Kunststoffplatte abgedeckt.   
 
 [Zum Seitenanfang](#up)
 
