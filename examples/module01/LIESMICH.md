@@ -8,7 +8,7 @@ Letzte &Auml;nderung: 16.3.2025 <a name="up"></a><br>
 [Link zur Inhalts&uuml;bersicht](#x05)   
 
 # Worum geht es hier?
-Diese Anleitung beschreibt das Umr&uuml;sten der elektrischen Steuerung eines 50 x 25 cm² gro&szlig;en N-Spur-Gleis-Moduls M01 „Gleis 1 auf 2 mit G&uuml;terschuppen“ auf das RCC-System. Die Bilder zeigen das Modul mit Landschaftsgestaltung und alter DCC-Steuerung. An der Forderfront sieht man ein altes Bedienelement f&uuml;r den Handbetrieb (im _Bild 1_ links unten).   
+Diese Anleitung beschreibt das Umr&uuml;sten der elektrischen Steuerung eines 50 x 25 cm² gro&szlig;en N-Spur-Gleis-Moduls M01 „Gleis 1 auf 2 mit G&uuml;terschuppen“ auf das RCC-System. Die folgenden Bilder zeigen das Modul mit Landschaftsgestaltung und alter DCC-Steuerung. An der Forderfront sieht man ein altes Bedienelement f&uuml;r den Handbetrieb (im _Bild 1_ links unten).   
 
 ![Modul M01 Landschaft](./images/300_M01_Landscape.png "Modul M01 Landschaft")   
 _Bild 1: Das Modul M01 mit Landschaft_   
@@ -24,9 +24,9 @@ _Bild 2: Die alte Steuerung des Modules M01_
 
 ## Eigenschaften des Moduls
 |                |                                                    |   
-|----------------|----------------------------------------------------|   
+| -------------- | -------------------------------------------------- |   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit Schotterbett          |   
-| Gleisbild      | 2x Zweiwegweiche (mit einem Schalter)<br>1x abschaltbares Gleis        |   
+| Gleisbild      | 2x Zweiwegweiche (mit einem Schalter zu schalten)<br>1x abschaltbares Gleis        |   
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker <br>(entsprechend NEM 908D, je 1x WEST und OST) |   
 | Fahrstrom     | Analog- oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | * H&auml;ndisch direkt an der Modulvorderseite <br> * &uuml;ber DCC <br> * NEU: durch MQTT-Nachrichten (&uuml;ber WLAN) |   
@@ -346,11 +346,17 @@ _Bild 5: Die fertige Verkabelung_
 <a name="x50"></a>   
 
 # 5. Probebetrieb
-1. Modul an Stromversorgung anschließen.   
-2. Weiche schalten: Beide Weichen sollten auf Gerade oder Abzweig stehen. Wenn nicht:   
+1. Modul an Stromversorgung anschließen:   
+   * OLED-Anzeige mit Taster weiterschalten   
+   * Fahrstrom Ladegleis (DCC 11) ist aus (mittlere gelbe und rote LED leuchten)   
+   * LEDs des Weichen-Blocks zeigen die Stellung der Weichen an   
+2. Weiche am Modul (h&auml;ndisch) schalten: Beide Weichen sollten auf Gerade oder Abzweig stehen. Wenn nicht:   
    * Eine Weiche "Gerade", eine "Abzweig": bei einer Weiche die Drähte an Klemme 1 und 3 vertauschen.   
-   * Stellung der beiden Weichen genau gegenteilig wie am Schaltblock: Drähte an Klemme 1 und 3 vertauschen.   
+   * Stellung der beiden Weichen genau gegenteilig zum Schaltblock: Drähte an Klemme 1 und 3 vertauschen.   
 3. Abschaltbares Gleis durch Probefahrt (oder mit einem Voltmeter) testen.   
+4. DCC-Schaltfunktion testen:
+   * DCC-Adresse 11: "Gerade" = Fahrstrom ein, "Abzweig" = Fahrstrom aus (wenn beide Schalter nicht betätigt sind!)   
+   * DCC-Adresse 12: Weichen schalten   
 
 [Zum Seitenanfang](#up)   
 <a name="x60"></a>   
