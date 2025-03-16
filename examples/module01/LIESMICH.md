@@ -13,6 +13,12 @@ Diese Anleitung beschreibt das Umrüsten der elektrischen Steuerung eines 50 x 2
 ![Modul M01 Landschaft](./images/300_M01_Landscape.png "Modul M01 Landschaft")   
 _Bild 1: Das Modul M01 mit Landschaft_   
 
+Die bisherige Bedienung des Moduls war entweder 
+* händisch (direkt am Modul über einen Ein-/Aus-Schalter und einen Dreifach-Schalter) oder über   
+* DCC-Befehle möglich.   
+
+Die DCC-Steuerung bestand aus einem Uhlenbrock Schaltdecoder SD1 für das Ladegleis und einem Uhlenbrock Magnetartikeldecoder MD2 zur Weichenschaltung. Das Umschalten zwischen DCC- und händischem Schalten der Weiche mit Wechselstrom erfolgte über ein 4-poliges Umschaltrelais LZNQ403 (im _Bild 2_ rechts unten).   
+
 ![Modul M01 mit alter Steuerung](./images/300_M01_Control_old.png "Modul M01 mit alter Steuerung")   
 _Bild 2: Die alte Steuerung des Modules M01_   
 
@@ -43,11 +49,8 @@ _Bild 2: Die alte Steuerung des Modules M01_
 <a name="x10"></a>   
 
 # 1. Vorbereitung
-## 1.1 Bisherige DCC-Steuerung
-Die bisherige DCC-Steuerung des Moduls erfolgte mit einem Uhlenbrock Schaltdecoder SD1 für das Ladegleis und einen Uhlenbrock Magnetartikeldecoder MD2 zur Weichenschaltung. Das Umschalten zwischen DCC- und Wechselstromsteuerung der Weiche erfolgte über ein 
-4-poliges Umschaltrelais LZNQ403.   
 
-## 1.2 Neue RCC-Komponenten bereitstellen
+## 1.1 RCC-Komponenten bereitstellen
 Für die Steuerung werden vier RCC-Komponenten benötigt:   
 * [SUB2525_NT: Modulverbinder mit 25-poligem Stecker auf beiden Seiten und Netzteil](/fab/rcc1_supply/LIESMICH.md)   
 * [uC_big: Mikrocontroller mit integrierter OLED-Anzeige](/fab/rcc2_esp32/LIESMICH.md)   
@@ -76,13 +79,13 @@ Die Verdrahtung erfolgt durch folgende Leitungen:
 
 Die übrige Verkabelung ist Bestand.   
 
-## 1.3 Block-Beschriftungen
+## 1.2 Block-Beschriftungen
 Die folgenden 40 x 42 mm großen Block-Beschriftungen auf Etikettenpapier auszudrucken und auf das Frontpanel kleben (Abstand zum unteren Rand 8 mm).   
 
 ![Modul M01 Beschriftung](./images/300_M01_cover.png "Modul M01 Beschriftung")   
 _Bild 3: Beschriftungen für die Steuerblöcke_   
 
-## 1.4 Neues Frontpanel (Rahmenteil Ra4 - Süd)
+## 1.3 Neues Frontpanel (Rahmenteil Ra4 - Süd)
 1. 10 mm starkes Pappelsperrholz auf die Größe 230 x 60 mm² zuschneiden   
 2. Rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm² für die OLED-Anzeige mit 3-D-gedrucktem Rahmen ausschneiden:   
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
@@ -347,7 +350,7 @@ _Bild 5: Die fertige Verkabelung_
 <a name="x60"></a>   
 
 # 6. Abschlie&szlig;ende Arbeiten
-
+Damit die Weichenzuleitungen und andere Leitungen beim Einstecken der 25-poligen Modulverbindungen nicht im Wege sind, werden sie mit einer 12 x 6 cm großen, 0,5 mm dicken, transparenten Kunststoffplatte abgedeckt.   
 
 [Zum Seitenanfang](#up)
 
