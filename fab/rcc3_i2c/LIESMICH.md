@@ -10,6 +10,10 @@ Die Anbindung der [Steuerbl&ouml;cke](/fab/rcc4_block) an den [ESP32-Mikrocontro
 ![I²C-PCF8574-I/O-Prints](/images/300_pcf8574_boards.png "I²C-PCF8574-I/O-Prints")   
 _Bild 1: I²C-PCF8574-I/O-Platinen_   
 
+Mit den Jumpern kann die I²C-Adresse der Boards (im Bild links 0x20 und rechts 0x21) eingestellt werden.   
+
+---   
+
 Die hier beschriebenen Zusatzplatinen sind nicht unbedingt erforderlich, aber hilfreich, weil die PCF8574-Platinen zB keine Bohrungen f&uuml;r eine Befestigung haben.   
 Folgende Prints sind derzeit verf&uuml;gbar:   
 * [I²C-Halterung 20 mm](#x20)   

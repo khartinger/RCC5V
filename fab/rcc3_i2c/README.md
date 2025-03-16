@@ -10,6 +10,10 @@ The [control blocks](/fab/rcc4_block) are connected to the [ESP32 microcontrolle
 ![I²C-PCF8574-I/O-Prints](/images/300_pcf8574_boards.png "I²C-PCF8574-I/O-Prints")   
 _Figure 1: I²C-PCF8574-I/O-Prints_   
 
+The jumpers can be used to set the I²C address of the boards (0x20 on the left and 0x21 on the right in the picture).   
+
+---   
+
 The additional boards described here are not absolutely necessary, but are helpful because the PCF8574 boards do not have any holes for mounting, for example.   
 The following prints are currently available:   
 * [I²C holder 20 mm](#x20)   
