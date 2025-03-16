@@ -80,7 +80,8 @@ Die __*Verdrahtung*__ erfolgt durch folgende Leitungen:
 Die &uuml;brige Verkabelung ist Bestand.   
 
 ## 1.2 Block-Beschriftungen
-Die folgenden 40 x 42 mm gro&szlig;en Block-Beschriftungen auf Etikettenpapier auszudrucken und auf das Frontpanel kleben (Abstand zum unteren Rand 8 mm).   
+Um die händische Bedienung zu erleichtern und zB die DCC-Adresse der Schaltblöcke abzuzeigen sollten die Schaltblöcke beschriftet werden. 
+Dazu kann man die folgenden 40 x 42 mm gro&szlig;en Block-Beschriftungen auf Etikettenpapier ausdrucken und auf das Frontpanel kleben (Abstand zum unteren Rand 8 mm).   
 
 ![Modul M01 Beschriftung](./images/300_M01_cover.png "Modul M01 Beschriftung")   
 _Bild 3: Beschriftungen f&uuml;r die Steuerbl&ouml;cke_   
@@ -97,23 +98,23 @@ Der Abstand zum unteren Rand betr&auml;gt 8 mm.
 _Bild 5: Position der Beschriftung der Steuerbl&ouml;cke_   
 
 4. Bohren:   
-* F&uuml;r die Querverstrebung (innen): 2 mm Durchmesser   
-* F&uuml;r Schalter bzw. Taster: 7 mm Durchmesser   
-* F&uuml;r die LED-Fassungen: 5,6 mm Durchmesser   
+   * F&uuml;r die Querverstrebung (innen): 2 mm Durchmesser   
+   * F&uuml;r Schalter bzw. Taster: 7 mm Durchmesser   
+   * F&uuml;r die LED-Fassungen: 5,6 mm Durchmesser   
 
 5. Auf der R&uuml;ckseite (hinter den Beschriftungen) die Block-Halterungen mit je vier selbstbohrenden Schrauben M 2,6 x 10 mm anschrauben.   
 
 6. OLED-Block in die rechteckige Aussparung stecken   
 
-7. Schaltbl&ouml;cke `2IO` und `W2` in die Block-Halterungen einsetzen und anschrauben (mit je vier Schrauben M 2 x 10 mm).   
+7. Die Schaltbl&ouml;cke `2IO` und `W2` in die Block-Halterungen einsetzen und anschrauben (mit je vier Schrauben M 2 x 10 mm).   
 ![Modul 01 Schaltbl&ouml;cke](./images/300_M01_mounted_switch_blocks.png "Modul 01 Schaltbl&ouml;cke")   
-_Bild 5: Montierte Schaltbl&ouml;cke_   
+_Bild 5: Montierte Schaltbl&ouml;cke und uC-OLED-Block_   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
 
 # 2. Abbau der alten Steuerung
-Bei Abbau der alten Schaltung ist darauf zu achten, dass alle von den Gleisen und Weichen kommenden Leitungen m&ouml;glichst nicht gek&uuml;rzt oder zu kurz abgeschnitten werden.   
+Beim Abbau der alten Schaltung ist darauf zu achten, dass alle von den Gleisen und Weichen kommenden Leitungen m&ouml;glichst wenig gek&uuml;rzt oder zu kurz abgeschnitten werden.   
 1. Abschrauben des alten Frontpanels vom Modul   
 Falls das Panel zus&auml;tzlich zu den Schrauben verleimt ist: Entweder mit einer Stichs&auml;ge die Verleimung aufschneiden oder mit Hammer und Holzbrett durch Schlagen l&ouml;sen.   
 2. Trennen der elektrischen Leitungen zwischen Panel und Modul   
@@ -126,11 +127,11 @@ Leitungen losschrauben oder abzwicken (siehe _Bild 2_).
 # 3. Software f&uuml;r den ESP32
 ## 3.1 Planung der Verkabelung
 F&uuml;r die Konfiguration der Software muss der Anschluss der Steuerbl&ouml;cke an die I/O-Leitungen der I/O-Expander bekannt sein. 
-F&uuml;r ein abschaltbares Gleis (Block 2IO) und eine Zweisegweiche (Block W2) m&uuml;ssen lediglich drei I/O-Leitungen an die I/O-Expander angeschlossen werden:   
+Zum Anschluss eines abschaltbaren Gleises (Block 2IO) und einer Zweiwegweiche (Block W2) werden nur drei I/O-Leitungen benötigt:   
 * Abschaltbares Gleis: Pin 0   
 * Zweiwegweiche: Pin 1 und Pin 2   
 
-Die Verdrahtung zwischen den I/O-Boards und den Bl&ouml;cken zeigt das folgende Bild.
+Die Verdrahtung zwischen den I/O-Boards und den Bl&ouml;cken zeigt das folgende Bild.   
 
 ![Modul M01 Verkabelung](./images/600_M01_wiring1.png "Modul M01 Verkabelung")   
 _Bild 4: Verkabelung Modul M01_   
@@ -345,6 +346,11 @@ _Bild 5: Die fertige Verkabelung_
 <a name="x50"></a>   
 
 # 5. Probebetrieb
+1. Modul an Stromversorgung anschließen.   
+2. Weiche schalten: Beide Weichen sollten auf Gerade oder Abzweig stehen. Wenn nicht:   
+   * Eine Weiche "Gerade", eine "Abzweig": bei einer Weiche die Drähte an Klemme 1 und 3 vertauschen.   
+   * Stellung der beiden Weichen genau gegenteilig wie am Schaltblock: Drähte an Klemme 1 und 3 vertauschen.   
+3. Abschaltbares Gleis durch Probefahrt (oder mit einem Voltmeter) testen.   
 
 [Zum Seitenanfang](#up)   
 <a name="x60"></a>   
