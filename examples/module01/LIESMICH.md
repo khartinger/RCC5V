@@ -5,9 +5,9 @@ Letzte &Auml;nderung: 13.3.2025 <a name="up"></a><br>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
-[Hier geht es direkt zur Inhalts&uuml;bersicht](#x05)   
+[Link zur Inhalts&uuml;bersicht](#x05)   
 
-# &Uuml;bersicht
+# Worum geht es hier?
 Diese Anleitung beschreibt das Umrüsten der elektrischen Steuerung eines 50 x 25 cm² gro&szlig;en N-Spur-Gleis-Moduls M01 „Gleis 1 auf 2 mit Güterschuppen“ auf das RCC-System. Die Bilder zeigen das Modul mit Landschaftsgestaltung und alter DCC-Steuerung. An der Forderfront sieht man ein altes Bedienelement f&uuml;r den Handbetrieb (im _Bild 1_ links unten).   
 
 ![Modul M01 Landschaft](./images/300_M01_Landscape.png "Modul M01 Landschaft")   
