@@ -348,14 +348,14 @@ _Bild 5: Die fertige Verkabelung_
 # 5. Probebetrieb
 1. Modul an Stromversorgung anschließen:   
    * OLED-Anzeige mit Taster weiterschalten   
-   * Fahrstrom Ladegleis (DCC 11) ist aus (mittlere gelbe und rote LED leuchten)   
-   * LEDs des Weichen-Blocks zeigen die Stellung der Weichen an   
+   * Der Fahrstrom Ladegleis (DCC 11) ist aus, die mittlere gelbe und rote LED leuchten   
+   * Die LEDs des Weichen-Blocks (DCC 12) zeigen die Stellung der Weichen an   
 2. Weiche am Modul (h&auml;ndisch) schalten: Beide Weichen sollten auf Gerade oder Abzweig stehen. Wenn nicht:   
    * Eine Weiche "Gerade", eine "Abzweig": bei einer Weiche die Drähte an Klemme 1 und 3 vertauschen.   
    * Stellung der beiden Weichen genau gegenteilig zum Schaltblock: Drähte an Klemme 1 und 3 vertauschen.   
 3. Abschaltbares Gleis durch Probefahrt (oder mit einem Voltmeter) testen.   
 4. DCC-Schaltfunktion testen:
-   * DCC-Adresse 11: "Gerade" = Fahrstrom ein, "Abzweig" = Fahrstrom aus (wenn beide Schalter nicht betätigt sind!)   
+   * DCC-Adresse 11: "Gerade" = Fahrstrom des Ladegleises ist ein, "Abzweig" = Fahrstrom aus (wenn beide Schalter nicht betätigt sind!)   
    * DCC-Adresse 12: Weichen schalten   
 
 [Zum Seitenanfang](#up)   
