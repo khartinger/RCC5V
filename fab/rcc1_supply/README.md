@@ -115,7 +115,7 @@ _*Link to the KiCad files*_: [/fab/kicad/RW_5V_2SUB25_V4](/fab/kicad/RW_5V_2SUB2
 ### Assembly   
 1. screw terminals J10, J7 and J8, J9 plug together and solder   
 2. sub-D connector J2   
-3. plugging and unplugging the 5V power supply board into J5 and J6   
+3. plugging and unplugging the 5V power supply board into J5 and J6 <br> Tip: It is much easier to plug in the power supply board if you shorten one of the two pin headers slightly so that the pins can be inserted one after the other...   
 4. sub-D connector J1   
 
 ### Versions
@@ -147,7 +147,7 @@ _*Link to the KiCad files*_: [/fab/kicad/RW_5V_SUB25_10_V3](/fab/kicad/RW_5V_SUB
 
 ### Assembly   
 1. screw terminals J10, J7 and J8, J9 and J2 plug together and solder   
-2. plugging and unplugging the 5V power supply board into J5 and J6   
+2. plugging and unplugging the 5V power supply board into J5 and J6 <br> Tip: It is much easier to plug in the power supply board if you shorten one of the two pin headers slightly so that the pins can be inserted one after the other...   
 3. sub-D connector J1   
 
 ### Versions

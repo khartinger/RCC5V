@@ -115,7 +115,7 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_2SUB25_V4](/fab/kicad/RW_5V_2SU
 ### Best&uuml;ckung   
 1. Schraubklemmen J10, J7 und J8, J9 zusammenstecken und einl&ouml;ten    
 2. Sub-D-Stecker J2   
-3. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6   
+3. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6 <br> Tipp: Das Einstecken der Netzteil-Platine gelingt viel leichter, wenn man eine der beiden Stiftleisten etwas k&uuml;rzt und die damit die Stifte nacheinander einsetzen kann...    
 4. Sub-D-Stecker J1   
 
 ### Versionen
@@ -147,7 +147,7 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_SUB25_10_V3](/fab/kicad/RW_5V_S
 
 ### Best&uuml;ckung   
 1. Schraubklemmen J10, J7 und J8, J9 sowie J2 zusammenstecken und einl&ouml;ten    
-2. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6   
+2. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6 <br> Tipp: Das Einstecken der Netzteil-Platine gelingt viel leichter, wenn man eine der beiden Stiftleisten etwas k&uuml;rzt und die damit die Stifte nacheinander einsetzen kann...    
 3. Sub-D-Stecker J1   
 
 ### Versionen
