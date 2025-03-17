@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 6.3.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 17.3.2025 <a name="up"></a><br>   
 <h1>Komponenten f&uuml;r die Stromversorgung</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -109,7 +109,7 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_2SUB25_V4](/fab/kicad/RW_5V_2SU
 |--------|--------------|------------------------|--------------------|   
 |    2   | J1, J2       | Sub-D-Stecker 25-polig (DB25_Plug) | _kh_library:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm |   
 |    3   | J7, J8, J10  | Schraubklemme 2-polig schwarz (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
-|    1   | J9           | Schraubklemme 2-polig grün (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
+|    1   | J9           | Schraubklemme 2-polig gr&uuml;n (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
 |    1   | J5, J6, U1   | 5V-Netzteil-Platine     | _kh_library:AC_5V_supply_6pol_PinsOnly |   
 
 ### Best&uuml;ckung   
@@ -129,25 +129,26 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_2SUB25_V4](/fab/kicad/RW_5V_2SU
 # 3.3 Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (RW_5V_SUB25_10)
 Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm) auf einer Seite verwendet. Sie enth&auml;lt Anschl&uuml;sse f&uuml;r ein 5V-Netzteil und das DCC-Steuersignal sowie Schraubklemmen f&uuml;r den DCC-Fahrstrom (SS, NN und SN, NS), die Hilfsleitungen OA und OB und zus&auml;tzlich f&uuml;r alle Signale. Die Platine ist so aufgebaut, dass sie symmetrisch zu einer Verstrebung liegen kann.   
 
-![Platine RW_5V_SUB25_10](/images/pcb_f/PCB_F_RW_5V_SUB25_10_V1.png "RW_5V_SUB25_10")   
+![Platine RW_5V_SUB25_10](/images/pcb_f/PCB_F_RW_5V_SUB25_10_V3.png "RW_5V_SUB25_10")   
 _Bild 8: Platine RW_5V_SUB25_10_   
 
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
 _*Montagebohrungen*_: 2,5 mm, Abstand 70 mm x 60 mm   
-_*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_SUB25_10_V1](/fab/kicad/RW_5V_SUB25_10_V1)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_SUB25_10_V3](/fab/kicad/RW_5V_SUB25_10_V3)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
 |--------|--------------|------------------------|--------------------|   
 |    1   | J1           | Sub-D-Stecker 25-polig (DB25_Plug) | _kh_library:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm |   
-|    1   | J2           | Schraubklemme 5x 2-polig (= 10-polig) |    |   
-|    1   | J7, J8, J9   | Schraubklemme 2-polig (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
+|    1   | J2           | Schraubklemme 5x 2-polig (= 10-polig) <br> zB je 2-polig schwarz-gr&uuml;n-rot-gr&uuml;n-schwarz |    |   
+|    3   | J7, J8, J10   | Schraubklemme 2-polig schwarz (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
+|    1   | J9   | Schraubklemme 2-polig gr&uuml;n (Screw_Terminal_01x02_P5) | _kh_library:Screw_Terminal_01x02_P5 |   
 |    1   | J5, J6, U1   | 5V-Netzteil-Platine     | _kh_library:AC_5V_supply_6pol_PinsOnly |   
 
 ### Best&uuml;ckung   
-1. Schraubklemmen J2, J7, J8, J9    
-2. Sub-D-Stecker J1   
-3. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6   
+1. Schraubklemmen J10, J7 und J8, J9 sowie J2 zusammenstecken und einl&ouml;ten    
+2. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6   
+3. Sub-D-Stecker J1   
 
 ### Versionen
 * V1 (241104): OK   
