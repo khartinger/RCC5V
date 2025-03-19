@@ -20,6 +20,7 @@ Folgende Erg&auml;nzungsplatinen sind hilfreich und werden auf dieser Seite besc
 
 # 2. Halterung für Schaltblöcke (RW_LEER_LED)   
 Die Halterung für Schaltblöcke (Blockbefestigungsplatine) wird mit M 2,6 x 10 Schrauben auf den Rahmen eines Eisenbahnmoduls geschraubt und dient zur Befestigung eines Schaltblocks (f&uuml;r Weichen, Entkuppler, Fahrstromschalter). Sie enth&auml;lt Bohrungen f&uuml;r LEDs und Taster/Schalter, damit diese durch den Rahmen des Moduls hin zur Bedienseite durchgesteckt werden k&ouml;nnen.   
+__*Wichtig:*__ Die Halterungen nicht zu fest anschrauben, d.h. nur so fest schrauben, dass sich die Sechskant-Abstandshalter nicht nach innen neigen.   
 
 ![Montierte Befestigungsplatine](/images/300_RW_LEER_LED.png "Befestigungsplatine montiert")   
 _Bild 1: Auf einem 3D-gedruckten Rahmen montierte Befestigungsplatinen f&uuml;r Schaltbl&ouml;cke_   

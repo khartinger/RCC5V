@@ -20,6 +20,7 @@ The following add-on boards are helpful and are described on this page:
 
 # 2. Bracket for switch blocks (RW_LEER_LED)   
 The bracket for switch blocks (block mounting board) is screwed with M 2,6 x 10 screws onto the frame of a railroad module and is used to attach a switching block (for points, uncouplers, traction current switches). It contains holes for LEDs and buttons/switches so that these can be inserted through the frame of the module to the operating side.   
+__*Important:*__ Do not screw the brackets on too tightly, i.e. only screw them on so tightly that the hexagonal spacers do not tilt inwards.
 
 ![Mounted mounting board](/images/300_RW_LEER_LED.png "Mounting board mounted")   
 _Figure 1: Mounting boards for switching blocks mounted on a 3D-printed frame_   
