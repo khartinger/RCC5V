@@ -1,8 +1,10 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2024-11-27 <a name="up"></a><br>   
+Last modified: 2025-03-21 <a name="up"></a><br>   
 <h1>Example wiring of a turnout</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
+
+<a href="LIESMICH.md"><b> Sorry! This page is only available in German.</b></a>   
 
 # ... To Do ...
 
