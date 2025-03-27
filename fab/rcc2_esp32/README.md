@@ -46,6 +46,8 @@ On the lower shield you can see the connection for the button (sockets on the le
 On the upper shield you can see the four connectors for the IO-I²C bus at the front and the four sockets for the standard I²C bus to the display at the top center. The red board is the 3.3V/5V converter.   
 The shields are described in more detail below.   
 
+<a name="x15"></a>   
+
 ### Extended I²C shield
 If you print a holder for the OLED display and the button with a 3D printer, you can create a unit consisting of display and microcontroller:   
 

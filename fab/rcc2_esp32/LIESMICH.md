@@ -46,6 +46,8 @@ Beim unteren Shield erkennt man den Anschluss f&uuml;r den Taster (Buchsen links
 Beim oberen Shield sieht man vorne die vier Stecker f&uuml;r den IO-I²C-Bus und oben in der Mitte die vier Buchsen f&uuml;r den Standard-I²C-Bus zum Display. Die rote Platine ist der 3,3V/5V-Wandler.   
 In nachfolgenden Kapiteln werden die Shields genauer vorgestellt.   
 
+<a name="x15"></a>   
+
 ### Erweitertes I²C-Shield
 Druckt man mit einem 3D-Drucker eine Halterung f&uuml;r das OLED-Display und den Taster, so kann man damit eine Einheit aus Anzeige und Mikrocontroller erzeugen:   
 
