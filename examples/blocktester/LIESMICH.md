@@ -50,17 +50,30 @@ _Bild 3: Blocktester von oben_
 <a name="x10"></a>   
 
 # 1. Schaltung des Testsystems
-Das Testsystem ist so aufgebaut, dass alle Komponenten leicht ausgetauscht werden können und die Verwendung der verschiedenen Platinen gezeigt wird.    
-Das folgende Bild zeigt eine Übersicht über die eingesetzten Komponenten:   
+Das Testsystem ist so aufgebaut, dass alle Komponenten leicht ausgetauscht werden können und der praktische Einsatz der verschiedenen Platinen gezeigt wird.    
+Das folgende Bild gibt eine Übersicht über die eingesetzten Komponenten:   
 ![Übersicht Testsystem](./images/600_overview_testsystem.png  "Übersicht Testsystem")   
 _Bild 3: Übersichtsplan des Testsystems_   
 
-`SUB25_10` `...` [Verbindung von Modulen](/fab/rcc1_supply/LIESMICH.md#x30)      
-`uC_OLED`  `...` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
+`SUB25_10 ....` [Modul-Verbinder mit Netzteil](/fab/rcc1_supply/LIESMICH.md#x30)      
+`uC_OLED .....` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
+
+`1OUT ........` [Block zur Ausgabe der Wechselspannung](/fab/rcc4_block/LIESMICH.md#x40) zB für Entkuppler   
+`W2 ..........` [Block zum Schalten einer Zweiwegweiche](/fab/rcc4_block/LIESMICH.md#x20)   
+`W3 ..........` [Block zum Schalten einer Dreiwegweiche](/fab/rcc4_block/LIESMICH.md#x30)   
+`2IO..........` [Block zum Schalten eines abschaltbaren Gleises](/fab/rcc4_block/LIESMICH.md#x50)   
+
+`10pol_PIN....` Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin [als ältere Version `CON_10pol_PIN`](/fab/rcc5_add_ons/LIESMICH.md#x90) bzw. [als neuere Version `CON_10pol_2x4`](/fab/rcc5_add_ons/LIESMICH.md#x80)   
+`CON_6pol-3 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 3 Pins](/fab/rcc5_add_ons/LIESMICH.md#x40)   
+`CON_6pol-6 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 6 Pins](/fab/rcc5_add_ons/LIESMICH.md#x50)   
+`CON_1xIO ....` [Umsetzer vom 6-poligen Flachbandkabel auf Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x60) zum einfachen Anschluss des Fahrstroms.   
+
+`i2c_40mm ....` [I²C-Halterung 40 mm](/fab/rcc3_i2c/LIESMICH.md#x30)   
+`PCF8574 .....` [I²C-PCF8574-I/O-Platinen](/fab/rcc3_i2c/LIESMICH.md)   
+`i2c_LED .....` [I2C-LED-Platine](/fab/rcc3_i2c/LIESMICH.md#x40)   
 
 
 # ----- ToDo... ------
-
 
 
 [Zum Seitenanfang](#up)   
