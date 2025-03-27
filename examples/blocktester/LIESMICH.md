@@ -1,5 +1,4 @@
-<table><tr><td><img src="./images/RCC5V_Logo_96.png
-"></img></td><td>
+<table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 27.3.2025 <a name="up"></a><br>   
 <h1>RCC-Blocktester</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
