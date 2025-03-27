@@ -52,7 +52,7 @@ _Bild 3: Blocktester von oben_
 Das Testsystem ist so aufgebaut, dass alle Komponenten leicht ausgetauscht werden können und der praktische Einsatz der verschiedenen Platinen gezeigt wird.    
 Das folgende Bild gibt eine Übersicht über die eingesetzten Komponenten:   
 ![Übersicht Testsystem](./images/600_overview_testsystem.png  "Übersicht Testsystem")   
-_Bild 3: Übersichtsplan des Testsystems_   
+_Bild 4: Übersichtsplan des Testsystems_   
 
 `SUB25_10 ....` [Modul-Verbinder mit Netzteil](/fab/rcc1_supply/LIESMICH.md#x30)      
 `uC_OLED .....` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
@@ -71,22 +71,55 @@ _Bild 3: Übersichtsplan des Testsystems_
 `PCF8574 .....` [I²C-PCF8574-I/O-Platinen](/fab/rcc3_i2c/LIESMICH.md)   
 `i2c_LED .....` [I2C-LED-Platine](/fab/rcc3_i2c/LIESMICH.md#x40)   
 
-
-# ----- ToDo... ------
-
+Da Entkuppler beim Schalten Störspannungen erzeugen, werden direkt beim Entkuppleranschluss (CON_6pol-3) und am Ende des 6-poligen Stromversorgungskabels (an den Wechselstromklemmen Pin 4 und Pin 6) 100nF-Kondensatoren angebracht.   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
 
 # 2. Aufbau des Blocktesters
+## 2.1 Rahmen
+Der Rahmen des Blocktesters besteht aus 10 mm-Pappelsperrholz. Die Grundplatte ist 31 x 22 cm² groß, die Frontplatte 31 x 6 cm² und die beiden Seitenteile 5 x 5 cm².   
+Die "Deckplatte" besteht aus einer 31 x 3 cm² (oder 30 x 3 cm²) großen, 10 mm dicken [Acrylplatte](https://de.aliexpress.com/item/1005006407038394.html?spm=a2g0o.order_list.order_list_main.506.f9f35c5f0KKSc4&gatewayAdapt=glo2deu), damit man die Schaltblöcke darunter sehen kann.   
+
+## 2.2 Frontplatte
+__OLED-Anzeige__   
+Für den OLED-Mikroprozessor-Block wird ein 3D-gedruckter Rahmen verwendet. Dieser ben&ouml;tigt eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm². Da der Platz am Frontpanel beengt ist, beträgt der Abstand vom linken Rand nur 20 mm statt der sonst üblichen 30mm.   
+
+![OLED_Button_frame](./images/300_BT_OLED_Button_frame.png "OLED_Button_frame")   
+_Bild 5: Ma&szlig;e f&uuml;r die Frontplatte_   
+
+__Steuerbl&ouml;cke__   
+Zum einfachen Bestimmen der Lage der Bohrungen für die Steuerblöcke wird zuerst zB in __LibreOffice Draw__ die [Beschriftung](./odg/Blocktester_Cover_250317.odg) entworfen. Wählt man in der Zeichnung den Abstand zwischen zwei Blockbeschriftungen 9 mm, so kann man den ganzen Ausdruck direkt auf die Frontplatte kleben.   
 
 ![Blocktester Beschriftung](./images/300_BT_cover.png "Blocktester Beschriftung")   
-_Bild ..: Beschriftungen f&uuml;r die Steuerbl&ouml;cke_   
+_Bild 6: Beschriftungen f&uuml;r die Steuerbl&ouml;cke_   
+
+![Blocktester Sued](./images/300_BT_sued_310mm.png "Blocktester_Sued")   
+_Bild 7: Ma&szlig;e f&uuml;r die Frontplatte_   
+
+Nach dem Aufkleben der Beschriftung werden die Löcher gebohrt. Der Bohrdurchmesser für die LED-Fassungen beträgt 5,6 mm, der für die Taster ca. 7 mm.   
+
+__LED-Fassungen__   
+Nach dem Bohren sind die Bohrungen zu reinigen und die LED-Fassungen einzupressen.   
+
+__Halterungen f&uuml;r Steuerbl&ouml;cke__   
+Als N&auml;chstes kann man die Halterungen f&uuml;r die Steuerbl&ouml;cke mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
+
+## 2.3 Zusammenbau des Rahmens
+Der Zusammenbau des Rahmens erfolgt so, wie es im _Bild 1_ zu sehen ist. Als Schrauben werden zB selbstschneidende Schrauben 3 x 20 mm verwendet.   
+Das Acrylglas wird mit Doppelklebeband befestigt und/oder mit Schrauben M 2 x 20 mm.   
+
+## 2.4 Gleisbau
+Der Aufbau des Gleisbildes ist unproblematisch, da die Gleise primär nicht für einen Fahrbetrieb gedacht sind. Wichtig ist nur, dass eine Trennstelle vorgesehen wird (die kleinen roten Rechtecke im _Bild 4_), damit man das Gleis mit abschaltbarem Fahrstrom testen kann. Weiters sollte man darauf achten, dass der Abstand der Parallelgleise üblicherweise 33,6 mm beträgt.    
+
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
 
+# ----- ToDo... ------
+
 # 3. Software f&uuml;r den ESP32
+Als Software wird die Demo-Software [`rcc_demo1`](/software/rcc_demo1/LIESMICH.md) verwendet.   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   

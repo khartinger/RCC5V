@@ -425,7 +425,7 @@ _Figure 26: Frame with base plate and tracks_
 ## 4. Electrical wiring of the module   
 
 ## 4.1 Wiring the power supply and traction current
-1. connect the “POWER” connection of the `RW_5V_SUB25_10` supply board to the eight switching blocks using a 6-pin ribbon cable approx. one meter long and 10 mounted post connectors. The first post connector is used to connect to the supply board, the post connector at the end of the cable is used to extend the ribbon cable if necessary or to connect 100 nF capacitors between V+ and V- as well as 5V and 0V. (The connector is not yet attached in the top right of _Fig. 27_...)   
+1. connect the “POWER” connection of the `RW_5V_SUB25_10` supply board to the eight switching blocks using a 6-pin ribbon cable approx. one meter long and 10 mounted post connectors. The first post connector is used to connect to the supply board, the post connector at the end of the cable is used to extend the ribbon cable if necessary or to connect 100 nF capacitors between V+ and V- as well as 5V and 0V. (The connector is not yet attached in the top right of _Fig. 24_...)   
 ![Terminating capacitors](./images/300_powerline_2xC.png "Terminating capacitors")   
 _Figure 27: Terminating capacitors at the end of the POWER cable_   
 

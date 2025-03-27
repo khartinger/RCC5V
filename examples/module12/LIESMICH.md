@@ -425,7 +425,7 @@ _Bild 26: Rahmen mit Grundplatte und Gleisen._
 # 4. Elektrische Verdrahtung des Moduls   
 
 ## 4.1 Verdrahtung der Stromversorgung und des Fahrstroms
-1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltbl&ouml;cken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 10 montierten Pfostenverbindern. Der erste Pfostenverbinder dient zum Anschluss an die Versorgungsplatine, der Pfostenverbinder am Ende der Leitung dient einem eventuell erforderlichem Verl&auml;ngern des Flachbandkabels bzw. zum Anschluss von 100 nF-Kondensatoren zwischen V+ und V- sowie 5V und 0V. (Der Stecker ist im _Bild 27_ rechts oben noch nicht angebracht...)   
+1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltbl&ouml;cken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 10 montierten Pfostenverbindern. Der erste Pfostenverbinder dient zum Anschluss an die Versorgungsplatine, der Pfostenverbinder am Ende der Leitung dient einem eventuell erforderlichem Verl&auml;ngern des Flachbandkabels bzw. zum Anschluss von 100 nF-Kondensatoren zwischen V+ und V- sowie 5V und 0V. (Der Stecker ist im _Bild 24_ rechts oben noch nicht angebracht...)   
 ![Abschlusskondensatoren](./images/300_powerline_2xC.png "Abschlusskondensatoren")   
 _Bild 27: Abschlusskondensatoren am Ende des POWER-Kabels_   
 
