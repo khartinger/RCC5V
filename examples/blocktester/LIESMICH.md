@@ -110,8 +110,25 @@ Der Zusammenbau des Rahmens erfolgt so, wie es im _Bild 1_ zu sehen ist. Als Sch
 Das Acrylglas wird mit Doppelklebeband befestigt und/oder mit Schrauben M 2 x 20 mm.   
 
 ## 2.4 Gleisbau
-Der Aufbau des Gleisbildes ist unproblematisch, da die Gleise primär nicht für einen Fahrbetrieb gedacht sind. Wichtig ist nur, dass eine Trennstelle vorgesehen wird (die kleinen roten Rechtecke im _Bild 4_), damit man das Gleis mit abschaltbarem Fahrstrom testen kann. Weiters sollte man darauf achten, dass der Abstand der Parallelgleise üblicherweise 33,6 mm beträgt.    
+Der Aufbau des Gleisbildes ist unproblematisch, da die Gleise primär nicht für einen Fahrbetrieb gedacht sind. Wichtig ist nur, dass eine Trennstelle vorgesehen wird (die kleinen roten Rechtecke im _Bild 4_), damit man das Gleis mit abschaltbarem Fahrstrom testen kann. Weiters sollte man darauf achten, dass der Abstand der Parallelgleise üblicherweise 33,6 mm beträgt. Folgende Gleise werden zB benötigt:    
 
+| Anzahl | Nummer | Name | Euro/Stk | Euro |   
+| :---: | :---: | :--- |  ---: |  ---: |   
+| 3 | 9103 | Gerade 55, 5 mm | 4,40 | 13,20 |   
+| 4 | 9104 | Gerade 27,75 mm | 4,40 | 17,60 |   
+| 1 | 9112 | Entkupplungsgleis gerade (mit Antrieb) | 31,90 | 31,90 |   
+| 1 | 9116 | Prellbock 57,5 mm | 8,40 | 8,40 |   
+| 1 | 9136 | Bogen Radius 430mm, Winkel 15° (R4) | 4,90 | 4,90 |   
+| 1 | 9157 | Dreiwegweiche | 47,80 | 47,80 |   
+| 1 | 9178 | Weiche links mit stromleitendem Herzst&uuml;ck | 29,90 | 29,90 |   
+| 3 | 640000 | Elektromagnetischer Weichenantrieb mit Endabschaltung | 25,60 | 76,80 |   
+| 1 | 9403 | Isolierschienenverbinder | 6,90 | 6,90 |   
+| 2 | 22217 | 2-poliges Anschlusskabel | 4,40 | 8,80 |   
+   
+Gesamtkosten 2025: ca. 246,20 Euro   
+
+![Blocktester_Gleisbild](./images/300_BT_Gleisbild.png "Blocktester_Gleisbild")   
+_Bild 7: Gleisbild_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
