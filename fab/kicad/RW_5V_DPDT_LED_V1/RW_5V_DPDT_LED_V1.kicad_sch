@@ -2258,7 +2258,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED grün"
+		(property "Value" "LED gr&uuml;n"
 			(at 95.758 88.9 90)
 			(effects
 				(font
@@ -2673,7 +2673,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED grün"
+		(property "Value" "LED gr&uuml;n"
 			(at 69.088 88.9 90)
 			(effects
 				(font

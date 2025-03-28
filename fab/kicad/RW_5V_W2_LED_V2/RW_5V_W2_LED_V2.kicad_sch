@@ -2691,7 +2691,7 @@
 		)
 		(uuid "bb97f383-bf8f-42f9-a2e2-c2459fdb3b78")
 	)
-	(text "Taster drücken bewirkt"
+	(text "Taster dr&uuml;cken bewirkt"
 		(exclude_from_sim no)
 		(at 141.732 104.394 0)
 		(effects
@@ -3220,7 +3220,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED grün"
+		(property "Value" "LED gr&uuml;n"
 			(at 156.972 55.88 0)
 			(effects
 				(font
@@ -3844,7 +3844,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED grün"
+		(property "Value" "LED gr&uuml;n"
 			(at 148.082 57.15 0)
 			(effects
 				(font

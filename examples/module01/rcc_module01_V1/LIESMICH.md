@@ -1,13 +1,13 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 5.1.2025 <a name="up"></a><br>   
-<h1>Überblick über die Demo-Software zum Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
+<h1>&Uuml;berblick &uuml;ber die Demo-Software zum Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # Ziel
-Dieses Programm f&uuml;r einen ESP32 dient zum Testen von verschiedenen, selbst gebauten Modelleisenbahn-Schaltblöcken. Die Blöcke werden über die I/O-Pins zweier I²C-PCF8574-I/O-Expander angesteuert, wobei der PCF8574 mit der I2C-Adresse 0x20 (IO-Expander #0) zur Ansteuerung und der PCF8574 mit der I2C-Adresse 0x21 (IO-Expander #1) für die Rückmeldung dient. Die IO-Pins zur Ansteuerung und zur Rückmeldung haben jeweils die gleiche Pin-Nummer.   
+Dieses Programm f&uuml;r einen ESP32 dient zum Testen von verschiedenen, selbst gebauten Modelleisenbahn-Schaltbl&ouml;cken. Die Bl&ouml;cke werden &uuml;ber die I/O-Pins zweier I²C-PCF8574-I/O-Expander angesteuert, wobei der PCF8574 mit der I2C-Adresse 0x20 (IO-Expander #0) zur Ansteuerung und der PCF8574 mit der I2C-Adresse 0x21 (IO-Expander #1) f&uuml;r die R&uuml;ckmeldung dient. Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung haben jeweils die gleiche Pin-Nummer.   
 
-Folgende Blöcke sind in der Software definiert:  
+Folgende Bl&ouml;cke sind in der Software definiert:  
 1. DCC 11, IO-Expander Pin 0: Entkuppler   
 2. DCC 21, IO-Expander Pin 1,2: Zweiwegweiche (mit Endabschaltung)   
 3. DCC 31,32, IO-Expander Pin 3,4,5: Dreiwegweiche (mit Endabschaltung)   
@@ -16,7 +16,7 @@ Folgende Blöcke sind in der Software definiert:
 
 Der Schaltzustand der Komponenten wird auf einem 1,54"-OLED-Display angezeigt.   
 
-Mit Hilfe eines Tasters am Pin IO19 (D6) kann man die einzelnen Seiten der Informationsanzeige oder das Suchen nach dem WLAN überspringen.   
+Mit Hilfe eines Tasters am Pin IO19 (D6) kann man die einzelnen Seiten der Informationsanzeige oder das Suchen nach dem WLAN &uuml;berspringen.   
 
 Dr&uuml;ckt man w&auml;hrend des Programmlaufs den Taster an IO19 f&uuml;r eine Sekunde, wird ein Reset ausgel&ouml;st. Dies kann zB dazu verwendet werden, um beim erneuten Hochfahren das WLAN zu aktivieren.   
 
@@ -25,14 +25,14 @@ Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigen
 # Erforderliche Hardware
 ## Elektronische Bauteile   
 1. ESP32 D1 mini   
-2. 1x Selbstbau-Board "Shield_I2C_5V_3V3": Anschluss für die beiden I2C-Busse   
-3. 1x Selbstbau-Board "Shield_5V_DCC_6pol": Stromversorgung mit 5V, DCC-Signal und Anschluss für Taster an Pin D6 (IO19)   
+2. 1x Selbstbau-Board "Shield_I2C_5V_3V3": Anschluss f&uuml;r die beiden I2C-Busse   
+3. 1x Selbstbau-Board "Shield_5V_DCC_6pol": Stromversorgung mit 5V, DCC-Signal und Anschluss f&uuml;r Taster an Pin D6 (IO19)   
 4. 1x OLED-Display mit SSD1309 controller (zB 1,54" oder 2,4" Display mit 128x64 Pixel Aufl&ouml;sung)   
 5. 2x I²C-Expander-Boards PCF8574 mit den (7-Bit-)Adressen 0x20 und 0x21   
 6. Taster am Pin D6 (IO19) mit Pullup-Widerstand (zB 10 kOhm) nach 3,3V (oder ein Draht)   
 
 ## Elektrische Bauteile
-Die benötigten elektrischen Bauteile sind abhängig davon, was man testen will.    
+Die ben&ouml;tigten elektrischen Bauteile sind abh&auml;ngig davon, was man testen will.    
 __Beispiel Zweiwegweiche:__   
 1. Eine Zweiweg-Weiche mit Endabschaltung   
 2. Selbstbau-Block "RW_5V_W2" bestehend aus den beiden Platinen `RW_5V_W2_STRG` und `RW_5V_W2_LED` und den LEDs zur Ansteuerung der Weiche mit 5V   
@@ -44,12 +44,12 @@ __Beispiel Zweiwegweiche:__
 Sind der Trafo (Punkt 3.) und die DCC-Quelle (Punkt 5.) an einem 25-poligen Kabel nach NEM908D angeschlossen, so kann die Selbstbau-Platine "CON_SubD_Screw10_V1" (mit aufgesteckter Platine "AC_5V_6pol_DCC_V1" und LM2596-DC-DC-Wandler zur Erzeugung der 5V-Spannung) zur Versorgung des Test-Aufbaus verwendet werden. (Siehe Bild 1)   
 
 ## Verkabelung
-1. Anstecken von zwei Drähten (oder einem Taster) an den IO19-Anschlüssen des Shields "Shield_5V_DCC_6pol"   
+1. Anstecken von zwei Dr&auml;hten (oder einem Taster) an den IO19-Anschl&uuml;ssen des Shields "Shield_5V_DCC_6pol"   
 2. Zusammenstecken der beiden I²C-Expander-Boards PCF8574 mit den (7-Bit-)Adressen 0x20 und 0x21   
 3. Verbinden der I²C-Expander-Boards mit der 4-poligen Stiftleiste am "Shield_I2C_5V_3V3" mit vier Kabeln   
 4. Verbinden des 6-poligen Steckers des "Shield_5V_DCC_6pol"-Shields mit dem DCC-Stecker an der "CON_SubD_Screw10_V1"-Platine   
 5. Verbinden des 6-poligen Power-Steckers des "RW_5V_W2"-Blocks mit dem "POWER"-Stecker an der "CON_SubD_Screw10_V1"-Platine   
-6. Verbinden der Weichendrähte mit den Klemmen auf der "CON_6pol_3"-Platine   
+6. Verbinden der Weichendr&auml;hte mit den Klemmen auf der "CON_6pol_3"-Platine   
 7. Verbinden der "CON_6pol_3"-Platine mit dem 6-poligen Ausgang des "RW_5V_W2"-Blocks   
 8. Verbinden des 10-poligen Steckers des "RW_5V_W2"-Blocks mit der "CON_10pol_PIN"-Platine   
 9. Verbinden "CON_10pol_PIN"-Pin 1 (IN1) mit PCF8574-0-Pin 2 (OUT)   

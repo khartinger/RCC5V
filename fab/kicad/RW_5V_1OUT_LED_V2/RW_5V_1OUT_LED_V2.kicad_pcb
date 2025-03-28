@@ -3051,7 +3051,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "LED grün"
+		(property "Value" "LED gr&uuml;n"
 			(at 1.27 -2.96 0)
 			(layer "B.Fab")
 			(uuid "e5b3cedf-6f8e-4838-994a-cb322fc8ae6f")
@@ -4011,7 +4011,7 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "LED grün"
+	(gr_text "LED gr&uuml;n"
 		(at 38.1 58.9 0)
 		(layer "B.SilkS")
 		(uuid "704a6b27-a8af-43d9-9286-be826d3cb26f")
@@ -4197,7 +4197,7 @@
 			)
 		)
 	)
-	(gr_text "LED grün"
+	(gr_text "LED gr&uuml;n"
 		(at 38.3794 59.055 0)
 		(layer "F.SilkS")
 		(uuid "3d24002f-c22b-49b7-aeb9-7c7e7a729a8b")

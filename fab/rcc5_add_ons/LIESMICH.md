@@ -1,13 +1,13 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 22.02.2025 <a name="up"></a><br>   
-<h1>Ergänzungsplatinen für das RCC-System</h1>
+<h1>Erg&auml;nzungsplatinen f&uuml;r das RCC-System</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # 1. Einleitung   
-Erg&auml;nzungsplatinen sind Platinen, die für den Betrieb des RCC-Systems nicht unbedingt notwendig sind, allerdings die Handhabung oder Verkabelung einfacher und übersichtlicher machen. So kann man zB die I²C-Signale eines Blocks entweder direkt am 10-poligen Wannenstecker J4 abgreifen oder aber ein 10-poliges Flachbandkabel und das Ergänzungsboard `CON_10pol_PIN` verwenden.   
+Erg&auml;nzungsplatinen sind Platinen, die f&uuml;r den Betrieb des RCC-Systems nicht unbedingt notwendig sind, allerdings die Handhabung oder Verkabelung einfacher und &uuml;bersichtlicher machen. So kann man zB die I²C-Signale eines Blocks entweder direkt am 10-poligen Wannenstecker J4 abgreifen oder aber ein 10-poliges Flachbandkabel und das Erg&auml;nzungsboard `CON_10pol_PIN` verwenden.   
 Folgende Erg&auml;nzungsplatinen sind hilfreich und werden auf dieser Seite beschrieben:   
-* [Halterung für Schaltblöcke (RW_LEER_LED)](#x20)   
+* [Halterung f&uuml;r Schaltbl&ouml;cke (RW_LEER_LED)](#x20)   
 * [Fahrstromverteiler (CON_2pol_141)](#x30)   
 * [Verteilerplatine von 6-poligem Kabel auf 3 Schraubklemmen (CON_6pol_3)](#x40)   
 * [Verteilerplatine von 6-poligem Kabel auf 6 Schraubklemmen (CON_6pol_6)](#x50)   
@@ -18,8 +18,8 @@ Folgende Erg&auml;nzungsplatinen sind hilfreich und werden auf dieser Seite besc
    
 <a name="x20"></a>   
 
-# 2. Halterung für Schaltblöcke (RW_LEER_LED)   
-Die Halterung für Schaltblöcke (Blockbefestigungsplatine) wird mit M 2,6 x 10 Schrauben auf den Rahmen eines Eisenbahnmoduls geschraubt und dient zur Befestigung eines Schaltblocks (f&uuml;r Weichen, Entkuppler, Fahrstromschalter). Sie enth&auml;lt Bohrungen f&uuml;r LEDs und Taster/Schalter, damit diese durch den Rahmen des Moduls hin zur Bedienseite durchgesteckt werden k&ouml;nnen.   
+# 2. Halterung f&uuml;r Schaltbl&ouml;cke (RW_LEER_LED)   
+Die Halterung f&uuml;r Schaltbl&ouml;cke (Blockbefestigungsplatine) wird mit M 2,6 x 10 Schrauben auf den Rahmen eines Eisenbahnmoduls geschraubt und dient zur Befestigung eines Schaltblocks (f&uuml;r Weichen, Entkuppler, Fahrstromschalter). Sie enth&auml;lt Bohrungen f&uuml;r LEDs und Taster/Schalter, damit diese durch den Rahmen des Moduls hin zur Bedienseite durchgesteckt werden k&ouml;nnen.   
 __*Wichtig:*__ Die Halterungen nicht zu fest anschrauben, d.h. nur so fest schrauben, dass sich die Sechskant-Abstandshalter nicht nach innen neigen.   
 
 ![Montierte Befestigungsplatine](/images/300_RW_LEER_LED.png "Befestigungsplatine montiert")   
@@ -86,7 +86,7 @@ Bei der Version 2 wurde der Wannenstecker umgedreht, damit das Flachbandkabel ni
 _Bild 6: Die best&uuml;ckte "CON_6pol_3"-Platine V1 (links) und V2 (rechts)_   
 
 ![CON_6pol_3_circuit_V1](/images/200_CON_6pol_3_V1_circuit.png "CON_6pol_3_circuit_V1") &nbsp; ![CON_6pol_3_circuit_V2](/images/200_CON_6pol_3_V2_circuit.png "CON_6pol_3_circuit_V2")   
-_Bild 7: Schaltpläne der "CON_6pol_3"-Platine_   
+_Bild 7: Schaltpl&auml;ne der "CON_6pol_3"-Platine_   
 
 ![Klemme f&uuml;r Zweiwegweiche V1](/images/pcb_f/PCB_F_CON_6pol_3_V1.png "Klemme f&uuml;r Zweiwegweiche V1") &nbsp; ![Klemme f&uuml;r Zweiwegweiche V2](/images/pcb_f/PCB_F_CON_6pol_3_V2.png "Klemme f&uuml;r Zweiwegweiche V2")   
 _Bild 8: Platine Anschlussklemme f&uuml;r Zweiwegweiche V1 (links) und V2 (rechts)_   
@@ -105,7 +105,7 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_
 2. Schraubklemme J6   
 
 ### Versionen
-* V1 (241104): OK, geeignet für 0° und 90°-Stecker, Flachbandkabel verdrehen   
+* V1 (241104): OK, geeignet f&uuml;r 0° und 90°-Stecker, Flachbandkabel verdrehen   
 * V2 (250208): OK   
 
 [Zum Seitenanfang](#up)   
@@ -119,7 +119,7 @@ Bei der Version 2 wurde der Wannenstecker umgedreht, damit das Flachbandkabel ni
 _Bild 9: Die best&uuml;ckte "CON_6pol_6"-Platine V1 (links) und V2 (rechts)_   
 
 ![CON_6pol_6_V1_circuit](/images/200_CON_6pol_6_V1_circuit.png "CON_6pol_6_V1_circuit") &nbsp; ![CON_6pol_6_V2_circuit](/images/200_CON_6pol_6_V2_circuit.png "CON_6pol_6_V2_circuit")   
-_Bild 10: Schaltpläne der "CON_6pol_6"-Platine_   
+_Bild 10: Schaltpl&auml;ne der "CON_6pol_6"-Platine_   
 
 ![Klemme f&uuml;r Dreiwegweiche V1](/images/pcb_f/PCB_F_CON_6pol_6_V1.png "Klemme f&uuml;r Dreiwegweiche V1") &nbsp; ![Klemme f&uuml;r Dreiwegweiche V2](/images/pcb_f/PCB_F_CON_6pol_6_V2.png "Klemme f&uuml;r Dreiwegweiche V2")   
 _Bild 11: Platine Anschlussklemme f&uuml;r Dreiwegweiche, V1 (links) und V2 (rechts)_   
@@ -140,7 +140,7 @@ _Anmerkung_: Statt der beiden 3-poligen Schraubklemmen k&ouml;nnen auch drei 2-p
 2. Schraubklemmen J6, J7   
 
 ### Versionen
-* V1 (241104): OK, geeignet für 0° und 90°-Stecker, Flachbandkabel verdrehen   
+* V1 (241104): OK, geeignet f&uuml;r 0° und 90°-Stecker, Flachbandkabel verdrehen   
 * V2 (250208): OK   
 
 [Zum Seitenanfang](#up)   
@@ -172,7 +172,7 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_1xIO_V1](/fab/kicad/CON_1xIO_V1)
 2. Schraubklemmen J3, J5, J6   
 
 ### Versionen
-* V1 (250117): OK, geeignet für 0° und 90°-Stecker, Flachbandkabel verdrehen   
+* V1 (250117): OK, geeignet f&uuml;r 0° und 90°-Stecker, Flachbandkabel verdrehen   
 * V2 (250208): OK   
 
 [Zum Seitenanfang](#up)   
@@ -205,7 +205,7 @@ _*Link zu den KiCad-Dateien*_: [Version 1 /fab/kicad/CON_2xIO_V1](/fab/kicad/CON
 2. Schraubklemmen J3, J4, J5, J6   
 
 ### Versionen
-* V1 (250117): OK, geeignet für 0° und 90°-Stecker, Flachbandkabel verdrehen   
+* V1 (250117): OK, geeignet f&uuml;r 0° und 90°-Stecker, Flachbandkabel verdrehen   
 * V2 (250208): OK   
 
 [Zum Seitenanfang](#up)   

@@ -5,6 +5,9 @@ Last modified: 2025-01-05 <a name="up"></a><br>
 </td></tr></table>    
 
 # Aim
+
+
+
 This program for an ESP32 is used to test various self-built model railroad switching blocks. The blocks are controlled via the I/O pins of two I²C PCF8574 I/O expanders, whereby the PCF8574 with the I2C address 0x20 (IO expander #0) is used for control and the PCF8574 with the I2C address 0x21 (IO expander #1) for feedback. The IO pins for control and feedback each have the same pin number.   
 
 1. DCC 11, IO expander pin 0: Decoupler (uncoupler)   

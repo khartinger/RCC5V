@@ -4159,7 +4159,7 @@
 		)
 		(uuid "d6d4fbb1-15a9-4a28-aa56-c384f00a5088")
 	)
-	(text "Zur LED-Anzeige/Rückmeldung"
+	(text "Zur LED-Anzeige/R&uuml;ckmeldung"
 		(exclude_from_sim no)
 		(at 113.792 158.75 0)
 		(effects

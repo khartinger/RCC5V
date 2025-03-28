@@ -80,7 +80,7 @@ Die __*Verdrahtung*__ erfolgt durch folgende Leitungen:
 Die &uuml;brige Verkabelung ist Bestand.   
 
 ## 1.2 Block-Beschriftungen
-Um die händische Bedienung zu erleichtern und zB die DCC-Adresse der Schaltblöcke abzuzeigen sollten die Schaltblöcke beschriftet werden. 
+Um die h&auml;ndische Bedienung zu erleichtern und zB die DCC-Adresse der Schaltbl&ouml;cke abzuzeigen sollten die Schaltbl&ouml;cke beschriftet werden. 
 Dazu kann man die folgenden 40 x 42 mm gro&szlig;en Block-Beschriftungen auf Etikettenpapier ausdrucken und auf das Frontpanel kleben (Abstand zum unteren Rand 8 mm).   
 
 ![Modul M01 Beschriftung](./images/300_M01_cover.png "Modul M01 Beschriftung")   
@@ -127,7 +127,7 @@ Leitungen losschrauben oder abzwicken (siehe _Bild 2_).
 # 3. Software f&uuml;r den ESP32
 ## 3.1 Planung der Verkabelung
 F&uuml;r die Konfiguration der Software muss der Anschluss der Steuerbl&ouml;cke an die I/O-Leitungen der I/O-Expander bekannt sein. 
-Zum Anschluss eines abschaltbaren Gleises (Block 2IO) und einer Zweiwegweiche (Block W2) werden nur drei I/O-Leitungen benötigt:   
+Zum Anschluss eines abschaltbaren Gleises (Block 2IO) und einer Zweiwegweiche (Block W2) werden nur drei I/O-Leitungen ben&ouml;tigt:   
 * Abschaltbares Gleis: Pin 0   
 * Zweiwegweiche: Pin 1 und Pin 2   
 
@@ -346,16 +346,16 @@ _Bild 5: Die fertige Verkabelung_
 <a name="x50"></a>   
 
 # 5. Probebetrieb
-1. Modul an Stromversorgung anschließen:   
+1. Modul an Stromversorgung anschlie&szlig;en:   
    * OLED-Anzeige mit Taster weiterschalten   
    * Der Fahrstrom Ladegleis (DCC 11) ist aus, die mittlere gelbe und rote LED leuchten   
    * Die LEDs des Weichen-Blocks (DCC 12) zeigen die Stellung der Weichen an   
 2. Weiche am Modul (h&auml;ndisch) schalten: Beide Weichen sollten auf Gerade oder Abzweig stehen. Wenn nicht:   
-   * Eine Weiche "Gerade", eine "Abzweig": bei einer Weiche die Drähte an Klemme 1 und 3 vertauschen.   
-   * Stellung der beiden Weichen genau gegenteilig zum Schaltblock: Drähte an Klemme 1 und 3 vertauschen.   
+   * Eine Weiche "Gerade", eine "Abzweig": bei einer Weiche die Dr&auml;hte an Klemme 1 und 3 vertauschen.   
+   * Stellung der beiden Weichen genau gegenteilig zum Schaltblock: Dr&auml;hte an Klemme 1 und 3 vertauschen.   
 3. Abschaltbares Gleis durch Probefahrt (oder mit einem Voltmeter) testen.   
 4. DCC-Schaltfunktion testen:
-   * DCC-Adresse 11: "Gerade" = Fahrstrom des Ladegleises ist ein, "Abzweig" = Fahrstrom aus (wenn beide Schalter nicht betätigt sind!)   
+   * DCC-Adresse 11: "Gerade" = Fahrstrom des Ladegleises ist ein, "Abzweig" = Fahrstrom aus (wenn beide Schalter nicht bet&auml;tigt sind!)   
    * DCC-Adresse 12: Weichen schalten   
 
 [Zum Seitenanfang](#up)   

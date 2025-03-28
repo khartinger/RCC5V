@@ -11,7 +11,7 @@ Das Steuerprogramm `rcc_demo1.cpp` muss im Normalfall nicht ver&auml;ndert werde
 <a name="x20"></a>   
 
 # Die Konfigurationsdatei dcc_config.h
-## Übersicht
+## &Uuml;bersicht
 In der Konfigurationsdatei `dcc_config.h` werden alle wesentlichen Projekteigenschaften definiert wie   
 * Versionsbezeichnung des Programms (zB das Datum der letzten &Auml;nderung)   
 * Informationen zum verwendeten Netzwerk (WLAN)   

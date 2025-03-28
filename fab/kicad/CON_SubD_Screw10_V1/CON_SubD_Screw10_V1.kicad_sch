@@ -2259,7 +2259,7 @@
 		)
 		(uuid "fe44f407-429d-4970-b237-0bad3b12f9fa")
 	)
-	(text "Südliche Schiene, südliches Gleis"
+	(text "S&uuml;dliche Schiene, s&uuml;dliches Gleis"
 		(exclude_from_sim no)
 		(at 113.03 81.788 0)
 		(effects
@@ -2270,7 +2270,7 @@
 		)
 		(uuid "0d1ddc2f-954c-4292-ab88-7ad4f62b5c01")
 	)
-	(text "Südliche Schiene, nördliches Gleis"
+	(text "S&uuml;dliche Schiene, n&ouml;rdliches Gleis"
 		(exclude_from_sim no)
 		(at 113.03 61.468 0)
 		(effects
@@ -2292,7 +2292,7 @@
 		)
 		(uuid "14780e97-a0fd-41d8-a6dc-bc832cc25106")
 	)
-	(text "Nördliche Schiene, nördliches Gleis"
+	(text "N&ouml;rdliche Schiene, n&ouml;rdliches Gleis"
 		(exclude_from_sim no)
 		(at 113.03 58.928 0)
 		(effects
@@ -2357,7 +2357,7 @@
 		)
 		(uuid "9b161f20-bd90-4f52-9f37-3c85e432552a")
 	)
-	(text "Südliche Schiene, nördliches Gleis"
+	(text "S&uuml;dliche Schiene, n&ouml;rdliches Gleis"
 		(exclude_from_sim no)
 		(at 113.03 79.248 0)
 		(effects

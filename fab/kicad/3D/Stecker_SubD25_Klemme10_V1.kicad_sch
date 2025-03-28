@@ -2378,7 +2378,7 @@
 		)
 		(uuid "f78de3cd-58bc-4236-b55a-81ff587620cd")
 	)
-	(text "Nördliche Schiene, nördliches Gleis"
+	(text "N&ouml;rdliche Schiene, n&ouml;rdliches Gleis"
 		(exclude_from_sim no)
 		(at 131.826 52.578 0)
 		(effects

@@ -2312,7 +2312,7 @@ tactile switch Omron B3F right angle through hole
 Button_Switch_THT
 SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm
 Wuerth, WS-SLTV, 450301014042, https://www.we-online.com/components/products/datasheet/450301014042.pdf
-switch single-pole opposite-side-connection double-throw SPDT würth wurth
+switch single-pole opposite-side-connection double-throw SPDT w&uuml;rth wurth
 0
 3
 3
@@ -8472,7 +8472,7 @@ microSD SD molex
 Connector_Card
 microSD_HC_Wuerth_693072010801
 http://katalog.we-online.de/em/datasheet/693072010801.pdf
-Micro SD Wuerth Wurth Würth
+Micro SD Wuerth Wurth W&uuml;rth
 0
 12
 9
@@ -8709,7 +8709,7 @@ SMA Straight Samtec Edge Mount
 2
 Connector_Coaxial
 SMA_Wurth_60312102114405_Vertical
-Würth WR-SMA PCB SMT Jack, Vertical (https://www.we-online.com/components/products/datasheet/60312102114405.pdf)
+W&uuml;rth WR-SMA PCB SMT Jack, Vertical (https://www.we-online.com/components/products/datasheet/60312102114405.pdf)
 Coaxial Connector 50 ohms Female
 0
 3
@@ -8744,14 +8744,14 @@ mcrf hirose ufl u.fl microcoaxial
 2
 Connector_Coaxial
 WR-MMCX_Wuerth_66012102111404_Vertical
-Würth WR-MMCX PCB SMT Jack, Vertical (https://www.we-online.com/components/products/datasheet/66012102111404.pdf)
+W&uuml;rth WR-MMCX PCB SMT Jack, Vertical (https://www.we-online.com/components/products/datasheet/66012102111404.pdf)
 Coaxial Connector 50 ohms Female
 0
 3
 2
 Connector_Coaxial
 WR-MMCX_Wuerth_66011102111302_Horizontal
-Würth WR-MMCX PCB SMT Jack, Horizontal (https://www.we-online.com/components/products/datasheet/66011102111302.pdf)
+W&uuml;rth WR-MMCX PCB SMT Jack, Horizontal (https://www.we-online.com/components/products/datasheet/66011102111302.pdf)
 Coaxial Connector 50 ohms Female
 0
 7
@@ -49660,7 +49660,7 @@ usb A plug horizontal
 Connector_USB
 USB3_A_Receptacle_Wuerth_692122030100
 USB 3.0, type A, right angle (https://www.we-online.com/katalog/datasheet/692122030100.pdf)
-USB 3.0 type A right angle Würth
+USB 3.0 type A right angle W&uuml;rth
 0
 11
 10
@@ -57975,7 +57975,7 @@ Fuseholder horizontal open 5x20 Stelvio-Kontek PTF/78
 2
 Fuse
 Fuseholder_Cylinder-5x20mm_Wuerth_696103101002-SMD_Horizontal_Open
-Fuseholder horizontal open 5x20mm 250V 10A Würth 696103101002
+Fuseholder horizontal open 5x20mm 250V 10A W&uuml;rth 696103101002
 Fuseholder horizontal open 5x20mm 250V 10A
 0
 2
@@ -67138,14 +67138,14 @@ mounting hole 8.4mm m8
 1
 Mounting_Wuerth
 Mounting_Wuerth_WA-SMRA-D3.3mm_L7mm_7466300R_Horizontal
-Right-angle SMD mounting hardware, inside through hole 3.3mm, lenght 7mm, total height 5mm, Würth electronics 7466300R (https://www.we-online.com/components/products/datasheet/7466300R.pdf)
+Right-angle SMD mounting hardware, inside through hole 3.3mm, lenght 7mm, total height 5mm, W&uuml;rth electronics 7466300R (https://www.we-online.com/components/products/datasheet/7466300R.pdf)
 screw
 0
 4
 1
 Mounting_Wuerth
 Mounting_Wuerth_WA-SMRA-M3_L7mm_7466303R_Horizontal
-Right-angle SMD mounting Hardware, inside threaded M3, length 7m, total height 5mm, Würth electronics 7466303R (https://www.we-online.com/components/products/datasheet/7466303R.pdf)
+Right-angle SMD mounting Hardware, inside threaded M3, length 7m, total height 5mm, W&uuml;rth electronics 7466303R (https://www.we-online.com/components/products/datasheet/7466303R.pdf)
 threaded screw
 0
 4
@@ -68293,14 +68293,14 @@ Mounting 4.5mm 9774100982
 1
 Mounting_Wuerth
 Mounting_Wuerth_WP-SMRA-D3.3mm_L7mm_7466300_Horizontal
-Right-angle SMD mounting hardware, inside through hole 3.3mm, lenght 7mm, total height 5mm, Würth electronics 7466300 (https://www.we-online.com/components/products/datasheet/7466300.pdf)
+Right-angle SMD mounting hardware, inside through hole 3.3mm, lenght 7mm, total height 5mm, W&uuml;rth electronics 7466300 (https://www.we-online.com/components/products/datasheet/7466300.pdf)
 screw
 0
 4
 1
 Mounting_Wuerth
 Mounting_Wuerth_WP-SMRA-M3_L7mm_7466303_Horizontal
-Right-angle SMD mounting Hardware, inside threaded M3, length 7m, total height 5mm, Würth electronics 7466303 (https://www.we-online.com/components/products/datasheet/7466303.pdf)
+Right-angle SMD mounting Hardware, inside threaded M3, length 7m, total height 5mm, W&uuml;rth electronics 7466303 (https://www.we-online.com/components/products/datasheet/7466303.pdf)
 threaded screw
 0
 4

@@ -5,7 +5,7 @@ Letzte &Auml;nderung: 3.1.2025 <a name="up"></a><br>
 </td></tr></table>   
 
 # Einleitung
-Der Quellcode des Demo-Programms `rcc_demo1` besteht aus insgesamt .. Dateien und ist folgendermaßen aufgebaut:   
+Der Quellcode des Demo-Programms `rcc_demo1` besteht aus insgesamt .. Dateien und ist folgenderma&szlig;en aufgebaut:   
 
 | Datei | Inhalt |   
 | ----- | ------ |   

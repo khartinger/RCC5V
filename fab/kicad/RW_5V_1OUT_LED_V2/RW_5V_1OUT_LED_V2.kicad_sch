@@ -2049,7 +2049,7 @@
 		)
 		(uuid "4f057c5c-2573-4a59-b52b-53ad99763bce")
 	)
-	(text "D2 zeigt, ob der Taster gedrückt ist.\nKein Tastendruck ergibt REMOTE-Steuerung."
+	(text "D2 zeigt, ob der Taster gedr&uuml;ckt ist.\nKein Tastendruck ergibt REMOTE-Steuerung."
 		(exclude_from_sim no)
 		(at 112.268 139.7 0)
 		(effects
@@ -2701,7 +2701,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED grün"
+		(property "Value" "LED gr&uuml;n"
 			(at 47.498 85.09 90)
 			(effects
 				(font

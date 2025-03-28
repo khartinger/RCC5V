@@ -5,7 +5,7 @@ Letzte &Auml;nderung: 8.3.2025 <a name="up"></a><br>
 </td></tr></table>   
 
 # 1. Einleitung   
-Die Steuerung des RCC-Systems (Railway Component Control) erfolgt mit einem "ESP32 D1 Mini" Multiprozessor und Zusatzplatinen. Die Zusatzplatinen dienen dazu, das DCC-Signal und den Taster einzulesen sowie die I²C-Busse für das Display und die PCF85745-Ein-Ausgabe-Expander bereitzustellen.   
+Die Steuerung des RCC-Systems (Railway Component Control) erfolgt mit einem "ESP32 D1 Mini" Multiprozessor und Zusatzplatinen. Die Zusatzplatinen dienen dazu, das DCC-Signal und den Taster einzulesen sowie die I²C-Busse f&uuml;r das Display und die PCF85745-Ein-Ausgabe-Expander bereitzustellen.   
 
 ## &Uuml;bersicht &uuml;ber die Zusatzplatinen
 Diese Seite beschreibt die Herstellung bzw. Best&uuml;ckung folgender Zusatzplatinen:   
@@ -163,16 +163,16 @@ _Nicht vergessen_: Optokoppler U2 in die Fassung stecken...
 
 ### Shield_5V_DCC_6pol und OLED-Fassung
 Wird die Zusatzplatine `Shield_5V_DCC_6pol` gemeinsam mit einer OLED-Fassung verwendet, so sollte auf dieser gleich der 12 mm Drucktaster aus Edelstahl montiert werden.   
-1. Anschlussleitungen des Tasters auf ca. 9 cm kürzen.   
-2. Von einem 2 mm Schrumpfschlauch zwei 1,5 cm lange Stücke herunterschneiden.   
-3. Die Schrumpfschlauch-Stücke auf die Anschlussleitungen ganz hinauf schieben.   
+1. Anschlussleitungen des Tasters auf ca. 9 cm k&uuml;rzen.   
+2. Von einem 2 mm Schrumpfschlauch zwei 1,5 cm lange St&uuml;cke herunterschneiden.   
+3. Die Schrumpfschlauch-St&uuml;cke auf die Anschlussleitungen ganz hinauf schieben.   
 4. Von einer Buchsenleiste mit kurzen Kontakten 2 Kontakte herunterschneiden und verzinnen.   
-5. Die Anschlussleitungen an die Buchsenleiste löten.   
-6. Den Schrumpfschlauch über die Lötstelle schieben und erhitzen.   
-7. Den Taster in die OLED-Fassung schieben und verschrauben. Mit einem 14-er Maul-Schlüssel festziehen.   
+5. Die Anschlussleitungen an die Buchsenleiste l&ouml;ten.   
+6. Den Schrumpfschlauch &uuml;ber die L&ouml;tstelle schieben und erhitzen.   
+7. Den Taster in die OLED-Fassung schieben und verschrauben. Mit einem 14-er Maul-Schl&uuml;ssel festziehen.   
 
 ![Edelstahl-Taster](/images/300_pushbutton_parts.png "Edelstahl-Taster")   
-_Bild 13: Bauteile für den Edelstahl-Taster_   
+_Bild 13: Bauteile f&uuml;r den Edelstahl-Taster_   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -218,7 +218,7 @@ _Bild 17: Bauteile f&uuml;r die "Shield_I2C_5V_3V3_big"-Platine_
 
 ### Best&uuml;ckung   
 1. Die beiden gelben 4-poligen Stiftleisten sowohl in die Konverter- als auch in in die I2C-Platine stecken und beidseitig auf der Bauteilseite des Prints verl&ouml;ten.  
-   __Wichtig__: Die Konverter-Platine so drehen, dass die Bauteile nach unten zeigen und die 3V- und 5V-Anschlüsse auf der jeweils richtigen Seite sind!   
+   __Wichtig__: Die Konverter-Platine so drehen, dass die Bauteile nach unten zeigen und die 3V- und 5V-Anschl&uuml;sse auf der jeweils richtigen Seite sind!   
 2. 8-polige Stiftleisten Stiftleisten U1 nach unten (auf L&ouml;tseite)   
 3. 4-polige Stiftleisten J5 und J6 nach unten (auf L&ouml;tseite), auf senkrechte Ausrichtung achten!   
 4. 4-polige Buchsenleiste J4 auf die Bauteilseite l&ouml;ten, auf senkrechte Ausrichtung achten!   
