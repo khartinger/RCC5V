@@ -23,22 +23,27 @@ verantwortlich ist.
 
 Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung werden normalerweise auf die gleichen Pin-Nummern verdrahtet.   
 
-Mit Hilfe dieser Demo-Software k&ouml;nnen folgende Bl&ouml;cke getestet werden:  
+Folgende Bl&ouml;cke und Pin-Nummern sind in der Demo-Software vorgesehen:   
 1. DCC 11, IO-Expander Pin 0: Entkuppler   
 2. DCC 21, IO-Expander Pin 1,2: Zweiwegweiche (mit Endabschaltung)   
 3. DCC 31,32, IO-Expander Pin 3,4,5: Dreiwegweiche (mit Endabschaltung)   
 4. DCC 41, IO-Expander Pin 6: Fahrstrom   
 5. DCC 51, IO-Expander Pin 7: Blinklicht   
 
-Der Schaltzustand der Komponenten wird auf einem 1,54"-OLED-Display angezeigt.   
-
-Mit Hilfe eines Tasters am Pin IO19 (D6) kann man die einzelnen Seiten der Informationsanzeige oder das Suchen nach dem WLAN &uuml;berspringen.   
-
-Dr&uuml;ckt man w&auml;hrend des Programmlaufs den Taster an IO19 f&uuml;r eine Sekunde, wird ein Reset ausgel&ouml;st. Dies kann zB dazu verwendet werden, um beim erneuten Hochfahren das WLAN zu aktivieren.   
+__*Weitere Funktionen der Software:*__   
+* Der Schaltzustand der Komponenten wird auf einem 1,54"-OLED-Display angezeigt.   
+* Mit Hilfe eines Tasters am Pin IO19 (D6) kann man die einzelnen Seiten der Informationsanzeige oder das Suchen nach dem WLAN &uuml;berspringen.   
+* Dr&uuml;ckt man w&auml;hrend des Programmlaufs den Taster an IO19 f&uuml;r mehr als eine Sekunde, wird ein Reset ausgel&ouml;st. Dies kann zB dazu verwendet werden, um beim erneuten Hochfahren das WLAN zu aktivieren.   
 
 Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigenschaften, werden in einer Konfigurationsdatei `dcc_config.h` gespeichert.   
 
-# Erforderliche Hardware
+# Erforderliche Hardware   
+F&uuml;r die erforderliche Hardware zur Demo-Software gibt es zwei M&ouml;glichkeiten:   
+* Nutzung des in Kapitel [`/examples/blocktester` beschriebenen Blocktesters](/examples/blocktester/LIESMICH.md) oder   
+* eine diskret zusammengebaute Hardware.   
+
+In diesem Beitrag wird erkl&auml;rt, wie man aus verschiedenen Teilen die Hardware f&uuml;r die Demo-Software zusammenbaut.   
+
 ## Elektronische Bauteile   
 1. ESP32 D1 mini   
 2. 1x Selbstbau-Board "Shield_I2C_5V_3V3" oder "Shield_I2C_5V_3V3_big": Anschluss f&uuml;r die beiden I2C-Busse   
@@ -46,7 +51,7 @@ Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigen
 4. 1x OLED-Display mit SSD1309 controller (zB 1,54" oder 2,4" Display mit 128x64 Pixel Aufl&ouml;sung)   
 5. 2x I²C-Expander-Boards PCF8574 mit den (7-Bit-)Adressen 0x20 und 0x21   
 6. Taster am Pin D6 (IO19) mit Pullup-Widerstand (zB 10 kOhm) nach 3,3V (oder ein Draht)   
-7. Zu testende Schaltblöcke   
+7. Zu testende Schaltbl&ouml;cke   
 
 ## Elektrische Bauteile
 Die ben&ouml;tigten elektrischen Bauteile sind abh&auml;ngig davon, was man testen will.    
@@ -58,7 +63,7 @@ __Beispiel Zweiwegweiche:__
 5. Eine DCC-Quelle zum Senden von Weichenbefehlen (zB Roco MultiMAUS mit Digitalverst&auml;rker 10764 und Netzteil 10850)   
 6. Ein WLAN-Server (zB Raspberry Pi) mit installiertem MQTT-Broker   
 
-Sind der Trafo (Punkt 3.) und die DCC-Quelle (Punkt 5.) an einem 25-poligen Kabel nach NEM908D angeschlossen, so kann die Selbstbau-Platine "CON_SubD_Screw10_V1" (mit aufgesteckter Platine "AC_5V_6pol_DCC_V1" und LM2596-DC-DC-Wandler zur Erzeugung der 5V-Spannung) zur Versorgung des Test-Aufbaus verwendet werden. (Siehe Bild 1)   
+Sind der Trafo (Punkt 3.) und die DCC-Quelle (Punkt 5.) an einem 25-poligen Kabel nach NEM908D angeschlossen, so kann die Selbstbau-Platine "CON_SubD_Screw10_V1" (mit aufgesteckter Platine "AC_5V_6pol_DCC_V1" und LM2596-DC-DC-Wandler zur Erzeugung der 5V-Spannung) zur Versorgung des Test-Aufbaus verwendet werden. (Siehe Bild 2)   
 
 ## Verkabelung
 1. Anstecken von zwei Dr&auml;hten (oder einem Taster) an den IO19-Anschl&uuml;ssen des Shields "Shield_5V_DCC_6pol"   

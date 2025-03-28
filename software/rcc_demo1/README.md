@@ -23,18 +23,17 @@ is responsible.
 
 The IO pins for control and feedback are normally wired to the same pin numbers.   
 
-The following blocks can be tested using this demo software:  
+The following blocks and pin numbers are provided in the demo software:   
 1. DCC 11, IO expander pin 0: Decoupler (uncoupler)   
 2. DCC 21, IO expander pin 1,2: Two-way switch (with limit switch)   
 3. DCC 31,32, IO expander pin 3,4,5: Three-way switch (with limit switching)   
 4. DCC 41, IO expander pin 6: Disconnectable track   
 5. DCC 51, IO expander pin 7: Flashing light   
 
-The switching status of the components is shown on a 1.54” OLED display.   
-
-A button on pin D6 (IO19) can be used to skip the individual pages of the information display or to search for the WLAN.   
-
-If you press the button for one second during the program run, a reset is triggered. This can be used, for example, to activate the WLAN when starting up again.   
+__*Further functions of the software:*__   
+* The switching status of the components is shown on a 1.54” OLED display.   
+* A button on pin D6 (IO19) can be used to skip the individual pages of the information display or to search for the WLAN.   
+* If you press the button for one second during the program run, a reset is triggered. This can be used, for example, to activate the WLAN when starting up again.   
 
 All project-specific data, such as WLAN access, MQTT commands and hardware properties, are saved in a configuration file `dcc_config.h`.   
 
@@ -57,7 +56,7 @@ __Example three-way turnout:__
 4. a DCC source for sending turnout commands (e.g. Roco MultiMAUS with digital amplifier 10764 and power supply 10850)   
 5. a 5V power supply   
 
-If the transformer (point 3.) and the DCC source (point 5.) are connected to a 25-pin connector according to NEM908D, the self-assembly board “Connector_SubD_Screw_5Vsupply_DCC” (with plugged-on board “AC_5V_supply_6pol_DCC” and LM2596-DC-DC converter for generating the 5V voltage) can be used to supply the test setup. (See Figure 1)   
+If the transformer (point 3.) and the DCC source (point 5.) are connected to a 25-pin connector according to NEM908D, the self-assembly board “Connector_SubD_Screw_5Vsupply_DCC” (with plugged-on board “AC_5V_supply_6pol_DCC” and LM2596-DC-DC converter for generating the 5V voltage) can be used to supply the test setup. (See Figure 2)   
 
 ********************************
 = - = - = - = - = - = - = - = - = - = - = - = - = - = - = -   
