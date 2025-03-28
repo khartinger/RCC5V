@@ -15,10 +15,12 @@ Jeder Schaltblock hat drei Anschl&uuml;sse:
 _Bild 1: Anschl&uuml;sse am Beispiel des Zweiwegweichen-Schaltblocks_   
 
 F&uuml;r die Ansteuerung durch den Mikrocontroller ist der 10-polige Anschluss von Interesse.   
+
 Die Verbindung zum Mikrocontroller erfolgt &uuml;ber I²C-PCF8574-I/O-Expander-Boards, wobei immer eine gerade Anzahl erforderlich ist. Dies ergibt sich daraus, dass immer   
 * ein Board zur Ansteuerung der Komponenten (I2C-Adresse 0x20, IO-Expander #0) und   
 * ein Board f&uuml;r die R&uuml;ckmeldesignale (I2C-Adresse 0x21, IO-Expander #1)   
 verantwortlich ist.   
+
 Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung werden normalerweise auf die gleichen Pin-Nummern verdrahtet.   
 
 Mit Hilfe dieser Demo-Software k&ouml;nnen folgende Bl&ouml;cke getestet werden:  
@@ -39,11 +41,12 @@ Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigen
 # Erforderliche Hardware
 ## Elektronische Bauteile   
 1. ESP32 D1 mini   
-2. 1x Selbstbau-Board "Shield_I2C_5V_3V3": Anschluss f&uuml;r die beiden I2C-Busse   
+2. 1x Selbstbau-Board "Shield_I2C_5V_3V3" oder "Shield_I2C_5V_3V3_big": Anschluss f&uuml;r die beiden I2C-Busse   
 3. 1x Selbstbau-Board "Shield_5V_DCC_6pol": Stromversorgung mit 5V, DCC-Signal und Anschluss f&uuml;r Taster an Pin D6 (IO19)   
 4. 1x OLED-Display mit SSD1309 controller (zB 1,54" oder 2,4" Display mit 128x64 Pixel Aufl&ouml;sung)   
 5. 2x I²C-Expander-Boards PCF8574 mit den (7-Bit-)Adressen 0x20 und 0x21   
 6. Taster am Pin D6 (IO19) mit Pullup-Widerstand (zB 10 kOhm) nach 3,3V (oder ein Draht)   
+7. Zu testende Schaltblöcke   
 
 ## Elektrische Bauteile
 Die ben&ouml;tigten elektrischen Bauteile sind abh&auml;ngig davon, was man testen will.    

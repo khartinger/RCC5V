@@ -5,11 +5,25 @@ Last modified: 2025-01-05 <a name="up"></a><br>
 </td></tr></table>    
 
 # Aim
+This program for an ESP32 is used to test various self-built model railroad switch blocks.   
+Each switch block has three connections:   
+* a 10-pin connection for control by the microcontroller,   
+* a 6-pin connection for the railroad components (point machines etc.),   
+* a 6-pin connector for the power supply (in _Fig. 1_ below, vertical).   
 
+![Connections_w2_block](/images/300_connections_w2_block.png "Connections_w2_block")   
+_Figure 1: Connections using the example of the two-way switch block_   
 
+The 10-pin connection is of interest for control by the microcontroller.   
 
-This program for an ESP32 is used to test various self-built model railroad switching blocks. The blocks are controlled via the I/O pins of two I²C PCF8574 I/O expanders, whereby the PCF8574 with the I2C address 0x20 (IO expander #0) is used for control and the PCF8574 with the I2C address 0x21 (IO expander #1) for feedback. The IO pins for control and feedback each have the same pin number.   
+The connection to the microcontroller is made via I²C-PCF8574-I/O expander boards, whereby an even number is always required. This is due to the fact that   
+* one board for controlling the components (I2C address 0x20, IO expander #0) and   
+* one board is responsible for the feedback signals (I2C address 0x21, IO expander #1)   
+is responsible.   
 
+The IO pins for control and feedback are normally wired to the same pin numbers.   
+
+The following blocks can be tested using this demo software:  
 1. DCC 11, IO expander pin 0: Decoupler (uncoupler)   
 2. DCC 21, IO expander pin 1,2: Two-way switch (with limit switch)   
 3. DCC 31,32, IO expander pin 3,4,5: Three-way switch (with limit switching)   
@@ -27,16 +41,17 @@ All project-specific data, such as WLAN access, MQTT commands and hardware prope
 # Required hardware
 ## Electronic components   
 1. ESP32 D1 mini   
-2. 1x do-it-yourself board “Shield_I2C_5V_3V3”: Connection for the two I2C buses   
+2. 1x do-it-yourself board “Shield_I2C_5V_3V3” or “Shield_I2C_5V_3V3_big”: Connection for the two I2C buses   
 3. 1x DIY board “Shield_5V_DCC_6pol”: Power supply with 5V, DCC signal and connection for button on pin D6 (IO19)   
 4. 1x OLED display with SSD1309 controller (e.g. 1.54“ or 2.4” displays with 128x64 pixel resolution)   
 5. 2x I²C expander boards PCF8574 with the (7-bit) addresses 0x20 and 0x21   
 6. push-button on pin D6 (IO19) with pull-up resistor (e.g. 10 kOhm) to 3.3V (or a wire)   
+7. switching blocks to be tested   
 
 ## Electrical components
 The electrical components depend on what you want to test.    
-__Example three-way crossover:___
-1. a three-way crossover with limit switching   
+__Example three-way turnout:__
+1. a three-way turnout with limit switching   
 2. self-assembly block “RW_5V_W3” consisting of the two circuit boards `RW_5V_W3_STRG` and `RW_5V_W3_LED` for controlling the points with 5V   
 3. a transformer with 16V alternating voltage (V+, V-)   
 4. a DCC source for sending turnout commands (e.g. Roco MultiMAUS with digital amplifier 10764 and power supply 10850)   
