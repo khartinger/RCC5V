@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 28.3.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 29.3.2025 <a name="up"></a><br>   
 <h1>RCC-Blocktester</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -155,7 +155,7 @@ _Bild 11: I²C-Verdrahtungsplan des Blocktesters_
 
 ## 3. Gleisbau
 ## 3.1 Montage der Gleise
-Der Aufbau des Gleisbildes ist an sich unproblematisch, da die Gleise prim&auml;r nicht f&uuml;r einen Fahrbetrieb gedacht sind. Wichtig ist nur, dass eine Trennstelle vorgesehen wird (die kleinen roten Rechtecke im _Bild 4_ bzw. das dunkelgraue Dreieck im _Bild 7_), damit man das Gleis mit abschaltbarem Fahrstrom testen kann. Weiters sollte man darauf achten, dass der Abstand der Parallelgleise &uuml;blicherweise 33,6 mm betr&auml;gt. Dies kann man durch Aufzeichnen der Gleislage auf der Grundplatte sicherstellen.   
+Der Aufbau der Eisenbahn-Komponenten (Weichen usw.) ist beliebig, da die Gleise prim&auml;r nicht f&uuml;r einen Fahrbetrieb gedacht sind. Wichtig ist nur, dass eine Trennstelle vorgesehen wird (die kleinen roten Rechtecke im _Bild 4_ bzw. das dunkelgraue Dreieck im _Bild 12_), damit man das Abschalten des Fahrstroms testen kann. Weiters sollte man darauf achten, dass der Abstand der Parallelgleise &uuml;blicherweise 33,6 mm betr&auml;gt. Dies kann man durch Aufzeichnen der Gleislage auf der Grundplatte sicherstellen.   
 
 ![Blocktester_Gleisbild](./images/300_BT_Gleisbild.png "Blocktester_Gleisbild")   
 _Bild 12: Gleisbild_   
@@ -179,7 +179,7 @@ F&uuml;r das vorgeschlagene Gleisbild werden folgende Gleise ben&ouml;tigt:
 Gesamtkosten 2025: ca. 255 Euro   
 
 Die Gleise werden nur mit Gleisn&auml;geln befestigt (kein Aufkleben), damit man sie bei Bedarf abbauen und anderwertig einsetzen kann.   
-An das Ende des Prellbockgleises kann ein Zweifach-LED mit zwei Anschl&uuml;ssen und einem 2,2 k&Omega;-Widerstand in Serie gel&ouml;tet werden, damit man am Leuchten der LED gleich erkennt, wenn eine Fahrspannung anliegt.   
+An das Ende des geschalteten Gleises kann ein Zweifach-LED mit zwei Anschl&uuml;ssen und einem 2,2 k&Omega;-Widerstand in Serie gel&ouml;tet werden, damit man am Leuchten der LED gleich erkennt, ob eine Fahrspannung anliegt.   
 
 ## 3.2 Verdrahtung der Eisenbahn-Komponenten
 Die Verdrahtung der Eisenbahn-Komponenten erfolgt beim Blocktester von den Bauteilen (Weichen, Entkuppler, Fahrstromanschluss) zu den entsprechenden 6-poligen Platinen. An sich k&ouml;nnte die Verdrahtung auch direkt zu den Schaltbl&ouml;cken erfolgen, aber durch die Verwendung der Add-On-Platinen wird die Verdrahtung wesentlich &uuml;bersichtlicher und einfacher.   
@@ -188,14 +188,14 @@ Die Verdrahtung der Eisenbahn-Komponenten erfolgt beim Blocktester von den Baute
 Anschluss der beiden Leitungen an Pin 3 (Masse, mittlere Schraubklemme, schwarze Leitung) und Pin 5 (braune Leitung). Zwischen die beiden Pins muss zum Vermeiden von St&ouml;rspannungen ein Kondensator (zB 100 nF/50V) geschaltet werden.   
 Pin 1 bleibt frei.   
 
-![CON_6pol_3_circuit_V1](/images/200_CON_6pol_3_V1_circuit.png "CON_6pol_3_circuit_V1") &nbsp; ![CON_6pol_3_circuit_V2](/images/200_CON_6pol_3_V2_circuit.png "CON_6pol_3_circuit_V2")   
-_Bild 13: Schaltpl&auml;ne der "CON_6pol_3"-Platine_   
+![CON_6pol_3_circuit_V1](/images/200_CON_6pol_3_V1_circuit.png "CON_6pol_3_circuit_V1")   
+_Bild 13: Schaltplan der "CON_6pol_3"-Platine, Version 1 (!)_   
 
 ![Pinbelegung_1OUT-J5](/images/200_J5_pins_1OUT.png "Pinbelegung 1OUT-J5")   
 _Bild 14: Pinbelegung des Steckers J5 von 1OUT (RW_5V_1OUT_STRG)_   
 
 ### Zweiwegweiche (CON_6pol-3)
-Die Masse der Zweiwegweiche (schwarze Leitung) wird an Pin 3 (mittlere Schraubklemme) angeschraubt. Der Anschluss der beiden anderen Kabel h&auml;ngt davon ab, ob die Weiche &Uuml;ber- oder Unterflur montiert wird. Am besten eine Leitung an Pin 1 anschrauben und die Weiche mit dem Schaltblock W2 schalten. Passt der Schaltzustand ("Gerade" oder "Abzweig"), so schließt man das zweite Kabel am anderen Anschluss an, ansonsten vertauscht man die beiden braunen Kabel.   
+Die Masse der Zweiwegweiche (schwarze Leitung) wird an Pin 3 (mittlere Schraubklemme) angeschraubt. Der Anschluss der beiden anderen Kabel h&auml;ngt davon ab, ob die Weiche &Uuml;berflur oder Unterflur montiert wird. Am besten eine Leitung an Pin 1 anschrauben und die Weiche mit dem Schaltblock W2 schalten. Passt der Schaltzustand ("Gerade" oder "Abzweig"), so schließt man das zweite Kabel am anderen Anschluss an, ansonsten vertauscht man die beiden braunen Kabel.   
 
 ![Pinbelegung_W2-J5](/images/200_J5_pins_W2.png "Pinbelegung W2-J5")   
 _Bild 15: Pinbelegung des Steckers J5 von W2 (RW_5V_W2_STRG)_   
@@ -209,14 +209,14 @@ Das Herausfinden der Anschl&uuml;sse erfolgt am besten durch Versuche wie bei de
 * herausfinden, welcher der beiden Dr&auml;hte f&uuml;r das "Gerade"-Schalten des rechten Weichenantriebs zust&auml;ndig ist und bei Klemme 5 oder 6 anschließen   
 * anderen Anschluss des rechten Weichenantreibs anschließen.    
 
-![CON_6pol_6_V1_circuit](/images/200_CON_6pol_6_V1_circuit.png "CON_6pol_6_V1_circuit") &nbsp; ![CON_6pol_6_V2_circuit](/images/200_CON_6pol_6_V2_circuit.png "CON_6pol_6_V2_circuit")   
-_Bild 16: Schaltpl&auml;ne der "CON_6pol_6"-Platine_   
+![CON_6pol_6_V1_circuit](/images/200_CON_6pol_6_V1_circuit.png "CON_6pol_6_V1_circuit")   
+_Bild 16: Schaltplan der "CON_6pol_6"-Platine, Version 1 (!)_   
 
 ![Pinbelegung_W3-J5](/images/200_J5_pins_W3.png "Pinbelegung W3-J5")   
 _Bild 17: Pinbelegung des Steckers J5 von W3 (RW_5V_W3_STRG)_   
 
 ### Abschaltbares Gleis (CON_1xIO)
-An den Stecker `CON_1xIO` wird links oder rechts der Fahrstrom angeschlossen und &uuml;ber der 6-polige Kabel wird der geschaltete Fahrstrom an die mittlere Doppelklemme ausgegeben.   
+An den Stecker `CON_1xIO` wird links oder rechts der Fahrstrom angeschlossen und &uuml;ber das 6-polige Kabel wird der geschaltete Fahrstrom an die mittlere Doppelklemme ausgegeben.   
 Der Fahrstrom zum Gleis wird daher an das mittlere Klemmenpaar angeschlossen.   
 
 ![CON_1xIO_V1_circuit](/images/200_CON_1xIO_V1_circuit.png "CON_1xIO_V1_circuit")   
@@ -229,7 +229,7 @@ _Bild 19: Pinbelegung des Steckers J5 von 2IO (RW_5V_2IO_STRG)_
 <a name="x40"></a>   
 
 # 4. Software f&uuml;r den ESP32
-Als Software wird die Demo-Software [`rcc_demo1` (siehe /software/rcc_demo1/LIESMICH.md)](/software/rcc_demo1/LIESMICH.md) verwendet.   
+Als Software wird die Demo-Software `rcc_demo1` (siehe [/software/rcc_demo1/LIESMICH.md)](/software/rcc_demo1/LIESMICH.md) verwendet.   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
@@ -256,10 +256,10 @@ Zus&auml;tzlich zum direkten Test sollte noch ein Funktionstest mit DCC (oder MQ
 * die DCC-Adresse 21 zu w&auml;hlen und die Zweiwegweiche auf "Gerade" oder "Abzweig" zu stellen,   
 * die DCC-Adresse 31 zu w&auml;hlen und die Dreiwegweiche auf "Links" oder "Mitte" zu stellen,   
 * die DCC-Adresse 32 zu w&auml;hlen und die Dreiwegweiche auf "Rechts" oder "Mitte" zu stellen,   
-* die DCC-Adresse 41 zu w&auml;hlen und der Fahrstrom des Abstellgleises ein- und auszuschalten. Dabei ist sicherzustellen, dass die beiden Schalter nicht gedr&uuml;ckt sind.   
+* die DCC-Adresse 41 zu w&auml;hlen und der Fahrstrom des Abstellgleises ein- und auszuschalten. Dabei ist sicherzustellen, dass die beiden Schalter "Hand-Ein" und "Hand-Aus" am Schaltblock nicht gedr&uuml;ckt sind.   
 * die DCC-Adresse 51 zu w&auml;hlen, um das Blinklicht ein- und auszuschalten.   
 
-Sollte zwar kein DCC-Eingabeger&auml;t aber daf&uuml;r ein Netzwerk mit MQTT-Broker zur Verf&uuml;gung stehen, so kann man die Funktion auch &uuml;ber MQTT testen. Dazu muss der PC (oder Laptop) mit dem WLAN `Raspi11` verbunden und ein Kommandofenster ge&ouml;ffnet werden. Durch Befehle dieser Art k&ouml;nnen die Bl&ouml;cke angesteuert werden:   
+Sollte kein DCC-Eingabeger&auml;t aber daf&uuml;r ein Netzwerk mit MQTT-Broker zur Verf&uuml;gung stehen, so kann man die Funktion auch &uuml;ber MQTT testen. Dazu muss der PC (oder Laptop) mit dem WLAN `Raspi11` verbunden und ein Kommandofenster ge&ouml;ffnet werden. Durch Befehle dieser Art k&ouml;nnen die Bl&ouml;cke angesteuert werden:   
 
 Einschalten des Entkupplers:   
 `mosquitto_pub -h 10.1.1.1 -t rcc/demo1/set/11 -m 1`   
@@ -274,8 +274,7 @@ usw.
 
 ## 5.2 Beispiel: Test eines W2-Blocks
 Waren alle Tests erfolgreich, k&ouml;nnen externe Bl&ouml;cke oder andere Komponenten gepr&uuml;ft werden.   
-Zum Test eines W2-Blocks (Zweiwegweiche) m&uuml;ssen einfach das 10-polige Kabel (zum/vom I²C-Bus) und 
-das 6-polige Kabel (zur/von der Weiche) von eingebauten W2-Block abgesteckt und beim Pr&uuml;fling nebeneinander angesteckt werden. Als Letztes wird eine der freien Buchsen des 6-poligen Stromversorgungskabels am Pr&uuml;fling angeschlossen (senkrecht stehender Stecker J3).   
+Zum Test eines W2-Blocks (Zweiwegweiche) m&uuml;ssen einfach das 10-polige Kabel (zum/vom I²C-Bus) und das 6-polige Kabel (zur/von der Weiche) direkt vom eingebauten W2-Block abgesteckt und beim Pr&uuml;fling nebeneinander eingesteckt werden. Als Letztes wird eine der freien Buchsenstecker des 6-poligen Stromversorgungskabels am Pr&uuml;fling angeschlossen (senkrecht stehender Stecker J3).   
 Der Test erfolgt wieder wie oben beschrieben (Weiche schalten mit Taster und DCC).   
 
 ![Blocktester_Test_W2_1](./images/300_BT_Test_W2_1.png "Blocktester_Test_W2_1") ![Blocktester_Test_W2_2](./images/300_BT_Test_W2_2.png "Blocktester_Test_W2_2")   
