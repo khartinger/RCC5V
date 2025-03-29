@@ -95,24 +95,31 @@ Die "Deckplatte" besteht aus einer 31 x 3 cm² (oder 30 x 3 cm²) gro&szlig;en, 
 
 ## 2.2 Frontplatte
 __OLED-Anzeige__   
-F&uuml;r den OLED-Mikroprozessor-Block wird ein [3D-gedruckter Rahmen (OLED_Mount_250209.3mf)](/fab/3d/LIESMICH.md#x40) verwendet. Dieser ben&ouml;tigt eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm². Da der Platz am Frontpanel beengt ist, betr&auml;gt der Abstand vom linken Rand nur 20 mm statt der sonst &uuml;blichen 30mm.   
+F&uuml;r den OLED-Mikroprozessor-Block wird ein [3D-gedruckter Rahmen (OLED_Mount_250209.3mf)](/fab/3d/LIESMICH.md#x40) verwendet.   
+
+![OLED- und Taster-Einsatz](/images/3d/300_OLED-Mount.png "OLED- und Taster-Einsatz")   
+_Bild 5: Halterung f&uuml;r die OLED-Anzeige und den Taster_   
+
+Dieser ben&ouml;tigt eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm². Da der Platz am Frontpanel beengt ist, betr&auml;gt der Abstand vom linken Rand nur 20 mm statt der sonst &uuml;blichen 30mm.   
 
 ![OLED_Button_frame](./images/300_BT_OLED_Button_frame.png "OLED_Button_frame")   
-_Bild 5: Ma&szlig;e f&uuml;r die Frontplatte_   
+_Bild 6: Ma&szlig;e f&uuml;r die Frontplatte_   
 
 __Steuerbl&ouml;cke__   
 Zum einfachen Bestimmen der Lage der Bohrungen f&uuml;r die Steuerbl&ouml;cke wird zuerst zB in __LibreOffice Draw__ die [Beschriftung](./odg/Blocktester_Cover_250317.odg) entworfen. W&auml;hlt man in der Zeichnung den Abstand zwischen zwei Blockbeschriftungen 9 mm, so kann man den ganzen Ausdruck direkt auf die Frontplatte kleben.   
 
 ![Blocktester Beschriftung](./images/300_BT_cover.png "Blocktester Beschriftung")   
-_Bild 6: Beschriftungen f&uuml;r die Steuerbl&ouml;cke_   
-
-![Blocktester Sued](./images/300_BT_sued_310mm.png "Blocktester_Sued")   
-_Bild 7: Ma&szlig;e f&uuml;r die Frontplatte_   
+_Bild 7: Beschriftungen f&uuml;r die Steuerbl&ouml;cke_   
 
 Nach dem Aufkleben der Beschriftung werden die L&ouml;cher gebohrt. Der Bohrdurchmesser f&uuml;r die LED-Fassungen betr&auml;gt 5,6 mm, der f&uuml;r die Taster ca. 7 mm.   
 
+![Blocktester Sued](./images/300_BT_sued_310mm.png "Blocktester_Sued")   
+_Bild 8: Ma&szlig;e f&uuml;r die Frontplatte_   
+
 __LED-Fassungen__   
-Nach dem Bohren sind die Bohrungen zu reinigen und die LED-Fassungen einzupressen.   
+Nach dem Bohren sind die Bohrungen zu entgraten (reinigen) und die LED-Fassungen einzupressen.   
+![LED holder](/images/parts/200_ledholder2.png "LED holder")   
+_Bild 9: LED-Fassung_   
 
 __Halterungen f&uuml;r Steuerbl&ouml;cke__   
 Als N&auml;chstes kann man die Halterungen f&uuml;r die Steuerbl&ouml;cke mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
@@ -145,7 +152,7 @@ Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung werden normalerweise auf di
 Der Aufbau des Gleisbildes ist an sich unproblematisch, da die Gleise prim&auml;r nicht f&uuml;r einen Fahrbetrieb gedacht sind. Wichtig ist nur, dass eine Trennstelle vorgesehen wird (die kleinen roten Rechtecke im _Bild 4_ bzw. das dunkelgraue Dreieck im _Bild 7_), damit man das Gleis mit abschaltbarem Fahrstrom testen kann. Weiters sollte man darauf achten, dass der Abstand der Parallelgleise &uuml;blicherweise 33,6 mm betr&auml;gt. Dies kann man durch Aufzeichnen der Gleislage auf der Grundplatte sicherstellen.   
 
 ![Blocktester_Gleisbild](./images/300_BT_Gleisbild.png "Blocktester_Gleisbild")   
-_Bild 8: Gleisbild_   
+_Bild 10: Gleisbild_   
 
 F&uuml;r das vorgeschlagene Gleisbild werden folgende Gleise ben&ouml;tigt:    
 
@@ -176,16 +183,16 @@ Anschluss der beiden Leitungen an Pin 3 (Masse, mittlere Schraubklemme, schwarze
 Pin 1 bleibt frei.   
 
 ![CON_6pol_3_circuit_V1](/images/200_CON_6pol_3_V1_circuit.png "CON_6pol_3_circuit_V1") &nbsp; ![CON_6pol_3_circuit_V2](/images/200_CON_6pol_3_V2_circuit.png "CON_6pol_3_circuit_V2")   
-_Bild 9: Schaltpl&auml;ne der "CON_6pol_3"-Platine_   
+_Bild 11: Schaltpl&auml;ne der "CON_6pol_3"-Platine_   
 
 ![Pinbelegung_1OUT-J5](/images/200_J5_pins_1OUT.png "Pinbelegung 1OUT-J5")   
-_Bild 10: Pinbelegung des Steckers J5 von 1OUT (RW_5V_1OUT_STRG)_   
+_Bild 12: Pinbelegung des Steckers J5 von 1OUT (RW_5V_1OUT_STRG)_   
 
 ### Zweiwegweiche (CON_6pol-3)
 Die Masse der Zweiwegweiche (schwarze Leitung) wird an Pin 3 (mittlere Schraubklemme) angeschraubt. Der Anschluss der beiden anderen Kabel h&auml;ngt davon ab, ob die Weiche &Uuml;ber- oder Unterflur montiert wird. Am besten eine Leitung an Pin 1 anschrauben und die Weiche mit dem Schaltblock W2 schalten. Passt der Schaltzustand ("Gerade" oder "Abzweig"), so schließt man das zweite Kabel am anderen Anschluss an, ansonsten vertauscht man die beiden braunen Kabel.   
 
 ![Pinbelegung_W2-J5](/images/200_J5_pins_W2.png "Pinbelegung W2-J5")   
-_Bild 11: Pinbelegung des Steckers J5 von W2 (RW_5V_W2_STRG)_   
+_Bild 13: Pinbelegung des Steckers J5 von W2 (RW_5V_W2_STRG)_   
 
 ### Dreiwegweiche (CON_6pol-6)
 Der mittlere der beiden 3-poligen Anschl&uuml;sse wird mit der R&uuml;ckleitung (schwarzes Kabel) der Weichenantriebe verbunden.   
@@ -197,20 +204,20 @@ Das Herausfinden der Anschl&uuml;sse erfolgt am besten durch Versuche wie bei de
 * anderen Anschluss des rechten Weichenantreibs anschließen.    
 
 ![CON_6pol_6_V1_circuit](/images/200_CON_6pol_6_V1_circuit.png "CON_6pol_6_V1_circuit") &nbsp; ![CON_6pol_6_V2_circuit](/images/200_CON_6pol_6_V2_circuit.png "CON_6pol_6_V2_circuit")   
-_Bild 12: Schaltpl&auml;ne der "CON_6pol_6"-Platine_   
+_Bild 14: Schaltpl&auml;ne der "CON_6pol_6"-Platine_   
 
 ![Pinbelegung_W3-J5](/images/200_J5_pins_W3.png "Pinbelegung W3-J5")   
-_Bild 13: Pinbelegung des Steckers J5 von W3 (RW_5V_W3_STRG)_   
+_Bild 15: Pinbelegung des Steckers J5 von W3 (RW_5V_W3_STRG)_   
 
 ### Abschaltbares Gleis (CON_1xIO)
 An den Stecker `CON_1xIO` wird links oder rechts der Fahrstrom angeschlossen und &uuml;ber der 6-polige Kabel wird der geschaltete Fahrstrom an die mittlere Doppelklemme ausgegeben.   
 Der Fahrstrom zum Gleis wird daher an das mittlere Klemmenpaar angeschlossen.   
 
 ![CON_1xIO_V1_circuit](/images/200_CON_1xIO_V1_circuit.png "CON_1xIO_V1_circuit")   
-_Bild 14: Schaltplan der "CON_1xIO"-Platine_   
+_Bild 16: Schaltplan der "CON_1xIO"-Platine_   
 
 ![Pinbelegung_2IO-J5](/images/200_J5_pins_2IO.png "Pinbelegung 2IO-J5")   
-_Bild 15: Pinbelegung des Steckers J5 von 2IO (RW_5V_2IO_STRG)_   
+_Bild 17: Pinbelegung des Steckers J5 von 2IO (RW_5V_2IO_STRG)_   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -266,7 +273,7 @@ das 6-polige Kabel (zur/von der Weiche) von eingebauten W2-Block abgesteckt und 
 Der Test erfolgt wieder wie oben beschrieben (Weicxhe schalten mit Taster und DCC).   
 
 ![Blocktester_Test_W2_1](./images/300_BT_Test_W2_1.png "Blocktester_Test_W2_1") ![Blocktester_Test_W2_2](./images/300_BT_Test_W2_2.png "Blocktester_Test_W2_2")   
-_Bild 16: Test eines W2-Blocks_   
+_Bild 18: Test eines W2-Blocks_   
 
 [Zum Seitenanfang](#up)
 

@@ -105,7 +105,7 @@ Die angegebenen Preise dienen nur der Information und waren im Dezember 2024 g&u
 | ![self-drilling_screw_M2x4](/images/parts/200_self-drilling_screw_M2x4.png "self-drilling_screw_M2x4") | 1 | 40 (400) | Selbstbohrende Schrauben M2 x 4 Kreuzschlitz Pan Kopf (Box) | 9,78 | [Amazon](https://www.amazon.de/dp/B07HHWZQH7?ref=ppx_yo2ov_dt_b_fed_asin_title) |   
 | ![LED holder](/images/parts/300_ledholder.png "LED holder") | 1 | 20 | LED-Fassung 3mm, Chrom-Messing, hervorstehende L&uuml;nette, 6 mm Durchmesser, Schraubplattenmontage | 12,98 | [AliExpress Daier_Store](https://de.aliexpress.com/item/1005007180033606.html?spm=a2g0o.order_list.order_list_main.33.f9f35c5fKqYn54&gatewayAdapt=glo2deu) |   
 | ![switch_cap](/images/parts/300_switch_cap.png "switch_cap") | 1 | 7x10 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, 7 verschiedene Farben | 1,92 | [AliExpress Ali_CanHui](https://de.aliexpress.com/item/1005001524633998.html?spm=a2g0o.order_list.order_list_main.193.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
-|  | 1 | 100 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 7mm, verschiedene Farben | 2,17 | [AliExpress TEJIATE_Store](https://de.aliexpress.com/item/4000504035520.html?spm=a2g0o.order_list.order_list_main.322.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
+| ![switch_cap_7mm](/images/parts/300_switch_cap_7mm.png "switch_cap_7mm") | 1 | 100 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 7mm, verschiedene Farben | 2,17 | [AliExpress TEJIATE_Store](https://de.aliexpress.com/item/4000504035520.html?spm=a2g0o.order_list.order_list_main.322.40f55c5f5h69eX&gatewayAdapt=glo2deu) |   
 
 <a name="x32"></a>   
 ## Elektrische Bauteile
