@@ -7,24 +7,26 @@ Letzte &Auml;nderung: 28.3.2025 <a name="up"></a><br>
 [Link zur Inhalts&uuml;bersicht](#x05)   
 
 # Worum geht es hier?
-Diese Anleitung beschreibt den Aufbau eines Testsystems f&uuml;r RCC-Komponenten (RCC: Railroad Control Components). Damit k&ouml;nnen Zweiweg- und Dreiwegweichen sowie Entkuppler und Fahrstromabschaltungen von Gleisen getestet werden. Das Testsystem ist so aufgebaut, dass alle Funktionen bereits vorhanden sind und funktionieren. Zum Testen einer neu gebauten Komponente setzt man diese im Testsystem ein und schaut, ob das System weiter funktioniert.   
+Diese Anleitung beschreibt den Aufbau eines Testsystems f&uuml;r RCC-Komponenten (RCC: Railroad Control Components). Damit k&ouml;nnen Zweiweg- und Dreiwegweichen sowie Entkuppler und Fahrstromabschaltungen von Gleisen getestet werden. Das Testsystem ist so aufgebaut, dass alle Funktionen bereits vorhanden sind und funktionieren. Zum Testen einer neu gebauten Komponente baut man diese ins Testsystem ein und schaut, ob das System weiter funktioniert.   
 
 ![Ansicht Blocktester 1](./images/300_BT_view_front2.png "Ansicht Blocktester 1")   
-_Bild 1: Ansicht des Blocktesters von vorne oben_   
+_Bild 1: Ansicht des Blocktesters_   
 
 Die Gr&ouml;&szlig;e des Testsystems ist mit 31 x 22 cm² so gew&auml;hlt, dass es einfach in einer IKEA-Samla-Box 401.029.78 aufbewahrt werden kann.   
 
 ![Ansicht Blocktester IKEA](./images/300_BT_view_ikea.png "Ansicht Blocktester IKEA")   
 _Bild 2: Blocktester in einer IKEA-Box_   
 
-## Eigenschaften des Moduls
-Das folgende Bild zeigt den Blocktester von oben. Man erkennt im Bild oben die Gleise mit den Weichenantrieben und den Entkuppler (links).   
-In der Mitte des Bildes sieht man links den Modulanschluss (Stromversorgung), die Anschlussplatinen f&uuml;r die Eisenbahn-Komponenten und die I²C-Platinen.   
-Unten im Bild befindeen sich links der Mikrocontroller mit den Shields und daneben die verschiedenen Steuerbl&ouml;cke.   
+## Eigenschaften des Blocktesters
+Das folgende Bild zeigt den Blocktester von oben.   
+* Oben im Bild erkennt man die Gleise mit den Weichenantrieben und den Entkuppler (links).   
+* In der Mitte des Bildes sieht man links den Modulanschluss (Stromversorgung), die Anschlussplatinen f&uuml;r die Eisenbahn-Komponenten und die I²C-Platinen.   
+* Unten im Bild sieht man links der Mikrocontroller mit den Shields und daneben die verschiedenen Steuerbl&ouml;cke.   
 
 ![Ansicht Blocktester oben](./images/600_BT_view_above.png "Ansicht Blocktester oben")   
 _Bild 3: Blocktester von oben_   
 
+### Übersicht über die System-Eigenschaften 
 |                |                                                    |   
 | -------------- | -------------------------------------------------- |   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit Schotterbett          |   
@@ -43,26 +45,29 @@ _Bild 3: Blocktester von oben_
 * [1. Schaltung des Test-Systems](#x10)   
 * [2. Aufbau des Blocktesters](#x20)   
 * [3. Gleisbau](#x30)   
-* [3. Software f&uuml;r den ESP32](#x40)   
-* [4. Arbeiten mit dem Blocktester](#x50)   
+* [4. Software f&uuml;r den ESP32](#x40)   
+* [5. Arbeiten mit dem Blocktester](#x50)   
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
 
 # 1. Schaltung des Testsystems
-Das Testsystem ist so aufgebaut, dass alle Komponenten leicht ausgetauscht werden k&ouml;nnen und der praktische Einsatz der verschiedenen Platinen gezeigt wird.    
+Das Testsystem ist so aufgebaut, dass einerseits alle Komponenten leicht ausgetauscht werden k&ouml;nnen und andererseits der Einsatz der verschiedenen Add-On-Platinen gezeigt wird.    
 Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die eingesetzten Komponenten:   
 ![&Uuml;bersicht Testsystem](./images/600_overview_testsystem.png  "&Uuml;bersicht Testsystem")   
 _Bild 4: &Uuml;bersichtsplan des Testsystems_   
 
+## Bedeutung der einzelnen Komponenten
+Die folgende Liste enthält Links zum Bau bzw. zu Beschreibungen der Komponenten.   
+
 `SUB25_10 ....` [Modul-Verbinder mit Netzteil](/fab/rcc1_supply/LIESMICH.md#x30)      
 `uC_OLED .....` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
-
+-------   
 `1OUT ........` [Block zur Ausgabe der Wechselspannung](/fab/rcc4_block/LIESMICH.md#x40) zB f&uuml;r Entkuppler   
 `W2 ..........` [Block zum Schalten einer Zweiwegweiche](/fab/rcc4_block/LIESMICH.md#x20)   
 `W3 ..........` [Block zum Schalten einer Dreiwegweiche](/fab/rcc4_block/LIESMICH.md#x30)   
 `2IO..........` [Block zum Schalten eines abschaltbaren Gleises](/fab/rcc4_block/LIESMICH.md#x50)   
-
+-------   
 `10pol_PIN....` Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin [als &auml;ltere Version `CON_10pol_PIN`](/fab/rcc5_add_ons/LIESMICH.md#x90) bzw. [als neuere Version `CON_10pol_2x4`](/fab/rcc5_add_ons/LIESMICH.md#x80)   
 `CON_6pol-3 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 3 Pins](/fab/rcc5_add_ons/LIESMICH.md#x40) zum Beispiel f&uuml;r eine Zweiwegweiche `W2` oder einen Entkuppler `1OUT`   
 `CON_6pol-6 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 6 Pins](/fab/rcc5_add_ons/LIESMICH.md#x50) zum Beispiel f&uuml;r eine Dreiwegweiche `W3`    
