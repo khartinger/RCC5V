@@ -100,7 +100,7 @@ F&uuml;r den OLED-Mikroprozessor-Block wird ein [3D-gedruckter Rahmen (OLED_Moun
 ![OLED- und Taster-Einsatz](/images/3d/300_OLED-Mount.png "OLED- und Taster-Einsatz")   
 _Bild 5: Halterung f&uuml;r die OLED-Anzeige und den Taster_   
 
-Dieser ben&ouml;tigt eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm². Da der Platz am Frontpanel beengt ist, betr&auml;gt der Abstand vom linken Rand nur 20 mm statt der sonst &uuml;blichen 30mm.   
+Dieser ben&ouml;tigt eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm². Da der Platz am Frontpanel beengt ist, betr&auml;gt der Abstand vom linken Rand nur 20 mm statt der sonst &uuml;blichen 30 mm.   
 
 ![OLED_Button_frame](./images/300_BT_OLED_Button_frame.png "OLED_Button_frame")   
 _Bild 6: Ma&szlig;e f&uuml;r die Frontplatte_   
@@ -125,24 +125,30 @@ __Halterungen f&uuml;r Steuerbl&ouml;cke__
 Als N&auml;chstes kann man die Halterungen f&uuml;r die Steuerbl&ouml;cke mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
 Das Anziehen der Schrauben sollte nicht zu fest erfolgen, sodass sich die Sechskant-Distanzhalter nicht nach innen biegen!   
 
+![Block holder](./images/300_BT_blockholder.png "300_BT_Blockholder")   
+_Bild 10: Unbestückte und bestückte (rechts) Block-Halterung_   
+
 ## 2.3 Zusammenbau des Rahmens
 Der Zusammenbau des Rahmens erfolgt so, wie es im _Bild 1_ zu sehen ist. Als Schrauben werden zB selbstschneidende Schrauben 3 x 20 mm verwendet.   
 Das Acrylglas wird mit Doppelklebeband befestigt und/oder mit Schrauben M 2 x 20 mm.   
 
 ## 2.4 Montage der Schaltbl&ouml;cke
-Die Schaltbl&ouml;cke werden auf die Blockhalterungen gesteckt und mit Schrauben M2 x 20 LEICHT 
-
+Die Schaltbl&ouml;cke werden auf die Blockhalterungen gesteckt und mit Schrauben M2 x 20 LEICHT angeschraubt.   
 
 ## 2.5 I²C-Verbindungen
 F&uuml;r das Erstellen bzw. die Verwendung der Demo-Software ist die Kenntnis der Verdrahtung zwischen Schaltbl&ouml;cken und I²C-I/O-Expandern wichtig. Diese ist auch unter [`/software/rcc_demo1`](/software/rcc_demo1/LIESMICH.md) beschrieben.   
 
-1. DCC 11, IO-Expander Pin 0: Entkuppler   
-2. DCC 21, IO-Expander Pin 1,2: Zweiwegweiche (mit Endabschaltung)   
-3. DCC 31,32, IO-Expander Pin 3,4,5: Dreiwegweiche (mit Endabschaltung)   
-4. DCC 41, IO-Expander Pin 6: Fahrstrom   
+1. DCC 11, IO-Expander Pin 0: Entkuppler (Schaltblock 1OUT)   
+2. DCC 21, IO-Expander Pin 1,2: Zweiwegweiche (mit Endabschaltung, Schaltblock W2)   
+3. DCC 31,32, IO-Expander Pin 3,4,5: Dreiwegweiche (mit Endabschaltung, Schaltblock W3)   
+4. DCC 41, IO-Expander Pin 6: Fahrstrom (Schaltblock 2IO)   
 5. DCC 51, IO-Expander Pin 7: Blinklicht   
 
 Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung werden normalerweise auf die gleichen Pin-Nummern verdrahtet.   
+
+Die Umsetzung vom 10-poligen Schaltblock-Ausgang auf Einzelpins erfolgt mit 10pol_PIN-Platinen.   
+![Blocktester_i2c_Schaltplan](./images/480_rcc_demo1_i2c_2_circuit.png "Blocktester_i2c_Schaltplan")   
+_Bild 11: I²C-Verdrahtungsplan des Blocktesters_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
@@ -152,7 +158,7 @@ Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung werden normalerweise auf di
 Der Aufbau des Gleisbildes ist an sich unproblematisch, da die Gleise prim&auml;r nicht f&uuml;r einen Fahrbetrieb gedacht sind. Wichtig ist nur, dass eine Trennstelle vorgesehen wird (die kleinen roten Rechtecke im _Bild 4_ bzw. das dunkelgraue Dreieck im _Bild 7_), damit man das Gleis mit abschaltbarem Fahrstrom testen kann. Weiters sollte man darauf achten, dass der Abstand der Parallelgleise &uuml;blicherweise 33,6 mm betr&auml;gt. Dies kann man durch Aufzeichnen der Gleislage auf der Grundplatte sicherstellen.   
 
 ![Blocktester_Gleisbild](./images/300_BT_Gleisbild.png "Blocktester_Gleisbild")   
-_Bild 10: Gleisbild_   
+_Bild 12: Gleisbild_   
 
 F&uuml;r das vorgeschlagene Gleisbild werden folgende Gleise ben&ouml;tigt:    
 
@@ -183,16 +189,16 @@ Anschluss der beiden Leitungen an Pin 3 (Masse, mittlere Schraubklemme, schwarze
 Pin 1 bleibt frei.   
 
 ![CON_6pol_3_circuit_V1](/images/200_CON_6pol_3_V1_circuit.png "CON_6pol_3_circuit_V1") &nbsp; ![CON_6pol_3_circuit_V2](/images/200_CON_6pol_3_V2_circuit.png "CON_6pol_3_circuit_V2")   
-_Bild 11: Schaltpl&auml;ne der "CON_6pol_3"-Platine_   
+_Bild 13: Schaltpl&auml;ne der "CON_6pol_3"-Platine_   
 
 ![Pinbelegung_1OUT-J5](/images/200_J5_pins_1OUT.png "Pinbelegung 1OUT-J5")   
-_Bild 12: Pinbelegung des Steckers J5 von 1OUT (RW_5V_1OUT_STRG)_   
+_Bild 14: Pinbelegung des Steckers J5 von 1OUT (RW_5V_1OUT_STRG)_   
 
 ### Zweiwegweiche (CON_6pol-3)
 Die Masse der Zweiwegweiche (schwarze Leitung) wird an Pin 3 (mittlere Schraubklemme) angeschraubt. Der Anschluss der beiden anderen Kabel h&auml;ngt davon ab, ob die Weiche &Uuml;ber- oder Unterflur montiert wird. Am besten eine Leitung an Pin 1 anschrauben und die Weiche mit dem Schaltblock W2 schalten. Passt der Schaltzustand ("Gerade" oder "Abzweig"), so schließt man das zweite Kabel am anderen Anschluss an, ansonsten vertauscht man die beiden braunen Kabel.   
 
 ![Pinbelegung_W2-J5](/images/200_J5_pins_W2.png "Pinbelegung W2-J5")   
-_Bild 13: Pinbelegung des Steckers J5 von W2 (RW_5V_W2_STRG)_   
+_Bild 15: Pinbelegung des Steckers J5 von W2 (RW_5V_W2_STRG)_   
 
 ### Dreiwegweiche (CON_6pol-6)
 Der mittlere der beiden 3-poligen Anschl&uuml;sse wird mit der R&uuml;ckleitung (schwarzes Kabel) der Weichenantriebe verbunden.   
@@ -204,20 +210,20 @@ Das Herausfinden der Anschl&uuml;sse erfolgt am besten durch Versuche wie bei de
 * anderen Anschluss des rechten Weichenantreibs anschließen.    
 
 ![CON_6pol_6_V1_circuit](/images/200_CON_6pol_6_V1_circuit.png "CON_6pol_6_V1_circuit") &nbsp; ![CON_6pol_6_V2_circuit](/images/200_CON_6pol_6_V2_circuit.png "CON_6pol_6_V2_circuit")   
-_Bild 14: Schaltpl&auml;ne der "CON_6pol_6"-Platine_   
+_Bild 16: Schaltpl&auml;ne der "CON_6pol_6"-Platine_   
 
 ![Pinbelegung_W3-J5](/images/200_J5_pins_W3.png "Pinbelegung W3-J5")   
-_Bild 15: Pinbelegung des Steckers J5 von W3 (RW_5V_W3_STRG)_   
+_Bild 17: Pinbelegung des Steckers J5 von W3 (RW_5V_W3_STRG)_   
 
 ### Abschaltbares Gleis (CON_1xIO)
 An den Stecker `CON_1xIO` wird links oder rechts der Fahrstrom angeschlossen und &uuml;ber der 6-polige Kabel wird der geschaltete Fahrstrom an die mittlere Doppelklemme ausgegeben.   
 Der Fahrstrom zum Gleis wird daher an das mittlere Klemmenpaar angeschlossen.   
 
 ![CON_1xIO_V1_circuit](/images/200_CON_1xIO_V1_circuit.png "CON_1xIO_V1_circuit")   
-_Bild 16: Schaltplan der "CON_1xIO"-Platine_   
+_Bild 18: Schaltplan der "CON_1xIO"-Platine_   
 
 ![Pinbelegung_2IO-J5](/images/200_J5_pins_2IO.png "Pinbelegung 2IO-J5")   
-_Bild 17: Pinbelegung des Steckers J5 von 2IO (RW_5V_2IO_STRG)_   
+_Bild 19: Pinbelegung des Steckers J5 von 2IO (RW_5V_2IO_STRG)_   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -270,10 +276,10 @@ usw.
 Waren alle Tests erfolgreich, k&ouml;nnen externe Bl&ouml;cke oder andere Komponenten gepr&uuml;ft werden.   
 Zum Test eines W2-Blocks (Zweiwegweiche) m&uuml;ssen einfach das 10-polige Kabel (zum/vom I²C-Bus) und 
 das 6-polige Kabel (zur/von der Weiche) von eingebauten W2-Block abgesteckt und beim Pr&uuml;fling nebeneinander angesteckt werden. Als Letztes wird eine der freien Buchsen des 6-poligen Stromversorgungskabels am Pr&uuml;fling angeschlossen (senkrecht stehender Stecker J3).   
-Der Test erfolgt wieder wie oben beschrieben (Weicxhe schalten mit Taster und DCC).   
+Der Test erfolgt wieder wie oben beschrieben (Weiche schalten mit Taster und DCC).   
 
 ![Blocktester_Test_W2_1](./images/300_BT_Test_W2_1.png "Blocktester_Test_W2_1") ![Blocktester_Test_W2_2](./images/300_BT_Test_W2_2.png "Blocktester_Test_W2_2")   
-_Bild 18: Test eines W2-Blocks_   
+_Bild 20: Test eines W2-Blocks_   
 
 [Zum Seitenanfang](#up)
 
