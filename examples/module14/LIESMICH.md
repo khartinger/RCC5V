@@ -30,7 +30,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 # Inhaltsverzeichnis   
 * [1. Vorbereitung - Einkauf](#x10)   
 * [2. Bau des Modul-Rahmens](#x20)   
-* [3. Aufbau des Gleisplans](#x30)   
+* [3. Deckplatte (Gleisplan) und Verdrahtung vorbereiten](#x30)   
 * [4. Elektrische Verdrahtung des Moduls](#x40)   
 * [5. Probebetrieb](#x50)   
 * [6. Abschlie&szlig;ende Arbeiten](#x60)   
@@ -285,7 +285,7 @@ Die Halterung f&uuml;r die SUB-D-Stecker-Platine besteht aus zwei U-f&ouml;rmige
 _Bild 19: Ma&szlig;e der Halterung_   
 
 In jeden U-f&ouml;rmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,5 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatine.   
-Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm Sechskantmutter gegeneinander an einer Querstrebe verschraubt.   
+Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3 mm Sechskantmuttern gegeneinander an der Querstrebe verschraubt.   
 
 ![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
 _Bild 20: Teile der Sub-D-Halterung_   
@@ -299,69 +299,66 @@ _Bild 21: Zusammengeschraubter Rahmen_
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
 
-# 3. Aufbau des Gleisplans   
+# 3. Deckplatte (Gleisplan) und Verdrahtung vorbereiten   
 
 ## 3.1 Stellprobe   
 Der Probeaufbau erfolgt auf der 5 mm (bzw. 4 mm) Sperrholzplatte. Dazu wird der Gleisplan im Ma&szlig;stab 1:1 auf diese gezeichnet. Das kann entweder durch Ausdruck des Gleisplans im Ma&szlig;stab 1:1 und &uuml;bertragen auf das Sperrholz erfolgen (zB mit Kohlepapier), oder durch &Uuml;bertragen der Koordinaten auf das Sperrholz und Zeichnen des Gleisplans.   
-Entsprechend dem Gleisplanentwurf m&uuml;ssen die Trennstellen in jeweils beiden Schienenstr&auml;ngen hergestellt werden. Dazu werden Fleischmann 9403 Isolier-Schienenverbinder verwendet. Die bisherigen Gleisverbinder werden entfernt und durch die Isolier-Schienenverbinder ersetzt.   
+Entsprechend dem Gleisplan m&uuml;ssen die zwei Trennstellen in jeweils beiden Schienenstr&auml;ngen hergestellt werden. Dazu werden Fleischmann 9403 Isolier-Schienenverbinder verwendet. Die bisherigen Gleisverbinder werden entfernt und durch die Isolier-Schienenverbinder ersetzt.   
 Danach werden die Gleise entsprechend dem Gleisbild zusammengesteckt.   
-Beim Probeaufbau sollten auch alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufgestellt werden, damit man wei&szlig;, wie der Bahnk&ouml;rper (die 5 mm bzw. 4 mm Platte) zugeschnitten werden muss.   
-Schlie&szlig;lich wird mit dem l&auml;ngsten Waggon h&auml;ndisch eine Probefahrt durchgef&uuml;hrt und kontrolliert, ob alle Radien, &Uuml;berg&auml;nge etc. passen und keine Geb&auml;ude im Wege stehen.   
 
 ## 3.2 Zuschneiden und Aufkleben des Bahndamms auf die Grundplatte   
-War die Stellprobe erfolgreich, folgen &Uuml;berlegungen zu den einzelnen Gel&auml;ndeh&ouml;hen.   
-* An beiden Seiten des Moduls (Ost und West) ist die Gel&auml;ndeh&ouml;he null (E0). Ausgenommen davon ist der Bahndamm und das Schotterbett des Gleises, das in den Modul f&uuml;hrt.   
-* Das Schotterbett liegt auf der Ebene E5 (= 5 mm Sperrholz). Der &Uuml;bergang zu Ebene E0 erfolgt &uuml;ber Schr&auml;gen mit 45 Grad.   
-* Die Fleischmann-Gleise liegen auf Niveau E8. Dazu wird auf das 5 mm-Sperrholz das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Der Schaumstoff d&auml;mpft auch etwas das Fahrger&auml;usch (Schallschutz).   
-* Bahnhofsgeb&auml;ude, Bahnsteige oder Verladerampen stehen normalerweise auf Niveau E8. An diesen Stellen sollte man das 5 mm-Sperrholz ausschneiden und gleich 8 mm hohes Sperrholz einsetzen und nicht die H&ouml;he schichtweise aufzubauen.   
-* Stra&szlig;en, die die Gleise &uuml;berqueren, haben als Oberkante E12.   
-
-Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet man die entsprechenden Platten zu und klebt sie auf die Grundplatte. Dazu sollte sich die Grundplatte im Rahmen befinden, damit man den Gleisanschluss am linken und rechten Rand genau herstellen kann.   
-
-Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, m&uuml;ssen noch Aussparungen ausgeschnitten werden.   
+War die Stellprobe erfolgreich, folgen normalerweise &Uuml;berlegungen zu den einzelnen Gel&
+Da der Weichenantrieb als Unterflurantrieb verbaut werden soll, muss noch die Aussparung ausgeschnitten werden.   
 
 ![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_turnout_cutout_right.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
-_Bild 20: Ma&szlig;e der Aussparung f&uuml;r einen Unterflurantrieb._   
-
-Die folgenden beiden Bilder zeigen die verschiedenen Ebenen des Gel&auml;ndes und die Aussparungen f&uuml;r die Weichen. Links vorne und rechts hinten ist das Niveau E0, in der Mitte und hinten (im Bild oben) ist 8 mm hohes Sperrholz (E8).   
-![Bahndamm2](./images/300_Bahndamm2.png "Bahndamm2")   
-![Bahndamm](./images/300_Bahndamm.png "Bahndamm")   
-_Bild 21: Verschiedene Modul-Ebenen_
+_Bild 22: Ma&szlig;e der Aussparung f&uuml;r einen Unterflurantrieb._   
 
 ## 3.3 Bettungsk&ouml;rper (Schotterbett)
-Im n&auml;chsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Dies erfolgt nicht nur an Stellen, wo sp&auml;ter ein Gleis verl&auml;uft, sondern auch an Stellen, die das gleiche Niveau haben sollen, zB zwischen den Gleisen oder dort, wo sp&auml;ter der Antrieb f&uuml;r den Entkuppler hinkommt.   
+Im n&auml;chsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Dies erfolgt nicht nur an Stellen, wo sp&auml;ter ein Gleis verl&auml;uft, sondern auch an Stellen, die das gleiche Niveau haben sollen, zB zwischen den Gleisen.   
 Danach bohrt man mit einem 4 mm Bohrer die L&ouml;cher f&uuml;r die Fahrstromzuf&uuml;hrung. Wenn man eine 1:1 Vorlage des Gleisbildes ausgedruckt hat, so kann man diese als Bohrschablone verwenden.   
-Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen f&uuml;r die Weichenantriebe und die Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung.   
+Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmung f&uuml;r den Weichenantrieb und die Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung.   
 
-![Schotterbett](./images/300_Schotterbett1.png "Schotterbett")   
-_Bild 22: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
+![Schotterbett](./images/300_m14_schotterbett1.png "Schotterbett")   
+_Bild 23: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitt_   
 
 ## 3.4 Vorbereitung der Verdrahtung
-### Montage der Schaltbl&ouml;cke   
-Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). F&uuml;r ein leichteres Arbeiten entfernt man zuerst die Grundplatte vom Rahmen und montiert die Schaltbl&ouml;cke. Dazu steckt man einen Schaltblock in die Schaltblock-Halterung und schraubt ihn mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
-![Schaltblockmontage](./images/300_Schaltblockmontage.png "Schaltblockmontage")   
+### Platz für Flachbandkabel kennzeichnen
+Damit später die einzelnen Komponenten besser plaziert werden können, sollten auf die Rückseite der Deckplatte in Längsrichtung (Ost - West) je zwei Linien mit 4 cm und 5,5 cm Abstand zum Rand gezeichnet werden. Diese Linien führen genau durch die Durchf&uuml;hrungen der Querverbinder.   
+
+### Montage des W2-Schaltblocks   
+Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). F&uuml;r ein leichteres Arbeiten kann man die Grundplatte vom Rahmen entfernen (bei einem Schaltblock nicht notwendig). Um den Schaltblock zu montieren steckt man ihn in die Schaltblock-Halterung. Danach kontrolliert man auf der Vorderseite, ob die LEDs sichtbar sind und die Taster nicht stecken. Danach schraubt man den Schaltblock mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
+
+![Schaltblockmontage](./images/300_m14_angeschraubter_schaltblock.png "Schaltblockmontage")   
 _Bild 23: Anschrauben der Schaltbl&ouml;cke_   
 
-Weiters montiert man auf die erste und dritte Querstrebe die Halterung f&uuml;r die Sub-D-Stecker. Sollte dabei eine Fahrstromzuf&uuml;hrung genau unter einer Halterung liegen, so muss man die Stromzuf&uuml;hrung nochmals bohren....   
+Sollte eine Fahrstromzuf&uuml;hrung genau unter einer Halterung liegen, so muss man die Stromzuf&uuml;hrung nochmals bohren....   
 
 ### Montage der Anzeige und des Mikrocontrollers   
 Die OLED-Anzeige und den Mikrocontroller, wie bei [Rahmenteil Ra4 (S&uuml;d)](#x24) beschrieben, in den Rahmen einsetzen.   
 
+## Montage der SUB-D-Platine
+Die mit dem Netzteil bestückte Platine RW_5V_2SUB25 wird mit der Netzteilseite Richtung West (OLED-Anzeige) auf die Sub-D-Halterung gesteckt und mit vier M 2,5 mm Muttern fixiert (5 mm Schraubenschlüssel).   
+
 ## Montage der I²C-I/O-Expanderplatinen
-1. Segment 2: Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
-2. Segment 3: Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x22 und 0x23 mit Hilfe der Jumper.   
+Die Montage der beiden I²C-PCF8574-I/O-Expanderplatinen und der angesteckten Hilfsplatinen `CON_i2c_20mm` erfolgt in der Nähe des Mikrocontrollers mit Hilfe von selbstbohrenden M2 x 10 mm Schrauben.   
+Das Einstellen der Adressen 0x20 und 0x21 geschieht mit Hilfe der Jumper.   
 
 ### Montage der Schraubklemmen   
-Um die Verkabelung des Moduls &uuml;bersichtlich zu gestalten, werden 2x2 L&auml;ngslinien (Abstand vom Rand 4 cm und 5,5 cm) gezeichnet, die genau durch die Durchf&uuml;hrungen der Querverbinder f&uuml;hren. In diesem Bereich werden die Kabel gef&uuml;hrt. Nun setzt man die Grundplatte wieder in den Rahmen ein.   
 F&uuml;r die Platzierung der Klemmen gilt allgemein:   
-* I²C-Komponenten (zB die Prints mit 10-poligem Wannenstecker) werden in der N&auml;he der Schaltbl&ouml;cke montiert (im folgenden Bild oben zu sehen). Die Montage sollte aber nicht zu Nahe an den Schaltbl&ouml;cken erfolgen, damit man im Fehlerfall die Schaltbl&ouml;cke noch leicht abschrauben kann.   
+* I²C-Komponenten (zB die Prints mit 10-poligem Wannenstecker) werden in der N&auml;he der Schaltbl&ouml;cke montiert. Die Montage sollte aber nicht zu Nahe an den Schaltbl&ouml;cken erfolgen, damit man im Fehlerfall die Schaltbl&ouml;cke noch leicht abschrauben kann.   
 * Fahrstromkomponenten (zB Prints mit 6-poligem Wannenstecker) auf der den Schaltbl&ouml;cken gegen&uuml;berliegenden L&auml;ngsseite ("hinten", im Bild unten) und 
 * Weichenanschl&uuml;sse in der N&auml;he der Weichen.   
 
-Das folgende Bild zeigt die montierten Klemmen.   
+Dem entsprechend wird die Add-On-Platine `CON_6pol_3_V2` vor dem W2-Schaltblock und die Platine `CON_10pol_2x4_V1` vor den I²C-Expandern angeschraubt (mit selbstbohrenden Schrauben M 2 x 10 mm).   
 
-![M12_Verdrahtung_1](./images/300_M12_Verdrahtung1.png "M12_Verdrahtung_1")   
-_Bild 24: Schraubklemmen f&uuml;r die Verdrahtung_   
+Das folgende Bild zeigt die montierten und bereits verdrahteten Klemmen.   
+
+![M14_Verdrahtung_1](./images/480_M14_Verdrahtung1.png "M14_Verdrahtung_1")   
+_Bild 24: Verdrahtung der Steuerelemente_   
+
+---   
+
+# ..ToDo..
 
 #### Montage der Schraubklemmen etc. im Detail    
 1. Beschriften der Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung:   
