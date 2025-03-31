@@ -43,8 +43,8 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 ## 1.1 Entwurf des Gleisplans
 ### 1.1.1 Allgemeines zu Gleispl&auml;nen
 Beim Erstellen eines Gleisplans sind zwei Dinge zu beachten: das Lichtraumprofil und die H&ouml;he des Gleisaufbaus.   
-Das __Lichtraumprofil__ gibt an, wieviel Platz (vor allem von langen Waggons) neben dem Gleis ben&ouml;tigt wird. Dies ist vor allem bei engen Radien wichtig.   
-F&uuml;r den Radius R2 ben&ouml;tigt man eine Gesamt-Gleisbreite von 27 + 2 · 7 = 41 mm.   
+Das __Lichtraumprofil__ gibt an, wieviel Platz (vor allem von langen Waggons) neben dem Gleis ben&ouml;tigt wird. Dies ist besonders bei engen Radien wichtig.   
+F&uuml;r einen minimalen Radius R2 (225,6 mm bzw. 228,2 mm) ben&ouml;tigt man eine Gesamt-Gleisbreite von 27 + 2 · 7 = 41 mm.   
 ![Lichtraumprofil](./images/300_lichtraumprofil.png "Lichtraumprofil")   
 _Bild 2: Lichtraumprofil_   
 
@@ -78,8 +78,8 @@ Der Gleisplan enthält einige Besonderheiten:
 _Bild 5: Skizze zur Berechnung eines Gleisversatzes_   
 Allgemein ergibt sich mit $\ r = R_a + R_b$   
 für den Winkel &alpha; die Lösung   
-$\ cos(\alpha) = \Large{ 1 \over {r^2 \: + \: c^2} } \normalsize \cdot [\,r \cdot (r - y_0) + c \cdot \sqrt{(r^2 + c^2) - (r - y_0)^2 \:} \: ]$ <br>   
-Mit Ra = Rb = R4 = 430 mm ergibt sich ein Winkel &alpha; = 6,138375°   
+$\ cos(\alpha) = \Large{ 1 \over {r^2 + c^2} } \normalsize \cdot [\enspace r \cdot (r - y_0) + c \cdot \sqrt{(r^2 + c^2) - (r - y_0)^2 \enspace } \enspace ]$ <br>   
+Für R<sub>a</sub> = R<sub>b</sub> = R<sub>4</sub> = 430 mm ergibt sich ein Winkel &alpha; = 6,138375°   
 Dieser Winkel entspricht bei einem R4-Gleis genau 9 Schwellen, da das ganze Gleis 22 Schwellen bei 15° hat. Das 9136-Gleis ist daher auf 9 Schwellen zu kürzen.  
 
 * Um von der Weichenabzweigung auf das nördliche (obere) Parallelgleis zu kommen ist ein "Restwinkel" von 15° - 6,1384° = 8,8616° erforderlich, was 13 Schwellen entspricht.   
