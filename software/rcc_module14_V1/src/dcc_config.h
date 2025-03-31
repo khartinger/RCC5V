@@ -78,7 +78,7 @@ struct strRcomp {
 // ------two way turnout (Zweiwegweiche = Standardweiche)-------
 // Two expander pins A B to control 2way turnout (active low!)
 // A=0: curved, B=0: stright
-#define  RCOMP_1        RC_TYPE_TO,"T2", 141, EX0,PIN0,PIN1,   EX1,PIN0,PIN1, 500,0
+#define  RCOMP_1        RC_TYPE_TO,"T2", 141, EX0,PIN0,PIN1,   EX1,PIN0,PIN1, 700,0
 
 //.......Array of all railway components........................
 #define  RCOMP_NUM      1
