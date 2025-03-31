@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 12.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 31.3.2025 <a name="up"></a><br>   
 <h1>3D Daten</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -42,5 +42,26 @@ _Bild 4: Halterung f&uuml;r die OLED-Anzeige und den Taster_
 __Datei__: Biegelehre_LED_v4.3mf   
 ![Biegelehre f&uuml;r LEDs](/images/3d/300_Biegelehre_LED.png "Biegelehre f&uuml;r LEDs")   
 _Bild 5: Biegelehre f&uuml;r LEDs_   
+
+<a name="x60"></a>   
+
+# Weichenabdeckung f&uuml;r Zweiwegweiche
+__Datei__: Weichenabdeckung_2Weg_1_v4.3mf   
+![Weichenabdeckung f&uuml;r Zweiwegweiche](/images/3d/300_Weichenabdeckung_2Weg_1.png "Weichenabdeckung f&uuml;r Zweiwegweiche")   
+_Bild 6: Weichenabdeckung f&uuml;r Zweiwegweiche_   
+
+<a name="x70"></a>   
+
+# Flache Weichenabdeckung f&uuml;r Zweiwegweiche
+__Datei__: Weichenabdeckung_2Weg_flach v1.3mf   
+![Flache Weichenabdeckung f&uuml;r Zweiwegweiche](/images/3d/300_Weichenabdeckung_2Weg_flach.png "Flache Weichenabdeckung f&uuml;r Zweiwegweiche")   
+_Bild 7: Flache Weichenabdeckung f&uuml;r Zweiwegweiche_   
+
+<a name="x80"></a>   
+
+# Weichenabdeckung f&uuml;r Dreiwegweiche
+__Datei__: Weichenabdeckung_3Weg_beide_v2.3mf   
+![Weichenabdeckung f&uuml;r Dreiwegweiche](/images/3d/300_Weichenabdeckung_3Weg_beide.png "Weichenabdeckung f&uuml;r Dreiwegweiche")   
+_Bild 8: Weichenabdeckung f&uuml;r Dreiwegweiche_   
 
 [Zum Seitenanfang](#up)
