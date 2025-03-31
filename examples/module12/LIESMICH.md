@@ -514,7 +514,7 @@ _Bild 32: Verdrahtung Stecker Ost_
 # 5. Probebetrieb
 ## 5.1 Modul-Start
 1. MQTT-Server starten.   
-2. Einen Laptop oder PC mit dem Netzwerk des MQTT-Servers verbinden und die Software `mosquitto_sub` in einem Kommando-Fesnster mit diesem Kommando starten:   
+2. Einen Laptop oder PC mit dem Netzwerk des MQTT-Servers verbinden und die Software `mosquitto_sub` in einem Kommando-Fenster mit diesem Kommando starten:   
    `mosquitto_sub -h 10.1.1.1 -t rcc/# -v`   
 3. Anstecken eines 25-poligen Steckers mit Fahrstrom- und Wechselstromversorgung: Die LEDs der Schaltbl&ouml;cke sollten entspechend der Hardware-Stellung richtig leuchten.   
 4. Die Info-Seiten auf dem OLED mit dem neben liegenden Taster weiterschalten. Wenn alles funktioniert, erscheint auf dem OLED-Display folgende Anzeige:   
