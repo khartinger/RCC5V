@@ -9,7 +9,7 @@ Letzte &Auml;nderung: 29.3.2025 <a name="up"></a><br>
 # &Uuml;bersicht
 Diese Anleitung beschreibt den Bau eines 50 x 25 cm² gro&szlig;en N-Spur-Gleis-Moduls M14 „Zwei Gleise auf ein Gleis“. Das Bild zeigt das technisch fertige Modul ohne Landschaftsgestaltung. An der Forderfront erkennt man die Bedien- und Anzeigeelemente f&uuml;r den Handbetrieb.   
 
-![Modul M14](./images/300_M14_Gleis_montiert1.png "Modul M14")   
+![Modul M14](./images/300_m14_gleis_montiert1.png "Modul M14")   
 _Bild 1: Rahmen mit Grundplatte und Gleisen._   
 
 ## Eigenschaften des Moduls
@@ -73,13 +73,13 @@ Der folgende Gleisplan wurde mit dem Programm [AnyRail](https://www.anyrail.com/
 _Bild 4: Gleisplan_   
 
 Der Gleisplan enthält einige Besonderheiten:   
-* Um von der Modulmitte Ost (rechts) einen Gleisversatz von um y<sub>0</sub>  = 33,6 / 2 = 16,8 mm nach West (links) zu erreichen und um in den schrägen Abschnitt eine Weiche der Länge c = 111 mm einbauen zu können, wird der erforderliche Winkel für die gebogenen Gleise R4 (9136) folgendermaßen berechnet:   
+* Um von der Modulmitte Ost (rechts) einen Gleisversatz von y<sub>0</sub>  = 33,6 / 2 = 16,8 mm nach West (links) zu erreichen und um in den schrägen Abschnitt eine Weiche der Länge c = 111 mm einbauen zu können, wird der erforderliche Winkel für die gebogenen Gleise mit Radius R4 (9136) folgendermaßen berechnet:   
 ![M14_Berechnung_Versatz](./images/200_m14_berechnung_versatz.png "M14_Berechnung_Versatz")   
 _Bild 5: Skizze zur Berechnung eines Gleisversatzes_   
-Mit $\ r = R_a + R_b$   
-ergibt sich   
-$\ cos(\alpha) = \Large{ 1 \over {r^2 \: + \: c^2} } \normalsize \cdot [\,r \cdot (r - y_0) + c \cdot \sqrt{(r^2 + c^2) - (r - y_0)^2 \:} \: ]$   
-Für Ra = Rb = R4 = 430 mm ergibt sich somit ein Winkel von &alpha; = 6,138375°   
+Allgemein ergibt sich mit $\ r = R_a + R_b$   
+für den Winkel &alpha; die Lösung   
+$\ cos(\alpha) = \Large{ 1 \over {r^2 \: + \: c^2} } \normalsize \cdot [\,r \cdot (r - y_0) + c \cdot \sqrt{(r^2 + c^2) - (r - y_0)^2 \:} \: ]$ <br>   
+Mit Ra = Rb = R4 = 430 mm ergibt sich ein Winkel &alpha; = 6,138375°   
 Dieser Winkel entspricht bei einem R4-Gleis genau 9 Schwellen, da das ganze Gleis 22 Schwellen bei 15° hat. Das 9136-Gleis ist daher auf 9 Schwellen zu kürzen.  
 
 * Um von der Weichenabzweigung auf das nördliche (obere) Parallelgleis zu kommen ist ein "Restwinkel" von 15° - 6,1384° = 8,8616° erforderlich, was 13 Schwellen entspricht.   
