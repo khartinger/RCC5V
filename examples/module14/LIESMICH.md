@@ -294,7 +294,7 @@ _Bild 21: Teile der Sub-D-Halterung_
 Nachdem alle Teile des Rahmens vorbereitet wurden, kann dieser mit selbstbohrenden M 3 x 30 Schrauben zusammengeschraubt werden.   
 
 ![Rahmen M14](./images/300_M14_frame_1.png "Rahmen M14")   
-_Bild 22: Zusammengeschraubter Rahmen_   
+_Bild 22: Zusammengeschraubter Rahmen mit Halterung für die SUB-D-Platine_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
@@ -306,9 +306,12 @@ Der Probeaufbau erfolgt auf der 5 mm (bzw. 4 mm) Sperrholzplatte. Dazu wird der 
 Entsprechend dem Gleisplan m&uuml;ssen die zwei Trennstellen in jeweils beiden Schienenstr&auml;ngen hergestellt werden. Dazu werden Fleischmann 9403 Isolier-Schienenverbinder verwendet. Die bisherigen Gleisverbinder werden entfernt und durch die Isolier-Schienenverbinder ersetzt.   
 Danach werden die Gleise entsprechend dem Gleisbild zusammengesteckt.   
 
+<a name="x32"></a>   
+
 ## 3.2 Zuschneiden und Aufkleben des Bahndamms auf die Grundplatte   
-War die Stellprobe erfolgreich, folgen normalerweise &Uuml;berlegungen zu den einzelnen Gel&
-Da der Weichenantrieb als Unterflurantrieb verbaut werden soll, muss noch die Aussparung ausgeschnitten werden.   
+War die Stellprobe erfolgreich, folgen normalerweise &Uuml;berlegungen zu den einzelnen Gel&auml;ndeh&ouml;hen, was hier entfallen kann.   
+Um den Bahndamm darzustellen, schrägt man die 5 mm Sperrkolzplatte an den Nord- und Südkanten mit ungefähr 45° ab. Danach legt man sie auf den Rahmen mit eingesetzter Grundplatte, richtet sie aus (links und rechts nach den Gleisen) und klebt sie fest.   
+Da der Weichenantrieb als Unterflurantrieb verbaut werden soll, muss als noch die Aussparung gezeichnet und ausgeschnitten werden.   
 
 ![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_turnout_cutout_right.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
 _Bild 23: Ma&szlig;e der Aussparung f&uuml;r einen Unterflurantrieb._   
@@ -323,7 +326,7 @@ _Bild 24: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahr
 
 ## 3.4 Vorbereitung der Verdrahtung
 ### Platz für Flachbandkabel kennzeichnen
-Damit später die einzelnen Komponenten besser plaziert werden können, sollten auf die Rückseite der Deckplatte in Längsrichtung (Ost - West) je zwei Linien mit 4 cm und 5,5 cm Abstand zum Rand gezeichnet werden. Diese Linien führen genau durch die Durchf&uuml;hrungen der Querverbinder.   
+Damit später die einzelnen Platinen besser plaziert werden können, sollten auf die Rückseite der Deckplatte in Längsrichtung (Ost - West) je zwei Linien mit 4 cm und 5,5 cm Abstand zum Rand gezeichnet werden. Diese Linien führen genau durch die Durchf&uuml;hrungen des Querverbinders.   
 
 ### Montage des W2-Schaltblocks   
 Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). F&uuml;r ein leichteres Arbeiten kann man die Grundplatte vom Rahmen entfernen (bei einem Schaltblock nicht notwendig). Um den Schaltblock zu montieren steckt man ihn in die Schaltblock-Halterung. Danach kontrolliert man auf der Vorderseite, ob die LEDs sichtbar sind und die Taster nicht stecken. Danach schraubt man den Schaltblock mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
@@ -331,13 +334,11 @@ Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (da
 ![Schaltblockmontage](./images/300_m14_angeschraubter_schaltblock.png "Schaltblockmontage")   
 _Bild 25: Anschrauben der Schaltbl&ouml;cke_   
 
-Sollte eine Fahrstromzuf&uuml;hrung genau unter einer Halterung liegen, so muss man die Stromzuf&uuml;hrung nochmals bohren....   
-
 ### Montage der Anzeige und des Mikrocontrollers   
 Die OLED-Anzeige und den Mikrocontroller, wie bei [Rahmenteil Ra4 (S&uuml;d)](#x24) beschrieben, in den Rahmen einsetzen.   
 
 ## Montage der SUB-D-Platine
-Die mit dem Netzteil bestückte Platine RW_5V_2SUB25 wird mit der Netzteilseite Richtung West (OLED-Anzeige) auf die Sub-D-Halterung gesteckt und mit vier M 2,5 mm Muttern fixiert (5 mm Schraubenschlüssel).   
+Die mit dem Netzteil bestückte Platine RW_5V_2SUB25 wird mit der Netzteilseite Richtung West (OLED-Anzeige) auf die Sub-D-Halterung gesteckt und mit vier M 2,5 mm Muttern fixiert (5 mm Schraubenschlüssel). Siehe dazu auch _Bild 26_ unten.    
 
 ## Montage der I²C-I/O-Expanderplatinen
 Die Montage der beiden I²C-PCF8574-I/O-Expanderplatinen und der angesteckten Hilfsplatinen `CON_i2c_20mm` erfolgt in der Nähe des Mikrocontrollers mit Hilfe von selbstbohrenden M2 x 10 mm Schrauben.   
@@ -359,9 +360,9 @@ _Bild 26: Verdrahtung der Steuerelemente_
 
 ## 3.5 Gleisbau
 ### Anbringen der Stromversorgung am Gleis   
-Zur Stromversorgung kann man Fleischmann 22217 Anschlu&szlig;kabel 2pol. Spur N verwenden oder man l&ouml;tet selbst Dr&auml;hte an die Gleisverbinder. Dies geht f&uuml;r Fleischmann-Schotterbett-Gleise sehr gut, w&auml;hrend die Verbinder von Gleisen ohne Schotterbett praktisch nicht l&ouml;tbar sind.   
-Als Anschlussdraht verwendet man einen ca. 25 cm langen braunen Volldraht mit 0,32 mm² (22awg) f&uuml;r die n&ouml;rdliche Schiene und einen roten Draht f&uuml;r die s&uuml;dliche Schiene. Der Draht wird beidseitig ca. 6 mm abisoliert und f&uuml;r den Gleisverbinder-Anschluss hakenf&ouml;rmig gebogen, mit einer kleinen Zange etwas flachgedr&uuml;ckt und verzinnt.   
-Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, der rechts oben entfernt ist.   
+Zur Stromversorgung kann man Fleischmann "22217 Anschlusskabel 2-polig Spur N" verwenden oder man l&ouml;tet selbst Dr&auml;hte an die Gleisverbinder. Dies geht bei Fleischmann-Schotterbett-Gleisen sehr gut, w&auml;hrend die Verbinder von Gleisen ohne Schotterbett praktisch nicht l&ouml;tbar sind.   
+Als Anschlussdraht verwendet man einen ca. 25 cm langen braunen Volldraht mit 0,32 mm² Querschnitt (22awg) f&uuml;r die n&ouml;rdliche Schiene und einen roten Draht f&uuml;r die s&uuml;dliche Schiene. Der Draht wird beidseitig ca. 6 mm abisoliert und f&uuml;r den Gleisverbinder-Anschluss hakenf&ouml;rmig gebogen, mit einer kleinen Zange etwas flachgedr&uuml;ckt und verzinnt.   
+Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten noch die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, der rechts oben bereits entfernt ist.   
 
 ![Loeten_Gleisanschluss1](./images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")   
 _Bild 27: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
@@ -543,18 +544,12 @@ Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT dur
 <a name="x60"></a>   
 
 # 6. Abschlie&szlig;ende Arbeiten   
-## 6.1 Weichenabdeckungen   
-F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 20 und 21). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M12 werden zwei verschiedene Arten von Abdeckungen ben&ouml;tigt:   
-* Drei flache Abdeckungen (ausgehend von Ebene E8)   
-* Eine hohe Abdeckung f&uuml;r den rechten Antrieb der Dreiweg-Weiche (d.h. ausgehend von der Grundplatte E0)   
+## 6.1 Weichenabdeckung   
+F&uuml;r die Montage des Unterflur-Weichenantriebs wurde in [Kapitel 3.2](#x32) die Grundplatte ausgeschnitten. F&uuml;r die Landschaftsgestaltung muss dieser Ausschnitt jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Dies geschieht z.B. mit einer hohen, 3D-gedruckten Abdeckung.   
+![3D Weichenabdeckung](./images/300_m14_weichenabdeckung.png "3D Weichenabdeckung")   
+_Bild 30: 3D-Druck-Abdeckungen der Weichenaussparungen_   
 
-* 0,5 mm Metallplatte auf der Weichenunterseite + 0,5 mm Metall-Haltenasen + 0,5 mm H&ouml;henausgleich, falls die Weiche Oberflur montiert wird...   
-Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisabdeckung sowie eine 1 mm Folie dar&uuml;ber + eine 0,5 mm Folie &uuml;ber dem Antrieb verwendet werden.   
-Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im _Bild 33_ zu sehen sind.   
-![3D Weichenabdeckung](/images/300_3d_weichenabdeckung.png "3D Weichenabdeckung")   
-_Bild 33: 3D-Druck-Abdeckungen der Weichenaussparungen_   
-
-Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisn&auml;geln (0,7 mm Durchmesser). Die mittlere Abdeckung wurde mit einer Schere passend geschnitten.   
+Die St&auml;rke der Abdeckung betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Leim oder Gleisn&auml;geln (0,7 mm Durchmesser).   
 
 ## 6.2 Bodenabdeckung   
 Um die Verkabelung zu sch&uuml;tzen, kann man auch Teile des Bodens mit durchsichtigen Folien (zB mit 1 mm St&auml;rke) abdecken.   
