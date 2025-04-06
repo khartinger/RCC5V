@@ -15,7 +15,7 @@ Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das
 
 ## 1.2 Aufbau von Bl&ouml;cken
 Schaltbl&ouml;cke bestehen immer aus zwei Platinen: einer Steuerungs-(STRG-) und einer Anzeige-(LED-)Platine. Diese Platinen werden zusammengesteckt. Die Steuerungsplatine hat dazu zwei 8-polige Stiftleisten (nach unten gerichtet), die Anzeigeplatine 8-polige Buchsenleisten mit langen Kontakten (nach oben).   
-![Zusammenstecken der Blockh&auml;lften](./images/300_assemble_block_parts.png "Zusammenstecken der Blockh&auml;lften")   
+![Zusammenstecken der Blockh&auml;lften](/images/300_assemble_block_parts.png "Zusammenstecken der Blockh&auml;lften")   
 _Bild 1: Zusammenstecken der Blockteile "Steuerung" (links) und "Anzeige" (rechts)_   
 
 ## 1.3 Pinbelegung der Bl&ouml;cke
