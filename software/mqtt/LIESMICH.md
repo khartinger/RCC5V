@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 12.2.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 6.4.2025 <a name="up"></a><br>   
 <h1>MQTT-Nachrichten f&uuml;r das RCC-System</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -124,5 +124,36 @@ mosquitto_pub -h 10.1.1.1 -t rcc/demo1/set/51 -m 1
 * Demo-System starten und kontrollieren, ob das System mit dem MQTT-Broker verbunden ist (in Zeile 2 sollte `MQTT ok     Raspi11` stehen)   
 * Mit dem Linux-Rechner verbinden (zB mit putty) und im Kommando-Fenster die Batch-Datei starten:   
 `./rcc_demo1_start.sh`   
+
+# 4. Beispiele
+## 4.1 Weichentest
+Die folgende Windows-Batch-Datei `dcc141.bat` schaltet die Weiche mit der DCC-Adresse `141` auf Modul `module14` mehrmals um. Die Anzahl der Hin- und Her-Schaltungen kann als Parameter angegeben werden. Wird kein Parameter angegeben, wird viermal umgeschaltet.   
+* Anwendungsbeispiel: `dcc141 5`   
+   Die Weiche wird fünfmal auf Abzweig und Gerade geschaltet.   
+### Quellcode   
+```   
+@echo off
+setlocal enabledelayedexpansion
+REM echo repeat.bat: Mehrmaliger Aufruf von mosquitto_pub -t 10.1.1.1 -t rcc/module14/set/141 -m ..
+REM echo Anwendungsbeispiel: repeat 4
+set max_=%1%
+IF {%1%} == {} ( set max_=4 )
+set /a max2 = 2*max_
+set dir_=0
+set /a dir_=1-%dir_%
+FOR /L %%A IN (1,1,%max2%) DO (
+ set /a dir_=1 - !dir_!
+ echo mosquitto_pub -t 10.1.1.1 -t rcc/module14/set/141 -m !dir_! 
+ mosquitto_pub -h 10.1.1.1 -t rcc/module14/set/141 -m !dir_! 
+ if !dir_!==0 (
+  REM ---wait 1,5 sec--------
+  ping 127.0.0.1 -n 2 >nul
+  >nul ping 127.0.0.1 -n 1 -w 500
+ ) else (
+  REM ---wait 3 sec----------
+  timeout 3 /nobreak > nul
+ ) 
+)
+```   
 
 [Zum Seitenanfang](#up)   

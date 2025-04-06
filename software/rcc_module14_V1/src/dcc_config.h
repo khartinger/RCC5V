@@ -14,8 +14,8 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_14     "2025-03-31 rcc_module14"
-#define  VERSION_14_1   "Version 2025-03-31"
+#define  VERSION_14     "2025-04-06 rcc_module14"
+#define  VERSION_14_1   "Version 2025-04-06"
 
 #define  INFOLINES_SEC  20             // time to show one page
 
@@ -78,7 +78,7 @@ struct strRcomp {
 // ------two way turnout (Zweiwegweiche = Standardweiche)-------
 // Two expander pins A B to control 2way turnout (active low!)
 // A=0: curved, B=0: stright
-#define  RCOMP_1        RC_TYPE_TO,"T2", 141, EX0,PIN0,PIN1,   EX1,PIN0,PIN1, 700,0
+#define  RCOMP_1        RC_TYPE_TO,"T2", 141, EX0,PIN0,PIN1, EX1,PIN0,PIN1, 500,0
 
 //.......Array of all railway components........................
 #define  RCOMP_NUM      1

@@ -1,21 +1,16 @@
 //_____rcc_module14_________________________________khartinger_____
-// This program for an ESP32 is used to test various self-built 
-// model railroad switching blocks. The blocks are controlled 
-// via the I/O pins of two I²C PCF8574 I/O expanders, whereby 
+// This program for an ESP32 is used to switch a two-way-turnout.
+// The block is controlled via the I/O pins of two 
+// I²C PCF8574 I/O expanders, whereby 
 // the PCF8574 with the I2C address 0x20 (IO expander #0) is 
 // used for control and the PCF8574 with the I2C address 0x21 
 // (IO expander #1) for feedback. The IO pins for control and 
 // feedback each have the same pin number.
 //
-// 1. DCC 11, IO expander pin 0: Decoupler (uncoupler)
-// 2. DCC 21, IO expander pin 1,2: Two-way switch 
+// 1. DCC 141, IO expander pin 0,1: Two-way turnout (switch)
 //    (with limit switch)
-// 3. DCC 31,32, IO expander pin 3,4,5: Three-way switch
-//    (with limit switching)
-// 4. DCC 41, IO expander pin 6: Disconnectable track
-// 5. DCC 51, IO expander pin 7: Flashing light
 //
-// The switching status of the components is shown 
+// The switching status of the component is shown 
 // on a 1.54” OLED display.
 //
 // A button on pin D6 (IO19) can be used to skip the individual
@@ -46,9 +41,9 @@
 // Electrical components
 // The electrical components depend on what you want to test.
 // Example three-way crossover:
-// 1. a three-way crossover with limit switching   
-// 2. self-assembly block “RW_5V_W3” consisting of the two 
-//    circuit boards `RW_5V_W3_STRG` and `RW_5V_W3_LED`
+// 1. a two-way turnout with limit switching   
+// 2. self-assembly block “RW_5V_W2” consisting of the two 
+//    circuit boards `RW_5V_W2_STRG` and `RW_5V_W2_LED`
 //    for controlling the points with 5V   
 // 3. a transformer with 16V alternating voltage (V+, V-)
 // 4. a DCC source for sending turnout commands (e.g. Roco 
@@ -67,13 +62,15 @@
 // 2024-11-28 Change program name
 // 2025-01-03 Change TOPIC_BASE, add #define CON_...
 // 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
+// 2025-04-06 add DEBUG_14_ALL
 // Released into the public domain.
 
 // #include <Arduino.h>
 // #include "src/pcf8574/D1_class_PCF8574.h"
 //#define D1MINI          1              // ESP8266 D1mini +pro
 #define  ESP32D1        2                   // ESP32 D1mini
-#define  DEBUG_14      true                // true OR false
+#define  DEBUG_14      true                 // true OR false
+#define  DEBUG_14_SHOW_ALL  false           // true OR false
 #define  LANGUAGE      'd'                  // 'd' or 'e'
 #include "rcc_module14_text.h"                     // AFTER LANGUAGE
 #include "pre_config.h"                     // common defines
@@ -1098,8 +1095,13 @@ void loop() {
  uint32_t ms=stm.loopEnd();                   // state end
  //------print serial data--------------------------------------
  if(DEBUG_14) {
-  Serial.print(sSerial+" | "); Serial.print(ms); 
-  if(ms>STATE_DELAY) Serial.println("ms-Too long!!");
-  else Serial.println("ms");
+  sSerial+=" | ";
+  sSerial+=String(ms);
+  if(ms>STATE_DELAY) sSerial+=" ms-Too long!!";
+  else sSerial+=" ms";
+  if(DEBUG_14_SHOW_ALL) Serial.println(sSerial);
+  else {
+   if(sSerial.length()>14) Serial.println(sSerial);
+  }
  }
 }
