@@ -134,8 +134,8 @@ Die folgende Windows-Batch-Datei `dcc141.bat` schaltet die Weiche mit der DCC-Ad
 ```   
 @echo off
 setlocal enabledelayedexpansion
-REM echo repeat.bat: Mehrmaliger Aufruf von mosquitto_pub -t 10.1.1.1 -t rcc/module14/set/141 -m ..
-REM echo Anwendungsbeispiel: repeat 4
+REM echo dcc141.bat: Mehrmaliger Aufruf von mosquitto_pub -t 10.1.1.1 -t rcc/module14/set/141 -m 0|1
+REM echo Anwendungsbeispiel: repeat 3
 set max_=%1%
 IF {%1%} == {} ( set max_=4 )
 set /a max2 = 2*max_
