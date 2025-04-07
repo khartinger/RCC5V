@@ -92,8 +92,8 @@ _Bild 12: Best&uuml;ckte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
 |    1   | C1                | 100 nF              | _kh_library:C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
-|    4   | D1,D3,<br>D6,D7 | Diode 1N4148 | _kh_library:D_DO-35_SOD27_P5.08mm_Vertical_AnodeUp_kh <br>_kh_library:D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp_kh |   
-|    4   | D11,D12,D14,D15 | Diode 1N4148 oder BAT48 |   |   
+|    2   | D1,D3 | Diode 1N4148 | _kh_library:D_DO-35_SOD27_P5.08mm_Vertical_AnodeUp_kh |   
+|    6   | D6,D7, D11,D12, D14,D15 | Diode 1N4148 oder BAT48 | _kh_library:D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp_kh |   
 |    2   | J1,J2             | Stiftleiste 8-polig (Conn_01x08_Pin) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh |   
 |    2   | J3,J5             | Wannenstecker 6-polig, stehend  | _kh_library:Box_02x03_P2.54mm_Vertical |   
 |    1   | J4                | Wannenstecker 10-polig, stehend | _kh_library:Box_02x05_P2.54mm_Vertical |   
