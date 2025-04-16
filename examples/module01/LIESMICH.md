@@ -87,7 +87,7 @@ Dazu kann man die folgenden 40 x 42 mm gro&szlig;en Block-Beschriftungen auf Eti
 _Bild 3: Beschriftungen f&uuml;r die Steuerbl&ouml;cke_   
 
 ## 1.3 Neues Frontpanel (Rahmenteil Ra4 - S&uuml;d)
-1. 10 mm starkes Pappelsperrholz auf die Gr&ouml;&szlig;e 230 x 60 mm² zuschneiden   
+1. 10 mm starkes Pappelsperrholz auf die Gr&ouml;&szlig;e 480 x 60 mm² zuschneiden   
 2. Rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm² f&uuml;r die OLED-Anzeige mit 3-D-gedrucktem Rahmen ausschneiden:   
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
 _Bild 4: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
