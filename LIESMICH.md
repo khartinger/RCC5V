@@ -8,11 +8,11 @@ Letzte &Auml;nderung: 29.3.2025 <a name="up"></a><br>
 
 # Einleitung
 Das Schalten von Weichen ist bei Modellbahnen eine wichtige Sache. Wer will nicht die M&ouml;glichkeit haben, das auf verschiedene Arten zu machen? Es gibt viele Mittel und Wege, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern.   
-Das folgende Bild einer RCC-Steuerung (RCC = Railway-Component-Control) zeigt ein elegantes Beispiel mit Informationsanzeige, Schalten und LED-R&uuml;ckmeldung.   
+Das folgende Bild einer RCC-Steuerung (RCC = Railway-Component-Control) zeigt ein elegantes Beispiel mit Informationsanzeige, Schaltm&ouml;glichkeit und LED-R&uuml;ckmeldung.   
 ![Beispiel RCC-Steuerung](./images/600_M12_OLED_Blocks2.png "Beispiel RCC-Steuerung")   
 _Bild 1: Beispiel User-Interface RCC-Steuerung_   
 
-Die einfachste Methode des Schaltens ist nat&uuml;rlich, das alles von Hand zu machen. In dem Fall braucht man nicht einmal Weichenantriebe. Aber bei weiter entfernten oder verteilten Komponenten wird diese Betriebsart schnell umst&auml;ndlich.   
+Die einfachste Methode des Schaltens ist, dies von Hand zu machen. In dem Fall braucht man nicht einmal Weichenantriebe. Aber bei weiter entfernten oder verteilten Komponenten wird diese Betriebsart schnell umst&auml;ndlich.   
 Aus diesem Grund werden zum Schalten der Komponenten &uuml;blicherweise magnetische Antriebe verwendet. Dabei wird im einfachsten Fall die Wechselspannung direkt geschaltet:   
 
 ![RCC_5V_DirectSwitching](./images/300_RCC5V_DirectSwitching1.png "RCC_5V_DirectSwitching")   
@@ -103,10 +103,10 @@ _Bild 3: Blockschaltbild Schalten von Eisenbahnkomponenten mit 5V_
 
 Durch die Verwendung der I2C-I/O-Expander-Boards ist es m&ouml;glich, mehrere Komponenten anzusteuern:   
 ![RCC5V_BlockDiagram3x](./images/300_RCC5V_BlockDiagramm_3x_V2.png "RCC5V_BlockDiagram3x")   
-_Bild 4: Blockschaltbild Schalten von mehreren Eisenbahnkomponenten mit 5V_   
+_Bild 4: Blockschaltbild zum Schalten von mehreren Eisenbahnkomponenten mit 5V_   
 
 # Praktischer Aufbau
-Vor zB dem ersten Schalten einer Weiche mit RCC m&uuml;ssen zuerst einige Komponenten hergestellt werden. Wie das geht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
+Vor dem ersten Schalten einer Weiche mit RCC m&uuml;ssen zuerst einige Komponenten hergestellt werden. Wie das geht, ist im Kapitel ["Wie starte ich das RCC-Projekt?" (/fab/rcc0_start/LIESMICH.md)](/fab/rcc0_start/LIESMICH.md) beschrieben.   
 Das folgende Bild zeigt beispielhaft die Baugruppen, die zur Ansteuerung einer Dreiwegweiche erforderlich sind:   
 ![RCC5V_Demo_Setup](./images/480_RCC5V_DemoSetup.png "RCC5V_Demo_Setup")   
 _Bild 5: Demo-Aufbau eines RCC-5V-Systems: die einzelnen Teile_   
@@ -121,7 +121,7 @@ _Bild 6: Beispiel Modul-Frontansicht (= Bedienungsseite)_
 <a name="x40"></a>   
 
 # Beispiel: Schaltplan zum Schalten einer Weiche mit dem RCC5V-System
-Das folgende Bild zeigt den elektrischen Schaltplan zur Ansteuerung einer Weiche mit DCC, MQTT oder manuell. Die hellgr&uuml;nen Rechtecke stellen in KiCad 8.0 entwickelte Platinen dar, die von [PCB Way](https://www.pcbway.com/) hergestellt wurden. Dazu installiert man in KiCad einfach das PlugIn von PCB Way und die &Uuml;bertragung der f&uuml;r die Produktion erforderlichen Daten erfolgt dann per Mausklick.   
+Das folgende Bild zeigt den vollst&auml;ndigen elektrischen Schaltplan zur Ansteuerung einer Weiche mit DCC, MQTT oder manuell. Die hellgr&uuml;nen Rechtecke stellen in KiCad 8.0 entwickelte Platinen dar, die von [PCB Way](https://www.pcbway.com/) hergestellt wurden. Dazu installiert man in KiCad einfach das PlugIn von PCB Way und die &Uuml;bertragung der f&uuml;r die Produktion erforderlichen Daten erfolgt dann per Mausklick.   
 
 ![overall_circuit_diagram](./images/768_RCC5V_OverviewCircuitDiagram_241111.png "overall circuit diagram")   
 _Bild 7: Gesamtschaltung des RCC-5V-Systems_   
