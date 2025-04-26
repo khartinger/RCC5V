@@ -129,7 +129,7 @@ mosquitto_pub -h 10.1.1.1 -t rcc/demo1/set/51 -m 1
 ## 4.1 Weichentest
 Die folgende Windows-Batch-Datei `dcc141.bat` schaltet die Weiche mit der DCC-Adresse `141` auf Modul `module14` mehrmals um. Die Anzahl der Hin- und Her-Schaltungen kann als Parameter angegeben werden. Wird kein Parameter angegeben, wird viermal umgeschaltet.   
 * Anwendungsbeispiel: `dcc141 5`   
-   Die Weiche wird fünfmal auf Abzweig und Gerade geschaltet.   
+   Die Weiche wird f&uuml;nfmal auf Abzweig und Gerade geschaltet.   
 ### Quellcode   
 ```   
 @echo off

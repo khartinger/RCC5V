@@ -26,7 +26,7 @@ Das folgende Bild zeigt den Blocktester von oben.
 ![Ansicht Blocktester oben](./images/600_BT_view_above.png "Ansicht Blocktester oben")   
 _Bild 3: Blocktester von oben_   
 
-### Übersicht über die System-Eigenschaften 
+### &Uuml;bersicht &uuml;ber die System-Eigenschaften 
 |                |                                                    |   
 | -------------- | -------------------------------------------------- |   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit Schotterbett          |   
@@ -58,7 +58,7 @@ Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die eingesetzten Komponente
 _Bild 4: &Uuml;bersichtsplan des Testsystems_   
 
 ## Bedeutung der einzelnen Komponenten
-Die folgende Liste enthält Links zu Beschreibungen und zum Bau der Komponenten.   
+Die folgende Liste enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
 
 `SUB25_10 ....` [Modul-Verbinder mit Netzteil](/fab/rcc1_supply/LIESMICH.md#x30)      
 `uC_OLED .....` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
@@ -126,7 +126,7 @@ Als N&auml;chstes kann man die Halterungen f&uuml;r die Steuerbl&ouml;cke mit 2,
 Das Anziehen der Schrauben sollte nicht zu fest erfolgen, sodass sich die Sechskant-Distanzhalter nicht nach innen biegen!   
 
 ![Block holder](./images/300_BT_blockholder.png "300_BT_Blockholder")   
-_Bild 10: Unbestückte und bestückte (rechts) Block-Halterung_   
+_Bild 10: Unbest&uuml;ckte und best&uuml;ckte (rechts) Block-Halterung_   
 
 ## 2.3 Zusammenbau des Rahmens
 Der Zusammenbau des Rahmens erfolgt so, wie es im _Bild 1_ zu sehen ist. Als Schrauben werden zB selbstschneidende Schrauben 3 x 20 mm verwendet.   
@@ -195,7 +195,7 @@ _Bild 13: Schaltplan der "CON_6pol_3"-Platine, Version 1 (!)_
 _Bild 14: Pinbelegung des Steckers J5 von 1OUT (RW_5V_1OUT_STRG)_   
 
 ### Zweiwegweiche (CON_6pol-3)
-Die Masse der Zweiwegweiche (schwarze Leitung) wird an Pin 3 (mittlere Schraubklemme) angeschraubt. Der Anschluss der beiden anderen Kabel h&auml;ngt davon ab, ob die Weiche &Uuml;berflur oder Unterflur montiert wird. Am besten eine Leitung an Pin 1 anschrauben und die Weiche mit dem Schaltblock W2 schalten. Passt der Schaltzustand ("Gerade" oder "Abzweig"), so schließt man das zweite Kabel am anderen Anschluss an, ansonsten vertauscht man die beiden braunen Kabel.   
+Die Masse der Zweiwegweiche (schwarze Leitung) wird an Pin 3 (mittlere Schraubklemme) angeschraubt. Der Anschluss der beiden anderen Kabel h&auml;ngt davon ab, ob die Weiche &Uuml;berflur oder Unterflur montiert wird. Am besten eine Leitung an Pin 1 anschrauben und die Weiche mit dem Schaltblock W2 schalten. Passt der Schaltzustand ("Gerade" oder "Abzweig"), so schlie&szlig;t man das zweite Kabel am anderen Anschluss an, ansonsten vertauscht man die beiden braunen Kabel.   
 
 ![Pinbelegung_W2-J5](/images/200_J5_pins_W2.png "Pinbelegung W2-J5")   
 _Bild 15: Pinbelegung des Steckers J5 von W2 (RW_5V_W2_STRG)_   
@@ -205,9 +205,9 @@ Der mittlere der beiden 3-poligen Anschl&uuml;sse wird mit der R&uuml;ckleitung 
 Beim Verdrahten der Dreiwegweiche ist besonders darauf zu achten, dass die Stellung "Gerade" (= "Mitte") f&uuml;r beide Weichenantriebe an die selbe Klemme angeschraubt wird.   
 Das Herausfinden der Anschl&uuml;sse erfolgt am besten durch Versuche wie bei der Zweiwegweiche:   
 * zuerst herausfinden, ob die linken oder rechten drei Klemmen f&uuml;r das "Links"-Schalten der Weiche zust&auml;ndig sind   
-* herausfinden, welcher der beiden Dr&auml;hte f&uuml;r das "Gerade"-Schalten des linken Weichenantriebs zust&auml;ndig ist und bei Klemme 5 oder 6 anschließen   
-* herausfinden, welcher der beiden Dr&auml;hte f&uuml;r das "Gerade"-Schalten des rechten Weichenantriebs zust&auml;ndig ist und bei Klemme 5 oder 6 anschließen   
-* anderen Anschluss des rechten Weichenantreibs anschließen.    
+* herausfinden, welcher der beiden Dr&auml;hte f&uuml;r das "Gerade"-Schalten des linken Weichenantriebs zust&auml;ndig ist und bei Klemme 5 oder 6 anschlie&szlig;en   
+* herausfinden, welcher der beiden Dr&auml;hte f&uuml;r das "Gerade"-Schalten des rechten Weichenantriebs zust&auml;ndig ist und bei Klemme 5 oder 6 anschlie&szlig;en   
+* anderen Anschluss des rechten Weichenantreibs anschlie&szlig;en.    
 
 ![CON_6pol_6_V1_circuit](/images/200_CON_6pol_6_V1_circuit.png "CON_6pol_6_V1_circuit")   
 _Bild 16: Schaltplan der "CON_6pol_6"-Platine, Version 1 (!)_   

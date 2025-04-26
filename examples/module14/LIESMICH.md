@@ -72,19 +72,19 @@ Der folgende Gleisplan wurde mit dem Programm [AnyRail](https://www.anyrail.com/
 ![M14 Gleisplan](./images/300_m14_gleisplan.png "M14 Gleisplan")   
 _Bild 4: Gleisplan_   
 
-Der Gleisplan enthält einige Besonderheiten:   
-* Um von der Modulmitte Ost (rechts) einen Gleisversatz von y<sub>0</sub>  = 33,6 / 2 = 16,8 mm nach West (links) zu erreichen und um in den schrägen Abschnitt eine Weiche der Länge c = 111 mm einbauen zu können, wird der erforderliche Winkel für die gebogenen Gleise mit Radius R4 (9136) folgendermaßen berechnet:   
+Der Gleisplan enth&auml;lt einige Besonderheiten:   
+* Um von der Modulmitte Ost (rechts) einen Gleisversatz von y<sub>0</sub>  = 33,6 / 2 = 16,8 mm nach West (links) zu erreichen und um in den schr&auml;gen Abschnitt eine Weiche der L&auml;nge c = 111 mm einbauen zu k&ouml;nnen, wird der erforderliche Winkel f&uuml;r die gebogenen Gleise mit Radius R4 (9136) folgenderma&szlig;en berechnet:   
 ![M14_Berechnung_Versatz](./images/200_m14_berechnung_versatz.png "M14_Berechnung_Versatz")   
 _Bild 5: Skizze zur Berechnung eines Gleisversatzes_   
 Allgemein ergibt sich mit $\ r = R_a + R_b$   
-für den Winkel &alpha; die Lösung   
+f&uuml;r den Winkel &alpha; die L&ouml;sung   
 $\ cos(\alpha) = \Large{ 1 \over {r^2 + c^2} } \normalsize \cdot [\enspace r \cdot (r - y_0) + c \cdot \sqrt{(r^2 + c^2) - (r - y_0)^2 \enspace } \enspace ]$ <br>   
-Für R<sub>a</sub> = R<sub>b</sub> = R<sub>4</sub> = 430 mm ergibt sich ein Winkel &alpha; = 6,138375°   
-Dieser Winkel entspricht bei einem R4-Gleis genau 9 Schwellen, da das ganze Gleis 22 Schwellen bei 15° hat. Das 9136-Gleis ist daher auf 9 Schwellen zu kürzen.  
+F&uuml;r R<sub>a</sub> = R<sub>b</sub> = R<sub>4</sub> = 430 mm ergibt sich ein Winkel &alpha; = 6,138375°   
+Dieser Winkel entspricht bei einem R4-Gleis genau 9 Schwellen, da das ganze Gleis 22 Schwellen bei 15° hat. Das 9136-Gleis ist daher auf 9 Schwellen zu k&uuml;rzen.  
 
-* Um von der Weichenabzweigung auf das nördliche (obere) Parallelgleis zu kommen ist ein "Restwinkel" von 15° - 6,1384° = 8,8616° erforderlich, was 13 Schwellen entspricht.   
+* Um von der Weichenabzweigung auf das n&ouml;rdliche (obere) Parallelgleis zu kommen ist ein "Restwinkel" von 15° - 6,1384° = 8,8616° erforderlich, was 13 Schwellen entspricht.   
 
-* Wenn man ein R4 Gleis mit 13 Schwellen verwendet, wird zusätzlich noch ein gerades Gleis mit 59,71 mm benötigt, um auf einen Gesamtgleisabstand von 33,6 mm zu kommen.   
+* Wenn man ein R4 Gleis mit 13 Schwellen verwendet, wird zus&auml;tzlich noch ein gerades Gleis mit 59,71 mm ben&ouml;tigt, um auf einen Gesamtgleisabstand von 33,6 mm zu kommen.   
 
 * Die beiden dunkelgrauen Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
 
@@ -151,7 +151,7 @@ Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu 
 |      2     |   |   | Paar Einmal-Handschuhe         |   
 |      1     |   |   | Schleifpapier K&ouml;rnung 240      |   
 
-Eine einfachere, aber nicht ganz so gute Möglichkeit besteht darin, das Holz mit einem Plastikspray zu besprühen.   
+Eine einfachere, aber nicht ganz so gute M&ouml;glichkeit besteht darin, das Holz mit einem Plastikspray zu bespr&uuml;hen.   
 
 ## 1.4 Elektronische RCC-Komponenten
 ### 1.4.1 Steuerung
@@ -188,8 +188,8 @@ __Dr&auml;hte, Leitungen und Stecker__
 * ca. 0,75 m Volldraht 22awg (0,32 mm²) braun   
 * ca. 0,8 m Flachbandkabel 6-polig   
 * ca. 0,2 m Flachbandkabel 10-polig   
-* 1x 10-poliges Flachbandkabel mit Buchsen Female-Female 10 cm lang (Dupont Jumper Wire Cable) für I²C-Expander-Pin-Anschlüsse  
-* 1x vier Kabel Female-Female 15 cm lang (orange, gelb, gr&uuml;n, blau) für I²C-Bus   
+* 1x 10-poliges Flachbandkabel mit Buchsen Female-Female 10 cm lang (Dupont Jumper Wire Cable) f&uuml;r I²C-Expander-Pin-Anschl&uuml;sse  
+* 1x vier Kabel Female-Female 15 cm lang (orange, gelb, gr&uuml;n, blau) f&uuml;r I²C-Bus   
 -----   
 * 6x IDC Buchsen-Stecker f&uuml;r Flachbandkabel 6-polig   
 * 2x IDC Buchsen-Stecker f&uuml;r Flachbandkabel 10-polig   
@@ -206,7 +206,7 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 
 ![Modul-Rahmen](./images/300_m14_module_frame.png "Modul-Rahmen")   
-_Bild 9: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4), der Querverstrebung (Ri1) und der Halterung für den 25-poligen Stecker_
+_Bild 9: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4), der Querverstrebung (Ri1) und der Halterung f&uuml;r den 25-poligen Stecker_
 
 Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
 
@@ -236,7 +236,7 @@ _Bild 12: Seitenteil Nord Ra2_
 <a name="x24"></a>   
 
 ## 2.4 Rahmenteil Ra4 (S&uuml;d)
-Der Rahmenteil S&uuml;d enthält das Display, die Bohrungen f&uuml;r den W2-Steuerblock und die Querverstrebung. Das folgende Bild gibt einen &Uuml;berblick &uuml;ber die erforderlichen Bohrungen.   
+Der Rahmenteil S&uuml;d enth&auml;lt das Display, die Bohrungen f&uuml;r den W2-Steuerblock und die Querverstrebung. Das folgende Bild gibt einen &Uuml;berblick &uuml;ber die erforderlichen Bohrungen.   
 
 ![Modul_S&uuml;d_480mm](./images/300_m14_sued_480mm.png "Modul_S&uuml;d_480mm")   
 _Bild 13: Ma&szlig;e f&uuml;r den Rahmenteil S&uuml;d (Ra4)_   
@@ -251,7 +251,7 @@ Bei Verwendung eines 3D-gedruckten Rahmens ben&ouml;tigt man eine rechteckf&ouml
 _Bild 15: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
 
 __Steuerblock W2__   
-Um die Position der für den Steuerblock W2 erforderlichen Bohrungen zu bestimmen, druckt man die 40 x 42 mm große Beschriftung (Cover) aus und klebt sie an die richtige Position des Rahmens. Die Mitte soll 290 mm vom linken Rand sein, das heißt die Unterkante des Covers reicht von 270 mm bis 310 mm und ist 8 mm vom Rand entfernt. Am besten ist es, zuerst einen Strich zu zeichnen und dann die Beschriftung aufzukleben.   
+Um die Position der f&uuml;r den Steuerblock W2 erforderlichen Bohrungen zu bestimmen, druckt man die 40 x 42 mm gro&szlig;e Beschriftung (Cover) aus und klebt sie an die richtige Position des Rahmens. Die Mitte soll 290 mm vom linken Rand sein, das hei&szlig;t die Unterkante des Covers reicht von 270 mm bis 310 mm und ist 8 mm vom Rand entfernt. Am besten ist es, zuerst einen Strich zu zeichnen und dann die Beschriftung aufzukleben.   
 
 ![Beschriftung Bedienungselemente](./images/300_M14_cover.png "Beschriftung Bedienungselemente")   
 _Bild 16: Beschriftung des W2-Bedienungselementes f&uuml;r Modul 14_   
@@ -273,7 +273,7 @@ _Bild 17: Rahmenteil S&uuml;d Forderseite_
 _Bild 18: Rahmenteil S&uuml;d R&uuml;ckseite_   
 
 ## 2.5 Querverstrebung Ri1
-Die Querverstrebung enthält verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
+Die Querverstrebung enth&auml;lt verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
 
 ![Verstrebung](./images/300_verstrebung_230mm.png "Verstrebung")   
 _Bild 19: Querverstrebungen Ri1_
@@ -294,7 +294,7 @@ _Bild 21: Teile der Sub-D-Halterung_
 Nachdem alle Teile des Rahmens vorbereitet wurden, kann dieser mit selbstbohrenden M 3 x 30 Schrauben zusammengeschraubt werden.   
 
 ![Rahmen M14](./images/300_M14_frame_1.png "Rahmen M14")   
-_Bild 22: Zusammengeschraubter Rahmen mit Halterung für die SUB-D-Platine_   
+_Bild 22: Zusammengeschraubter Rahmen mit Halterung f&uuml;r die SUB-D-Platine_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
@@ -310,7 +310,7 @@ Danach werden die Gleise entsprechend dem Gleisbild zusammengesteckt.
 
 ## 3.2 Zuschneiden und Aufkleben des Bahndamms auf die Grundplatte   
 War die Stellprobe erfolgreich, folgen normalerweise &Uuml;berlegungen zu den einzelnen Gel&auml;ndeh&ouml;hen, was hier entfallen kann.   
-Um den Bahndamm darzustellen, schrägt man die 5 mm Sperrkolzplatte an den Nord- und Südkanten mit ungefähr 45° ab. Danach legt man sie auf den Rahmen mit eingesetzter Grundplatte, richtet sie aus (links und rechts nach den Gleisen) und klebt sie fest.   
+Um den Bahndamm darzustellen, schr&auml;gt man die 5 mm Sperrkolzplatte an den Nord- und S&uuml;dkanten mit ungef&auml;hr 45° ab. Danach legt man sie auf den Rahmen mit eingesetzter Grundplatte, richtet sie aus (links und rechts nach den Gleisen) und klebt sie fest.   
 Da der Weichenantrieb als Unterflurantrieb verbaut werden soll, muss als noch die Aussparung gezeichnet und ausgeschnitten werden.   
 
 ![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_turnout_cutout_right.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
@@ -325,8 +325,8 @@ Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmung f&uuml;r den 
 _Bild 24: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitt_   
 
 ## 3.4 Vorbereitung der Verdrahtung
-### Platz für Flachbandkabel kennzeichnen
-Damit später die einzelnen Platinen besser plaziert werden können, sollten auf die Rückseite der Deckplatte in Längsrichtung (Ost - West) je zwei Linien mit 4 cm und 5,5 cm Abstand zum Rand gezeichnet werden. Diese Linien führen genau durch die Durchf&uuml;hrungen des Querverbinders.   
+### Platz f&uuml;r Flachbandkabel kennzeichnen
+Damit sp&auml;ter die einzelnen Platinen besser plaziert werden k&ouml;nnen, sollten auf die R&uuml;ckseite der Deckplatte in L&auml;ngsrichtung (Ost - West) je zwei Linien mit 4 cm und 5,5 cm Abstand zum Rand gezeichnet werden. Diese Linien f&uuml;hren genau durch die Durchf&uuml;hrungen des Querverbinders.   
 
 ### Montage des W2-Schaltblocks   
 Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). F&uuml;r ein leichteres Arbeiten kann man die Grundplatte vom Rahmen entfernen (bei einem Schaltblock nicht notwendig). Um den Schaltblock zu montieren steckt man ihn in die Schaltblock-Halterung. Danach kontrolliert man auf der Vorderseite, ob die LEDs sichtbar sind und die Taster nicht stecken. Danach schraubt man den Schaltblock mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
@@ -338,10 +338,10 @@ _Bild 25: Anschrauben der Schaltbl&ouml;cke_
 Die OLED-Anzeige und den Mikrocontroller, wie bei [Rahmenteil Ra4 (S&uuml;d)](#x24) beschrieben, in den Rahmen einsetzen.   
 
 ## Montage der SUB-D-Platine
-Die mit dem Netzteil bestückte Platine RW_5V_2SUB25 wird mit der Netzteilseite Richtung West (OLED-Anzeige) auf die Sub-D-Halterung gesteckt und mit vier M 2,5 mm Muttern fixiert (5 mm Schraubenschlüssel). Siehe dazu auch _Bild 26_ unten.    
+Die mit dem Netzteil best&uuml;ckte Platine RW_5V_2SUB25 wird mit der Netzteilseite Richtung West (OLED-Anzeige) auf die Sub-D-Halterung gesteckt und mit vier M 2,5 mm Muttern fixiert (5 mm Schraubenschl&uuml;ssel). Siehe dazu auch _Bild 26_ unten.    
 
 ## Montage der I²C-I/O-Expanderplatinen
-Die Montage der beiden I²C-PCF8574-I/O-Expanderplatinen und der angesteckten Hilfsplatinen `CON_i2c_20mm` erfolgt in der Nähe des Mikrocontrollers mit Hilfe von selbstbohrenden M2 x 10 mm Schrauben.   
+Die Montage der beiden I²C-PCF8574-I/O-Expanderplatinen und der angesteckten Hilfsplatinen `CON_i2c_20mm` erfolgt in der N&auml;he des Mikrocontrollers mit Hilfe von selbstbohrenden M2 x 10 mm Schrauben.   
 Das Einstellen der Adressen 0x20 und 0x21 geschieht mit Hilfe der Jumper.   
 
 ### Montage der Schraubklemmen   
@@ -396,14 +396,14 @@ _Bild 28: Rahmen mit Grundplatte und Gleisen._
 ## 4.1 Verdrahtung der Stromversorgung und des Fahrstroms
 1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit dem Schaltblock mit einem 6-poligen, ca. 0,3 Meter langen Flachbandkabel und zwei montierten Pfostenverbindern.    
 2. Verbinden des Fahrstroms Ost (NN, SS) mit der Versorgungsplatine `RW_5V_2SUB25`   
-3. Verbinden der Fahrströme West (NN, SN, NS, SS) mit der Versorgungsplatine `RW_5V_2SUB25`   
+3. Verbinden der Fahrstr&ouml;me West (NN, SN, NS, SS) mit der Versorgungsplatine `RW_5V_2SUB25`   
 
 ## 4.2 Vorbereitung Mikrocontroller
 1. Verbinden des Anschlusses "DCC" der Versorgungsplatine `RW_5V_SUB25_10` mit dem Mikrocontroller &uuml;ber ein ca. 30 cm langes, 6-poliges Kabel.   
 2. Verbinden des Mikrocontrollers mit den I²C-PCF8574-I/O-Expanderplatinen mit 20 cm langen, 4-poligen Kabeln mit female-female-Steckern.   
 
 ## 4.3 Weichenausgang Schaltblock W2
-Der 6-polige Ausgang des Schaltblock W2 wird über ein 6-poliges Flachbandkabel mit der Platine `CON_6pol_3_V2` verbunden. Die Drähte der Weiche werden mit den Schraubklemmen verbunden, wobei der Rückleiter (schwarzer Draht) am mittleren Anschluss angeschraubt wird. Die braunen Drähte werden beliebig angeschraubt und später beim Test der Verdrahtung auf ihren richtigen Anschluss hin geprüft.   
+Der 6-polige Ausgang des Schaltblock W2 wird &uuml;ber ein 6-poliges Flachbandkabel mit der Platine `CON_6pol_3_V2` verbunden. Die Dr&auml;hte der Weiche werden mit den Schraubklemmen verbunden, wobei der R&uuml;ckleiter (schwarzer Draht) am mittleren Anschluss angeschraubt wird. Die braunen Dr&auml;hte werden beliebig angeschraubt und sp&auml;ter beim Test der Verdrahtung auf ihren richtigen Anschluss hin gepr&uuml;ft.   
 
 ## 4.4 Verdrahtung I²C-Bus
 Festlegung: Der Schaltblock W2 hat die DCC-Adresse 141.   
@@ -433,11 +433,11 @@ Mit der bisherigen Verdrahtung ist es bereits m&ouml;glich, einen h&auml;ndische
 ## 5.2 Programmierung des Mikrocontrollers
 1. Kopieren der Software `rcc_demo1` in ein neues Verzeichnis und Umbenennen des Verzeichnisses in `rcc_module14_V1`.   
 2. Umbenennen der Dateien `rcc_demo1.cpp` und `rcc_demo1_text.h` in `rcc_module14_V1.cpp` und `rcc_module14_text.h` im Verzeichnis `rcc_module14_V1/src`.   
-3. Starten von Visual Studio Code und Öffnen des Ordners (Verzeichnisses) `rcc_module14_V1`.   
-4. Umbenennen von `rcc_demo1` in `rcc_module14` __*in allen Dateien*__ (Menüpunkt Bearbeiten - In Dateien ersetzen).   
-5. Datei `rcc_module14_V1.cpp` im Editorfenster öffnen.   
-6. Umbenennen von `DEBUG_99` in `DEBUG_14` __*in allen Dateien*__ (Menüpunkt Bearbeiten - In Dateien ersetzen).   
-7. Umbenennen von `VERSION_99` in `VERSION_14` __*in allen Dateien*__ (Menüpunkt Bearbeiten - In Dateien ersetzen).   
+3. Starten von Visual Studio Code und &Ouml;ffnen des Ordners (Verzeichnisses) `rcc_module14_V1`.   
+4. Umbenennen von `rcc_demo1` in `rcc_module14` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+5. Datei `rcc_module14_V1.cpp` im Editorfenster &ouml;ffnen.   
+6. Umbenennen von `DEBUG_99` in `DEBUG_14` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+7. Umbenennen von `VERSION_99` in `VERSION_14` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
 8. Anpassen des Starttextes in der Datei `rcc_module14_text.h`:   
 ```  
 #define  INFOLINES_NUM     10

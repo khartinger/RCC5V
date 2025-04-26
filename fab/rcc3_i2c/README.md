@@ -14,12 +14,13 @@ The jumpers can be used to set the I²C address of the boards (0x20 on the left 
 
 ---   
 
-The additional boards described here are not absolutely necessary, but are helpful because the PCF8574 boards do not have any holes for mounting, for example.   
+The additional boards described here are not absolutely necessary, but are helpful because the PCF8574 boards do not have any holes for mounting and the lines of the I²C bus should also be terminated with pull-up resistors.   
 The following prints are currently available:   
 * [I²C holder 20 mm](#x20)   
 * [I²C holder 40 mm](#x30)   
 * [I2C LED board](#x40)   
 * [I²C distributor](#x50)   
+* [I²C board with pull-up resistors](#x60)   
 
 <a name="x20"></a>   
 
@@ -36,19 +37,25 @@ _Figure 3: Circuit diagram of the “CON_i2c_20mm” board_
 _Figure 4: Board for screwing down I²C boards_   
 
 _*Board size*_: 20 x 15 mm²   
-_*Link to the KiCad files*_: [/fab/kicad/CON_i2c_20mm_V1](/fab/kicad/CON_i2c_20mm_V1)   
+_*Link to the KiCad files*_: [/fab/kicad/CON_i2c_20mm_V2](/fab/kicad/CON_i2c_20mm_V2)   
 
-### Bill Of Materials   
+## Bill Of Materials   
 | Quantity | Reference | Value | Use |   
 |--------|-----------|-------------------|--------------------|   
 | 1 | J1 | 4-pin pin header angled 90° | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh |   
 | 1 | J2 | 4-pin female connector with long contacts | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh |   
+|    1   |    C1     | 100 nF, 2,54 mm Raster |  |   
 
-### Preparation   
+## Preparation   
 Bend the long contacts of the 4-pin socket strip by 90°.   
 
-### Assembly   
+## Assembly   
 Insert and solder the pin and socket strips.    
+Solder in the capacitor.   
+
+## Versions
+* V1 (250128): OK   
+* V2 (250407): Buffer capacitor added (0:1 &mu;F ... 1 &mu;F)   
 
 [To the top of the page](#up)   
 <a name="x30"></a>   
@@ -151,5 +158,41 @@ Bend the long contacts of the 4-pin socket strips by 90°.
 2. pin headers J1 to J4   
 
 Insert the jumpers as required.   
+
+[To the top of the page](#up)   
+<a name="x60"></a>   
+
+# 6. I²C board with pull-up resistors
+This 20 mm long board has space for two 4.7 k,7 k&Omega; resistors and a buffer capacitor.   
+
+![CON_i2c_Term_V1](/images/200_CON_i2c_Term_V1.png "CON_i2c_Term_V1")   
+_Figure 14: The assembled "CON_i2c_Term" circuit board_ 
+
+![CON_i2c_Term_circuit](/images/200_CON_i2c_Term_circuit_V1.png "CON_i2c_Term_circuit")   
+_Figure 15: Circuit diagram of the "CON_i2c_Term" board_ 
+
+![Print i2c Term](/images/pcb_f/PCB_F_CON_i2c_Term_V1.png "Print i2c Term 20 mm")   
+_Figure 16: Board for screwing down I²C boards and terminating resistors_ 
+
+_*Board size*_: 20 x 15 mm² 
+_*Link to the KiCad files*_: [/fab/kicad/CON_i2c_Term_V1](/fab/kicad/CON_i2c_Term_V1) 
+
+## Parts list   
+| Anzahl | Referenz | Wert | Geh&auml;use | 
+|--------|-----------|-------------------|--------------------| 
+| 1 | J1 | 4-pole pin header 90° angled | _kh_library:PinSocket_1x04_P2. 54mm_Vertical_kh | 
+| 1 | J2 | 4-pin female connector with long contacts | _kh_library:PinSocket_1x04_P2.54mm_Vertical_kh | 
+| 1 | C1 | 100 nF, 2.54 mm pitch | | 
+
+## Preparation 
+Bend the long contacts of the 4-pin female connector by 90°.   
+
+## Assembly 
+1. Plug in the male and female connectors and connect them.    
+2. solder in the resistors.   
+3. solder in the capacitor.   
+
+## Versions
+* V1 (250407): OK  
 
 [To the top of the page](#up)   
