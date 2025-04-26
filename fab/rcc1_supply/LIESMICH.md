@@ -20,6 +20,14 @@ Um den Verdrahtungsaufwand klein zu halten, werden der Mikrocontroller und die R
 ![connector_6pol](/images/100_6pol.png "connector_6pol")   
 _Bild 2: Pinbelegung der 6-poligen Wannenstecker_   
 
+---   
+
+Zur Realisierung dieser Aufgaben sind unter anderem folgende Prints im Einsatz:   
+* [Netzteil-Trägerplatine (`AC_5V_6pol_DCC`)](#x22)   
+* [Platine mit zwei 25-poligen Sub-D-Steckern und Netzteil (`RW_5V_2SUB25`)](#x32)   
+* [Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (`RW_5V_SUB25_10`)](#x33)    
+* [Platine mit 25-poligem Sub-D-Stecker und Schraubklemmen (`CON_SubD_Screw10`)](#x34)   
+
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
 
@@ -36,6 +44,8 @@ _Bild 3: Schaltung der 5V-, AC- und DCC-Versorgung_
 * U1 stellt das DC-DC-Board dar.  
 * J1 und J2 sind die 6-poligen Stecker "DCC" und "POWER".   
 * Die Stecker J5 und J6 dienen nur der Vereinfachung: So muss man f&uuml;r die Aufnahme des DC-DC-Wandler-Boards nicht vier einzelne Buchsen aufl&ouml;ten, sondern kann zwei 8-polige Buchsenleisten verwenden.   
+
+<a name="x22"></a>   
 
 ## 2.2 Die Netzteil-Tr&auml;gerplatine AC_5V_supply_6pol_DCC
 Die Netzteil-Platine sieht so aus:   
