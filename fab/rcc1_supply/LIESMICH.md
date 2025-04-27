@@ -23,7 +23,7 @@ _Bild 2: Pinbelegung der 6-poligen Wannenstecker_
 ---   
 
 Zur Realisierung dieser Aufgaben sind unter anderem folgende Prints im Einsatz:   
-* [Netzteil-Trägerplatine (`AC_5V_6pol_DCC`)](#x22)   
+* [Netzteil-Tr&auml;gerplatine (`AC_5V_6pol_DCC`)](#x22)   
 * [Platine mit zwei 25-poligen Sub-D-Steckern und Netzteil (`RW_5V_2SUB25`)](#x32)   
 * [Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (`RW_5V_SUB25_10`)](#x33)    
 * [Platine mit 25-poligem Sub-D-Stecker und Schraubklemmen (`CON_SubD_Screw10`)](#x34)   
