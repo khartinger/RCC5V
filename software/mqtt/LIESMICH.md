@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 6.4.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 1.5.2025 <a name="up"></a><br>   
 <h1>MQTT-Nachrichten f&uuml;r das RCC-System</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -126,34 +126,35 @@ mosquitto_pub -h 10.1.1.1 -t rcc/demo1/set/51 -m 1
 `./rcc_demo1_start.sh`   
 
 # 4. Beispiele
+Im Verzeichnis `software/mqtt/batch` befinden sich zahlreiche Beispiele f&uuml;r (Windows) Batch-Dateien zum Testen der Komponenten von Modulen bzw. zum Setzen von Startwerten von Modulen. In der Regel wird eine Durchfahrt durch den Modul freigeschaltet.   
+Als Beispiel wird im folgenden das Testen (Mehrfach-Umschalten) der Weiche von Modul 14 beschrieben.   
+
 ## 4.1 Weichentest
-Die folgende Windows-Batch-Datei `dcc141.bat` schaltet die Weiche mit der DCC-Adresse `141` auf Modul `module14` mehrmals um. Die Anzahl der Hin- und Her-Schaltungen kann als Parameter angegeben werden. Wird kein Parameter angegeben, wird viermal umgeschaltet.   
-* Anwendungsbeispiel: `dcc141 5`   
-   Die Weiche wird f&uuml;nfmal auf Abzweig und Gerade geschaltet.   
+Die Windows-Batch-Datei `m14_test.bat` schaltet die Weiche mit der DCC-Adresse `141` auf Modul `module14` mehrmals um. Die Anzahl der Hin- und Her-Schaltungen kann als Parameter angegeben werden. Wird kein Parameter angegeben, wird einmal umgeschaltet.   
+* Anwendungsbeispiel: `m14_test 3`   
+   Die Weiche wird dreimal auf Abzweig und Gerade geschaltet.   
 ### Quellcode   
 ```   
 @echo off
 setlocal enabledelayedexpansion
-REM echo dcc141.bat: Mehrmaliger Aufruf von mosquitto_pub -t 10.1.1.1 -t rcc/module14/set/141 -m 0|1
-REM echo Anwendungsbeispiel: repeat 3
+echo(
+echo m14_test.bat: MQTT-Befehle zum Testen von Modul 14
+REM Aufrufe wie mosquitto_pub -t 10.1.1.1 -t rcc/module14/set/... m 0|1
+echo Anwendungsbeispiel: m14_test 3
 set max_=%1%
-IF {%1%} == {} ( set max_=4 )
-set /a max2 = 2*max_
-set dir_=0
-set /a dir_=1-%dir_%
+IF {%1%} == {} ( set max_=1 )
+set /a max2 = max_
+REM -----Weiche-------------------------------------------------
 FOR /L %%A IN (1,1,%max2%) DO (
- set /a dir_=1 - !dir_!
- echo mosquitto_pub -t 10.1.1.1 -t rcc/module14/set/141 -m !dir_! 
- mosquitto_pub -h 10.1.1.1 -t rcc/module14/set/141 -m !dir_! 
- if !dir_!==0 (
-  REM ---wait 1,5 sec--------
-  ping 127.0.0.1 -n 2 >nul
-  >nul ping 127.0.0.1 -n 1 -w 500
- ) else (
-  REM ---wait 3 sec----------
-  timeout 3 /nobreak > nul
- ) 
+echo Weiche "Abzweig"
+ mosquitto_pub -h 10.1.1.1 -t rcc/module14/set/141 -m 0 
+ timeout 2 /nobreak > nul
+ echo Weiche "Gerade"
+ mosquitto_pub -h 10.1.1.1 -t rcc/module14/set/141 -m 1 
+ timeout 2 /nobreak > nul
 )
+REM -----FERTIG!------------------------------------------------
+echo ---Fertig!-----
 ```   
 
 [Zum Seitenanfang](#up)   

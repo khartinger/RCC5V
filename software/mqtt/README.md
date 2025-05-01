@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-02-12 <a name="up"></a><br>   
+Last modified: 2025-05-01 <a name="up"></a><br>   
 <h1>MQTT messages for the RCC system</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
@@ -124,5 +124,37 @@ mosquitto_pub -h 10.1.1.1 -t rcc/demo1/set/51 -m 1
 * Start the demo system and check whether the system is connected to the MQTT broker (line 2 should read `MQTT ok     Raspi11`)   
 * Connect to the Linux computer (e.g. with putty) and start the batch file in the command window:   
 `./rcc_demo1_start.sh`   
+
+# 4. Examples
+The directory `software/mqtt/batch` contains numerous examples of (Windows) batch files for testing the components of modules or for setting the start values of modules. As a rule, one pass through the module is enabled.   
+The following example describes the testing (multiple switching) of the points of module 14.   
+
+## 4.1 Switch test
+The Windows batch file `m14_test.bat` switches the switch with the DCC address `141` on module `module14` several times. The number of toggles can be specified as a parameter. If no parameter is specified, switching takes place once.   
+* Application example: `m14_test 3` 
+ The turnout is switched three times to branch and straight.
+### Source code
+```   
+@echo off
+setlocal enabledelayedexpansion
+echo(
+echo m14_test.bat: MQTT-Befehle zum Testen von Modul 14
+REM Aufrufe wie mosquitto_pub -t 10.1.1.1 -t rcc/module14/set/... m 0|1
+echo Anwendungsbeispiel: m14_test 3
+set max_=%1%
+IF {%1%} == {} ( set max_=1 )
+set /a max2 = max_
+REM -----Weiche-------------------------------------------------
+FOR /L %%A IN (1,1,%max2%) DO (
+echo Weiche "Abzweig"
+ mosquitto_pub -h 10.1.1.1 -t rcc/module14/set/141 -m 0 
+ timeout 2 /nobreak > nul
+ echo Weiche "Gerade"
+ mosquitto_pub -h 10.1.1.1 -t rcc/module14/set/141 -m 1 
+ timeout 2 /nobreak > nul
+)
+REM -----FERTIG!------------------------------------------------
+echo ---Fertig!-----
+```   
 
 [To the top of the page](#up)   

@@ -74,7 +74,7 @@ Folgende Vorgangsweise ist sinnvoll:
 1. Installation des Open Source [Layoutprogramm KiCad](https://www.kicad.org/) mit dem Plug-in "PCBWay".   
 2. Herstellen der ben&ouml;tigten Leiterplatten   
 F&uuml;r jede Komponente gibt es im Verzeichnis /fab/kicad die zur Herstellung der Leiterplatte [erforderlichen KiCad-Dateien](/fab/kicad). Die Leiterplatten sind zweiseitig, durchkontaktiert und mit Siebdruck auf beiden Seiten entworfen. M&ouml;chte man die Leiterplatten selbst herstellen, sind entsprechende Anpassungen erforderlich.   
-M&ouml;chte man die Leiterplatten dagegen zB von der Firma PCBWay fertigen lassen, geht man folgendermaßen vor:   
+M&ouml;chte man die Leiterplatten dagegen zB von der Firma PCBWay fertigen lassen, geht man folgenderma&szlig;en vor:   
 
 1. Laden des KiCad-Projekts in KiCad (aus dem Verzeichnis /kikad holen)   
 2. Starten des Leiterplatteneditors (oder Mausklick auf *.kicad_pcb-Datei)   
