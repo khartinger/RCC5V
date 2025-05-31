@@ -4,6 +4,8 @@ Letzte &Auml;nderung: 7.4.2025 <a name="up"></a><br>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
+<a name="x10"></a>   
+
 # 1. Einleitung
 ## 1.1 &Uuml;bersicht
 Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das Herstellen folgender Bl&ouml;cke beschrieben:   
@@ -13,10 +15,14 @@ Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das
 * [Block Abschaltbares Gleis (2IO)](#x50)   
 * [Block Zweifachumschalter (DPDT)](#x60)   
 
+<a name="x12"></a>   
+
 ## 1.2 Aufbau von Bl&ouml;cken
 Schaltbl&ouml;cke bestehen immer aus zwei Platinen: einer Steuerungs-(STRG-) und einer Anzeige-(LED-)Platine. Diese Platinen werden zusammengesteckt. Die Steuerungsplatine hat dazu zwei 8-polige Stiftleisten (nach unten gerichtet), die Anzeigeplatine 8-polige Buchsenleisten mit langen Kontakten (nach oben).   
 ![Zusammenstecken der Blockh&auml;lften](/images/300_assemble_block_parts.png "Zusammenstecken der Blockh&auml;lften")   
 _Bild 1: Zusammenstecken der Blockteile "Steuerung" (links) und "Anzeige" (rechts)_   
+
+<a name="x13"></a>   
 
 ## 1.3 Pinbelegung der Bl&ouml;cke
 Die Stecker f&uuml;r die Ein- und Ausg&auml;nge sind bei allen Schaltbl&ouml;cken gleich:   
@@ -72,7 +78,9 @@ Alle "LED"-Platinen enthalten Taster und Schalter, die im letzten Arbeitsschritt
 _Bild 9: L&ouml;ten von Tastern_   
 
 [Zum Seitenanfang](#up)   
+
 <a name="x20"></a>   
+<a name="x21"></a>   
 
 # 2. Zweiwegweiche
 
@@ -123,6 +131,8 @@ _Bild 13: Bauteile der "RW_5V_W2_STRG"-Platine_
 ### Versionen
 * V1 (241103): OK   
 * V2 (241115): OK   
+
+<a name="x22"></a>   
 
 ## 2.2 Zweiwegweiche: LED-Anzeige mit Taster
 Diese Platine dient zum Schalten einer Zweiwegweiche (mit je einem Taster f&uuml;r die Richtungswahl "Gerade" oder "Abzweig") und zur Anzeige der tats&auml;chlichen Weichenstellung. Es sind alle Taster- und LED-Positionen verdrahtet, sodass man durch die richtige Wahl von zwei Tastern und zwei LEDs alle Schaltbilder, n&auml;mlich   
@@ -294,6 +304,7 @@ _Bild 23: Pinbelegung des Steckers J5 von RW_5V_W2_STRG_
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
+<a name="x31"></a>   
 
 # 3. Dreiwegweiche
 
@@ -344,6 +355,8 @@ _Bild 27: Bauteile der "RW_5V_W3_STRG"-Platine_
 * V2 (241011): Bezeichnung GND (wird durch 0V ersetzt), Haltebohrungen alt, Lage der Wannenstecker J1 bis J3 falsch, kein 100 nF-Kondensator f&uuml;r die Versorgungsspannung, keine Schutzschaltung (R7, R8, R9, D13, D14, D15), falls beim Microcontroller die Versorgungsspannung ausf&auml;llt.   
 * V3 (241021): OK   
 * V4 (241024): OK   
+
+<a name="x32"></a>   
 
 ## 3.2 Dreiwegweiche: LED-Anzeige mit Taster
 Diese Platine dient zum Bedienen einer Dreiwegweiche (Richtung links - Mitte - rechts) und zur Anzeige der tats&auml;chlichen Weichenstellung.   
@@ -501,7 +514,9 @@ _Bild 34: Pinbelegung des Steckers J5 von RW_5V_W3_STRG_
 * V4 (241124): OK   
 
 [Zum Seitenanfang](#up)   
+
 <a name="x40"></a>   
+<a name="x41"></a>   
 
 # 4. Entkuppler (1OUT)   
 
@@ -560,6 +575,8 @@ _Nicht vergessen_: Optokoppler U1 richtig herum in die Fassung stecken...
 
 ### Versionen
 * V1 (240930): OK
+
+<a name="x42"></a>   
 
 ## 4.2 LED-Anzeige mit Taster zur Entkuppler-Bedienung
 Diese Platine dient zur Bedienung der Schaltplatine "RW_5V_1OUT_STRG".   
@@ -666,7 +683,9 @@ _Bild 44: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_
 * V2 (241102): OK   
 
 [Zum Seitenanfang](#up)   
+
 <a name="x50"></a>   
+<a name="x51"></a>   
 
 # 5. Abschaltbares Gleis (2IO)   
 
@@ -838,6 +857,7 @@ _Bild 54: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_
 
 [Zum Seitenanfang](#up)   
 <a name="x60"></a>   
+<a name="x61"></a>   
 
 # 6. Zweipoliger Umschalter (DPDT)   
 
@@ -893,6 +913,8 @@ _Nicht vergessen_: Optokoppler U1, U2 richtig herum in die Fassung stecken...
 
 ### Versionen
 * V1 (241124): OK
+
+<a name="x62"></a>   
 
 ## 6.2 LED-Anzeige f&uuml;r zweipoligen Umschalter
 Diese Platine dient zum Ansteuern und Anzeigen der Zust&auml;nde der Schaltplatine "RW_5V_DPDT_STRG". Sie enth&auml;lt   
