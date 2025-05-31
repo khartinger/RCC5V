@@ -15,7 +15,7 @@ Das Schalten erfolgt durch Verbinden von Pin 1 oder Pin 5 mit Wechselspannung. D
 ![W2_Direct_Switching1](./images/300_W2_DirectSwitching1.png "W2_Direct_Switching1")   
 _Bild 1: Schaltplan zu "Direktes Schalten einer Zweiwegweiche"_   
 
-![W2_Direct_Switching2](./images/300_W2_DirectSwitching2.png "W2_Direct_Switching2")   
+![W2_Direct_Switching2](./images/o_W2_DirectSwitching2.png "W2_Direct_Switching2")   
 _Bild 2: Direktes Schalten einer Zweiwegweiche_   
 
 # 2. Einspeisen der Wechselspannung über Sub-D-Stecker
