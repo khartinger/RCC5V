@@ -41,7 +41,19 @@ Im _Bild 4_ ist links ein (10-poliges) graues Testkabel mit Schraubklemmen und 2
 <a name="x30"></a>   
 
 # 3. Weichen-Schaltblock W2
-Zum Ansteuern von Zweiweg-Weichen wird der [Schaltblock W2](/fab/rcc4_block/LIESMICH.md#x20) verwendet. Dieser besteht - wie alle Blöcke - aus der Steuerungsplatine [`RW_5V_W2_STRG`](/fab/rcc4_block/LIESMICH.md#x20) und der Bedienplatine [`RW_5V_W2_LED`](/fab/rcc4_block/LIESMICH.md#x22). Der Zusammenbau und der Test des Blocks ist unter [https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md#x22](https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md#x22) beschrieben.   
+Zum Ansteuern von Zweiweg-Weichen wird der [Schaltblock W2](/fab/rcc4_block/LIESMICH.md#x20) verwendet. Dieser besteht - wie alle Blöcke - aus der Steuerungsplatine [`RW_5V_W2_STRG`](/fab/rcc4_block/LIESMICH.md#x20) und der Bedienplatine [`RW_5V_W2_LED`](/fab/rcc4_block/LIESMICH.md#x22). Der Zusammenbau und der Test des W2-Blocks ist unter [https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md#x23](https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md#x23) beschrieben. Dabei ist die Einbau-Richtung der Weiche zu beachten, damit die LEDs und Taster des W2-Blocks in die richtige Richtung zeigen. In diesem Beispiel wird eine linke Weiche mit Abzweigung nach Ost (Richtung rechts, oben) verwendet.   
+#### Anschluss des W2-Blocks
+* Zur Stromversorgung wird der J3-Stecker des W2-Weichenblocks mit einem 6-poligen Flachbandkabel mit dem POWER-Stecker der `RW_5V_SUB25_10`-Platine verbunden. Über dieses Kabel wird sowohl die 5V- als auch die Wechselspannung zum Schalten der Weiche übertragen.   
+* Der J5-Ausgang des W2-Blocks wird über ein 6-poliges Flachbandkabel mit der Hilfsplatine [`CON_6pol_3`](/fab/rcc5_add_ons/LIESMICH.md#x40) verbunden.   
+
+   ![J3-J5 Pinlayout](./images/300_W2_J3-J5_Pinlayout1.png "J3-J5 Pinlayout")   
+   _Bild 5: Pinbelegung der Stecker des W2-Blocks_
+
+![W2_Block1](./images/480_W2_block1.png "W2_Block1")   
+_Bild 6: _   
+
+![W2_Block2](./images/480_W2_block2.png "W2_Block")   
+_Bild 7: _   
 
 # ... To Do ...
 
