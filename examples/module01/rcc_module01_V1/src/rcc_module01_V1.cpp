@@ -867,7 +867,7 @@ void setup() {
  for(int i=0; i<IOEX_NUM; i++) {
   //aIOEx[i].setInvertOutput(true);
   s1=String((*pIOEx[i]).getAddress(), 16);
-  s3="Search PCF8474 0x"+s1;
+  s3="Search PCF8574 0x"+s1;
   s3=s3.substring(0,SCREEN_LINE_LEN);       // max. 21 character
   showLine(3,s3);
   while (!(*pIOEx[i]).begin(bfirstComp)) {  // I2C started
