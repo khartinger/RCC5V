@@ -76,7 +76,10 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_2pol_141_V1](/fab/kicad/CON_2pol_
 * V1 (250117): OK   
 
 [Zum Seitenanfang](#up)   
+
 <a name="x40"></a>   
+
+<a name="x41"></a>   
 
 # 4. Verteilerplatine von 6-poligem Kabel auf 3 Schraubklemmen (CON_6pol_3)   
 Diese Platine dient zum Anschluss einer Zweiwegweiche, daher sind nur die Pins 1, 3 und 5 herausgef&uuml;hrt. Die Dr&auml;hte der Weiche k&ouml;nnen direkt angeschraubt werden, wobei der mittlere Anschluss der gemeinsame R&uuml;ckleiter ist.   
@@ -109,6 +112,7 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_
 * V2 (250208): OK   
 
 [Zum Seitenanfang](#up)   
+
 <a name="x50"></a>   
 
 # 5. Verteilerplatine von 6-poligem Kabel auf 6 Schraubklemmen (CON_6pol_6)   
