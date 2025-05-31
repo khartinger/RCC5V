@@ -15,13 +15,21 @@ Das Schalten erfolgt durch Verbinden von Pin 1 oder Pin 5 mit Wechselspannung. D
 ![W2_Direct_Switching1](./images/300_W2_DirectSwitching1.png "W2_Direct_Switching1")   
 _Bild 1: Schaltplan zu "Direktes Schalten einer Zweiwegweiche"_   
 
-![W2_Direct_Switching2](./images/o_W2_DirectSwitching2.png "W2_Direct_Switching2")   
+![W2_Direct_Switching2](./images/480_W2_DirectSwitching2.png "W2_Direct_Switching2")   
 _Bild 2: Direktes Schalten einer Zweiwegweiche_   
 
 # 2. Einspeisen der Wechselspannung über Sub-D-Stecker
-Das folgende Bild zweigt die Verwendung des 25-poligen Steckers mit 5V-Netzteil zum Einspeisen der Wechselspannung:   
-![W2_Sub-D_1](./images/300_W2_Sub-D_1.png "W2_Sub-D_1")   
-_Bild 3: Einspeisen der Wechselspannung über Sub-D-Stecker_   
+In der [Norm NEM 908D](/info/con_NEM908/LIESMICH.md) wird die Verbindung von Eisenbahnmodulen durch 25-polige Sub-D-Stecker und Buchsen beschreiben. Daher ist es naheliegend, auch hier die Versorgungsspannung der Weiche über ein 25-poliges Buchsenkabel zuzuführen.   
+Das folgende Bild zeigt die Verwendung des [25-poligen Steckers mit 5V-Netzteil](/fab/rcc1_supply/LIESMICH.md#x30) zum Einspeisen der Wechselspannung:   
+
+![W2_Sub-D_1](./images/480_W2_Sub-D_1.png "W2_Sub-D_1")   
+_Bild 3: Schaltplan zum Einspeisen der Wechselspannung über Sub-D-Stecker_   
+
+![W2_Sub-D_2](./images/480_W2_Sub-D_2.png "W2_Sub-D_2")   
+_Bild 4: Einspeisen der Wechselspannung über Sub-D-Stecker_   
+
+Im _Bild 4_ ist links ein (10-poliges) graues Testkabel mit Schraubklemmen und 25-poliger Buchse (silber) zu sehen. Dieses ist die Platine mit Sub-D-Stecker und 5V-Netzteil angesteckt. Die zweipolige, rote Schraubklemme in der Klemmenreihe stellt die Wechselspannung für die Weiche zur Verfügung.   
+
 
 
 # ... To Do ...
