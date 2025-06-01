@@ -62,7 +62,7 @@ Das erweiterte I²C-Board [`Shield_I2C_5V_3V3_big` wird hier](#x40) beschrieben.
 
 # 2. ESP32-Shield I²C-Bus (Shield_I2C_5V_3V3)   
 Diese Platine im D1-mini-Format stellt zwei I2C-Busse zur Verf&uuml;gung:   
-* I2C-Bus 1 mit SCL1=IO22=D1 und SDA1=IO21=D2 und 3,3V zum Anschluss eines 1,56"-OLED-Displays.   
+* I2C-Bus 1 mit SCL1=IO22=D1 und SDA1=IO21=D2 und 3,3V zum Anschluss eines 1,54"-OLED-Displays.   
 * I2C-Bus 2 mit SCL2=IO16=D4 und SDA2=IO17=D3 und 5V zum Anschluss der PCF8574-IO-Expander.   
 Die Pinbelegung der Anschl&uuml;sse ist so gew&auml;hlt, dass sich ein Display bzw. die IO-Expander-Platinen leicht anschlie&szlig;en lassen (Pinbelegung I2C-1: SDA3-SCL3-3V3-GND und I2C-2: SCL5-SDA5-GND-5V).   
 
@@ -179,7 +179,7 @@ _Bild 13: Bauteile f&uuml;r den Edelstahl-Taster_
 
 # 4. Das erweiterte I²C-Board Shield_I2C_5V_3V3_big
 Diese Platine stellt zwei I²C-Busse zur Verf&uuml;gung:   
-* __I2C-Bus Nr. 1__ mit SCL1=IO22=D1 und SDA1=IO21=D2 und 3,3V zum direkten Anschluss eines 1,56"-OLED-Displays.   
+* __I2C-Bus Nr. 1__ mit SCL1=IO22=D1 und SDA1=IO21=D2 und 3,3V zum direkten Anschluss eines 1,54"-OLED-Displays.   
 * __I2C-Bus Nr. 2__ mit SCL2=IO16=D4 und SDA2=IO17=D3 und 5V zum Anschluss der PCF8574-IO-Expander-Platinen.   
 
 Die Reihenfolge der Pins bei den Anschl&uuml;ssen J4 bis J6 ist so gew&auml;hlt, dass sich das Display bzw. die IO-Expander-Platinen leicht anschlie&szlig;en lassen (Pinbelegung I2C-1: SDA3-SCL3-3V3-GND und I2C-2: SCL5-SDA5-GND-5V).   

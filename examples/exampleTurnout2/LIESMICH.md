@@ -7,6 +7,11 @@ Letzte &Auml;nderung: 27.11.2024 <a name="up"></a><br>
 # Worum geht es hier?
 Diese Anleitung beschreibt Schritt für Schritt die Entstehung des RCC-Systems zum Schalten einer Weiche. Die Weiche wird durch einen elektrischen Weichenantrieb mit Endabschaltung gestellt (zB. Fleischmann 640000).  
 Zu Beginn wird die Weiche direkt mit Wechselstrom aus einem Trafo geschaltet und danach werden der Reihe nach weitere Komponenten eingebaut, bis das Gesamtsystem fertig ist.   
+Damit gibt es folgende Möglichkeiten zum Schalten der Weiche:   
+1. Schalten der Weiche von Hand und Anzeige des Schaltzustands auf dem Display.   
+2. Schalten der Weiche mit den Tasten des W2-Blocks.   
+3. Schalten der Weiche mit DCC-Befehlen.   
+4. Schalten der Weiche mit MQTT-Befehlen.   
 
 <a name="x10"></a>   
 
@@ -16,6 +21,13 @@ Beim direkten Schalten einer Weiche mit Wechselstrom wird die Wechselspannung an
 Das Schalten erfolgt durch Verbinden von Pin 1 oder Pin 5 mit Wechselspannung. Der Rückleiter liegt fix an Pin 3.   
 ![W2_Direct_Switching1](./images/300_W2_DirectSwitching1.png "W2_Direct_Switching1")   
 _Bild 1: Schaltplan zu "Direktes Schalten einer Zweiwegweiche"_   
+
+#### Praktischer Aufbau
+Für den praktischen Aufbau werden folgende Mittel benötigt:   
+1. Zweiwegweiche mit elektrischem Antrieb mit Endabschaltung, zB Fleischmann-Weiche 9170 und Antrieb 640000   
+2. Modellbahn-Trafo mit Wechselspannungsausgang, zB Conrad BV00/026 oder Roco 0903 usw.   
+3. Zwei Leitungen Stift-Buchse (Länge egal zB 30 cm)   
+4. Eigenbau-Hilfsplatine [`CON_6pol_3`](/fab/rcc5_add_ons/LIESMICH.md#x40)    
 
 ![W2_Direct_Switching2](./images/480_W2_DirectSwitching2.png "W2_Direct_Switching2")   
 _Bild 2: Direktes Schalten einer Zweiwegweiche_   
@@ -30,6 +42,16 @@ Das folgenden Bilder zeigen die Verwendung des [25-poligen Steckers mit 5V-Netzt
 
 ![W2_Sub-D_1](./images/480_W2_Sub-D_1.png "W2_Sub-D_1")   
 _Bild 3: Schaltplan zum Einspeisen der Wechselspannung über Sub-D-Stecker_   
+
+#### Praktischer Aufbau
+Für den praktischen Aufbau werden folgende Mittel benötigt:   
+1. Zweiwegweiche mit elektrischem Antrieb mit Endabschaltung, zB Fleischmann-Weiche 9170 und Antrieb 640000   
+2. Modellbahn-Trafo mit Wechselspannungsausgang, zB Conrad BV00/026 oder Roco 0903 usw.   
+3. Zwei Leitungen Stift-Buchse (Länge egal zB 30 cm)   
+4. Eigenbau-Hilfsplatine [`CON_6pol_3`](/fab/rcc5_add_ons/LIESMICH.md#x40)    
+5. Eigenbau-Platine [`RW_5V_SUB25_10`](/fab/rcc5_add_ons/LIESMICH.md#x40)    
+6. Zwei Leitungen Stift-Stift (Länge egal zB 15 cm) zum Anschluss des Trafos am Zuleitungskabel   
+7. 10-poliges Zuleitungskabel mit 8- (oder 10-) poliger Schraubklemme und 25-poliger Sub-D-Buchse   
 
 ![W2_Sub-D_2](./images/480_W2_Sub-D_2.png "W2_Sub-D_2")   
 _Bild 4: Einspeisen der Wechselspannung über Sub-D-Stecker_   
@@ -46,8 +68,15 @@ Auf der Rückseite des W2-Blocks befinden sich folgende Anschlüsse:
 ![J3-J5 Pinlayout](./images/300_W2_J3-J5_Pinlayout1.png "J3-J5 Pinlayout")   
 _Bild 5: Pinbelegung der Stecker des W2-Blocks_
 
+#### Praktischer Aufbau
+Für den praktischen Aufbau werden folgende Mittel benötigt:   
+  Nr. 1., 2., 4. bis 7. : Wie bei Punkt 2. (ohne Punkt 3.)   
+  8. [Schaltblock W2](/fab/rcc4_block/LIESMICH.md#x20)   
+  9. Flachbandkabel 6-polig, 30 cm   
+  10. Flachbandkabel 6-polig, 11 cm   
+
 #### Anschluss des W2-Blocks
-* Zur Stromversorgung wird der J3-Stecker des W2-Weichenblocks mit einem 6-poligen Flachbandkabel mit dem POWER-Stecker der `RW_5V_SUB25_10`-Platine verbunden. Über dieses Kabel wird sowohl die 5V- als auch die Wechselspannung zum Schalten der Weiche übertragen.   
+* Zur Stromversorgung wird der J3-Stecker des W2-Weichenblocks mit einem 30 cm langen, 6-poligen Flachbandkabel mit dem POWER-Stecker der `RW_5V_SUB25_10`-Platine verbunden. Über dieses Kabel wird sowohl die 5V- als auch die Wechselspannung zum Schalten der Weiche übertragen.   
 * Der J5-Ausgang des W2-Blocks wird über ein 6-poliges Flachbandkabel mit der Hilfsplatine [`CON_6pol_3`](/fab/rcc5_add_ons/LIESMICH.md#x40) verbunden.   
 
 ![W2_Block1](./images/480_W2_block1.png "W2_Block1")   
@@ -61,14 +90,14 @@ Das folgende Bild zeigt die Anschlüsse des W2-Blocks von der Rückseite. Das Ve
 _Bild 8: Rückseite des W2-Blocks_   
 
 #### Test
-Ist der Trafo eingeschaltet, so kann durch Drücken der Tasten am W2-Block die Wiche gestellt werden.   
+Ist der Trafo eingeschaltet, so kann durch Drücken der Tasten am W2-Block die Weiche gestellt werden.   
 
 [Zum Seitenanfang](#up)   
 
 <a name="x40"></a>   
 
 # 4. Vorbereitung der Steuerung durch Mikrocontroller
-Als Hardware für die Mikrocontroller-Steuerung wird ein ESP32 mit DCC- und I²C-Shield sowie einem 1,56-Zoll-Display verwendet. Der Zusammenbau ist unter [https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md](https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md) beschrieben.   
+Als Hardware für die Mikrocontroller-Steuerung wird ein ESP32 mit DCC- und I²C-Shield sowie einem 1,54-Zoll-Display verwendet. Der Zusammenbau ist unter [https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md](https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md) beschrieben.   
 
 Als Software kann die [Demo-Software](/software/rcc_demo1/LIESMICH.md) verwendet werden. Auch wenn nur die Zweiwegweiche mit der DCC-Adresse 21 angeschlossen wird, so funktioniert die Steuerung trotzdem.   
 
@@ -82,10 +111,49 @@ _Bild 9: Anschluss des ESP32 an die Versorgungsplatine_
 <a name="x50"></a>   
 
 # 5. Verbindung der Mikrocontroller-Steuerung mit dem W2-Block
-Die Verbindung zwischen der Mikrocontroller-Steuerung und dem W2-Block erfolgt über I²C-PCF8574-I/O-Platinen. Diese sind mit dem Mikrocontroller über den I²C-Bus und mit dem W2-Block über 2x2 Datenleitungen verbunden.   
+Die Verbindung zwischen der Mikrocontroller-Steuerung und dem W2-Block erfolgt über [I²C-PCF8574-I/O-Platinen](/fab/rcc3_i2c/LIESMICH.md). Diese sind mit dem Mikrocontroller über den I²C-Bus und mit dem W2-Block über 2x2 Datenleitungen verbunden. Zwei der Leitungen dienen zum Ansteuern der Weiche und zwei zur Rückmeldung des Schaltzustands. Die Datenleitungen könnten direkt beim W2-Block angesteckt werden, jedoch ist es übersichtlicher, wenn man als "Zwischenstecker" die Platine [`CON_10pol_PIN`](/fab/rcc5_add_ons/LIESMICH.md#x90) verwendet.   
+__Wichtig__: Der Anschluss Datenleitungen muss so erfolgen, wie es im ESP32-Programm definiert ist. Für die `rcc_demo1`-Software ist die Zweiwegweiche an die Pins P1 und P2 der PCF8574-Expander anzuschließen:   
+* I²C-Adresse 0x40-Pin P1 - CON_10pol_PIN-IN1: Steuerleitung WSA zur Weiche (rot)   
+* I²C-Adresse 0x40-Pin P2 - CON_10pol_PIN-IN2: Steuerleitung WSB zur Weiche (orange)   
+* I²C-Adresse 0x41-Pin P1 - CON_10pol_PIN-OUT1: Rückmeldeleitung WRA von der Weiche (rot)   
+* I²C-Adresse 0x41-Pin P2 - CON_10pol_PIN-OUT2: Rückmeldeleitung WRB von der Weiche (orange)   
+
+Die Farbe der Verbindungsleitungen ist an sich egal, aber die Verwendung der gleichen Farbcodierung wie bei Flachbandkabel ist sinnvoll:   
+* PCF8574-Pin P0 = Leitung 1: braun   
+* PCF8574-Pin P1 = Leitung 2: rot   
+* PCF8574-Pin P2 = Leitung 3: orange   
+* PCF8574-Pin P3 = Leitung 4: gelb   
+* PCF8574-Pin P4 = Leitung 5: grün   
+* PCF8574-Pin P5 = Leitung 6: blau   
+* PCF8574-Pin P6 = Leitung 7: violett   
+* PCF8574-Pin P7 = Leitung 8: grau   
+
+![Gesamtschaltung Weichensteuerung](./images/600_W2_circuit1.png "Gesamtschaltung Weichensteuerung")   
+_Bild 10: Gesamtschaltung der Weichensteuerung_
+
+PCF8574-I/O-Platinen haben keine Befestigungsbohrungen, daher muss man sie entweder mit Doppelklebeband festkleben oder die Hilfsplatinen [`CON_I2C_20mm`](/fab/rcc3_i2c/LIESMICH.md#x20) und/oder [`CON_I2C_Term`](/fab/rcc3_i2c/LIESMICH.md#x60) verwenden. Diese Platinen verlängern einfach den I²C-Bus, haben eine 2,2 mm-Bohrung und einen 100 nF-Kondensator zur Stabilisierung der 5V-Spannung. Die Platine `CON_I2C_Term` enthält weiters zwei I²C-Abschlusswiderstände.    
+
+Das folgende Bild zeigt den Gesamtaufbau der Weichensteuerung.   
+![Aufbau Weichensteuerung](./images/480_W2_structure2.png "Aufbau Weichensteuerung")   
+_Bild 11: Gesamtaufbau der Weichensteuerung_
+
+# 6. Abschließender Test des W2-Aufbaus
+## 6.1 Schalten der Weiche von Hand
+* Trafo einschalten und warten bis der ESP32 hochgefahren ist. Die Zwischenbildschirme können durch kurzes Bedühren der beiden Drähte (IO19 gegen Masse) übersprungen werden.   
+* Ändert man die Weichenstellung mit dem Schieber auf dem Weichenantrieb, so ändert sich die Anzeige bei T2 (DCC 21) von `__` (Gerade) auf `_/` (Abzweig) und umgekehrt.   
+
+## 6.2 Schalten der Weiche mit den Tasten des W2-Blocks
+* Trafo einschalten und warten bis der ESP32 hochgefahren ist. Die Zwischenbildschirme können durch kurzes Bedühren der beiden Drähte (IO19 gegen Masse) übersprungen werden.   
+* Drückt man den mittleren (grünen) Taster, so wird die Weiche auf Gerade gestellt.   
+* Drückt man den oberen (gelben) Taster, so wird die Weiche auf Abzweig gestellt.   
+* Die Stellung der Weiche ist wieder in der Anzeige bei T2 (DCC 21) ersichtlich   
+(`__` = Gerade, `_/` = Abzweig).   
+
+## 6.3 Schalten der Weiche mit DCC-Befehlen
+Zum Schalten mit DCC-Befehlen wird eine DCC-Zentrale benötigt. Eine einfache Möglichkeit ist die Verwendung der MultiMaus von Roco.   
 
 
+## 6.4 Schalten der Weiche mit MQTT-Befehlen
 
-# ... To Do ...
 
 [Zum Seitenanfang](#up)   
