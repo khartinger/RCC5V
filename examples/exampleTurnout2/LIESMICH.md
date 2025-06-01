@@ -43,6 +43,11 @@ Das folgenden Bilder zeigen die Verwendung des [25-poligen Steckers mit 5V-Netzt
 ![W2_Sub-D_1](./images/480_W2_Sub-D_1.png "W2_Sub-D_1")   
 _Bild 3: Schaltplan zum Einspeisen der Wechselspannung über Sub-D-Stecker_   
 
+Als Alternative zum Kabel mit Schraubklemmen und 25-poliger Sub-D-Buchse kann man auch die Platine [`CON_SubD_Screw10`](/fab/rcc1_supply/LIESMICH.md#x34) und ein 25-poliges Kabel mit beidseitigen Buchsen verwenden. In diesem Fall schaut der Schaltplan folgendermaßen aus:   
+
+![W2_Sub-D_V2](./images/480_W2_Sub-D_V2.png "W2_Sub-D_V2")   
+_Bild 4: Schaltplan zum Einspeisen der Wechselspannung über Sub-D-Stecker - Version 2_   
+
 #### Praktischer Aufbau
 Für den praktischen Aufbau werden folgende Mittel benötigt:   
 1. Zweiwegweiche mit elektrischem Antrieb mit Endabschaltung, zB Fleischmann-Weiche 9170 und Antrieb 640000   
@@ -54,7 +59,7 @@ Für den praktischen Aufbau werden folgende Mittel benötigt:
 7. 10-poliges Zuleitungskabel mit 8- (oder 10-) poliger Schraubklemme und 25-poliger Sub-D-Buchse   
 
 ![W2_Sub-D_2](./images/480_W2_Sub-D_2.png "W2_Sub-D_2")   
-_Bild 4: Einspeisen der Wechselspannung über Sub-D-Stecker_   
+_Bild 5: Einspeisen der Wechselspannung über Sub-D-Stecker_   
 
 Im _Bild 4_ ist links ein (10-poliges) graues Testkabel mit Schraubklemmen und 25-poliger Buchse (silber) zu sehen. Dieses ist an die Platine [`RW_5V_SUB25_10`](/fab/rcc1_supply/LIESMICH.md#x33) mit Sub-D-Stecker, Klemmenleiste und 5V-Netzteil angesteckt. Die zweipolige, rote Schraubklemme in der Klemmenreihe stellt die Wechselspannung für die Weiche zur Verfügung.   
 
@@ -66,7 +71,7 @@ Im _Bild 4_ ist links ein (10-poliges) graues Testkabel mit Schraubklemmen und 2
 Zum Ansteuern von Zweiweg-Weichen wird der [Schaltblock W2](/fab/rcc4_block/LIESMICH.md#x20) verwendet. Dieser besteht aus der Steuerungsplatine [`RW_5V_W2_STRG`](/fab/rcc4_block/LIESMICH.md#x20) und der Bedienplatine [`RW_5V_W2_LED`](/fab/rcc4_block/LIESMICH.md#x22). Der Zusammenbau und der Test des W2-Blocks ist unter [https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md#x23](https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md#x23) beschrieben. Dabei ist die Einbau-Richtung der Weiche zu beachten, damit die LEDs und Taster des W2-Blocks in die richtige Richtung zeigen. In diesem Beispiel wird eine linke Weiche mit Abzweigung nach Ost (Richtung rechts, oben) verwendet.   
 Auf der Rückseite des W2-Blocks befinden sich folgende Anschlüsse:  
 ![J3-J5 Pinlayout](./images/300_W2_J3-J5_Pinlayout1.png "J3-J5 Pinlayout")   
-_Bild 5: Pinbelegung der Stecker des W2-Blocks_
+_Bild 6: Pinbelegung der Stecker des W2-Blocks_
 
 #### Praktischer Aufbau
 Für den praktischen Aufbau werden folgende Mittel benötigt:   
@@ -80,14 +85,14 @@ Für den praktischen Aufbau werden folgende Mittel benötigt:
 * Der J5-Ausgang des W2-Blocks wird über ein 6-poliges Flachbandkabel mit der Hilfsplatine [`CON_6pol_3`](/fab/rcc5_add_ons/LIESMICH.md#x40) verbunden.   
 
 ![W2_Block1](./images/480_W2_block1.png "W2_Block1")   
-_Bild 6: Schaltplan zum Anschließen eines W2-Blocks_   
+_Bild 7: Schaltplan zum Anschließen eines W2-Blocks_   
 
 ![W2_Block2](./images/480_W2_block2.png "W2_Block")   
-_Bild 7: Anschluss eines W2-Blocks_   
+_Bild 8: Anschluss eines W2-Blocks_   
 
 Das folgende Bild zeigt die Anschlüsse des W2-Blocks von der Rückseite. Das Versorgungskabel (unten) kann zu weiteren Blöcken geführt werden.   
 ![Rückseite W2_Block2](./images/300_W2_block2_back.png "Rückseite W2_Block")   
-_Bild 8: Rückseite des W2-Blocks_   
+_Bild 9: Rückseite des W2-Blocks_   
 
 #### Test
 Ist der Trafo eingeschaltet, so kann durch Drücken der Tasten am W2-Block die Weiche gestellt werden.   
@@ -104,7 +109,7 @@ Als Software kann die [Demo-Software](/software/rcc_demo1/LIESMICH.md) verwendet
 Nach der Programmierung des ESP32 und dem Zusammenbau der Harware kann diese getestet werden. Dazu wird der DCC-Anschluss des [DCC-Shields](/fab/rcc2_esp32/LIESMICH.md#x30) über ein 6-poliges Kabel mit dem DCC-Steckers der Versorgungsplatine [`RW_5V_SUB25_10`](/fab/rcc1_supply/LIESMICH.md#x33) verbunden. Nach dem Einschalten des Trafos fährt der ESP32 hoch und stoppt bei der Überprüfung des I²C-Busses mit der Fehlermeldung "Search PCF8574 0x20 - 20 NOT found - Check wiring!", da noch keine I²C-PCF8574-I/O-Platinen angeschlossen sind.   
 
 ![ESP32 mit W2-Block](./images/480_W2_ESP32_1.png "ESP32 mit W2-Block")    
-_Bild 9: Anschluss des ESP32 an die Versorgungsplatine_   
+_Bild 10: Anschluss des ESP32 an die Versorgungsplatine_   
 
 [Zum Seitenanfang](#up)   
 
@@ -129,13 +134,13 @@ Die Farbe der Verbindungsleitungen ist an sich egal, aber die Verwendung der gle
 * PCF8574-Pin P7 = Leitung 8: grau   
 
 ![Gesamtschaltung Weichensteuerung](./images/600_W2_circuit1.png "Gesamtschaltung Weichensteuerung")   
-_Bild 10: Gesamtschaltung der Weichensteuerung_
+_Bild 11: Gesamtschaltung der Weichensteuerung_
 
 PCF8574-I/O-Platinen haben keine Befestigungsbohrungen, daher muss man sie entweder mit Doppelklebeband festkleben oder die Hilfsplatinen [`CON_I2C_20mm`](/fab/rcc3_i2c/LIESMICH.md#x20) und/oder [`CON_I2C_Term`](/fab/rcc3_i2c/LIESMICH.md#x60) verwenden. Diese Platinen verlängern einfach den I²C-Bus, haben eine 2,2 mm-Bohrung und einen 100 nF-Kondensator zur Stabilisierung der 5V-Spannung. Die Platine `CON_I2C_Term` enthält weiters zwei I²C-Abschlusswiderstände.    
 
 Das folgende Bild zeigt den Gesamtaufbau der Weichensteuerung.   
 ![Aufbau Weichensteuerung](./images/480_W2_structure2.png "Aufbau Weichensteuerung")   
-_Bild 11: Gesamtaufbau der Weichensteuerung_
+_Bild 12: Gesamtaufbau der Weichensteuerung_
 
 # 6. Abschließender Test des W2-Aufbaus
 ## 6.1 Schalten der Weiche von Hand
@@ -150,10 +155,27 @@ _Bild 11: Gesamtaufbau der Weichensteuerung_
 (`__` = Gerade, `_/` = Abzweig).   
 
 ## 6.3 Schalten der Weiche mit DCC-Befehlen
-Zum Schalten mit DCC-Befehlen wird eine DCC-Zentrale benötigt. Eine einfache Möglichkeit ist die Verwendung der MultiMaus von Roco.   
+Zum Schalten mit DCC-Befehlen wird eine DCC-Zentrale benötigt. Eine einfache Möglichkeit ist die Verwendung der MultiMaus von Roco. Die DCC-Zentrale besteht dabei aus folgenden Teilen:   
+* Roco Netzteil 10850   
+* Roco Master/Booster 10764   
+* Roco MultiMaus   
 
+![Schaltung DCC-Roco](./images/600_W2_roco1.png "Schaltung DCC Roco")   
+_Bild 13: Gesamtschaltung mit Roco-Steuerung_
+
+Zum Schalten der Weiche mit DCC-Befehlen stellt man mit der Lok/Weiche-Taste ![Taste_Lok_Weiche](./images/50_taste_lok_weiche.png) die Weichenadresse auf 21 ein und drückt die Tasten für Gerade und Abzweig ![Pfeiltasten](./images/50_taste_pfeil.png).   
 
 ## 6.4 Schalten der Weiche mit MQTT-Befehlen
+Zum Schalten der Weiche mit MQTT-Befehlen muss auf einem Rechner oder Raspperry Pi der Mosquitto-Broker laufen und über WLAN erreichbar sein.    
+| Annahmen:      |                                                    |   
+|----------------|----------------------------------------------------|   
+| WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
+| MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
 
+Befindet man sich im Netzwerk mit dem Broker und ist `mosquitto_pub` auf dem Rechner oder Raspberry installiert, so kann man über ein Kommando-Fenster die Weiche schalten, zB.   
+Schalten der Weiche auf "Gerade":   
+`mosquitto_pub -h 10.1.1.1 -t rcc_demo1/set/21 -m 1`   
+Schalten auf Abzweig:   
+`mosquitto_pub -h 10.1.1.1 -t rcc_demo1/set/21 -m 0`   
 
 [Zum Seitenanfang](#up)   
