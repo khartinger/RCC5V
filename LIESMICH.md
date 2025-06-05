@@ -83,6 +83,7 @@ __Anwendungsbeispiele__
 * [Beispiel-Verdrahtung einer Weiche](/examples/exampleTurnout2/LIESMICH.md)   
 * [Bau eines RCC-Blocktesters](/examples/blocktester/LIESMICH.md)   
 * [Bau des Moduls 12: "Ausweichstelle und Abstellgleis"](/examples/module12/LIESMICH.md)   
+* [Bau des Moduls 13 "Kehrschleife West"](/examples/module13/LIESMICH.md)   
 * [Bau des Moduls 14: "Zwei Gleise auf 1 Gleis"](/examples/module14/LIESMICH.md)   
 * [Umbau des Moduls 01: "Gleis 1 auf 2 mit G&uuml;terschuppen (2010)"](/examples/module01/LIESMICH.md)   
 
