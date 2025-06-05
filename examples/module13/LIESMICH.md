@@ -6,29 +6,26 @@ Letzte &Auml;nderung: 5.6.2025 <a name="up"></a><br>
 
 [Hier geht es direkt zur Inhalts&uuml;bersicht](#x05)   
 
-
-
-
-# ====================================
-# ===== Vorlage für Beschreibung =====
 # &Uuml;bersicht
-Diese Anleitung beschreibt den Bau eines 100 x 25 cm² gro&szlig;en N-Spur-Gleis-Moduls M12 „Ausweichstelle und Abstellgleis“. Das Bild zeigt das technisch fertige Modul ohne Landschaftsgestaltung. An der Forderfront erkennt man die Bedien- und Anzeigeelemente f&uuml;r den Handbetrieb.   
+Diese Anleitung beschreibt den Bau eines 80 x 50 cm² gro&szlig;en N-Spur-Gleis-Moduls M13 „Kehrschleife West“. Die Kehrschleife ist symmetrisch auf dem Modul angeordnet, sodass sie auch spiegelverkehrt verwendet werden könnte.   
+Ein von Osten kommender Zug fährt über die Kehrschleife zurück nach Osten. In der Modul-Mitte befindet sich ein 45 cm langes Gleis mit Stromabschaltemöglichkeit zum Abstellen eines Zuges.   
+Das Bild zeigt das technisch fertige Modul ohne Landschaftsgestaltung. An der Forderfront erkennt man die Bedien- und Anzeigeelemente f&uuml;r den Handbetrieb.   
 
-![Modul M12](./images/300_Gleis_montiert1.png "Modul M12")   
+![Modul M13](./images/300_m13_Gleis_montiert1.png "Modul M13")   
 _Bild 1: Rahmen mit Grundplatte und Gleisen._   
 
 ## Eigenschaften des Moduls
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit und ohne Schotterbett |   
-| Gleisbild      | 1x Dreiwegweiche, 2x Zweiwegweiche, 1x Entkuppler, 4x abschaltbarer Gleisabschnitt |   
+| Gleisbild      | 1x Dreiwegweiche, 1x abschaltbarer Gleisabschnitt |   
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
 | Fahrstrom     | Analog- oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | * H&auml;ndisch direkt an der Modulvorderseite <br> * &uuml;ber DCC <br> * durch MQTT-Nachrichten (&uuml;ber WLAN) |   
-| Bedienelemente mit R&uuml;ckmeldung | 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 121 und 122) <br> 2x Zweiwegweiche (Block W2, DCC 123 und 128) <br> 1x Entkuppler (Block 1OUT, DCC 124) <br> 4x Fahrstrom (Block 2IO, DCC 125, 126, 127 und 129) |   
+| Bedienelemente mit R&uuml;ckmeldung | 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 131 und 132) <br> 1x Fahrstrom (Block 2IO, DCC 133) |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 | MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
-| Sonstiges | * Einfaches Verbinden mit anderen Modulen durch ausziehbare Gleise an den Segment-Enden |   
+| Sonstiges | * Einfaches Verbinden mit anderen Modulen durch ein ausziehbares Gleis am Segment-Ende |   
 
 <a name="x05"></a>   
 
@@ -42,6 +39,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
+<a name="x11"></a>   
 
 # 1. Vorbereitung und Einkauf
 ## 1.1 Entwurf des Gleisplans
@@ -72,42 +70,41 @@ Der Entwurf des Gleisplans erfolgt in zwei Schritten:
 * Zuerst wird der Gleisplan so entworfen, dass er grunds&auml;tzlich den Anforderungen entspricht.   
 * Im n&auml;chsten Schritt wird die Lage der Stromversorgungsstellen und Isolationsstellen festgelegt. Das kann dazu f&uuml;hren, dass zB Gleise in zwei Teile zerlegt werden m&uuml;ssen, damit man 2-polige Anschlusskabel (Fleischmann 22217) oder Isolierschienenverbinder (Fleischmann 9403) anbringen kann.   
 
-Der folgende Gleisplan wurde mit dem Programm [AnyRail](https://www.anyrail.com/) gezeichnet.   
-![M12 Gleisplan](./images/300_m12_gleisplan.png "M12 Gleisplan")   
+Der folgende Gleisplan wurde mit dem Programm [AnyRail Version 7](https://www.anyrail.com/) gezeichnet.   
+![M12 Gleisplan](./images/480_m12_gleisplan.png "M12 Gleisplan")   
 _Bild 4: Gleisplan_   
 
 Dunkelgraue Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
-Das 2. Gleis von links ist ein Gleis ohne Schotterbett mit der L&auml;nge 17,2 mm (22207). Die &uuml;brigen kurzen Gleise sind Gerade (9104) mit der L&auml;nge 27,75 mm. (Im Plan schlecht lesbar.)   
-Eine Besonderheit stellt das Gleis 9136 mit dem Kommentar "R4 9 Schwellen" dar: Hier wird ein Gleis 9136 zuerst links mit der Weiche verbunden und danach bei einem Winkel von 6,14° (= 9 Schwellen) "abgeschnitten".   
+
+<a name="x12"></a>   
 
 ## 1.2 Schienenkauf - St&uuml;ckliste
 Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:   
 | Anzahl | Nummer | Name | Euro/Stk | Euro |   
 | :---: | :---: | :--- |  ---: |  ---: |   
-| 1 | 22207 |  N Fleischmann, Gerade 17,2 mm | 2,00 | 2,00 |   
-| 1 | 22210 | N Fleischmann, Aufgleisger&auml;t gerade, 104,2 mm | 4,20 | 4,20 |   
-| 8 | 9101 | Gerade 111 mm | 4,40 | 35,20 |   
-| 1 | 9102 | Gerade 57,5 mm | 4,40 | 4,40 |   
+| 2 | 9101 | Gerade 111 mm | 4,40 | 8,80 |   
 | 1 | 9103 | Gerade 55, 5 mm | 4,40 | 4,40 |   
-| 9 | 9104 | Gerade | 4,40 | 39,60 |   
-| 2 | 9110 | Ausgleichsgleis gerade 83mm-111mm | 14,60 | 29,20 |   
-| 1 | 9112 | Entkupplungsgleis gerade (mit Antrieb) | 31,90 | 31,90 |   
-| 2 | 9116 | Prellbock 57,5 mm | 8,40 | 16,80 |   
-| 1 | 9135 | Bogen Radius 430mm, Winkel 30° (R4) | 4,90 | 4,90 |   
-| 3 | 9136 | Bogen Radius 430mm, Winkel 15° (R4) | 4,90 | 14,70 |   
+| 3 | 9104 | Gerade | 4,40 | 13,20 |   
+| 1 | 9110 | Ausgleichsgleis gerade 83mm-111mm | 14,60 | 14,60 |   
+| 1 | 9116 | Prellbock 57,5 mm | 8,40 | 8,40 |   
+| 6 | 9125 | Bogen Radius 225,6 mm, Winkel 45° (R2) | 4,90 | 29,40 |   
+| 4 | 9127 | Bogen Radius 225,6 mm, Winkel 30° (R2) | 4,90 | 19,60 |   
+| 4 | 9128 | Bogen Radius 225,6 mm, Winkel 7,5° (R2) | 4,90 | 19,60 |   
 | 1 | 9157 | Dreiwegweiche | 47,80 | 47,80 |   
-| 1 | 9178 | Weiche links mit stromleitendem Herzst&uuml;ck | 29,90 | 29,90 |   
-| 1 | 9179 | Weiche rechts mit stromleitendem Herzst&uuml;ck | 29,90 | 29,90 |   
-| 4 | 640000 | Elektromagnetischer Weichenantrieb mit Endabschaltung | 25,60 | 102,40 |   
-| 1 | 9403 | Isolierschienenverbinder | 6,90 | 6,90 |   
-| 7 | 22217 | 2-poliges Anschlusskabel | 4,40 | 30,80 |   
-   
-Gesamtkosten 2025: ca. 435 Euro   
+| 2 | 22205 | N Fleischmann, Gerade 50 mm | 4,40 | 8,80 |   
+| 1 | 14974 | Minitrix, Aufgleisger&auml;t gerade, 104,2 mm | 4,20 | 4,20 |   
+| 2 | 640000 | Elektromagnetischer Weichenantrieb mit Endabschaltung | 25,60 | 51,20 |   
+| 1 | 9403   | Isolierschienenverbinder | 6,90 | 6,90 |   
+| 9 | 22217  | 2-poliges Anschlusskabel | 4,40 | 39,60 |   
+| 1 | LK200  | Kehrschleifenmodul Fa. Lenz | 83,10 | 83,10 |   
+
+Gesamtkosten 2025: ca. 360 Euro   
+
+<a name="x13"></a>   
 
 ## 1.3 Rahmen
 ### 1.3.1 Modulrahmen
-Der 100 x 25 cm² gro&szlig;e Modulrahmen ist 6 cm hoch und besteht aus zwei Seitenteilen ("Ost" und "West"), zwei L&auml;ngsteilen ("Nord" und "S&uuml;d") sowie drei Querstreben. Die Gel&auml;ndeplatte wird in den Rahmen eingelegt.   
-Die Teile des Rahmens k&ouml;nnen entweder aus Holz hergestellt oder mit dem 3D-Drucker gedruckt werden. Auch eine gemischte Bauweise ist m&ouml;glich, zB Seitenteile und Querstreben 3D-Drucken, L&auml;ngsteile aus Holz.   
+Der 80 x 50 cm² gro&szlig;e Modulrahmen ist 6 cm hoch und besteht aus zwei Seitenteilen ("Ost" und "West"), zwei L&auml;ngsteilen ("Nord" und "S&uuml;d") sowie sechs Querstreben. Die Gel&auml;ndeplatte wird in den Rahmen eingelegt.   
 
 ### 1.3.2 Holzkauf f&uuml;r Modul 100 x 25 cm²
 Das Holz besorgt man sich am besten bei einem Baumarkt und l&auml;sst es gleich auf die folgenden Gr&ouml;&szlig;en zuschneiden:   
@@ -115,15 +112,17 @@ Das Holz besorgt man sich am besten bei einem Baumarkt und l&auml;sst es gleich 
 __Pappelsperrholz 10 mm__   
 | St&uuml;ck | Abmessung     | Kurzbezeichnung | Verwendung             |   
 |:-----:|:-------------:|:--------:|:-----------------------|   
-|   1   | 980 x 230 mm² |     -    | Gel&auml;nde-Grundplatte    |   
-|   2   | 980 x 60 mm²  | Ra2, Ra4 | Rahmen au&szlig;en Nord, S&uuml;d |   
-|   2   | 250 x 70 mm²  | Ra1, Ra3 | Rahmen au&szlig;en West, Ost |   
-|   3   | 230 x 50 mm²  | Ri1      | Rahmen innen           |   
+|   1   | 780 x 480 mm² |     -    | Gel&auml;nde-Grundplatte     |   
+|   2   | 780 x 60 mm²  | Ra2, Ra4 | Rahmen au&szlig;en Nord, S&uuml;d |   
+|   2   | 500 x 70 mm²  | Ra1, Ra3 | Rahmen au&szlig;en West, Ost |   
+|   2   | 480 x 50 mm²  | Ri1, Ri2 | Rahmen innen (quer)          |   
+|   2   | 230 x 50 mm²  | Ri3, Ri4 | Rahmen innen (l&auml;ngs)    |   
+|   2   | 265 x 50 mm²  | Ri5, Ri6 | Rahmen innen (l&auml;ngs)    |   
 
 __Pappelsperrholz 5 mm (oder 4 mm)__   
 | St&uuml;ck | Abmessung     | Anmerkung |   
 |:-----:|:-------------:|:----------|   
-|   1   | 980 x 250 mm² | Bahndamm  |   
+|   1   | 780 x 500 mm² | Bahndamm  |   
 
 __Kleinteile__   
 4x Pappelsperrholz 10 mm stark, 70 x 35 mm² f&uuml;r die Halterungen der Sub-D-Stecker.   
@@ -131,7 +130,7 @@ __Kleinteile__
 20x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend (zB Fa. Spax 4 003530 021251)   
 8x Schraube M 2,5 x 16 mm Kreuzschlitz, Senkkopf   
 8x Sechskantmutter M 2,5 mm   
-4x Schraube M 3 x 35 mm Kreutschlitz, Halbrundkopf   
+4x Schraube M 3 x 35 mm Kreuzschlitz, Halbrundkopf   
 4x Sechskantmutter M 3 mm   
 
 ## 1.3.3 Verbrauchsmaterial
@@ -167,25 +166,22 @@ Die best&uuml;ckte Netzteil-Platine muss auf die Tr&auml;gerplatine `RW_5V_SUB25
 
 ### 1.4.3 Ansteuerung der Schaltkomponenten
 F&uuml;r die Ansteuerung der Schaltkomponenten werden folgende Schaltbl&ouml;cke ben&ouml;tigt:   
-* 8x [Halterung f&uuml;r Schaltbl&ouml;cke](/fab/rcc5_add_ons/LIESMICH.md#x20)   
+* 2x [Halterung f&uuml;r Schaltbl&ouml;cke](/fab/rcc5_add_ons/LIESMICH.md#x20)   
 * 1x [Block Dreiwegweiche (W3)](/fab/rcc4_block/LIESMICH.md#x30)   
-* 2x [Block Zweiwegweiche (W2)](/fab/rcc4_block/LIESMICH.md#x20)   
-* 1x [Block Entkuppler (1OUT)](/fab/rcc4_block/LIESMICH.md#x40)   
-* 4x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
+* 1x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
 
-Weiters werden 30 LED-Fassungen ben&ouml;tigt.   
+Weiters werden 6 + 7 = 13 LED-Fassungen ben&ouml;tigt.   
 
 ### 1.4.4 I²C-Expander
-* 4x [PCF8574 I/O-Expander](/fab/rcc0_start/LIESMICH.md#34)   
+* 2x [PCF8574 I/O-Expander](/fab/rcc0_start/LIESMICH.md#34)   
 
 ### 1.4.5 Verdrahtung
 Zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen:   
 * 1x [`CON_2pol_141` Fahrstromverteiler](/fab/rcc5_add_ons/LIESMICH.md#x60)   
-* 2x [`CON_1xIO` Fahrstromschalter einfach](/fab/rcc5_add_ons/LIESMICH.md#x70)   
-* 1x [`CON_2xIO` Fahrstromschalter doppelt](/fab/rcc5_add_ons/LIESMICH.md#x80)   
-* 8x [`CON_10pol_PIN` oder `CON_10pol_2x4` Umsetzer 10-poliges Kabel auf Stifte](/fab/rcc5_add_ons/LIESMICH.md#x30)   
-* 3x [`CON_6pol_3` 6-poliger Stecker auf drei Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x40)   
-* 2x [`CON_6pol_6` 6-poliger Stecker auf sechs Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x50)   
+* 1x [`CON_1xIO` Fahrstromschalter einfach](/fab/rcc5_add_ons/LIESMICH.md#x70)   
+* 2x [`CON_10pol_PIN` oder `CON_10pol_2x4` Umsetzer 10-poliges Kabel auf Stifte](/fab/rcc5_add_ons/LIESMICH.md#x30)   
+* 1x [`CON_6pol_3` 6-poliger Stecker auf drei Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x40)   
+* 1x [`CON_6pol_6` 6-poliger Stecker auf sechs Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x50)   
 
 __Dr&auml;hte, Leitungen und Stecker__   
 * ca. 4 m Volldraht 22awg (0,32 mm²) rot   
@@ -208,14 +204,18 @@ __Dr&auml;hte, Leitungen und Stecker__
 ## 2.1 Einleitung
 Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, die die Gleise und Landschaft enth&auml;lt. Zuerst sollte man den Modul-Rahmen erstellen. Das hat zwei Vorteile:   
 1. Der Test, ob die Grundplatte in den Rahmen passt, kann mit der leeren Grundplatte erfolgen. Falls die Grundplatte zu gro&szlig; ist, kann sie einfach zugeschnitten oder zugeschliffen werden.   
-2. Beim Aufkleben der Gleise auf die Grundplatte sind an den Modul&uuml;berg&auml;ngen (Ost und West) bereits die Seitenteile mit den Gleisausnehmungen vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
-
+2. Beim Aufkleben der Gleise auf die Grundplatte ist am Modul&uuml;bergang (Ost) bereits der Seitenteil mit der Gleisausnehmung vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
 Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 
-![Modul-Rahmen](./images/300_module_frame.png "Modul-Rahmen")   
-_Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1, Ri2, Ri3)_
+![Modul-Rahmen](./images/300_m13_module_frame.png "Modul-Rahmen")   
+_Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1 bis Ri6)_
 
 Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
+
+
+
+# ====================================
+# ===== Vorlage für Beschreibung =====
 
 ## 2.2 Seitenteile Ra1, Ra3 (West, Ost)
 Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   

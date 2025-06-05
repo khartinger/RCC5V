@@ -99,6 +99,8 @@ Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:
    
 Gesamtkosten 2025: ca. 435 Euro   
 
+<a name="x13"></a>   
+
 ## 1.3 Rahmen
 ### 1.3.1 Modulrahmen
 Der 100 x 25 cm² gro&szlig;e Modulrahmen ist 6 cm hoch und besteht aus zwei Seitenteilen ("Ost" und "West"), zwei L&auml;ngsteilen ("Nord" und "S&uuml;d") sowie drei Querstreben. Die Gel&auml;ndeplatte wird in den Rahmen eingelegt.   
@@ -126,7 +128,7 @@ __Kleinteile__
 20x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend (zB Fa. Spax 4 003530 021251)   
 8x Schraube M 2,5 x 16 mm Kreuzschlitz, Senkkopf   
 8x Sechskantmutter M 2,5 mm   
-4x Schraube M 3 x 35 mm Kreutschlitz, Halbrundkopf   
+4x Schraube M 3 x 35 mm Kreuzschlitz, Halbrundkopf   
 4x Sechskantmutter M 3 mm   
 
 ## 1.3.3 Verbrauchsmaterial
@@ -145,6 +147,8 @@ Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu 
 |      1     |   |   | Topfreiniger (Abwasch-Schwamm) |   
 |      2     |   |   | Paar Einmal-Handschuhe         |   
 |      1     |   |   | Schleifpapier K&ouml;rnung 240      |   
+
+<a name="x14"></a>   
 
 ## 1.4 Elektronische RCC-Komponenten
 ### 1.4.1 Steuerung
@@ -201,14 +205,14 @@ __Dr&auml;hte, Leitungen und Stecker__
 
 # 2. Bau des Modul-Rahmens   
 ## 2.1 Einleitung
-Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, die die Gleise und Landschaft enth&auml;lt. Zuerst sollte man den Modul-Rahmen erstellen. Das hat zwei Vorteile:   
+Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, die die Gleise und Landschaft tr&auml;gt. Zuerst sollte man den Modul-Rahmen erstellen. Das hat zwei Vorteile:   
 1. Der Test, ob die Grundplatte in den Rahmen passt, kann mit der leeren Grundplatte erfolgen. Falls die Grundplatte zu gro&szlig; ist, kann sie einfach zugeschnitten oder zugeschliffen werden.   
 2. Beim Aufkleben der Gleise auf die Grundplatte sind an den Modul&uuml;berg&auml;ngen (Ost und West) bereits die Seitenteile mit den Gleisausnehmungen vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
 
 Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 
 ![Modul-Rahmen](./images/300_module_frame.png "Modul-Rahmen")   
-_Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1, Ri2, Ri3)_
+_Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1 bis Ri3)_
 
 Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
 
