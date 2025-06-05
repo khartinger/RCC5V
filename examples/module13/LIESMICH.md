@@ -205,8 +205,8 @@ __Dr&auml;hte, Leitungen und Stecker__
 Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, die die Gleise und Landschaft enth&auml;lt. Zuerst sollte man den Modul-Rahmen erstellen. Das hat zwei Vorteile:   
 1. Der Test, ob die Grundplatte in den Rahmen passt, kann mit der leeren Grundplatte erfolgen. Falls die Grundplatte zu gro&szlig; ist, kann sie einfach zugeschnitten oder zugeschliffen werden.   
 2. Beim Aufkleben der Gleise auf die Grundplatte ist am Modul&uuml;bergang (Ost) bereits der Seitenteil mit der Gleisausnehmung vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
-Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 
+Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 ![Modul-Rahmen](./images/300_m13_module_frame.png "Modul-Rahmen")   
 _Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1 bis Ri6)_
 
@@ -217,11 +217,18 @@ Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den 
 # ====================================
 # ===== Vorlage für Beschreibung =====
 
-## 2.2 Seitenteile Ra1, Ra3 (West, Ost)
-Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   
+## 2.1 Seitenteil Ra1 (West)
+Der Seitenteil "West" hat eine Grifföffnung (zum Tragen) und Bohrungen für die Längsstreben Ri3 und Ri4.
 
-![Modul_OstWest_1_Mitte.png](./images/300_OstWest_1_Mitte.png "Modul_OstWest_1_Mitte")   
-_Bild 6: Ma&szlig;e f&uuml;r die Seitenteile Ost und West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
+![Modul_West_1.png](./images/300_m13_West_1.png "Modul_West_1")   
+_Bild 6: Ma&szlig;e f&uuml;r den Seitenteil West (Breite 500mm)._   
+
+
+## 2.2 Seitenteil Ra3 (Ost)
+Dieser Seitenteil ist so ausgelegt, dass er zu den anderen Modulen in diesem Repository kompatibel ist.
+
+![Modul_Ost_1.png](./images/300_m13_Ost_1.png "Modul_Ost_1")   
+_Bild 7: Ma&szlig;e f&uuml;r den Seitenteil Ost (Breite 500mm, ein in der Mitte liegendes Gleis)._   
 
 * Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 250 x 70 mm²   
 * Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Fl&uuml;gelschrauben und Fl&uuml;gelmuttern.   
