@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 7.6.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 5.6.2025 <a name="up"></a><br>   
 <h1>Bau des Moduls 13 "Kehrschleife West"</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -71,7 +71,7 @@ Der Entwurf des Gleisplans erfolgt in zwei Schritten:
 * Im n&auml;chsten Schritt wird die Lage der Stromversorgungsstellen und Isolationsstellen festgelegt. Das kann dazu f&uuml;hren, dass zB Gleise in zwei Teile zerlegt werden m&uuml;ssen, damit man 2-polige Anschlusskabel (Fleischmann 22217) oder Isolierschienenverbinder (Fleischmann 9403) anbringen kann.   
 
 Der folgende Gleisplan wurde mit dem Programm [AnyRail Version 7](https://www.anyrail.com/) gezeichnet.   
-![M12 Gleisplan](./images/480_m13_gleisplan.png "M12 Gleisplan")   
+![M12 Gleisplan](./images/480_m12_gleisplan.png "M12 Gleisplan")   
 _Bild 4: Gleisplan_   
 
 Dunkelgraue Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
@@ -113,11 +113,9 @@ __Pappelsperrholz 10 mm__
 | St&uuml;ck | Abmessung     | Kurzbezeichnung | Verwendung             |   
 |:-----:|:-------------:|:--------:|:-----------------------|   
 |   1   | 780 x 480 mm² |     -    | Gel&auml;nde-Grundplatte     |   
-|   2   | 505 x 60 mm²  | Ra2, Ra4 | Rahmen au&szlig;en Nord, S&uuml;d |   
-|   2   | 500 x 60 mm²  | Ra1, Ra3 | Rahmen au&szlig;en West, Mitte |   
-|   2   | 265 x 60 mm²  | Ra5, Ra7 | Rahmen au&szlig;en ostseitig Nord, S&uuml;d |   
-|   1   | 250 x 70 mm²  | Ra6      | Rahmen Anschluss au&szlig;en Ost|   
-|   1   | 480 x 50 mm²  | Ri1      | Rahmen innen (quer)          |   
+|   2   | 780 x 60 mm²  | Ra2, Ra4 | Rahmen au&szlig;en Nord, S&uuml;d |   
+|   2   | 500 x 70 mm²  | Ra1, Ra3 | Rahmen au&szlig;en West, Ost |   
+|   2   | 480 x 50 mm²  | Ri1, Ri2 | Rahmen innen (quer)          |   
 |   2   | 230 x 50 mm²  | Ri3, Ri4 | Rahmen innen (l&auml;ngs)    |   
 |   2   | 265 x 50 mm²  | Ri5, Ri6 | Rahmen innen (l&auml;ngs)    |   
 
@@ -211,7 +209,7 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 
 Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 ![Modul-Rahmen](./images/300_m13_module_frame.png "Modul-Rahmen")   
-_Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra7) und Querverstrebungen (Ri1 bis Ri6)_
+_Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1 bis Ri6)_
 
 Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
 
