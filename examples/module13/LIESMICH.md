@@ -71,7 +71,7 @@ Der Entwurf des Gleisplans erfolgt in zwei Schritten:
 * Im n&auml;chsten Schritt wird die Lage der Stromversorgungsstellen und Isolationsstellen festgelegt. Das kann dazu f&uuml;hren, dass zB Gleise in zwei Teile zerlegt werden m&uuml;ssen, damit man 2-polige Anschlusskabel (Fleischmann 22217) oder Isolierschienenverbinder (Fleischmann 9403) anbringen kann.   
 
 Der folgende Gleisplan wurde mit dem Programm [AnyRail Version 7](https://www.anyrail.com/) gezeichnet.   
-![M12 Gleisplan](./images/480_m13_gleisplan.png "M12 Gleisplan")   
+![M12 Gleisplan](./images/600_m13_gleisplan.png "M12 Gleisplan")   
 _Bild 4: Gleisplan_   
 
 Dunkelgraue Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
@@ -83,8 +83,8 @@ Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:
 | Anzahl | Nummer | Name | Euro/Stk | Euro |   
 | :---: | :---: | :--- |  ---: |  ---: |   
 | 2 | 9101 | Gerade 111 mm | 4,40 | 8,80 |   
-| 1 | 9103 | Gerade 55, 5 mm | 4,40 | 4,40 |   
-| 3 | 9104 | Gerade | 4,40 | 13,20 |   
+| 1 | 9103 | Gerade 55,5 mm | 4,40 | 4,40 |   
+| 3 | 9104 | Gerade 27,75 mm | 4,40 | 13,20 |   
 | 1 | 9110 | Ausgleichsgleis gerade 83mm-111mm | 14,60 | 14,60 |   
 | 1 | 9116 | Prellbock 57,5 mm | 8,40 | 8,40 |   
 | 6 | 9125 | Bogen Radius 225,6 mm, Winkel 45° (R2) | 4,90 | 29,40 |   
@@ -113,13 +113,13 @@ __Pappelsperrholz 10 mm__
 | St&uuml;ck | Abmessung     | Kurzbezeichnung | Verwendung             |   
 |:-----:|:-------------:|:--------:|:-----------------------|   
 |   1   | 780 x 480 mm² |     -    | Gel&auml;nde-Grundplatte     |   
-|   2   | 505 x 60 mm²  | Ra2, Ra4 | Rahmen au&szlig;en Nord, S&uuml;d |   
+|   2   | 500 x 60 mm²  | Ra2, Ra4 | Rahmen au&szlig;en Nord, S&uuml;d |   
 |   2   | 500 x 60 mm²  | Ra1, Ra3 | Rahmen au&szlig;en West, Mitte |   
-|   2   | 265 x 60 mm²  | Ra5, Ra7 | Rahmen au&szlig;en ostseitig Nord, S&uuml;d |   
+|   2   | 270 x 60 mm²  | Ra5, Ra7 | Rahmen au&szlig;en ostseitig Nord, S&uuml;d |   
 |   1   | 250 x 70 mm²  | Ra6      | Rahmen Anschluss au&szlig;en Ost|   
 |   1   | 480 x 50 mm²  | Ri1      | Rahmen innen (quer)          |   
 |   2   | 230 x 50 mm²  | Ri3, Ri4 | Rahmen innen (l&auml;ngs)    |   
-|   2   | 265 x 50 mm²  | Ri5, Ri6 | Rahmen innen (l&auml;ngs)    |   
+|   2   | 260 x 50 mm²  | Ri5, Ri6 | Rahmen innen (l&auml;ngs)    |   
 
 __Pappelsperrholz 5 mm (oder 4 mm)__   
 | St&uuml;ck | Abmessung     | Anmerkung |   
@@ -209,7 +209,7 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 1. Der Test, ob die Grundplatte in den Rahmen passt, kann mit der leeren Grundplatte erfolgen. Falls die Grundplatte zu gro&szlig; ist, kann sie einfach zugeschnitten oder zugeschliffen werden.   
 2. Beim Aufkleben der Gleise auf die Grundplatte ist am Modul&uuml;bergang (Ost) bereits der Seitenteil mit der Gleisausnehmung vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
 
-Das folgende Bild zeigt den Grundriss des Modulrahmens:   
+Das folgende Bild zeigt den Grundriss des Modulrahmens, der aus 7 Außen- und 5 Innenteilen besteht:   
 ![Modul-Rahmen](./images/300_m13_module_frame.png "Modul-Rahmen")   
 _Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra7) und Querverstrebungen (Ri1 bis Ri6)_
 
@@ -218,14 +218,34 @@ Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den 
 <a name="x22"></a>   
 
 ## 2.2 Seitenteil Ra1 (West)
-Der Seitenteil "West" hat eine Grifföffnung (zum Tragen) und Bohrungen für die Längsstreben Ri3 und Ri4.
+Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²   
+* Der Seitenteil "West" hat in der Mitte eine 20x60 mm² große Grifföffnung (zum Tragen)   
+* Die vier 2 mm-Bohrungen am linken und rechten Rand dienen zum Anschrauben der Nord- und S&uuml;dwand.   
+* Die vier 2 mm-Bohrungen in der Mitte dienen zum Anschrauben der (Längs-)Querstreben Ri3 und Ri4.   
+* Die zwei 2 mm-Bohrungen am oberen Rand dienen zum Fixieren der Gel&auml;nde-Grundplatte (falls erforderlich).   
+* Alle Bohrungen m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 
 ![Modul_West_1.png](./images/300_m13_west_500mm.png "Modul_West_1")   
 _Bild 6: Ma&szlig;e f&uuml;r den Seitenteil West (Breite 500mm)._   
 
 <a name="x23"></a>   
 
-## 2.3 Seitenteil Ra3 (Ost)
+## 2.3 Seitenteil Ra3 bzw. Ri2 (Ost 1)
+Dieser Seitenteil ist ein Spezialteil, der außen ein Außenteil und im der Mitte ein Verstrebung ist.
+Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²   
+* Der Seitenteil "Ost 1" ist in der Mitte (jeweils 135 mm vom Rand) eine Verstrebung mit der Höhe 5 cm.   
+* In der Mitte ist eine 25x72 mm² große Öffnung für die Sub-D-Stecher-Platine.   
+* Die inneren vier Bohrungen werden von innen mit einem Kegelsenker erweitert, alle andere Bohrungen von außen.   
+
+
+![Modul_Ost_1.png](./images/300_m13_ost1_500mm.png "Modul_Ost_1")   
+_Bild 7: Ma&szlig;e f&uuml;r den Seitenteil Ost Ra3 bzw. Querverstrebung Ri2 (Breite 500mm)._   
+
+
+
+# ====================================
+# ===== Vorlage für Beschreibung =====
+
 Dieser Seitenteil ist so ausgelegt, dass er zu den anderen Modulen in diesem Repository kompatibel ist.
 
 ![Modul_Ost_1.png](./images/300_m13_ost_500mm.png "Modul_Ost_1")   
@@ -296,12 +316,6 @@ _Bild 14: Rahmenteil S&uuml;d Forderseite_
 
 ![Rahmenteil S&uuml;d R&uuml;ckseite](./images/300_m13_frame_south_back.png "Rahmenteil S&uuml;d R&uuml;ckseite")   
 _Bild 15: Rahmenteil S&uuml;d R&uuml;ckseite_   
-
-
-
-# ====================================
-# ===== Vorlage für Beschreibung =====
-
 
 ## 2.5 Querverstrebung Ri1 bis Ri3
 Die Querverstrebungen enthalten verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
