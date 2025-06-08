@@ -210,7 +210,7 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 2. Beim Aufkleben der Gleise auf die Grundplatte ist am Modul&uuml;bergang (Ost) bereits der Seitenteil mit der Gleisausnehmung vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
 
 Das folgende Bild zeigt den Grundriss des Modulrahmens, der aus 7 Außen- und 5 Innenteilen besteht:   
-![Modul-Rahmen](./images/300_m13_module_frame.png "Modul-Rahmen")   
+![Modul-Rahmen](./images/480_m13_module_frame.png "Modul-Rahmen")   
 _Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra7) und Querverstrebungen (Ri1 bis Ri6)_
 
 Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
@@ -230,50 +230,41 @@ _Bild 6: Ma&szlig;e f&uuml;r den Seitenteil West (Breite 500mm)._
 
 <a name="x23"></a>   
 
-## 2.3 Seitenteil Ra3 bzw. Ri2 (Ost 1)
-Dieser Seitenteil ist ein Spezialteil, der außen ein Außenteil und im der Mitte ein Verstrebung ist.
+## 2.3 Seitenteil Ra2 (Nord)
 Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²   
-* Der Seitenteil "Ost 1" ist in der Mitte (jeweils 135 mm vom Rand) eine Verstrebung mit der Höhe 5 cm.   
-* In der Mitte ist eine 25x72 mm² große Öffnung für die Sub-D-Stecher-Platine.   
-* Die inneren vier Bohrungen werden von innen mit einem Kegelsenker erweitert, alle andere Bohrungen von außen.   
+* Der Seitenteil "Nord" hat in der Mitte zwei 2 mm-Bohrungen zum Anschrauben der Verstrebung Ri1.   
+* Die Bohrungen m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 
-
-![Modul_Ost_1.png](./images/300_m13_ost1_500mm.png "Modul_Ost_1")   
-_Bild 7: Ma&szlig;e f&uuml;r den Seitenteil Ost Ra3 bzw. Querverstrebung Ri2 (Breite 500mm)._   
-
-
-
-# ====================================
-# ===== Vorlage für Beschreibung =====
-
-Dieser Seitenteil ist so ausgelegt, dass er zu den anderen Modulen in diesem Repository kompatibel ist.
-
-![Modul_Ost_1.png](./images/300_m13_ost_500mm.png "Modul_Ost_1")   
-_Bild 7: Ma&szlig;e f&uuml;r den Seitenteil Ost (Breite 500mm, ein in der Mitte liegendes Gleis)._   
-
-* Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 70 mm²   
-* Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Fl&uuml;gelschrauben und Fl&uuml;gelmuttern.   
-* Die linken und rechten vier 2 mm-Bohrungen dienen zum Anschrauben der Nord- und S&uuml;dwand. Sie m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
-* Die oberen zwei 2mm-Bohrungen dienen zum Fixieren der Gel&auml;nde-Grundplatte (falls erforderlich). Auch sie m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
-* Die 60x20 mm²-Ausnehmung dient zum Durchf&uuml;hren des 25-poligen Sub-D-Steckers.   
-
-Mit besonderer Vorsicht ist die Ausnehmung f&uuml;r das Gleis zu fertigen. Mit einer Laubs&auml;ge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile so lange erweitert, bis ein Fleischmann-Schotterbett-Gleis gerade (klemmend) hineinpasst und auch mittig positioniert ist.   
+![Modul_Nord_1.png](./images/300_m13_nord1_500mm.png "Modul_Nord_1")   
+_Bild 7: Ma&szlig;e f&uuml;r den Seitenteil Nord 1 (Breite 500mm)._   
 
 <a name="x24"></a>   
 
-## 2.4 Rahmenteil Ra2 (Nord)
-Der Rahmenteil "Nord" enth&auml;lt lediglich zweimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden innen die Querverstrebungen verschraubt.   
+## 2.4 Seitenteil Ra3 bzw. Ri2 (Ost 1)
+Dieser Seitenteil ist ein Spezialteil, der außen ein Außenteil und im der Mitte ein Verstrebung ist.   
+Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²   
+* Der Seitenteil "Ost 1" fungiert in der Mitte (jeweils 135 mm vom Rand) als Verstrebung mit der Höhe 5 cm.   
+* In der Mitte ist eine 25x72 mm² große Öffnung für die Sub-D-Stecher-Platine.   
+* Im 5 mm Bereich befinden sich zwei ca. 30x10 mm Ausnehmungen, um Kabel durchführen zu können.   
+* Alle Bohrdurchmesser sind 2 mm, bis auf die blau eingezeichneten Bohrungen mit 3,2 mm.   
+* Die vier Bohrungen mit Randabstand 130 mm (grün eingezeichnet) werden von der Innenseite mit einem Kegelsenker erweitert, alle andere Bohrungen von der Außenseite.   
 
-![Modul_Nord_780mm](./images/300_m13_nord_780mm.png "Modul_Nord_780mm")   
-_Bild 8: Seitenteil Nord Ra2_   
+![Modul_Ost_1.png](./images/300_m13_ost1_500mm.png "Modul_Ost_1")   
+_Bild 8: Ma&szlig;e f&uuml;r den Seitenteil Ost Ra3 bzw. Querverstrebung Ri2 (Breite 500mm)._   
 
 <a name="x25"></a>   
 
-## 2.5 Rahmenteil Ra4 (S&uuml;d)
-Der Rahmenteil S&uuml;d ist etwas aufw&auml;ndiger zu fertigen, da er das Display mit Taster und die Bohrungen f&uuml;r alle Steuerbl&ouml;cke und f&uuml;r alle Querverstrebungen enth&auml;lt. Das folgende Bild gibt einen &Uuml;berblick &uuml;ber die erforderlichen Bohrungen.   
+## 2.5 Seitenteil Ra4 (Süd 1)
+Der Seitenteil "Süd" enthält die Steuerelemente des Moduls, wie Anzeige (OLED) und Schalter für das abschaltbare Gleis und die Weiche.   
+Das folgende Bild gibt einen &Uuml;berblick &uuml;ber die erforderlichen Bohrungen.   
 
-![Modul_S&uuml;d_780mm](./images/300_m13_sued_780mm.png "Modul_S&uuml;d_780mm")   
-_Bild 9: Ma&szlig;e f&uuml;r den Rahmenteil S&uuml;d (Ra4)_   
+![Modul_Süd1_1.png](./images/300_m13_sued1_500mm.png "Modul_Süd_1")   
+_Bild 9: Ma&szlig;e f&uuml;r den Seitenteil Süd 1 (Breite 500mm)._   
+
+__Querverstrebung__   
+* Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²   
+* Zwei 2 mm-Bohrungen im Abstand von 235 mm vom linken Rand.   
+* Die beiden Bohrungen für die Querstrebe Ri1  m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 
 __OLED-Anzeige__   
 Die Aussparungen f&uuml;r die OLED-Anzeige und den dazugeh&ouml;rigen Taster sind abh&auml;ngig davon, ob man die Bauteile einzeln montiert oder einen 3D-Druck-Rahmen verwendet. Bei getrennter Montage ben&ouml;tigt man eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 20 x 38 mm² und eine 11,6 mm-Bohrung.   
@@ -293,7 +284,7 @@ _Bild 12: Ma&szlig;e f&uuml;r die LED- und Taster-Bohrungen_
 
 Der Bohrdurchmesser f&uuml;r die LED-Fassungen betr&auml;gt 5,6 mm, der f&uuml;r die Taster ca. 7 mm.   
 
-Das einzelne Anzeichnen der Positionen der Bohrungen ben&ouml;tigt viel Zeit und genaues Arbeiten. Daher macht es Sinn, f&uuml;r die Schaltbl&ouml;cke Abdeckungen (Beschriftungen) zu entwerfen, diese auf Etikettenpapier auszudrucken und auf das Holz aufzukleben (Abstand zum unteren Rand 8 mm). Damit ist das Bohren wesentlich einfacher. Die Beschriftungen k&ouml;nnen entweder beibehalten oder entfernt werden, wenn man sie nicht m&ouml;chte. Falls die Beschriftungen zu stark durch das Bohren besch&auml;digt wurden, kann man sie auch durch neue ersetzen....   
+Das einzelne Anzeichnen der Positionen der Bohrungen ben&ouml;tigt viel Zeit und genaues Arbeiten. Daher macht es Sinn, f&uuml;r die Schaltbl&ouml;cke Abdeckungen (Beschriftungen) zu entwerfen, diese auf Etikettenpapier auszudrucken und auf das Holz aufzukleben (Abstand zum unteren Rand 8 mm). Damit ist das Bohren wesentlich einfacher. Die Beschriftungen k&ouml;nnen entweder beibehalten oder entfernt werden, wenn man sie nicht m&ouml;chte. Falls die Beschriftungen zu stark durch das Bohren besch&auml;digt wurden, kann man sie auch ablösen und durch neue ersetzen....   
 
 Das folgende Bild zeigt die 40 x 42 mm gro&szlig;en Abdeckungen.   
  
@@ -304,11 +295,25 @@ __LED-Fassungen__
 Nach dem Bohren sind die Bohrungen zu reinigen und die LED-Fassungen einzupressen.   
 
 __Halterungen f&uuml;r Steuerbl&ouml;cke__   
-Als N&auml;chstes kann man auf der Innenseite die Halterungen f&uuml;r die Steuerbl&ouml;cke mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
+Im nicht zusammengeschraubten Zustand ist es viel leichter, gleich die Halterungen f&uuml;r die Steuerbl&ouml;cke auf der Innenseite mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
 
 Die Position der Schrauben f&uuml;r die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgenderma&szlig;en festgelegt:   
 ![Schraubposition f&uuml;r Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition f&uuml;r Blockhalter")   
-_Bild 13: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
+_Bild 14: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
+
+<a name="x26"></a>   
+
+## 2.6 Querverstrebung Ri1
+Die Querverstrebungen enthalten verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
+
+![Verstrebung Ri1](./images/300_m13_verstrebung_Ri1_480mm.png "Verstrebung Ri1")   
+_Bild 15: Querverstrebung Ri1_
+
+
+
+# ====================================
+# ===== Vorlage für Beschreibung =====
+
 
 Den fertigen Rahmenteil S&uuml;d zeigen die folgenden Bilder   
 ![Rahmenteil S&uuml;d Forderseite](./images/300_m13_frame_south_front.png "Rahmenteil S&uuml;d Forderseite")   
