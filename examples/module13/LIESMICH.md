@@ -172,7 +172,7 @@ F&uuml;r die Ansteuerung der Schaltkomponenten werden folgende Schaltbl&ouml;cke
 * 1x [Block Dreiwegweiche (W3)](/fab/rcc4_block/LIESMICH.md#x30)   
 * 1x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
 
-Weiters werden 6 + 7 = 13 LED-Fassungen ben&ouml;tigt.   
+Weiters werden 5 + 3 = 8 LED-Fassungen ben&ouml;tigt.   
 
 ### 1.4.4 I²C-Expander
 * 2x [PCF8574 I/O-Expander](/fab/rcc0_start/LIESMICH.md#34)   
@@ -255,7 +255,7 @@ _Bild 8: Ma&szlig;e f&uuml;r den Seitenteil Ost Ra3 bzw. Querverstrebung Ri2 (Br
 <a name="x25"></a>   
 
 ## 2.5 Seitenteil Ra4 (Süd 1)
-Der Seitenteil "Süd" enthält die Steuerelemente des Moduls, wie Anzeige (OLED) und Schalter für das abschaltbare Gleis und die Weiche.   
+Der Seitenteil "Süd" enthält die Steuerelemente des Moduls, wie die Anzeige (OLED) oder die Schalter für das abschaltbare Gleis und die Weiche.   
 Das folgende Bild gibt einen &Uuml;berblick &uuml;ber die erforderlichen Bohrungen.   
 
 ![Modul_Süd1_1.png](./images/300_m13_sued1_500mm.png "Modul_Süd_1")   
@@ -284,12 +284,65 @@ _Bild 12: Ma&szlig;e f&uuml;r die LED- und Taster-Bohrungen_
 
 Der Bohrdurchmesser f&uuml;r die LED-Fassungen betr&auml;gt 5,6 mm, der f&uuml;r die Taster ca. 7 mm.   
 
-Das einzelne Anzeichnen der Positionen der Bohrungen ben&ouml;tigt viel Zeit und genaues Arbeiten. Daher macht es Sinn, f&uuml;r die Schaltbl&ouml;cke Abdeckungen (Beschriftungen) zu entwerfen, diese auf Etikettenpapier auszudrucken und auf das Holz aufzukleben (Abstand zum unteren Rand 8 mm). Damit ist das Bohren wesentlich einfacher. Die Beschriftungen k&ouml;nnen entweder beibehalten oder entfernt werden, wenn man sie nicht m&ouml;chte. Falls die Beschriftungen zu stark durch das Bohren besch&auml;digt wurden, kann man sie auch ablösen und durch neue ersetzen....   
+Das einzelne Anzeichnen der Positionen der Bohrungen ben&ouml;tigt viel Zeit und genaues Arbeiten. Daher macht es Sinn, in einem Grafik-Programm (zB `LibreOffice Draw`) Abdeckungen (Beschriftungen) f&uuml;r die Schaltbl&ouml;cke  zu entwerfen. Diese werden auf Etikettenpapier ausgedruckt und auf das Holz aufgeklebt (Abstand zum unteren Rand 8 mm). Damit ist das Bohren wesentlich einfacher. Die Beschriftungen k&ouml;nnen entweder beibehalten oder entfernt werden, wenn man sie nicht m&ouml;chte. Falls die Beschriftungen zu stark durch das Bohren besch&auml;digt wurden, kann man sie auch ablösen und durch neue ersetzen....   
 
-Das folgende Bild zeigt die 40 x 42 mm gro&szlig;en Abdeckungen.   
+Das folgende Bild zeigt die beiden je 40 x 42 mm gro&szlig;en Abdeckungen (Abstand 8 mm).   
  
 ![Beschriftung Bedienungselemente](./images/300_m13_cover_50mm.png "Beschriftung Bedienungselemente")   
 _Bild 13: Beschriftung der Bedienungselemente f&uuml;r Modul 13_   
+
+<a name="x26"></a>   
+
+## 2.6 Außenteile Ra5 und Ra7 (Nord2 und Süd2)
+Die Außenteile Ra5 und Ra7 sind 270 x 60 mm² groß und enthalten keine Bohrungen.   
+
+<a name="x27"></a>   
+
+## 2.7 Anschlussteil Ra6 (Ost)
+Dieser Seitenteil ist an eine (ehemalige) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   
+
+![Modul_Ost_2_Mitte.png](./images/300_m13_ost_2_mitte.png "Modul_Ost_2_Mitte")   
+_Bild 14: Ma&szlig;e f&uuml;r den Seitenteil Ost 2 (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
+
+* Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 250 x 70 mm²   
+* Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Fl&uuml;gelschrauben und Fl&uuml;gelmuttern.   
+* Die linken und rechten vier 2 mm-Bohrungen dienen zum Anschrauben der Nord- und S&uuml;dwand. Sie m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
+* Die oberen zwei 2mm-Bohrungen dienen zum Fixieren der Gel&auml;nde-Grundplatte (falls erforderlich). Auch sie m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
+* Die 60x20 mm²-Ausnehmung dient zum Durchf&uuml;hren des 25-poligen Sub-D-Steckers.   
+
+Mit besonderer Vorsicht ist die Ausnehmung f&uuml;r das Gleis zu fertigen. Mit einer Laubs&auml;ge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile so lange erweitert, bis ein Fleischmann-Schotterbett-Gleis gerade (klemmend) hineinpasst und auch mittig positioniert ist.   
+
+<a name="x28"></a>   
+
+## 2.8 Längsverstrebung Ri1
+Die Längsverstrebung enthält verschiedene Durchbr&uuml;che f&uuml;r Kabel, zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker sowie Bohrungen für die Querverstrebungen.   
+
+![Verstrebung Ri1](./images/300_m13_verstrebung_Ri1_480mm.png "Verstrebung Ri1")   
+_Bild 14: Querverstrebung Ri1_
+
+<a name="x29"></a>   
+
+## 2.9 Querverstebung Ri3 und Ri4
+
+<a name="x2A"></a>   
+
+## 2.10 Querverstebung Ri5 und Ri5
+
+<a name="x2B"></a>   
+
+## 2.11 Zusammenbau des Rahmens
+Nachdem alle Teile des Rahmens bearbeitet wurden, sollten die Holzteile mit Bootslack oder Plastiklack überzogen werden, damit sie besser Staub abweisen bzw. leichter zu reinigen sind.   
+Danach kann der Rahmen zusammengeschraubt werden.   
+
+![Rahmen Ansicht von unten](./images/300_m13_frame_bottom_view.png "Rahmen Ansicht von unten")   
+_Bild ..: Zusammengeschraubter Rahmen, Ansicht von unten_   
+
+[Zum Seitenanfang](#up)   
+
+
+# ====================================
+# ===== Vorlage für Beschreibung =====
+
 
 __LED-Fassungen__   
 Nach dem Bohren sind die Bohrungen zu reinigen und die LED-Fassungen einzupressen.   
@@ -300,19 +353,6 @@ Im nicht zusammengeschraubten Zustand ist es viel leichter, gleich die Halterung
 Die Position der Schrauben f&uuml;r die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgenderma&szlig;en festgelegt:   
 ![Schraubposition f&uuml;r Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition f&uuml;r Blockhalter")   
 _Bild 14: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
-
-<a name="x26"></a>   
-
-## 2.6 Querverstrebung Ri1
-Die Querverstrebungen enthalten verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
-
-![Verstrebung Ri1](./images/300_m13_verstrebung_Ri1_480mm.png "Verstrebung Ri1")   
-_Bild 15: Querverstrebung Ri1_
-
-
-
-# ====================================
-# ===== Vorlage für Beschreibung =====
 
 
 Den fertigen Rahmenteil S&uuml;d zeigen die folgenden Bilder   
