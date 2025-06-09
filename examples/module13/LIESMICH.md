@@ -314,25 +314,63 @@ Mit besonderer Vorsicht ist die Ausnehmung f&uuml;r das Gleis zu fertigen. Mit e
 
 <a name="x28"></a>   
 
-## 2.8 Längsverstrebung Ri1
-Die Längsverstrebung enthält verschiedene Durchbr&uuml;che f&uuml;r Kabel, zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker sowie Bohrungen für die Querverstrebungen.   
+## 2.8 Querverstrebung Ri1
+Die Querverstrebung enthält verschiedene Durchbr&uuml;che f&uuml;r Kabel, zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker (3,2 mm, im Bild blau eingezeichnet) sowie Bohrungen für die Querverstrebungen (2 mm).   
 
 ![Verstrebung Ri1](./images/300_m13_verstrebung_Ri1_480mm.png "Verstrebung Ri1")   
-_Bild 14: Querverstrebung Ri1_
+_Bild 15: Querverstrebung Ri1_
 
 <a name="x29"></a>   
 
-## 2.9 Querverstebung Ri3 und Ri4
+## 2.9 Längsverstebung Ri3 und Ri4
+Die Längsverstrebungen Ri3 und Ri4 entsprechen den 230 x 50 mm² großen Standard-Querverstrebungen in anderen Modulen.   
+![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
+_Bild 16: Längsverstrebungen Ri3 und Ri4_
 
 <a name="x2A"></a>   
 
-## 2.10 Querverstebung Ri5 und Ri5
+## 2.10 Querverstebung Ri5 und Ri6
+Die Längsverstrebungen Ri5 und Ri6 sind ähnlich den Standard-Querverstrebungen in anderen Modulen, allerdings sind sie mit 260 x 50 mm² um 3 cm länger.   
+![Verstrebung](./images/300_Verstrebung_260mm.png "Verstrebung")   
+_Bild 17: Längsverstrebungen Ri5und Ri6_
 
 <a name="x2B"></a>   
 
 ## 2.11 Zusammenbau des Rahmens
-Nachdem alle Teile des Rahmens bearbeitet wurden, sollten die Holzteile mit Bootslack oder Plastiklack überzogen werden, damit sie besser Staub abweisen bzw. leichter zu reinigen sind.   
-Danach kann der Rahmen zusammengeschraubt werden.   
+Nachdem alle Teile des Rahmens bearbeitet wurden, sollten die Holzteile mit Bootslack oder Plastiklack überzogen werden, damit sie besser Staub abweisen bzw. leichter zu reinigen sind. Dazu werden sie auf die Unterseite gestellt und bearbeitet.   
+Vor dem Zusammenbau empfiehlt es sich, einige Komponenten vorher zu montieren, da dies einfacher ist:   
+
+### Seitenteil Ra4 (Süd 1)
+__LED-Fassungen__   
+Reinigen der Bohrungen und Einpressen der LED-Fassungen.   
+
+__Halterungen f&uuml;r Steuerbl&ouml;cke__   
+Anschrauben der Halterungen f&uuml;r die Steuerbl&ouml;cke auf der Innenseite mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
+
+Die Position der Schrauben f&uuml;r die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgenderma&szlig;en festgelegt:   
+![Schraubposition f&uuml;r Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition f&uuml;r Blockhalter")   
+_Bild 18: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
+
+__OLED__   
+Einstecken der OLED in die vorgesehene Öffnung.   
+
+### Querstrebe Ri1 und Ri2 (auf Ra3)
+Anschrauben der Halterung f&uuml;r Sub-D-Stecker. Diese besteht aus zwei U-f&ouml;rmigen Teilen, die links und rechts an einer Querstrebe angeschraubt werden. Die Teile k&ouml;nnen sowohl aus Holz als auch mit 3D-Druck hergestellt werden. F&uuml;r den Modul M12 werden zwei Halterungen ben&ouml;tigt.   
+
+![Sub-D-Halterung](./images/300_bracket_sub-d.png "Sub-D-Halterung")   
+_Bild 19: Ma&szlig;e der Halterung_   
+
+In jeden U-f&ouml;rmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,5 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatine.   
+Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm Sechskantmutter gegeneinander an einer Querstrebe verschraubt.   
+
+![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
+_Bild 20: Teile der Sub-D-Halterung_   
+
+
+
+
+
+Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden.   
 
 ![Rahmen Ansicht von unten](./images/300_m13_frame_bottom_view.png "Rahmen Ansicht von unten")   
 _Bild ..: Zusammengeschraubter Rahmen, Ansicht von unten_   
@@ -381,7 +419,7 @@ Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm S
 _Bild 18: Teile der Sub-D-Halterung_   
 
 ## 2.7 Zusammenbau des Rahmens
-Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser zusammengeschraubt werden.   
+Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser mit selbstbohrenden M 3 x 30 Senkkopfschrauben zusammengeschraubt werden.   
 
 ![Rahmen Ansicht von unten](./images/300_M12_frame_bottom_view.png "Rahmen Ansicht von unten")   
 _Bild 19: Zusammengeschraubter Rahmen, Ansicht von unten_   

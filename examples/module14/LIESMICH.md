@@ -291,7 +291,7 @@ Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3 mm 
 _Bild 21: Teile der Sub-D-Halterung_   
 
 ## 2.7 Zusammenbau des Rahmens
-Nachdem alle Teile des Rahmens vorbereitet wurden, kann dieser mit selbstbohrenden M 3 x 30 Schrauben zusammengeschraubt werden.   
+Nachdem alle Teile des Rahmens vorbereitet wurden, kann dieser mit selbstbohrenden M 3 x 30 Senkkopfschrauben zusammengeschraubt werden.   
 
 ![Rahmen M14](./images/300_M14_frame_1.png "Rahmen M14")   
 _Bild 22: Zusammengeschraubter Rahmen mit Halterung f&uuml;r die SUB-D-Platine_   
