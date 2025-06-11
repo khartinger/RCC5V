@@ -366,63 +366,17 @@ Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm S
 ![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
 _Bild 20: Teile der Sub-D-Halterung_   
 
+Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden. Im folgenden Bild erkennt man die Holzteile (hell)  und die 3D-gedruckten Teile (schwarz) des Rahmens. Weiters sind die montierten Schaltblöcke (Mitte unten) und die Versorgungsplatine (Mitte rechts in grün) zu erkennen.   
 
-
-
-
-Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden.   
-
-![Rahmen Ansicht von unten](./images/300_m13_frame_bottom_view.png "Rahmen Ansicht von unten")   
-_Bild ..: Zusammengeschraubter Rahmen, Ansicht von unten_   
+![Rahmen Ansicht von oben](./images/300_m13_rahmen1.png "Rahmen Ansicht von oben")   
+_Bild 21: Zusammengeschraubter Rahmen, Ansicht von oben_   
 
 [Zum Seitenanfang](#up)   
 
 
+
 # ====================================
 # ===== Vorlage für Beschreibung =====
-
-
-__LED-Fassungen__   
-Nach dem Bohren sind die Bohrungen zu reinigen und die LED-Fassungen einzupressen.   
-
-__Halterungen f&uuml;r Steuerbl&ouml;cke__   
-Im nicht zusammengeschraubten Zustand ist es viel leichter, gleich die Halterungen f&uuml;r die Steuerbl&ouml;cke auf der Innenseite mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
-
-Die Position der Schrauben f&uuml;r die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgenderma&szlig;en festgelegt:   
-![Schraubposition f&uuml;r Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition f&uuml;r Blockhalter")   
-_Bild 14: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
-
-
-Den fertigen Rahmenteil S&uuml;d zeigen die folgenden Bilder   
-![Rahmenteil S&uuml;d Forderseite](./images/300_m13_frame_south_front.png "Rahmenteil S&uuml;d Forderseite")   
-_Bild 14: Rahmenteil S&uuml;d Forderseite_   
-
-![Rahmenteil S&uuml;d R&uuml;ckseite](./images/300_m13_frame_south_back.png "Rahmenteil S&uuml;d R&uuml;ckseite")   
-_Bild 15: Rahmenteil S&uuml;d R&uuml;ckseite_   
-
-## 2.5 Querverstrebung Ri1 bis Ri3
-Die Querverstrebungen enthalten verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
-
-![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
-_Bild 16: Querverstrebungen Ri1 bis Ri3_
-
-## 2.6 Halterung f&uuml;r Sub-D-Stecker
-Die Halterung f&uuml;r einen SUB-D-Stecker besteht aus zwei U-f&ouml;rmigen Teilen, die links und rechts an einer Querstrebe angeschraubt werden. Die Teile k&ouml;nnen sowohl aus Holz als auch mit 3D-Druck hergestellt werden. F&uuml;r den Modul M12 werden zwei Halterungen ben&ouml;tigt.   
-
-![Sub-D-Halterung](./images/300_bracket_sub-d.png "Sub-D-Halterung")   
-_Bild 17: Ma&szlig;e der Halterung_   
-
-In jeden U-f&ouml;rmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,6 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatine.   
-Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm Sechskantmutter gegeneinander an einer Querstrebe verschraubt.   
-
-![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
-_Bild 18: Teile der Sub-D-Halterung_   
-
-## 2.7 Zusammenbau des Rahmens
-Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser mit selbstbohrenden M 3 x 30 Senkkopfschrauben zusammengeschraubt werden.   
-
-![Rahmen Ansicht von unten](./images/300_M12_frame_bottom_view.png "Rahmen Ansicht von unten")   
-_Bild 19: Zusammengeschraubter Rahmen, Ansicht von unten_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
