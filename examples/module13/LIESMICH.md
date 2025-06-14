@@ -36,6 +36,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 * [4. Elektrische Verdrahtung des Moduls](#x40)   
 * [5. Probebetrieb](#x50)   
 * [6. Abschlie&szlig;ende Arbeiten](#x60)   
+* [7. Anhang: Nachträglicher Einbau eines Entkupplers](#x70)   
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
@@ -71,8 +72,8 @@ Der Entwurf des Gleisplans erfolgt in zwei Schritten:
 * Im n&auml;chsten Schritt wird die Lage der Stromversorgungsstellen und Isolationsstellen festgelegt. Das kann dazu f&uuml;hren, dass zB Gleise in zwei Teile zerlegt werden m&uuml;ssen, damit man 2-polige Anschlusskabel (Fleischmann 22217) oder Isolierschienenverbinder (Fleischmann 9403) anbringen kann.   
 
 Der folgende Gleisplan wurde mit dem Programm [AnyRail Version 7](https://www.anyrail.com/) gezeichnet.   
-![M12 Gleisplan](./images/600_m13_gleisplan.png "M12 Gleisplan")   
-_Bild 4: Gleisplan_   
+![M12 Gleisplan V2](./images/600_m13_gleisplan_V2.png "M12 Gleisplan V2")   
+_Bild 4: Gleisplan Version 2_   
 
 Dunkelgraue Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
 
@@ -82,23 +83,27 @@ Dunkelgraue Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und r
 Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:   
 | Anzahl | Nummer | Name | Euro/Stk | Euro |   
 | :---: | :---: | :--- |  ---: |  ---: |   
-| 2 | 9101 | Gerade 111 mm | 4,40 | 8,80 |   
+| 1 | 9101 | Gerade 111 mm | 4,40 | 4,40 |   
 | 1 | 9103 | Gerade 55,5 mm | 4,40 | 4,40 |   
 | 3 | 9104 | Gerade 27,75 mm | 4,40 | 13,20 |   
 | 1 | 9110 | Ausgleichsgleis gerade 83mm-111mm | 14,60 | 14,60 |   
+| 1 | 9114 | Entkupplungsgleis gerade 111 mm | 15,20 | 15,20 |   
 | 1 | 9116 | Prellbock 57,5 mm | 8,40 | 8,40 |   
-| 6 | 9125 | Bogen Radius 225,6 mm, Winkel 45° (R2) | 4,90 | 29,40 |   
-| 4 | 9127 | Bogen Radius 225,6 mm, Winkel 30° (R2) | 4,90 | 19,60 |   
-| 4 | 9128 | Bogen Radius 225,6 mm, Winkel 7,5° (R2) | 4,90 | 19,60 |   
+| 6 | 9125 | Bogen Radius 225,6 mm, Winkel 45° (R2) | 4,40 | 26,40 |   
+| 4 | 9127 | Bogen Radius 225,6 mm, Winkel 15° (R2) | 4,40 | 17,60 |   
+| 4 | 9128 | Bogen Radius 225,6 mm, Winkel 7,5° (R2) | 4,10 | 17,60 |   
 | 1 | 9157 | Dreiwegweiche | 47,80 | 47,80 |   
-| 2 | 22205 | N Fleischmann, Gerade 50 mm | 4,40 | 8,80 |   
+| 2 | 22205 | N Fleischmann, Gerade 50 mm | 2,00 | 4,00 |   
 | 1 | 14974 | Minitrix, Aufgleisger&auml;t gerade, 104,2 mm | 4,20 | 4,20 |   
-| 2 | 640000 | Elektromagnetischer Weichenantrieb mit Endabschaltung | 25,60 | 51,20 |   
+| 2 | 640000 | Elektromagnetischer Weichenantrieb mit Endabschaltung | 24,90 | 49,80 |   
+| 1 | 9414 | Ansteckbarer Elektroantrieb für das Hand-Entkupplungsgleis 9114 | 29,90 | 29,90 |   
 | 1 | 9403   | Isolierschienenverbinder | 6,90 | 6,90 |   
-| 9 | 22217  | 2-poliges Anschlusskabel | 4,40 | 39,60 |   
+| 9 | 22217  | 2-poliges Anschlusskabel | 4,90 | 44,10 |   
 | 1 | LK200  | Kehrschleifenmodul Fa. Lenz | 83,10 | 83,10 |   
 
-Gesamtkosten 2025: ca. 360 Euro   
+Gesamtkosten Juni 2025: ca. 392 Euro   
+
+Preise unter anderem von der [Webseite der Fa. Fleischmann](https://www.fleischmann.de/fde/produkte/gleise.html?_=1749922164452&p=4&verfuegbarkeit_status=41%2C42%2C45).
 
 <a name="x13"></a>   
 
@@ -254,7 +259,7 @@ _Bild 8: Ma&szlig;e f&uuml;r den Seitenteil Ost Ra3 bzw. Querverstrebung Ri2 (Br
 
 <a name="x25"></a>   
 
-## 2.5 Seitenteil Ra4 (Süd 1)
+## 2.5 Seitenteil Ra4 (Süd 1) - Version 1
 Der Seitenteil "Süd" enthält die Steuerelemente des Moduls, wie die Anzeige (OLED) oder die Schalter für das abschaltbare Gleis und die Weiche.   
 Das folgende Bild gibt einen &Uuml;berblick &uuml;ber die erforderlichen Bohrungen.   
 
@@ -345,11 +350,13 @@ __LED-Fassungen__
 Reinigen der Bohrungen und Einpressen der LED-Fassungen.   
 
 __Halterungen f&uuml;r Steuerbl&ouml;cke__   
-Anschrauben der Halterungen f&uuml;r die Steuerbl&ouml;cke auf der Innenseite mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
+Anschrauben der Halterungen f&uuml;r die Steuerbl&ouml;cke auf der Innenseite mit 2,6 x 8 mm Kreuzschlitz-Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
 
 Die Position der Schrauben f&uuml;r die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgenderma&szlig;en festgelegt:   
 ![Schraubposition f&uuml;r Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition f&uuml;r Blockhalter")   
 _Bild 18: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
+
+Nach der Montage der Schaltblock-Halterung steckt man die Schaltblöcke hinein und schraubt sie mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
 
 __OLED__   
 Einstecken der OLED in die vorgesehene Öffnung.   
@@ -372,66 +379,87 @@ Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden. Im f
 _Bild 21: Zusammengeschraubter Rahmen, Ansicht von oben_   
 
 [Zum Seitenanfang](#up)   
-
-
-
-# ====================================
-# ===== Vorlage für Beschreibung =====
-
-[Zum Seitenanfang](#up)   
 <a name="x30"></a>   
+<a name="x31"></a>   
 
 # 3. Aufbau des Gleisplans   
 
 ## 3.1 Stellprobe   
-Der Probeaufbau erfolgt auf der 5 mm (bzw. 4 mm) Sperrholzplatte. Dazu wird der Gleisplan im Ma&szlig;stab 1:1 auf diese gezeichnet. Das kann entweder durch Ausdruck des Gleisplans im Ma&szlig;stab 1:1 und &uuml;bertragen auf das Sperrholz erfolgen (zB mit Kohlepapier), oder durch &Uuml;bertragen der Koordinaten auf das Sperrholz und Zeichnen des Gleisplans.   
+Der Probeaufbau erfolgt auf einer 5 mm (bzw. 4 mm) Sperrholzplatte. Dazu wird der Gleisplan im Ma&szlig;stab 1:1 auf diese gezeichnet. Das kann entweder durch Ausdruck des Gleisplans im Ma&szlig;stab 1:1 und &uuml;bertragen auf das Sperrholz erfolgen (zB mit Kohlepapier), oder durch &Uuml;bertragen der Koordinaten auf das Sperrholz und Zeichnen des Gleisplans.   
 Entsprechend dem Gleisplanentwurf m&uuml;ssen die Trennstellen in jeweils beiden Schienenstr&auml;ngen hergestellt werden. Dazu werden Fleischmann 9403 Isolier-Schienenverbinder verwendet. Die bisherigen Gleisverbinder werden entfernt und durch die Isolier-Schienenverbinder ersetzt.   
 Danach werden die Gleise entsprechend dem Gleisbild zusammengesteckt.   
 Beim Probeaufbau sollten auch alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufgestellt werden, damit man wei&szlig;, wie der Bahnk&ouml;rper (die 5 mm bzw. 4 mm Platte) zugeschnitten werden muss.   
 Schlie&szlig;lich wird mit dem l&auml;ngsten Waggon h&auml;ndisch eine Probefahrt durchgef&uuml;hrt und kontrolliert, ob alle Radien, &Uuml;berg&auml;nge etc. passen und keine Geb&auml;ude im Wege stehen.   
 
+Erst bei der Stellprobe ergab sich der Wunsch nach einem Entkupplungsgleis, sodass nachträglich ein Taster dafür eingebaut werden musste. Dieser Vorgang wird im Anhang beschrieben.   
+
+<a name="x32"></a>   
+
 ## 3.2 Zuschneiden und Aufkleben des Bahndamms auf die Grundplatte   
-War die Stellprobe erfolgreich, folgen &Uuml;berlegungen zu den einzelnen Gel&auml;ndeh&ouml;hen.   
-* An beiden Seiten des Moduls (Ost und West) ist die Gel&auml;ndeh&ouml;he null (E0). Ausgenommen davon ist der Bahndamm und das Schotterbett des Gleises, das in den Modul f&uuml;hrt.   
+War die Stellprobe erfolgreich, folgen &Uuml;berlegungen zu einzelnen Gel&auml;ndeh&ouml;hen.   
+* Auf der Ost-Seite des Moduls ist die Gel&auml;ndeh&ouml;he null (E0). Ausgenommen davon ist der Bahndamm und das Schotterbett des Gleises, das in den Modul f&uuml;hrt.   
 * Das Schotterbett liegt auf der Ebene E5 (= 5 mm Sperrholz). Der &Uuml;bergang zu Ebene E0 erfolgt &uuml;ber Schr&auml;gen mit 45 Grad.   
 * Die Fleischmann-Gleise liegen auf Niveau E8. Dazu wird auf das 5 mm-Sperrholz das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Der Schaumstoff d&auml;mpft auch etwas das Fahrger&auml;usch (Schallschutz).   
-* Bahnhofsgeb&auml;ude, Bahnsteige oder Verladerampen stehen normalerweise auf Niveau E8. An diesen Stellen sollte man das 5 mm-Sperrholz ausschneiden und gleich 8 mm hohes Sperrholz einsetzen und nicht die H&ouml;he schichtweise aufzubauen.   
-* Stra&szlig;en, die die Gleise &uuml;berqueren, haben als Oberkante E12.   
 
-Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet man die entsprechenden Platten zu und klebt sie auf die Grundplatte. Dazu sollte sich die Grundplatte im Rahmen befinden, damit man den Gleisanschluss am linken und rechten Rand genau herstellen kann.   
+Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet man die entsprechenden Platten zu und klebt sie auf die Grundplatte. Dazu sollte sich die Grundplatte im Rahmen befinden, damit man den Gleisanschluss rechten Rand genau herstellen kann.   
 
-Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, m&uuml;ssen noch Aussparungen ausgeschnitten werden.   
+Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, m&uuml;ssen noch Aussparungen in die Grundplatte geschnitten werden.   
 
-![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_turnout_cutout_right.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
-_Bild 20: Ma&szlig;e der Aussparung f&uuml;r einen Unterflurantrieb._   
+![Ma&szlig;e der Aussparung Unterflurantriebe](./images/300_m13_W3_turnout_cutout.png "Ma&szlig;e der Aussparung Unterflurantriebe")   
+_Bild 22: Ma&szlig;e der Aussparung f&uuml;r die Unterflurantriebe._   
 
-Die folgenden beiden Bilder zeigen die verschiedenen Ebenen des Gel&auml;ndes und die Aussparungen f&uuml;r die Weichen. Links vorne und rechts hinten ist das Niveau E0, in der Mitte und hinten (im Bild oben) ist 8 mm hohes Sperrholz (E8).   
-![Bahndamm2](./images/300_Bahndamm2.png "Bahndamm2")   
-![Bahndamm](./images/300_Bahndamm.png "Bahndamm")   
-_Bild 21: Verschiedene Modul-Ebenen_
+Die Ecken der Aussparungen bilden sechs Punkte mit den Koordinaten P1(12/5), P2(100/16), P3(97,5/36), P4(73/37), P5(33/32) und P6(9,5/25). Für den zweiten Antrieb der Dreiwegweiche sind die Koordinaten gespiegelt. Der Koordinatenursprung befindet sich in der Mitte des Gleisrandes bei den Weichenzungen (siehe Bild oben).    
+
+<a name="x33"></a>   
 
 ## 3.3 Bettungsk&ouml;rper (Schotterbett)
-Im n&auml;chsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Dies erfolgt nicht nur an Stellen, wo sp&auml;ter ein Gleis verl&auml;uft, sondern auch an Stellen, die das gleiche Niveau haben sollen, zB zwischen den Gleisen oder dort, wo sp&auml;ter der Antrieb f&uuml;r den Entkuppler hinkommt.   
-Danach bohrt man mit einem 4 mm Bohrer die L&ouml;cher f&uuml;r die Fahrstromzuf&uuml;hrung. Wenn man eine 1:1 Vorlage des Gleisbildes ausgedruckt hat, so kann man diese als Bohrschablone verwenden.   
+Im n&auml;chsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt.   
+
+<a name="x34"></a>   
+
+## 3.4 Bohrungen für die Stromzuführung zu den Gleisen
+Wichtig: Vor den Bohren müssen die 25-poligen Sub-D-Platinen entfernt werden, damit sie nicht beschädigt werden.   
+Danach bohrt man mit einem 4 mm Bohrer die L&ouml;cher f&uuml;r die Fahrstromzuf&uuml;hrung. Wenn man eine 1:1 Vorlage des Gleisbildes ausgedruckt hat, kann man diese als Bohrschablone verwenden.   
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen f&uuml;r die Weichenantriebe und die Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung.   
 
-![Schotterbett](./images/300_Schotterbett1.png "Schotterbett")   
-_Bild 22: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
+![Schotterbett](./images/300_m13_schotterbett1.png "Schotterbett")   
+_Bild ..: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
 
-## 3.4 Vorbereitung der Verdrahtung
-### Montage der Schaltbl&ouml;cke   
-Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). F&uuml;r ein leichteres Arbeiten entfernt man zuerst die Grundplatte vom Rahmen und montiert die Schaltbl&ouml;cke. Dazu steckt man einen Schaltblock in die Schaltblock-Halterung und schraubt ihn mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
-![Schaltblockmontage](./images/300_Schaltblockmontage.png "Schaltblockmontage")   
-_Bild 23: Anschrauben der Schaltbl&ouml;cke_   
+<a name="x35"></a>   
 
-Weiters montiert man auf die erste und dritte Querstrebe die Halterung f&uuml;r die Sub-D-Stecker. Sollte dabei eine Fahrstromzuf&uuml;hrung genau unter einer Halterung liegen, so muss man die Stromzuf&uuml;hrung nochmals bohren....   
-
-### Montage der Anzeige und des Mikrocontrollers   
-Die OLED-Anzeige und den Mikrocontroller, wie bei [Rahmenteil Ra4 (S&uuml;d)](#x24) beschrieben, in den Rahmen einsetzen.   
+## 3.5 Vorbereitung der Verdrahtung
+Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). Dazu legt man das Modul mit der Oberseite (Gleisseite) auf den Tisch.   
 
 ## Montage der I²C-I/O-Expanderplatinen
-1. Segment 2: Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
-2. Segment 3: Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x22 und 0x23 mit Hilfe der Jumper.   
+Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
+
+# === ..ToDo.. ===   
+
+
+[Zum Seitenanfang](#up)   
+<a name="x70"></a>   
+
+## 7. Anhang: Nachträglicher Einbau eines Entkupplers
+Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch wäre, wenn man Waggons dort abstellen möchte. Dazu sind einige Arbeitsschritte erforderlich:   
+1. Ausbau des [Seitenteils Ra4 (Süd 1) - Version 1](#x25).   
+   ![Seitenteil_Ra4_Version_1](./images/300_m13_Ra4_V1.png "Seitenteil_Ra4_Version_1")   
+   _Bild ..: Das ausgebaute Seitenteil Ra4_   
+2. Entfernen der Steuerblöcke und des uC-LED-Blocks (rechts).   
+3. Ergänzung der Beschriftung der Bedienungselemente.   
+  ![Beschriftung_Bedienungselemente_Version_2](./images/300_m13_cover_50mm_V2.png "Beschriftung_Bedienungselemente_Version_2")   
+  _Bild ..: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
+4. Ausschneiden der bestehenden Bohrungen auf dem Klebefolie-Ausdruck mit einer Schere, Aufkleben der Folie auf den Seitenteil Ra4 und Bohren der vier fehlenden Bohrungen für den Entkuppler (1x 7 mm, 3x 5,6 mm Durchmesser).   
+   ![Seitenteil_Ra4_Version_2_roh](./images/300_m13_Ra4_V2_raw.png "Seitenteil_Ra4_Version_2_roh")   
+   _Bild ..: Seitenteil Ra4 mit den Bohrungen für die neuen Bedienelemente_   
+5. Einpressen der LED-Fassungen und Montage der Blockhalterungen auf der Rückseite mit 2,6 x 8 mm Kreuzschlitz-Schrauben.   
+   ![Seitenteil_Ra4_V2_Blockhalterungen](./images/300_m13_Ra4_V2_block_holder.png "Seitenteil_Ra4_V2_Blockhalterungen")   
+   _Bild ..: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugehörigen Schaltblöcke._   
+6. Einsetzen der Schaltblöcke und mit M2x20 mm Kreuzschlitz-Schrauben __leicht (!)__ anschrauben.   
+7. Einsetzen des uC-LED-Blocks.   
+8. Einbau des Seitenteils Ra4 - Version 2 in den Rahmen.   
+
+# ====================================
+# ===== Vorlage für Beschreibung =====
 
 ### Montage der Schraubklemmen   
 Um die Verkabelung des Moduls &uuml;bersichtlich zu gestalten, werden 2x2 L&auml;ngslinien (Abstand vom Rand 4 cm und 5,5 cm) gezeichnet, die genau durch die Durchf&uuml;hrungen der Querverbinder f&uuml;hren. In diesem Bereich werden die Kabel gef&uuml;hrt. Nun setzt man die Grundplatte wieder in den Rahmen ein.   
