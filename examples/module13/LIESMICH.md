@@ -413,11 +413,15 @@ _Bild 22: Ma&szlig;e der Aussparung f&uuml;r die Unterflurantriebe._
 
 Die Ecken der Aussparungen bilden sechs Punkte mit den Koordinaten P1(12/5), P2(100/16), P3(97,5/36), P4(73/37), P5(33/32) und P6(9,5/25). Für den zweiten Antrieb der Dreiwegweiche sind die Koordinaten gespiegelt. Der Koordinatenursprung befindet sich in der Mitte des Gleisrandes bei den Weichenzungen (siehe Bild oben).    
 
+Das folgende Bild zeigt den aufgeklebten Bahndamm mit den Weichenausschnitten:   
+![Bahndamm](./images/300_m13_bahndamm1.png "Bahndamm")   
+_Bild ..: Grundplatte mit Bahndamm und Weichenausschnitten_   
+
 <a name="x33"></a>   
 
-## 3.3 Bettungsk&ouml;rper (Schotterbett)
-Nach dem Aufkleben der zugeschnittenen und abgeschrägten 5 mm-Sperrholzplatte ("Schotterbett") auf die Basisplatte sollte das Trocknen des Leims abgewartet werden. Währenddessen kann bereits das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) vorbereitet werden. Damit das Biegen des R2-Radius leichter fällt können auf der Innenseite schmale Keile eingeschnitten werden (Abstand einige cm, bis zur Mitte des Gleisbettes).    
-Anschließend wird der Schaumstoff aufgeklebt.   
+## 3.3 Bahndamm und Schotterbett
+Nach dem Aufkleben der zugeschnittenen und abgeschrägten 5 mm-Sperrholzplatte ("Bahndamm") auf die Basisplatte sollte das Trocknen des Leims abgewartet werden. Währenddessen kann bereits das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) vorbereitet werden. Damit das Biegen des R2-Radius leichter fällt, können auf der Innenseite in das Schaumstoffband schmale Keile eingeschnitten werden (Abstand einige cm, bis zur Mitte des Gleisbettes).    
+Im nächsten Schritt wird der Schaumstoff aufgeklebt.   
 
 <a name="x34"></a>   
 
