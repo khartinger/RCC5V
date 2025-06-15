@@ -11,7 +11,7 @@ Diese Anleitung beschreibt den Bau eines 80 x 50 cm² gro&szlig;en N-Spur-Gleis-
 Ein von Osten kommender Zug fährt über die Kehrschleife zurück nach Osten. In der Modul-Mitte befindet sich ein 45 cm langes Gleis mit Stromabschaltemöglichkeit zum Abstellen eines Zuges.   
 Das Bild zeigt das technisch fertige Modul ohne Landschaftsgestaltung. An der Forderfront erkennt man die Bedien- und Anzeigeelemente f&uuml;r den Handbetrieb.   
 
-..ToDo: Bild 1 folgt..   
+_..ToDo: Bild 1 folgt, sobald das Modul fertig ist :) .._   
 
 ![Modul M13](./images/300_m13_Gleis_montiert1.png "Modul M13")   
 _Bild 1: Rahmen mit Grundplatte und Gleisen._   
@@ -34,7 +34,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 # Inhaltsverzeichnis   
 * [1. Vorbereitung - Einkauf](#x10)   
 * [2. Bau des Modul-Rahmens](#x20)   
-* [3. Aufbau des Gleisplans](#x30)   
+* [3. Aufbau der Gleise](#x30)   
 * [4. Elektrische Verdrahtung des Moduls](#x40)   
 * [5. Probebetrieb](#x50)   
 * [6. Abschlie&szlig;ende Arbeiten](#x60)   
@@ -384,26 +384,26 @@ _Bild 21: Zusammengeschraubter Rahmen, Ansicht von oben_
 <a name="x30"></a>   
 <a name="x31"></a>   
 
-# 3. Aufbau des Gleisplans   
+# 3. Aufbau der Gleise   
 
 ## 3.1 Stellprobe   
-Der Probeaufbau erfolgt auf einer 5 mm (bzw. 4 mm) Sperrholzplatte. Dazu wird der Gleisplan im Ma&szlig;stab 1:1 auf diese gezeichnet. Das kann entweder durch Ausdruck des Gleisplans im Ma&szlig;stab 1:1 und &uuml;bertragen auf das Sperrholz erfolgen (zB mit Kohlepapier), oder durch &Uuml;bertragen der Koordinaten auf das Sperrholz und Zeichnen des Gleisplans.   
-Entsprechend dem Gleisplanentwurf m&uuml;ssen die Trennstellen in jeweils beiden Schienenstr&auml;ngen hergestellt werden. Dazu werden Fleischmann 9403 Isolier-Schienenverbinder verwendet. Die bisherigen Gleisverbinder werden entfernt und durch die Isolier-Schienenverbinder ersetzt.   
+Der Probeaufbau erfolgt auf der 78 x 48 cm² großen, 5 mm (bzw. 4 mm) starken Sperrholzplatte. Als Vorbereitung druckt man den Gleisplan in [AnyRail](https://www.anyrail.com/) im Ma&szlig;stab 1:1 aus und überträgt ihn mit Kohlepapier - falls vorhanden - auf die Platte.   
+An den im Gleisplan vorgegebenen Stellen werden die Trennstellen hergestellt. Dazu zieht man an beiden Schienen die bisherigen Gleisverbinder mit einer Zange ab und ersetzt sie durch Fleischmann 9403 Isolier-Schienenverbinder.   
 Danach werden die Gleise entsprechend dem Gleisbild zusammengesteckt.   
 Beim Probeaufbau sollten auch alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufgestellt werden, damit man wei&szlig;, wie der Bahnk&ouml;rper (die 5 mm bzw. 4 mm Platte) zugeschnitten werden muss.   
 Schlie&szlig;lich wird mit dem l&auml;ngsten Waggon h&auml;ndisch eine Probefahrt durchgef&uuml;hrt und kontrolliert, ob alle Radien, &Uuml;berg&auml;nge etc. passen und keine Geb&auml;ude im Wege stehen.   
 
-Erst bei der Stellprobe ergab sich der Wunsch nach einem Entkupplungsgleis, sodass nachträglich ein Taster dafür eingebaut werden musste. Dieser Vorgang wird im Anhang beschrieben.   
+Erst bei der Stellprobe ergab sich der Wunsch nach einem Entkupplungsgleis, sodass nachträglich ein Taster in den Rahmen eingebaut werden musste. Dieser Vorgang wird [im Anhang](#x70) beschrieben.   
 
 <a name="x32"></a>   
 
 ## 3.2 Zuschneiden und Aufkleben des Bahndamms auf die Grundplatte   
-War die Stellprobe erfolgreich, folgen &Uuml;berlegungen zu einzelnen Gel&auml;ndeh&ouml;hen.   
+War die Stellprobe erfolgreich, folgen &Uuml;berlegungen zu einzelnen Gleis- und Gel&auml;ndeh&ouml;hen.   
 * Auf der Ost-Seite des Moduls ist die Gel&auml;ndeh&ouml;he null (E0). Ausgenommen davon ist der Bahndamm und das Schotterbett des Gleises, das in den Modul f&uuml;hrt.   
 * Das Schotterbett liegt auf der Ebene E5 (= 5 mm Sperrholz). Der &Uuml;bergang zu Ebene E0 erfolgt &uuml;ber Schr&auml;gen mit 45 Grad.   
 * Die Fleischmann-Gleise liegen auf Niveau E8. Dazu wird auf das 5 mm-Sperrholz das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Der Schaumstoff d&auml;mpft auch etwas das Fahrger&auml;usch (Schallschutz).   
 
-Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet man die entsprechenden Platten zu und klebt sie auf die Grundplatte. Dazu sollte sich die Grundplatte im Rahmen befinden, damit man den Gleisanschluss rechten Rand genau herstellen kann.   
+Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet man die entsprechenden Platten zu und klebt sie auf die Grundplatte. Dazu sollte sich die Grundplatte im Rahmen befinden, damit man den Gleisanschluss am rechten Rand genau herstellen kann.   
 
 Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, m&uuml;ssen noch Aussparungen in die Grundplatte geschnitten werden.   
 
@@ -421,7 +421,17 @@ Im n&auml;chsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 
 
 ## 3.4 Bohrungen für die Stromzuführung zu den Gleisen
 Wichtig: Vor den Bohren müssen die 25-poligen Sub-D-Platinen entfernt werden, damit sie nicht beschädigt werden.   
-Danach bohrt man mit einem 4 mm Bohrer die L&ouml;cher f&uuml;r die Fahrstromzuf&uuml;hrung. Wenn man eine 1:1 Vorlage des Gleisbildes ausgedruckt hat, kann man diese als Bohrschablone verwenden.   
+#### Vorbereitung der Weichen   
+Um den Antrieb als Unterflurantrieb zu verwenden, muss man den Schalthebel der Weiche herausziehen und um 180° gedreht wieder einstecken. Danach kann der Antrieb mit der Oberseite nach unten aufgesteckt werden.   
+#### Art der Stromzuf&uuml;hrung   
+Die Art der Stromzuführung bestimmt die Anzahl und Lage der Bohrungen.   
+* Verwendet man die Stromzuf&uuml;hrungskabel Fleischmann 22217, so muss man __außerhalb__ (oberhalb) des Gleises __eine__ Bohrung setzen (4 mm), um die Kabel nach unten durchf&uuml;hren zu k&ouml;nnen.   
+* Lötet man die Stromzuf&uuml;hrungen selbst ([siehe Kap. 3.5 weiter unten](#x35)), so muss __direkt unter__ jedem Gleisverbinder eine Bohrung (d.h. in Summe __zwei__ Bohrungen) gesetzt werden.   
+#### Vorbereitung Entkupplungsgleis   
+F&uuml;r den Antrieb des Entkupplungsgleises 9112 (oder 22212) muss ebenfalls eine 4 mm-Bohrung gesetzt werden.   
+
+Sind alle Bohrpositionen festgelegt, bohrt man mit einem 4 mm Bohrer die L&ouml;cher f&uuml;r die Fahrstromzuf&uuml;hrung. Wenn man eine 1:1 Vorlage des Gleisbildes ausgedruckt hat, kann man diese als Bohrschablone verwenden.   
+
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen f&uuml;r die Weichenantriebe und die Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung.   
 
 ![Schotterbett](./images/300_m13_schotterbett1.png "Schotterbett")   
@@ -429,11 +439,34 @@ _Bild ..: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahr
 
 <a name="x35"></a>   
 
-## 3.5 Vorbereitung der Verdrahtung
-Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). Dazu legt man das Modul mit der Oberseite (Gleisseite) auf den Tisch.   
+## 3.5 Anbringen der Stromversorgung an den Gleisen   
+Zur Stromversorgung kann man entweder Fleischmann 22217 "Anschlu&szlig;kabel 2pol. Spur N" verwenden oder man l&ouml;tet selbst Dr&auml;hte an die Gleisverbinder. Dies geht f&uuml;r Fleischmann-Schotterbett-Gleise sehr gut, w&auml;hrend die Verbinder von Gleisen ohne Schotterbett praktisch nicht l&ouml;tbar sind.   
+Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht mit 0,32 mm² (22awg) f&uuml;r die n&ouml;rdliche Schiene und einen roten Draht f&uuml;r die s&uuml;dliche Schiene. Der Draht wird beidseitig ca. 6 mm abisoliert und f&uuml;r den Gleisverbinder-Anschluss hakenf&ouml;rmig gebogen, mit einer kleinen Zange etwas flachgedr&uuml;ckt und verzinnt.   
+Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, der rechts oben entfernt ist.   
 
-## Montage der I²C-I/O-Expanderplatinen
-Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
+![Loeten_Gleisanschluss1](./images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")   
+_Bild ..: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
+
+<a name="x35"></a>   
+
+## 3.6 Gleise aufkleben   
+Alle Kabel in die Bohrungen einf&auml;deln und nach unten ziehen, bis die Gleise etwa 5 bis 10 cm Abstand zur zuk&uuml;nftigen Position haben. Die Grundplatte etwas schr&auml;g stellen, damit die Kabel nicht geknickt werden.   
+Alle Bereiche markieren, auf die kein Leim aufgetragen werden darf (oder mit Klebeband abdecken):   
+* Weichenantrieb   
+* Entkupplungsgleis   
+* Ausgleichsgleis (Anschlussgleis) am rechten Rand (Ost)   
+
+Das Gleisbett mit Leim bestreichen. Dabei darauf achten, dass im Bereich der Weiche und des Entkupplungsgleises m&ouml;glichst wenig Leim (oder gar kein Leim) aufgebracht wird, damit kein Leim in die Antriebe gelangt und diese verklebt!   
+Da das Ausgleichsgleis zur Anpassung von Abst&auml;nden am Modulrand dient, darf in diesem Bereich ebenfalls KEIN Leim aufgebracht werden!   
+Danach die Gleise fertig zusammenstecken und vorsichtig an den Kabeln ziehen, bis die Gleise auf dem Leim liegen.   
+Da das Ausgleichsgleis am rechten Rand im Betrieb mechanisch in L&auml;ngsrichtung beansprucht wird, sollte es mit einem Gleisnagel zus&auml;tzlich fixiert werden. Dabei muss der Gleisnagel an der vom Rand entfernten Gleisseite eingeschlagen werden.   
+
+Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgenderma&szlig;en aus:   
+![Montiertes Gleis](./images/300_m13_gleis_montiert1.png "Montiertes Gleis")   
+_Bild ..: Rahmen mit Grundplatte und Gleisen._   
+
+
+
 
 # === ..ToDo.. ===   
 
@@ -462,6 +495,13 @@ Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w�
 
 # ====================================
 # ===== Vorlage für Beschreibung =====
+
+
+## 3.5 Vorbereitung der Verdrahtung
+Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). Dazu legt man das Modul mit der Oberseite (Gleisseite) auf den Tisch.   
+
+## Montage der I²C-I/O-Expanderplatinen
+Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
 
 ### Montage der Schraubklemmen   
 Um die Verkabelung des Moduls &uuml;bersichtlich zu gestalten, werden 2x2 L&auml;ngslinien (Abstand vom Rand 4 cm und 5,5 cm) gezeichnet, die genau durch die Durchf&uuml;hrungen der Querverbinder f&uuml;hren. In diesem Bereich werden die Kabel gef&uuml;hrt. Nun setzt man die Grundplatte wieder in den Rahmen ein.   
