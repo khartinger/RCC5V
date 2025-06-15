@@ -388,12 +388,13 @@ _Bild 21: Zusammengeschraubter Rahmen, Ansicht von oben_
 
 ## 3.1 Stellprobe   
 Der Probeaufbau erfolgt auf der 78 x 48 cm² großen, 5 mm (bzw. 4 mm) starken Sperrholzplatte. Als Vorbereitung druckt man den Gleisplan in [AnyRail](https://www.anyrail.com/) im Ma&szlig;stab 1:1 aus und überträgt ihn mit Kohlepapier - falls vorhanden - auf die Platte.   
-An den im Gleisplan vorgegebenen Stellen werden die Trennstellen hergestellt. Dazu zieht man an beiden Schienen die bisherigen Gleisverbinder mit einer Zange ab und ersetzt sie durch Fleischmann 9403 Isolier-Schienenverbinder.   
+An den im Gleisplan vorgegebenen Stellen werden die Trennstellen hergestellt. Dazu zieht man an der Trennstelle beiden Schienen die bisherigen Gleisverbinder mit einer Zange ab und ersetzt sie durch Fleischmann 9403 Isolier-Schienenverbinder.   
 Danach werden die Gleise entsprechend dem Gleisbild zusammengesteckt.   
+
 Beim Probeaufbau sollten auch alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufgestellt werden, damit man wei&szlig;, wie der Bahnk&ouml;rper (die 5 mm bzw. 4 mm Platte) zugeschnitten werden muss.   
 Schlie&szlig;lich wird mit dem l&auml;ngsten Waggon h&auml;ndisch eine Probefahrt durchgef&uuml;hrt und kontrolliert, ob alle Radien, &Uuml;berg&auml;nge etc. passen und keine Geb&auml;ude im Wege stehen.   
 
-Erst bei der Stellprobe ergab sich der Wunsch nach einem Entkupplungsgleis, sodass nachträglich ein Taster in den Rahmen eingebaut werden musste. Dieser Vorgang wird [im Anhang](#x70) beschrieben.   
+Beim Modul 13 ergab sich erst bei der Stellprobe der Wunsch nach einem Entkupplungsgleis, sodass nachträglich ein Taster in den Rahmen eingebaut werden musste. Dieser Vorgang wird [im Anhang](#x70) beschrieben.   
 
 <a name="x32"></a>   
 
@@ -415,12 +416,13 @@ Die Ecken der Aussparungen bilden sechs Punkte mit den Koordinaten P1(12/5), P2(
 <a name="x33"></a>   
 
 ## 3.3 Bettungsk&ouml;rper (Schotterbett)
-Im n&auml;chsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt.   
+Nach dem Aufkleben der zugeschnittenen und abgeschrägten 5 mm-Sperrholzplatte ("Schotterbett") auf die Basisplatte sollte das Trocknen des Leims abgewartet werden. Währenddessen kann bereits das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) vorbereitet werden. Damit das Biegen des R2-Radius leichter fällt können auf der Innenseite schmale Keile eingeschnitten werden (Abstand einige cm, bis zur Mitte des Gleisbettes).    
+Anschließend wird der Schaumstoff aufgeklebt.   
 
 <a name="x34"></a>   
 
 ## 3.4 Bohrungen für die Stromzuführung zu den Gleisen
-Wichtig: Vor den Bohren müssen die 25-poligen Sub-D-Platinen entfernt werden, damit sie nicht beschädigt werden.   
+Wichtig: Vor den Bohren müssen auf der Unterseite die 25-poligen Sub-D-Platinen entfernt werden, damit sie nicht beschädigt werden.   
 #### Vorbereitung der Weichen   
 Um den Antrieb als Unterflurantrieb zu verwenden, muss man den Schalthebel der Weiche herausziehen und um 180° gedreht wieder einstecken. Danach kann der Antrieb mit der Oberseite nach unten aufgesteckt werden.   
 #### Art der Stromzuf&uuml;hrung   
@@ -441,8 +443,9 @@ _Bild ..: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahr
 
 ## 3.5 Anbringen der Stromversorgung an den Gleisen   
 Zur Stromversorgung kann man entweder Fleischmann 22217 "Anschlu&szlig;kabel 2pol. Spur N" verwenden oder man l&ouml;tet selbst Dr&auml;hte an die Gleisverbinder. Dies geht f&uuml;r Fleischmann-Schotterbett-Gleise sehr gut, w&auml;hrend die Verbinder von Gleisen ohne Schotterbett praktisch nicht l&ouml;tbar sind.   
-Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht mit 0,32 mm² (22awg) f&uuml;r die n&ouml;rdliche Schiene und einen roten Draht f&uuml;r die s&uuml;dliche Schiene. Der Draht wird beidseitig ca. 6 mm abisoliert und f&uuml;r den Gleisverbinder-Anschluss hakenf&ouml;rmig gebogen, mit einer kleinen Zange etwas flachgedr&uuml;ckt und verzinnt.   
-Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, der rechts oben entfernt ist.   
+Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht f&uuml;r die n&ouml;rdliche Schiene und einen roten Draht f&uuml;r die s&uuml;dliche Schiene. Der Drahtdurchmesser sollte zB 0,64 mm (= 0,32 mm² = 22 awg) oder - besser - 0,8 mm (= 0,5 mm² = 20 awg) betragen.   
+Der Draht wird beidseitig ca. 6 mm abisoliert, hakenf&ouml;rmig gebogen, mit einer kleinen Zange etwas flachgedr&uuml;ckt und verzinnt.   
+Dann fixiert man das Gleis am besten mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ) und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten noch die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, die rechts oben bereits entfernt ist.   
 
 ![Loeten_Gleisanschluss1](./images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")   
 _Bild ..: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
