@@ -283,7 +283,7 @@ Bei Verwendung eines 3D-gedruckten Rahmens ben&ouml;tigt man eine rechteckf&ouml
 _Bild 11: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
 
 __Steuerbl&ouml;cke__   
-Je nach Art des Steuerelementes werden unterschiedliche Bohrungen ben&ouml;tigt. So zeigt das Symbol der Dreiwegweiche W3 nach links und hat 6 Bohrungen, das Schaltsymbol f&uuml;r die Fahrstromabschaltung 2IO enthält 7 Bohrungen.   
+Je nach Art des Steuerelementes werden unterschiedliche Bohrungen ben&ouml;tigt. So zeigt das Symbol der Dreiwegweiche W3 nach links und hat 6 Bohrungen, das Schaltsymbol f&uuml;r die Fahrstromabschaltung 2IO enthält 7 Bohrungen und der später eingefügte Taster für das Entkuppler-Gleis hat 4 Bohrungen.   
 Die genaue Lage aller Bohrungen f&uuml;r einen Schaltblock zeigt das folgende Bild, wobei je nach Schaltblock-Typ nur die entsprechenden Bohrungen ben&ouml;tigt werden (!):   
 
 ![Bohrposition LEDs und Taster](./images/300_drill_position_LED_button.png "Bohrposition LEDs und Taster")   
@@ -291,12 +291,14 @@ _Bild 12: Ma&szlig;e f&uuml;r die LED- und Taster-Bohrungen_
 
 Der Bohrdurchmesser f&uuml;r die LED-Fassungen betr&auml;gt 5,6 mm, der f&uuml;r die Taster ca. 7 mm.   
 
-Das einzelne Anzeichnen der Positionen der Bohrungen ben&ouml;tigt viel Zeit und genaues Arbeiten. Daher macht es Sinn, in einem Grafik-Programm (zB `LibreOffice Draw`) Abdeckungen (Beschriftungen) f&uuml;r die Schaltbl&ouml;cke  zu entwerfen. Diese werden auf Etikettenpapier ausgedruckt und auf das Holz aufgeklebt (Abstand zum unteren Rand 8 mm). Damit ist das Bohren wesentlich einfacher. Die Beschriftungen k&ouml;nnen entweder beibehalten oder entfernt werden, wenn man sie nicht m&ouml;chte. Falls die Beschriftungen zu stark durch das Bohren besch&auml;digt wurden, kann man sie auch ablösen und durch neue ersetzen....   
+Das einzelne Anzeichnen der Positionen der Bohrungen ben&ouml;tigt viel Zeit und genaues Arbeiten. Daher macht es Sinn, in einem Grafik-Programm (zB `LibreOffice Draw`) Abdeckungen (Beschriftungen) f&uuml;r die Schaltbl&ouml;cke  zu entwerfen. Diese werden auf Etikettenpapier ausgedruckt und auf das Holz aufgeklebt (Abstand zum unteren Rand 8 mm). Damit ist das Bohren wesentlich einfacher. Die Beschriftungen k&ouml;nnen nach dem Bohren entweder beibehalten oder entfernt werden, wenn man sie nicht m&ouml;chte. Falls die Beschriftungen zu stark durch das Bohren besch&auml;digt wurden, kann man sie auch ablösen und durch neue ersetzen....   
 
-Das folgende Bild zeigt die beiden je 40 x 42 mm gro&szlig;en Abdeckungen (Abstand 8 mm).   
+Das folgende Bild zeigt die Version 1 der Abdeckung (Blockgröße 40 x 42 mm², Abstand 8 mm).   
  
 ![Beschriftung Bedienungselemente](./images/300_m13_cover_50mm.png "Beschriftung Bedienungselemente")   
-_Bild 13: Beschriftung der Bedienungselemente f&uuml;r Modul 13_   
+_Bild 13: Version 1 der Beschriftung der Bedienungselemente f&uuml;r Modul 13_   
+
+Bereits beim Erstellen der Beschriftung sollte man die DCC-Adressen für die Schaltblöcke festlegen, damit man die Werte in der Beschriftungszeile mit angeben kann. In den Beispielen dieses Repositorys wird als ACC-Adresse die Modulnummer plus eine fortlaufende Einerstelle verwendet, für diesen Modul 13 zB 131 bis 134.   
 
 <a name="x26"></a>   
 
@@ -457,21 +459,65 @@ _Bild ..: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._
 <a name="x35"></a>   
 
 ## 3.6 Gleise aufkleben   
-Alle Kabel in die Bohrungen einf&auml;deln und nach unten ziehen, bis die Gleise etwa 5 bis 10 cm Abstand zur zuk&uuml;nftigen Position haben. Die Grundplatte etwas schr&auml;g stellen, damit die Kabel nicht geknickt werden.   
-Alle Bereiche markieren, auf die kein Leim aufgetragen werden darf (oder mit Klebeband abdecken):   
+Zuerst werden alle Bereiche markiert, auf die kein Leim aufgetragen werden darf:   
 * Weichenantrieb   
 * Entkupplungsgleis   
 * Ausgleichsgleis (Anschlussgleis) am rechten Rand (Ost)   
 
-Das Gleisbett mit Leim bestreichen. Dabei darauf achten, dass im Bereich der Weiche und des Entkupplungsgleises m&ouml;glichst wenig Leim (oder gar kein Leim) aufgebracht wird, damit kein Leim in die Antriebe gelangt und diese verklebt!   
-Da das Ausgleichsgleis zur Anpassung von Abst&auml;nden am Modulrand dient, darf in diesem Bereich ebenfalls KEIN Leim aufgebracht werden!   
-Danach die Gleise fertig zusammenstecken und vorsichtig an den Kabeln ziehen, bis die Gleise auf dem Leim liegen.   
-Da das Ausgleichsgleis am rechten Rand im Betrieb mechanisch in L&auml;ngsrichtung beansprucht wird, sollte es mit einem Gleisnagel zus&auml;tzlich fixiert werden. Dabei muss der Gleisnagel an der vom Rand entfernten Gleisseite eingeschlagen werden.   
+Jetzt beginnt das Aufkleben:   
+* Alle Gleisanschlusskabel in die Bohrungen einf&auml;deln und nach unten ziehen, bis die Gleise etwa 5 bis 10 cm Abstand zur zuk&uuml;nftigen Position haben. Die Grundplatte etwas schr&auml;g stellen, damit die Kabel nicht geknickt werden.   
+* Die Mitte des Gleisbettes mit Leim bestreichen.   
+Dabei darauf achten, dass im Bereich der Weiche und des Entkupplungsgleises kein Leim aufgebracht wird, damit dieser nicht in die Antriebe gelangt und diese verklebt!   
+Das Ausgleichsgleis am rechten Rand des Moduls dient zur Anpassung von Abst&auml;nden und muss ein- und ausschiebbar sein. Daher darf in diesem Bereich ebenfalls KEIN Leim aufgebracht werden!   
+* Die Gleise fertig zusammenstecken und von unten vorsichtig an den Kabeln ziehen, bis die Gleise auf dem Leim liegen.   
+* Da das Ausgleichsgleis am rechten Rand im Betrieb mechanisch in L&auml;ngsrichtung beansprucht wird, sollte es mit einem Gleisnagel zus&auml;tzlich fixiert werden. Dabei muss der Gleisnagel an der vom Rand entfernten Gleisseite eingeschlagen werden.   
 
 Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgenderma&szlig;en aus:   
 ![Montiertes Gleis](./images/300_m13_gleis_montiert1.png "Montiertes Gleis")   
 _Bild ..: Rahmen mit Grundplatte und Gleisen._   
 
+[Zum Seitenanfang](#up)   
+<a name="x40"></a>   
+<a name="x41"></a>   
+
+# 4. Elektrische Verdrahtung des Moduls   
+
+## 4.1 Verdrahtungsplan
+Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der eingesetzten Komponenten:   
+![&Uuml;bersicht M13](./images/600_m13_overview.png "&Uuml;bersicht M13")   
+_Bild ..: &Uuml;bersichtsplan Modul 13_   
+
+## Bedeutung der einzelnen Komponenten
+Die folgende Liste enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
+
+`SUB25_10 ....` [Modul-Verbinder mit Netzteil](/fab/rcc1_supply/LIESMICH.md#x30)      
+`uC_OLED .....` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
+
+-------   
+
+`1OUT ........` [Block zur Ausgabe der Wechselspannung](/fab/rcc4_block/LIESMICH.md#x40) zB f&uuml;r Entkuppler   
+`W3 ..........` [Block zum Schalten einer Dreiwegweiche](/fab/rcc4_block/LIESMICH.md#x30)   
+`2IO..........` [Block zum Schalten eines abschaltbaren Gleises](/fab/rcc4_block/LIESMICH.md#x50)   
+
+-------   
+
+`10pol_PIN....` Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin [als &auml;ltere Version `CON_10pol_PIN`](/fab/rcc5_add_ons/LIESMICH.md#x90) bzw. [als neuere Version `CON_10pol_2x4`](/fab/rcc5_add_ons/LIESMICH.md#x80)   
+`CON_6pol-3 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 3 Pins](/fab/rcc5_add_ons/LIESMICH.md#x40) zum Beispiel f&uuml;r eine Zweiwegweiche _W2_ oder einen Entkuppler _1OUT_   
+`CON_6pol-6 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 6 Pins](/fab/rcc5_add_ons/LIESMICH.md#x50) zum Beispiel f&uuml;r eine Dreiwegweiche _W3_    
+`CON_1xIO ....` [Umsetzer vom 6-poligen Flachbandkabel auf Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x60) zum einfachen Anschluss des Fahrstromschalters _2IO_.   
+
+-------   
+
+`i2c_20mm ....` [I²C-Halterung 20 mm](/fab/rcc3_i2c/LIESMICH.md#x20)   
+`PCF8574 .....` [I²C-PCF8574-I/O-Platinen](/fab/rcc3_i2c/LIESMICH.md)   
+`i2c_Term ....` [I²C-Halterung mit Abschluss-Widerständen](/fab/rcc3_i2c/LIESMICH.md#x60)   
+
+Da Entkuppler beim Schalten St&ouml;rspannungen erzeugen, werden direkt beim Entkuppleranschluss (CON_6pol-3) und am Ende des 6-poligen Stromversorgungskabels (an den Wechselstromklemmen Pin 4 und Pin 6) 100nF-Kondensatoren angebracht.   
+
+<a name="x42"></a>   
+
+## 4.2 Verdrahtung der Stromversorgung und des Fahrstroms
+Vor dem Verdrahten muss das Modul mit der Oberseite nach unten aufgelegt werden. Zum Schutz der Gleise sollte ein Kunststoff oder eine Decke als Unterlage verwendet werden.   
 
 
 
