@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-02-22 <a name="up"></a><br>   
+Last modified: 2025-06-16 <a name="up"></a><br>   
 <h1>Add-on boards for the RCC system</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
@@ -75,8 +75,16 @@ _*Link to the KiCad files*_: [/fab/kicad/CON_2pol_141_V1](/fab/kicad/CON_2pol_14
 ### Versions
 * V1 (250117): OK   
 
+<a name="x39"></a>   
+
+__Notes:__   
+* A three-pole variant is available under the name `CON_2pol_131` [(Link: /fab/kicad/CON_2pol_141_V1)](/fab/kicad/CON_2pol_131_V1).   
+* A two-pole variant is available under the name `CON_2pol_121` [(Link: /fab/kicad/CON_2pol_121_V1)](/fab/kicad/CON_2pol_121_V1).   
+
 [To the top of the page](#up)   
+
 <a name="x40"></a>   
+<a name="x41"></a>   
 
 # 4. Distributor board from 6-pin cable to 3 screw terminals (CON_6pol_3)   
 This board is used to connect a two-way crossover, so only pins 1, 3 and 5 are led out. The wires of the crossover can be screwed on directly, whereby the middle connection is the common return conductor.   
@@ -109,6 +117,7 @@ _*Link to the KiCad files*_: [/fab/kicad/CON_6pol_3_V1](/fab/kicad/CON_6pol_3_V1
 * V2 (250208): OK   
 
 [To the top of the page](#up)   
+
 <a name="x50"></a>   
 
 # 5. Distributor board from 6-pin cable to 6 screw terminals (CON_6pol_6)   

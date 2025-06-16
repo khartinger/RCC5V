@@ -516,9 +516,20 @@ Da Entkuppler beim Schalten St&ouml;rspannungen erzeugen, werden direkt beim Ent
 
 <a name="x42"></a>   
 
-## 4.2 Verdrahtung der Stromversorgung und des Fahrstroms
+## 4.2 Verdrahtung des Fahrstroms
 Vor dem Verdrahten muss das Modul mit der Oberseite nach unten aufgelegt werden. Zum Schutz der Gleise sollte ein Kunststoff oder eine Decke als Unterlage verwendet werden.   
+Obwohl das Modul nur drei Fahrstromkreise hat, ist die Verdrahtung aufwändig, da zur sicheren Fahrstromversorgung neun Einspeisepunkte zu verdrahten sind. Zum Verteilen des Stromes werden folgende Hilfsplatinen verwendet:   
+* Zufahrt: [Fahrstromverteiler 4-fach `CON_2pol_141`](/fab/rcc5_add_ons/LIESMICH.md#x30 "Fahrstromverteiler 4-fach")   
+* Kehrschleife: 
+* abschaltbares Gleis:
 
+
+## 4.3 Verdrahtung der Stromversorgung
+
+
+
+## Montage der I²C-I/O-Expanderplatinen
+Die zwei I²C-PCF8574-I/O-Expanderplatinen und die Hilfsplatinen `CON_i2c_20mm` und `CON_i2c_Term` werden in ca. 5 cm Entfernung gegenüber der Schaltblöcke montiert. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
 
 
 # === ..ToDo.. ===   
@@ -552,10 +563,6 @@ Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w�
 
 ## 3.5 Vorbereitung der Verdrahtung
 Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). Dazu legt man das Modul mit der Oberseite (Gleisseite) auf den Tisch.   
-
-## Montage der I²C-I/O-Expanderplatinen
-Montage von zwei I²C-PCF8574-I/O-Expanderplatinen und den Hilfsplatinen `CON_i2c_20mm`. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
-
 ### Montage der Schraubklemmen   
 Um die Verkabelung des Moduls &uuml;bersichtlich zu gestalten, werden 2x2 L&auml;ngslinien (Abstand vom Rand 4 cm und 5,5 cm) gezeichnet, die genau durch die Durchf&uuml;hrungen der Querverbinder f&uuml;hren. In diesem Bereich werden die Kabel gef&uuml;hrt. Nun setzt man die Grundplatte wieder in den Rahmen ein.   
 F&uuml;r die Platzierung der Klemmen gilt allgemein:   
@@ -580,6 +587,7 @@ _Bild 24: Schraubklemmen f&uuml;r die Verdrahtung_
 5. Je vier Prints `CON_10pol_PIN_V2` im Segment 2 und 3 stellen die Ein- und Ausgangspins der 10-poligen Schaltblock-Ausg&auml;nge f&uuml;r die I²C-Verdrahtung zur Verf&uuml;gung.   
 6. Im Segment 2 und 3 sind je zwei PCF 8574-I/O-Prints montiert (einer f&uuml;r die Ausgangs- und einer f&uuml;r die Eingangssignale).   
 7. Der Anschluss der Weichen und des Entkupplers erfolgt an Prints 3x `CON_6pol_3_V1` bzw. 1x `CON_6pol_6_V1` (f&uuml;r Dreiwegweiche).   
+
 
 ## 3.5 Gleisbau
 ### Anbringen der Stromversorgung am Gleis   

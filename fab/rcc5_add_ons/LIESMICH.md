@@ -1,5 +1,5 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 22.02.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 16.06.2025 <a name="up"></a><br>   
 <h1>Erg&auml;nzungsplatinen f&uuml;r das RCC-System</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -75,10 +75,15 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_2pol_141_V1](/fab/kicad/CON_2pol_
 ### Versionen
 * V1 (250117): OK   
 
+<a name="x39"></a>   
+
+__Anmerkungen:__   
+* Eine dreipolige Variante ist unter dem Namen `CON_2pol_131` [(Link: /fab/kicad/CON_2pol_141_V1)](/fab/kicad/CON_2pol_131_V1) verf&uuml;gbar.   
+* Eine zweipolige Variante ist unter dem Namen `CON_2pol_121` [(Link: /fab/kicad/CON_2pol_121_V1)](/fab/kicad/CON_2pol_121_V1) verf&uuml;gbar.   
+
 [Zum Seitenanfang](#up)   
 
 <a name="x40"></a>   
-
 <a name="x41"></a>   
 
 # 4. Verteilerplatine von 6-poligem Kabel auf 3 Schraubklemmen (CON_6pol_3)   
