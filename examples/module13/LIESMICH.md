@@ -518,13 +518,49 @@ Da Entkuppler beim Schalten St&ouml;rspannungen erzeugen, werden direkt beim Ent
 
 ## 4.2 Verdrahtung des Fahrstroms
 Vor dem Verdrahten muss das Modul mit der Oberseite nach unten aufgelegt werden. Zum Schutz der Gleise sollte ein Kunststoff oder eine Decke als Unterlage verwendet werden.   
-Obwohl das Modul nur drei Fahrstromkreise hat, ist die Verdrahtung aufwändig, da zur sicheren Fahrstromversorgung neun Einspeisepunkte zu verdrahten sind. Zum Verteilen des Stromes werden folgende Hilfsplatinen verwendet:   
-* Zufahrt: [Fahrstromverteiler 4-fach `CON_2pol_141`](/fab/rcc5_add_ons/LIESMICH.md#x30 "Fahrstromverteiler 4-fach")   
-* Kehrschleife: 
-* abschaltbares Gleis:
+Obwohl das Modul nur drei Fahrstromkreise hat, ist die Verdrahtung aufwändig, da zur sicheren Fahrstromversorgung neun Einspeisepunkte zu verdrahten sind.   
+* Zufahrt   
+Von der SUB25_10-Platine werden eine NN- und SS-Leitung zu einem [4-fach Fahrstromverteiler `CON_2pol_141`](/fab/rcc5_add_ons/LIESMICH.md#x30 "Fahrstromverteiler 4-fach") gelegt. An diesen werden die Leitungen der vier Einspeisepunkte rund um die Dreiwegweiche angeschraubt.   
+* Kehrschleife   
+Von der SUB25_10-Platine werden eine NN- und SS-Leitung zum Eingang "IN" des Kehrschleifenmoduls LK200 der Firma Lenz gelegt. An den Ausgang wird ein [3-fach Fahrstromverteiler `CON_2pol_131`](/fab/rcc5_add_ons/LIESMICH.md#x39 "Fahrstromverteiler 3-fach") angeschlossen, wo die Kabel der drei Einspeisepunkte der Kehrschleife angeschraubt werden.   
+* Abschaltbares Gleis   
+Von der SUB25_10-Platine werden eine NN- und SS-Leitung zum Eingang des [Fahrstromschalters `CON_1xIO`](/fab/rcc5_add_ons/LIESMICH.md#x60 "Fahrstromschalter 1xIO") gelegt. Der Ausgang wird mit den beiden Einspeisepunkten des abschaltbaren Gleises verbunden.   
+
+![Verdrahtung des Fahrstroms](./images/480_m13_traction_current_wiring3.png "Verdrahtung des Fahrstroms")   
+_Bild ..: Modul 13 mit Verdrahtung des Fahrstroms_   
+
+Hat man diese Hilfsplatinen nicht zur Hand, kann man natürlich auch Lüsterklemmen zum Verbinden der Fahrstromanschlüsse verwenden.   
+
+Verbindet man im sechspoligen Stecker der `CON_1xIO`-Platine die Klemmen 1 und 5 sowie 2 und 6 durch Buchse-Buchse-Leitungen miteinander, so kann man bereits das Fahren auf dem Modul 13 testen. Dazu dreht man das Modul um, schließt ein DCC-Signal an den 25-poligen Stecker und befährt mit einer DCC-Lok alle Gleise.   
+
+<a name="x43"></a>   
+
+## 4.3 Verdrahtung der 5 V-Versorgung
+Die 5 V-Versorgung erfolgt durch 6-polige Flachbandkabel und besteht aus zwei Teilen:   
+1. Versorgung des Mikrocontrollers mit 5 V und DCC-Signal   
+   Ein 70 cm langes, 6-poliges Flachbandkabel mit Buchse an beiden Enden verbindet den DCC-Anschluss des Sub-D-Boards mit dem DCC-Shield des Mikrocontrollers.  
+2. Versorgung der Schaltblöcke mit 5 V und Wechselspannung   
+   Auf ein 60 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Die Einzelbuchse wird in den "POWER"-Stecker des Sub-D-Boards gesteckt, die übrigen Buchsen werden an die senkrechten Stecker der Schaltblöcke gesteckt. Der letzte Buchse bleibt frei.   
+
+<a name="x44"></a>   
+
+## 4.4 Anschluss der Eisenbahn-Komponenten
+#### Abschaltbares Gleis
+Da die Fahrstrom-Leitungen bereits an den Fahrstromschalter `CON_1xIO` angeschlossen sind, muss lediglich ein 25 cm langes, 6-poliges Kabel zum 2IO-Schaltblock gelegt werden.   
+
+# === ..ToDo.. ===   
 
 
-## 4.3 Verdrahtung der Stromversorgung
+#### Entkuppler
+
+#### Dreiwegweiche
+In der Nähe der Weichenantriebe wird ein 6-poligen Umsetzer `CON_6pol_6` angeschraubt und über ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem W3-Block verbunden.   
+
+Das Anschließen der Dreiwegweiche erfordert eine bestimmte Vorgangsweise.
+
+Die Weichenantriebe werden an einen 6-poligen Umsetzer `CON_6pol_6` angeschraubt. An die Pin 1, 3 und 5 wird der Antrieb für die linke Weiche (nördlicher Antrieb!), an Pin 2, 4, 6 der Antrieb für die rechte Weiche (südlich!) angeschlossen. Der mittlere Anschluss ist die Masse (schwarze Leitung).   
+
+
 
 
 
@@ -532,7 +568,7 @@ Obwohl das Modul nur drei Fahrstromkreise hat, ist die Verdrahtung aufwändig, d
 Die zwei I²C-PCF8574-I/O-Expanderplatinen und die Hilfsplatinen `CON_i2c_20mm` und `CON_i2c_Term` werden in ca. 5 cm Entfernung gegenüber der Schaltblöcke montiert. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
 
 
-# === ..ToDo.. ===   
+
 
 
 [Zum Seitenanfang](#up)   
