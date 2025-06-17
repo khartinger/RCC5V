@@ -548,17 +548,36 @@ Die 5 V-Versorgung erfolgt durch 6-polige Flachbandkabel und besteht aus zwei Te
 #### Abschaltbares Gleis
 Da die Fahrstrom-Leitungen bereits an den Fahrstromschalter `CON_1xIO` angeschlossen sind, muss lediglich ein 25 cm langes, 6-poliges Kabel zum 2IO-Schaltblock gelegt werden.   
 
-# === ..ToDo.. ===   
-
-
 #### Entkuppler
+In der Nähe des Entkupplers wird ein 3-poliger Umsetzer `CON_6pol_3` angeschraubt und über ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem 1OUT-Block verbunden.   
+![Pins_Entkuppler](/images/200_J5_pins_1OUT.png "Pins_Entkuppler")   
+_Bild ..: J5-Stecker des 1OUT-Blocks_   
+
+Die beiden Anschlussleitungen des Entkupplers werden an Pin 3 (Masse) und Pin 5 des 3-poligen Umsetzers `CON_6pol_3` angeschraubt und zusätzlich durch einen 100 nF-Kondensator verbunden.   
+![Anschluss_Entkuppler](./images/300_m13_con_uncoupler.png "Anschluss_Entkuppler")   
+_Bild ..: Anschluss des Entkupplers_   
 
 #### Dreiwegweiche
 In der Nähe der Weichenantriebe wird ein 6-poligen Umsetzer `CON_6pol_6` angeschraubt und über ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem W3-Block verbunden.   
+![Pins_3-Weg-Weiche](/images/200_J5_pins_W3.png "Pins_3-Weg-Weiche")   
+_Bild ..: J5-Stecker des W3-Blocks_   
 
-Das Anschließen der Dreiwegweiche erfordert eine bestimmte Vorgangsweise.
+Zum Anschließen der beiden Antriebe der Dreiwegweiche sollte man folgendes Wissen:   
+1. Die Antriebe befinden sich auf der jeweils gegenüber liegenden Weichenseite.   
+2. Beim Schalten auf "Mitte" werden beide Antriebe betätigt.   
 
-Die Weichenantriebe werden an einen 6-poligen Umsetzer `CON_6pol_6` angeschraubt. An die Pin 1, 3 und 5 wird der Antrieb für die linke Weiche (nördlicher Antrieb!), an Pin 2, 4, 6 der Antrieb für die rechte Weiche (südlich!) angeschlossen. Der mittlere Anschluss ist die Masse (schwarze Leitung).   
+Daher ist folgende Vorgangsweise beim Anschluss sinnvoll:   
+1. Anschrauben des Antriebs für die linke Weiche (nördlicher Antrieb!) an Pin 1, 3 und 5.   
+2. Einschalten der Stromversorgung über Sub-D-Stecker:   
+   
+# === ..ToDo.. ===   
+
+Die Weichenantriebe werden an einen 6-poligen Umsetzer `CON_6pol_6` angeschraubt. an Pin 2, 4, 6 der Antrieb für die rechte Weiche (südlich!) angeschlossen. Der mittlere Anschluss ist die Masse (schwarze Leitung).   
+
+
+
+
+
 
 
 
