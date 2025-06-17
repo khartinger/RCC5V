@@ -567,9 +567,26 @@ Zum Anschließen der beiden Antriebe der Dreiwegweiche sollte man folgendes Wiss
 2. Beim Schalten auf "Mitte" werden beide Antriebe betätigt.   
 
 Daher ist folgende Vorgangsweise beim Anschluss sinnvoll:   
-1. Anschrauben des Antriebs für die linke Weiche (nördlicher Antrieb!) an Pin 1, 3 und 5.   
+1. Anschrauben des Antriebs für die linke Weiche (nördlicher Antrieb!) an Pin 1, 3 (Masse, schwarz) und 5.   
 2. Einschalten der Stromversorgung über Sub-D-Stecker:   
-   
+   * Drücken der mittleren Taste schaltet die Weiche auf "Mitte" (Gerade), drücken der unteren Taste schaltet die Weiche auf "Links".   
+   * Die entsprechende LED leuchtet.   
+
+   Sollte Stellung "Mitte" und "Links" der Weiche vertauscht sein: Die braunen Drähte an Pin 1 und 5 vertauschen.   
+   Sollte die Weiche auf "Rechts" schalten: den anderen Antrieb verwenden.   
+3. Abschalten der Stromversorgung   
+4. Abschrauben der Masse der linken Weiche (Pin 3).   
+5. Anschrauben des Antriebs für die rechte Weiche (südlich) an Pin 2, 4 (Masse, schwarz) und 6.   
+6. Einschalten der Stromversorgung über Sub-D-Stecker:   
+   * Drücken der mittleren Taste schaltet die Weiche auf "Mitte" (Gerade), drücken der oberen Taste schaltet die Weiche auf "Rechts".   
+   * Die entsprechende LED leuchtet.   
+7. Abschalten der Stromversorgung   
+8. Anschrauben der Masse der linken Weiche (Pin 3).   
+9. Einschalten der Stromversorgung über Sub-D-Stecker:   
+   Die Weiche sollte richtig funktionieren.   
+
+Jetzt kann man auch die übrigen Komponenten testen:   
+
 # === ..ToDo.. ===   
 
 Die Weichenantriebe werden an einen 6-poligen Umsetzer `CON_6pol_6` angeschraubt. an Pin 2, 4, 6 der Antrieb für die rechte Weiche (südlich!) angeschlossen. Der mittlere Anschluss ist die Masse (schwarze Leitung).   
