@@ -428,17 +428,17 @@ Mit der bisherigen Verdrahtung ist es bereits m&ouml;glich, einen h&auml;ndische
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
 
-# 5. Steuerungs-Software
-
-## 5.2 Programmierung des Mikrocontrollers
-1. Kopieren der Software `rcc_demo1` in ein neues Verzeichnis und Umbenennen des Verzeichnisses in `rcc_module14_V1`.   
-2. Umbenennen der Dateien `rcc_demo1.cpp` und `rcc_demo1_text.h` in `rcc_module14_V1.cpp` und `rcc_module14_text.h` im Verzeichnis `rcc_module14_V1/src`.   
-3. Starten von Visual Studio Code und &Ouml;ffnen des Ordners (Verzeichnisses) `rcc_module14_V1`.   
-4. Umbenennen von `rcc_demo1` in `rcc_module14` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
-5. Datei `rcc_module14_V1.cpp` im Editorfenster &ouml;ffnen.   
-6. Umbenennen von `DEBUG_99` in `DEBUG_14` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
-7. Umbenennen von `VERSION_99` in `VERSION_14` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
-8. Anpassen des Starttextes in der Datei `rcc_module14_text.h`:   
+# 5. Steuerungssoftware
+## 5.1 Anpassung des Demoprogramms für Modul 14
+1. Erstellen eines neuen Verzeichnisses mit dem Namen `rcc_module14_V1`.   
+2. Kopieren der Dateien aus dem Verzeichnis `rcc_demo1` in das neue Verzeichnis `rcc_module14_V1`.   
+3. Umbenennen der Dateien `rcc_demo1.cpp` und `rcc_demo1_text.h` in `rcc_module14_V1.cpp` und `rcc_module14_text.h` im Verzeichnis `rcc_module14_V1/src`.   
+4. Starten von Visual Studio Code und &Ouml;ffnen des Ordners (Verzeichnisses) `rcc_module14_V1`.   
+5. Umbenennen von `rcc_demo1` in `rcc_module14` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+6. Datei `rcc_module14_V1.cpp` im Editorfenster &ouml;ffnen.   
+7. Umbenennen von `DEBUG_99` in `DEBUG_14` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+8. Umbenennen von `VERSION_99` in `VERSION_14` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+9. Anpassen des Starttextes in der Datei `rcc_module14_text.h`:   
 ```  
 #define  INFOLINES_NUM     10
   #define  INFOLINES { \
@@ -470,7 +470,7 @@ und im englischsprachigen Abschnitt
    " Next: Button IO19   ", \
   }
 ```   
-9. Anpassen der projektspezifischen Daten in der Datei `dcc_config.h`. Details dazu [siehe /software/rcc_demo1/CUSTOMIZE_D.md](/software/rcc_demo1/CUSTOMIZE_D.md). Insbesondere:    
+10. Anpassen der projektspezifischen Daten in der Datei `dcc_config.h`. Details dazu [siehe /software/rcc_demo1/CUSTOMIZE_D.md](/software/rcc_demo1/CUSTOMIZE_D.md). Insbesondere:    
 ```   
 // ------two way turnout (Zweiwegweiche = Standardweiche)-------
 // Two expander pins A B to control 2way turnout (active low!)
@@ -483,8 +483,11 @@ strRcomp aRcomp[RCOMP_NUM] = {
  {RCOMP_1}
 };
 ```   
-10. Anpassen des Kommentars am Beginn der Datei `rcc_module14_V1.cpp`.   
-11. Programmierung des Mikrocontrollers mit der Software `rcc_module14_V1`.   
+11. Anpassen des Kommentars am Beginn der Datei `rcc_module14_V1.cpp`.   
+
+## 5.2 Programmierung des Mikrocontrollers
+Zum Programmieren des Mikrocontrollers wird das Modul von der Stromversorgung getrennt und der Mikrocontroller über das USB-Kabel mit dem Programmiergerät (PC oder Laptop) verbunden.   
+Programmierung des Mikrocontrollers mit der Software `rcc_module14_V1`.   
 
 [Zum Seitenanfang](#up)   
 <a name="x60"></a>   
