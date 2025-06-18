@@ -40,7 +40,7 @@
 //
 // Electrical components
 // The electrical components depend on what you want to test.
-// Example three-way crossover:
+// Example two-way crossover:
 // 1. a two-way turnout with limit switching   
 // 2. self-assembly block “RW_5V_W2” consisting of the two 
 //    circuit boards `RW_5V_W2_STRG` and `RW_5V_W2_LED`
@@ -62,7 +62,7 @@
 // 2024-11-28 Change program name
 // 2025-01-03 Change TOPIC_BASE, add #define CON_...
 // 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
-// 2025-04-06 add DEBUG_14_ALL
+// 2025-04-06 add DEBUG_14_SHOW_ALL
 // Released into the public domain.
 
 // #include <Arduino.h>

@@ -1,19 +1,12 @@
 //_____rcc_module13_________________________________khartinger_____
-// This program for an ESP32 is used to test various self-built 
-// model railroad switching blocks. The blocks are controlled 
-// via the I/O pins of two I²C PCF8574 I/O expanders, whereby 
+// This program for an ESP32 is used to switch a tree-way-turnout,
+// a disconnectable track and an uncoupler by selfmade switch-blocks.
+// The blocks are controlled via the I/O pins of two 
+// I²C PCF8574 I/O expanders, whereby 
 // the PCF8574 with the I2C address 0x20 (IO expander #0) is 
 // used for control and the PCF8574 with the I2C address 0x21 
 // (IO expander #1) for feedback. The IO pins for control and 
 // feedback each have the same pin number.
-//
-// 1. DCC 11, IO expander pin 0: Decoupler (uncoupler)
-// 2. DCC 21, IO expander pin 1,2: Two-way switch 
-//    (with limit switch)
-// 3. DCC 31,32, IO expander pin 3,4,5: Three-way switch
-//    (with limit switching)
-// 4. DCC 41, IO expander pin 6: Disconnectable track
-// 5. DCC 51, IO expander pin 7: Flashing light
 //
 // The switching status of the components is shown 
 // on a 1.54” OLED display.
@@ -30,31 +23,7 @@
 // `dcc_config.h`.
 //
 // Required hardware
-// Electronic components
-// 1. ESP32 D1 mini
-// 2. 1x do-it-yourself board “Shield_I2C_5V_3V3”: 
-//    Connection for the two I2C buses
-// 3. 1x DIY board “Shield_5V_DCC_6pol”: Power supply with 5V,
-//    DCC signal and connection for button on pin D6 (IO19)
-// 4. 1x OLED display with SSD1309 controller (e.g. 1.54“ or
-//    2.4” displays with 128x64 pixel resolution)
-// 5. 2x I²C expander boards PCF8574 with the (7-bit) 
-//    addresses 0x20 and 0x21
-// 6. push-button on pin D6 (IO19) with pull-up resistor 
-//    (e.g. 10 kOhm) to 3.3V (or a wire)   
-//
-// Electrical components
-// The electrical components depend on what you want to test.
-// Example three-way crossover:
-// 1. a three-way crossover with limit switching   
-// 2. self-assembly block “RW_5V_W3” consisting of the two 
-//    circuit boards `RW_5V_W3_STRG` and `RW_5V_W3_LED`
-//    for controlling the points with 5V   
-// 3. a transformer with 16V alternating voltage (V+, V-)
-// 4. a DCC source for sending turnout commands (e.g. Roco 
-//    MultiMAUS with digital amplifier 10764 and 
-//    power supply 10850)
-// 5. a 5V power supply   
+// Module 13 "Reverse Loop - West"
 //
 // Class SimpleMqtt extends class PubSubClient for easy use.
 // All commands of the PubSubClient class can still be used.
@@ -67,6 +36,7 @@
 // 2024-11-28 Change program name
 // 2025-01-03 Change TOPIC_BASE, add #define CON_...
 // 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
+// 2025-06-18 Add "signal", DEBUG_99_SHOW_ALL
 // Released into the public domain.
 
 // #include <Arduino.h>
@@ -74,6 +44,7 @@
 //#define D1MINI          1              // ESP8266 D1mini +pro
 #define  ESP32D1        2                   // ESP32 D1mini
 #define  DEBUG_13       true                // true OR false
+#define  DEBUG_13_SHOW_ALL  false           // true OR false
 #define  LANGUAGE      'd'                  // 'd' or 'e'
 #include "rcc_module13_text.h"                     // AFTER LANGUAGE
 #include "pre_config.h"                     // common defines
@@ -226,6 +197,11 @@ String simpleGet(String sPayload)
  //-------------------------------------------------------------
  if(sPayload=="ip") {
   p1="{\"ip\":\""; p1+= client.getsLocalIP(); p1+="\"}";
+  return p1;
+ }
+ //-------------------------------------------------------------
+ if(sPayload=="signal") {
+  p1="{\"signal\":"; p1+=client.getsSignal(); p1+="}";
   return p1;
  }
  //-------------------------------------------------------------
@@ -946,7 +922,8 @@ void setup() {
     iConn=CON_MQTT_OK;                      // MQTT OK
     //client.bAllowMQTTStartInfo(false);     //NO mqtt (re)start info
     if(DEBUG_13) Serial.println("setup(): Connected to MQTT-broker: "+s2);
-    client.publish_P("rcc/start/mqtt",("{\"topicbase\":\""+s2+"\"}").c_str(),false);
+    String s3="{\"topicbase\":\""+s2+"\",\"signal\":"+client.getsSignal()+"}";
+    client.publish_P("rcc/start/mqtt",s3.c_str(),false);
    }
    else
    {
@@ -1098,8 +1075,13 @@ void loop() {
  uint32_t ms=stm.loopEnd();                   // state end
  //------print serial data--------------------------------------
  if(DEBUG_13) {
-  Serial.print(sSerial+" | "); Serial.print(ms); 
-  if(ms>STATE_DELAY) Serial.println("ms-Too long!!");
-  else Serial.println("ms");
+ sSerial+=" | ";
+  sSerial+=String(ms);
+  if(ms>STATE_DELAY) sSerial+=" ms-Too long!!";
+  else sSerial+=" ms";
+  if(DEBUG_13_SHOW_ALL) Serial.println(sSerial);
+  else {
+   if(sSerial.length()>14) Serial.println(sSerial);
+  }
  }
 }

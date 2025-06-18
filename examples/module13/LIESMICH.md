@@ -539,9 +539,13 @@ Verbindet man im sechspoligen Stecker der `CON_1xIO`-Platine die Klemmen 1 und 5
 ## 4.3 Verdrahtung der 5 V-Versorgung
 Die 5 V-Versorgung erfolgt durch 6-polige Flachbandkabel und besteht aus zwei Teilen:   
 1. Versorgung des Mikrocontrollers mit 5 V und DCC-Signal   
-   Ein 70 cm langes, 6-poliges Flachbandkabel mit Buchse an beiden Enden verbindet den DCC-Anschluss des Sub-D-Boards mit dem DCC-Shield des Mikrocontrollers.  
+   Ein 50 cm langes, 6-poliges Flachbandkabel mit Buchse an beiden Enden verbindet den DCC-Anschluss des Sub-D-Boards mit dem DCC-Shield des Mikrocontrollers.  
 2. Versorgung der Schaltblöcke mit 5 V und Wechselspannung   
-   Auf ein 60 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Die Einzelbuchse wird in den "POWER"-Stecker des Sub-D-Boards gesteckt, die übrigen Buchsen werden an die senkrechten Stecker der Schaltblöcke gesteckt. Der letzte Buchse bleibt frei.   
+   Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Blöcke oben, daher sind die Block-Buchsen im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
+   ![6pol_Blockverbinder](./images/300_6pol_block_connector.png "6pol_Blockverbinder")   
+   _Bild ..: J5-Stecker des 1OUT-Blocks_   
+   Die Einzelbuchse wird in den "POWER"-Stecker des Sub-D-Boards gesteckt, die übrigen Buchsen werden an die senkrechten Stecker der Schaltblöcke gesteckt. Der letzte Buchse bleibt frei.   
+   
 
 <a name="x44"></a>   
 
@@ -598,7 +602,7 @@ Sind beide Schalter nicht gedrückt, leuchtet die mittlere LED ("Remote") und de
 Drückt man den roten Schalter, leuchtet die obere LED ("Hand-Aus") und der Fahrstrom bleibt abgeschaltet.   
 Löst man den roten Schalter und drückt den grünen Schalter, leuchten die beiden unteren LED ("Hand-Ein" und "Ein") und das Gleis hat Fahrstrom, sodass eine Lok auf dem Gleis angesteuert werden kann und fährt.   
 
-<a name="x44"></a>   
+<a name="x45"></a>   
 
 ## 4.5 Hardware für die DCC- und MQTT-Steuerung
 Die DCC- und MQTT-Steuerung erfolgt durch den Mikrocontroller über den I²C-Bus und die I/O-Pins von I²C-PCF8574-I/O-Platinen.   
@@ -618,6 +622,7 @@ Die zwei I²C-PCF8574-I/O-Expanderplatinen und die Hilfsplatinen `CON_i2c_20mm` 
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
+<a name="x51"></a>   
 
 # 5. Steuerungssoftware   
 ## 5.1 Anpassung des Demoprogramms für Modul 13
@@ -705,17 +710,141 @@ strRcomp aRcomp[RCOMP_NUM] = {
 
 12. Anpassen des Kommentars am Beginn der Datei `rcc_module13_V1.cpp`, zB.   
 ```   
-
+//_____rcc_module13_________________________________khartinger_____
+// This program for an ESP32 is used to switch a tree-way-turnout,
+// a disconnectable track and an uncoupler by selfmade switch-blocks.
+// The blocks are controlled via the I/O pins of two 
+// I²C PCF8574 I/O expanders, whereby 
+// the PCF8574 with the I2C address 0x20 (IO expander #0) is 
+// used for control and the PCF8574 with the I2C address 0x21 
+// (IO expander #1) for feedback. The IO pins for control and 
+// feedback each have the same pin number.
+//
+// The switching status of the components is shown 
+// on a 1.54” OLED display.
+//
+// A button on pin D6 (IO19) can be used to skip the individual
+// pages of the information display or to search for the WLAN.
+//
+// If you press the button for one second during the program 
+// run, a reset is triggered. This can be used, for example, 
+// to activate the WLAN when starting up again.
+//
+// All project-specific data, such as WLAN access, MQTT commands
+// and hardware properties, are saved in a configuration file
+// `dcc_config.h`.
+//
+// Required hardware
+// Module 13 "Reverse Loop - West"
+//
+// Class SimpleMqtt extends class PubSubClient for easy use.
+// All commands of the PubSubClient class can still be used.
+// Note: When PubSubClient lib is installed,
+//       delete PubSubClient files in directory src/simplemqtt
+// Important: Example needs a MQTT-broker!
+// Created by Karl Hartinger, November 02, 2024
+// Changes:
+// 2024-11-14 2-way-turnout number 1=stright <-> 2=curved changed
+// 2024-11-28 Change program name
+// 2025-01-03 Change TOPIC_BASE, add #define CON_...
+// 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
+// Released into the public domain.
 ```  
+
+<a name="x52"></a>   
 
 ## 5.2 Programmierung des Mikrocontrollers
 Zum Programmieren des Mikrocontrollers wird das Modul von der Stromversorgung getrennt und der Mikrocontroller über das USB-Kabel mit dem Programmiergerät (PC oder Laptop) verbunden.   
-Danach wird Visual Studio Code mit installiertem PlatformIO. gestartet und der Mikrocontroller mit der Software `rcc_module14_V1` programmiert.   
+Danach wird Visual Studio Code mit installiertem PlatformIO gestartet und der Mikrocontroller mit der Software `rcc_module14_V1` programmiert.   
 
 [Zum Seitenanfang](#up)   
 <a name="x60"></a>   
+<a name="x61"></a>   
 
 # 6. Probebetrieb   
+
+## 6.1 Erste Modul-Start
+1. Anstecken eines 25-poligen Steckers mit Fahrstrom- und Wechselstromversorgung: Die LEDs der Schaltbl&ouml;cke sollten entspechend der Hardware richtig leuchten.   
+2. Die Info-Seiten auf dem OLED mit dem neben liegenden Taster weiterschalten. Wenn alles funktioniert, erscheint auf dem OLED-Display folgende Anzeige:   
+```   
+   RCC Module 13     
+Ohne WiFi  Raspi11   
+Keine MQTT Steuerung!
+T3L T3R DT  UC       
+__  __  Aus Aus      
+131 132 133 134      
+```   
+
+Die Anzeige der Stellung der Dreiwegweiche ist abh&auml;ngig von der tats&auml;chlichen Stellung der Weiche. Die Anzeige wird alle 5 Sekunden aufgefrischt.   
+
+<a name="x62"></a>   
+
+## 6.2 Manueller Funktionstest des Moduls inklusive OLED-Anzeige
+#### Test Dreiwegweiche
+* Drücken der oberen Taste: Weiche schaltet auf "Rechts", obere LED leuchtet, OLED-Anzeige `__ _/`.
+* Drücken der mittleren Taste: Weiche schaltet auf "Mitte" (Gerade), mittlere LED leuchtet, OLED-Anzeige `__ __`.
+* Drücken der unteren Taste: Weiche schaltet auf "Links", unter LED leuchtet, OLED-Anzeige `_/ __`.
+
+#### Test Entkuppler
+Drückt man die weiße Taste, leuchtet die grüne LED, der Entkuppler zieht an und aud der OLED-Anzeige steht über der DCC-Adresse 134 `Ein`.   
+
+#### Test des abschaltbaren Gleises
+* Sind beide Schalter nicht gedrückt, leuchtet die mittlere LED ("Remote"), der Fahrstrom des geraden Gleises ist abgeschaltet, die rote LED leuchtet und auf der OLED-Anzeige steht über der DCC-Adresse 133 `Aus`.   
+* Drückt man den roten Schalter, leuchten beide oberen LEDs ("Hand-Aus" und "Aus"), der Fahrstrom bleibt abgeschaltet und auf der OLED-Anzeige steht über der DCC-Adresse 133 `Aus`.   
+* Löst man den roten Schalter und drückt den grünen Schalter, leuchten die beiden unteren LED ("Hand-Ein" und "Ein"), das Gleis hat Fahrstrom und auf der OLED-Anzeige steht über der DCC-Adresse 133 `Ein`.   
+
+<a name="x63"></a>   
+
+## 6.3 Test mit MQTT
+1. MQTT-Server starten.   
+2. Einen Laptop oder PC mit dem Netzwerk des MQTT-Servers verbinden   
+3. Die Software `mosquitto_sub` in einem Kommando-Fenster mit diesem Kommando starten:   
+   `mosquitto_sub -h 10.1.1.1 -t rcc/# -v`   
+4. Anstecken eines 25-poligen Steckers mit Fahrstrom- und Wechselstromversorgung: Die LEDs der Schaltbl&ouml;cke sollten entspechend der Hardware-Stellung richtig leuchten.   
+5. Die Info-Seiten auf dem OLED mit dem neben liegenden Taster weiterschalten. Wenn alles funktioniert, erscheint auf dem OLED-Display folgende Anzeige:   
+```   
+   RCC Module 13     
+MQTT OK    Raspi11   
+rcc/module13
+T3L T3R DT  UC       
+__  __  Aus Aus      
+131 132 133 134      
+```   
+
+6. Im Kommandofenster am Laptop erscheint die Startmeldung des Moduls:   
+`rcc/start/mqtt {"topicbase":"rcc/module13","signal":-52}`   
+
+7. Ein zweites Kommando-Fenster am Laptop &ouml;ffnen und folgendes eingeben:   
+`mosquitto_pub -h 10.1.1.1 -t rcc/module13/get -m ?`   
+Im ersten Kommando-Fenster werden die m&ouml;glichen Befehle angezeigt:   
+```   
+rcc/module13/get ?
+rcc/module13/ret/?
+get: ?|help|version|ip|topicbase|eeprom|byname|bydcc|T3L|131|T3R|132|DT|133|UC|134|
+set: topicbase|eeprom0|T3L|131|T3R|132|DT|133|UC|134|
+sub:
+pub:
+MQTT: ../set/w1 -m 1|g|G OR -m 0|A|a|B|b (set by name)
+      ../set/11 -m 1|g|G OR -m 0|A|a|B|b (set by dcc address)
+      ../get -m byname|bydcc (values of all components)
+```   
+
+### Beispiele f&uuml;r Schaltbefehle  
+Schalten der Weiche DCC 131 auf Gerade:   
+`mosquitto_pub -h 10.1.1.1 -t rcc/module13/set/131 -m 1`   
+
+Schalten der Weiche DCC 131 mit Namen T3L auf Abzweig (Bogen):   
+`mosquitto_pub -h 10.1.1.1 -t rcc/module13/set/T3L -m 0`   
+
+<a name="x64"></a>   
+
+## 6.4 Test mit DCC
+Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT durchgef&uuml;hrt werden.   
+### Beispiel Roco Multi-Maus
+* Weichensteuerung w&auml;hlen (Taste Lok/Weiche) ![Taste_Lok_Weiche](./images/50_taste_lok_weiche.png)   
+* DCC-Adresse 131 eingeben   
+* Mit den Pfeiltasten die Weiche schalten ![Pfeiltasten](./images/50_taste_pfeil.png)   
+
 
 [Zum Seitenanfang](#up)   
 <a name="x70"></a>   

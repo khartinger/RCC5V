@@ -67,6 +67,7 @@
 // 2024-11-28 Change program name
 // 2025-01-03 Change TOPIC_BASE, add #define CON_...
 // 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
+// 2025-06-18 Add "signal", DEBUG_99_SHOW_ALL
 // Released into the public domain.
 
 // #include <Arduino.h>
@@ -74,6 +75,7 @@
 //#define D1MINI          1              // ESP8266 D1mini +pro
 #define  ESP32D1        2                   // ESP32 D1mini
 #define  DEBUG_99       true                // true OR false
+#define  DEBUG_99_SHOW_ALL  false           // true OR false
 #define  LANGUAGE      'd'                  // 'd' or 'e'
 #include "rcc_demo1_text.h"                     // AFTER LANGUAGE
 #include "pre_config.h"                     // common defines
@@ -226,6 +228,11 @@ String simpleGet(String sPayload)
  //-------------------------------------------------------------
  if(sPayload=="ip") {
   p1="{\"ip\":\""; p1+= client.getsLocalIP(); p1+="\"}";
+  return p1;
+ }
+ //-------------------------------------------------------------
+ if(sPayload=="signal") {
+  p1="{\"signal\":"; p1+=client.getsSignal(); p1+="}";
   return p1;
  }
  //-------------------------------------------------------------
@@ -946,7 +953,8 @@ void setup() {
     iConn=CON_MQTT_OK;                      // MQTT OK
     //client.bAllowMQTTStartInfo(false);     //NO mqtt (re)start info
     if(DEBUG_99) Serial.println("setup(): Connected to MQTT-broker: "+s2);
-    client.publish_P("rcc/start/mqtt",("{\"topicbase\":\""+s2+"\"}").c_str(),false);
+    String s3="{\"topicbase\":\""+s2+"\",\"signal\":"+client.getsSignal()+"}";
+    client.publish_P("rcc/start/mqtt",s3.c_str(),false);
    }
    else
    {
@@ -1098,8 +1106,13 @@ void loop() {
  uint32_t ms=stm.loopEnd();                   // state end
  //------print serial data--------------------------------------
  if(DEBUG_99) {
-  Serial.print(sSerial+" | "); Serial.print(ms); 
-  if(ms>STATE_DELAY) Serial.println("ms-Too long!!");
-  else Serial.println("ms");
+ sSerial+=" | ";
+  sSerial+=String(ms);
+  if(ms>STATE_DELAY) sSerial+=" ms-Too long!!";
+  else sSerial+=" ms";
+  if(DEBUG_99_SHOW_ALL) Serial.println(sSerial);
+  else {
+   if(sSerial.length()>14) Serial.println(sSerial);
+  }
  }
 }
