@@ -36,9 +36,10 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 * [2. Bau des Modul-Rahmens](#x20)   
 * [3. Aufbau der Gleise](#x30)   
 * [4. Elektrische Verdrahtung des Moduls](#x40)   
-* [5. Probebetrieb](#x50)   
-* [6. Abschlie&szlig;ende Arbeiten](#x60)   
-* [7. Anhang: Nachträglicher Einbau eines Entkupplers](#x70)   
+* [5. Steuerungssoftware](#x50)   
+* [6. Probebetrieb](#x60)   
+* [7. Abschlie&szlig;ende Arbeiten](#x70)   
+* [8. Anhang: Nachträglicher Einbau eines Entkupplers](#x80)   
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
@@ -586,31 +587,145 @@ Daher ist folgende Vorgangsweise beim Anschluss sinnvoll:
    Die Weiche sollte richtig funktionieren.   
 
 Jetzt kann man auch die übrigen Komponenten testen:   
+![block_userinterface](./images/300_block_userinterface.png "block_userinterface")   
+_Bild ..: Bedienelemente der Schaltblöcke_   
+
+#### Test Entkuppler
+Drückt man die weiße Taste, leuchtet die grüne LED und der Entkuppler zieht an.   
+
+#### Test des abschaltbaren Gleises
+Sind beide Schalter nicht gedrückt, leuchtet die mittlere LED ("Remote") und der Fahrstrom des geraden Gleises ist abgeschaltet (rote LED "Aus" leuchtet).   
+Drückt man den roten Schalter, leuchtet die obere LED ("Hand-Aus") und der Fahrstrom bleibt abgeschaltet.   
+Löst man den roten Schalter und drückt den grünen Schalter, leuchten die beiden unteren LED ("Hand-Ein" und "Ein") und das Gleis hat Fahrstrom, sodass eine Lok auf dem Gleis angesteuert werden kann und fährt.   
+
+<a name="x44"></a>   
+
+## 4.5 Hardware für die DCC- und MQTT-Steuerung
+Die DCC- und MQTT-Steuerung erfolgt durch den Mikrocontroller über den I²C-Bus und die I/O-Pins von I²C-PCF8574-I/O-Platinen.   
+Zum Einbau legt man das Modul auf die Gleisseite.   
+
+#### Montage der CON_10pol_2x4-Platinen
+Drei `CON_10pol_2x4`-Platinen werden gleich nach der Querstrebe auf die Basisplatte geschraubt und mit 10-poligen Flachbandkabeln mit den entsprechenden Schaltblöcken verbunden.   
+
+#### Montage der I²C-I/O-Expanderplatinen
+Die zwei I²C-PCF8574-I/O-Expanderplatinen und die Hilfsplatinen `CON_i2c_20mm` und `CON_i2c_Term` werden in ca. 5 cm Entfernung von den `CON_10pol_2x4`-Platinen montiert. Mit Hilfe der Jumper werden die Adressen 0x20 und 0x21 eingestellt.   
+
+#### Verbindung der I/Os
+
+
 
 # === ..ToDo.. ===   
 
-Die Weichenantriebe werden an einen 6-poligen Umsetzer `CON_6pol_6` angeschraubt. an Pin 2, 4, 6 der Antrieb für die rechte Weiche (südlich!) angeschlossen. Der mittlere Anschluss ist die Masse (schwarze Leitung).   
+[Zum Seitenanfang](#up)   
+<a name="x50"></a>   
 
+# 5. Steuerungssoftware   
+## 5.1 Anpassung des Demoprogramms für Modul 13
+1. Erstellen eines neuen Verzeichnisses mit dem Namen `rcc_module13_V1`.   
+2. Kopieren der Dateien aus dem Verzeichnis `rcc_demo1` in das neue Verzeichnis `rcc_module13_V1`.   
+3. Löschen der *.md-Dateien im Verzeichnis `rcc_module13_V1`.   
+4. Umbenennen der Dateien `rcc_demo1.cpp` und `rcc_demo1_text.h` in `rcc_module13_V1.cpp` und `rcc_module13_text.h` im Verzeichnis `rcc_module13_V1/src`.   
+5. Starten von Visual Studio Code und &Ouml;ffnen des Ordners (Verzeichnisses) `software/rcc_module13_V1`.   
+6. Umbenennen von `rcc_demo1` in `rcc_module13` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+7. Datei `rcc_module13_V1.cpp` im Editorfenster &ouml;ffnen.   
+8. Umbenennen von `DEBUG_99` in `DEBUG_13` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+9. Umbenennen von `VERSION_99` in `VERSION_13` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+10. Anpassen des Starttextes in der Datei `rcc_module13_text.h`:   
+```  
+#define  INFOLINES_NUM     15
+  #define  INFOLINES { \
+   "Modul 13:            ", \
+   "Kehrschleife West    ", \
+   "mit Abstellgleis     ", \
+   VERSION_13_1, \
+   " Weiter: Taste IO19  ", \
+   "DCC 131,132 Dreiweg- ", \
+   "    Weiche Einfahrt  ", \
+   "DCC 133 Fahrstrom 1/0", \
+   "DCC 134 Entkuppler   ", \
+   " Weiter: Taste IO19  ", \
+   " ",\
+   "Es folgt: IO-Expander", \
+   " und Wifi-Suche      ", \
+   " ",\
+   " Weiter: Taste IO19  ", \
+  }
+```   
+und im englischsprachigen Abschnitt   
+```   
+  #define  INFOLINES_NUM     15
+  #define  INFOLINES { \
+   "Module 13:           ", \
+   "West reversing loop  ", \
+   "with siding          ", \
+   VERSION_13_1, \
+   " Next: Button IO19   ", \
+   "DCC 131,132 3-Way-   ", \
+   "    Turnout Entrance ", \
+   "DCC 133 Disconn.Track", \
+   "DCC 134 Uncoupler    ", \
+   " Next: Button IO19   ", \
+   " ",\
+   "Next up: IO-Expander ", \
+   " and Wifi search     ", \
+   " ",\
+   " Next: Button IO19   ", \
+  }
+```   
+11. Anpassen der projektspezifischen Daten in der Datei `dcc_config.h`. Details dazu [siehe /software/rcc_demo1/CUSTOMIZE_D.md](/software/rcc_demo1/CUSTOMIZE_D.md). Insbesondere:   
 
+_Zeile 17 und 18_:   
+```   
+#define  VERSION_13     "2025-06-18 rcc_module13_V1"
+#define  VERSION_13_1   "Version 2025-06-18"
+```   
+_Zeile 27_:   
+```   
+#define  TOPIC_BASE     "rcc/module13"
+```   
+_Zeile 34_:   
+```   
+#define  SCREEN_TITLE   "RCC Module 13"
+```   
+_Ab Zeile 78:_   
+```   
+//-------three way turnout (Dreiwegweiche)----------------------
+// A=0: curved, B=0: stright (@ 3 pin: middle pin=0V -> stright)
+#define  RCOMP_1L       RC_TYPE_T3,"T3L",131, EX0,PIN0,PIN1,   EX1,PIN0,PIN1, 500,0
+#define  RCOMP_1R       RC_TYPE_T3,"T3R",132, EX0,PIN2,PIN1,   EX1,PIN2,PIN1, 500,0
+//-------disconnectable track (Fahrstrom)-----------------------
+#define  RCOMP_2        RC_TYPE_DT,"DT", 133, EX0,PIN3,NO_PIN, EX1,PIN3,NO_PIN, 0,0
+// ------uncoupler (Entkuppler)---------------------------------
+#define  RCOMP_3        RC_TYPE_UC,"UC", 134, EX0,PIN4,NO_PIN, EX1,PIN4,NO_PIN, 1500,0
+#define  RCOMP_NUM      4
+strRcomp aRcomp[RCOMP_NUM] = {
+ {RCOMP_1L},{RCOMP_1R},{RCOMP_2},{RCOMP_3}
+};
+```   
 
+12. Anpassen des Kommentars am Beginn der Datei `rcc_module13_V1.cpp`, zB.   
+```   
 
+```  
 
+## 5.2 Programmierung des Mikrocontrollers
+Zum Programmieren des Mikrocontrollers wird das Modul von der Stromversorgung getrennt und der Mikrocontroller über das USB-Kabel mit dem Programmiergerät (PC oder Laptop) verbunden.   
+Danach wird Visual Studio Code mit installiertem PlatformIO. gestartet und der Mikrocontroller mit der Software `rcc_module14_V1` programmiert.   
 
+[Zum Seitenanfang](#up)   
+<a name="x60"></a>   
 
-
-
-
-## Montage der I²C-I/O-Expanderplatinen
-Die zwei I²C-PCF8574-I/O-Expanderplatinen und die Hilfsplatinen `CON_i2c_20mm` und `CON_i2c_Term` werden in ca. 5 cm Entfernung gegenüber der Schaltblöcke montiert. Einstellen der Adressen 0x20 und 0x21 mit Hilfe der Jumper.   
-
-
-
-
+# 6. Probebetrieb   
 
 [Zum Seitenanfang](#up)   
 <a name="x70"></a>   
 
-## 7. Anhang: Nachträglicher Einbau eines Entkupplers
+# 7. Abschlie&szlig;ende Arbeiten   
+
+[Zum Seitenanfang](#up)   
+<a name="x80"></a>   
+
+## 8. Anhang: Nachträglicher Einbau eines Entkupplers
 Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch wäre, wenn man Waggons dort abstellen möchte. Dazu sind einige Arbeitsschritte erforderlich:   
 1. Ausbau des [Seitenteils Ra4 (Süd 1) - Version 1](#x25).   
    ![Seitenteil_Ra4_Version_1](./images/300_m13_Ra4_V1.png "Seitenteil_Ra4_Version_1")   
@@ -633,139 +748,11 @@ Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w�
 # ===== Vorlage für Beschreibung =====
 
 
-## 3.5 Vorbereitung der Verdrahtung
-Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). Dazu legt man das Modul mit der Oberseite (Gleisseite) auf den Tisch.   
-### Montage der Schraubklemmen   
-Um die Verkabelung des Moduls &uuml;bersichtlich zu gestalten, werden 2x2 L&auml;ngslinien (Abstand vom Rand 4 cm und 5,5 cm) gezeichnet, die genau durch die Durchf&uuml;hrungen der Querverbinder f&uuml;hren. In diesem Bereich werden die Kabel gef&uuml;hrt. Nun setzt man die Grundplatte wieder in den Rahmen ein.   
-F&uuml;r die Platzierung der Klemmen gilt allgemein:   
-* I²C-Komponenten (zB die Prints mit 10-poligem Wannenstecker) werden in der N&auml;he der Schaltbl&ouml;cke montiert (im folgenden Bild oben zu sehen). Die Montage sollte aber nicht zu Nahe an den Schaltbl&ouml;cken erfolgen, damit man im Fehlerfall die Schaltbl&ouml;cke noch leicht abschrauben kann.   
-* Fahrstromkomponenten (zB Prints mit 6-poligem Wannenstecker) auf der den Schaltbl&ouml;cken gegen&uuml;berliegenden L&auml;ngsseite ("hinten", im Bild unten) und 
-* Weichenanschl&uuml;sse in der N&auml;he der Weichen.   
-
-Das folgende Bild zeigt die montierten Klemmen.   
-
-![M12_Verdrahtung_1](./images/300_M12_Verdrahtung1.png "M12_Verdrahtung_1")   
-_Bild 24: Schraubklemmen f&uuml;r die Verdrahtung_   
-
-#### Montage der Schraubklemmen etc. im Detail    
-1. Beschriften der Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung:   
-   Segment 1: GW-1, GW-2,G1A-1   
-   Segment 2: E1, G2-1, G1-1   
-   Segment 3: G1-2, G2-2, G3-1   
-   Segment 4: GO-1, GO-2   
-2. Alle Prints werden mit M2 x 10 mm Schrauben, L&uuml;sterklemmen mit M2,6 x 12 mm Schrauben angeschraubt.   
-3. Die Gleise der Ein- und Ausfahrt eines Moduls werden immer direkt mit dem Fahrstrom verbunden. Mit dem Stromverteiler-Print `CON_2pol_141_V1` stehen zus&auml;tzliche Klemmen f&uuml;r die Fahrstromverteilung zur Verf&uuml;gung (Gr&uuml;ner Balken unten im 2. Segment von links)   
-4. Die Prints 2x `CON_1xIO_V1` und 1x `CON_2xIO_V1` dienen dem Schalten des Fahrstroms (gemeinsam mit den Schaltbl&ouml;cken `2IO`) (unten im Bild 21).   
-5. Je vier Prints `CON_10pol_PIN_V2` im Segment 2 und 3 stellen die Ein- und Ausgangspins der 10-poligen Schaltblock-Ausg&auml;nge f&uuml;r die I²C-Verdrahtung zur Verf&uuml;gung.   
-6. Im Segment 2 und 3 sind je zwei PCF 8574-I/O-Prints montiert (einer f&uuml;r die Ausgangs- und einer f&uuml;r die Eingangssignale).   
-7. Der Anschluss der Weichen und des Entkupplers erfolgt an Prints 3x `CON_6pol_3_V1` bzw. 1x `CON_6pol_6_V1` (f&uuml;r Dreiwegweiche).   
-
-
-## 3.5 Gleisbau
-### Anbringen der Stromversorgung am Gleis   
-Zur Stromversorgung kann man Fleischmann 22217 Anschlu&szlig;kabel 2pol. Spur N verwenden oder man l&ouml;tet selbst Dr&auml;hte an die Gleisverbinder. Dies geht f&uuml;r Fleischmann-Schotterbett-Gleise sehr gut, w&auml;hrend die Verbinder von Gleisen ohne Schotterbett praktisch nicht l&ouml;tbar sind.   
-Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht mit 0,32 mm² (22awg) f&uuml;r die n&ouml;rdliche Schiene und einen roten Draht f&uuml;r die s&uuml;dliche Schiene. Der Draht wird beidseitig ca. 6 mm abisoliert und f&uuml;r den Gleisverbinder-Anschluss hakenf&ouml;rmig gebogen, mit einer kleinen Zange etwas flachgedr&uuml;ckt und verzinnt.   
-Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, der rechts oben entfernt ist.   
-
-![Loeten_Gleisanschluss1](./images/300_Loeten_Gleisanschluss1.png "Loeten_Gleisanschluss1")   
-_Bild 25: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
-
-### Gleise aufkleben   
-#### Vorbereitung der Weichen   
-Um den Antrieb als Unterflurantrieb zu verwenden, muss man den Schalthebel der Weiche herausziehen und um 180° gedreht wieder einstecken. Danach kann der Antrieb mit der Oberseite nach unten aufgesteckt werden.   
-#### Vorbereitung Stromzuf&uuml;hrung   
-Verwendet man die Stromzuf&uuml;hrungskabel Fleischmann 22217, so muss man immer oberhalb der Kontaktstelle eine Bohrung setzen (4 mm), um die Kabel nach unten durchf&uuml;hren zu k&ouml;nnen.   
-Bei selbst gel&ouml;teten Stromzuf&uuml;hrungen muss jeweils direkt unter jedem Gleisverbinder eine Bohrung gesetzt werden.   
-#### Vorbereitung Entkupplungsgleis   
-F&uuml;r den Antrieb des Entkupplungsgleises 9112 (oder 22212) muss ebenfalls eine 4 mm-Bohrung gesetzt werden.   
-#### Gleise aufkleben   
-Alle Kabel in die Bohrungen einf&auml;deln und nach unten ziehen, bis die Gleise etwa 5 bis 10 cm Abstand zur zuk&uuml;nftigen Position haben. Die Grundplatte etwas schr&auml;g stellen, damit die Kabel nicht geknickt werden.   
-Alle Bereiche markieren, auf die kein Leim aufgetragen werden darf (oder mit Klebeband abdecken):   
-* Weichenantrieb   
-* Entkupplungsgleis   
-* Ausgleichsgleise am linken und rechten Rand (Ost und West)   
-
-Das Gleisbett mit Leim versehen. Dabei ist zu beachten, dass im Bereich der Weiche und des Entkupplungsgleises m&ouml;glichst wenig Leim (oder gar kein Leim) aufgebracht wird, damit kein Leim in die Antriebe gelangt und diese verklebt!   
-Da die Ausgleichsgleise zur Anpassung von Abst&auml;nden an den Modulgrenzen dienen, darf in diesem Bereich ebenfalls KEIN Leim aufgebracht werden!   
-Danach die Gleise fertig zusammenstecken und vorsichtig an den Kabeln ziehen, bis die Gleise auf dem Leim liegen.   
-Da die beiden Ausgleichsgleise am linken und rechten Rand im Betrieb mechanisch in L&auml;ngsrichtung beansprucht werden, sollten sie mit je einem Gleisnagel zus&auml;tzlich fixiert werden. Dabei muss der Gleisnagel an der vom Rand entfernten Gleisseite eingeschlagen werden.   
-
-Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgenderma&szlig;en aus:   
-![Montiertes Gleis](./images/300_Gleis_montiert1.png "Montiertes Gleis")   
-_Bild 26: Rahmen mit Grundplatte und Gleisen._   
-
-[Zum Seitenanfang](#up)   
-<a name="x40"></a>   
-
-# 4. Elektrische Verdrahtung des Moduls   
-
-## 4.1 Verdrahtung der Stromversorgung und des Fahrstroms
-1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltbl&ouml;cken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 10 montierten Pfostenverbindern. Der erste Pfostenverbinder dient zum Anschluss an die Versorgungsplatine, der Pfostenverbinder am Ende der Leitung dient einem eventuell erforderlichem Verl&auml;ngern des Flachbandkabels bzw. zum Anschluss von 100 nF-Kondensatoren zwischen V+ und V- sowie 5V und 0V. (Der Stecker ist im _Bild 24_ rechts oben noch nicht angebracht...)   
-![Abschlusskondensatoren](./images/300_powerline_2xC.png "Abschlusskondensatoren")   
-_Bild 27: Abschlusskondensatoren am Ende des POWER-Kabels_   
-
-2. Verbinden aller Fahrstromanschl&uuml;sse mit den entsprechenden Klemmen.   
-3. Verbinden des Fahrstroms (NN, SS) von der Versorgungsplatine `RW_5V_SUB25_10` zu den Platinen `CON_2pol_141`, `CON_1xIO`, `CON_2xIO` sowie den L&uuml;sterklemmen GW (Gleis West) und GO (Gleis Ost).   
-4. Verbinden der Anschl&uuml;sse der beiden Weichenantriebe der Dreiwegweiche mit der Platine `CON_6pol_6` (linke Weiche = Antrieb n&auml;her zu den Schaltbl&ouml;cken = Pin 1 und 3, Masse an Pin 2).   
-5. Verbinden der Anschl&uuml;sse der beiden Zweiweg-Weichenantriebe mit den Platinen `CON_6pol_3` (Masse = schwarzes Kabel an Pin 2).   
-6. Verbinden der Anschl&uuml;sse des Entkupplers mit der Platine `CON_6pol_3`.   
-_Wichtig_: Da der Entkuppler St&ouml;rspannungen erzeugt, muss ein 100 nF-Kondensator parallel zu den Klemmen V+ und V- geschaltet werden.   
-![Entst&ouml;rkondensator](./images/300_uncoupler_C.png "Entst&ouml;rkondensator")   
-_Bild 28: Entst&ouml;rkondensator am Entkuppler_   
-
-Die Verdrahtung der Stromversorgung im &Uuml;berblick:   
-
-![Verdrahtung 1](./images/300_Verdrahtung1.png "Verdrahtung 1")   
-_Bild 29: Verdrahtung Stromversorgung_   
-
-### Erster Test der Verdrahtung   
-Mit der bisherigen Verdrahtung ist es bereits m&ouml;glich, einen h&auml;ndischen Betrieb durchzuf&uuml;hren. Dabei kann vor allem der richtige Anschluss der Weichen und die Funktion aller Stromzuf&uuml;hrungen (L&ouml;tstellen) getestet werden.   
-1. Anstecken eines 25-poligen Steckers mit Fahrstrom- und Wechselstromversorgung: Die LEDs der Schaltbl&ouml;cke sollten leuchten.   
-2. Test der Ansteuerung der Dreiwegweiche Links-Mitte und Mitte-Rechts. Falls ein Fehler auftritt: Anschl&uuml;sse 1 und 3 vertauschen.   
-2. Test der Ansteuerung der Zweiwegweichen. Stimmt die Anzeige-LED f&uuml;r Gerade und Abzweig? Schaltet die Weiche entsprechend dem Taster auf "Gerade" oder "Abzweig"? Falls nicht: Anschl&uuml;sse 1 und 3 vertauschen.   
-3. Arbeitet der Entkuppler?   
-4. Stimmen alle LED-Anzeigen mit der entsprechenden Hardware &uuml;berein?   
-5. Fahrstrom Gleis 1, 2, 3 und 1A mit den gr&uuml;nen Tastern einschalten, Probefahrt mit einer Lokomotive &uuml;ber alle Gleise.   
-
-## 4.2 Vorbereitung Mikrocontroller
-1. Verbinden des Anschlusses "DCC" der Versorgungsplatine `RW_5V_SUB25_10` mit dem Mikrocontroller &uuml;ber ein ca. 30 cm langes, 6-poliges Kabel.   
-2. Verbinden des Mikrocontrollers mit den I²C-PCF8574-I/O-Expanderplatinen mit 20 cm langen, 4-poligen Kabeln mit male-female-Steckern.   
-3. Programmierung des Mikrocontrollers mit der Software `rcc_module12_V1`.   
-
-## 4.3 Verdrahtung I²C-Bus
-1. Verbinden der acht 10-poligen Stecker der Schaltbl&ouml;cke mit den 10-poligen Steckern der Platinen `CON_10pol_PIN`.   
-
 2. Herstellung der Verbindungen zwischen den Stiftleisten der `CON_10pol_PIN`-Platinen und den I²C-PCF8574-I/O-Expanderplatinen mit 10 cm langen Leitungen female-female.    
 
 Im Segment 2:   
    * I/O-Expander 0x20 - Pin 0 <---> Block DCC 129, Pin 1 - IN   
    * I/O-Expander 0x20 - Pin 1 <---> Block DCC 121/122, Pin 1 - IN   
-   * I/O-Expander 0x20 - Pin 2 <---> Block DCC 121/122, Pin 2 - IN   
-   * I/O-Expander 0x20 - Pin 3 <---> Block DCC 121/122, Pin 3 - IN   
-   * I/O-Expander 0x20 - Pin 4 <---> Block DCC 123, Pin 1 - IN   
-   * I/O-Expander 0x20 - Pin 5 <---> Block DCC 123, Pin 2 - IN   
-   * I/O-Expander 0x20 - Pin 6 <---> Block DCC 124, Pin 1 - IN   
-   -------   
-   * I/O-Expander 0x21 - Pin 0 <---> Block DCC 129, Pin 1 - OUT   
-   * I/O-Expander 0x21 - Pin 1 <---> Block DCC 121/122, Pin 1 - OUT   
-   * I/O-Expander 0x21 - Pin 2 <---> Block DCC 121/122, Pin 2 - OUT   
-   * I/O-Expander 0x21 - Pin 3 <---> Block DCC 121/122, Pin 3 - OUT   
-   * I/O-Expander 0x21 - Pin 4 <---> Block DCC 123, Pin 1 - OUT   
-   * I/O-Expander 0x21 - Pin 5 <---> Block DCC 123, Pin 2 - OUT   
-   * I/O-Expander 0x21 - Pin 6 <---> Block DCC 124, Pin 1 - OUT   
-
-Im Segment 3:   
-   * I/O-Expander 0x22 - Pin 0 <---> Block DCC 128, Pin 1 - IN   
-   * I/O-Expander 0x22 - Pin 1 <---> Block DCC 128, Pin 2 - IN   
-   * I/O-Expander 0x22 - Pin 2 <---> Block DCC 127, Pin 1 - IN   
-   * I/O-Expander 0x22 - Pin 3 <---> Block DCC 126, Pin 1 - IN   
-   * I/O-Expander 0x22 - Pin 4 <---> Block DCC 125, Pin 1 - IN   
-   -------   
-   * I/O-Expander 0x23 - Pin 0 <---> Block DCC 128, Pin 1 - OUT   
-   * I/O-Expander 0x23 - Pin 1 <---> Block DCC 128, Pin 2 - OUT   
-   * I/O-Expander 0x23 - Pin 2 <---> Block DCC 127, Pin 1 - OUT   
-   * I/O-Expander 0x23 - Pin 3 <---> Block DCC 126, Pin 1 - OUT   
-   * I/O-Expander 0x23 - Pin 4 <---> Block DCC 125, Pin 1 - OUT   
 
 ## 4.4 Modulverbindung
 Damit Module aneinandergereiht werden k&ouml;nnen m&uuml;ssen noch die 10 Schraubklemmen bei den 25-poligen Steckern miteinander verbunden werden.   
