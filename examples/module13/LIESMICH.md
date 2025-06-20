@@ -7,11 +7,9 @@ Letzte &Auml;nderung: 7.6.2025 <a name="up"></a><br>
 [Hier geht es direkt zur Inhalts&uuml;bersicht](#x05)   
 
 # &Uuml;bersicht
-Diese Anleitung beschreibt den Bau eines 80 x 50 cm² gro&szlig;en N-Spur-Gleis-Moduls M13 „Kehrschleife West“. Die Kehrschleife ist symmetrisch auf dem Modul angeordnet, sodass sie auch spiegelverkehrt verwendet werden könnte.   
+Diese Anleitung beschreibt den Bau eines 80 x 50 cm² gro&szlig;en N-Spur-Moduls M13 „Kehrschleife West“. Die Kehrschleife ist symmetrisch auf dem Modul angeordnet, sodass sie auch spiegelverkehrt verwendet werden könnte.   
 Ein von Osten kommender Zug fährt über die Kehrschleife zurück nach Osten. In der Modul-Mitte befindet sich ein 45 cm langes Gleis mit Stromabschaltemöglichkeit zum Abstellen eines Zuges.   
 Das Bild zeigt das technisch fertige Modul ohne Landschaftsgestaltung. An der Forderfront erkennt man die Bedien- und Anzeigeelemente f&uuml;r den Handbetrieb.   
-
-_..ToDo: Bild 1 folgt, sobald das Modul fertig ist :) .._   
 
 ![Modul M13](./images/300_m13_Gleis_montiert1.png "Modul M13")   
 _Bild 1: Rahmen mit Grundplatte und Gleisen._   
@@ -20,11 +18,11 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit und ohne Schotterbett |   
-| Gleisbild      | 1x Dreiwegweiche, 1x abschaltbarer Gleisabschnitt |   
+| Gleisbild      | 1x Dreiwegweiche, 1x abschaltbarer Gleisabschnitt, 1x Entkuppler |   
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
 | Fahrstrom     | Analog- oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | * H&auml;ndisch direkt an der Modulvorderseite <br> * &uuml;ber DCC <br> * durch MQTT-Nachrichten (&uuml;ber WLAN) |   
-| Bedienelemente mit R&uuml;ckmeldung | 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 131 und 132) <br> 1x Fahrstrom (Block 2IO, DCC 133) |   
+| Bedienelemente mit R&uuml;ckmeldung | 1x OLED-Display und Taster <br> 1x Dreiwegweiche (Block W3, DCC 131 und 132) <br> 1x Fahrstrom (Block 2IO, DCC 133) <br> 1x Entkuppler (Block 1OUT, DCC 134) |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 | MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
 | Sonstiges | * Einfaches Verbinden mit anderen Modulen durch ein ausziehbares Gleis am Segment-Ende |   
@@ -75,7 +73,7 @@ Der Entwurf des Gleisplans erfolgt in zwei Schritten:
 * Im n&auml;chsten Schritt wird die Lage der Stromversorgungsstellen und Isolationsstellen festgelegt. Das kann dazu f&uuml;hren, dass zB Gleise in zwei Teile zerlegt werden m&uuml;ssen, damit man 2-polige Anschlusskabel (Fleischmann 22217) oder Isolierschienenverbinder (Fleischmann 9403) anbringen kann.   
 
 Der folgende Gleisplan wurde mit dem Programm [AnyRail Version 7](https://www.anyrail.com/) gezeichnet.   
-![M12 Gleisplan V2](./images/600_m13_gleisplan_V2.png "M12 Gleisplan V2")   
+![M13 Gleisplan V2](./images/600_m13_gleisplan_V2.png "M13 Gleisplan V2")   
 _Bild 4: Gleisplan Version 2_   
 
 Dunkelgraue Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
@@ -160,19 +158,27 @@ Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu 
 |      2     |   |   | Paar Einmal-Handschuhe         |   
 |      1     |   |   | Schleifpapier K&ouml;rnung 240      |   
 
+<a name="x14"></a>   
+
 ## 1.4 Elektronische RCC-Komponenten
 ### 1.4.1 Steuerung
 F&uuml;r die Steuerung wird der ESP32 mit den beiden Zusatzplatinen (I²C, DCC) und dem 1,54"-OLED-Display verwendet. Der Zusammenbau ist auf   
 [`https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md`](/fab/rcc2_esp32/LIESMICH.md)   
 beschrieben.   
+![OLED_Shields_uC](./images/300_oled_shields_esp32.png "OLED_Shields_uC")   
+_Bild 5: Zusammengebaute Steuerung aus OLED, Shields und Mikrocontroller ESP32_   
+
 
 ### 1.4.2 Anschluss der 25-poligen Stecker
-F&uuml;r den Anschluss der 25-poligen Stecker und f&uuml;r die Stromversorgung werden folgende best&uuml;ckte Leiterplatten ben&ouml;tigt:   
+Zum Bau des Anschlusses mit den 25-poligen Stecker und der Stromversorgung werden folgende best&uuml;ckte Leiterplatten ben&ouml;tigt:   
 * 1x [Netzteil-Platine AC_5V_supply_6pol_DCC](/fab/rcc1_supply/LIESMICH.md#x20)   
 * 1x [Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (RW_5V_SUB25_10)](/fab/rcc1_supply/LIESMICH.md#x33)   
 * 1x [Platine mit 25-poligem Sub-D-Stecker und Schraubklemmen (CON_SubD_Screw10)](/fab/rcc1_supply/LIESMICH.md#x34)   
 
 Die best&uuml;ckte Netzteil-Platine muss auf die Tr&auml;gerplatine `RW_5V_SUB25_10` montiert werden.   
+
+![Sub-D-Stecker mit Netzteil](./images/300_sub-d_power.png "Sub-D-Stecker mit Netzteil")   
+_Bild 6: Sub-D-Stecker für West und Ost_   
 
 ### 1.4.3 Ansteuerung der Schaltkomponenten
 F&uuml;r die Ansteuerung der Schaltkomponenten werden folgende Schaltbl&ouml;cke ben&ouml;tigt:   
@@ -180,32 +186,33 @@ F&uuml;r die Ansteuerung der Schaltkomponenten werden folgende Schaltbl&ouml;cke
 * 1x [Block Dreiwegweiche (W3)](/fab/rcc4_block/LIESMICH.md#x30)   
 * 1x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
 
-Weiters werden 5 + 3 = 8 LED-Fassungen ben&ouml;tigt.   
+Weiters werden 3 + 5 + 3 = 11 LED-Fassungen ben&ouml;tigt.   
 
 ### 1.4.4 I²C-Expander
 * 2x [PCF8574 I/O-Expander](/fab/rcc0_start/LIESMICH.md#34)   
 
 ### 1.4.5 Verdrahtung
-Zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen:   
+Zum Verteilen des Fahrstroms und zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen (siehe auch [Verdrahtungsplan im Kapitel 4](#x40)):   
 * 1x [`CON_2pol_141` Fahrstromverteiler](/fab/rcc5_add_ons/LIESMICH.md#x60)   
+* 1x [`CON_2pol_131` Fahrstromverteiler](/fab/rcc5_add_ons/LIESMICH.md#x60)   
 * 1x [`CON_1xIO` Fahrstromschalter einfach](/fab/rcc5_add_ons/LIESMICH.md#x70)   
-* 2x [`CON_10pol_PIN` oder `CON_10pol_2x4` Umsetzer 10-poliges Kabel auf Stifte](/fab/rcc5_add_ons/LIESMICH.md#x30)   
 * 1x [`CON_6pol_3` 6-poliger Stecker auf drei Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x40)   
 * 1x [`CON_6pol_6` 6-poliger Stecker auf sechs Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x50)   
+* 3x [`CON_10pol_PIN` oder `CON_10pol_2x4` Umsetzer 10-poliges Kabel auf Stifte](/fab/rcc5_add_ons/LIESMICH.md#x30)   
 
 __Dr&auml;hte, Leitungen und Stecker__   
 * ca. 4 m Volldraht 22awg (0,32 mm²) rot   
 * ca. 4 m Volldraht 22awg (0,32 mm²) braun   
+* 10 x 0,3 m Volldraht 18awg (0,8 mm²) wenn möglich in braun, rot, orange, gelb, grün, blau, violett, grau, weiß, schwarz
 * ca. 3 m Flachbandkabel 6-polig   
-* ca. 2 m Flachbandkabel 10-polig   
+* ca. 0,45 m Flachbandkabel 10-polig   
 * ca. 60 cm 10-poliges Kabel 10 x 1 mm²   
 * 4x 10-poliges Flachbandkabel mit Buchsen Female-Female 10 cm lang (Dupont Jumper Wire Cable)   
 * 1x 10-poliges Flachbandkabel mit Buchsen Female-Female 15 cm lang (Dupont Jumper Wire Cable)   
-* 2x vier Kabel Male-Female 30 cm lang (orange, gelb, gr&uuml;n, blau)   
+* 2x vier Kabel Female-Female 30 cm lang (orange, gelb, gr&uuml;n, blau)   
 -----   
-* 28x IDC Buchsen-Stecker f&uuml;r Flachbandkabel 6-polig   
-* 16x IDC Buchsen-Stecker f&uuml;r Flachbandkabel 10-polig   
-* 8x L&uuml;sterklemmen   
+* 14x IDC Buchsen-Stecker f&uuml;r Flachbandkabel 6-polig   
+* 6x IDC Buchsen-Stecker f&uuml;r Flachbandkabel 10-polig   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
@@ -219,7 +226,7 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 
 Das folgende Bild zeigt den Grundriss des Modulrahmens, der aus 7 Außen- und 5 Innenteilen besteht:   
 ![Modul-Rahmen](./images/480_m13_module_frame.png "Modul-Rahmen")   
-_Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra7) und Querverstrebungen (Ri1 bis Ri6)_
+_Bild 7: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra7) und Querverstrebungen (Ri1 bis Ri6)_
 
 Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
 
@@ -234,7 +241,7 @@ Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²
 * Alle Bohrungen m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 
 ![Modul_West_1.png](./images/300_m13_west_500mm.png "Modul_West_1")   
-_Bild 6: Ma&szlig;e f&uuml;r den Seitenteil West (Breite 500mm)._   
+_Bild 8: Ma&szlig;e f&uuml;r den Seitenteil West (Breite 500mm)._   
 
 <a name="x23"></a>   
 
@@ -244,7 +251,7 @@ Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²
 * Die Bohrungen m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 
 ![Modul_Nord_1.png](./images/300_m13_nord1_500mm.png "Modul_Nord_1")   
-_Bild 7: Ma&szlig;e f&uuml;r den Seitenteil Nord 1 (Breite 500mm)._   
+_Bild 8: Ma&szlig;e f&uuml;r den Seitenteil Nord 1 (Breite 500mm)._   
 
 <a name="x24"></a>   
 
@@ -372,7 +379,7 @@ Anschrauben der Halterung f&uuml;r Sub-D-Stecker. Diese besteht aus zwei U-f&oum
 ![Sub-D-Halterung](./images/300_bracket_sub-d.png "Sub-D-Halterung")   
 _Bild 19: Ma&szlig;e der Halterung_   
 
-In jeden U-f&ouml;rmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,5 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatine.   
+In jeden U-f&ouml;rmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,5 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatinen. Für die `RW_5V_SUB25_10`-Platine (mit Netzteil) müssen die Schrauben weiter weg von der Querstrebe Ri1, für die `CON_SubD_Screw10`-Platine näher an der Querstrebe Ri2 montiert werden.    
 Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm Sechskantmutter gegeneinander an einer Querstrebe verschraubt.   
 
 ![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
@@ -381,7 +388,7 @@ _Bild 20: Teile der Sub-D-Halterung_
 Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden. Im folgenden Bild erkennt man die Holzteile (hell)  und die 3D-gedruckten Teile (schwarz) des Rahmens. Weiters sind die montierten Schaltblöcke (Mitte unten) und die Versorgungsplatine (Mitte rechts in grün) zu erkennen.   
 
 ![Rahmen Ansicht von oben](./images/300_m13_rahmen1.png "Rahmen Ansicht von oben")   
-_Bild 21: Zusammengeschraubter Rahmen, Ansicht von oben_   
+_Bild 21: Zusammengeschraubter Rahmen, Ansicht von oben (die Sub-D-Platinen sind im Bild vertauscht)_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
@@ -418,7 +425,7 @@ Die Ecken der Aussparungen bilden sechs Punkte mit den Koordinaten P1(12/5), P2(
 
 Das folgende Bild zeigt den aufgeklebten Bahndamm mit den Weichenausschnitten:   
 ![Bahndamm](./images/300_m13_bahndamm1.png "Bahndamm")   
-_Bild ..: Grundplatte mit Bahndamm und Weichenausschnitten_   
+_Bild 23: Grundplatte mit Bahndamm und Weichenausschnitten_   
 
 <a name="x33"></a>   
 
@@ -444,7 +451,7 @@ Sind alle Bohrpositionen festgelegt, bohrt man mit einem 4 mm Bohrer die L&ouml;
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen f&uuml;r die Weichenantriebe und die Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung.   
 
 ![Schotterbett](./images/300_m13_schotterbett1.png "Schotterbett")   
-_Bild ..: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
+_Bild 24: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
 
 <a name="x35"></a>   
 
@@ -455,7 +462,7 @@ Der Draht wird beidseitig ca. 6 mm abisoliert, hakenf&ouml;rmig gebogen, mit ein
 Dann fixiert man das Gleis am besten mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ) und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten noch die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, die rechts oben bereits entfernt ist.   
 
 ![Loeten_Gleisanschluss1](./images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")   
-_Bild ..: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
+_Bild 25: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
 
 <a name="x35"></a>   
 
@@ -475,7 +482,7 @@ Das Ausgleichsgleis am rechten Rand des Moduls dient zur Anpassung von Abst&auml
 
 Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgenderma&szlig;en aus:   
 ![Montiertes Gleis](./images/300_m13_gleis_montiert1.png "Montiertes Gleis")   
-_Bild ..: Rahmen mit Grundplatte und Gleisen._   
+_Bild 26: Rahmen mit Grundplatte und Gleisen._   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -486,7 +493,7 @@ _Bild ..: Rahmen mit Grundplatte und Gleisen._
 ## 4.1 Verdrahtungsplan
 Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der eingesetzten Komponenten:   
 ![&Uuml;bersicht M13](./images/600_m13_overview.png "&Uuml;bersicht M13")   
-_Bild ..: &Uuml;bersichtsplan Modul 13_   
+_Bild 27: &Uuml;bersichtsplan Modul 13_   
 
 ## Bedeutung der einzelnen Komponenten
 Die folgende Liste enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
@@ -527,9 +534,6 @@ Von der SUB25_10-Platine werden eine NN- und SS-Leitung zum Eingang "IN" des Keh
 * Abschaltbares Gleis   
 Von der SUB25_10-Platine werden eine NN- und SS-Leitung zum Eingang des [Fahrstromschalters `CON_1xIO`](/fab/rcc5_add_ons/LIESMICH.md#x60 "Fahrstromschalter 1xIO") gelegt. Der Ausgang wird mit den beiden Einspeisepunkten des abschaltbaren Gleises verbunden.   
 
-![Verdrahtung des Fahrstroms](./images/480_m13_traction_current_wiring3.png "Verdrahtung des Fahrstroms")   
-_Bild ..: Modul 13 mit Verdrahtung des Fahrstroms_   
-
 Hat man diese Hilfsplatinen nicht zur Hand, kann man natürlich auch Lüsterklemmen zum Verbinden der Fahrstromanschlüsse verwenden.   
 
 Verbindet man im sechspoligen Stecker der `CON_1xIO`-Platine die Klemmen 1 und 5 sowie 2 und 6 durch Buchse-Buchse-Leitungen miteinander, so kann man bereits das Fahren auf dem Modul 13 testen. Dazu dreht man das Modul um, schließt ein DCC-Signal an den 25-poligen Stecker und befährt mit einer DCC-Lok alle Gleise.   
@@ -543,7 +547,7 @@ Die 5 V-Versorgung erfolgt durch 6-polige Flachbandkabel und besteht aus zwei Te
 2. Versorgung der Schaltblöcke mit 5 V und Wechselspannung   
    Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Blöcke oben, daher sind die Block-Buchsen im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
    ![6pol_Blockverbinder](./images/300_6pol_block_connector.png "6pol_Blockverbinder")   
-   _Bild ..: J5-Stecker des 1OUT-Blocks_   
+   _Bild 28: J5-Stecker des 1OUT-Blocks_   
    Die Einzelbuchse wird in den "POWER"-Stecker des Sub-D-Boards gesteckt, die übrigen Buchsen werden an die senkrechten Stecker der Schaltblöcke gesteckt. Der letzte Buchse bleibt frei.   
    
 
@@ -556,16 +560,16 @@ Da die Fahrstrom-Leitungen bereits an den Fahrstromschalter `CON_1xIO` angeschlo
 #### Entkuppler
 In der Nähe des Entkupplers wird ein 3-poliger Umsetzer `CON_6pol_3` angeschraubt und über ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem 1OUT-Block verbunden.   
 ![Pins_Entkuppler](/images/200_J5_pins_1OUT.png "Pins_Entkuppler")   
-_Bild ..: J5-Stecker des 1OUT-Blocks_   
+_Bild 29: J5-Stecker des 1OUT-Blocks_   
 
 Die beiden Anschlussleitungen des Entkupplers werden an Pin 3 (Masse) und Pin 5 des 3-poligen Umsetzers `CON_6pol_3` angeschraubt und zusätzlich durch einen 100 nF-Kondensator verbunden.   
 ![Anschluss_Entkuppler](./images/300_m13_con_uncoupler.png "Anschluss_Entkuppler")   
-_Bild ..: Anschluss des Entkupplers_   
+_Bild 30: Anschluss des Entkupplers_   
 
 #### Dreiwegweiche
 In der Nähe der Weichenantriebe wird ein 6-poligen Umsetzer `CON_6pol_6` angeschraubt und über ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem W3-Block verbunden.   
 ![Pins_3-Weg-Weiche](/images/200_J5_pins_W3.png "Pins_3-Weg-Weiche")   
-_Bild ..: J5-Stecker des W3-Blocks_   
+_Bild 31: J5-Stecker des W3-Blocks_   
 
 Zum Anschließen der beiden Antriebe der Dreiwegweiche sollte man folgendes Wissen:   
 1. Die Antriebe befinden sich auf der jeweils gegenüber liegenden Weichenseite.   
@@ -592,7 +596,7 @@ Daher ist folgende Vorgangsweise beim Anschluss sinnvoll:
 
 Jetzt kann man auch die übrigen Komponenten testen:   
 ![block_userinterface](./images/300_block_userinterface.png "block_userinterface")   
-_Bild ..: Bedienelemente der Schaltblöcke_   
+_Bild 32: Bedienelemente der Schaltblöcke_   
 
 #### Test Entkuppler
 Drückt man die weiße Taste, leuchtet die grüne LED und der Entkuppler zieht an.   
