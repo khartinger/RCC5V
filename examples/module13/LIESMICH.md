@@ -553,7 +553,7 @@ Da Entkuppler beim Schalten St&ouml;rspannungen erzeugen, werden direkt beim Ent
 <a name="x42"></a>   
 
 ## 4.2 Verdrahtung des Fahrstroms
-Dazu muss das Modul mit der Oberseite (Schienenseite) nach unten gelegt werden. Zum Schutz der Gleise sollte man ein Kunststoff oder eine Decke als Unterlage verwenden.   
+Dazu muss das Modul mit der Oberseite (Schienenseite) nach unten gelegt werden. Zum Schutz der Gleise sollte man einen weichen Schaumstoff oder eine Decke als Unterlage verwenden.   
 Obwohl das Modul nur drei Fahrstromkreise hat, ben&ouml;tigt die Verdrahtung etwas Zeit, da zur sicheren Fahrstromversorgung insgesamt neun Einspeisepunkte vorgesehen sind.   
 * Zufahrt   
 Von der SUB25_10-Platine werden eine NN- und SS-Leitung zu einem [4-fach Fahrstromverteiler `CON_2pol_141`](/fab/rcc5_add_ons/LIESMICH.md#x30 "Fahrstromverteiler 4-fach") gelegt. An diesen werden die Leitungen der vier Einspeisepunkte rund um die Dreiwegweiche angeschraubt.   
@@ -573,12 +573,12 @@ Die 5 V-Versorgung erfolgt durch zwei 6-polige Flachbandkabel:
 1. Versorgung des Mikrocontrollers mit 5 V und DCC-Signal   
    Ein 50 cm langes, 6-poliges Flachbandkabel mit Buchse an beiden Enden verbindet den DCC-Anschluss des Sub-D-Boards mit dem DCC-Shield des Mikrocontrollers.  
 2. Versorgung der Schaltbl&ouml;cke mit 5 V und Wechselspannung   
-   Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Bl&ouml;cke oben, daher sind die Buchsen f&uuml;r die Bl&ouml;cke im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
+   Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende nur eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Bl&ouml;cke oben, daher sind die Buchsen f&uuml;r die Bl&ouml;cke im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
 
    ![6pol_Blockverbinder](./images/300_6pol_block_connector.png "6pol_Blockverbinder")   
-   _Bild 37: J5-Stecker des 1OUT-Blocks_   
+   _Bild 37: Stromversorgungskabel f&uuml;r die Bl&ouml;cke_   
 
-   Die Einzelbuchse wird in den "POWER"-Stecker des Sub-D-Boards gesteckt, die &uuml;brigen Buchsen werden an die senkrechten Stecker der Schaltbl&ouml;cke gesteckt. Der letzte Buchse bleibt frei.   
+   Die Einzelbuchse wird in den "POWER"-Stecker des Sub-D-Boards gesteckt, die &uuml;brigen Buchsen werden an die senkrechten Stecker der Schaltbl&ouml;cke gesteckt. Die letzte Buchse bleibt frei.   
 
 <a name="x44"></a>   
 
@@ -609,24 +609,25 @@ Zum korrekten Anschluss der beiden Antriebe einer Dreiwegweiche sollte man Folge
 Folgende Vorgangsweise ist beim Anschluss sinnvoll:   
 1. Anschrauben des Antriebs f&uuml;r die linke Weiche (n&ouml;rdlicher Antrieb!) an die Schraubklemmen Pin 1, 3 (Masse, schwarz) und 5 des `CON_6pol_6`-Steckers.   
 2. Einschalten der Stromversorgung &uuml;ber den Sub-D-Stecker:   
-   * Dr&uuml;cken der mittleren Taste schaltet die Weiche auf "Mitte" (Gerade), dr&uuml;cken der unteren Taste schaltet die Weiche auf "Links".   
+   * Durch Dr&uuml;cken der mittleren Taste schaltet die Weiche auf "Mitte" (Gerade), durch Dr&uuml;cken der unteren Taste schaltet die Weiche auf "Links".   
    * Die entsprechende LED leuchtet.   
 
-   Sollte Stellung "Mitte" und "Links" der Weiche vertauscht sein: Die braunen Dr&auml;hte an Pin 1 und 5 vertauschen.   
+   Sollten die Stellungen "Mitte" und "Links" der Weiche vertauscht sein: Die braunen Dr&auml;hte an Pin 1 und 5 vertauschen.   
    Sollte die Weiche auf "Rechts" schalten: den anderen Antrieb verwenden.   
 3. Abschalten der Stromversorgung.   
 4. Abschrauben der Masse der linken Weiche (Pin 3).   
 5. Anschrauben des Antriebs f&uuml;r die rechte Weiche (s&uuml;dlich) an Pin 2, 4 (Masse, schwarz) und 6.   
 6. Einschalten der Stromversorgung &uuml;ber Sub-D-Stecker:   
-   * Dr&uuml;cken der mittleren Taste schaltet die Weiche auf "Mitte" (Gerade), dr&uuml;cken der oberen Taste schaltet die Weiche auf "Rechts".   
+   * Durch Dr&uuml;cken der mittleren Taste schaltet die Weiche auf "Mitte" (Gerade), durch Dr&uuml;cken der oberen Taste schaltet die Weiche auf "Rechts".   
    * Die entsprechende LED leuchtet.   
+   Sollten die Stellungen "Mitte" und "Rechts" der Weiche vertauscht sein: Die braunen Dr&auml;hte an Pin 2 und 6 vertauschen.   
 7. Abschalten der Stromversorgung.   
 8. Anschrauben der Masse der linken Weiche (Pin 3).   
 9. Einschalten der Stromversorgung &uuml;ber Sub-D-Stecker:   
    Die Weiche sollte richtig funktionieren.   
 
 ![Verdrahtung W3](./images/300_m13_verdrahtung_w3.png "Verdrahtung W3")   
-_Bild 42: Verdrahtung der Dreiwegweiche mit Fahrstromzuf&uuml;hrung rund um die Dreiwegweiche._   
+_Bild 42: Verdrahtung der Dreiwegweiche und Fahrstromzuf&uuml;hrung rund um die Dreiwegweiche._   
 
 Jetzt kann man auch die &uuml;brigen Komponenten testen:   
 ![block_userinterface](./images/300_block_userinterface.png "block_userinterface")   
