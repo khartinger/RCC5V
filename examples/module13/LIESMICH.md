@@ -328,7 +328,7 @@ Das folgende Bild zeigt die Version 1 der Abdeckung (Blockgr&ouml;&szlig;e 40 x 
 ![Beschriftung Bedienungselemente](./images/300_m13_cover_50mm.png "Beschriftung Bedienungselemente")   
 _Bild 20: Version 1 der Beschriftung der Bedienungselemente f&uuml;r Modul 13_   
 
-Bereits beim Erstellen der Beschriftung sollte man die DCC-Adressen f&uuml;r die Schaltbl&ouml;cke festlegen, damit man die Werte in der Beschriftungszeile mit angeben kann. In den Beispielen dieses Repositorys wird als ACC-Adresse die Modulnummer plus eine fortlaufende Einerstelle verwendet, f&uuml;r diesen Modul 13 zB 131 bis 134.   
+Bereits beim Erstellen der Beschriftung sollte man die DCC-Adressen f&uuml;r die Schaltbl&ouml;cke festlegen, damit man die Werte in der Beschriftungszeile mit angeben kann. In den Beispielen dieses Repositories wird als DCC-Adresse die 10-fache Modul-Nummer plus eine fortlaufende Einerstelle verwendet. F&uuml;r dieses Modul Nummer 13 ergeben sich zB die DCC-Adressen 131 bis 134.   
 
 <a name="x26"></a>   
 
@@ -338,15 +338,15 @@ Die Au&szlig;enteile Ra5 und Ra7 sind 270 x 60 mm² gro&szlig; und enthalten kei
 <a name="x27"></a>   
 
 ## 2.7 Anschlussteil Ra6 (Ost)
-Dieser Seitenteil ist an eine (ehemalige) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   
+Dieser Seitenteil ist an eine (ehemalige ?) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil jedoch der NEM122 entspricht:   
 
 ![Modul_Ost_2_Mitte.png](./images/300_m13_ost_2_mitte.png "Modul_Ost_2_Mitte")   
-_Bild 21: Ma&szlig;e f&uuml;r den Seitenteil Ost 2 (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
+_Bild 21: Ma&szlig;e f&uuml;r den Seitenteil Ost 2 (Modulbreite 250 mm, ein in der Mitte liegendes Gleis)._   
 
 * Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 250 x 70 mm²   
-* Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Fl&uuml;gelschrauben und Fl&uuml;gelmuttern.   
+* Die vier 8 mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Fl&uuml;gelschrauben und Fl&uuml;gelmuttern.   
 * Die linken und rechten vier 2 mm-Bohrungen dienen zum Anschrauben der Nord- und S&uuml;dwand. Sie m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
-* Die oberen zwei 2mm-Bohrungen dienen zum Fixieren der Gel&auml;nde-Grundplatte (falls erforderlich). Auch sie m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
+* Die oberen zwei 2 mm-Bohrungen dienen zum Fixieren der Gel&auml;nde-Grundplatte (falls erforderlich). Auch sie m&uuml;ssen mit einem Kegelsenker erweitert werden, damit die Senkkopfschrauben nicht vorstehen.   
 * Die 60x20 mm²-Ausnehmung dient zum Durchf&uuml;hren des 25-poligen Sub-D-Steckers.   
 
 Mit besonderer Vorsicht ist die Ausnehmung f&uuml;r das Gleis zu fertigen. Mit einer Laubs&auml;ge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile so lange erweitert, bis ein Fleischmann-Schotterbett-Gleis gerade (klemmend) hineinpasst und auch mittig positioniert ist.   
@@ -354,7 +354,7 @@ Mit besonderer Vorsicht ist die Ausnehmung f&uuml;r das Gleis zu fertigen. Mit e
 <a name="x28"></a>   
 
 ## 2.8 Querverstrebung Ri1
-Die Querverstrebung enth&auml;lt verschiedene Durchbr&uuml;che f&uuml;r Kabel, zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker (3,2 mm, im Bild blau eingezeichnet) sowie Bohrungen f&uuml;r die Querverstrebungen (2 mm).   
+Die Querverstrebung enth&auml;lt verschiedene Durchbr&uuml;che f&uuml;r Kabel, zwei 3,2 mm-Bohrungen (im Bild blau eingezeichnet) f&uuml;r die Halterung des 25-poligen Sub-D-Steckers `RW_5V_SUB25_10`, sowie Bohrungen f&uuml;r die Querverstrebungen (2 mm).   
 
 ![Verstrebung Ri1](./images/300_m13_verstrebung_Ri1_480mm.png "Verstrebung Ri1")   
 _Bild 22: Querverstrebung Ri1_
@@ -377,40 +377,46 @@ _Bild 24: L&auml;ngsverstrebungen Ri5und Ri6_
 
 ## 2.11 Zusammenbau des Rahmens
 Nachdem alle Teile des Rahmens bearbeitet wurden, sollten die Holzteile mit Bootslack oder Plastiklack &uuml;berzogen werden, damit sie besser Staub abweisen bzw. leichter zu reinigen sind. Dazu werden sie auf die Unterseite gestellt und bearbeitet.   
-Vor dem Zusammenbau empfiehlt es sich, einige Komponenten vorher zu montieren, da dies einfacher ist:   
+Vor dem Zusammenbau empfiehlt es sich, einige Komponenten vorher zu montieren, da dies im zusammengebauten Rahmen umständlicher ist:   
 
 ### Seitenteil Ra4 (S&uuml;d 1)
 __LED-Fassungen__   
 Reinigen der Bohrungen und Einpressen der LED-Fassungen.   
+![M13_Ra4_mit_LED-Fassung](./images/300_m13_ra4_led_sockets.png "M13_Ra4_mit_LED-Fassung")   
+_Bild 25: Seitenteil Ra4 mit eingepressten LEDs_
 
 __Halterungen f&uuml;r Steuerbl&ouml;cke__   
-Anschrauben der Halterungen f&uuml;r die Steuerbl&ouml;cke auf der Innenseite mit 2,6 x 8 mm Kreuzschlitz-Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
+Die Halterungen f&uuml;r die Steuerbl&ouml;cke werden auf der Innenseite mit 2,6 x 8 mm Kreuzschlitz-Schrauben angeschraubt. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
 
 Die Position der Schrauben f&uuml;r die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgenderma&szlig;en festgelegt:   
 ![Schraubposition f&uuml;r Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition f&uuml;r Blockhalter")   
-_Bild 25: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
+_Bild 26: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
 
-Nach der Montage der Schaltblock-Halterung steckt man die Schaltbl&ouml;cke hinein und schraubt sie mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
+Nach der Montage der Schaltblock-Halterung steckt man die Schaltbl&ouml;cke hinein und schraubt sie mit vier M2 x 20 mm Schrauben leicht an (Schrauben nicht zu fest anziehen!).    
 
-__OLED__   
-Einstecken der OLED in die vorgesehene &Ouml;ffnung.   
+__OLED mit Steuerung__   
+Einstecken der OLED mit den Shields und dem Mikrocontroller in die vorgesehene &Ouml;ffnung. Im Bild sind bereits die Kabel zum Sub-D-Stecker (DCC, nach rechts) und für den I²C-Bus (unten) angesteckt.   
+![OLED_von_hinten](./images/300_oled_mounted.png "OLED_von_hinten")   
+_Bild 27: Montierte Steuerung mit OLED_   
 
 ### Querstrebe Ri1 und Ri2 (auf Ra3)
-Anschrauben der Halterung f&uuml;r Sub-D-Stecker. Diese besteht aus zwei U-f&ouml;rmigen Teilen, die links und rechts an einer Querstrebe angeschraubt werden. Die Teile k&ouml;nnen sowohl aus Holz als auch mit 3D-Druck hergestellt werden. F&uuml;r den Modul M12 werden zwei Halterungen ben&ouml;tigt.   
+Anschrauben der Halterung f&uuml;r Sub-D-Stecker. Diese besteht aus zwei U-f&ouml;rmigen Teilen, die links und rechts an einer Querstrebe angeschraubt werden. Die Teile k&ouml;nnen sowohl aus Holz als auch mit 3D-Druck hergestellt werden. F&uuml;r den Modul M12 werden vier Halterungen ben&ouml;tigt.   
 
 ![Sub-D-Halterung](./images/300_bracket_sub-d.png "Sub-D-Halterung")   
-_Bild 26: Ma&szlig;e der Halterung_   
+_Bild 28: Ma&szlig;e der Halterung_   
 
 In jeden U-f&ouml;rmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,5 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatinen. F&uuml;r die `RW_5V_SUB25_10`-Platine (mit Netzteil) m&uuml;ssen die Schrauben weiter weg von der Querstrebe Ri1, f&uuml;r die `CON_SubD_Screw10`-Platine n&auml;her an der Querstrebe Ri2 montiert werden.    
 Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm Sechskantmutter gegeneinander an einer Querstrebe verschraubt.   
 
 ![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
-_Bild 27: Teile der Sub-D-Halterung_   
+_Bild 29: Teile der Sub-D-Halterung_   
 
-Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden. Im folgenden Bild erkennt man die Holzteile (hell)  und die 3D-gedruckten Teile (schwarz) des Rahmens. Weiters sind die montierten Schaltbl&ouml;cke (Mitte unten) und die Versorgungsplatine (Mitte rechts in gr&uuml;n) zu erkennen.   
-
+Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden. Im folgenden Bild erkennt man die Holzteile (hell)  und die 3D-gedruckten Teile (schwarz) des Rahmens in der Version 1.   
+Das Bild enthält zwei Fehler:   
+1. Unten in der Mitte fehlt noch der 1OUT-Block für den Entkuppler.   
+2. Die beiden Sub-D-Stecker-Platinen in der Mitte des Bildes müssen vertauscht werden (die größere Platine sollte links sein).  
 ![Rahmen Ansicht von oben](./images/300_m13_rahmen1.png "Rahmen Ansicht von oben")   
-_Bild 28: Zusammengeschraubter Rahmen, Ansicht von oben (die Sub-D-Platinen sind im Bild vertauscht)_   
+_Bild 30: Zusammengeschraubter Rahmen, Ansicht von oben (fehlerhafte Version 1)_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
