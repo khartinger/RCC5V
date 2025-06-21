@@ -1019,7 +1019,7 @@ Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im folge
 ![3D Weichenabdeckung](./images/300_m13_3d_weichenabdeckung.png "3D Weichenabdeckung")   
 _Bild 50: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
 
-Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisn&auml;geln (0,7 mm Durchmesser). Die mittlere Abdeckung wurde mit einer Schere passend geschnitten.   
+Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisn&auml;geln (0,7 mm Durchmesser).   
 
 <a name="x72"></a>   
 
