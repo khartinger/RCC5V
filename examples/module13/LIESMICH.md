@@ -414,7 +414,7 @@ _Bild 29: Teile der Sub-D-Halterung_
 Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden. Im folgenden Bild erkennt man die Holzteile (hell)  und die 3D-gedruckten Teile (schwarz) des Rahmens in der Version 1.   
 Das Bild enth&auml;lt zwei Fehler:   
 1. Unten in der Mitte fehlt noch der 1OUT-Block f&uuml;r den Entkuppler.   
-2. Die beiden Sub-D-Stecker-Platinen in der Mitte des Bildes m&uuml;ssen vertauscht werden (die gr&ouml;ßere Platine sollte links sein).  
+2. Die beiden Sub-D-Stecker-Platinen in der Mitte des Bildes m&uuml;ssen vertauscht werden (die gr&ouml;&szlig;ere Platine sollte links sein).  
 ![Rahmen Ansicht von oben](./images/300_m13_rahmen1.png "Rahmen Ansicht von oben")   
 _Bild 30: Zusammengeschraubter Rahmen, Ansicht von oben (fehlerhafte Version 1)_   
 
