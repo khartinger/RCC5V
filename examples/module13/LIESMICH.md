@@ -426,7 +426,7 @@ _Bild 30: Zusammengeschraubter Rahmen, Ansicht von oben (fehlerhafte Version 1)_
 
 ## 3.1 Stellprobe   
 Der Probeaufbau erfolgt auf der 78 x 48 cm² gro&szlig;en, 5 mm (bzw. 4 mm) starken Sperrholzplatte. Als Vorbereitung druckt man den Gleisplan in [AnyRail](https://www.anyrail.com/) im Ma&szlig;stab 1:1 aus und &uuml;bertr&auml;gt ihn mit Kohlepapier - falls vorhanden - auf die Platte.   
-An den im Gleisplan vorgegebenen Stellen werden die Trennstellen hergestellt. Dazu zieht man an der Trennstelle beiden Schienen die bisherigen Gleisverbinder mit einer Zange ab und ersetzt sie durch Fleischmann 9403 Isolier-Schienenverbinder.   
+An den im Gleisplan vorgegebenen Stellen werden die Trennstellen hergestellt. Dazu zieht man an der Trennstelle mit einer kleinen Zange von beiden Schienen die bisherigen Gleisverbinder ab und ersetzt sie durch Fleischmann 9403 Isolier-Schienenverbinder.   
 Danach werden die Gleise entsprechend dem Gleisbild zusammengesteckt.   
 
 Beim Probeaufbau sollten auch alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufgestellt werden, damit man wei&szlig;, wie der Bahnk&ouml;rper (die 5 mm bzw. 4 mm Platte) zugeschnitten werden muss.   
@@ -447,13 +447,13 @@ Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet
 Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, m&uuml;ssen noch Aussparungen in die Grundplatte geschnitten werden.   
 
 ![Ma&szlig;e der Aussparung Unterflurantriebe](./images/300_m13_W3_turnout_cutout.png "Ma&szlig;e der Aussparung Unterflurantriebe")   
-_Bild 29: Ma&szlig;e der Aussparung f&uuml;r die Unterflurantriebe._   
+_Bild 31: Ma&szlig;e der Aussparung f&uuml;r die Unterflurantriebe._   
 
 Die Ecken der Aussparungen bilden sechs Punkte mit den Koordinaten P1(12/5), P2(100/16), P3(97,5/36), P4(73/37), P5(33/32) und P6(9,5/25). F&uuml;r den zweiten Antrieb der Dreiwegweiche sind die Koordinaten gespiegelt. Der Koordinatenursprung befindet sich in der Mitte des Gleisrandes bei den Weichenzungen (siehe Bild oben).    
 
 Das folgende Bild zeigt den aufgeklebten Bahndamm mit den Weichenausschnitten:   
 ![Bahndamm](./images/300_m13_bahndamm1.png "Bahndamm")   
-_Bild 30: Grundplatte mit Bahndamm und Weichenausschnitten_   
+_Bild 32: Grundplatte mit Bahndamm und Weichenausschnitten_   
 
 <a name="x33"></a>   
 
@@ -469,8 +469,8 @@ Wichtig: Vor den Bohren m&uuml;ssen auf der Unterseite die 25-poligen Sub-D-Plat
 Um den Antrieb als Unterflurantrieb zu verwenden, muss man den Schalthebel der Weiche herausziehen und um 180° gedreht wieder einstecken. Danach kann der Antrieb mit der Oberseite nach unten aufgesteckt werden.   
 #### Art der Stromzuf&uuml;hrung   
 Die Art der Stromzuf&uuml;hrung bestimmt die Anzahl und Lage der Bohrungen.   
-* Verwendet man die Stromzuf&uuml;hrungskabel Fleischmann 22217, so muss man __au&szlig;erhalb__ (oberhalb) des Gleises __eine__ Bohrung setzen (4 mm), um die Kabel nach unten durchf&uuml;hren zu k&ouml;nnen.   
-* L&ouml;tet man die Stromzuf&uuml;hrungen selbst ([siehe Kap. 3.5 weiter unten](#x35)), so muss __direkt unter__ jedem Gleisverbinder eine Bohrung (d.h. in Summe __zwei__ Bohrungen) gesetzt werden.   
+* Verwendet man die Stromzuf&uuml;hrungskabel Fleischmann 22217, so muss man __au&szlig;erhalb__ (oberhalb) des Gleises pro Stromzuführung __eine__ Bohrung setzen (4 mm), um die Kabel nach unten durchf&uuml;hren zu k&ouml;nnen.   
+* L&ouml;tet man die Stromzuf&uuml;hrungen selbst ([siehe Kap. 3.5 weiter unten](#x35)), so muss __direkt unter__ jedem Gleisverbinder eine Bohrung (d.h. in Summe __zwei__ Bohrungen pro Stromzuführung) gesetzt werden.   
 #### Vorbereitung Entkupplungsgleis   
 F&uuml;r den Antrieb des Entkupplungsgleises 9112 (oder 22212) muss ebenfalls eine 4 mm-Bohrung gesetzt werden.   
 
@@ -479,7 +479,7 @@ Sind alle Bohrpositionen festgelegt, bohrt man mit einem 4 mm Bohrer die L&ouml;
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen f&uuml;r die Weichenantriebe und die Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung.   
 
 ![Schotterbett](./images/300_m13_schotterbett1.png "Schotterbett")   
-_Bild 31: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
+_Bild 33: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
 
 <a name="x35"></a>   
 
@@ -487,10 +487,10 @@ _Bild 31: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahr
 Zur Stromversorgung kann man entweder Fleischmann 22217 "Anschlu&szlig;kabel 2pol. Spur N" verwenden oder man l&ouml;tet selbst Dr&auml;hte an die Gleisverbinder. Dies geht f&uuml;r Fleischmann-Schotterbett-Gleise sehr gut, w&auml;hrend die Verbinder von Gleisen ohne Schotterbett praktisch nicht l&ouml;tbar sind.   
 Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht f&uuml;r die n&ouml;rdliche Schiene und einen roten Draht f&uuml;r die s&uuml;dliche Schiene. Der Drahtdurchmesser sollte zB 0,64 mm (= 0,32 mm² = 22 awg) oder - besser - 0,8 mm (= 0,5 mm² = 20 awg) betragen.   
 Der Draht wird beidseitig ca. 6 mm abisoliert, hakenf&ouml;rmig gebogen, mit einer kleinen Zange etwas flachgedr&uuml;ckt und verzinnt.   
-Dann fixiert man das Gleis am besten mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ) und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten noch die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, die rechts oben bereits entfernt ist.   
+Dann fixiert man das Gleis am besten mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ) und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten noch die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, die links oben vor dem Löten bereits entfernt wurde.   
 
 ![Loeten_Gleisanschluss1](./images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")   
-_Bild 32: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
+_Bild 34: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
 
 <a name="x35"></a>   
 
@@ -501,16 +501,16 @@ Zuerst werden alle Bereiche markiert, auf die kein Leim aufgetragen werden darf:
 * Ausgleichsgleis (Anschlussgleis) am rechten Rand (Ost)   
 
 Jetzt beginnt das Aufkleben:   
-* Alle Gleisanschlusskabel in die Bohrungen einf&auml;deln und nach unten ziehen, bis die Gleise etwa 5 bis 10 cm Abstand zur zuk&uuml;nftigen Position haben. Die Grundplatte etwas schr&auml;g stellen, damit die Kabel nicht geknickt werden.   
+* Alle Gleisanschlusskabel in die Bohrungen einf&auml;deln und vorsichtig nach unten ziehen, bis die Gleise etwa 5 bis 10 cm Abstand von der zuk&uuml;nftigen Position entfernt sind. Die Grundplatte etwas schr&auml;g stellen, damit die Kabel nicht geknickt werden.   
 * Die Mitte des Gleisbettes mit Leim bestreichen.   
-Dabei darauf achten, dass im Bereich der Weiche und des Entkupplungsgleises kein Leim aufgebracht wird, damit dieser nicht in die Antriebe gelangt und diese verklebt!   
+Dabei darauf achten, dass im Bereich der Weiche und des Entkupplungsgleises kein Leim aufgebracht wird, damit dieser nicht in die Antriebe gelangt und die beweglichen Teile verklebt!   
 Das Ausgleichsgleis am rechten Rand des Moduls dient zur Anpassung von Abst&auml;nden und muss ein- und ausschiebbar sein. Daher darf in diesem Bereich ebenfalls KEIN Leim aufgebracht werden!   
 * Die Gleise fertig zusammenstecken und von unten vorsichtig an den Kabeln ziehen, bis die Gleise auf dem Leim liegen.   
-* Da das Ausgleichsgleis am rechten Rand im Betrieb mechanisch in L&auml;ngsrichtung beansprucht wird, sollte es mit einem Gleisnagel zus&auml;tzlich fixiert werden. Dabei muss der Gleisnagel an der vom Rand entfernten Gleisseite eingeschlagen werden.   
+* Da das Ausgleichsgleis am rechten Rand im Betrieb mechanisch in L&auml;ngsrichtung beansprucht wird, sollte es mit einem Gleisnagel zus&auml;tzlich fixiert werden. Dabei muss der Gleisnagel an der vom Rand weiter entfernten Gleisseite eingeschlagen werden.   
 
 Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgenderma&szlig;en aus:   
-![Montiertes Gleis](./images/300_m13_gleis_montiert1.png "Montiertes Gleis")   
-_Bild 33: Rahmen mit Grundplatte und Gleisen._   
+![Montiertes Gleis](./images/300_m13_gleis_montiert1a.png "Montiertes Gleis")   
+_Bild 35: Rahmen mit Grundplatte und Gleisen._   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -521,7 +521,7 @@ _Bild 33: Rahmen mit Grundplatte und Gleisen._
 ## 4.1 Verdrahtungsplan
 Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der eingesetzten Komponenten:   
 ![&Uuml;bersicht M13](./images/600_m13_overview.png "&Uuml;bersicht M13")   
-_Bild 34: &Uuml;bersichtsplan Modul 13_   
+_Bild 36: &Uuml;bersichtsplan Modul 13_   
 
 ## Bedeutung der einzelnen Komponenten
 Die folgende Liste enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
@@ -576,10 +576,9 @@ Die 5 V-Versorgung erfolgt durch 6-polige Flachbandkabel und besteht aus zwei Te
    Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Bl&ouml;cke oben, daher sind die Block-Buchsen im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
 
    ![6pol_Blockverbinder](./images/300_6pol_block_connector.png "6pol_Blockverbinder")   
-   _Bild 35: J5-Stecker des 1OUT-Blocks_   
+   _Bild 37: J5-Stecker des 1OUT-Blocks_   
 
    Die Einzelbuchse wird in den "POWER"-Stecker des Sub-D-Boards gesteckt, die &uuml;brigen Buchsen werden an die senkrechten Stecker der Schaltbl&ouml;cke gesteckt. Der letzte Buchse bleibt frei.   
-   
 
 <a name="x44"></a>   
 
@@ -590,16 +589,16 @@ Da die Fahrstrom-Leitungen bereits an den Fahrstromschalter `CON_1xIO` angeschlo
 #### Entkuppler
 In der N&auml;he des Entkupplers wird ein 3-poliger Umsetzer `CON_6pol_3` angeschraubt und &uuml;ber ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem 1OUT-Block verbunden.   
 ![Pins_Entkuppler](/images/200_J5_pins_1OUT.png "Pins_Entkuppler")   
-_Bild 36: J5-Stecker des 1OUT-Blocks_   
+_Bild 38: J5-Stecker des 1OUT-Blocks_   
 
 Die beiden Anschlussleitungen des Entkupplers werden an Pin 3 (Masse) und Pin 5 des 3-poligen Umsetzers `CON_6pol_3` angeschraubt und zus&auml;tzlich durch einen 100 nF-Kondensator verbunden.   
 ![Anschluss_Entkuppler](./images/300_m13_con_uncoupler.png "Anschluss_Entkuppler")   
-_Bild 37: Anschluss des Entkupplers_   
+_Bild 39: Anschluss des Entkupplers_   
 
 #### Dreiwegweiche
 In der N&auml;he der Weichenantriebe wird ein 6-poligen Umsetzer `CON_6pol_6` angeschraubt und &uuml;ber ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem W3-Block verbunden.   
 ![Pins_3-Weg-Weiche](/images/200_J5_pins_W3.png "Pins_3-Weg-Weiche")   
-_Bild 38: J5-Stecker des W3-Blocks_   
+_Bild 40: J5-Stecker des W3-Blocks_   
 
 Zum Anschlie&szlig;en der beiden Antriebe der Dreiwegweiche sollte man folgendes Wissen:   
 1. Die Antriebe befinden sich auf der jeweils gegen&uuml;ber liegenden Weichenseite.   
@@ -625,11 +624,11 @@ Daher ist folgende Vorgangsweise beim Anschluss sinnvoll:
    Die Weiche sollte richtig funktionieren.   
 
 ![Verdrahtung W3](./images/300_m13_verdrahtung_w3.png "Verdrahtung W3")   
-_Bild 39: Verdrahtung der Dreiwegweiche_   
+_Bild 41: Verdrahtung der Dreiwegweiche_   
 
 Jetzt kann man auch die &uuml;brigen Komponenten testen:   
 ![block_userinterface](./images/300_block_userinterface.png "block_userinterface")   
-_Bild 40: Bedienelemente der Schaltbl&ouml;cke_   
+_Bild 42: Bedienelemente der Schaltbl&ouml;cke_   
 
 #### Test Entkuppler
 Dr&uuml;ckt man die wei&szlig;e Taste, leuchtet die gr&uuml;ne LED und der Entkuppler zieht an.   
@@ -645,7 +644,7 @@ L&ouml;st man den roten Schalter und dr&uuml;ckt den gr&uuml;nen Schalter, leuch
 Die DCC- und MQTT-Steuerung erfolgt mit dem Mikrocontroller ESP32. Dazu schaltet er &uuml;ber den I²C-Bus und die I/O-Pins von [I²C-PCF8574-I/O-Platinen](/fab/fcc3_i2c/LIESMICH.md) (kurz "I/O-Platinen") die Schaltbl&ouml;cke genau so, als ob man die Taster auf den Bl&ouml;cken dr&uuml;cken w&uuml;rde. Gleichzeitig erh&auml;lt er &uuml;ber die I/O-Platinen die gleiche R&uuml;ckmeldung, die auch mit den LEDs der Bl&ouml;cke angezeigt wird.   
 Die Signale der Schaltbl&ouml;cke sind auf dem Stecker J4 verf&uuml;gbar.   
 ![Pins_J4_Stecker](/images/200_J4_pins.png "Pins_J4_Stecker")   
-_Bild 41: Allgemeine Pinbelegung des J4-Steckers (Datenleitungen)_   
+_Bild 43: Allgemeine Pinbelegung des J4-Steckers (Datenleitungen)_   
 
 Die (Daten-) Ein- und Ausg&auml;nge der Bl&ouml;cke m&uuml;ssen mit den entsprechenden Pins der I/O-Platinen verbunden werden. Wichtig: Die Verbindungen der Pins ("Codierung") m&uuml;ssen mit der Angabe in der Steuersoftware &uuml;bereinstimmen!   
 Hardware-m&auml;&szlig;ig k&ouml;nnte die Verbindung zwischen dem J4-Stecker und den I/O-Platinen direkt &uuml;ber Female-Female Jumper Wires (Buchse-Buchse-Leitungen) erfolgen, allerdings ist es &uuml;bersichtlicher, die Signale &uuml;ber 10-polige IDC-Flachbandkabel in die N&auml;he der I/O-Platinen zu f&uuml;hren und dort &uuml;ber `CON_10pol_2x4`-Platinen an zwei vierpoligen Stiftleisten bereit zu stellen. Hier erfolgt dann die Verbindung zu den I/O-Platinen &uuml;ber kurze Female-Female Jumper Wires.    
@@ -674,10 +673,10 @@ Die Verbindung der Datenleitungen erfolgt gem&auml;&szlig; Verdrahtungsplan:
 
 Das folgende Bild zeigt die mit Female-Female Jumper Wires verbundenen Platinen ("Codierung"):   
 ![Verbindung_Datenleitungen](./images/300_m13_i2c_2x4pin.png "Verbindung_Datenleitungen")   
-_Bild 42: Verbindung der Datenleitungen_   
+_Bild 44: Verbindung der Datenleitungen_   
 
 ![Verdrahtung_Bl&ouml;cke](./images/300_m13_verdrahtung_bloecke.png "Verdrahtung_Bl&ouml;cke")   
-_Bild 43: Verdrahtung der Bl&ouml;cke_   
+_Bild 45: Verdrahtung der Bl&ouml;cke_   
 
 <a name="x46"></a>   
 
@@ -685,7 +684,7 @@ _Bild 43: Verdrahtung der Bl&ouml;cke_
 Damit der Modul von beiden Seiten angespeist werden kann m&uuml;ssen noch die 10 Schraubklemmen der 25-poligen Stecker miteinander verbunden werden.   
 Nach NEM908D erfolgt dies so, dass die Leitungen elektrisch ausgekreuzt, aber physikalisch gerade durchverbunden werden. Das bedeutet, dass sich zB der Fahrstrom des Gleises NN auf dem West-Stecker auf dem Pin 1 und auf dem Ost-Stecker auf dem Pin 13 befindet!   
 ![Wiring_NEM908D](/images/300_Wiring_NEM908D.png "Wiring_NEM908D")   
-_Bild 44: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
+_Bild 46: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
 
 [Siehe auch `/info/con_NEM908/LIESMICH.md`](/info/con_NEM908/LIESMICH.md)   
 
@@ -694,14 +693,14 @@ Die 30 cm langen Einzelleitungen werden an beiden Enden S-f&ouml;rmig gebogen, d
 
 ![Modulverbindung](./images/300_m13_con2x10.png "Modulverbindung")   
 ![Modulverbindung_West](./images/300_m13_con2x10_west.png "Modulverbindung_West")   
-_Bild 45: Verdrahtung der Sub-D-Stecker-Platinen_   
+_Bild 47: Verdrahtung der Sub-D-Stecker-Platinen_   
 
 <a name="x46"></a>   
 
 # 4.7 Gesamtverdrahtung
 Das folgende Bild zeigt die Gesamte Verdrahtung von Modul 13:   
 ![M13_Verdrahtung](./images/600_m13_verdrahtung.png "M13_Verdrahtung")   
-_Bild 46: Gesamtverdrahtung des Moduls 13_   
+_Bild 48: Gesamtverdrahtung des Moduls 13_   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
@@ -1015,7 +1014,7 @@ Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisab
 
 Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im folgenden Bild zu sehen sind.   
 ![3D Weichenabdeckung](./images/300_m13_3d_weichenabdeckung.png "3D Weichenabdeckung")   
-_Bild 47: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
+_Bild 49: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
 
 Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisn&auml;geln (0,7 mm Durchmesser). Die mittlere Abdeckung wurde mit einer Schere passend geschnitten.   
 
@@ -1036,17 +1035,17 @@ Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sei
 Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w&auml;re, wenn man Waggons dort abstellen m&ouml;chte. Für den nachträglichen Einbau eines 1OUT-Blocks sind folgende Arbeitsschritte erforderlich:   
 1. Ausbau des [Seitenteils Ra4 (S&uuml;d 1) - Version 1](#x25).   
    ![Seitenteil_Ra4_Version_1](./images/300_m13_Ra4_V1.png "Seitenteil_Ra4_Version_1")   
-   _Bild 48 Das ausgebaute Seitenteil Ra4_   
+   _Bild 50: Das ausgebaute Seitenteil Ra4_   
 2. Entfernen der Steuerbl&ouml;cke und des uC-LED-Blocks (rechts).   
 3. Erg&auml;nzung der Beschriftung der Bedienungselemente.   
   ![Beschriftung_Bedienungselemente_Version_2](./images/300_m13_cover_50mm_V2.png "Beschriftung_Bedienungselemente_Version_2")   
-  _Bild 49: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
+  _Bild 51: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
 4. Ausschneiden der bestehenden Bohrungen auf dem Klebefolie-Ausdruck mit einer Schere, Aufkleben der Folie auf den Seitenteil Ra4 und Bohren der vier fehlenden Bohrungen f&uuml;r den Entkuppler (1x 7 mm, 3x 5,6 mm Durchmesser).   
    ![Seitenteil_Ra4_Version_2_roh](./images/300_m13_Ra4_V2_raw.png "Seitenteil_Ra4_Version_2_roh")   
-   _Bild 50: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
+   _Bild 52: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
 5. Einpressen der LED-Fassungen und Montage der Blockhalterungen auf der R&uuml;ckseite mit 2,6 x 8 mm Kreuzschlitz-Schrauben.   
    ![Seitenteil_Ra4_V2_Blockhalterungen](./images/300_m13_Ra4_V2_block_holder.png "Seitenteil_Ra4_V2_Blockhalterungen")   
-   _Bild 51: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
+   _Bild 53: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
 6. Einsetzen der Schaltbl&ouml;cke und mit M2x20 mm Kreuzschlitz-Schrauben __leicht (!)__ anschrauben.   
 7. Einsetzen des uC-LED-Blocks.   
 8. Einbau des Seitenteils Ra4 - Version 2 in den Rahmen.   
