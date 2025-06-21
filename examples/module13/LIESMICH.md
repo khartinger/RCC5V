@@ -519,12 +519,12 @@ _Bild 35: Rahmen mit Grundplatte und Gleisen._
 # 4. Elektrische Verdrahtung des Moduls   
 
 ## 4.1 Verdrahtungsplan
-Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der eingesetzten Komponenten:   
+Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwendeten Komponenten:   
 ![&Uuml;bersicht M13](./images/600_m13_overview.png "&Uuml;bersicht M13")   
 _Bild 36: &Uuml;bersichtsplan Modul 13_   
 
 ## Bedeutung der einzelnen Komponenten
-Die folgende Liste enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
+Die folgende Aufzählung enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
 
 `SUB25_10 ....` [Modul-Verbinder mit Netzteil](/fab/rcc1_supply/LIESMICH.md#x30)      
 `uC_OLED .....` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
@@ -554,11 +554,11 @@ Da Entkuppler beim Schalten St&ouml;rspannungen erzeugen, werden direkt beim Ent
 
 ## 4.2 Verdrahtung des Fahrstroms
 Dazu muss das Modul mit der Oberseite (Schienenseite) nach unten gelegt werden. Zum Schutz der Gleise sollte man ein Kunststoff oder eine Decke als Unterlage verwenden.   
-Obwohl das Modul nur drei Fahrstromkreise hat, ben&ouml;tigt die Verdrahtung etwas Zeit, da zur sicheren Fahrstromversorgung insgesamt neun Einspeisepunkte zu verdrahten sind.   
+Obwohl das Modul nur drei Fahrstromkreise hat, ben&ouml;tigt die Verdrahtung etwas Zeit, da zur sicheren Fahrstromversorgung insgesamt neun Einspeisepunkte vorgesehen sind.   
 * Zufahrt   
 Von der SUB25_10-Platine werden eine NN- und SS-Leitung zu einem [4-fach Fahrstromverteiler `CON_2pol_141`](/fab/rcc5_add_ons/LIESMICH.md#x30 "Fahrstromverteiler 4-fach") gelegt. An diesen werden die Leitungen der vier Einspeisepunkte rund um die Dreiwegweiche angeschraubt.   
 * Kehrschleife   
-Von der SUB25_10-Platine werden eine NN- und SS-Leitung zum Eingang "IN" des Kehrschleifenmoduls LK200 der Firma Lenz gelegt. An den Ausgang wird ein [3-fach Fahrstromverteiler `CON_2pol_131`](/fab/rcc5_add_ons/LIESMICH.md#x39 "Fahrstromverteiler 3-fach") angeschlossen, wo die Kabel der drei Einspeisepunkte der Kehrschleife angeschraubt werden.   
+Von der SUB25_10-Platine werden eine NN- und SS-Leitung zum Eingang "IN" des Kehrschleifenmoduls LK200 der Firma Lenz gelegt. An den Ausgang wird ein [3-fach Fahrstromverteiler `CON_2pol_131`](/fab/rcc5_add_ons/LIESMICH.md#x39 "Fahrstromverteiler 3-fach") angeschlossen, an den die Kabel der drei Einspeisepunkte der Kehrschleife angeschraubt werden.   
 * Abschaltbares Gleis   
 Von der SUB25_10-Platine werden eine NN- und SS-Leitung zum Eingang des [Fahrstromschalters `CON_1xIO`](/fab/rcc5_add_ons/LIESMICH.md#x60 "Fahrstromschalter 1xIO") gelegt. Der Ausgang wird mit den beiden Einspeisepunkten des abschaltbaren Gleises verbunden.   
 
@@ -569,11 +569,11 @@ Verbindet man im sechspoligen Stecker der `CON_1xIO`-Platine die Klemmen 1 und 5
 <a name="x43"></a>   
 
 ## 4.3 Verdrahtung der 5 V-Versorgung
-Die 5 V-Versorgung erfolgt durch 6-polige Flachbandkabel und besteht aus zwei Teilen:   
+Die 5 V-Versorgung erfolgt durch zwei 6-polige Flachbandkabel:   
 1. Versorgung des Mikrocontrollers mit 5 V und DCC-Signal   
    Ein 50 cm langes, 6-poliges Flachbandkabel mit Buchse an beiden Enden verbindet den DCC-Anschluss des Sub-D-Boards mit dem DCC-Shield des Mikrocontrollers.  
 2. Versorgung der Schaltbl&ouml;cke mit 5 V und Wechselspannung   
-   Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Bl&ouml;cke oben, daher sind die Block-Buchsen im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
+   Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Bl&ouml;cke oben, daher sind die Buchsen für die Blöcke im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
 
    ![6pol_Blockverbinder](./images/300_6pol_block_connector.png "6pol_Blockverbinder")   
    _Bild 37: J5-Stecker des 1OUT-Blocks_   
@@ -584,70 +584,72 @@ Die 5 V-Versorgung erfolgt durch 6-polige Flachbandkabel und besteht aus zwei Te
 
 ## 4.4 Anschluss der Eisenbahn-Komponenten
 #### Abschaltbares Gleis
-Da die Fahrstrom-Leitungen bereits an den Fahrstromschalter `CON_1xIO` angeschlossen sind, muss lediglich ein 25 cm langes, 6-poliges Kabel zum 2IO-Schaltblock gelegt werden.   
+Da die Fahrstrom-Leitungen bereits an den Fahrstromschalter `CON_1xIO` angeschlossen sind, muss lediglich ein 25 cm langes, 6-poliges Kabel zum 2IO-Schaltblock gelegt werden, das den zu schaltenden Fahrstrom enthält.   
+![Pins_Entkuppler](/images/200_J5_pins_2IO.png "Pins_Entkuppler")   
+_Bild 38: J5-Stecker des 1OUT-Blocks_   
 
 #### Entkuppler
 In der N&auml;he des Entkupplers wird ein 3-poliger Umsetzer `CON_6pol_3` angeschraubt und &uuml;ber ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem 1OUT-Block verbunden.   
 ![Pins_Entkuppler](/images/200_J5_pins_1OUT.png "Pins_Entkuppler")   
-_Bild 38: J5-Stecker des 1OUT-Blocks_   
+_Bild 39: J5-Stecker des 1OUT-Blocks_   
 
 Die beiden Anschlussleitungen des Entkupplers werden an Pin 3 (Masse) und Pin 5 des 3-poligen Umsetzers `CON_6pol_3` angeschraubt und zus&auml;tzlich durch einen 100 nF-Kondensator verbunden.   
 ![Anschluss_Entkuppler](./images/300_m13_con_uncoupler.png "Anschluss_Entkuppler")   
-_Bild 39: Anschluss des Entkupplers_   
+_Bild 40: Anschluss des Entkupplers_   
 
 #### Dreiwegweiche
 In der N&auml;he der Weichenantriebe wird ein 6-poligen Umsetzer `CON_6pol_6` angeschraubt und &uuml;ber ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem W3-Block verbunden.   
 ![Pins_3-Weg-Weiche](/images/200_J5_pins_W3.png "Pins_3-Weg-Weiche")   
-_Bild 40: J5-Stecker des W3-Blocks_   
+_Bild 41: J5-Stecker des W3-Blocks_   
 
-Zum Anschlie&szlig;en der beiden Antriebe der Dreiwegweiche sollte man folgendes Wissen:   
+Zum korrekten Anschluss der beiden Antriebe einer Dreiwegweiche sollte man Folgendes wissen.   
 1. Die Antriebe befinden sich auf der jeweils gegen&uuml;ber liegenden Weichenseite.   
 2. Beim Schalten auf "Mitte" werden beide Antriebe bet&auml;tigt.   
 
-Daher ist folgende Vorgangsweise beim Anschluss sinnvoll:   
-1. Anschrauben des Antriebs f&uuml;r die linke Weiche (n&ouml;rdlicher Antrieb!) an Pin 1, 3 (Masse, schwarz) und 5.   
-2. Einschalten der Stromversorgung &uuml;ber Sub-D-Stecker:   
+Folgende Vorgangsweise ist beim Anschluss sinnvoll:   
+1. Anschrauben des Antriebs f&uuml;r die linke Weiche (n&ouml;rdlicher Antrieb!) an die Schraubklemmen Pin 1, 3 (Masse, schwarz) und 5 des `CON_6pol_6`-Steckers.   
+2. Einschalten der Stromversorgung &uuml;ber den Sub-D-Stecker:   
    * Dr&uuml;cken der mittleren Taste schaltet die Weiche auf "Mitte" (Gerade), dr&uuml;cken der unteren Taste schaltet die Weiche auf "Links".   
    * Die entsprechende LED leuchtet.   
 
    Sollte Stellung "Mitte" und "Links" der Weiche vertauscht sein: Die braunen Dr&auml;hte an Pin 1 und 5 vertauschen.   
    Sollte die Weiche auf "Rechts" schalten: den anderen Antrieb verwenden.   
-3. Abschalten der Stromversorgung   
+3. Abschalten der Stromversorgung.   
 4. Abschrauben der Masse der linken Weiche (Pin 3).   
 5. Anschrauben des Antriebs f&uuml;r die rechte Weiche (s&uuml;dlich) an Pin 2, 4 (Masse, schwarz) und 6.   
 6. Einschalten der Stromversorgung &uuml;ber Sub-D-Stecker:   
    * Dr&uuml;cken der mittleren Taste schaltet die Weiche auf "Mitte" (Gerade), dr&uuml;cken der oberen Taste schaltet die Weiche auf "Rechts".   
    * Die entsprechende LED leuchtet.   
-7. Abschalten der Stromversorgung   
+7. Abschalten der Stromversorgung.   
 8. Anschrauben der Masse der linken Weiche (Pin 3).   
 9. Einschalten der Stromversorgung &uuml;ber Sub-D-Stecker:   
    Die Weiche sollte richtig funktionieren.   
 
 ![Verdrahtung W3](./images/300_m13_verdrahtung_w3.png "Verdrahtung W3")   
-_Bild 41: Verdrahtung der Dreiwegweiche_   
+_Bild 42: Verdrahtung der Dreiwegweiche mit Fahrstromzuführung rund um die Dreiwegweiche._   
 
 Jetzt kann man auch die &uuml;brigen Komponenten testen:   
 ![block_userinterface](./images/300_block_userinterface.png "block_userinterface")   
-_Bild 42: Bedienelemente der Schaltbl&ouml;cke_   
+_Bild 43: Bedienelemente der Schaltbl&ouml;cke._   
 
 #### Test Entkuppler
-Dr&uuml;ckt man die wei&szlig;e Taste, leuchtet die gr&uuml;ne LED und der Entkuppler zieht an.   
+* Dr&uuml;ckt man die wei&szlig;e Taste, leuchten die gelbe und die gr&uuml;ne LED und der Entkuppler zieht an.   
 
 #### Test des abschaltbaren Gleises
-Sind beide Schalter nicht gedr&uuml;ckt, leuchtet die mittlere LED ("Remote") und der Fahrstrom des geraden Gleises ist abgeschaltet (rote LED "Aus" leuchtet).   
-Dr&uuml;ckt man den roten Schalter, leuchtet die obere LED ("Hand-Aus") und der Fahrstrom bleibt abgeschaltet.   
-L&ouml;st man den roten Schalter und dr&uuml;ckt den gr&uuml;nen Schalter, leuchten die beiden unteren LED ("Hand-Ein" und "Ein") und das Gleis hat Fahrstrom, sodass eine Lok auf dem Gleis angesteuert werden kann und f&auml;hrt.   
+* Sind beide Schalter __nicht__ gedr&uuml;ckt, leuchtet die mittlere LED ("Remote") und der Fahrstrom des geraden Gleises ist abgeschaltet (rote LED "Aus" leuchtet).   
+* Dr&uuml;ckt man den roten Schalter, leuchten beide oberen LEDs ("Hand-Aus" und "Aus") und der Fahrstrom bleibt abgeschaltet.   
+* L&ouml;st man den roten Schalter und dr&uuml;ckt den gr&uuml;nen Schalter, leuchten die beiden unteren LEDs ("Hand-Ein" und "Ein") und das Gleis hat Fahrstrom, sodass eine Lok auf dem Gleis angesteuert werden kann und f&auml;hrt.   
 
 <a name="x45"></a>   
 
 ## 4.5 Hardware f&uuml;r die DCC- und MQTT-Steuerung
-Die DCC- und MQTT-Steuerung erfolgt mit dem Mikrocontroller ESP32. Dazu schaltet er &uuml;ber den I²C-Bus und die I/O-Pins von [I²C-PCF8574-I/O-Platinen](/fab/fcc3_i2c/LIESMICH.md) (kurz "I/O-Platinen") die Schaltbl&ouml;cke genau so, als ob man die Taster auf den Bl&ouml;cken dr&uuml;cken w&uuml;rde. Gleichzeitig erh&auml;lt er &uuml;ber die I/O-Platinen die gleiche R&uuml;ckmeldung, die auch mit den LEDs der Bl&ouml;cke angezeigt wird.   
+Die DCC- und MQTT-Steuerung erfolgen über den Mikrocontroller ESP32 (&micro;C). Dazu schaltet der &micro;C &uuml;ber den I²C-Bus und die I/O-Pins von [I²C-PCF8574-I/O-Platinen](/fab/fcc3_i2c/LIESMICH.md) (kurz "I/O-Platinen") die Schaltbl&ouml;cke genau so, als ob man die Taster auf den Bl&ouml;cken dr&uuml;cken w&uuml;rde. Gleichzeitig erh&auml;lt der &micro;C &uuml;ber die I/O-Platinen die gleiche R&uuml;ckmeldung, die auch mit den LEDs der Bl&ouml;cke angezeigt wird.   
 Die Signale der Schaltbl&ouml;cke sind auf dem Stecker J4 verf&uuml;gbar.   
 ![Pins_J4_Stecker](/images/200_J4_pins.png "Pins_J4_Stecker")   
-_Bild 43: Allgemeine Pinbelegung des J4-Steckers (Datenleitungen)_   
+_Bild 44: Allgemeine Pinbelegung des J4-Steckers (Datenleitungen)_   
 
 Die (Daten-) Ein- und Ausg&auml;nge der Bl&ouml;cke m&uuml;ssen mit den entsprechenden Pins der I/O-Platinen verbunden werden. Wichtig: Die Verbindungen der Pins ("Codierung") m&uuml;ssen mit der Angabe in der Steuersoftware &uuml;bereinstimmen!   
-Hardware-m&auml;&szlig;ig k&ouml;nnte die Verbindung zwischen dem J4-Stecker und den I/O-Platinen direkt &uuml;ber Female-Female Jumper Wires (Buchse-Buchse-Leitungen) erfolgen, allerdings ist es &uuml;bersichtlicher, die Signale &uuml;ber 10-polige IDC-Flachbandkabel in die N&auml;he der I/O-Platinen zu f&uuml;hren und dort &uuml;ber `CON_10pol_2x4`-Platinen an zwei vierpoligen Stiftleisten bereit zu stellen. Hier erfolgt dann die Verbindung zu den I/O-Platinen &uuml;ber kurze Female-Female Jumper Wires.    
+Hardware-m&auml;&szlig;ig k&ouml;nnte die Verbindung zwischen dem J4-Stecker und den I/O-Platinen direkt &uuml;ber Female-Female Jumper Wires (Buchse-Buchse-Leitungen) erfolgen, allerdings ist es &uuml;bersichtlicher, die Signale &uuml;ber 10-polige IDC-Flachbandkabel in die N&auml;he der I/O-Platinen zu f&uuml;hren und dort &uuml;ber `CON_10pol_2x4`-Platinen an zwei vierpoligen Stiftleisten bereit zu stellen. Hier erfolgt dann die Verbindung zu den I/O-Platinen &uuml;ber kurze Female-Female Jumper Wires (siehe _Bild 45_ und _Bild 46_ weiter unten).    
 
 Zum Einbau der erforderlichen Komponenten legt man das Modul auf die Gleisseite.   
 
@@ -671,12 +673,12 @@ Die Verbindung der Datenleitungen erfolgt gem&auml;&szlig; Verdrahtungsplan:
 * I/O-Expander 0x21 - Pin 4 ` <--gelb----<-- ` Block DCC 133, Pin 1 - OUT   
 * I/O-Expander 0x21 - Pin 5 ` <--gr&uuml;n----<-- ` Block DCC 134, Pin 1 - OUT   
 
-Das folgende Bild zeigt die mit Female-Female Jumper Wires verbundenen Platinen ("Codierung"):   
+Die folgenden Bilder zeigen die mit Female-Female Jumper Wires verbundenen Platinen ("Codierung"):   
 ![Verbindung_Datenleitungen](./images/300_m13_i2c_2x4pin.png "Verbindung_Datenleitungen")   
-_Bild 44: Verbindung der Datenleitungen_   
+_Bild 45: Verbindung der Datenleitungen_   
 
 ![Verdrahtung_Bl&ouml;cke](./images/300_m13_verdrahtung_bloecke.png "Verdrahtung_Bl&ouml;cke")   
-_Bild 45: Verdrahtung der Bl&ouml;cke_   
+_Bild 46: Verdrahtung der Bl&ouml;cke_   
 
 <a name="x46"></a>   
 
@@ -684,7 +686,7 @@ _Bild 45: Verdrahtung der Bl&ouml;cke_
 Damit der Modul von beiden Seiten angespeist werden kann m&uuml;ssen noch die 10 Schraubklemmen der 25-poligen Stecker miteinander verbunden werden.   
 Nach NEM908D erfolgt dies so, dass die Leitungen elektrisch ausgekreuzt, aber physikalisch gerade durchverbunden werden. Das bedeutet, dass sich zB der Fahrstrom des Gleises NN auf dem West-Stecker auf dem Pin 1 und auf dem Ost-Stecker auf dem Pin 13 befindet!   
 ![Wiring_NEM908D](/images/300_Wiring_NEM908D.png "Wiring_NEM908D")   
-_Bild 46: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
+_Bild 47: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
 
 [Siehe auch `/info/con_NEM908/LIESMICH.md`](/info/con_NEM908/LIESMICH.md)   
 
@@ -693,14 +695,14 @@ Die 30 cm langen Einzelleitungen werden an beiden Enden S-f&ouml;rmig gebogen, d
 
 ![Modulverbindung](./images/300_m13_con2x10.png "Modulverbindung")   
 ![Modulverbindung_West](./images/300_m13_con2x10_west.png "Modulverbindung_West")   
-_Bild 47: Verdrahtung der Sub-D-Stecker-Platinen_   
+_Bild 48: Verdrahtung der Sub-D-Stecker-Platinen_   
 
 <a name="x46"></a>   
 
 # 4.7 Gesamtverdrahtung
 Das folgende Bild zeigt die Gesamte Verdrahtung von Modul 13:   
 ![M13_Verdrahtung](./images/600_m13_verdrahtung.png "M13_Verdrahtung")   
-_Bild 48: Gesamtverdrahtung des Moduls 13_   
+_Bild 49: Gesamtverdrahtung des Moduls 13_   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
@@ -1008,13 +1010,13 @@ echo ---Fertig!-----
 
 # 7. Abschlie&szlig;ende Arbeiten   
 ## 7.1 Weichenabdeckungen   
-F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 29 und 30). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M13 werden zwei hohe Abdeckungen f&uuml;r die Antriebe der Dreiwegweiche ben&ouml;tigt.    
+F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 31 und 32). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M13 werden zwei hohe Abdeckungen f&uuml;r die Antriebe der Dreiwegweiche ben&ouml;tigt.    
 
 Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisabdeckung sowie eine 1 mm Folie dar&uuml;ber + eine 0,5 mm Folie &uuml;ber dem Antrieb verwendet werden.   
 
 Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im folgenden Bild zu sehen sind.   
 ![3D Weichenabdeckung](./images/300_m13_3d_weichenabdeckung.png "3D Weichenabdeckung")   
-_Bild 49: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
+_Bild 50: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
 
 Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisn&auml;geln (0,7 mm Durchmesser). Die mittlere Abdeckung wurde mit einer Schere passend geschnitten.   
 
@@ -1035,17 +1037,17 @@ Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sei
 Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w&auml;re, wenn man Waggons dort abstellen m&ouml;chte. Für den nachträglichen Einbau eines 1OUT-Blocks sind folgende Arbeitsschritte erforderlich:   
 1. Ausbau des [Seitenteils Ra4 (S&uuml;d 1) - Version 1](#x25).   
    ![Seitenteil_Ra4_Version_1](./images/300_m13_Ra4_V1.png "Seitenteil_Ra4_Version_1")   
-   _Bild 50: Das ausgebaute Seitenteil Ra4_   
+   _Bild 51: Das ausgebaute Seitenteil Ra4_   
 2. Entfernen der Steuerbl&ouml;cke und des uC-LED-Blocks (rechts).   
 3. Erg&auml;nzung der Beschriftung der Bedienungselemente.   
   ![Beschriftung_Bedienungselemente_Version_2](./images/300_m13_cover_50mm_V2.png "Beschriftung_Bedienungselemente_Version_2")   
-  _Bild 51: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
+  _Bild 52: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
 4. Ausschneiden der bestehenden Bohrungen auf dem Klebefolie-Ausdruck mit einer Schere, Aufkleben der Folie auf den Seitenteil Ra4 und Bohren der vier fehlenden Bohrungen f&uuml;r den Entkuppler (1x 7 mm, 3x 5,6 mm Durchmesser).   
    ![Seitenteil_Ra4_Version_2_roh](./images/300_m13_Ra4_V2_raw.png "Seitenteil_Ra4_Version_2_roh")   
-   _Bild 52: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
+   _Bild 53: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
 5. Einpressen der LED-Fassungen und Montage der Blockhalterungen auf der R&uuml;ckseite mit 2,6 x 8 mm Kreuzschlitz-Schrauben.   
    ![Seitenteil_Ra4_V2_Blockhalterungen](./images/300_m13_Ra4_V2_block_holder.png "Seitenteil_Ra4_V2_Blockhalterungen")   
-   _Bild 53: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
+   _Bild 54: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
 6. Einsetzen der Schaltbl&ouml;cke und mit M2x20 mm Kreuzschlitz-Schrauben __leicht (!)__ anschrauben.   
 7. Einsetzen des uC-LED-Blocks.   
 8. Einbau des Seitenteils Ra4 - Version 2 in den Rahmen.   
