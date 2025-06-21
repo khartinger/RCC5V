@@ -766,8 +766,8 @@ und im englischsprachigen Abschnitt
 
 _Zeile 17 und 18_:   
 ```   
-#define  VERSION_13     "2025-06-18 rcc_module13_V1"
-#define  VERSION_13_1   "Version 2025-06-18"
+#define  VERSION_13     "2025-06-21 rcc_module13_V1"
+#define  VERSION_13_1   "Version 2025-06-21"
 ```   
 _Zeile 27_:   
 ```   
@@ -871,10 +871,10 @@ Die Anzeige der Stellung der Dreiwegweiche ist abh&auml;ngig von der tats&auml;c
 * Dr&uuml;cken der unteren Taste: Weiche schaltet auf "Links", unter LED leuchtet, OLED-Anzeige `_/ __`.
 
 #### Test Entkuppler
-Dr&uuml;ckt man die wei&szlig;e Taste, leuchtet die gr&uuml;ne LED, der Entkuppler zieht an und aud der OLED-Anzeige steht &uuml;ber der DCC-Adresse 134 `Ein`.   
+Dr&uuml;ckt man die wei&szlig;e Taste, leuchtet die gr&uuml;ne LED, der Entkuppler zieht an und auf der OLED-Anzeige steht &uuml;ber der DCC-Adresse 134 `Ein`.   
 
 #### Test des abschaltbaren Gleises
-* Sind beide Schalter nicht gedr&uuml;ckt, leuchtet die mittlere LED ("Remote"), der Fahrstrom des geraden Gleises ist abgeschaltet, die rote LED leuchtet und auf der OLED-Anzeige steht &uuml;ber der DCC-Adresse 133 `Aus`.   
+* Sind beide Schalter nicht gedr&uuml;ckt, leuchtet die mittlere LED ("Remote"), der Fahrstrom des geraden Gleises (Abstellgleis) ist abgeschaltet, die rote LED leuchtet und auf der OLED-Anzeige steht &uuml;ber der DCC-Adresse 133 `Aus`.   
 * Dr&uuml;ckt man den roten Schalter, leuchten beide oberen LEDs ("Hand-Aus" und "Aus"), der Fahrstrom bleibt abgeschaltet und auf der OLED-Anzeige steht &uuml;ber der DCC-Adresse 133 `Aus`.   
 * L&ouml;st man den roten Schalter und dr&uuml;ckt den gr&uuml;nen Schalter, leuchten die beiden unteren LED ("Hand-Ein" und "Ein"), das Gleis hat Fahrstrom und auf der OLED-Anzeige steht &uuml;ber der DCC-Adresse 133 `Ein`.   
 
@@ -882,7 +882,7 @@ Dr&uuml;ckt man die wei&szlig;e Taste, leuchtet die gr&uuml;ne LED, der Entkuppl
 
 ## 6.3 Test mit MQTT
 1. MQTT-Server starten.   
-2. Einen Laptop oder PC mit dem Netzwerk des MQTT-Servers verbinden   
+2. Einen Laptop oder PC mit dem Netzwerk des MQTT-Servers verbinden.   
 3. Die Software `mosquitto_sub` in einem Kommando-Fenster mit diesem Kommando starten:   
    `mosquitto_sub -h 10.1.1.1 -t rcc/# -v`   
 4. Anstecken eines 25-poligen Steckers mit Fahrstrom- und Wechselstromversorgung: Die LEDs der Schaltbl&ouml;cke sollten entspechend der Hardware-Stellung richtig leuchten.   
@@ -905,7 +905,7 @@ Im ersten Kommando-Fenster werden die m&ouml;glichen Befehle angezeigt:
 ```   
 rcc/module13/get ?
 rcc/module13/ret/?
-get: ?|help|version|ip|topicbase|eeprom|byname|bydcc|T3L|131|T3R|132|DT|133|UC|134|
+get: ?|help|version|ip|signal|topicbase|eeprom|byname|bydcc|T3L|131|T3R|132|DT|133|UC|134|
 set: topicbase|eeprom0|T3L|131|T3R|132|DT|133|UC|134|
 sub:
 pub:
