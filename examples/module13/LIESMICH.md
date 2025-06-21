@@ -249,7 +249,7 @@ Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den 
 
 ## 2.2 Seitenteil Ra1 (West)
 Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²   
-* Der Seitenteil "West" hat in der Mitte eine 20x60 mm² gro&szlig;e Griff&ouml;ffnung (zum Tragen)   
+* Der Seitenteil "West" hat in der Mitte eine 20x60 mm² gro&szlig;e Griff&ouml;ffnung (zum Tragen), wobei die linke und rechte Seite des Lochs durch Halbkreise (Durchmesser 20 mm) gebildet werden.    
 * Die vier 2 mm-Bohrungen am linken und rechten Rand dienen zum Anschrauben der Nord- und S&uuml;dwand.   
 * Die vier 2 mm-Bohrungen in der Mitte dienen zum Anschrauben der (L&auml;ngs-)Querstreben Ri3 und Ri4.   
 * Die zwei 2 mm-Bohrungen am oberen Rand dienen zum Fixieren der Gel&auml;nde-Grundplatte (falls erforderlich).   
@@ -271,12 +271,12 @@ _Bild 13: Ma&szlig;e f&uuml;r den Seitenteil Nord 1 (Breite 500mm)._
 <a name="x24"></a>   
 
 ## 2.4 Seitenteil Ra3 bzw. Ri2 (Ost 1)
-Dieser Seitenteil ist ein Spezialteil, der au&szlig;en ein Au&szlig;enteil und im der Mitte ein Verstrebung ist.   
+Dieser Seitenteil ist ein Spezialteil, der im Bereich der kurzen Kanten ein Au&szlig;enteil und in der Mitte ein Verstrebung ist.   
 Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²   
 * Der Seitenteil "Ost 1" fungiert in der Mitte (jeweils 135 mm vom Rand) als Verstrebung mit der H&ouml;he 5 cm.   
-* In der Mitte ist eine 25x72 mm² gro&szlig;e &Ouml;ffnung f&uuml;r die Sub-D-Stecher-Platine.   
-* Im 5 mm Bereich befinden sich zwei ca. 30x10 mm Ausnehmungen, um Kabel durchf&uuml;hren zu k&ouml;nnen.   
-* Alle Bohrdurchmesser sind 2 mm, bis auf die blau eingezeichneten Bohrungen mit 3,2 mm.   
+* In der Mitte ist eine 25x72 mm² gro&szlig;e &Ouml;ffnung zur Aufnahme der Sub-D-Stecker-Platine `CON_SubD_Screw10`.   
+* Im inneren Bereich befinden sich zwei ca. 30x10 mm Ausnehmungen, um Kabel durchf&uuml;hren zu k&ouml;nnen.   
+* Alle Bohrdurchmesser haben einen Durchmesser von 2 mm, bis auf die zwei blau eingezeichneten Bohrungen in der Mitte oben mit 3,2 mm.   
 * Die vier Bohrungen mit Randabstand 130 mm (gr&uuml;n eingezeichnet) werden von der Innenseite mit einem Kegelsenker erweitert, alle andere Bohrungen von der Au&szlig;enseite.   
 
 ![Modul_Ost_1.png](./images/300_m13_ost1_500mm.png "Modul_Ost_1")   
@@ -284,12 +284,19 @@ _Bild 14: Ma&szlig;e f&uuml;r den Seitenteil Ost Ra3 bzw. Querverstrebung Ri2 (B
 
 <a name="x25"></a>   
 
-## 2.5 Seitenteil Ra4 (S&uuml;d 1) - Version 1
-Der Seitenteil "S&uuml;d" enth&auml;lt die Steuerelemente des Moduls, wie die Anzeige (OLED) oder die Schalter f&uuml;r das abschaltbare Gleis und die Weiche.   
-Das folgende Bild gibt einen &Uuml;berblick &uuml;ber die erforderlichen Bohrungen.   
+## 2.5 Seitenteil Ra4 (S&uuml;d 1)
+Vom Seitenteil Ra4 gibt es zwei Versionen: Ursprünglich waren - zusätzlich zur Anzeige (OLED) - als Steuerblöcke nur die Dreiwegweiche und die Fahrstromabschaltung für das Abstellgleis geplant.    
 
 ![Modul_S&uuml;d1_1.png](./images/300_m13_sued1_500mm.png "Modul_S&uuml;d_1")   
-_Bild 15: Ma&szlig;e f&uuml;r den Seitenteil S&uuml;d 1 (Breite 500mm)._   
+_Bild 15: Ma&szlig;e f&uuml;r den Seitenteil S&uuml;d 1 - Version 1._   
+
+In der Version 2 kommen zusätzlich noch die Bohrungen für den Entkuppler (1OUT-Block) dazu:   
+
+![Modul_S&uuml;d1_2.png](./images/300_m13_sued1_v2_500mm.png "Modul_S&uuml;d1_2")   
+_Bild 16: Ma&szlig;e f&uuml;r den Seitenteil S&uuml;d 1 - Version 2._   
+
+Wie man von der Version 1 auf die Version 2 kommt, ist im [Anhang, Kapitel 8](#x80), beschrieben.   
+Im Detail gilt:   
 
 __Querverstrebung__   
 * Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 500 x 60 mm²   
@@ -299,18 +306,18 @@ __Querverstrebung__
 __OLED-Anzeige__   
 Die Aussparungen f&uuml;r die OLED-Anzeige und den dazugeh&ouml;rigen Taster sind abh&auml;ngig davon, ob man die Bauteile einzeln montiert oder einen 3D-Druck-Rahmen verwendet. Bei getrennter Montage ben&ouml;tigt man eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 20 x 38 mm² und eine 11,6 mm-Bohrung.   
 ![OLED_Button_single](./images/300_OLED_Button_single.png "OLED_Button_single")   
-_Bild 16: Ma&szlig;e f&uuml;r die getrennte Montage der OLED-Anzeige und des Tasters_   
+_Bild 17: Ma&szlig;e f&uuml;r die getrennte Montage der OLED-Anzeige und des Tasters_   
 
 Bei Verwendung eines 3D-gedruckten Rahmens ben&ouml;tigt man eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm².   
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
-_Bild 17: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
+_Bild 18: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
 
 __Steuerbl&ouml;cke__   
 Je nach Art des Steuerelementes werden unterschiedliche Bohrungen ben&ouml;tigt. So zeigt das Symbol der Dreiwegweiche W3 nach links und hat 6 Bohrungen, das Schaltsymbol f&uuml;r die Fahrstromabschaltung 2IO enth&auml;lt 7 Bohrungen und der sp&auml;ter eingef&uuml;gte Taster f&uuml;r das Entkuppler-Gleis hat 4 Bohrungen.   
 Die genaue Lage aller Bohrungen f&uuml;r einen Schaltblock zeigt das folgende Bild, wobei je nach Schaltblock-Typ nur die entsprechenden Bohrungen ben&ouml;tigt werden (!):   
 
 ![Bohrposition LEDs und Taster](./images/300_drill_position_LED_button.png "Bohrposition LEDs und Taster")   
-_Bild 18: Ma&szlig;e f&uuml;r die LED- und Taster-Bohrungen_   
+_Bild 19: Ma&szlig;e f&uuml;r die LED- und Taster-Bohrungen_   
 
 Der Bohrdurchmesser f&uuml;r die LED-Fassungen betr&auml;gt 5,6 mm, der f&uuml;r die Taster ca. 7 mm.   
 
@@ -319,7 +326,7 @@ Das einzelne Anzeichnen der Positionen der Bohrungen ben&ouml;tigt viel Zeit und
 Das folgende Bild zeigt die Version 1 der Abdeckung (Blockgr&ouml;&szlig;e 40 x 42 mm², Abstand 8 mm).   
  
 ![Beschriftung Bedienungselemente](./images/300_m13_cover_50mm.png "Beschriftung Bedienungselemente")   
-_Bild 19: Version 1 der Beschriftung der Bedienungselemente f&uuml;r Modul 13_   
+_Bild 20: Version 1 der Beschriftung der Bedienungselemente f&uuml;r Modul 13_   
 
 Bereits beim Erstellen der Beschriftung sollte man die DCC-Adressen f&uuml;r die Schaltbl&ouml;cke festlegen, damit man die Werte in der Beschriftungszeile mit angeben kann. In den Beispielen dieses Repositorys wird als ACC-Adresse die Modulnummer plus eine fortlaufende Einerstelle verwendet, f&uuml;r diesen Modul 13 zB 131 bis 134.   
 
@@ -334,7 +341,7 @@ Die Au&szlig;enteile Ra5 und Ra7 sind 270 x 60 mm² gro&szlig; und enthalten kei
 Dieser Seitenteil ist an eine (ehemalige) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   
 
 ![Modul_Ost_2_Mitte.png](./images/300_m13_ost_2_mitte.png "Modul_Ost_2_Mitte")   
-_Bild 20: Ma&szlig;e f&uuml;r den Seitenteil Ost 2 (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
+_Bild 21: Ma&szlig;e f&uuml;r den Seitenteil Ost 2 (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
 
 * Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 250 x 70 mm²   
 * Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Fl&uuml;gelschrauben und Fl&uuml;gelmuttern.   
@@ -350,21 +357,21 @@ Mit besonderer Vorsicht ist die Ausnehmung f&uuml;r das Gleis zu fertigen. Mit e
 Die Querverstrebung enth&auml;lt verschiedene Durchbr&uuml;che f&uuml;r Kabel, zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker (3,2 mm, im Bild blau eingezeichnet) sowie Bohrungen f&uuml;r die Querverstrebungen (2 mm).   
 
 ![Verstrebung Ri1](./images/300_m13_verstrebung_Ri1_480mm.png "Verstrebung Ri1")   
-_Bild 21: Querverstrebung Ri1_
+_Bild 22: Querverstrebung Ri1_
 
 <a name="x29"></a>   
 
 ## 2.9 L&auml;ngsverstebung Ri3 und Ri4
 Die L&auml;ngsverstrebungen Ri3 und Ri4 entsprechen den 230 x 50 mm² gro&szlig;en Standard-Querverstrebungen in anderen Modulen.   
 ![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
-_Bild 22: L&auml;ngsverstrebungen Ri3 und Ri4_
+_Bild 23: L&auml;ngsverstrebungen Ri3 und Ri4_
 
 <a name="x2A"></a>   
 
 ## 2.10 Querverstebung Ri5 und Ri6
 Die L&auml;ngsverstrebungen Ri5 und Ri6 sind &auml;hnlich den Standard-Querverstrebungen in anderen Modulen, allerdings sind sie mit 260 x 50 mm² um 3 cm l&auml;nger.   
 ![Verstrebung](./images/300_Verstrebung_260mm.png "Verstrebung")   
-_Bild 23: L&auml;ngsverstrebungen Ri5und Ri6_
+_Bild 24: L&auml;ngsverstrebungen Ri5und Ri6_
 
 <a name="x2B"></a>   
 
@@ -381,7 +388,7 @@ Anschrauben der Halterungen f&uuml;r die Steuerbl&ouml;cke auf der Innenseite mi
 
 Die Position der Schrauben f&uuml;r die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgenderma&szlig;en festgelegt:   
 ![Schraubposition f&uuml;r Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition f&uuml;r Blockhalter")   
-_Bild 24: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
+_Bild 25: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
 
 Nach der Montage der Schaltblock-Halterung steckt man die Schaltbl&ouml;cke hinein und schraubt sie mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
 
@@ -392,18 +399,18 @@ Einstecken der OLED in die vorgesehene &Ouml;ffnung.
 Anschrauben der Halterung f&uuml;r Sub-D-Stecker. Diese besteht aus zwei U-f&ouml;rmigen Teilen, die links und rechts an einer Querstrebe angeschraubt werden. Die Teile k&ouml;nnen sowohl aus Holz als auch mit 3D-Druck hergestellt werden. F&uuml;r den Modul M12 werden zwei Halterungen ben&ouml;tigt.   
 
 ![Sub-D-Halterung](./images/300_bracket_sub-d.png "Sub-D-Halterung")   
-_Bild 25: Ma&szlig;e der Halterung_   
+_Bild 26: Ma&szlig;e der Halterung_   
 
 In jeden U-f&ouml;rmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,5 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatinen. F&uuml;r die `RW_5V_SUB25_10`-Platine (mit Netzteil) m&uuml;ssen die Schrauben weiter weg von der Querstrebe Ri1, f&uuml;r die `CON_SubD_Screw10`-Platine n&auml;her an der Querstrebe Ri2 montiert werden.    
 Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm Sechskantmutter gegeneinander an einer Querstrebe verschraubt.   
 
 ![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
-_Bild 26: Teile der Sub-D-Halterung_   
+_Bild 27: Teile der Sub-D-Halterung_   
 
 Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden. Im folgenden Bild erkennt man die Holzteile (hell)  und die 3D-gedruckten Teile (schwarz) des Rahmens. Weiters sind die montierten Schaltbl&ouml;cke (Mitte unten) und die Versorgungsplatine (Mitte rechts in gr&uuml;n) zu erkennen.   
 
 ![Rahmen Ansicht von oben](./images/300_m13_rahmen1.png "Rahmen Ansicht von oben")   
-_Bild 27: Zusammengeschraubter Rahmen, Ansicht von oben (die Sub-D-Platinen sind im Bild vertauscht)_   
+_Bild 28: Zusammengeschraubter Rahmen, Ansicht von oben (die Sub-D-Platinen sind im Bild vertauscht)_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
@@ -434,13 +441,13 @@ Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet
 Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, m&uuml;ssen noch Aussparungen in die Grundplatte geschnitten werden.   
 
 ![Ma&szlig;e der Aussparung Unterflurantriebe](./images/300_m13_W3_turnout_cutout.png "Ma&szlig;e der Aussparung Unterflurantriebe")   
-_Bild 28: Ma&szlig;e der Aussparung f&uuml;r die Unterflurantriebe._   
+_Bild 29: Ma&szlig;e der Aussparung f&uuml;r die Unterflurantriebe._   
 
 Die Ecken der Aussparungen bilden sechs Punkte mit den Koordinaten P1(12/5), P2(100/16), P3(97,5/36), P4(73/37), P5(33/32) und P6(9,5/25). F&uuml;r den zweiten Antrieb der Dreiwegweiche sind die Koordinaten gespiegelt. Der Koordinatenursprung befindet sich in der Mitte des Gleisrandes bei den Weichenzungen (siehe Bild oben).    
 
 Das folgende Bild zeigt den aufgeklebten Bahndamm mit den Weichenausschnitten:   
 ![Bahndamm](./images/300_m13_bahndamm1.png "Bahndamm")   
-_Bild 29: Grundplatte mit Bahndamm und Weichenausschnitten_   
+_Bild 30: Grundplatte mit Bahndamm und Weichenausschnitten_   
 
 <a name="x33"></a>   
 
@@ -466,7 +473,7 @@ Sind alle Bohrpositionen festgelegt, bohrt man mit einem 4 mm Bohrer die L&ouml;
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen f&uuml;r die Weichenantriebe und die Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung.   
 
 ![Schotterbett](./images/300_m13_schotterbett1.png "Schotterbett")   
-_Bild 30: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
+_Bild 31: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
 
 <a name="x35"></a>   
 
@@ -477,7 +484,7 @@ Der Draht wird beidseitig ca. 6 mm abisoliert, hakenf&ouml;rmig gebogen, mit ein
 Dann fixiert man das Gleis am besten mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ) und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten noch die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, die rechts oben bereits entfernt ist.   
 
 ![Loeten_Gleisanschluss1](./images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")   
-_Bild 31: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
+_Bild 32: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
 
 <a name="x35"></a>   
 
@@ -497,7 +504,7 @@ Das Ausgleichsgleis am rechten Rand des Moduls dient zur Anpassung von Abst&auml
 
 Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgenderma&szlig;en aus:   
 ![Montiertes Gleis](./images/300_m13_gleis_montiert1.png "Montiertes Gleis")   
-_Bild 32: Rahmen mit Grundplatte und Gleisen._   
+_Bild 33: Rahmen mit Grundplatte und Gleisen._   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -508,7 +515,7 @@ _Bild 32: Rahmen mit Grundplatte und Gleisen._
 ## 4.1 Verdrahtungsplan
 Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der eingesetzten Komponenten:   
 ![&Uuml;bersicht M13](./images/600_m13_overview.png "&Uuml;bersicht M13")   
-_Bild 33: &Uuml;bersichtsplan Modul 13_   
+_Bild 34: &Uuml;bersichtsplan Modul 13_   
 
 ## Bedeutung der einzelnen Komponenten
 Die folgende Liste enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
@@ -561,8 +568,10 @@ Die 5 V-Versorgung erfolgt durch 6-polige Flachbandkabel und besteht aus zwei Te
    Ein 50 cm langes, 6-poliges Flachbandkabel mit Buchse an beiden Enden verbindet den DCC-Anschluss des Sub-D-Boards mit dem DCC-Shield des Mikrocontrollers.  
 2. Versorgung der Schaltbl&ouml;cke mit 5 V und Wechselspannung   
    Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Bl&ouml;cke oben, daher sind die Block-Buchsen im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
+
    ![6pol_Blockverbinder](./images/300_6pol_block_connector.png "6pol_Blockverbinder")   
-   _Bild 34: J5-Stecker des 1OUT-Blocks_   
+   _Bild 35: J5-Stecker des 1OUT-Blocks_   
+
    Die Einzelbuchse wird in den "POWER"-Stecker des Sub-D-Boards gesteckt, die &uuml;brigen Buchsen werden an die senkrechten Stecker der Schaltbl&ouml;cke gesteckt. Der letzte Buchse bleibt frei.   
    
 
@@ -575,16 +584,16 @@ Da die Fahrstrom-Leitungen bereits an den Fahrstromschalter `CON_1xIO` angeschlo
 #### Entkuppler
 In der N&auml;he des Entkupplers wird ein 3-poliger Umsetzer `CON_6pol_3` angeschraubt und &uuml;ber ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem 1OUT-Block verbunden.   
 ![Pins_Entkuppler](/images/200_J5_pins_1OUT.png "Pins_Entkuppler")   
-_Bild 35: J5-Stecker des 1OUT-Blocks_   
+_Bild 36: J5-Stecker des 1OUT-Blocks_   
 
 Die beiden Anschlussleitungen des Entkupplers werden an Pin 3 (Masse) und Pin 5 des 3-poligen Umsetzers `CON_6pol_3` angeschraubt und zus&auml;tzlich durch einen 100 nF-Kondensator verbunden.   
 ![Anschluss_Entkuppler](./images/300_m13_con_uncoupler.png "Anschluss_Entkuppler")   
-_Bild 36: Anschluss des Entkupplers_   
+_Bild 37: Anschluss des Entkupplers_   
 
 #### Dreiwegweiche
 In der N&auml;he der Weichenantriebe wird ein 6-poligen Umsetzer `CON_6pol_6` angeschraubt und &uuml;ber ein ca. 30 cm langes, 6-poliges Flachbandkabel mit dem W3-Block verbunden.   
 ![Pins_3-Weg-Weiche](/images/200_J5_pins_W3.png "Pins_3-Weg-Weiche")   
-_Bild 37: J5-Stecker des W3-Blocks_   
+_Bild 38: J5-Stecker des W3-Blocks_   
 
 Zum Anschlie&szlig;en der beiden Antriebe der Dreiwegweiche sollte man folgendes Wissen:   
 1. Die Antriebe befinden sich auf der jeweils gegen&uuml;ber liegenden Weichenseite.   
@@ -610,11 +619,11 @@ Daher ist folgende Vorgangsweise beim Anschluss sinnvoll:
    Die Weiche sollte richtig funktionieren.   
 
 ![Verdrahtung W3](./images/300_m13_verdrahtung_w3.png "Verdrahtung W3")   
-_Bild 38: Verdrahtung der Dreiwegweiche_   
+_Bild 39: Verdrahtung der Dreiwegweiche_   
 
 Jetzt kann man auch die &uuml;brigen Komponenten testen:   
 ![block_userinterface](./images/300_block_userinterface.png "block_userinterface")   
-_Bild 39: Bedienelemente der Schaltbl&ouml;cke_   
+_Bild 40: Bedienelemente der Schaltbl&ouml;cke_   
 
 #### Test Entkuppler
 Dr&uuml;ckt man die wei&szlig;e Taste, leuchtet die gr&uuml;ne LED und der Entkuppler zieht an.   
@@ -630,7 +639,7 @@ L&ouml;st man den roten Schalter und dr&uuml;ckt den gr&uuml;nen Schalter, leuch
 Die DCC- und MQTT-Steuerung erfolgt mit dem Mikrocontroller ESP32. Dazu schaltet er &uuml;ber den I²C-Bus und die I/O-Pins von [I²C-PCF8574-I/O-Platinen](/fab/fcc3_i2c/LIESMICH.md) (kurz "I/O-Platinen") die Schaltbl&ouml;cke genau so, als ob man die Taster auf den Bl&ouml;cken dr&uuml;cken w&uuml;rde. Gleichzeitig erh&auml;lt er &uuml;ber die I/O-Platinen die gleiche R&uuml;ckmeldung, die auch mit den LEDs der Bl&ouml;cke angezeigt wird.   
 Die Signale der Schaltbl&ouml;cke sind auf dem Stecker J4 verf&uuml;gbar.   
 ![Pins_J4_Stecker](/images/200_J4_pins.png "Pins_J4_Stecker")   
-_Bild 40: Allgemeine Pinbelegung des J4-Steckers (Datenleitungen)_   
+_Bild 41: Allgemeine Pinbelegung des J4-Steckers (Datenleitungen)_   
 
 Die (Daten-) Ein- und Ausg&auml;nge der Bl&ouml;cke m&uuml;ssen mit den entsprechenden Pins der I/O-Platinen verbunden werden. Wichtig: Die Verbindungen der Pins ("Codierung") m&uuml;ssen mit der Angabe in der Steuersoftware &uuml;bereinstimmen!   
 Hardware-m&auml;&szlig;ig k&ouml;nnte die Verbindung zwischen dem J4-Stecker und den I/O-Platinen direkt &uuml;ber Female-Female Jumper Wires (Buchse-Buchse-Leitungen) erfolgen, allerdings ist es &uuml;bersichtlicher, die Signale &uuml;ber 10-polige IDC-Flachbandkabel in die N&auml;he der I/O-Platinen zu f&uuml;hren und dort &uuml;ber `CON_10pol_2x4`-Platinen an zwei vierpoligen Stiftleisten bereit zu stellen. Hier erfolgt dann die Verbindung zu den I/O-Platinen &uuml;ber kurze Female-Female Jumper Wires.    
@@ -659,10 +668,10 @@ Die Verbindung der Datenleitungen erfolgt gem&auml;&szlig; Verdrahtungsplan:
 
 Das folgende Bild zeigt die mit Female-Female Jumper Wires verbundenen Platinen ("Codierung"):   
 ![Verbindung_Datenleitungen](./images/300_m13_i2c_2x4pin.png "Verbindung_Datenleitungen")   
-_Bild 41: Verbindung der Datenleitungen_   
+_Bild 42: Verbindung der Datenleitungen_   
 
 ![Verdrahtung_Bl&ouml;cke](./images/300_m13_verdrahtung_bloecke.png "Verdrahtung_Bl&ouml;cke")   
-_Bild 42: Verdrahtung der Bl&ouml;cke_   
+_Bild 43: Verdrahtung der Bl&ouml;cke_   
 
 <a name="x46"></a>   
 
@@ -670,7 +679,7 @@ _Bild 42: Verdrahtung der Bl&ouml;cke_
 Damit der Modul von beiden Seiten angespeist werden kann m&uuml;ssen noch die 10 Schraubklemmen der 25-poligen Stecker miteinander verbunden werden.   
 Nach NEM908D erfolgt dies so, dass die Leitungen elektrisch ausgekreuzt, aber physikalisch gerade durchverbunden werden. Das bedeutet, dass sich zB der Fahrstrom des Gleises NN auf dem West-Stecker auf dem Pin 1 und auf dem Ost-Stecker auf dem Pin 13 befindet!   
 ![Wiring_NEM908D](/images/300_Wiring_NEM908D.png "Wiring_NEM908D")   
-_Bild 43: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
+_Bild 44: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
 
 [Siehe auch `/info/con_NEM908/LIESMICH.md`](/info/con_NEM908/LIESMICH.md)   
 
@@ -679,14 +688,14 @@ Die 30 cm langen Einzelleitungen werden an beiden Enden S-f&ouml;rmig gebogen, d
 
 ![Modulverbindung](./images/300_m13_con2x10.png "Modulverbindung")   
 ![Modulverbindung_West](./images/300_m13_con2x10_west.png "Modulverbindung_West")   
-_Bild 44: Verdrahtung der Sub-D-Stecker-Platinen_   
+_Bild 45: Verdrahtung der Sub-D-Stecker-Platinen_   
 
 <a name="x46"></a>   
 
 # 4.7 Gesamtverdrahtung
 Das folgende Bild zeigt die Gesamte Verdrahtung von Modul 13:   
 ![M13_Verdrahtung](./images/600_m13_verdrahtung.png "M13_Verdrahtung")   
-_Bild 45: Gesamtverdrahtung des Moduls 13_   
+_Bild 46: Gesamtverdrahtung des Moduls 13_   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
@@ -994,13 +1003,13 @@ echo ---Fertig!-----
 
 # 7. Abschlie&szlig;ende Arbeiten   
 ## 7.1 Weichenabdeckungen   
-F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 28 und 29). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M13 werden zwei hohe Abdeckungen f&uuml;r die Antriebe der Dreiwegweiche ben&ouml;tigt.    
+F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 29 und 30). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M13 werden zwei hohe Abdeckungen f&uuml;r die Antriebe der Dreiwegweiche ben&ouml;tigt.    
 
 Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisabdeckung sowie eine 1 mm Folie dar&uuml;ber + eine 0,5 mm Folie &uuml;ber dem Antrieb verwendet werden.   
 
-Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im _Bild 46_ zu sehen sind.   
+Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im folgenden Bild zu sehen sind.   
 ![3D Weichenabdeckung](./images/300_m13_3d_weichenabdeckung.png "3D Weichenabdeckung")   
-_Bild 46: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
+_Bild 47: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
 
 Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisn&auml;geln (0,7 mm Durchmesser). Die mittlere Abdeckung wurde mit einer Schere passend geschnitten.   
 
@@ -1018,20 +1027,20 @@ Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sei
 <a name="x80"></a>   
 
 ## 8. Anhang: Nachtr&auml;glicher Einbau eines Entkupplers
-Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w&auml;re, wenn man Waggons dort abstellen m&ouml;chte. Dazu sind einige Arbeitsschritte erforderlich:   
+Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w&auml;re, wenn man Waggons dort abstellen m&ouml;chte. Für den nachträglichen Einbau eines 1OUT-Blocks sind folgende Arbeitsschritte erforderlich:   
 1. Ausbau des [Seitenteils Ra4 (S&uuml;d 1) - Version 1](#x25).   
    ![Seitenteil_Ra4_Version_1](./images/300_m13_Ra4_V1.png "Seitenteil_Ra4_Version_1")   
-   _Bild 47: Das ausgebaute Seitenteil Ra4_   
+   _Bild 48 Das ausgebaute Seitenteil Ra4_   
 2. Entfernen der Steuerbl&ouml;cke und des uC-LED-Blocks (rechts).   
 3. Erg&auml;nzung der Beschriftung der Bedienungselemente.   
   ![Beschriftung_Bedienungselemente_Version_2](./images/300_m13_cover_50mm_V2.png "Beschriftung_Bedienungselemente_Version_2")   
-  _Bild 48: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
+  _Bild 49: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
 4. Ausschneiden der bestehenden Bohrungen auf dem Klebefolie-Ausdruck mit einer Schere, Aufkleben der Folie auf den Seitenteil Ra4 und Bohren der vier fehlenden Bohrungen f&uuml;r den Entkuppler (1x 7 mm, 3x 5,6 mm Durchmesser).   
    ![Seitenteil_Ra4_Version_2_roh](./images/300_m13_Ra4_V2_raw.png "Seitenteil_Ra4_Version_2_roh")   
-   _Bild 49: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
+   _Bild 50: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
 5. Einpressen der LED-Fassungen und Montage der Blockhalterungen auf der R&uuml;ckseite mit 2,6 x 8 mm Kreuzschlitz-Schrauben.   
    ![Seitenteil_Ra4_V2_Blockhalterungen](./images/300_m13_Ra4_V2_block_holder.png "Seitenteil_Ra4_V2_Blockhalterungen")   
-   _Bild 50: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
+   _Bild 51: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
 6. Einsetzen der Schaltbl&ouml;cke und mit M2x20 mm Kreuzschlitz-Schrauben __leicht (!)__ anschrauben.   
 7. Einsetzen des uC-LED-Blocks.   
 8. Einbau des Seitenteils Ra4 - Version 2 in den Rahmen.   
