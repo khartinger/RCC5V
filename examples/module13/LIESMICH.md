@@ -700,7 +700,7 @@ _Bild 48: Verdrahtung der Sub-D-Stecker-Platinen_
 <a name="x46"></a>   
 
 # 4.7 Gesamtverdrahtung
-Das folgende Bild zeigt die Gesamte Verdrahtung von Modul 13:   
+Das folgende Bild zeigt die gesamte Verdrahtung von Modul 13:   
 ![M13_Verdrahtung](./images/600_m13_verdrahtung.png "M13_Verdrahtung")   
 _Bild 49: Gesamtverdrahtung des Moduls 13_   
 
