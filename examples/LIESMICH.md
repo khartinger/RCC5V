@@ -4,7 +4,7 @@ Letzte &Auml;nderung: 5.6.2025 <a name="up"></a><br>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
-Dieses Verzeichnis enthält folgende Beispiele:   
+Dieses Verzeichnis enth&auml;lt folgende Beispiele:   
 
 * [__`blocktester`__: Bau eines RCC-Blocktesters](/examples/blocktester/LIESMICH.md)   
 * [__`exampleTurnout2`__: Beispiel-Verdrahtung einer Weiche](/examples/exampleTurnout2/LIESMICH.md)   

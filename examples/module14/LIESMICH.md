@@ -429,7 +429,7 @@ Mit der bisherigen Verdrahtung ist es bereits m&ouml;glich, einen h&auml;ndische
 <a name="x50"></a>   
 
 # 5. Steuerungssoftware
-## 5.1 Anpassung des Demoprogramms für Modul 14
+## 5.1 Anpassung des Demoprogramms f&uuml;r Modul 14
 1. Erstellen eines neuen Verzeichnisses mit dem Namen `rcc_module14_V1`.   
 2. Kopieren der Dateien aus dem Verzeichnis `rcc_demo1` in das neue Verzeichnis `rcc_module14_V1`.   
 3. Umbenennen der Dateien `rcc_demo1.cpp` und `rcc_demo1_text.h` in `rcc_module14_V1.cpp` und `rcc_module14_text.h` im Verzeichnis `rcc_module14_V1/src`.   
@@ -486,7 +486,7 @@ strRcomp aRcomp[RCOMP_NUM] = {
 11. Anpassen des Kommentars am Beginn der Datei `rcc_module14_V1.cpp`.   
 
 ## 5.2 Programmierung des Mikrocontrollers
-Zum Programmieren des Mikrocontrollers wird das Modul von der Stromversorgung getrennt und der Mikrocontroller über das USB-Kabel mit dem Programmiergerät (PC oder Laptop) verbunden.   
+Zum Programmieren des Mikrocontrollers wird das Modul von der Stromversorgung getrennt und der Mikrocontroller &uuml;ber das USB-Kabel mit dem Programmierger&auml;t (PC oder Laptop) verbunden.   
 Programmierung des Mikrocontrollers mit der Software `rcc_module14_V1`.   
 
 [Zum Seitenanfang](#up)   
