@@ -285,12 +285,12 @@ _Bild 14: Ma&szlig;e f&uuml;r den Seitenteil Ost Ra3 bzw. Querverstrebung Ri2 (B
 <a name="x25"></a>   
 
 ## 2.5 Seitenteil Ra4 (S&uuml;d 1)
-Vom Seitenteil Ra4 gibt es zwei Versionen: Ursprünglich waren - zusätzlich zur Anzeige (OLED) - als Steuerblöcke nur die Dreiwegweiche und die Fahrstromabschaltung für das Abstellgleis geplant.    
+Vom Seitenteil Ra4 gibt es zwei Versionen: Urspr&uuml;nglich waren - zus&auml;tzlich zur Anzeige (OLED) - als Steuerbl&ouml;cke nur die Dreiwegweiche und die Fahrstromabschaltung f&uuml;r das Abstellgleis geplant.    
 
 ![Modul_S&uuml;d1_1.png](./images/300_m13_sued1_500mm.png "Modul_S&uuml;d_1")   
 _Bild 15: Ma&szlig;e f&uuml;r den Seitenteil S&uuml;d 1 - Version 1._   
 
-In der Version 2 kommen zusätzlich noch die Bohrungen für den Entkuppler (1OUT-Block) dazu:   
+In der Version 2 kommen zus&auml;tzlich noch die Bohrungen f&uuml;r den Entkuppler (1OUT-Block) dazu:   
 
 ![Modul_S&uuml;d1_2.png](./images/300_m13_sued1_v2_500mm.png "Modul_S&uuml;d1_2")   
 _Bild 16: Ma&szlig;e f&uuml;r den Seitenteil S&uuml;d 1 - Version 2._   
@@ -377,7 +377,7 @@ _Bild 24: L&auml;ngsverstrebungen Ri5und Ri6_
 
 ## 2.11 Zusammenbau des Rahmens
 Nachdem alle Teile des Rahmens bearbeitet wurden, sollten die Holzteile mit Bootslack oder Plastiklack &uuml;berzogen werden, damit sie besser Staub abweisen bzw. leichter zu reinigen sind. Dazu werden sie auf die Unterseite gestellt und bearbeitet.   
-Vor dem Zusammenbau empfiehlt es sich, einige Komponenten vorher zu montieren, da dies im zusammengebauten Rahmen umständlicher ist:   
+Vor dem Zusammenbau empfiehlt es sich, einige Komponenten vorher zu montieren, da dies im zusammengebauten Rahmen umst&auml;ndlicher ist:   
 
 ### Seitenteil Ra4 (S&uuml;d 1)
 __LED-Fassungen__   
@@ -395,7 +395,7 @@ _Bild 26: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_
 Nach der Montage der Schaltblock-Halterung steckt man die Schaltbl&ouml;cke hinein und schraubt sie mit vier M2 x 20 mm Schrauben leicht an (Schrauben nicht zu fest anziehen!).    
 
 __OLED mit Steuerung__   
-Einstecken der OLED mit den Shields und dem Mikrocontroller in die vorgesehene &Ouml;ffnung. Im Bild sind bereits die Kabel zum Sub-D-Stecker (DCC, nach rechts) und für den I²C-Bus (unten) angesteckt.   
+Einstecken der OLED mit den Shields und dem Mikrocontroller in die vorgesehene &Ouml;ffnung. Im Bild sind bereits die Kabel zum Sub-D-Stecker (DCC, nach rechts) und f&uuml;r den I²C-Bus (unten) angesteckt.   
 ![OLED_von_hinten](./images/300_oled_mounted.png "OLED_von_hinten")   
 _Bild 27: Montierte Steuerung mit OLED_   
 
@@ -412,9 +412,9 @@ Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm S
 _Bild 29: Teile der Sub-D-Halterung_   
 
 Danach kann der Rahmen mit Schrauben M 3 x 30 mm zusammengeschraubt werden. Im folgenden Bild erkennt man die Holzteile (hell)  und die 3D-gedruckten Teile (schwarz) des Rahmens in der Version 1.   
-Das Bild enthält zwei Fehler:   
-1. Unten in der Mitte fehlt noch der 1OUT-Block für den Entkuppler.   
-2. Die beiden Sub-D-Stecker-Platinen in der Mitte des Bildes müssen vertauscht werden (die größere Platine sollte links sein).  
+Das Bild enth&auml;lt zwei Fehler:   
+1. Unten in der Mitte fehlt noch der 1OUT-Block f&uuml;r den Entkuppler.   
+2. Die beiden Sub-D-Stecker-Platinen in der Mitte des Bildes m&uuml;ssen vertauscht werden (die gr&ouml;ßere Platine sollte links sein).  
 ![Rahmen Ansicht von oben](./images/300_m13_rahmen1.png "Rahmen Ansicht von oben")   
 _Bild 30: Zusammengeschraubter Rahmen, Ansicht von oben (fehlerhafte Version 1)_   
 
@@ -469,8 +469,8 @@ Wichtig: Vor den Bohren m&uuml;ssen auf der Unterseite die 25-poligen Sub-D-Plat
 Um den Antrieb als Unterflurantrieb zu verwenden, muss man den Schalthebel der Weiche herausziehen und um 180° gedreht wieder einstecken. Danach kann der Antrieb mit der Oberseite nach unten aufgesteckt werden.   
 #### Art der Stromzuf&uuml;hrung   
 Die Art der Stromzuf&uuml;hrung bestimmt die Anzahl und Lage der Bohrungen.   
-* Verwendet man die Stromzuf&uuml;hrungskabel Fleischmann 22217, so muss man __au&szlig;erhalb__ (oberhalb) des Gleises pro Stromzuführung __eine__ Bohrung setzen (4 mm), um die Kabel nach unten durchf&uuml;hren zu k&ouml;nnen.   
-* L&ouml;tet man die Stromzuf&uuml;hrungen selbst ([siehe Kap. 3.5 weiter unten](#x35)), so muss __direkt unter__ jedem Gleisverbinder eine Bohrung (d.h. in Summe __zwei__ Bohrungen pro Stromzuführung) gesetzt werden.   
+* Verwendet man die Stromzuf&uuml;hrungskabel Fleischmann 22217, so muss man __au&szlig;erhalb__ (oberhalb) des Gleises pro Stromzuf&uuml;hrung __eine__ Bohrung setzen (4 mm), um die Kabel nach unten durchf&uuml;hren zu k&ouml;nnen.   
+* L&ouml;tet man die Stromzuf&uuml;hrungen selbst ([siehe Kap. 3.5 weiter unten](#x35)), so muss __direkt unter__ jedem Gleisverbinder eine Bohrung (d.h. in Summe __zwei__ Bohrungen pro Stromzuf&uuml;hrung) gesetzt werden.   
 #### Vorbereitung Entkupplungsgleis   
 F&uuml;r den Antrieb des Entkupplungsgleises 9112 (oder 22212) muss ebenfalls eine 4 mm-Bohrung gesetzt werden.   
 
@@ -487,7 +487,7 @@ _Bild 33: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahr
 Zur Stromversorgung kann man entweder Fleischmann 22217 "Anschlu&szlig;kabel 2pol. Spur N" verwenden oder man l&ouml;tet selbst Dr&auml;hte an die Gleisverbinder. Dies geht f&uuml;r Fleischmann-Schotterbett-Gleise sehr gut, w&auml;hrend die Verbinder von Gleisen ohne Schotterbett praktisch nicht l&ouml;tbar sind.   
 Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht f&uuml;r die n&ouml;rdliche Schiene und einen roten Draht f&uuml;r die s&uuml;dliche Schiene. Der Drahtdurchmesser sollte zB 0,64 mm (= 0,32 mm² = 22 awg) oder - besser - 0,8 mm (= 0,5 mm² = 20 awg) betragen.   
 Der Draht wird beidseitig ca. 6 mm abisoliert, hakenf&ouml;rmig gebogen, mit einer kleinen Zange etwas flachgedr&uuml;ckt und verzinnt.   
-Dann fixiert man das Gleis am besten mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ) und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten noch die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, die links oben vor dem Löten bereits entfernt wurde.   
+Dann fixiert man das Gleis am besten mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ) und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten noch die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, die links oben vor dem L&ouml;ten bereits entfernt wurde.   
 
 ![Loeten_Gleisanschluss1](./images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")   
 _Bild 34: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
@@ -524,7 +524,7 @@ Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwend
 _Bild 36: &Uuml;bersichtsplan Modul 13_   
 
 ## Bedeutung der einzelnen Komponenten
-Die folgende Aufzählung enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
+Die folgende Aufz&auml;hlung enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
 
 `SUB25_10 ....` [Modul-Verbinder mit Netzteil](/fab/rcc1_supply/LIESMICH.md#x30)      
 `uC_OLED .....` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
@@ -573,7 +573,7 @@ Die 5 V-Versorgung erfolgt durch zwei 6-polige Flachbandkabel:
 1. Versorgung des Mikrocontrollers mit 5 V und DCC-Signal   
    Ein 50 cm langes, 6-poliges Flachbandkabel mit Buchse an beiden Enden verbindet den DCC-Anschluss des Sub-D-Boards mit dem DCC-Shield des Mikrocontrollers.  
 2. Versorgung der Schaltbl&ouml;cke mit 5 V und Wechselspannung   
-   Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Bl&ouml;cke oben, daher sind die Buchsen für die Blöcke im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
+   Auf ein ca. 75 cm langes, 6-poliges Flachbandkabel werden an einem Ende vier Buchsen im Abstand von 8 cm aufgepresst, am anderen Ende eine Buchse. Es ist nicht egal, auf welcher Seite die Buchsen aufgepresst werden: Das braune Kabel ist bei der Verbindung der Bl&ouml;cke oben, daher sind die Buchsen f&uuml;r die Bl&ouml;cke im Abstand von 8 cm entsprechend dem Bild anzubringen (Buchsennase nach rechts).    
 
    ![6pol_Blockverbinder](./images/300_6pol_block_connector.png "6pol_Blockverbinder")   
    _Bild 37: J5-Stecker des 1OUT-Blocks_   
@@ -584,7 +584,7 @@ Die 5 V-Versorgung erfolgt durch zwei 6-polige Flachbandkabel:
 
 ## 4.4 Anschluss der Eisenbahn-Komponenten
 #### Abschaltbares Gleis
-Da die Fahrstrom-Leitungen bereits an den Fahrstromschalter `CON_1xIO` angeschlossen sind, muss lediglich ein 25 cm langes, 6-poliges Kabel zum 2IO-Schaltblock gelegt werden, das den zu schaltenden Fahrstrom enthält.   
+Da die Fahrstrom-Leitungen bereits an den Fahrstromschalter `CON_1xIO` angeschlossen sind, muss lediglich ein 25 cm langes, 6-poliges Kabel zum 2IO-Schaltblock gelegt werden, das den zu schaltenden Fahrstrom enth&auml;lt.   
 ![Pins_Entkuppler](/images/200_J5_pins_2IO.png "Pins_Entkuppler")   
 _Bild 38: J5-Stecker des 1OUT-Blocks_   
 
@@ -626,7 +626,7 @@ Folgende Vorgangsweise ist beim Anschluss sinnvoll:
    Die Weiche sollte richtig funktionieren.   
 
 ![Verdrahtung W3](./images/300_m13_verdrahtung_w3.png "Verdrahtung W3")   
-_Bild 42: Verdrahtung der Dreiwegweiche mit Fahrstromzuführung rund um die Dreiwegweiche._   
+_Bild 42: Verdrahtung der Dreiwegweiche mit Fahrstromzuf&uuml;hrung rund um die Dreiwegweiche._   
 
 Jetzt kann man auch die &uuml;brigen Komponenten testen:   
 ![block_userinterface](./images/300_block_userinterface.png "block_userinterface")   
@@ -643,7 +643,7 @@ _Bild 43: Bedienelemente der Schaltbl&ouml;cke._
 <a name="x45"></a>   
 
 ## 4.5 Hardware f&uuml;r die DCC- und MQTT-Steuerung
-Die DCC- und MQTT-Steuerung erfolgen über den Mikrocontroller ESP32 (&micro;C). Dazu schaltet der &micro;C &uuml;ber den I²C-Bus und die I/O-Pins von [I²C-PCF8574-I/O-Platinen](/fab/fcc3_i2c/LIESMICH.md) (kurz "I/O-Platinen") die Schaltbl&ouml;cke genau so, als ob man die Taster auf den Bl&ouml;cken dr&uuml;cken w&uuml;rde. Gleichzeitig erh&auml;lt der &micro;C &uuml;ber die I/O-Platinen die gleiche R&uuml;ckmeldung, die auch mit den LEDs der Bl&ouml;cke angezeigt wird.   
+Die DCC- und MQTT-Steuerung erfolgen &uuml;ber den Mikrocontroller ESP32 (&micro;C). Dazu schaltet der &micro;C &uuml;ber den I²C-Bus und die I/O-Pins von [I²C-PCF8574-I/O-Platinen](/fab/fcc3_i2c/LIESMICH.md) (kurz "I/O-Platinen") die Schaltbl&ouml;cke genau so, als ob man die Taster auf den Bl&ouml;cken dr&uuml;cken w&uuml;rde. Gleichzeitig erh&auml;lt der &micro;C &uuml;ber die I/O-Platinen die gleiche R&uuml;ckmeldung, die auch mit den LEDs der Bl&ouml;cke angezeigt wird.   
 Die Signale der Schaltbl&ouml;cke sind auf dem Stecker J4 verf&uuml;gbar.   
 ![Pins_J4_Stecker](/images/200_J4_pins.png "Pins_J4_Stecker")   
 _Bild 44: Allgemeine Pinbelegung des J4-Steckers (Datenleitungen)_   
@@ -665,13 +665,13 @@ Die Verbindung der Datenleitungen erfolgt gem&auml;&szlig; Verdrahtungsplan:
 * I/O-Expander 0x20 - Pin 1 ` -->--rot-----> ` Block DCC 131/132, Pin 2 - IN   
 * I/O-Expander 0x20 - Pin 2 ` -->--orange--> ` Block DCC 131/132, Pin 3 - IN   
 * I/O-Expander 0x20 - Pin 4 ` -->--gelb----> ` Block DCC 133, Pin 1 - IN   
-* I/O-Expander 0x20 - Pin 5 `-->--gr&uuml;n----> ` Block DCC 134, Pin 1 - IN   
+* I/O-Expander 0x20 - Pin 5 `-->--grün----> ` Block DCC 134, Pin 1 - IN   
 -------   
 * I/O-Expander 0x21 - Pin 0 ` <--braun---<-- ` Block DCC 131/132, Pin 1 - OUT   
 * I/O-Expander 0x21 - Pin 1 ` <--rot-----<-- ` Block DCC 131/132, Pin 2 - OUT   
 * I/O-Expander 0x21 - Pin 2 ` <--orange--<-- ` Block DCC 131/132, Pin 3 - OUT   
 * I/O-Expander 0x21 - Pin 4 ` <--gelb----<-- ` Block DCC 133, Pin 1 - OUT   
-* I/O-Expander 0x21 - Pin 5 ` <--gr&uuml;n----<-- ` Block DCC 134, Pin 1 - OUT   
+* I/O-Expander 0x21 - Pin 5 ` <--grün----<-- ` Block DCC 134, Pin 1 - OUT   
 
 Die folgenden Bilder zeigen die mit Female-Female Jumper Wires verbundenen Platinen ("Codierung"):   
 ![Verbindung_Datenleitungen](./images/300_m13_i2c_2x4pin.png "Verbindung_Datenleitungen")   
@@ -1034,7 +1034,7 @@ Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sei
 <a name="x80"></a>   
 
 ## 8. Anhang: Nachtr&auml;glicher Einbau eines Entkupplers
-Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w&auml;re, wenn man Waggons dort abstellen m&ouml;chte. Für den nachträglichen Einbau eines 1OUT-Blocks sind folgende Arbeitsschritte erforderlich:   
+Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w&auml;re, wenn man Waggons dort abstellen m&ouml;chte. F&uuml;r den nachtr&auml;glichen Einbau eines 1OUT-Blocks sind folgende Arbeitsschritte erforderlich:   
 1. Ausbau des [Seitenteils Ra4 (S&uuml;d 1) - Version 1](#x25).   
    ![Seitenteil_Ra4_Version_1](./images/300_m13_Ra4_V1.png "Seitenteil_Ra4_Version_1")   
    _Bild 51: Das ausgebaute Seitenteil Ra4_   
