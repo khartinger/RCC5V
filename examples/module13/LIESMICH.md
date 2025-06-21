@@ -11,7 +11,7 @@ Diese Anleitung beschreibt den Bau eines 80 x 50 cm² gro&szlig;en N-Spur-Moduls
 Ein von Osten kommender Zug f&auml;hrt &uuml;ber die Kehrschleife zur&uuml;ck nach Osten. In der Modul-Mitte befindet sich ein 45 cm langes Gleis mit Stromabschaltem&ouml;glichkeit zum Abstellen eines Zuges.   
 Das Bild zeigt das technisch fertige Modul ohne Landschaftsgestaltung. An der Forderfront (im Bild ganz unten in der Mitte) erkennt man die Bedien- und Anzeigeelemente f&uuml;r den Handbetrieb.   
 
-![Modul M13](./images/300_m13_Gleis_montiert1.png "Modul M13")   
+![Modul M13](./images/300_m13_gleis_montiert1a.png "Modul M13")   
 _Bild 1: Rahmen mit Grundplatte und Gleisen._   
 
 ## Eigenschaften des Moduls

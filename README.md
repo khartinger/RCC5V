@@ -83,7 +83,7 @@ __Examples, use of the system__
 * [Example wiring of a turnout](/examples/exampleTurnout2/README.md)   
 * [Construction of the “RCC block tester”](/examples/blocktester/README.md)   
 * [Construction of module 12: “passing loop and siding”](/examples/module12/README.md)   
-* [Construction of module 13 “reverse loop - west”](/examples/module13/README.md)   
+* [Construction of module 13: “reverse loop - west”](/examples/module13/README.md)   
 * [Construction of module 14: “Two tracks to one track”](/examples/module14/README.md)   
 * [Conversion of module M01: “Track 1 to 2 with goods shed (2010)”](/examples/module01/README.md)   
 
