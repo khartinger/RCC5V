@@ -48,7 +48,7 @@ _Bild 4: Pinbelegung der STRG-Stecker J5 (Anschluss der Eisenbahn-Komponenten)_
 Die Anzeige des Zustandes jedes Blockes erfolgt durch LEDs. Damit Fertigungstoleranzen leicht ausgeglichen werden k&ouml;nnen, werden die LEDs nicht direkt auf die erforderliche L&auml;nge geschnitten, sondern eine Art "Feder" eingebaut. Dazu wird folgende Vorgangsweise empfohlen:   
 1. Den Anoden- (Plus-) Anschlussdraht (l&auml;ngerer Draht) mit rotem Permanentstift markieren.   
 2. Jeden Anschluss mit 19 bis 20 mm Schrumpfschlauch (Durchmesser 1 mm) isolieren.   
-3. Die Anschlussdr&auml;hte der LEDs auf 25 mm L&auml;nge abschneiden.   
+3. Die Anschlussdr&auml;hte der LEDs auf 26 mm L&auml;nge abschneiden.   
 4. Nach folgender Zeichung biegen:   
 ![LED biegen](/images/200_LED_config.png "LED biegen")   
 _Bild 5: Anpassen der LEDs f&uuml;r die Montage_   
