@@ -562,7 +562,7 @@ _Bild 38: Bauteile der "RW_5V_1OUT_STRG"-Platine (ein 4k7-Widerstand fehlt)_
 1. IC-Fassung U1 4-polig (oder 2x Buchsenleiste mit 2 Pins)   
 2. Relais K1   
 3. Dioden D2 bis D5 (1N4148)   
-4. Transistor Q1   
+4. Transistor Q1 (BC327-40)  
 5. Kondensator C1 (33 &micro;F)   
 6. Kondensator C2 (100 nF)   
 7. Diode D1 (1N4007)   
@@ -602,7 +602,7 @@ _Bild 41: Die best&uuml;ckte "RW_5V_1OUT_LED"-Platine_
 |    1   | D5                | LED gelb 2 mA       | LED_THT:LED_D3.0mm |   
 |    3   | D1,D3,D5          | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs  |   
 |    2   | J1,J2             | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh |   
-|    1   | Q1                | Transistor BC337-4  | _kh_library:TO-92_Inline_Wide_custom |   
+|    1   | Q1                | Transistor BC337-40  | _kh_library:TO-92_Inline_Wide_custom |   
 |    2   | R2,R7             | 47 &Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 |    3   | R1,R3,<br>R5      | 1 k&Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical <br> _kh_library:R_Axial_P1.778mm_Vertical_kh |   
 |    1   | R4                | 10 k&Omega;         | _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
@@ -624,7 +624,7 @@ _Bild 42: Bauteile der "RW_5V_1OUT_LED"-Platine_
 Auf die _*Bauteilseite*_ l&ouml;ten:   
 
 2. Widerstand R5 (1 k&Omega; liegend)   
-3. Transistor Q1   
+3. Transistor Q1 (BC337-40)   
 4. Alle anderen Widerst&auml;nde   
 5. Buchsenleisten J1 und J2   
 
@@ -731,7 +731,7 @@ _Bild 48: Bauteile der "RW_5V_2IO_STRG"-Platine_
 1. IC-Fassung 4-polig (oder 2x Buchsenleiste mit 2 Pins)   
 2. Relais K1   
 3. Dioden D2 bis D4 (1N4148)   
-4. Transistor Q1   
+4. Transistor Q1 (BC327-40)   
 5. Kondensator C1 (33 &micro;F)   
 6. Kondensator C2 (100 nF)   
 7. Diode D1 (1N4007)   
@@ -770,7 +770,7 @@ _Bild 51: Best&uuml;ckte Platine "RW_5V_2IO_LED"_
 |    3   | D4,D5,D6          | LED gelb 2 mA       | LED_THT:LED_D3.0mm |   
 |    5   | D1,D3,D4,D5,D6    | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs  |   
 |    2   | J1,J2             | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | _kh_library:PinSocket_1x08_P2.54mm_Vertical_kh |   
-|    1   | Q1                | Transistor BC337-4  | _kh_library:TO-92_Inline_Wide_custom |   
+|    1   | Q1                | Transistor BC337-40 | _kh_library:TO-92_Inline_Wide_custom |   
 |    1   | R8                | 47 &Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 |    5   | R1,R3,R4,R5,R6    | 1 k&Omega;          | Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 |    1   | R2                | 10 k&Omega;         | _kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
@@ -793,7 +793,7 @@ _Bild 52: Bauteile der "RW_5V_2IO_LED"-Platine_
 Auf die _*Bauteilseite*_ l&ouml;ten:   
 
 2. Widerstand R8 (liegend)   
-3. Transistor Q1   
+3. Transistor Q1 (BC337-40)   
 4. Die Widerst&auml;nde R2 (10 k&Omega;) und R7 (100 k&Omega;)   
 5. Die restlichen Widerst&auml;nde (1 k&Omega;)   
 6. Buchsenleisten J1 und J2   
