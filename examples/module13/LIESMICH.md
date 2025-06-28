@@ -1019,7 +1019,7 @@ Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im folge
 ![3D Weichenabdeckung](./images/300_m13_3d_weichenabdeckung.png "3D Weichenabdeckung")   
 _Bild 50: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
 
-Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisn&auml;geln (0,7 mm Durchmesser).   
+Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt an den Ecken mit Gleisn&auml;geln (0,7 mm Durchmesser).   
 
 <a name="x72"></a>   
 
@@ -1028,7 +1028,31 @@ Um die Verkabelung zu sch&uuml;tzen, kann man auch Teile des Bodens mit durchsic
 
 <a name="x73"></a>   
 
-## 7.3 Modell-Hintergrundbild   
+## 7.3 Landschaft
+Da das Modul hauptsächlich als Wendeschleife einer eingleisigen Strecke gedacht ist, ist eine Landschaftsgestaltung eigentlich nicht erforderlich. Möchte man trotzdem das Modul mit einer Landschaft versehen, kann man folgende Punkte berücksichtigen:   
+1. Legt man das Modul auf die Schienenseite, sollten die Schienen geschützt sein (nicht direkt auf der Tischplatte aufliegen).   
+2. Da der Zug fast einen Kreis durchfährt, sollte dies - wenn möglich - kaschiert werden.   
+3. Alle Gleise sollen für Reinigungszwecke leicht zugänglich sein.   
+
+Punkt 1 kann erreicht werden, indem man an den Ecken des Moduls kleine Hügel vorsieht. Die Hügel können zB aus 3 cm dicken Hartschaumplatten, wie zB Bachl XPS EAN-Code 4032443390192, geformt werden.   
+
+Punkt 2 kann dadurch erreicht werden, dass der Zug entweder in einer Schlucht oder einem Tunnel fährt.   
+
+Punkt 3 bedeutet, dass, falls man einen Tunnel verwendet, dieser einfach entfernbar sein sollte (nicht fix verbauen!).   
+
+Das folgende Bild zeigt ein Beispiel für die Gestaltung der Basisplatte. In der oberen Mitte des Bildes erkennt man den Spalt für den Tunnelaussatz, der nachträglich ausgeschnitten wurde.   
+![Basisplatte mit Hügeln](./images/300_m13_basisplatte_huegel1.png "Basisplatte mit Hügeln")   
+_Bild 51: Basisplatte mit Hartschaum-Hügeln_   
+
+Beispiel für einen Tunnel:   
+![M13 Tunnelaufsatz oben](./images/300_m13_tunnelaufsatz_oben.png "M13 Tunnelaufsatz oben")   
+_Bild 52: Tunnelaufsatz, von oben gesehen_   
+![M13 Tunnelaufsatz unten](./images/300_m13_tunnelaufsatz_unten.png "M13 Tunnelaufsatz unten")   
+_Bild 53: Tunnelaufsatz, von unten gesehen_   
+
+<a name="x74"></a>   
+
+## 7.4 Modell-Hintergrundbild   
 Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sein.   
 
 [Zum Seitenanfang](#up)   
@@ -1038,17 +1062,17 @@ Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sei
 Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w&auml;re, wenn man Waggons dort abstellen m&ouml;chte. F&uuml;r den nachtr&auml;glichen Einbau eines 1OUT-Blocks sind folgende Arbeitsschritte erforderlich:   
 1. Ausbau des [Seitenteils Ra4 (S&uuml;d 1) - Version 1](#x25).   
    ![Seitenteil_Ra4_Version_1](./images/300_m13_Ra4_V1.png "Seitenteil_Ra4_Version_1")   
-   _Bild 51: Das ausgebaute Seitenteil Ra4_   
+   _Bild 54: Das ausgebaute Seitenteil Ra4_   
 2. Entfernen der Steuerbl&ouml;cke und des uC-LED-Blocks (rechts).   
 3. Erg&auml;nzung der Beschriftung der Bedienungselemente.   
   ![Beschriftung_Bedienungselemente_Version_2](./images/300_m13_cover_50mm_V2.png "Beschriftung_Bedienungselemente_Version_2")   
-  _Bild 52: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
+  _Bild 55: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
 4. Ausschneiden der bestehenden Bohrungen auf dem Klebefolie-Ausdruck mit einer Schere, Aufkleben der Folie auf den Seitenteil Ra4 und Bohren der vier fehlenden Bohrungen f&uuml;r den Entkuppler (1x 7 mm, 3x 5,6 mm Durchmesser).   
    ![Seitenteil_Ra4_Version_2_roh](./images/300_m13_Ra4_V2_raw.png "Seitenteil_Ra4_Version_2_roh")   
-   _Bild 53: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
+   _Bild 56: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
 5. Einpressen der LED-Fassungen und Montage der Blockhalterungen auf der R&uuml;ckseite mit 2,6 x 8 mm Kreuzschlitz-Schrauben.   
    ![Seitenteil_Ra4_V2_Blockhalterungen](./images/300_m13_Ra4_V2_block_holder.png "Seitenteil_Ra4_V2_Blockhalterungen")   
-   _Bild 54: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
+   _Bild 57: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
 6. Einsetzen der Schaltbl&ouml;cke und mit M2x20 mm Kreuzschlitz-Schrauben __leicht (!)__ anschrauben.   
 7. Einsetzen des uC-LED-Blocks.   
 8. Einbau des Seitenteils Ra4 - Version 2 in den Rahmen.   

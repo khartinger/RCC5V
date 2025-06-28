@@ -792,10 +792,10 @@ _Bild 52: Bauteile der "RW_5V_2IO_LED"-Platine_
 
 Auf die _*Bauteilseite*_ l&ouml;ten:   
 
-2. Widerstand R8 (liegend)   
+2. Widerstand R8 (47 &Omega;, liegend)   
 3. Transistor Q1 (BC337-40)   
 4. Die Widerst&auml;nde R2 (10 k&Omega;) und R7 (100 k&Omega;)   
-5. Die restlichen Widerst&auml;nde (1 k&Omega;)   
+5. Die restlichen Widerst&auml;nde R1, R3, R4, R5, R6 (1 k&Omega;)   
 6. Buchsenleisten J1 und J2   
 
 Auf die _*L&ouml;tseite*_ l&ouml;ten:   
@@ -900,10 +900,10 @@ __St&uuml;ckliste__
 1. IC-Fassungen 4-polig U1, U2 (oder 2x Buchsenleiste mit 2 Pins)   
 2. Relais K1   
 3. Dioden D2, D3, D4, D6   
-4. Transistor Q1   
-5. Kondensator C1, C3   
-6. Kondensator C2   
-7. Diode D1, D5   
+4. Transistor Q1 (BC327-40)   
+5. Kondensator C1, C3 (33 &micro;F/35V)   
+6. Kondensator C2 (100 nF)   
+7. Diode D1, D5 (Diode 1N4007)   
 8. Alle Widerst&auml;nde   
 9. Wannenstecker J3 bis J5   
 
