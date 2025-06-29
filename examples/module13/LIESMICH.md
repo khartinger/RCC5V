@@ -17,6 +17,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 ## Eigenschaften des Moduls
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
+| Größe          | 80 x 50 cm², ca. 10 cm hoch                        |   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit und ohne Schotterbett |   
 | Gleisbild      | 1x Dreiwegweiche, 1x abschaltbarer Gleisabschnitt, 1x Entkuppler |   
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
@@ -104,7 +105,9 @@ Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:
 
 Gesamtkosten Juni 2025: ca. 392 Euro   
 
-Preise unter anderem von der [Webseite der Fa. Fleischmann](https://www.fleischmann.de/fde/produkte/gleise.html?_=1749922164452&p=4&verfuegbarkeit_status=41%2C42%2C45).
+Preise unter anderem von der [Webseite der Fa. Fleischmann](https://www.fleischmann.de/fde/produkte/gleise.html?_=1749922164452&p=4&verfuegbarkeit_status=41%2C42%2C45).   
+
+Zusätzlich eventuell Fleischmann Gleisschotter 9479 (9,90 Euro), falls die Gleise eingeschottert werden sollen.   
 
 <a name="x13"></a>   
 
@@ -1029,8 +1032,8 @@ Um die Verkabelung zu sch&uuml;tzen, kann man auch Teile des Bodens mit durchsic
 <a name="x73"></a>   
 
 ## 7.3 Landschaft
-Da das Modul hauptsächlich als Wendeschleife einer eingleisigen Strecke gedacht ist, ist eine Landschaftsgestaltung eigentlich nicht erforderlich. Möchte man trotzdem das Modul mit einer Landschaft versehen, kann man folgende Punkte berücksichtigen:   
-1. Legt man das Modul auf die Schienenseite, sollten die Schienen geschützt sein (nicht direkt auf der Tischplatte aufliegen).   
+Für eine Wendeschleife mit einer realen Breite von 80 m und einem extrem kleinen Gleisradius ist das Gestalten einer realistisch aussehenden Landschaft praktisch nicht möglich. Möchte man trotzdem das Modul mit einer Landschaft versehen, sollte man zumindest folgende Punkte berücksichtigen:   
+1. Legt man das Modul auf die Schienenseite, sollten die Schienen geschützt sein (d.h., nicht direkt auf der Tischplatte aufliegen).   
 2. Da der Zug fast einen Kreis durchfährt, sollte dies - wenn möglich - kaschiert werden.   
 3. Alle Gleise sollen für Reinigungszwecke leicht zugänglich sein.   
 
@@ -1040,11 +1043,11 @@ Punkt 2 kann dadurch erreicht werden, dass der Zug entweder in einer Schlucht od
 
 Punkt 3 bedeutet, dass, falls man einen Tunnel verwendet, dieser einfach entfernbar sein sollte (nicht fix verbauen!).   
 
-Das folgende Bild zeigt ein Beispiel für die Gestaltung der Basisplatte. In der oberen Mitte des Bildes erkennt man den Spalt für den Tunnelaussatz, der nachträglich ausgeschnitten wurde.   
+Das folgende Bild zeigt ein Beispiel für die Gestaltung der Basisplatte. Links unten und in der oberen Mitte des Bildes erkennt man die Spalte für den Tunnelaufsatz, die nachträglich ausgeschnitten wurden.   
 ![Basisplatte mit Hügeln](./images/300_m13_basisplatte_huegel1.png "Basisplatte mit Hügeln")   
 _Bild 51: Basisplatte mit Hartschaum-Hügeln_   
 
-Beispiel für einen Tunnel:   
+Für den Tunnelaufsatz wird aus Pappelsperrholz eine "Schachtel" mit zwei Tunnelportalen gebaut. Auf den Holzdeckel wird eine 3 cm starke Hartschaumplatte geklebt, aus der die Landschaft herausgeschnitten wird.   
 ![M13 Tunnelaufsatz oben](./images/300_m13_tunnelaufsatz_oben.png "M13 Tunnelaufsatz oben")   
 _Bild 52: Tunnelaufsatz, von oben gesehen_   
 ![M13 Tunnelaufsatz unten](./images/300_m13_tunnelaufsatz_unten.png "M13 Tunnelaufsatz unten")   
