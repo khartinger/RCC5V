@@ -171,7 +171,7 @@ _Bild 14: Die best&uuml;ckte "CON_i2c_Term"-Platine_
 ![CON_i2c_Term_circuit](/images/200_CON_i2c_Term_circuit_V1.png "CON_i2c_Term_circuit")   
 _Bild 15: Schaltplan der "CON_i2c_Term"-Platine_   
 
-![Print i2c Term](/images/pcb_f/PCB_F_CON_i2c_Term_V1.png "Print i2c Term 20 mm")   
+![Print i2c Term](/images/pcb_f/PCB_F_CON_i2c_Term_V1.png "Print i2c Term 20 mm") ![Print i2c Term V2](/images/pcb_f/PCB_F_CON_i2c_Term_V2.png "Print i2c Term 20 mm V2")   
 _Bild 16: Platine zum Festschrauben von I²C-Platinen und Abschlusswiderst&auml;nde_   
 
 _*Platinengr&ouml;&szlig;e*_: 20 x 15 mm²   
@@ -194,5 +194,6 @@ Die langen Kontakte der 4-poligen Buchsenleiste um 90° abbiegen.
 
 ## Versionen
 * V1 (250407): OK   
+* V2 (240426): R1 gestreckt, OK   
 
 [Zum Seitenanfang](#up)   

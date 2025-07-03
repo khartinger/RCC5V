@@ -138,14 +138,15 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_2SUB25_V4](/fab/kicad/RW_5V_2SU
 <a name="x33"></a>   
 
 # 3.3 Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (RW_5V_SUB25_10)
-Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm) auf einer Seite verwendet. Sie enth&auml;lt Anschl&uuml;sse f&uuml;r ein 5V-Netzteil und das DCC-Steuersignal sowie Schraubklemmen f&uuml;r den DCC-Fahrstrom (SS, NN und SN, NS), die Hilfsleitungen OA und OB und zus&auml;tzlich f&uuml;r alle Signale. Die Platine ist so aufgebaut, dass sie symmetrisch zu einer Verstrebung liegen kann.   
+Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm) auf der West-Seite verwendet. Sie enth&auml;lt Anschl&uuml;sse f&uuml;r einen 25-poligen Stecker, 10 Schraubklemmen zur Weiterleitung der Spannungen, ein 5V-Netzteil und das DCC-Steuersignal sowie zusätzliche Schraubklemmen f&uuml;r den DCC-Fahrstrom (SS, NN und SN, NS) und die Hilfsleitungen OA und OB. Für die Ost-Seite gibt es eine ähnliche Platine mit der Bezeichnung `RW_5V_SUB25_10_east`.   
 
-![Platine RW_5V_SUB25_10](/images/pcb_f/PCB_F_RW_5V_SUB25_10_V3.png "RW_5V_SUB25_10")   
+![Platine RW_5V_SUB25_10](/images/pcb_f/PCB_F_RW_5V_SUB25_10_V4.png "RW_5V_SUB25_10")   
 _Bild 8: Platine RW_5V_SUB25_10_   
 
 _*Platinengr&ouml;&szlig;e*_: 80 x 66 mm²   
 _*Montagebohrungen*_: 2,5 mm, Abstand 70 mm x 60 mm   
-_*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_SUB25_10_V3](/fab/kicad/RW_5V_SUB25_10_V3)   
+_*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_SUB25_10_V4](/fab/kicad/RW_5V_SUB25_10_V4)   
+_*Link zu den KiCad-Dateien (Ost-Version)*_: [/fab/kicad/RW_5V_SUB25_10_east_V4](/fab/kicad/RW_5V_SUB25_10_east_V4)   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -158,13 +159,18 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_SUB25_10_V3](/fab/kicad/RW_5V_S
 
 ### Best&uuml;ckung   
 1. Schraubklemmen J10, J7 und J8, J9 sowie J2 zusammenstecken und einl&ouml;ten    
-2. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J5 und J6 <br> Tipp: Das Einstecken der Netzteil-Platine gelingt viel leichter, wenn man die &auml;u&szlig;ere Stiftleiste etwas k&uuml;rzt und die damit die Stifte nacheinander einsetzen kann...    
+2. Einstecken und Verl&ouml;ten der 5V-Netzteil-Platine in J3, J5 und J6 <br> Tipp 1: Wenn man auf die Stiftreihen kleine Streifen von einer Lochrasterplatine steckt, dann drücken die Lötstellen der 5V-Netzteil-Platine nicht auf die Sub-Dstecker-Platine<br> Tipp 2: Das Einstecken der Netzteil-Platine gelingt viel leichter, wenn man die &auml;u&szlig;ere Stiftleiste J3 etwas k&uuml;rzt und so die Stiftreihen nacheinander einsetzen kann...    
 3. Sub-D-Stecker J1   
+
+Die bestückte Versorgungsplatine `RW_5V_SUB25_10`   
+![Platine RW_5V_SUB25_10 bestückt](/images/300_RW_5V_SUB25_10_V4_assembled.png "RW_5V_SUB25_10 bestückt")   
+_Bild 9: Die bestückte Platine `RW_5V_SUB25_10` (Version 4)_   
 
 ### Versionen
 * V1 (241104): OK   
 * V2 (250120): J10 erg&auml;nzt, Bohrungen f&uuml;r U1 zu klein   
 * V3 (250306): OK
+* V4 (250622): OK Pinbezeichnungen auf Lötstoppmaske geändert.   
 
 <a name="x34"></a>   
 
@@ -172,7 +178,7 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/RW_5V_SUB25_10_V3](/fab/kicad/RW_5V_S
 Diese Platine wird bei l&auml;ngeren Modulen (L&auml;ngen von 75 cm oder 100 cm) auf einer der beiden Seiten (Ost oder West) verwendet. Sie f&uuml;hrt lediglich die Anschl&uuml;sse des Sub-D-Steckers auf Schraubklemmen heraus.   
 
 ![Platine CON_SubD_Screw10](/images/pcb_f/PCB_F_CON_SubD_Screw10_V1.png "CON_SubD_Screw10")   
-_Bild 9: Platine CON_SubD_Screw10_   
+_Bild 10: Platine CON_SubD_Screw10_   
 
 _*Platinengr&ouml;&szlig;e*_: 31 x 66 mm²   
 _*Montagebohrungen*_: 2,5 mm, Abstand 21 mm x 60 mm   
