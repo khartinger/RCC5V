@@ -38,6 +38,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
+<a name="x11"></a>   
 
 # 1. Vorbereitung und Einkauf
 ## 1.1 Entwurf des Gleisplans
@@ -88,6 +89,8 @@ Dieser Winkel entspricht bei einem R4-Gleis genau 9 Schwellen, da das ganze Glei
 
 * Die beiden dunkelgrauen Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
 
+<a name="x12"></a>   
+
 ## 1.2 Schienenkauf - St&uuml;ckliste
 Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:   
 | Anzahl | Nummer | Name | Euro/Stk | Euro |   
@@ -103,6 +106,8 @@ Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:
 | 1 | 9409 | Gleisn&auml;gel 7 mm Fleischmann (oder Minitrix 66537 10 mm) | 9,90 | 9,90 |   
 
 Gesamtkosten 2025: ca. 158 Euro   
+
+<a name="x13"></a>   
 
 ## 1.3 Rahmen
 ### 1.3.1 Modulrahmen
@@ -153,6 +158,8 @@ Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu 
 
 Eine einfachere, aber nicht ganz so gute M&ouml;glichkeit besteht darin, das Holz mit einem Plastikspray zu bespr&uuml;hen.   
 
+<a name="x14"></a>   
+
 ## 1.4 Elektronische RCC-Komponenten
 ### 1.4.1 Steuerung
 F&uuml;r die Steuerung wird der ESP32 mit den beiden Zusatzplatinen (DCC, erweitertes I²C-Shield) und dem 1,54"-OLED-Display verwendet. Der Zusammenbau ist auf   
@@ -196,6 +203,7 @@ __Dr&auml;hte, Leitungen und Stecker__
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
+<a name="x21"></a>   
 
 # 2. Bau des Modul-Rahmens   
 ## 2.1 Einleitung
@@ -209,6 +217,8 @@ Das folgende Bild zeigt den Grundriss des Modulrahmens:
 _Bild 9: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4), der Querverstrebung (Ri1) und der Halterung f&uuml;r den 25-poligen Stecker_
 
 Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
+
+<a name="x22"></a>   
 
 ## 2.2 Seitenteile Ra1, Ra3 (West, Ost)
 Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   
@@ -226,6 +236,8 @@ _Bild 11: Ma&szlig;e f&uuml;r den Seitenteil West (Modulbreite 250mm, zwei in de
 * Die 60x20 mm²-Ausnehmung dient zum Durchf&uuml;hren des 25-poligen Sub-D-Steckers.   
 
 Mit besonderer Vorsicht ist die Ausnehmung f&uuml;r das Gleis zu fertigen. Mit einer Laubs&auml;ge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile so lange erweitert, bis ein Fleischmann-Schotterbett-Gleis gerade (klemmend) hineinpasst und auch mittig positioniert ist.   
+
+<a name="x23"></a>   
 
 ## 2.3 Rahmenteil Ra2 (Nord)
 Der Rahmenteil „Nord“ enth&auml;lt lediglich zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier wird innen die Querverstrebung verschraubt.   
@@ -272,11 +284,15 @@ _Bild 17: Rahmenteil S&uuml;d Forderseite_
 ![Rahmenteil S&uuml;d R&uuml;ckseite](./images/300_m14_frame_south_back.png "Rahmenteil S&uuml;d R&uuml;ckseite")   
 _Bild 18: Rahmenteil S&uuml;d R&uuml;ckseite_   
 
+<a name="x25"></a>   
+
 ## 2.5 Querverstrebung Ri1
 Die Querverstrebung enth&auml;lt verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
 
 ![Verstrebung](./images/300_verstrebung_230mm.png "Verstrebung")   
 _Bild 19: Querverstrebungen Ri1_
+
+<a name="x26"></a>   
 
 ## 2.6 Halterung f&uuml;r Sub-D-Stecker
 Die Halterung f&uuml;r die SUB-D-Stecker-Platine besteht aus zwei U-f&ouml;rmigen Teilen, die links und rechts an einer Querstrebe angeschraubt werden. Die Teile k&ouml;nnen sowohl aus Holz als auch mit 3D-Druck hergestellt werden. F&uuml;r den Modul M14 werden zwei Halterungen ben&ouml;tigt.   
@@ -290,6 +306,8 @@ Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3 mm 
 ![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
 _Bild 21: Teile der Sub-D-Halterung_   
 
+<a name="x27"></a>   
+
 ## 2.7 Zusammenbau des Rahmens
 Nachdem alle Teile des Rahmens vorbereitet wurden, kann dieser mit selbstbohrenden M 3 x 30 Senkkopfschrauben zusammengeschraubt werden.   
 
@@ -298,6 +316,7 @@ _Bild 22: Zusammengeschraubter Rahmen mit Halterung f&uuml;r die SUB-D-Platine_
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
+<a name="x31"></a>   
 
 # 3. Deckplatte (Gleisplan) und Verdrahtung vorbereiten   
 
@@ -316,6 +335,8 @@ Da der Weichenantrieb als Unterflurantrieb verbaut werden soll, muss als noch di
 ![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_turnout_cutout_right.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
 _Bild 23: Ma&szlig;e der Aussparung f&uuml;r einen Unterflurantrieb._   
 
+<a name="x33"></a>   
+
 ## 3.3 Bettungsk&ouml;rper (Schotterbett)
 Im n&auml;chsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Dies erfolgt nicht nur an Stellen, wo sp&auml;ter ein Gleis verl&auml;uft, sondern auch an Stellen, die das gleiche Niveau haben sollen, zB zwischen den Gleisen.   
 Danach bohrt man mit einem 4 mm Bohrer die L&ouml;cher f&uuml;r die Fahrstromzuf&uuml;hrung. Wenn man eine 1:1 Vorlage des Gleisbildes ausgedruckt hat, so kann man diese als Bohrschablone verwenden.   
@@ -323,6 +344,8 @@ Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmung f&uuml;r den 
 
 ![Schotterbett](./images/300_m14_schotterbett1.png "Schotterbett")   
 _Bild 24: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitt_   
+
+<a name="x34"></a>   
 
 ## 3.4 Vorbereitung der Verdrahtung
 ### Platz f&uuml;r Flachbandkabel kennzeichnen
@@ -358,6 +381,8 @@ Das folgende Bild zeigt die montierten (und bereits verdrahteten) Klemmen.
 ![M14_Verdrahtung_1](./images/480_M14_Verdrahtung1.png "M14_Verdrahtung_1")   
 _Bild 26: Verdrahtung der Steuerelemente_   
 
+<a name="x35"></a>   
+
 ## 3.5 Gleisbau
 ### Anbringen der Stromversorgung am Gleis   
 Zur Stromversorgung kann man Fleischmann "22217 Anschlusskabel 2-polig Spur N" verwenden oder man l&ouml;tet selbst Dr&auml;hte an die Gleisverbinder. Dies geht bei Fleischmann-Schotterbett-Gleisen sehr gut, w&auml;hrend die Verbinder von Gleisen ohne Schotterbett praktisch nicht l&ouml;tbar sind.   
@@ -390,6 +415,7 @@ _Bild 28: Rahmen mit Grundplatte und Gleisen._
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
+<a name="x41"></a>   
 
 # 4. Elektrische Verdrahtung der Eisenbahnkomponenten   
 
@@ -398,12 +424,18 @@ _Bild 28: Rahmen mit Grundplatte und Gleisen._
 2. Verbinden des Fahrstroms Ost (NN, SS) mit der Versorgungsplatine `RW_5V_2SUB25`   
 3. Verbinden der Fahrstr&ouml;me West (NN, SN, NS, SS) mit der Versorgungsplatine `RW_5V_2SUB25`   
 
+<a name="x42"></a>   
+
 ## 4.2 Vorbereitung Mikrocontroller
 1. Verbinden des Anschlusses "DCC" der Versorgungsplatine `RW_5V_SUB25_10` mit dem Mikrocontroller &uuml;ber ein ca. 30 cm langes, 6-poliges Kabel.   
 2. Verbinden des Mikrocontrollers mit den I²C-PCF8574-I/O-Expanderplatinen mit 20 cm langen, 4-poligen Kabeln mit female-female-Steckern.   
 
+<a name="x43"></a>   
+
 ## 4.3 Weichenausgang Schaltblock W2
 Der 6-polige Ausgang des Schaltblock W2 wird &uuml;ber ein 6-poliges Flachbandkabel mit der Platine `CON_6pol_3_V2` verbunden. Die Dr&auml;hte der Weiche werden mit den Schraubklemmen verbunden, wobei der R&uuml;ckleiter (schwarzer Draht) am mittleren Anschluss angeschraubt wird. Die braunen Dr&auml;hte werden beliebig angeschraubt und sp&auml;ter beim Test der Verdrahtung auf ihren richtigen Anschluss hin gepr&uuml;ft.   
+
+<a name="x44"></a>   
 
 ## 4.4 Verdrahtung I²C-Bus
 Festlegung: Der Schaltblock W2 hat die DCC-Adresse 141.   
@@ -427,6 +459,7 @@ Mit der bisherigen Verdrahtung ist es bereits m&ouml;glich, einen h&auml;ndische
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
+<a name="x51"></a>   
 
 # 5. Steuerungssoftware
 ## 5.1 Anpassung des Demoprogramms f&uuml;r Modul 14
@@ -485,12 +518,15 @@ strRcomp aRcomp[RCOMP_NUM] = {
 ```   
 11. Anpassen des Kommentars am Beginn der Datei `rcc_module14_V1.cpp`.   
 
+<a name="x52"></a>   
+
 ## 5.2 Programmierung des Mikrocontrollers
 Zum Programmieren des Mikrocontrollers wird das Modul von der Stromversorgung getrennt und der Mikrocontroller &uuml;ber das USB-Kabel mit dem Programmierger&auml;t (PC oder Laptop) verbunden.   
 Programmierung des Mikrocontrollers mit der Software `rcc_module14_V1`.   
 
 [Zum Seitenanfang](#up)   
 <a name="x60"></a>   
+<a name="x61"></a>   
 
 # 6. Probebetrieb
 ## 6.1 Modul-Start
@@ -512,6 +548,8 @@ Die Anzeige der Stellung der Weiche 141 ist abh&auml;ngig von der tats&auml;chli
 
 5. Im Kommandofenster am Laptop erscheint die Startmeldung des Moduls:   
 `rcc/start/mqtt {"topicbase":"rcc/module14"}`   
+
+<a name="x52"></a>   
 
 ## 5.2 Test mit MQTT
 Ein zweites Kommando-Fenster am Laptop &ouml;ffnen und folgendes eingeben:   
@@ -536,6 +574,8 @@ Schalten der Weiche DCC 141 auf Gerade:
 Schalten der Weiche DCC 141 mit Namen T2 auf Abzweig (Bogen):   
 `mosquitto_pub -h 10.1.1.1 -t rcc/module14/set/T2 -m 0`   
 
+<a name="x53"></a>   
+
 ## 5.3 Test mit DCC
 Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT durchgef&uuml;hrt werden.   
 ### Beispiel Roco Multi-Maus
@@ -545,6 +585,7 @@ Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT dur
 
 [Zum Seitenanfang](#up)   
 <a name="x60"></a>   
+<a name="x61"></a>   
 
 # 6. Abschlie&szlig;ende Arbeiten   
 ## 6.1 Weichenabdeckung   
@@ -554,10 +595,23 @@ _Bild 30: 3D-Druck-Abdeckungen der Weichenaussparungen_
 
 Die St&auml;rke der Abdeckung betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Leim oder Gleisn&auml;geln (0,7 mm Durchmesser).   
 
+<a name="x62"></a>   
+
 ## 6.2 Bodenabdeckung   
 Um die Verkabelung zu sch&uuml;tzen, kann man auch Teile des Bodens mit durchsichtigen Folien (zB mit 1 mm St&auml;rke) abdecken.   
 
-## 6.3 Modell-Hintergrundbild   
+<a name="x63"></a>   
+
+## 6.3 Landschaftsgestaltung   
+Die einfachste "Landschaftsgestaltung" besteht darin, den Rand der Gleise einzuschottern und das Gel&auml;nde mit gr&uuml;ner Farbe zu bemalen. Nimmt man verschiedene Gr&uuml;n- und Gelbt&ouml;ne, so ist das Ergebnis durchaus brauchbar:   
+![Bemalte Grundplatte](./images/300_m14_painted.png "Bemalte Grundplatte")   
+_Bild 31: Bemalte Grundplatte_   
+
+Im n&auml;chsten Schritt k&ouml;nnte man Grasflocken und B&auml;ume aufbringen oder Geh&auml;use etc. hinzuf&uuml;gen. Das &Uuml;bermalen der gr&uuml;nen Farbe ist dabei kein Problem....   
+
+<a name="x64"></a>   
+
+## 6.4 Modell-Hintergrundbild   
 Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sein.   
 
 [Zum Seitenanfang](#up)
