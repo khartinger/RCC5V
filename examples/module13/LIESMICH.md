@@ -1037,13 +1037,13 @@ F&uuml;r eine Wendeschleife mit einer realen Breite von 80 m und einem extrem kl
 2. Da der Zug fast einen Kreis durchf&auml;hrt, sollte dies - wenn m&ouml;glich - kaschiert werden.   
 3. Alle Gleise sollen f&uuml;r Reinigungszwecke leicht zug&auml;nglich sein.   
 
-Punkt 1 kann erreicht werden, indem man an den Ecken des Moduls kleine H&uuml;gel vorsieht. Die H&uuml;gel k&ouml;nnen zB aus 3 cm dicken Hartschaumplatten, wie zB Bachl XPS EAN-Code 4032443390192, geformt werden.   
+==> Punkt 1 kann erreicht werden, indem man an den Ecken des Moduls kleine H&uuml;gel vorsieht. Die H&uuml;gel k&ouml;nnen zB aus 3 cm dicken Hartschaumplatten, wie zB Bachl XPS EAN-Code 4032443390192, geformt werden.   
 
-Punkt 2 kann dadurch erreicht werden, dass der Zug entweder in einer Schlucht oder einem Tunnel f&auml;hrt.   
+==> Punkt 2 wird zB dadurch erreicht, dass der Zug entweder in einer Schlucht oder einem Tunnel f&auml;hrt.   
 
-Punkt 3 bedeutet, dass, falls man einen Tunnel verwendet, dieser einfach entfernbar sein sollte (nicht fix verbauen!).   
+==> Punkt 3 bedeutet, dass, falls man einen Tunnel verwendet, dieser einfach entfernbar sein sollte (nicht fix montieren!).   
 
-Das folgende Bild zeigt ein Beispiel f&uuml;r die Gestaltung der Basisplatte. Links unten und in der oberen Mitte des Bildes erkennt man die Spalte f&uuml;r den Tunnelaufsatz, die nachtr&auml;glich ausgeschnitten wurden.   
+Das folgende Bild zeigt ein Beispiel f&uuml;r die Gestaltung der Basisplatte. Links unten und in der Mitte oben des Bildes erkennt man in  der Hartschaumplatte die Spalten f&uuml;r den Tunnelaufsatz, die nachtr&auml;glich ausgeschnitten wurden.   
 ![Basisplatte mit H&uuml;geln](./images/300_m13_basisplatte_huegel1.png "Basisplatte mit H&uuml;geln")   
 _Bild 51: Basisplatte mit Hartschaum-H&uuml;geln_   
 
@@ -1052,6 +1052,7 @@ F&uuml;r den Tunnelaufsatz wird aus Pappelsperrholz eine "Schachtel" mit zwei Tu
 _Bild 52: Tunnelaufsatz, von oben gesehen_   
 ![M13 Tunnelaufsatz unten](./images/300_m13_tunnelaufsatz_unten.png "M13 Tunnelaufsatz unten")   
 _Bild 53: Tunnelaufsatz, von unten gesehen_   
+
 
 <a name="x74"></a>   
 
