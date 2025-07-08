@@ -1019,11 +1019,11 @@ echo ---Fertig!-----
 
 # 7. Abschlie&szlig;ende Arbeiten   
 ## 7.1 Weichenabdeckungen   
-F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 31 und 32). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M13 werden zwei hohe Abdeckungen f&uuml;r die Antriebe der Dreiwegweiche ben&ouml;tigt.    
+F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe [Kapitel 3.2](#x32), Bild 31 und 32). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M13 werden zwei hohe Abdeckungen f&uuml;r die Antriebe der Dreiwegweiche ben&ouml;tigt.    
 
 Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisabdeckung sowie eine 1 mm Folie dar&uuml;ber + eine 0,5 mm Folie &uuml;ber dem Antrieb verwendet werden.   
 
-Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im folgenden Bild zu sehen sind.   
+Als Alternative sind auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im folgenden Bild zu sehen sind.   
 ![3D Weichenabdeckung](./images/300_m13_3d_weichenabdeckung.png "3D Weichenabdeckung")   
 _Bild 51: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
 
