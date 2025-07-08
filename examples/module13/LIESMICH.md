@@ -212,7 +212,7 @@ Zum Verteilen des Fahrstroms und zum Anschluss der Schaltkomponenten sinnvoll si
 * 1x [`CON_2pol_131` Fahrstromverteiler](/fab/rcc5_add_ons/LIESMICH.md#x60)   
 * 1x [`CON_1xIO` Fahrstromschalter einfach](/fab/rcc5_add_ons/LIESMICH.md#x70)   
 * 1x [`CON_6pol_3` 6-poliger Stecker auf drei Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x40)   
-* 1x [`CON_6pol_6` 6-poliger Stecker auf sechs Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x50)   
+* 2x [`CON_6pol_6` 6-poliger Stecker auf sechs Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x50)   
 * 3x [`CON_10pol_PIN` oder `CON_10pol_2x4` Umsetzer 10-poliges Kabel auf Stifte](/fab/rcc5_add_ons/LIESMICH.md#x30)   
 
 ![M13_ADD_ON](./images/300_m13_add_on.png "M13_ADD_ON")   
@@ -681,8 +681,13 @@ Die folgenden Bilder zeigen die mit Female-Female Jumper Wires verbundenen Plati
 ![Verbindung_Datenleitungen](./images/300_m13_i2c_2x4pin.png "Verbindung_Datenleitungen")   
 _Bild 45: Verbindung der Datenleitungen_   
 
+Die Verdrahtung der Bl&ouml;cke erfolgt mit dem 6-poligen Flachbandkabel mit den f&uuml;nf (oder sechs) Steckern. Am Ende des Kabels wird ein 6-poliger Stecker mit sechs Schraubklemmen `CON_6pol_6` angesteckt, der zwei 100 nF-Abschlusskondensatoren enth&auml;lt. Dies ist erforderlich, da das Schalten von Entkupplern St&ouml;rsignale auf den Versorgungsleitungen erzeugen k&ouml;nnen und eventuell abschaltbare Gleise abschalten.   
+
+![Abschluss der Block-Stromversorgung](./images/300_m13_verdrahtung_bloecke_con6.png "Abschluss der Block-Stromversorgung")   
+_Bild 46: Abschluss der Block-Stromversorgung mit `CON_6pol_6`-Platine und Kondensatoren_   
+
 ![Verdrahtung_Bl&ouml;cke](./images/300_m13_verdrahtung_bloecke.png "Verdrahtung_Bl&ouml;cke")   
-_Bild 46: Verdrahtung der Bl&ouml;cke_   
+_Bild 47: Verdrahtung der Bl&ouml;cke (noch ohne `CON_6pol_6`-Platine)_   
 
 <a name="x46"></a>   
 
@@ -690,7 +695,7 @@ _Bild 46: Verdrahtung der Bl&ouml;cke_
 Damit der Modul von beiden Seiten angespeist werden kann m&uuml;ssen noch die 10 Schraubklemmen der 25-poligen Stecker miteinander verbunden werden.   
 Nach NEM908D erfolgt dies so, dass die Leitungen elektrisch ausgekreuzt, aber physikalisch gerade durchverbunden werden. Das bedeutet, dass sich zB der Fahrstrom des Gleises NN auf dem West-Stecker auf dem Pin 1 und auf dem Ost-Stecker auf dem Pin 13 befindet!   
 ![Wiring_NEM908D](/images/300_Wiring_NEM908D.png "Wiring_NEM908D")   
-_Bild 47: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
+_Bild 48: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
 
 [Siehe auch `/info/con_NEM908/LIESMICH.md`](/info/con_NEM908/LIESMICH.md)   
 
@@ -699,14 +704,14 @@ Die 30 cm langen Einzelleitungen werden an beiden Enden S-f&ouml;rmig gebogen, d
 
 ![Modulverbindung](./images/300_m13_con2x10.png "Modulverbindung")   
 ![Modulverbindung_West](./images/300_m13_con2x10_west.png "Modulverbindung_West")   
-_Bild 48: Verdrahtung der Sub-D-Stecker-Platinen_   
+_Bild 49: Verdrahtung der Sub-D-Stecker-Platinen_   
 
 <a name="x46"></a>   
 
 # 4.7 Gesamtverdrahtung
 Das folgende Bild zeigt die gesamte Verdrahtung von Modul 13:   
-![M13_Verdrahtung](./images/600_m13_verdrahtung.png "M13_Verdrahtung")   
-_Bild 49: Gesamtverdrahtung des Moduls 13_   
+![M13_Verdrahtung](./images/600_m13_verdrahtung2.png "M13_Verdrahtung")   
+_Bild 50: Gesamtverdrahtung des Moduls 13_   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
@@ -1020,7 +1025,7 @@ Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisab
 
 Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im folgenden Bild zu sehen sind.   
 ![3D Weichenabdeckung](./images/300_m13_3d_weichenabdeckung.png "3D Weichenabdeckung")   
-_Bild 50: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
+_Bild 51: 3D-Druck-Abdeckungen f&uuml;r die Weichenaussparungen_   
 
 Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt an den Ecken mit Gleisn&auml;geln (0,7 mm Durchmesser).   
 
@@ -1045,14 +1050,20 @@ F&uuml;r eine Wendeschleife mit einer realen Breite von 80 m und einem extrem kl
 
 Das folgende Bild zeigt ein Beispiel f&uuml;r die Gestaltung der Basisplatte. Links unten und in der Mitte oben des Bildes erkennt man in  der Hartschaumplatte die Spalten f&uuml;r den Tunnelaufsatz, die nachtr&auml;glich ausgeschnitten wurden.   
 ![Basisplatte mit H&uuml;geln](./images/300_m13_basisplatte_huegel1.png "Basisplatte mit H&uuml;geln")   
-_Bild 51: Basisplatte mit Hartschaum-H&uuml;geln_   
+_Bild 52: Basisplatte mit Hartschaum-H&uuml;geln_   
 
-F&uuml;r den Tunnelaufsatz wird aus Pappelsperrholz eine "Schachtel" mit zwei Tunnelportalen gebaut. Auf den Holzdeckel wird eine 3 cm starke Hartschaumplatte geklebt, aus der die Landschaft herausgeschnitten wird.   
+F&uuml;r den Tunnelaufsatz wird aus Pappelsperrholz eine "Schachtel" mit zwei Tunnelportalen gebaut. Auf den Holzdeckel wird eine 3 cm starke Hartschaumplatte geklebt auf die ein altes Burg-Modell gesetzt wird. Danach wird die Landschaft herausgeschnitten.   
 ![M13 Tunnelaufsatz oben](./images/300_m13_tunnelaufsatz_oben.png "M13 Tunnelaufsatz oben")   
-_Bild 52: Tunnelaufsatz, von oben gesehen_   
+_Bild 53: Tunnelaufsatz, von oben gesehen_   
 ![M13 Tunnelaufsatz unten](./images/300_m13_tunnelaufsatz_unten.png "M13 Tunnelaufsatz unten")   
-_Bild 53: Tunnelaufsatz, von unten gesehen_   
+_Bild 54: Tunnelaufsatz, von unten gesehen_   
 
+Die gestaltete Landschaft - einmal ohne und einmal mit Tunnel.   
+
+![M13 Landschaft ohne Tunnel](./images/300_m13_landscape_without_tunnel.png "M13 Landschaft ohne Tunnel")   
+_Bild 55: Modul 13: Landschaft ohne Tunnel_   
+![M13 Landschaft mit Tunnel](./images/300_m13_landscape_with_tunnel.png "M13 Landschaft mit Tunnel")   
+_Bild 56: Modul 13: Landschaft mit Tunnel_   
 
 <a name="x74"></a>   
 
@@ -1066,17 +1077,17 @@ Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sei
 Bei der Stellprobe ergab sich, dass ein Entkuppler im geraden Gleis praktisch w&auml;re, wenn man Waggons dort abstellen m&ouml;chte. F&uuml;r den nachtr&auml;glichen Einbau eines 1OUT-Blocks sind folgende Arbeitsschritte erforderlich:   
 1. Ausbau des [Seitenteils Ra4 (S&uuml;d 1) - Version 1](#x25).   
    ![Seitenteil_Ra4_Version_1](./images/300_m13_Ra4_V1.png "Seitenteil_Ra4_Version_1")   
-   _Bild 54: Das ausgebaute Seitenteil Ra4_   
+   _Bild 57: Das ausgebaute Seitenteil Ra4_   
 2. Entfernen der Steuerbl&ouml;cke und des uC-LED-Blocks (rechts).   
 3. Erg&auml;nzung der Beschriftung der Bedienungselemente.   
   ![Beschriftung_Bedienungselemente_Version_2](./images/300_m13_cover_50mm_V2.png "Beschriftung_Bedienungselemente_Version_2")   
-  _Bild 55: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
+  _Bild 58: Beschriftung der Bedienungselemente f&uuml;r Modul 13 - Version 2_   
 4. Ausschneiden der bestehenden Bohrungen auf dem Klebefolie-Ausdruck mit einer Schere, Aufkleben der Folie auf den Seitenteil Ra4 und Bohren der vier fehlenden Bohrungen f&uuml;r den Entkuppler (1x 7 mm, 3x 5,6 mm Durchmesser).   
    ![Seitenteil_Ra4_Version_2_roh](./images/300_m13_Ra4_V2_raw.png "Seitenteil_Ra4_Version_2_roh")   
-   _Bild 56: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
+   _Bild 59: Seitenteil Ra4 mit den Bohrungen f&uuml;r die neuen Bedienelemente_   
 5. Einpressen der LED-Fassungen und Montage der Blockhalterungen auf der R&uuml;ckseite mit 2,6 x 8 mm Kreuzschlitz-Schrauben.   
    ![Seitenteil_Ra4_V2_Blockhalterungen](./images/300_m13_Ra4_V2_block_holder.png "Seitenteil_Ra4_V2_Blockhalterungen")   
-   _Bild 57: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
+   _Bild 60: Seitenteil Ra4 mit Blockhalterungen. Dahinter die dazugeh&ouml;rigen Schaltbl&ouml;cke._   
 6. Einsetzen der Schaltbl&ouml;cke und mit M2x20 mm Kreuzschlitz-Schrauben __leicht (!)__ anschrauben.   
 7. Einsetzen des uC-LED-Blocks.   
 8. Einbau des Seitenteils Ra4 - Version 2 in den Rahmen.   
