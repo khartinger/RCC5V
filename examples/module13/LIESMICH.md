@@ -171,7 +171,6 @@ beschrieben.
 ![OLED_Shields_uC](./images/300_oled_shields_esp32.png "OLED_Shields_uC")   
 _Bild 5: Zusammengebaute Steuerung aus OLED, Shields und Mikrocontroller ESP32_   
 
-
 ### 1.4.2 Anschluss der 25-poligen Stecker
 Die Versorgung des Moduls mit Energie und Daten erfolgt &uuml;ber einen 25-poligen Sub-D-Stecker. Dazu werden folgende best&uuml;ckte Leiterplatten ben&ouml;tigt:   
 * 1x [Netzteil-Platine AC_5V_supply_6pol_DCC](/fab/rcc1_supply/LIESMICH.md#x20)   

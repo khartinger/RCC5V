@@ -152,9 +152,11 @@ Damit der Holzrahmen nicht so leicht verstaubt, sollte er lackiert werden. Dazu 
 
 ## 1.4 Elektronische RCC-Komponenten
 ### 1.4.1 Steuerung
-F&uuml;r die Steuerung wird der ESP32 mit den beiden Zusatzplatinen (I²C, DCC) und dem 1,54"-OLED-Display verwendet. Der Zusammenbau ist auf   
+Die Steuerung besteht aus einem ESP32 mit zwei Zusatzplatinen (I²C, DCC) und dem 1,54"-OLED-Display. Der Zusammenbau ist auf   
 [`https://github.com/khartinger/RCC5V/blob/main/fab/rcc2_esp32/LIESMICH.md`](/fab/rcc2_esp32/LIESMICH.md)   
 beschrieben.   
+![OLED_Shields_uC](./images/300_oled_shields_esp32.png "OLED_Shields_uC")   
+_Bild 5: Zusammengebaute Steuerung aus OLED, Shields und Mikrocontroller ESP32_   
 
 ### 1.4.2 Anschluss der 25-poligen Stecker
 F&uuml;r den Anschluss der 25-poligen Stecker und f&uuml;r die Stromversorgung werden folgende best&uuml;ckte Leiterplatten ben&ouml;tigt:   
@@ -163,6 +165,9 @@ F&uuml;r den Anschluss der 25-poligen Stecker und f&uuml;r die Stromversorgung w
 * 1x [Platine mit 25-poligem Sub-D-Stecker und Schraubklemmen (CON_SubD_Screw10)](/fab/rcc1_supply/LIESMICH.md#x34)   
 
 Die best&uuml;ckte Netzteil-Platine muss auf die Tr&auml;gerplatine `RW_5V_SUB25_10` montiert werden.   
+
+![Sub-D-Stecker mit Netzteil](./images/300_sub-d_power.png "Sub-D-Stecker mit Netzteil")   
+_Bild 6: Sub-D-Stecker f&uuml;r West und Ost_   
 
 ### 1.4.3 Ansteuerung der Schaltkomponenten
 F&uuml;r die Ansteuerung der Schaltkomponenten werden folgende Schaltbl&ouml;cke ben&ouml;tigt:   
