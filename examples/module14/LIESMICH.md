@@ -177,13 +177,19 @@ Die best&uuml;ckte Netzteil-Platine muss auf die Tr&auml;gerplatine `RW_5V_2xSUB
 ![best&uuml;ckte Platine RW_5V_2SUB25](/images/300_RW_5V_2SUB25.png "best&uuml;ckte Platine RW_5V_2SUB25")   
 _Bild 7: Mit Netzteil best&uuml;ckte Verbindungsplatine mit zwei 25-poligen Steckern_   
 
-### 1.4.3 Ansteuerung der Schaltkomponenten
+### 1.4.3 Ansteuerung der Eisenbahn-Komponenten
 F&uuml;r die Ansteuerung der Weiche werden der [Schaltblock Zweiwegweiche (W2)](/fab/rcc4_block/LIESMICH.md#x20) sowie zwei LED-Fassungen ben&ouml;tigt.   
 ![Schaltblock W2](/images/300_schaltblock_w2.png "Schaltblock W2")   
 _Bild 8: Schaltblock W2 und Schaltblock-Halterung (links)_   
 
 ### 1.4.4 I²C-Expander
 * 2x [PCF8574 I/O-Expander](/fab/rcc0_start/LIESMICH.md#34)   
+* 1x [Halterung 20 mm f&uuml;r I/O-Expander](/fab/rcc3_i2c/LIESMICH.md#20)   
+* 1x [Halterung mit Abschlusswiderst&auml;nden](/fab/rcc3_i2c/LIESMICH.md#60)   
+
+
+![M14_I2C_IO](./images/300_m14_i2c_io.png "M14_I2C_IO")   
+_Bild 9: I²C-I/O-Anschl&uuml;sse f&uuml;r das M14-Modul_   
 
 ### 1.4.5 Verdrahtung
 Zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen:   
@@ -214,7 +220,7 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 
 ![Modul-Rahmen](./images/300_m14_module_frame.png "Modul-Rahmen")   
-_Bild 9: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4), der Querverstrebung (Ri1) und der Halterung f&uuml;r den 25-poligen Stecker_
+_Bild 10: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4), der Querverstrebung (Ri1) und der Halterung f&uuml;r den 25-poligen Stecker_
 
 Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
 
@@ -224,10 +230,10 @@ Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den 
 Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   
 
 ![Modul_Ost_1_Mitte.png](./images/300_m14_ost_1_mitte.png "Modul_Ost_1_Mitte")   
-_Bild 10: Ma&szlig;e f&uuml;r den Seitenteil Ost (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
+_Bild 11: Ma&szlig;e f&uuml;r den Seitenteil Ost (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
 
 ![Modul_West_2_Mitte.png](./images/300_m14_west_2_mitte.png "Modul_West_2_Mitte")   
-_Bild 11: Ma&szlig;e f&uuml;r den Seitenteil West (Modulbreite 250mm, zwei in der Mitte liegende Gleise)._   
+_Bild 12: Ma&szlig;e f&uuml;r den Seitenteil West (Modulbreite 250mm, zwei in der Mitte liegende Gleise)._   
 
 * Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 250 x 70 mm²   
 * Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Fl&uuml;gelschrauben und Fl&uuml;gelmuttern.   
@@ -243,7 +249,7 @@ Mit besonderer Vorsicht ist die Ausnehmung f&uuml;r das Gleis zu fertigen. Mit e
 Der Rahmenteil „Nord“ enth&auml;lt lediglich zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier wird innen die Querverstrebung verschraubt.   
 
 ![Modul_Nord_480mm](./images/300_m14_nord_480mm.png "Modul_Nord_480mm")   
-_Bild 12: Seitenteil Nord Ra2_   
+_Bild 13: Seitenteil Nord Ra2_   
 
 <a name="x24"></a>   
 
@@ -251,22 +257,22 @@ _Bild 12: Seitenteil Nord Ra2_
 Der Rahmenteil S&uuml;d enth&auml;lt das Display, die Bohrungen f&uuml;r den W2-Steuerblock und die Querverstrebung. Das folgende Bild gibt einen &Uuml;berblick &uuml;ber die erforderlichen Bohrungen.   
 
 ![Modul_S&uuml;d_480mm](./images/300_m14_sued_480mm.png "Modul_S&uuml;d_480mm")   
-_Bild 13: Ma&szlig;e f&uuml;r den Rahmenteil S&uuml;d (Ra4)_   
+_Bild 14: Ma&szlig;e f&uuml;r den Rahmenteil S&uuml;d (Ra4)_   
 
 __OLED-Anzeige__   
 Die Aussparungen f&uuml;r die OLED-Anzeige und den dazugeh&ouml;rigen Taster sind abh&auml;ngig davon, ob man die Bauteile einzeln montiert oder einen 3D-Druck-Rahmen verwendet. Bei getrennter Montage ben&ouml;tigt man eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 20 x 38 mm² und eine 11,6 mm-Bohrung.   
 ![OLED_Button_single](./images/300_OLED_Button_single.png "OLED_Button_single")   
-_Bild 14: Ma&szlig;e f&uuml;r die getrennte Montage der OLED-Anzeige und des Tasters_   
+_Bild 15: Ma&szlig;e f&uuml;r die getrennte Montage der OLED-Anzeige und des Tasters_   
 
 Bei Verwendung eines 3D-gedruckten Rahmens ben&ouml;tigt man eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm².   
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
-_Bild 15: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
+_Bild 16: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
 
 __Steuerblock W2__   
 Um die Position der f&uuml;r den Steuerblock W2 erforderlichen Bohrungen zu bestimmen, druckt man die 40 x 42 mm gro&szlig;e Beschriftung (Cover) aus und klebt sie an die richtige Position des Rahmens. Die Mitte soll 290 mm vom linken Rand sein, das hei&szlig;t die Unterkante des Covers reicht von 270 mm bis 310 mm und ist 8 mm vom Rand entfernt. Am besten ist es, zuerst einen Strich zu zeichnen und dann die Beschriftung aufzukleben.   
 
 ![Beschriftung Bedienungselemente](./images/300_M14_cover.png "Beschriftung Bedienungselemente")   
-_Bild 16: Beschriftung des W2-Bedienungselementes f&uuml;r Modul 14_   
+_Bild 17: Beschriftung des W2-Bedienungselementes f&uuml;r Modul 14_   
 
 Der Bohrdurchmesser f&uuml;r die LED-Fassungen betr&auml;gt 5,6 mm, der f&uuml;r die Taster ca. 7 mm.   
 Die Beschriftungen k&ouml;nnen entweder beibehalten oder entfernt werden, wenn man sie nicht m&ouml;chte. Falls die Beschriftungen zu stark durch das Bohren besch&auml;digt wurden, kann man sie auch durch neue ersetzen....   
@@ -279,10 +285,10 @@ Als N&auml;chstes kann man die Halterungen f&uuml;r die Steuerbl&ouml;cke mit 2,
 
 Den fertigen Rahmenteil S&uuml;d (ohne Fahrstromabschaltung Gleis 1A) zeigen die folgenden Bilder   
 ![Rahmenteil S&uuml;d Forderseite](./images/300_m14_frame_south_front.png "Rahmenteil S&uuml;d Forderseite")   
-_Bild 17: Rahmenteil S&uuml;d Forderseite_   
+_Bild 18: Rahmenteil S&uuml;d Forderseite_   
 
 ![Rahmenteil S&uuml;d R&uuml;ckseite](./images/300_m14_frame_south_back.png "Rahmenteil S&uuml;d R&uuml;ckseite")   
-_Bild 18: Rahmenteil S&uuml;d R&uuml;ckseite_   
+_Bild 19: Rahmenteil S&uuml;d R&uuml;ckseite_   
 
 <a name="x25"></a>   
 
@@ -290,7 +296,7 @@ _Bild 18: Rahmenteil S&uuml;d R&uuml;ckseite_
 Die Querverstrebung enth&auml;lt verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
 
 ![Verstrebung](./images/300_verstrebung_230mm.png "Verstrebung")   
-_Bild 19: Querverstrebungen Ri1_
+_Bild 20: Querverstrebungen Ri1_
 
 <a name="x26"></a>   
 
@@ -298,13 +304,13 @@ _Bild 19: Querverstrebungen Ri1_
 Die Halterung f&uuml;r die SUB-D-Stecker-Platine besteht aus zwei U-f&ouml;rmigen Teilen, die links und rechts an einer Querstrebe angeschraubt werden. Die Teile k&ouml;nnen sowohl aus Holz als auch mit 3D-Druck hergestellt werden. F&uuml;r den Modul M14 werden zwei Halterungen ben&ouml;tigt.   
 
 ![Sub-D-Halterung](./images/300_bracket_sub-d.png "Sub-D-Halterung")   
-_Bild 20: Ma&szlig;e der Halterung_   
+_Bild 21: Ma&szlig;e der Halterung_   
 
 In jeden U-f&ouml;rmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,5 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatine.   
 Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3 mm Sechskantmuttern gegeneinander an der Querstrebe verschraubt.   
 
 ![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
-_Bild 21: Teile der Sub-D-Halterung_   
+_Bild 22: Teile der Sub-D-Halterung_   
 
 <a name="x27"></a>   
 
@@ -312,7 +318,7 @@ _Bild 21: Teile der Sub-D-Halterung_
 Nachdem alle Teile des Rahmens vorbereitet wurden, kann dieser mit selbstbohrenden M 3 x 30 Senkkopfschrauben zusammengeschraubt werden.   
 
 ![Rahmen M14](./images/300_M14_frame_1.png "Rahmen M14")   
-_Bild 22: Zusammengeschraubter Rahmen mit Halterung f&uuml;r die SUB-D-Platine_   
+_Bild 23: Zusammengeschraubter Rahmen mit Halterung f&uuml;r die SUB-D-Platine_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
@@ -333,7 +339,7 @@ Um den Bahndamm darzustellen, schr&auml;gt man die 5 mm Sperrkolzplatte an den N
 Da der Weichenantrieb als Unterflurantrieb verbaut werden soll, muss als noch die Aussparung gezeichnet und ausgeschnitten werden.   
 
 ![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_W2_turnout_cutout.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
-_Bild 23: Ma&szlig;e der Aussparung f&uuml;r einen Weichen-Unterflurantrieb._   
+_Bild 24: Ma&szlig;e der Aussparung f&uuml;r einen Weichen-Unterflurantrieb._   
 
 Bei einer rechten Weiche bilden sechs Punkte die Ecken der Aussparung mit den Koordinaten P1(11/6), P2(101/6), P3(101/25), P4(81/30), P5(31/30) und P6(11/25). F&uuml;r eine linke Weiche sind die Koordinaten gespiegelt. Der Koordinatenursprung befindet sich in der Mitte des Gleisrandes bei den Weichenzungen (siehe Bild oben).    
 
@@ -345,7 +351,7 @@ Danach bohrt man mit einem 4 mm Bohrer die L&ouml;cher f&uuml;r die Fahrstromzuf
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmung f&uuml;r den Weichenantrieb und die Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung.   
 
 ![Schotterbett](./images/300_m14_schotterbett1.png "Schotterbett")   
-_Bild 24: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitt_   
+_Bild 25: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitt_   
 
 <a name="x34"></a>   
 
@@ -357,7 +363,7 @@ Damit sp&auml;ter die einzelnen Platinen besser plaziert werden k&ouml;nnen, sol
 Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). F&uuml;r ein leichteres Arbeiten kann man die Grundplatte vom Rahmen entfernen (bei einem Schaltblock nicht notwendig). Um den Schaltblock zu montieren steckt man ihn in die Schaltblock-Halterung. Danach kontrolliert man auf der Vorderseite, ob die LEDs sichtbar sind und die Taster nicht stecken. Danach schraubt man den Schaltblock mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
 
 ![Schaltblockmontage](./images/300_m14_angeschraubter_schaltblock.png "Schaltblockmontage")   
-_Bild 25: Anschrauben der Schaltbl&ouml;cke_   
+_Bild 26: Anschrauben der Schaltbl&ouml;cke_   
 
 ### Montage der Anzeige und des Mikrocontrollers   
 Die OLED-Anzeige und den Mikrocontroller, wie bei [Rahmenteil Ra4 (S&uuml;d)](#x24) beschrieben, in den Rahmen einsetzen.   
@@ -381,7 +387,7 @@ Die Verdrahtung der Komponenten erfolgt in Kapitel 4.
 Das folgende Bild zeigt die montierten (und bereits verdrahteten) Klemmen.   
 
 ![M14_Verdrahtung_1](./images/480_M14_Verdrahtung1.png "M14_Verdrahtung_1")   
-_Bild 26: Verdrahtung der Steuerelemente_   
+_Bild 27: Verdrahtung der Steuerelemente_   
 
 <a name="x35"></a>   
 
@@ -392,7 +398,7 @@ Als Anschlussdraht verwendet man einen ca. 25 cm langen braunen Volldraht mit 0,
 Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten noch die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, der rechts oben bereits entfernt ist.   
 
 ![Loeten_Gleisanschluss1](./images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")   
-_Bild 27: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
+_Bild 28: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
 
 ### Gleise aufkleben   
 #### Vorbereitung der Weichen   
@@ -413,7 +419,7 @@ Da die Ausgleichsgleise am linken und rechten Rand im Betrieb mechanisch in L&au
 
 Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgenderma&szlig;en aus:   
 ![Montiertes Gleis](./images/300_m14_gleis_montiert1.png "Montiertes Gleis")   
-_Bild 28: Rahmen mit Grundplatte und Gleisen._   
+_Bild 29: Rahmen mit Grundplatte und Gleisen._   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
@@ -423,7 +429,7 @@ _Bild 28: Rahmen mit Grundplatte und Gleisen._
 ## 4.1 Verdrahtungsplan
 Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwendeten Komponenten:   
 ![&Uuml;bersicht M14](./images/600_m14_overview.png "&Uuml;bersicht M14")   
-_Bild 29: &Uuml;bersichtsplan Modul 14_   
+_Bild 30: &Uuml;bersichtsplan Modul 14_   
 
 ## Bedeutung der einzelnen Komponenten
 Die folgende Aufz&auml;hlung enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
@@ -477,7 +483,7 @@ Festlegung: Der Schaltblock W2 hat die DCC-Adresse 141.
 
 Die fertige Verdrahtung zeigt das folgende Bild:   
 ![Verdrahtung 2](./images/300_m14_verdrahtung2.png "Verdrahtung 2")   
-_Bild 30: Verdrahtung mit angestecktem 25-poligen Versorgungskabel (gelb)_   
+_Bild 31: Verdrahtung mit angestecktem 25-poligen Versorgungskabel (gelb)_   
 
 ### Test der Verdrahtung   
 Mit der bisherigen Verdrahtung ist es bereits m&ouml;glich, einen h&auml;ndischen Betrieb durchzuf&uuml;hren. Dabei kann vor allem der richtige Anschluss der Weiche und die Funktion aller Stromzuf&uuml;hrungen (L&ouml;tstellen) getestet werden.   
@@ -619,7 +625,7 @@ Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT dur
 ## 7.1 Weichenabdeckung   
 F&uuml;r die Montage des Unterflur-Weichenantriebs wurde in [Kapitel 3.2](#x32) die Grundplatte ausgeschnitten. F&uuml;r die Landschaftsgestaltung muss dieser Ausschnitt jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Dies geschieht z.B. mit einer hohen, 3D-gedruckten Abdeckung.   
 ![3D Weichenabdeckung](./images/300_m14_weichenabdeckung.png "3D Weichenabdeckung")   
-_Bild 31: 3D-Druck-Abdeckungen der Weichenaussparungen_   
+_Bild 32: 3D-Druck-Abdeckungen der Weichenaussparungen_   
 
 Die St&auml;rke der Abdeckung betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Leim oder Gleisn&auml;geln (0,7 mm Durchmesser).   
 
@@ -633,7 +639,7 @@ Um die Verkabelung zu sch&uuml;tzen, kann man auch Teile des Bodens mit durchsic
 ## 7.3 Landschaftsgestaltung   
 Die einfachste "Landschaftsgestaltung" besteht darin, den Rand der Gleise einzuschottern und das Gel&auml;nde mit gr&uuml;ner Farbe zu bemalen. Nimmt man verschiedene Gr&uuml;n- und Gelbt&ouml;ne, so ist das Ergebnis durchaus brauchbar:   
 ![Bemalte Grundplatte](./images/300_m14_painted.png "Bemalte Grundplatte")   
-_Bild 32: Bemalte Grundplatte_   
+_Bild 33: Bemalte Grundplatte_   
 
 Im n&auml;chsten Schritt k&ouml;nnte man Grasflocken und B&auml;ume aufbringen oder Geh&auml;use etc. hinzuf&uuml;gen. Das &Uuml;bermalen der gr&uuml;nen Farbe ist dabei kein Problem....   
 
