@@ -555,7 +555,7 @@ Im Segment 2:
    * I/O-Expander 0x20 - Pin 1 ` -->--rot-----> ` Block DCC 121/122, Pin 1 - IN   
    * I/O-Expander 0x20 - Pin 2 ` -->--orange--> ` Block DCC 121/122, Pin 2 - IN   
    * I/O-Expander 0x20 - Pin 3 ` -->--gelb----> ` Block DCC 121/122, Pin 3 - IN   
-   * I/O-Expander 0x20 - Pin 4 `-->--gr&uuml;n----> ` Block DCC 123, Pin 1 - IN   
+   * I/O-Expander 0x20 - Pin 4 ` -->--gruen---> ` Block DCC 123, Pin 1 - IN   
    * I/O-Expander 0x20 - Pin 5 ` -->--blau----> ` Block DCC 123, Pin 2 - IN   
    * I/O-Expander 0x20 - Pin 6 ` -->--violett-> ` Block DCC 124, Pin 1 - IN   
    -------   
@@ -563,7 +563,7 @@ Im Segment 2:
    * I/O-Expander 0x21 - Pin 1 ` <--rot-----<-- ` Block DCC 121/122, Pin 1 - OUT   
    * I/O-Expander 0x21 - Pin 2 ` <--orange--<-- ` Block DCC 121/122, Pin 2 - OUT   
    * I/O-Expander 0x21 - Pin 3 ` <--gelb----<-- ` Block DCC 121/122, Pin 3 - OUT   
-   * I/O-Expander 0x21 - Pin 4 ` <--gr&uuml;n----<-- ` Block DCC 123, Pin 1 - OUT   
+   * I/O-Expander 0x21 - Pin 4 ` <--gruen---<-- ` Block DCC 123, Pin 1 - OUT   
    * I/O-Expander 0x21 - Pin 5 ` <--blau----<-- ` Block DCC 123, Pin 2 - OUT   
    * I/O-Expander 0x21 - Pin 6 ` <--violett-<-- ` Block DCC 124, Pin 1 - OUT   
 
@@ -572,13 +572,13 @@ Im Segment 3:
    * I/O-Expander 0x22 - Pin 1 ` -->--rot-----> ` Block DCC 128, Pin 2 - IN   
    * I/O-Expander 0x22 - Pin 2 ` -->--orange--> ` Block DCC 127, Pin 1 - IN   
    * I/O-Expander 0x22 - Pin 3 ` -->--gelb----> ` Block DCC 126, Pin 1 - IN   
-   * I/O-Expander 0x22 - Pin 4 `-->--gr&uuml;n----> ` Block DCC 125, Pin 1 - IN   
+   * I/O-Expander 0x22 - Pin 4 ` -->--gruen---> ` Block DCC 125, Pin 1 - IN   
    -------   
    * I/O-Expander 0x23 - Pin 0 ` <--braun---<-- ` Block DCC 128, Pin 1 - OUT   
    * I/O-Expander 0x23 - Pin 1 ` <--rot-----<-- ` Block DCC 128, Pin 2 - OUT   
    * I/O-Expander 0x23 - Pin 2 ` <--orange--<-- ` Block DCC 127, Pin 1 - OUT   
    * I/O-Expander 0x23 - Pin 3 ` <--gelb----<-- ` Block DCC 126, Pin 1 - OUT   
-   * I/O-Expander 0x23 - Pin 4 ` <--gr&uuml;n----<-- ` Block DCC 125, Pin 1 - OUT   
+   * I/O-Expander 0x23 - Pin 4 ` <--gruen---<-- ` Block DCC 125, Pin 1 - OUT   
 
 ## 4.4 Modulverbindung
 Damit Module aneinandergereiht werden k&ouml;nnen m&uuml;ssen noch die 10 Schraubklemmen bei den 25-poligen Steckern miteinander verbunden werden.   

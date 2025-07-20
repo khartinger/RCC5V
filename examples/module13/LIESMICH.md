@@ -668,13 +668,13 @@ Die Verbindung der Datenleitungen erfolgt gem&auml;&szlig; Verdrahtungsplan:
 * I/O-Expander 0x20 - Pin 1 ` -->--rot-----> ` Block DCC 131/132, Pin 2 - IN   
 * I/O-Expander 0x20 - Pin 2 ` -->--orange--> ` Block DCC 131/132, Pin 3 - IN   
 * I/O-Expander 0x20 - Pin 4 ` -->--gelb----> ` Block DCC 133, Pin 1 - IN   
-* I/O-Expander 0x20 - Pin 5 `-->--gr&uuml;n----> ` Block DCC 134, Pin 1 - IN   
+* I/O-Expander 0x20 - Pin 5 ` -->--gruen---> ` Block DCC 134, Pin 1 - IN   
 -------   
 * I/O-Expander 0x21 - Pin 0 ` <--braun---<-- ` Block DCC 131/132, Pin 1 - OUT   
 * I/O-Expander 0x21 - Pin 1 ` <--rot-----<-- ` Block DCC 131/132, Pin 2 - OUT   
 * I/O-Expander 0x21 - Pin 2 ` <--orange--<-- ` Block DCC 131/132, Pin 3 - OUT   
 * I/O-Expander 0x21 - Pin 4 ` <--gelb----<-- ` Block DCC 133, Pin 1 - OUT   
-* I/O-Expander 0x21 - Pin 5 ` <--gr&uuml;n----<-- ` Block DCC 134, Pin 1 - OUT   
+* I/O-Expander 0x21 - Pin 5 ` <--gruen---<-- ` Block DCC 134, Pin 1 - OUT   
 
 Die folgenden Bilder zeigen die mit Female-Female Jumper Wires verbundenen Platinen ("Codierung"):   
 ![Verbindung_Datenleitungen](./images/300_m13_i2c_2x4pin.png "Verbindung_Datenleitungen")   
