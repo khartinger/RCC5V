@@ -420,38 +420,64 @@ _Bild 28: Rahmen mit Grundplatte und Gleisen._
 <a name="x41"></a>   
 
 # 4. Elektrische Verdrahtung der Eisenbahnkomponenten   
+## 4.1 Verdrahtungsplan
+Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwendeten Komponenten:   
+![&Uuml;bersicht M14](./images/600_m14_overview.png "&Uuml;bersicht M14")   
+_Bild 29: &Uuml;bersichtsplan Modul 14_   
 
-## 4.1 Verdrahtung der Stromversorgung und des Fahrstroms
+## Bedeutung der einzelnen Komponenten
+Die folgende Aufz&auml;hlung enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
+
+`SUB25_10 ....` [Modul-Verbinder mit Netzteil](/fab/rcc1_supply/LIESMICH.md#x30)      
+`uC_OLED .....` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
+
+-------   
+
+`W2 ..........` [Block zum Schalten einer (Zweiweg-)Weiche](/fab/rcc4_block/LIESMICH.md#x20)   
+
+-------   
+
+`10pol_PIN....` Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin [als &auml;ltere Version `CON_6pol-3 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 3 Pins](/fab/rcc5_add_ons/LIESMICH.md#x40) zum Beispiel f&uuml;r eine Zweiwegweiche _W2_ oder einen Entkuppler _1OUT_   
+
+-------   
+
+`i2c_20mm ....` [I²C-Halterung 20 mm](/fab/rcc3_i2c/LIESMICH.md#x20)   
+`PCF8574 .....` [I²C-PCF8574-I/O-Platinen](/fab/rcc3_i2c/LIESMICH.md)   
+`i2c_Term ....` [I²C-Halterung mit Abschluss-Widerst&auml;nden](/fab/rcc3_i2c/LIESMICH.md#x60)   
+
+<a name="x42"></a>   
+
+## 4.2 Verdrahtung der Stromversorgung und des Fahrstroms
 1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit dem Schaltblock mit einem 6-poligen, ca. 0,3 Meter langen Flachbandkabel und zwei montierten Pfostenverbindern.    
 2. Verbinden des Fahrstroms Ost (NN, SS) mit der Versorgungsplatine `RW_5V_2SUB25`   
 3. Verbinden der Fahrstr&ouml;me West (NN, SN, NS, SS) mit der Versorgungsplatine `RW_5V_2SUB25`   
 
-<a name="x42"></a>   
+<a name="x43"></a>   
 
-## 4.2 Vorbereitung Mikrocontroller
+## 4.3 Vorbereitung Mikrocontroller
 1. Verbinden des Anschlusses "DCC" der Versorgungsplatine `RW_5V_SUB25_10` mit dem Mikrocontroller &uuml;ber ein ca. 30 cm langes, 6-poliges Kabel.   
 2. Verbinden des Mikrocontrollers mit den I²C-PCF8574-I/O-Expanderplatinen mit 20 cm langen, 4-poligen Kabeln mit female-female-Steckern.   
 
-<a name="x43"></a>   
-
-## 4.3 Weichenausgang Schaltblock W2
-Der 6-polige Ausgang des Schaltblock W2 wird &uuml;ber ein 6-poliges Flachbandkabel mit der Platine `CON_6pol_3_V2` verbunden. Die Dr&auml;hte der Weiche werden mit den Schraubklemmen verbunden, wobei der R&uuml;ckleiter (schwarzer Draht) am mittleren Anschluss angeschraubt wird. Die braunen Dr&auml;hte werden beliebig angeschraubt und sp&auml;ter beim Test der Verdrahtung auf ihren richtigen Anschluss hin gepr&uuml;ft.   
-
 <a name="x44"></a>   
 
-## 4.4 Verdrahtung I²C-Bus
+## 4.4 Weichenausgang Schaltblock W2
+Der 6-polige Ausgang des Schaltblock W2 wird &uuml;ber ein 6-poliges Flachbandkabel mit der Platine `CON_6pol_3_V2` verbunden. Die Dr&auml;hte der Weiche werden mit den Schraubklemmen verbunden, wobei der R&uuml;ckleiter (schwarzer Draht) am mittleren Anschluss angeschraubt wird. Die braunen Dr&auml;hte werden beliebig angeschraubt und sp&auml;ter beim Test der Verdrahtung auf ihren richtigen Anschluss hin gepr&uuml;ft.   
+
+<a name="x45"></a>   
+
+## 4.5 Verdrahtung I²C-Bus
 Festlegung: Der Schaltblock W2 hat die DCC-Adresse 141.   
 1. Verbinden des 10-poligen Steckers des Schaltblocks W2 mit dem 10-poligen Stecker der Platine `CON_10pol_PIN`.   
 2. Verbinden der Stifte der `CON_10pol_PIN`-Platine und der I²C-PCF8574-I/O-Expanderplatinen mit 10 cm langen Leitungen female-female.    
-   * I/O-Expander 0x20 - Pin 0 <---> Block W2 (DCC 141), Pin 1 - IN   
-   * I/O-Expander 0x20 - Pin 1 <---> Block W2 (DCC 141), Pin 2 - IN   
+   * I/O-Expander 0x20 - Pin 0 ` -->--braun---> ` Block W2 (DCC 141), Pin 1 - IN   
+   * I/O-Expander 0x20 - Pin 1 ` -->--rot-----> ` Block W2 (DCC 141), Pin 2 - IN   
    -------   
-   * I/O-Expander 0x21 - Pin 0 <---> Block W2 (DCC 141), Pin 1 - OUT   
-   * I/O-Expander 0x21 - Pin 1 <---> Block W2 (DCC 141), Pin 2 - OUT   
+   * I/O-Expander 0x21 - Pin 0 ` <--braun---<-- ` Block W2 (DCC 141), Pin 1 - OUT   
+   * I/O-Expander 0x21 - Pin 1 ` <--rot-----<-- ` Block W2 (DCC 141), Pin 2 - OUT   
 
 Die fertige Verdrahtung zeigt das folgende Bild:   
 ![Verdrahtung 2](./images/300_m14_verdrahtung2.png "Verdrahtung 2")   
-_Bild 29: Verdrahtung mit angestecktem 25-poligen Versorgungskabel (gelb)_   
+_Bild 30: Verdrahtung mit angestecktem 25-poligen Versorgungskabel (gelb)_   
 
 ### Test der Verdrahtung   
 Mit der bisherigen Verdrahtung ist es bereits m&ouml;glich, einen h&auml;ndischen Betrieb durchzuf&uuml;hren. Dabei kann vor allem der richtige Anschluss der Weiche und die Funktion aller Stromzuf&uuml;hrungen (L&ouml;tstellen) getestet werden.   
@@ -551,9 +577,9 @@ Die Anzeige der Stellung der Weiche 141 ist abh&auml;ngig von der tats&auml;chli
 5. Im Kommandofenster am Laptop erscheint die Startmeldung des Moduls:   
 `rcc/start/mqtt {"topicbase":"rcc/module14"}`   
 
-<a name="x52"></a>   
+<a name="x62"></a>   
 
-## 5.2 Test mit MQTT
+## 6.2 Test mit MQTT
 Ein zweites Kommando-Fenster am Laptop &ouml;ffnen und folgendes eingeben:   
 `mosquitto_pub -h 10.1.1.1 -t rcc/module14/get -m ?`   
 Im ersten Kommando-Fenster werden die m&ouml;glichen Befehle angezeigt:   
@@ -576,9 +602,9 @@ Schalten der Weiche DCC 141 auf Gerade:
 Schalten der Weiche DCC 141 mit Namen T2 auf Abzweig (Bogen):   
 `mosquitto_pub -h 10.1.1.1 -t rcc/module14/set/T2 -m 0`   
 
-<a name="x53"></a>   
+<a name="x63"></a>   
 
-## 5.3 Test mit DCC
+## 6.3 Test mit DCC
 Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT durchgef&uuml;hrt werden.   
 ### Beispiel Roco Multi-Maus
 * Weichensteuerung w&auml;hlen (Taste Lok/Weiche) ![Taste_Lok_Weiche](./images/50_taste_lok_weiche.png)   
@@ -586,34 +612,34 @@ Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT dur
 * Mit den Pfeiltasten die Weiche schalten ![Pfeiltasten](./images/50_taste_pfeil.png)   
 
 [Zum Seitenanfang](#up)   
-<a name="x60"></a>   
-<a name="x61"></a>   
+<a name="x70"></a>   
+<a name="x71"></a>   
 
-# 6. Abschlie&szlig;ende Arbeiten   
-## 6.1 Weichenabdeckung   
+# 7. Abschlie&szlig;ende Arbeiten   
+## 7.1 Weichenabdeckung   
 F&uuml;r die Montage des Unterflur-Weichenantriebs wurde in [Kapitel 3.2](#x32) die Grundplatte ausgeschnitten. F&uuml;r die Landschaftsgestaltung muss dieser Ausschnitt jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Dies geschieht z.B. mit einer hohen, 3D-gedruckten Abdeckung.   
 ![3D Weichenabdeckung](./images/300_m14_weichenabdeckung.png "3D Weichenabdeckung")   
-_Bild 30: 3D-Druck-Abdeckungen der Weichenaussparungen_   
+_Bild 31: 3D-Druck-Abdeckungen der Weichenaussparungen_   
 
 Die St&auml;rke der Abdeckung betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Leim oder Gleisn&auml;geln (0,7 mm Durchmesser).   
 
-<a name="x62"></a>   
+<a name="x72"></a>   
 
-## 6.2 Bodenabdeckung   
+## 7.2 Bodenabdeckung   
 Um die Verkabelung zu sch&uuml;tzen, kann man auch Teile des Bodens mit durchsichtigen Folien (zB mit 1 mm St&auml;rke) abdecken.   
 
-<a name="x63"></a>   
+<a name="x73"></a>   
 
-## 6.3 Landschaftsgestaltung   
+## 7.3 Landschaftsgestaltung   
 Die einfachste "Landschaftsgestaltung" besteht darin, den Rand der Gleise einzuschottern und das Gel&auml;nde mit gr&uuml;ner Farbe zu bemalen. Nimmt man verschiedene Gr&uuml;n- und Gelbt&ouml;ne, so ist das Ergebnis durchaus brauchbar:   
 ![Bemalte Grundplatte](./images/300_m14_painted.png "Bemalte Grundplatte")   
-_Bild 31: Bemalte Grundplatte_   
+_Bild 32: Bemalte Grundplatte_   
 
 Im n&auml;chsten Schritt k&ouml;nnte man Grasflocken und B&auml;ume aufbringen oder Geh&auml;use etc. hinzuf&uuml;gen. Das &Uuml;bermalen der gr&uuml;nen Farbe ist dabei kein Problem....   
 
-<a name="x64"></a>   
+<a name="x74"></a>   
 
-## 6.4 Modell-Hintergrundbild   
+## 7.4 Modell-Hintergrundbild   
 Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sein.   
 
 [Zum Seitenanfang](#up)
