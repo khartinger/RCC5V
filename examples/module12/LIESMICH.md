@@ -371,8 +371,10 @@ Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet
 
 Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, m&uuml;ssen noch Aussparungen ausgeschnitten werden.   
 
-![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_turnout_cutout_right.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
+![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_W2_turnout_cutout.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
 _Bild 26: Ma&szlig;e der Aussparung f&uuml;r einen Weichen-Unterflurantrieb._   
+
+Bei einer rechten Weiche bilden sechs Punkte die Ecken der Aussparung mit den Koordinaten P1(11/6), P2(101/6), P3(101/25), P4(81/30), P5(31/30) und P6(11/25). F&uuml;r eine linke Weiche sind die Koordinaten gespiegelt. Der Koordinatenursprung befindet sich in der Mitte des Gleisrandes bei den Weichenzungen (siehe Bild oben).    
 
 ![Ma&szlig;e der Aussparung Unterflurantriebe W3](./images/300_W3_turnout_cutout.png "Ma&szlig;e der Aussparung Unterflurantriebe W3")   
 _Bild 27: Ma&szlig;e der Aussparung f&uuml;r die Unterflurantriebe einer Dreiwegweiche._   

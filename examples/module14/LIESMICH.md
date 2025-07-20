@@ -332,8 +332,10 @@ War die Stellprobe erfolgreich, folgen normalerweise &Uuml;berlegungen zu den ei
 Um den Bahndamm darzustellen, schr&auml;gt man die 5 mm Sperrkolzplatte an den Nord- und S&uuml;dkanten mit ungef&auml;hr 45° ab. Danach legt man sie auf den Rahmen mit eingesetzter Grundplatte, richtet sie aus (links und rechts nach den Gleisen) und klebt sie fest.   
 Da der Weichenantrieb als Unterflurantrieb verbaut werden soll, muss als noch die Aussparung gezeichnet und ausgeschnitten werden.   
 
-![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_turnout_cutout_right.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
-_Bild 23: Ma&szlig;e der Aussparung f&uuml;r einen Unterflurantrieb._   
+![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_W2_turnout_cutout.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
+_Bild 23: Ma&szlig;e der Aussparung f&uuml;r einen Weichen-Unterflurantrieb._   
+
+Bei einer rechten Weiche bilden sechs Punkte die Ecken der Aussparung mit den Koordinaten P1(11/6), P2(101/6), P3(101/25), P4(81/30), P5(31/30) und P6(11/25). F&uuml;r eine linke Weiche sind die Koordinaten gespiegelt. Der Koordinatenursprung befindet sich in der Mitte des Gleisrandes bei den Weichenzungen (siehe Bild oben).    
 
 <a name="x33"></a>   
 
