@@ -32,11 +32,13 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 * [2. Bau des Modul-Rahmens](#x20)   
 * [3. Aufbau des Gleisplans](#x30)   
 * [4. Elektrische Verdrahtung des Moduls](#x40)   
-* [5. Probebetrieb](#x50)   
-* [6. Abschlie&szlig;ende Arbeiten](#x60)   
+* [5. Steuerungssoftware](#x50)   
+* [6. Probebetrieb](#x60)   
+* [7. Abschlie&szlig;ende Arbeiten](#x70)   
 
 [Zum Seitenanfang](#up)   
 <a name="x10"></a>   
+<a name="x11"></a>   
 
 # 1. Vorbereitung und Einkauf
 ## 1.1 Entwurf des Gleisplans
@@ -74,6 +76,8 @@ _Bild 4: Gleisplan_
 Dunkelgraue Dreiecke stellen Gleisisolierungen dar (Isolierschuhe), braune und rote Kreise sind Fahrstromeinspeisungen.   
 Das 2. Gleis von links ist ein Gleis ohne Schotterbett mit der L&auml;nge 17,2 mm (22207). Die &uuml;brigen kurzen Gleise sind Gerade (9104) mit der L&auml;nge 27,75 mm. (Im Plan schlecht lesbar.)   
 Eine Besonderheit stellt das Gleis 9136 mit dem Kommentar "R4 9 Schwellen" dar: Hier wird ein Gleis 9136 zuerst links mit der Weiche verbunden und danach bei einem Winkel von 6,14° (= 9 Schwellen) "abgeschnitten".   
+
+<a name="x12"></a>   
 
 ## 1.2 Schienenkauf - St&uuml;ckliste
 Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:   
@@ -177,19 +181,33 @@ F&uuml;r die Ansteuerung der Schaltkomponenten werden folgende Schaltbl&ouml;cke
 * 1x [Block Entkuppler (1OUT)](/fab/rcc4_block/LIESMICH.md#x40)   
 * 4x [Block Abschaltbares Gleis (2IO)](/fab/rcc4_block/LIESMICH.md#x50)   
 
-Weiters werden 30 LED-Fassungen ben&ouml;tigt.   
+![M12_Schaltbl&ouml;cke](./images/300_m12_blocks.png "M12_Schaltbl&ouml;cke")   
+_Bild 7: Schaltbl&ouml;cke f&uuml;r das M12-Modul: W3, 2x W2, 1OUT und 4x 2IO (hinten)_   
+
+Weiters werden 3 + 2x2 + 3 + 4x5 = 30 LED-Fassungen ben&ouml;tigt.   
+
+![LED-Fassungen](./images/300_led_sockets.png "LED-Fassungen")   
+_Bild 8: LED-Fassungen_   
 
 ### 1.4.4 I²C-Expander
-* 4x [PCF8574 I/O-Expander](/fab/rcc0_start/LIESMICH.md#34)   
+* 4x [PCF8574 I/O-Expander (Adresse 0x20 bis 0x23)](/fab/rcc0_start/LIESMICH.md#34)   
+* 3x [Halterung 20 mm f&uuml;r I/O-Expander](/fab/rcc3_i2c/LIESMICH.md#20)   
+* 1x [Halterung mit Abschlusswiderst&auml;nden](/fab/rcc3_i2c/LIESMICH.md#60)   
 
-### 1.4.5 Verdrahtung
+![M12_I2C_IO](./images/300_m12_i2c_io.png "M12_I2C_IO")   
+_Bild 9: I²C-I/O-Expander f&uuml;r das M12-Modul_   
+
+### 1.4.5 Zusatzplatinen f&uuml;r die Verdrahtung
 Zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen:   
-* 1x [`CON_2pol_141` Fahrstromverteiler](/fab/rcc5_add_ons/LIESMICH.md#x60)   
-* 2x [`CON_1xIO` Fahrstromschalter einfach](/fab/rcc5_add_ons/LIESMICH.md#x70)   
-* 1x [`CON_2xIO` Fahrstromschalter doppelt](/fab/rcc5_add_ons/LIESMICH.md#x80)   
 * 8x [`CON_10pol_PIN` oder `CON_10pol_2x4` Umsetzer 10-poliges Kabel auf Stifte](/fab/rcc5_add_ons/LIESMICH.md#x30)   
+* 2x [`CON_1xIO` Fahrstromschalter einfach](/fab/rcc5_add_ons/LIESMICH.md#x70)   
 * 3x [`CON_6pol_3` 6-poliger Stecker auf drei Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x40)   
 * 2x [`CON_6pol_6` 6-poliger Stecker auf sechs Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x50)   
+* 1x [`CON_2xIO` Fahrstromschalter doppelt](/fab/rcc5_add_ons/LIESMICH.md#x80)   
+* 1x [`CON_2pol_141` Fahrstromverteiler](/fab/rcc5_add_ons/LIESMICH.md#x60)   
+
+![M12_ADD_ON](./images/300_m12_add_on.png "M12_ADD_ON")   
+_Bild 10: Add-on-Boards f&uuml;r das M12-Modul_   
 
 __Dr&auml;hte, Leitungen und Stecker__   
 * ca. 4 m Volldraht 22awg (0,32 mm²) rot   
@@ -207,6 +225,7 @@ __Dr&auml;hte, Leitungen und Stecker__
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
+<a name="x21"></a>   
 
 # 2. Bau des Modul-Rahmens   
 ## 2.1 Einleitung
@@ -217,15 +236,17 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 Das folgende Bild zeigt den Grundriss des Modulrahmens:   
 
 ![Modul-Rahmen](./images/300_module_frame.png "Modul-Rahmen")   
-_Bild 5: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1 bis Ri3)_
+_Bild 11: AnyRail-Darstellung des Rahmengrundrisses mit den Au&szlig;enteilen (Ra1 bis Ra4) und Querverstrebungen (Ri1 bis Ri3)_
 
 Die einzelnen Teile des Rahmens m&uuml;ssen vor dem Zusammenbau entspechend den nachfolgenden Beschreibungen bearbeitet werden.   
+
+<a name="x22"></a>   
 
 ## 2.2 Seitenteile Ra1, Ra3 (West, Ost)
 Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   
 
 ![Modul_OstWest_1_Mitte.png](./images/300_OstWest_1_Mitte.png "Modul_OstWest_1_Mitte")   
-_Bild 6: Ma&szlig;e f&uuml;r die Seitenteile Ost und West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
+_Bild 12: Ma&szlig;e f&uuml;r die Seitenteile Ost und West (Modulbreite 250mm, ein in der Mitte liegendes Gleis)._   
 
 * Ausgangsmaterial: Pappelsperrholzplatte 10 mm, 250 x 70 mm²   
 * Die vier 8mm-Bohrungen dienen zum Verbinden der Module mit 8 mm-Fl&uuml;gelschrauben und Fl&uuml;gelmuttern.   
@@ -235,11 +256,13 @@ _Bild 6: Ma&szlig;e f&uuml;r die Seitenteile Ost und West (Modulbreite 250mm, ei
 
 Mit besonderer Vorsicht ist die Ausnehmung f&uuml;r das Gleis zu fertigen. Mit einer Laubs&auml;ge wird die Ausnehmung etwas zu klein ausgeschnitten und mit einer Dreiecksfeile so lange erweitert, bis ein Fleischmann-Schotterbett-Gleis gerade (klemmend) hineinpasst und auch mittig positioniert ist.   
 
+<a name="x23"></a>   
+
 ## 2.3 Rahmenteil Ra2 (Nord)
 Der Rahmenteil „Nord“ enth&auml;lt lediglich dreimal zwei Bohrungen mit 2 mm Durchmesser, die wieder mit einem  Kegelsenker erweitert werden. Hier werden innen die Querverstrebungen verschraubt.   
 
 ![Modul_Nord_980mm](./images/300_Nord_980mm.png "Modul_Nord_980mm")   
-_Bild 7: Seitenteil Nord Ra2_   
+_Bild 13: Seitenteil Nord Ra2_   
 
 <a name="x24"></a>   
 
@@ -247,23 +270,23 @@ _Bild 7: Seitenteil Nord Ra2_
 Der Rahmenteil S&uuml;d ist am aufw&auml;ndigsten zu fertigen, da er das Display, einen Taster und die Bohrungen f&uuml;r alle Steuerbl&ouml;cke und f&uuml;r alle Querverstrebungen enth&auml;lt. Das folgende Bild gibt einen &Uuml;berblick &uuml;ber die erforderlichen Bohrungen.   
 
 ![Modul_S&uuml;d_980mm](./images/300_Sued_980mm.png "Modul_S&uuml;d_980mm")   
-_Bild 8: Ma&szlig;e f&uuml;r den Rahmenteil S&uuml;d (Ra4)_   
+_Bild 14: Ma&szlig;e f&uuml;r den Rahmenteil S&uuml;d (Ra4)_   
 
 __OLED-Anzeige__   
 Die Aussparungen f&uuml;r die OLED-Anzeige und den dazugeh&ouml;rigen Taster sind abh&auml;ngig davon, ob man die Bauteile einzeln montiert oder einen 3D-Druck-Rahmen verwendet. Bei getrennter Montage ben&ouml;tigt man eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 20 x 38 mm² und eine 11,6 mm-Bohrung.   
 ![OLED_Button_single](./images/300_OLED_Button_single.png "OLED_Button_single")   
-_Bild 9: Ma&szlig;e f&uuml;r die getrennte Montage der OLED-Anzeige und des Tasters_   
+_Bild 15: Ma&szlig;e f&uuml;r die getrennte Montage der OLED-Anzeige und des Tasters_   
 
 Bei Verwendung eines 3D-gedruckten Rahmens ben&ouml;tigt man eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm².   
 ![OLED_Button_frame](./images/300_OLED_Button_frame.png "OLED_Button_frame")   
-_Bild 10: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
+_Bild 16: Ma&szlig;e f&uuml;r den Rahmen der OLED-Anzeige mit Taster_   
 
 __Steuerbl&ouml;cke__   
 Je nach Art des Steuerelementes werden unterschiedliche Bohrungen ben&ouml;tigt. So zeigt das Symbol der Dreiwegweiche W3 nach rechts (6 Bohrungen), das der ersten Zweiwegweiche W2 nach links unten (4 Bohrungen) und das des Entkupplers 1OUT nach rechts (4 Bohrungen). Es folgen die drei Schaltsymbole f&uuml;r die Fahrstromabschaltung 2IO (7 Bohrungen) und das Schaltbild der zweiten Zweiwegweiche W2 nach rechts oben (4 Bohrungen).   
 Die genaue Lage aller Bohrungen f&uuml;r einen Schaltblock zeigt das folgende Bild, wobei je nach Schaltblock-Typ nur die entsprechenden Bohrungen ben&ouml;tigt werden (!):   
 
 ![Bohrposition LEDs und Taster](./images/300_drill_position_LED_button.png "Bohrposition LEDs und Taster")   
-_Bild 11: Ma&szlig;e f&uuml;r die LED- und Taster-Bohrungen_   
+_Bild 17: Ma&szlig;e f&uuml;r die LED- und Taster-Bohrungen_   
 
 Der Bohrdurchmesser f&uuml;r die LED-Fassungen betr&auml;gt 5,6 mm, der f&uuml;r die Taster ca. 7 mm.   
 
@@ -272,7 +295,7 @@ Das einzelne Anzeichnen der Positionen der Bohrungen ben&ouml;tigt viel Zeit und
 Das folgende Bild zeigt die 40 x 42 mm gro&szlig;en Abdeckungen.   
  
 ![Beschriftung Bedienungselemente](./images/300_M12_cover.png "Beschriftung Bedienungselemente")   
-_Bild 12: Beschriftung der Bedienungselemente f&uuml;r Modul 12_   
+_Bild 18: Beschriftung der Bedienungselemente f&uuml;r Modul 12_   
 
 __LED-Fassungen__   
 Nach dem Bohren sind die Bohrungen zu reinigen und die LED-Fassungen einzupressen.   
@@ -282,43 +305,50 @@ Als N&auml;chstes kann man die Halterungen f&uuml;r die Steuerbl&ouml;cke mit 2,
 
 Die Position der Schrauben f&uuml;r die Steuerblock-Halterungen auf der Innenseite des Rahmens ist folgenderma&szlig;en festgelegt:   
 ![Schraubposition f&uuml;r Blockhalter](./images/300_blockholder_mountingholes.png "Schraubposition f&uuml;r Blockhalter")   
-_Bild 13: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
+_Bild 19: Position der Schrauben f&uuml;r die Steuerblock-Halterungen_   
 
 Den fertigen Rahmenteil S&uuml;d (ohne Fahrstromabschaltung Gleis 1A) zeigen die folgenden Bilder   
 ![Rahmenteil S&uuml;d Forderseite](./images/300_Frame_South_front.png "Rahmenteil S&uuml;d Forderseite")   
-_Bild 14: Rahmenteil S&uuml;d Forderseite_   
+_Bild 20: Rahmenteil S&uuml;d Forderseite_   
 
 ![Rahmenteil S&uuml;d R&uuml;ckseite](./images/300_Frame_South_back.png "Rahmenteil S&uuml;d R&uuml;ckseite")   
-_Bild 15: Rahmenteil S&uuml;d R&uuml;ckseite_   
+_Bild 21: Rahmenteil S&uuml;d R&uuml;ckseite_   
+
+<a name="x25"></a>   
 
 ## 2.5 Querverstrebung Ri1 bis Ri3
 Die Querverstrebungen enthalten verschiedene Durchbr&uuml;che f&uuml;r Kabel und zwei Bohrungen f&uuml;r die Halterung der 25-poligen Sub-D-Stecker.   
 
 ![Verstrebung](./images/300_Verstrebung_230mm.png "Verstrebung")   
-_Bild 16: Querverstrebungen Ri1 bis Ri3_
+_Bild 22: Querverstrebungen Ri1 bis Ri3_
+
+<a name="x26"></a>   
 
 ## 2.6 Halterung f&uuml;r Sub-D-Stecker
 Die Halterung f&uuml;r einen SUB-D-Stecker besteht aus zwei U-f&ouml;rmigen Teilen, die links und rechts an einer Querstrebe angeschraubt werden. Die Teile k&ouml;nnen sowohl aus Holz als auch mit 3D-Druck hergestellt werden. F&uuml;r den Modul M12 werden zwei Halterungen ben&ouml;tigt.   
 
 ![Sub-D-Halterung](./images/300_bracket_sub-d.png "Sub-D-Halterung")   
-_Bild 17: Ma&szlig;e der Halterung_   
+_Bild 23: Ma&szlig;e der Halterung_   
 
 In jeden U-f&ouml;rmigen Teil werden von unten zwei Kreuzschlitz-Senkkopf-Schrauben M 2,6 x 16 mm eingeschraubt und durch eine 2,5 mm Sechskantmutter gesichert. Die Schrauben dienen zum Festschrauben der Versorgungsplatine.   
 Die beiden U-f&ouml;rmigen Halterungen werden mit M3 x 35 mm Schrauben und 3mm Sechskantmutter gegeneinander an einer Querstrebe verschraubt.   
 
 ![Teile der Sub-D-Halterung](./images/300_bracket_parts.png "Teile der Sub-D-Halterung")   
-_Bild 18: Teile der Sub-D-Halterung_   
+_Bild 24: Teile der Sub-D-Halterung_   
+
+<a name="x27"></a>   
 
 ## 2.7 Zusammenbau des Rahmens
 Nachdem alle Teile des Rahmens bearbeitet wurden, kann dieser zusammengeschraubt werden.   
 
 ![Rahmen Ansicht von unten](./images/300_M12_frame_bottom_view.png "Rahmen Ansicht von unten")   
-_Bild 19: Zusammengeschraubter Rahmen, Ansicht von unten_   
+_Bild 25: Zusammengeschraubter Rahmen, Ansicht von unten_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
+<a name="x31"></a>   
 
-# 3. Aufbau des Gleisplans   
+# 3. Aufbau der Gleise   
 
 ## 3.1 Stellprobe   
 Der Probeaufbau erfolgt auf der 5 mm (bzw. 4 mm) Sperrholzplatte. Dazu wird der Gleisplan im Ma&szlig;stab 1:1 auf diese gezeichnet. Das kann entweder durch Ausdruck des Gleisplans im Ma&szlig;stab 1:1 und &uuml;bertragen auf das Sperrholz erfolgen (zB mit Kohlepapier), oder durch &Uuml;bertragen der Koordinaten auf das Sperrholz und Zeichnen des Gleisplans.   
@@ -326,6 +356,8 @@ Entsprechend dem Gleisplanentwurf m&uuml;ssen die Trennstellen in jeweils beiden
 Danach werden die Gleise entsprechend dem Gleisbild zusammengesteckt.   
 Beim Probeaufbau sollten auch alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufgestellt werden, damit man wei&szlig;, wie der Bahnk&ouml;rper (die 5 mm bzw. 4 mm Platte) zugeschnitten werden muss.   
 Schlie&szlig;lich wird mit dem l&auml;ngsten Waggon h&auml;ndisch eine Probefahrt durchgef&uuml;hrt und kontrolliert, ob alle Radien, &Uuml;berg&auml;nge etc. passen und keine Geb&auml;ude im Wege stehen.   
+
+<a name="x32"></a>   
 
 ## 3.2 Zuschneiden und Aufkleben des Bahndamms auf die Grundplatte   
 War die Stellprobe erfolgreich, folgen &Uuml;berlegungen zu den einzelnen Gel&auml;ndeh&ouml;hen.   
@@ -340,12 +372,19 @@ Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet
 Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, m&uuml;ssen noch Aussparungen ausgeschnitten werden.   
 
 ![Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb](./images/300_turnout_cutout_right.png "Ma&szlig;e der Aussparung f&uuml;r Unterflurantrieb")   
-_Bild 20: Ma&szlig;e der Aussparung f&uuml;r einen Unterflurantrieb._   
+_Bild 26: Ma&szlig;e der Aussparung f&uuml;r einen Weichen-Unterflurantrieb._   
+
+![Ma&szlig;e der Aussparung Unterflurantriebe W3](./images/300_W3_turnout_cutout.png "Ma&szlig;e der Aussparung Unterflurantriebe W3")   
+_Bild 27: Ma&szlig;e der Aussparung f&uuml;r die Unterflurantriebe einer Dreiwegweiche._   
+
+Die Ecken der Aussparungen bilden sechs Punkte mit den Koordinaten P1(12/5), P2(100/16), P3(97,5/36), P4(73/37), P5(33/32) und P6(9,5/25). F&uuml;r den zweiten Antrieb der Dreiwegweiche sind die Koordinaten gespiegelt. Der Koordinatenursprung befindet sich in der Mitte des Gleisrandes bei den Weichenzungen (siehe Bild oben).    
 
 Die folgenden beiden Bilder zeigen die verschiedenen Ebenen des Gel&auml;ndes und die Aussparungen f&uuml;r die Weichen. Links vorne und rechts hinten ist das Niveau E0, in der Mitte und hinten (im Bild oben) ist 8 mm hohes Sperrholz (E8).   
 ![Bahndamm2](./images/300_Bahndamm2.png "Bahndamm2")   
 ![Bahndamm](./images/300_Bahndamm.png "Bahndamm")   
-_Bild 21: Verschiedene Modul-Ebenen_
+_Bild 28: Verschiedene Modul-Ebenen_
+
+<a name="x33"></a>   
 
 ## 3.3 Bettungsk&ouml;rper (Schotterbett)
 Im n&auml;chsten Schritt wird das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) aufgeklebt. Dies erfolgt nicht nur an Stellen, wo sp&auml;ter ein Gleis verl&auml;uft, sondern auch an Stellen, die das gleiche Niveau haben sollen, zB zwischen den Gleisen oder dort, wo sp&auml;ter der Antrieb f&uuml;r den Entkuppler hinkommt.   
@@ -353,13 +392,15 @@ Danach bohrt man mit einem 4 mm Bohrer die L&ouml;cher f&uuml;r die Fahrstromzuf
 Das folgende Bild zeigt den Modul mit Schaumstoff-Bett, Ausnehmungen f&uuml;r die Weichenantriebe und die Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung.   
 
 ![Schotterbett](./images/300_Schotterbett1.png "Schotterbett")   
-_Bild 22: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
+_Bild 29: Grundplatte mit Bahndamm, Gleisbett (schwarz), Bohrungen f&uuml;r Fahrstrom und Weichenausschnitten_   
+
+<a name="x34"></a>   
 
 ## 3.4 Vorbereitung der Verdrahtung
 ### Montage der Schaltbl&ouml;cke   
 Bevor die Schienen verlegt werden, sollte die Verdrahtung vorbereitet werden (damit die Gleise nicht besch&auml;digt werden). F&uuml;r ein leichteres Arbeiten entfernt man zuerst die Grundplatte vom Rahmen und montiert die Schaltbl&ouml;cke. Dazu steckt man einen Schaltblock in die Schaltblock-Halterung und schraubt ihn mit vier M2 x 20 mm Schrauben fest (Schrauben nicht zu fest anziehen!).    
 ![Schaltblockmontage](./images/300_Schaltblockmontage.png "Schaltblockmontage")   
-_Bild 23: Anschrauben der Schaltbl&ouml;cke_   
+_Bild 30: Anschrauben der Schaltbl&ouml;cke_   
 
 Weiters montiert man auf die erste und dritte Querstrebe die Halterung f&uuml;r die Sub-D-Stecker. Sollte dabei eine Fahrstromzuf&uuml;hrung genau unter einer Halterung liegen, so muss man die Stromzuf&uuml;hrung nochmals bohren....   
 
@@ -380,7 +421,7 @@ F&uuml;r die Platzierung der Klemmen gilt allgemein:
 Das folgende Bild zeigt die montierten Klemmen.   
 
 ![M12_Verdrahtung_1](./images/300_M12_Verdrahtung1.png "M12_Verdrahtung_1")   
-_Bild 24: Schraubklemmen f&uuml;r die Verdrahtung_   
+_Bild 31: Schraubklemmen f&uuml;r die Verdrahtung_   
 
 #### Montage der Schraubklemmen etc. im Detail    
 1. Beschriften der Bohrungen f&uuml;r die Fahrstromzuf&uuml;hrung:   
@@ -395,14 +436,16 @@ _Bild 24: Schraubklemmen f&uuml;r die Verdrahtung_
 6. Im Segment 2 und 3 sind je zwei PCF 8574-I/O-Prints montiert (einer f&uuml;r die Ausgangs- und einer f&uuml;r die Eingangssignale).   
 7. Der Anschluss der Weichen und des Entkupplers erfolgt an Prints 3x `CON_6pol_3_V1` bzw. 1x `CON_6pol_6_V1` (f&uuml;r Dreiwegweiche).   
 
+<a name="x35"></a>   
+
 ## 3.5 Gleisbau
 ### Anbringen der Stromversorgung am Gleis   
 Zur Stromversorgung kann man Fleischmann 22217 Anschlu&szlig;kabel 2pol. Spur N verwenden oder man l&ouml;tet selbst Dr&auml;hte an die Gleisverbinder. Dies geht f&uuml;r Fleischmann-Schotterbett-Gleise sehr gut, w&auml;hrend die Verbinder von Gleisen ohne Schotterbett praktisch nicht l&ouml;tbar sind.   
 Als Anschlussdraht verwendet man einen ca. 30 cm langen braunen Volldraht mit 0,32 mm² (22awg) f&uuml;r die n&ouml;rdliche Schiene und einen roten Draht f&uuml;r die s&uuml;dliche Schiene. Der Draht wird beidseitig ca. 6 mm abisoliert und f&uuml;r den Gleisverbinder-Anschluss hakenf&ouml;rmig gebogen, mit einer kleinen Zange etwas flachgedr&uuml;ckt und verzinnt.   
 Dazu fixiert man am besten das Gleis mit einem Klebestreifen, schneidet mit einem Stanley-Messer die kleine Verbindung &uuml;ber dem Gleisverbinder heraus (damit man leichter l&ouml;ten kann ;) ), und verzinnt den Gleisverbinder. Im Bild unten sieht man rechts unten die kleine Plastikverbindung &uuml;ber dem Gleisverbinder, der rechts oben entfernt ist.   
 
-![Loeten_Gleisanschluss1](./images/300_Loeten_Gleisanschluss1.png "Loeten_Gleisanschluss1")   
-_Bild 25: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
+![Loeten_Gleisanschluss1](./images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")   
+_Bild 32: Vorbereitung des Anl&ouml;tens einer Stromzuf&uuml;hrung._   
 
 ### Gleise aufkleben   
 #### Vorbereitung der Weichen   
@@ -426,17 +469,53 @@ Da die beiden Ausgleichsgleise am linken und rechten Rand im Betrieb mechanisch 
 
 Das Modul mit eingesetzter Grundplatte und Gleisen sieht folgenderma&szlig;en aus:   
 ![Montiertes Gleis](./images/300_Gleis_montiert1.png "Montiertes Gleis")   
-_Bild 26: Rahmen mit Grundplatte und Gleisen._   
+_Bild 33: Rahmen mit Grundplatte und Gleisen._   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
+<a name="x41"></a>   
 
 # 4. Elektrische Verdrahtung des Moduls   
+## 4.1 Verdrahrungsplan
+Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwendeten Komponenten:   
+![&Uuml;bersicht M12](./images/600_m12_overview.png "&Uuml;bersicht M12")   
+_Bild 34: &Uuml;bersichtsplan Modul 12_   
 
-## 4.1 Verdrahtung der Stromversorgung und des Fahrstroms
+## Bedeutung der einzelnen Komponenten
+Die folgende Aufz&auml;hlung enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
+
+`SUB25_10 ....` [Modul-Verbinder mit Netzteil](/fab/rcc1_supply/LIESMICH.md#x30)      
+`uC_OLED .....` [Block OLED-Fassung mit I²C- und DCC-Shield sowie ESP32](/fab/rcc2_esp32/LIESMICH.md#x15)   
+
+-------   
+
+`1OUT ........` [Block zur Ausgabe der Wechselspannung](/fab/rcc4_block/LIESMICH.md#x40) zB f&uuml;r Entkuppler   
+`2IO..........` [Block zum Schalten eines abschaltbaren Gleises](/fab/rcc4_block/LIESMICH.md#x50)   
+`W2 ..........` [Block zum Schalten einer (Zweiweg-)Weiche](/fab/rcc4_block/LIESMICH.md#x20)   
+`W3 ..........` [Block zum Schalten einer Dreiwegweiche](/fab/rcc4_block/LIESMICH.md#x30)   
+
+-------   
+
+`10pol_PIN....` Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin [als &auml;ltere Version `CON_10pol_PIN`](/fab/rcc5_add_ons/LIESMICH.md#x90) bzw. [als neuere Version `CON_10pol_2x4`](/fab/rcc5_add_ons/LIESMICH.md#x80)   
+`CON_6pol-3 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 3 Pins](/fab/rcc5_add_ons/LIESMICH.md#x40) zum Beispiel f&uuml;r eine Zweiwegweiche _W2_ oder einen Entkuppler _1OUT_   
+`CON_6pol-6 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 6 Pins](/fab/rcc5_add_ons/LIESMICH.md#x50) zum Beispiel f&uuml;r eine Dreiwegweiche _W3_    
+`CON_1xIO ....` [Umsetzer vom 6-poligen Flachbandkabel auf Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x60) zum einfachen Anschluss des Fahrstromschalters _2IO_.   
+`CON_2xIO ....` [Zweifach-Umsetzer vom 6-poligen Flachbandkabel auf Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x70) zum einfachen Anschluss zweier Fahrstromschalter _2IO_.   
+
+-------   
+
+`i2c_20mm ....` [I²C-Halterung 20 mm](/fab/rcc3_i2c/LIESMICH.md#x20)   
+`PCF8574 .....` [I²C-PCF8574-I/O-Platinen](/fab/rcc3_i2c/LIESMICH.md)   
+`i2c_Term ....` [I²C-Halterung mit Abschluss-Widerst&auml;nden](/fab/rcc3_i2c/LIESMICH.md#x60)   
+
+Da Entkuppler beim Schalten St&ouml;rspannungen erzeugen, werden direkt beim Entkuppleranschluss (CON_6pol-3) und am Ende des 6-poligen Stromversorgungskabels (an den Wechselstromklemmen Pin 4 und Pin 6) 100nF-Kondensatoren angebracht.   
+
+<a name="x42"></a>   
+
+## 4.2 Verdrahtung der Stromversorgung und des Fahrstroms
 1. Verbinden des Anschlusses "POWER" der Versorgungsplatine `RW_5V_SUB25_10` mit den acht Schaltbl&ouml;cken mit einem 6-poligen, ca. einen Meter langen Flachbandkabel und 10 montierten Pfostenverbindern. Der erste Pfostenverbinder dient zum Anschluss an die Versorgungsplatine, der Pfostenverbinder am Ende der Leitung dient einem eventuell erforderlichem Verl&auml;ngern des Flachbandkabels bzw. zum Anschluss von 100 nF-Kondensatoren zwischen V+ und V- sowie 5V und 0V. (Der Stecker ist im _Bild 24_ rechts oben noch nicht angebracht...)   
 ![Abschlusskondensatoren](./images/300_powerline_2xC.png "Abschlusskondensatoren")   
-_Bild 27: Abschlusskondensatoren am Ende des POWER-Kabels_   
+_Bild 35: Abschlusskondensatoren am Ende des POWER-Kabels_   
 
 2. Verbinden aller Fahrstromanschl&uuml;sse mit den entsprechenden Klemmen.   
 3. Verbinden des Fahrstroms (NN, SS) von der Versorgungsplatine `RW_5V_SUB25_10` zu den Platinen `CON_2pol_141`, `CON_1xIO`, `CON_2xIO` sowie den L&uuml;sterklemmen GW (Gleis West) und GO (Gleis Ost).   
@@ -445,12 +524,12 @@ _Bild 27: Abschlusskondensatoren am Ende des POWER-Kabels_
 6. Verbinden der Anschl&uuml;sse des Entkupplers mit der Platine `CON_6pol_3`.   
 _Wichtig_: Da der Entkuppler St&ouml;rspannungen erzeugt, muss ein 100 nF-Kondensator parallel zu den Klemmen V+ und V- geschaltet werden.   
 ![Entst&ouml;rkondensator](./images/300_uncoupler_C.png "Entst&ouml;rkondensator")   
-_Bild 28: Entst&ouml;rkondensator am Entkuppler_   
+_Bild 36: Entst&ouml;rkondensator am Entkuppler_   
 
 Die Verdrahtung der Stromversorgung im &Uuml;berblick:   
 
 ![Verdrahtung 1](./images/300_Verdrahtung1.png "Verdrahtung 1")   
-_Bild 29: Verdrahtung Stromversorgung_   
+_Bild 37: Verdrahtung Stromversorgung_   
 
 ### Erster Test der Verdrahtung   
 Mit der bisherigen Verdrahtung ist es bereits m&ouml;glich, einen h&auml;ndischen Betrieb durchzuf&uuml;hren. Dabei kann vor allem der richtige Anschluss der Weichen und die Funktion aller Stromzuf&uuml;hrungen (L&ouml;tstellen) getestet werden.   
@@ -461,67 +540,202 @@ Mit der bisherigen Verdrahtung ist es bereits m&ouml;glich, einen h&auml;ndische
 4. Stimmen alle LED-Anzeigen mit der entsprechenden Hardware &uuml;berein?   
 5. Fahrstrom Gleis 1, 2, 3 und 1A mit den gr&uuml;nen Tastern einschalten, Probefahrt mit einer Lokomotive &uuml;ber alle Gleise.   
 
-## 4.2 Vorbereitung Mikrocontroller
+## 4.3 Vorbereitung Mikrocontroller
 1. Verbinden des Anschlusses "DCC" der Versorgungsplatine `RW_5V_SUB25_10` mit dem Mikrocontroller &uuml;ber ein ca. 30 cm langes, 6-poliges Kabel.   
 2. Verbinden des Mikrocontrollers mit den I²C-PCF8574-I/O-Expanderplatinen mit 20 cm langen, 4-poligen Kabeln mit male-female-Steckern.   
 3. Programmierung des Mikrocontrollers mit der Software `rcc_module12_V1`.   
 
-## 4.3 Verdrahtung I²C-Bus
+## 4.4 Verdrahtung I²C-Bus
 1. Verbinden der acht 10-poligen Stecker der Schaltbl&ouml;cke mit den 10-poligen Steckern der Platinen `CON_10pol_PIN`.   
 
 2. Herstellung der Verbindungen zwischen den Stiftleisten der `CON_10pol_PIN`-Platinen und den I²C-PCF8574-I/O-Expanderplatinen mit 10 cm langen Leitungen female-female.    
 
 Im Segment 2:   
-   * I/O-Expander 0x20 - Pin 0 <---> Block DCC 129, Pin 1 - IN   
-   * I/O-Expander 0x20 - Pin 1 <---> Block DCC 121/122, Pin 1 - IN   
-   * I/O-Expander 0x20 - Pin 2 <---> Block DCC 121/122, Pin 2 - IN   
-   * I/O-Expander 0x20 - Pin 3 <---> Block DCC 121/122, Pin 3 - IN   
-   * I/O-Expander 0x20 - Pin 4 <---> Block DCC 123, Pin 1 - IN   
-   * I/O-Expander 0x20 - Pin 5 <---> Block DCC 123, Pin 2 - IN   
-   * I/O-Expander 0x20 - Pin 6 <---> Block DCC 124, Pin 1 - IN   
+   * I/O-Expander 0x20 - Pin 0 ` -->--braun---> ` Block DCC 129, Pin 1 - IN   
+   * I/O-Expander 0x20 - Pin 1 ` -->--rot-----> ` Block DCC 121/122, Pin 1 - IN   
+   * I/O-Expander 0x20 - Pin 2 ` -->--orange--> ` Block DCC 121/122, Pin 2 - IN   
+   * I/O-Expander 0x20 - Pin 3 ` -->--gelb----> ` Block DCC 121/122, Pin 3 - IN   
+   * I/O-Expander 0x20 - Pin 4 `-->--gr&uuml;n----> ` Block DCC 123, Pin 1 - IN   
+   * I/O-Expander 0x20 - Pin 5 ` -->--blau----> ` Block DCC 123, Pin 2 - IN   
+   * I/O-Expander 0x20 - Pin 6 ` -->--violett-> ` Block DCC 124, Pin 1 - IN   
    -------   
-   * I/O-Expander 0x21 - Pin 0 <---> Block DCC 129, Pin 1 - OUT   
-   * I/O-Expander 0x21 - Pin 1 <---> Block DCC 121/122, Pin 1 - OUT   
-   * I/O-Expander 0x21 - Pin 2 <---> Block DCC 121/122, Pin 2 - OUT   
-   * I/O-Expander 0x21 - Pin 3 <---> Block DCC 121/122, Pin 3 - OUT   
-   * I/O-Expander 0x21 - Pin 4 <---> Block DCC 123, Pin 1 - OUT   
-   * I/O-Expander 0x21 - Pin 5 <---> Block DCC 123, Pin 2 - OUT   
-   * I/O-Expander 0x21 - Pin 6 <---> Block DCC 124, Pin 1 - OUT   
+   * I/O-Expander 0x21 - Pin 0 ` <--braun---<-- ` Block DCC 129, Pin 1 - OUT   
+   * I/O-Expander 0x21 - Pin 1 ` <--rot-----<-- ` Block DCC 121/122, Pin 1 - OUT   
+   * I/O-Expander 0x21 - Pin 2 ` <--orange--<-- ` Block DCC 121/122, Pin 2 - OUT   
+   * I/O-Expander 0x21 - Pin 3 ` <--gelb----<-- ` Block DCC 121/122, Pin 3 - OUT   
+   * I/O-Expander 0x21 - Pin 4 ` <--gr&uuml;n----<-- ` Block DCC 123, Pin 1 - OUT   
+   * I/O-Expander 0x21 - Pin 5 ` <--blau----<-- ` Block DCC 123, Pin 2 - OUT   
+   * I/O-Expander 0x21 - Pin 6 ` <--violett-<-- ` Block DCC 124, Pin 1 - OUT   
 
 Im Segment 3:   
-   * I/O-Expander 0x22 - Pin 0 <---> Block DCC 128, Pin 1 - IN   
-   * I/O-Expander 0x22 - Pin 1 <---> Block DCC 128, Pin 2 - IN   
-   * I/O-Expander 0x22 - Pin 2 <---> Block DCC 127, Pin 1 - IN   
-   * I/O-Expander 0x22 - Pin 3 <---> Block DCC 126, Pin 1 - IN   
-   * I/O-Expander 0x22 - Pin 4 <---> Block DCC 125, Pin 1 - IN   
+   * I/O-Expander 0x22 - Pin 0 ` -->--braun---> ` Block DCC 128, Pin 1 - IN   
+   * I/O-Expander 0x22 - Pin 1 ` -->--rot-----> ` Block DCC 128, Pin 2 - IN   
+   * I/O-Expander 0x22 - Pin 2 ` -->--orange--> ` Block DCC 127, Pin 1 - IN   
+   * I/O-Expander 0x22 - Pin 3 ` -->--gelb----> ` Block DCC 126, Pin 1 - IN   
+   * I/O-Expander 0x22 - Pin 4 `-->--gr&uuml;n----> ` Block DCC 125, Pin 1 - IN   
    -------   
-   * I/O-Expander 0x23 - Pin 0 <---> Block DCC 128, Pin 1 - OUT   
-   * I/O-Expander 0x23 - Pin 1 <---> Block DCC 128, Pin 2 - OUT   
-   * I/O-Expander 0x23 - Pin 2 <---> Block DCC 127, Pin 1 - OUT   
-   * I/O-Expander 0x23 - Pin 3 <---> Block DCC 126, Pin 1 - OUT   
-   * I/O-Expander 0x23 - Pin 4 <---> Block DCC 125, Pin 1 - OUT   
+   * I/O-Expander 0x23 - Pin 0 ` <--braun---<-- ` Block DCC 128, Pin 1 - OUT   
+   * I/O-Expander 0x23 - Pin 1 ` <--rot-----<-- ` Block DCC 128, Pin 2 - OUT   
+   * I/O-Expander 0x23 - Pin 2 ` <--orange--<-- ` Block DCC 127, Pin 1 - OUT   
+   * I/O-Expander 0x23 - Pin 3 ` <--gelb----<-- ` Block DCC 126, Pin 1 - OUT   
+   * I/O-Expander 0x23 - Pin 4 ` <--gr&uuml;n----<-- ` Block DCC 125, Pin 1 - OUT   
 
 ## 4.4 Modulverbindung
 Damit Module aneinandergereiht werden k&ouml;nnen m&uuml;ssen noch die 10 Schraubklemmen bei den 25-poligen Steckern miteinander verbunden werden.   
 Nach NEM908D erfolgt dies so, dass die Leitungen elektrisch ausgekreuzt, aber physikalisch gerade durchverbunden werden. Das bedeutet, dass sich zB der Fahrstrom des Gleises NN auf dem West-Stecker auf dem Pin 1 und auf dem Ost-Stecker auf dem Pin 13 befindet!   
 ![Wiring_NEM908D](/images/300_Wiring_NEM908D.png "Wiring_NEM908D")   
-_Bild 30: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
+_Bild 38: 25polige Sub-D Stecker auf dem Modul mit Pin-Belegung_   
 
 [Siehe auch `/info/con_NEM908/LIESMICH.md`](/info/con_NEM908/LIESMICH.md)   
 
 F&uuml;r die Verbindung der Pins kann zB 10-poliges Kabel verwendet werden.   
 
 ![Stecker West](./images/300_con10_west.png "Stecker West")   
-_Bild 31: Verdrahtung Stecker West_   
+_Bild 39: Verdrahtung Stecker West_   
 
 ![Stecker Ost](./images/300_con10_east.png "Stecker Ost")   
-_Bild 32: Verdrahtung Stecker Ost_   
+_Bild 40: Verdrahtung Stecker Ost_   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
+<a name="x51"></a>   
 
-# 5. Probebetrieb
-## 5.1 Modul-Start
+# 5. Steuerungssoftware   
+## 5.1 Anpassung des Demoprogramms f&uuml;r Modul 12
+1. Erstellen eines neuen Verzeichnisses mit dem Namen `rcc_module12_V1`.   
+2. Kopieren der Dateien aus dem Verzeichnis `rcc_demo1` in das neue Verzeichnis `rcc_module12_V1`.   
+3. L&ouml;schen der *.md-Dateien im Verzeichnis `rcc_module12_V1`.   
+4. Umbenennen der Dateien `rcc_demo1.cpp` und `rcc_demo1_text.h` in `rcc_module12_V1.cpp` und `rcc_module12_text.h` im Verzeichnis `rcc_module12_V1/src`.   
+5. Starten von Visual Studio Code und &Ouml;ffnen des Ordners (Verzeichnisses) `software/rcc_module12_V1`.   
+6. Umbenennen von `rcc_demo1` in `rcc_module12` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+7. Datei `rcc_module12_V1.cpp` im Editorfenster &ouml;ffnen.   
+8. Umbenennen von `DEBUG_99` in `DEBUG_12` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+9. Umbenennen von `VERSION_99` in `VERSION_12` __*in allen Dateien*__ (Men&uuml;punkt Bearbeiten - In Dateien ersetzen).   
+10. Anpassen des Starttextes in der Datei `rcc_module12_text.h`:   
+```  
+#define  INFOLINES_NUM     20
+  #define  INFOLINES { \
+   "Modul 12:            ", \
+   "Ausweichstelle und   ", \
+   "Abstellgleis         ", \
+   VERSION_99_1, \
+   " Weiter: Taste IO19  ", \
+   \
+   "DCC-Adressen      1/3", \
+   "121 3-Wegweiche Links", \
+   "122 3-Wegweiche Recht", \
+   "123 Weiche Gleis 1A  ", \
+   " Weiter: Taste IO19  ", \
+   \
+   "DCC-Adressen      2/3", \
+   "124 Entkuppler Gleis3", \
+   "125 Fahrstrom Gleis 1", \
+   "126 Fahrstrom Gleis 2", \
+   " Weiter: Taste IO19  ", \
+   \
+   "DCC-Adressen      3/3", \
+   "127 Fahrstrom Gleis 3", \
+   "128 Weiche W2 Ost   ", \
+   "129 Fahrstrom Gleis1A", \
+   " Weiter: Taste IO19  " \
+   }
+```  
+und im englischsprachigen Abschnitt   
+```   
+#define  INFOLINES_NUM     20
+  #define  INFOLINES { \
+   "Module 12:           ", \
+   "passing siding and   ", \
+   "siding               ", \
+   VERSION_99_1, \
+   " Next: Button IO19   ", \
+   \
+   "DCC-Addresses     1/3", \
+   "121 3way-Turnout left", \
+   "122 3way-Turnout righ", \
+   "123 Turnout Track 1A ", \
+   " Next: Button IO19   ", \
+   \
+   "DCC-Addresses     2/3", \
+   "124 Uncoupler Track 3", \
+   "125 Current Track 1  ", \
+   "126 Current Track 2  ", \
+   " Next: Button IO19   ", \
+   \
+   "DCC-Addresses     3/3", \
+   "127 Current Track 3  ", \
+   "128 Turnout W2 East  ", \
+   "129 Current Track 1A ", \
+   " Next: Button IO19   ", \
+   }
+```   
+11. Anpassen der projektspezifischen Daten in der Datei `dcc_config.h`. Details dazu [siehe /software/rcc_demo1/CUSTOMIZE_D.md](/software/rcc_demo1/CUSTOMIZE_D.md). Insbesondere:   
+
+_Zeile 17 und 18_:   
+```   
+#define  VERSION_99     "2025-02-05 rcc_module12_V1"
+#define  VERSION_99_1   "Version 2025-02-05"
+```   
+_Zeile 27_:   
+```   
+#define  TOPIC_BASE     "rcc/module12"
+```   
+_Zeile 34_:   
+```   
+#define  SCREEN_TITLE   "RCC Module 12"
+```   
+_Ab Zeile 78:_   
+```   
+//-------disconnectable track (Fahrstrom)-----------------------
+#define  RCOMP_1        RC_TYPE_DT,"G1A", 129, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 0,0
+//-------three way turnout (Dreiwegweiche)----------------------
+// A=0: curved, B=0: stright (@ 3 pin: middle pin=0V -> stright)
+#define  RCOMP_2L       RC_TYPE_T3,"TWL",121, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
+#define  RCOMP_2R       RC_TYPE_T3,"TWR",122, EX0,PIN3,PIN2,   EX1,PIN3,PIN2, 500,0
+// ------two way turnout (Zweiwegweiche = Standardweiche)-------
+// Two expander pins A B to control 2way turnout (active low!)
+// A=0: curved, B=0: stright
+#define  RCOMP_3        RC_TYPE_TO,"T1", 123, EX0,PIN4,PIN5,   EX1,PIN4,PIN5, 500,0
+// ------uncoupler (Entkuppler)---------------------------------
+#define  RCOMP_4        RC_TYPE_UC,"E1", 124, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 1500,0
+
+//-------disconnectable track (Fahrstrom)-----------------------
+#define  RCOMP_5        RC_TYPE_DT,"G1", 125, EX2,PIN4,NO_PIN, EX3,PIN4,NO_PIN, 0,0
+//-------disconnectable track (Fahrstrom)-----------------------
+#define  RCOMP_6        RC_TYPE_DT,"G2", 126, EX2,PIN3,NO_PIN, EX3,PIN3,NO_PIN, 0,0
+//-------disconnectable track (Fahrstrom)-----------------------
+#define  RCOMP_7        RC_TYPE_DT,"G3", 127, EX2,PIN2,NO_PIN, EX3,PIN2,NO_PIN, 0,0
+// ------two way turnout (Zweiwegweiche = Standardweiche)-------
+// Two expander pins A B to control 2way turnout (active low!)
+// A=0: curved, B=0: stright
+#define  RCOMP_8        RC_TYPE_TO,"T2", 128, EX2,PIN0,PIN1,   EX3,PIN0,PIN1, 500,0
+
+//.......Array of all railway components........................
+#define  RCOMP_NUM      9
+strRcomp aRcomp[RCOMP_NUM] = {
+ {RCOMP_1},{RCOMP_2L},{RCOMP_2R},{RCOMP_3},{RCOMP_4},{RCOMP_5},{RCOMP_6},{RCOMP_7},{RCOMP_8}
+};
+```   
+
+12. Anpassen des Kommentars am Beginn der Datei `rcc_module12_V1.cpp`, zB.   
+```   
+//_____rcc_module12_V1___________________________khartinger_____
+// This program for an ESP32 is used for the self-built 
+// model railroad switching blocks of module 12.
+// ...
+```   
+
+<a name="x52"></a>   
+
+## 5.2 Programmierung des Mikrocontrollers
+Zum Programmieren des Mikrocontrollers wird das Modul von der Stromversorgung getrennt und der Mikrocontroller &uuml;ber das USB-Kabel mit dem Programmierger&auml;t (PC oder Laptop) verbunden.   
+Danach wird Visual Studio Code mit installiertem PlatformIO gestartet und der Mikrocontroller mit der Software `rcc_module12_V1` programmiert.   
+
+[Zum Seitenanfang](#up)   
+<a name="x60"></a>   
+
+# 6. Probebetrieb
+## 6.1 Modul-Start
 1. MQTT-Server starten.   
 2. Einen Laptop oder PC mit dem Netzwerk des MQTT-Servers verbinden und die Software `mosquitto_sub` in einem Kommando-Fenster mit diesem Kommando starten:   
    `mosquitto_sub -h 10.1.1.1 -t rcc/# -v`   
@@ -541,7 +755,7 @@ Die Anzeige der Stellung der Weichen 121 bis 123 ist abh&auml;ngig von der tats&
 5. Im Kommandofenster am Laptop erscheint die Startmeldung des Moduls:   
 `rcc/start/mqtt {"topicbase":"rcc/module12"}`   
 
-## 5.2 Test mit MQTT
+## 6.2 Test mit MQTT
 Ein zweites Kommando-Fenster am Laptop &ouml;ffnen und folgendes eingeben:   
 `mosquitto_pub -h 10.1.1.1 -t rcc/module12/get -m ?`   
 Im ersten Kommando-Fenster werden die m&ouml;glichen Befehle angezeigt:   
@@ -572,7 +786,7 @@ Einschalten des Entkupplers (DCC 124):
 `mosquitto_pub -h 10.1.1.1 -t rcc/module12/set/124 -m 1`   
 Der Entkuppler wird f&uuml;r 1,5 Sekunden eingeschaltet.   
 
-## 5.3 Test mit DCC
+## 6.3 Test mit DCC
 Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT durchgef&uuml;hrt werden.   
 ### Beispiel Roco Multi-Maus
 * Weichensteuerung w&auml;hlen (Taste Lok/Weiche) ![Taste_Lok_Weiche](./images/50_taste_lok_weiche.png)   
@@ -580,11 +794,11 @@ Je nach DCC-Eingabeger&auml;t k&ouml;nnen die gleichen Aktionen wie mit MQTT dur
 * Mit den Pfeiltasten die Weiche schalten ![Pfeiltasten](./images/50_taste_pfeil.png)   
 
 [Zum Seitenanfang](#up)   
-<a name="x60"></a>   
+<a name="x70"></a>   
 
-# 6. Abschlie&szlig;ende Arbeiten   
-## 6.1 Weichenabdeckungen   
-F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 20 und 21). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M12 werden zwei verschiedene Arten von Abdeckungen ben&ouml;tigt:   
+# 7. Abschlie&szlig;ende Arbeiten   
+## 7.1 Weichenabdeckungen   
+F&uuml;r die Montage der Unterflur-Weichenantriebe muss die Grundplatte ausgeschnitten werden (siehe Bild 26 und Bild 27). F&uuml;r die Landschaftsgestaltung m&uuml;ssen diese Ausschnitte jedoch gut abgedeckt werden, damit keine Schotterk&ouml;rner etc. in die Weichenantriebe gelangen. Auf dem Modul M12 werden zwei verschiedene Arten von Abdeckungen ben&ouml;tigt:   
 * Drei flache Abdeckungen (ausgehend von Ebene E8)   
 * Eine hohe Abdeckung f&uuml;r den rechten Antrieb der Dreiweg-Weiche (d.h. ausgehend von der Grundplatte E0)   
 
@@ -593,14 +807,14 @@ Bei den flachen Abdeckungen reichen die Weichenantriebe 1,5 mm &uuml;ber das Niv
 Zum Abdecken des Ausschnitts kann daher eine 0,5 mm Kunststoff-Folie als Basisabdeckung sowie eine 1 mm Folie dar&uuml;ber + eine 0,5 mm Folie &uuml;ber dem Antrieb verwendet werden.   
 Als Alternative ist auch 3D-gedruckte Abdeckungen m&ouml;glich, wie sie im _Bild 33_ zu sehen sind.   
 ![3D Weichenabdeckung](/images/300_3d_weichenabdeckung.png "3D Weichenabdeckung")   
-_Bild 33: 3D-Druck-Abdeckungen der Weichenaussparungen_   
+_Bild 41: 3D-Druck-Abdeckungen der Weichenaussparungen_   
 
 Die St&auml;rke der Abdeckungen betr&auml;gt 0,6 mm (= 3 Schichten), die Befestigung erfolgt mit Gleisn&auml;geln (0,7 mm Durchmesser). Die mittlere Abdeckung wurde mit einer Schere passend geschnitten.   
 
-## 6.2 Bodenabdeckung   
+## 7.2 Bodenabdeckung   
 Um die Verkabelung zu sch&uuml;tzen, kann man auch Teile des Bodens mit durchsichtigen Folien (zB mit 1 mm St&auml;rke) abdecken.   
 
-## 6.3 Modell-Hintergrundbild   
+## 7.3 Modell-Hintergrundbild   
 Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sein.   
 
 [Zum Seitenanfang](#up)

@@ -205,7 +205,7 @@ _Bild 8: LED-Fassungen f&uuml;r das M13-Modul_
 ![M13_I2C_IO](./images/300_m13_i2c_io.png "M13_I2C_IO")   
 _Bild 9: I²C-I/O-Anschl&uuml;sse f&uuml;r das M13-Modul_   
 
-### 1.4.5 Verdrahtung
+### 1.4.5 Zusatzplatinen f&uuml;r die Verdrahtung
 Zum Verteilen des Fahrstroms und zum Anschluss der Schaltkomponenten sinnvoll sind folgende Zusatzplatinen (siehe auch [Verdrahtungsplan im Kapitel 4](#x40)):   
 * 1x [`CON_2pol_141` Fahrstromverteiler](/fab/rcc5_add_ons/LIESMICH.md#x60)   
 * 1x [`CON_2pol_131` Fahrstromverteiler](/fab/rcc5_add_ons/LIESMICH.md#x60)   
@@ -448,7 +448,7 @@ Hat man entschieden, wo welche Sperrholz-H&ouml;hen eingesetzt werden, schneidet
 
 Sollen die Weichenantriebe als Unterflurantriebe verbaut werden, m&uuml;ssen noch Aussparungen in die Grundplatte geschnitten werden.   
 
-![Ma&szlig;e der Aussparung Unterflurantriebe](./images/300_m13_W3_turnout_cutout.png "Ma&szlig;e der Aussparung Unterflurantriebe")   
+![Ma&szlig;e der Aussparung Unterflurantriebe](./images/300_W3_turnout_cutout.png "Ma&szlig;e der Aussparung Unterflurantriebe")   
 _Bild 31: Ma&szlig;e der Aussparung f&uuml;r die Unterflurantriebe._   
 
 Die Ecken der Aussparungen bilden sechs Punkte mit den Koordinaten P1(12/5), P2(100/16), P3(97,5/36), P4(73/37), P5(33/32) und P6(9,5/25). F&uuml;r den zweiten Antrieb der Dreiwegweiche sind die Koordinaten gespiegelt. Der Koordinatenursprung befindet sich in der Mitte des Gleisrandes bei den Weichenzungen (siehe Bild oben).    
@@ -459,7 +459,7 @@ _Bild 32: Grundplatte mit Bahndamm und Weichenausschnitten_
 
 <a name="x33"></a>   
 
-## 3.3 Bahndamm und Schotterbett
+## 3.3 Bahndamm und Bettungsk&ouml;rper (Schotterbett)
 Nach dem Aufkleben der zugeschnittenen und abgeschr&auml;gten 5 mm-Sperrholzplatte ("Bahndamm") auf die Basisplatte sollte das Trocknen des Leims abgewartet werden. W&auml;hrenddessen kann bereits das 3 mm hohe Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) vorbereitet werden. Damit das Biegen des R2-Radius leichter f&auml;llt, k&ouml;nnen auf der Innenseite in das Schaumstoffband schmale Keile eingeschnitten werden (Abstand einige cm, bis zur Mitte des Gleisbettes).    
 Im n&auml;chsten Schritt wird der Schaumstoff aufgeklebt.   
 
