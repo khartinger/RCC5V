@@ -59,7 +59,7 @@ Dieses Verzeichnis beschreibt die Dinge, die man ben&ouml;tigt, wenn man sich f&
 * [Welche Zukaufteile ben&ouml;tige ich?](/fab/rcc0_start/LIESMICH.md#x34)   
 * [Welches Werkzeug ben&ouml;tige ich?](/fab/rcc0_start/LIESMICH.md#x36)   
 
-Die Herstellung der RCC-Komponenten wird dann in den anderen Unterverzeichnissen dieses Verzeichnisses beschreiben.   
+Die Herstellung der RCC-Komponenten wird dann in den anderen Unterverzeichnissen dieses Verzeichnisses beschrieben.   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
