@@ -8,7 +8,6 @@ Letzte &Auml;nderung: 20.8.2025 <a name="up"></a><br>
 Das Info-Verzeichnis enthält ergänzende Informationen zum RCC-System. Das ist zB   
 * [con_NEM908: Norm zur elektrischen Verbindung von Eisenbahn-Modulen](/info/con_NEM908/LIESMICH.md)   
 * [frontpanel: Beschreibung der Frontplatte für Module](/info/frontpanel/LIESMICH.md)   
-
-
+* [misc: Verschiedene Hilfsmittel](/info/misc/LIESMICH.md)   
 
 [Zum Seitenanfang](#up)

@@ -5,7 +5,10 @@ Last modified: 2025-08-20 <a name="up"></a><br>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
-<a href="LIESMICH.md"><b> Sorry! This page is currently only available in German.</b></a>   
-
+# Overview
+The info directory contains additional information about the RCC system. This includes, for example
+* [con_NEM908: Standard for the electrical connection of railway modules](/info/con_NEM908/README.md)   
+* [frontpanel: Description of the front panel for modules](/info/frontpanel/README.md)   
+* [misc: Various tools](/info/misc/README.md)   
 
 [To the top of the page](#up)   
