@@ -1,18 +1,16 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 20.7.2025 <a name="up"></a><br>   
-<h1>Bauanleitungen für Module, Platinen und 3D-Teile</h1>
+<h1>Bauanleitungen f&uuml;r Module, Platinen und 3D-Teile</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 [Hier geht es direkt zur Inhalts&uuml;bersicht](#x05)   
 
 # &Uuml;bersicht
-Dieses Verzeichnis enthält Bauanleitungen und Beschreibungen für alle Steuermodulde sowie verschiedene Hilfswerkzeuge:   
+Das Verzeichnis `fab` (f&uuml;r "_fabrication_") ist das "Fertigungszentrum" des RCC-Systems (RCC = Railway Component Control). Es enth&auml;lt Herstellungsdaten, Bauanleitungen, Zeichnungen und Beschreibungen von Teilen, die f&uuml;r das RCC-System ben&ouml;tigt werden. Die Daten sind auf folgende Unterverzeichnisse aufgeteilt:   
 
-## 
 <a name="x05"></a>   
 
-# Inhaltsverzeichnis   
 * [1. 3d](#x10)   
 * [2. kicad](#x20)   
 * [3. odg](#x30)   
@@ -23,10 +21,12 @@ Dieses Verzeichnis enthält Bauanleitungen und Beschreibungen für alle Steuermo
 * [8. rcc4_block](#x80)   
 * [9. rcc5_add_ons](#x90)   
 
+Der folgende Text beschreibt den Inhalt der Verzeichnisse und enth&auml;lt Links zu den entsprechenden Anleitungen.   
+
 <a name="x10"></a>   
 
 # 1. 3d
-Dieses Verzeichnis enth&auml;lt 3mf-Dateien f&uuml;r verschiedene Bauteile von Eisenbahnmodulen. Beispiele sind   
+Dieses Verzeichnis enth&auml;lt 3mf-Dateien f&uuml;r mechanische Bauteile, die mit einem 3D-Drucker hergestellt werden k&ouml;nnen. Beispiele sind   
 <a name="x10"></a>   
 
 * [Modulseite (Ost, West)](/fab/3d/LIESMICH.md#x10)   
@@ -41,25 +41,31 @@ Dieses Verzeichnis enth&auml;lt 3mf-Dateien f&uuml;r verschiedene Bauteile von E
 <a name="x20"></a>   
 
 # 2. kicad
-Dieses Verzeichnis enthält die Kicad-Projekte aller Leiterplatten mit Schaltung und Platinenlayout. Mit dem Open Source [Layoutprogramm KiCad](https://www.kicad.org/) und zB dem Plug-in "PCBWay" kann man die dazugehörigen Leiterplatten bei einem Leiterplattenhersteller fertigen lassen.   
+Dieses Verzeichnis enth&auml;lt die Kicad-Projekte aller Leiterplatten mit Schaltung und Platinenlayout. Mit dem Open Source [Layoutprogramm KiCad](https://www.kicad.org/) und zB dem Plug-in "PCBWay" kann man die dazugeh&ouml;rigen Leiterplatten bei einem Leiterplattenhersteller fertigen lassen.   
 
 <a name="x30"></a>   
 
 # 3. odg
-Dieses Verzeichnis enthält die odg-Zeichnungen für allgemein gültige Informationen. Spezielle Zeichnungen, wie zum Beispiel die Cover der Beispiele und Module, sind in diesen Verzeichnissen abgelegt.   
-Die Bildschirm-Kopien dieser Bilder werden als png-Dateien in den Markdown (.md)-Dateien angezeigt.   
+Dieses Verzeichnis enth&auml;lt odg-Zeichnungen f&uuml;r allgemein g&uuml;ltige Informationen. Spezielle Zeichnungen, wie zum Beispiel die Cover der Beispiele und Module, sind bei den jeweiligen Projekten abgelegt.   
+Die Bildschirm-Kopien von odg-Zeichnungen sind als png-Dateien abgespeichert und werden in den Markdown (.md)-Dokumenten angezeigt.   
 
 [Zum Seitenanfang](#up)   
 <a name="x40"></a>   
 
 # 4. rcc0_start
-In diesem Verzeichnis wird der Start des RCC-Projektes (RCC = Railway Component Control) beschrieben: Welche Hard- und Software benötige ich, um Steuerblöcke und Eisenbahn-Module mit dieser Steuerung bauen zu können.   
+Dieses Verzeichnis beschreibt die Dinge, die man ben&ouml;tigt, wenn man sich f&uuml;r den Selbstbau des RCC-Systems entschlossen hat:   
+* [Welche Leiterplatten ben&ouml;tige ich und wie erstelle ich sie?](/fab/rcc0_start/LIESMICH.md#x20)   
+* [Welche Bauteile ben&ouml;tige ich? (Grundausstattung an Bauteilen) ](/fab/rcc0_start/LIESMICH.md#x30)   
+* [Welche Zukaufteile ben&ouml;tige ich?](/fab/rcc0_start/LIESMICH.md#x34)   
+* [Welches Werkzeug ben&ouml;tige ich?](/fab/rcc0_start/LIESMICH.md#x36)   
+
+Die Herstellung der RCC-Komponenten wird dann in den anderen Unterverzeichnissen dieses Verzeichnisses beschreiben.   
 
 [Zum Seitenanfang](#up)   
 <a name="x50"></a>   
 
 # 5. rcc1_supply
-In diesem Verzeichnis wird beschrieben, wie die Blöcke zur Energieversorgung der Eisenbahnmodule nach NEM 908 gebaut werden. Dabei werden die Eigenschaften sowie die Bestückung der Platinen erläutert, wie zum Beispiel   
+In diesem Verzeichnis wird beschrieben, wie die Bl&ouml;cke zur Energieversorgung der Eisenbahnmodule nach NEM 908 gebaut werden. Dabei werden die Eigenschaften sowie die Best&uuml;ckung der Platinen erl&auml;utert, wie zum Beispiel   
 * [Netzteil-Tr&auml;gerplatine (`AC_5V_6pol_DCC`)](/fab/rcc1_supply/LIESMICH.md#x22)   
 * [Platine mit zwei 25-poligen Sub-D-Steckern und Netzteil (`RW_5V_2SUB25`)](/fab/rcc1_supply/LIESMICH.md#x32)   
 * [Platine mit 25-poligem Sub-D-Stecker, Schraubklemmen und Netzteil (`RW_5V_SUB25_10`)](/fab/rcc1_supply/LIESMICH.md#x33)    
