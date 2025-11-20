@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-05-01 <a name="up"></a><br>   
+Last modified: 2025-11-20 <a name="up"></a><br>   
 <h1>Controlling model railroad components with DCC, MQTT and manually</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -7,11 +7,12 @@ Last modified: 2025-05-01 <a name="up"></a><br>
 [Directly to the table of contents of this repository](#x20)   
 
 # Introduction
-Switching points is an important part of model railroading. Who doesn't want to be able to do this in different ways? There are many ways to control turnouts, uncouplers, disconnectable tracks and other components.   
-The following image of an RCC example (RCC = Railway-Component-Control) shows an elegant example with information display, switching and LED feedback.   
+Switching points is an important part of model railroading. There are many ways to control turnouts, uncouplers, disconnectable tracks and other components. Who doesn't want to be able to do this in different ways?    
+The following image shows a part of an RCC control (RCC = Railway-Component-Control) with information display, switching and LED feedback.   
 ![Example RCC controller](./images/600_M12_OLED_Blocks2.png "Example RCC controller")   
 _Figure 1: Example user interface RCC control unit_   
 
+## Traditional switching of turnouts etc.   
 The simplest method of switching is, of course, to do it all by hand. In this case, you don't even need point machines. But with more distant or distributed components, this mode of operation quickly becomes cumbersome.   
 For this reason, magnetic drives are usually used to switch the components. In the simplest case, the AC voltage is switched directly:   
 
@@ -22,7 +23,7 @@ _Figure 2: Direct switching of model railway components
 However, direct switching of the AC voltage has disadvantages: There is no feedback on the actual switching status and automatic switching of several components is not possible.   
 These disadvantages can be eliminated by commercial, digital control systems. Unfortunately, this is usually associated with considerable costs. For this reason, self-construction is an option, which also offers additional possibilities and flexibility.   
 
-## How is it better?
+## How to do it better?
 If you like building things yourself, you've come to the right place. The low-cost RCC (Railway Component Control) model railroad component controller presented here allows you to switch model railroad components in three different ways:   
 * directly on the module or on the layout at the touch of a button   
 * via DCC   
@@ -86,6 +87,9 @@ __Examples, use of the system__
 * [Construction of module 13: “reverse loop - west”](/examples/module13/README.md)   
 * [Construction of module 14: “Two tracks to one track”](/examples/module14/README.md)   
 * [Conversion of module M01: “Track 1 to 2 with goods shed (2010)”](/examples/module01/README.md)   
+
+__Other practical ideas for modules and the like__   
+* [module dust cover](/demo/dust_cover/README.md)   
 
 [To the top of the page](#up)   
 <a name="x30"></a>   

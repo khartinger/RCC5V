@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 1.5.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 20.11.2025 <a name="up"></a><br>   
 <h1>Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -7,11 +7,12 @@ Letzte &Auml;nderung: 1.5.2025 <a name="up"></a><br>
 [Direkter Sprung zur Inhalts&uuml;bersicht von diesem Repository](#x20)   
 
 # Einleitung
-Das Schalten von Weichen ist bei Modellbahnen eine wichtige Sache. Wer will nicht die M&ouml;glichkeit haben, das auf verschiedene Arten zu machen? Es gibt viele Mittel und Wege, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern.   
-Das folgende Bild einer RCC-Steuerung (RCC = Railway-Component-Control) zeigt ein elegantes Beispiel mit Informationsanzeige, Schaltm&ouml;glichkeit und LED-R&uuml;ckmeldung.   
+Das Schalten von Weichen ist bei Modellbahnen eine wesentliche Sache. Es gibt viele Mittel und Wege, Weichen, Entkuppler, abschaltbare Gleise und andere Komponenten anzusteuern. Aber wer will nicht die M&ouml;glichkeit haben, das auf verschiedene Arten zu machen?    
+Das folgende Bild zeigt einen Teil einer RCC-Steuerung (RCC = Railway-Component-Control) mit Informationsanzeige, Schaltm&ouml;glichkeit und LED-R&uuml;ckmeldung.   
 ![Beispiel RCC-Steuerung](./images/600_M12_OLED_Blocks2.png "Beispiel RCC-Steuerung")   
 _Bild 1: Beispiel User-Interface RCC-Steuerung_   
 
+## Traditionelles Schalten von Weichen etc.   
 Die einfachste Methode des Schaltens ist, dies von Hand zu machen. In dem Fall braucht man nicht einmal Weichenantriebe. Aber bei weiter entfernten oder verteilten Komponenten wird diese Betriebsart schnell umst&auml;ndlich.   
 Aus diesem Grund werden zum Schalten der Komponenten &uuml;blicherweise magnetische Antriebe verwendet. Dabei wird im einfachsten Fall die Wechselspannung direkt geschaltet:   
 
@@ -86,6 +87,9 @@ __Anwendungsbeispiele__
 * [Bau des Moduls 13: "Kehrschleife West"](/examples/module13/LIESMICH.md)   
 * [Bau des Moduls 14: "Zwei Gleise auf 1 Gleis"](/examples/module14/LIESMICH.md)   
 * [Umbau des Moduls 01: "Gleis 1 auf 2 mit G&uuml;terschuppen (2010)"](/examples/module01/LIESMICH.md)   
+
+__Weitere praktische Ideen rund um Module__   
+* [Plexiglasabdeckung als Staubschutz f&uuml;r Module](/demo/dust_cover/LIESMICH.md)   
 
 [Zum Seitenanfang](#up)
 <a name="x30"></a>   
