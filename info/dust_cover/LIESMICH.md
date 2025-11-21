@@ -45,8 +45,18 @@ Lieferant f&uuml;r Plexiglas zB Fa. [PlasticExpress (https://plasticexpress.at)]
 * S&auml;ge (Stichs&auml;ge oder Bands&auml;ge)   
 * Bohrmaschine   
 * Bohrer: 4,8 mm, 3 mm, 0,8 mm   
+* Schraubenschl&uuml;ssel 5,5 mm (f&uuml;r M3 Muttern)   
 * Folienstift und Lineal (Dreieck) oder Bohrschablone  
 * Etwas Wei&szlig;leim   
+
+## 1.3 3D-gedruckte Hilfswerkzeuge
+Die folgenden Hilfswerkzeuge sind nicht unbedingt erforderlich, sind aber beim Zusammenbau hilfreich:   
+* Klammer 265 mm   
+* Bohrhilfe 0,8 mm   
+
+Die Freecad-Files finden sich hier:   
+* [/fab/3d/Klammer265.FCStd](/fab/3d/Klammer265.FCStd)   
+* [/fab/3d/Bohrhilfe_klein_251114.FCStd](/fab/3d/Bohrhilfe_klein_251114.FCStd)   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
@@ -54,14 +64,14 @@ Lieferant f&uuml;r Plexiglas zB Fa. [PlasticExpress (https://plasticexpress.at)]
 
 # 2. Bau der Abdeckung   
 ## 2.1 R&uuml;ckwand   
-F&uuml;r die R&uuml;ckwand ("Nordseite" des Moduls) gibt es zwei Möglichkeiten:   
+F&uuml;r die R&uuml;ckwand ("Nordseite" des Moduls) gibt es zwei M&ouml;glichkeiten:   
 * Plexiglas   
 * Pappelsperrholz 10 mm   
 
 Beide Varianten haben Vor- und Nachteile:   
 Das Pappelsperrholz ist massiver und der Hintergrund ist gestaltbar (entweder eine Himmel-Klebefolie oder ein gemaltes oder fotografiertes Hintergrundbild). Nachteilig ist, dass das Modul nicht von hinten einsehbar ist.   
 
-Bei diesem Modul wird die Pappelsperrholz-R&uuml;ckwand mit einer Wolken-Dekorfolie &uuml;berzogen. Die Grö&szlig;e der Folie (56 x 22,5 cm²) ist so gew&auml;hlt, dass sie an den Ecken umgeschlagen und hinten noch 2 cm verklebt sind.   
+Bei diesem Modul wird die Pappelsperrholz-R&uuml;ckwand mit einer Wolken-Dekorfolie &uuml;berzogen. Die Gr&ouml;&szlig;e der Folie (56 x 22,5 cm²) ist so gew&auml;hlt, dass sie an den Ecken umgeschlagen und hinten noch 2 cm verklebt sind.   
 
 ![Modul M14 Rueckwand](./images/300_m14_cover_back1.png "Modul M14 Rueckwand")   
 _Bild 2: R&uuml;ckseite der R&uuml;ckwand mit R&auml;ndelschrauben_   
@@ -71,7 +81,7 @@ In die R&uuml;ckwand werden zwei 3 mm Bohrungen gebohrt, die jeweils 25 mm von b
 <a name="x22"></a>   
 
 ## 2.2 Frontplatte   
-Aus der 500 x 230 mm² gro&szlig;e Plexiglas-Frontplatte werden unten zwei Ausnehmungen f&uuml;r die Anzeige und die Weichensteuerung herausgeschnitten. An sich w&uuml;rde es reichen, zwei rechteckförmige Fenster aus der Platte herauszuschneiden, allerdings ist es leichter, die Ausnehmungen bis zum Rand der Platte gehen zu lassen.    
+Aus der 500 x 230 mm² gro&szlig;e Plexiglas-Frontplatte werden unten zwei Ausnehmungen f&uuml;r die Anzeige und die Weichensteuerung herausgeschnitten. An sich w&uuml;rde es reichen, zwei rechteckf&ouml;rmige Fenster aus der Platte herauszuschneiden, allerdings ist es leichter, die Ausnehmungen bis zum Rand der Platte gehen zu lassen.    
 
 ![Modul M14 Ma&szlig;e Frontplatte](./images/300_m14_dim_front1.png "Modul M14 Ma&szlig;e Frontplatte")   
 _Bild 3: Ma&szlig;e der Ausnehmungen und Bohrungen in der Frontplatte_   
@@ -84,7 +94,7 @@ _Bild 4: Frontplatte mit Ausnehmungen und 3 mm-Bohrungen_
 <a name="x23"></a>   
 
 ## 2.3 Abstandsbolzen mit 3mm-Gewinde im Modulrahmen
-Damit das Entfernen der Abdeckung ohne Werkzeug möglich ist, werden zum Befestigen der Front- und Hintergrundplatte (flache) 3 mm-R&auml;ndelschrauben verwendet. Dazu benötigt man im Rahmen des Moduls M3 Gewinde. Da das Verschrauben von M3 Schrauben im Holz nicht gut möglich ist, werden Abstandsbolzen M3 x 10 mm + 6 mm in den Holzrahmen eingepresst.   
+Damit das Entfernen der Abdeckung ohne Werkzeug m&ouml;glich ist, werden zum Befestigen der Front- und Hintergrundplatte (flache) 3 mm-R&auml;ndelschrauben verwendet. Dazu ben&ouml;tigt man im Rahmen des Moduls M3 Gewinde. Da das Verschrauben von M3 Schrauben im Holz nicht gut m&ouml;glich ist, werden Abstandsbolzen M3 x 10 mm + 6 mm in den Holzrahmen eingepresst.   
 
 Damit die Abstandsbolzen gut zu den Bohrungen in der Frontplatte passen, wird diese als "Bohrvorlage" an den Modul angelegt und es werden durch die Frontplatte die beiden 3 mm Bohrungen in den Rahmen gebohrt. Das gleiche macht man mit der Hintergrundplatte. Anschlie&szlig;end werden die vier Bohrungen mit einem 4,8 mm Bohrer aufgebohrt.   
 Die vier Bohrungen werden innen an der Bohrungswand mit Wei&szlig;leim beschichtet, die Abstandsbolzen M3 x 10 mm + 6 mm werden eingedr&uuml;ckt und zus&auml;tzlich innen mit einer 9 mm Beilagscheibe und 3 mm Mutter verschraubt. Die folgenden Bilder zeigen das Ergebnis:   
@@ -108,7 +118,7 @@ Vor dem Bohren der Deckplatte m&uuml;ssen die Front- und Hintergrundplatte an de
 ![Montierte Front- und Hintergrundplatte](./images/300_m14_front_backpanel1.png "Montierte Front- und Hintergrundplatte")   
 _Bild 7: Montierte Front- und Hintergrundplatte_   
 
-Nun wird die Deckplatte vorsichtig aufgelegt und genau ausgerichtet.   
+Mit Abstandshaltern bzw. der ["Klammer265"](/fab/3d/LIESMICH.md#x90) sollte der innere Abstand der Front- und Hintergrundplatte auf 25 cm fixiert werden. Danach wird die Deckplatte vorsichtig aufgelegt und genau ausgerichtet.   
 Zuerst wird links vorne eine 0,8 mm Bohrung mit 15 mm Abstand vom Rand (mittig in der 5 mm "breiten" Plexiglasplatte) gesetzt. Die Gesamttiefe der Bohrung sollte ca. 13 bis 15 mm betragen. Nach dem Bohren wird sofort ein Gleisnagel in das Loch gedr&uuml;ckt, um die Position der Deckplatte zu fixieren.   
 
 ![Bohrung mit Gleisnagel](./images/300_m14_hole_with_track_nail1.png "Bohrung mit Gleisnagel")   
