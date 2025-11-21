@@ -34,22 +34,27 @@ _Bild 3: Querverstebung in einem 25 cm breiten Modul_
 
 # Sub-D-Stecker-Halterung
 Die Halterung f&uuml;r den Sub-D-Stecker besteht aus zwei U-f&ouml;rmigen Teilen.   
-__Datei__: Bracket_sub-D_250209.3mf   
-![Halterung Sub-D-Stecker](/images/3d/300_Halterung_sub-d.png "Halterung Sub-D-Stecker")   
+__Fusion-Datei__: Bracket_sub-D_250209.3mf   
+__Freecad-Datei__: [Bracket_sub-D.FCStd](/fab/3d/Bracket_sub-D.FCStd)   
+![Halterung Sub-D-Stecker](/images/3d/300_Halterung_sub-d.png "Halterung Sub-D-Stecker") 
+![Halterung Sub-D-Stecker](/images/3d/300_Bracket_sub-D.png "Halterung Sub-D-Stecker")   
 _Bild 4: Halterung f&uuml;r Sub-D-Stecker_   
 
 <a name="x40"></a>   
 
 # OLED- und Taster-Einsatz
-__Datei__: OLED-Mount_250209.3mf   
-![OLED- und Taster-Einsatz](/images/3d/300_OLED-Mount.png "OLED- und Taster-Einsatz")   
+__Fusion-Datei__: OLED-Mount_250209.3mf   
+__Freecad-Datei__: [OLED_Mount.FCStd](/fab/3d/OLED_Mount.FCStd)   
+![OLED- und Taster-Einsatz](/images/3d/300_OLED-Mount.png "OLED- und Taster-Einsatz") 
+![OLED- und Taster-Einsatz](/images/3d/300_OLED_Mount_FC.png "OLED- und Taster-Einsatz")   
 _Bild 5: Halterung f&uuml;r die OLED-Anzeige und den Taster_   
 
 <a name="x50"></a>   
 
 # Biegelehre f&uuml;r LEDs
-__Datei__: Biegelehre_LED_v4.3mf   
-![Biegelehre f&uuml;r LEDs](/images/3d/300_Biegelehre_LED.png "Biegelehre f&uuml;r LEDs")   
+__Fusion-Datei__: Biegelehre_LED_v4.3mf   
+__Freecad-Datei__: [Biegelehre_LED.FCStd](/fab/3d/Biegelehre_LED.FCStd)   
+![Biegelehre f&uuml;r LEDs](/images/3d/300_Biegelehre_LED.png "Biegelehre f&uuml;r LEDs") ![Biegelehre f&uuml;r LEDs](/images/3d/300_Biegelehre_LED_FC.png "Biegelehre f&uuml;r LEDs")    
 _Bild 6: Biegelehre f&uuml;r LEDs_   
 
 <a name="x60"></a>   
@@ -73,18 +78,36 @@ __Datei__: Weichenabdeckung_3Weg_beide_v2.3mf
 ![Weichenabdeckung f&uuml;r Dreiwegweiche](/images/3d/300_Weichenabdeckung_3Weg_beide.png "Weichenabdeckung f&uuml;r Dreiwegweiche")   
 _Bild 9: Weichenabdeckung f&uuml;r Dreiwegweiche_   
 
-<a name="x90"></a>   
+<a name="x100"></a>   
+
+# Hilfswerkzeug Stütze eingleisig
+Möchte man ein Modul auf der Unterseite bearbeiten (um zB die Elektronik zu verdrahten), so muss man das Modul mit den Schienen oder der Landschaft auf den Tisch legen. Um dies zu vermeiden, werden links und rechts (also "Ost" und "West") Stützen montiert, auf denen das Modul dann ruht.   
+
+__Freecad-Datei__: [ModulStützeEingleisig_251109.FCStd](/fab/3d/ModulStützeEingleisig_251109.FCStd)   
+![Hilfswerkzeug Stütze eingleisig](/images/3d/300_ModulStuetzeEingleisig_251109.png "Hilfswerkzeug Stütze eingleisig")   
+_Bild 10: Hilfswerkzeug eingleisige Stütze_   
+
+<a name="x110"></a>   
+
+# Hilfswerkzeug Stütze zweigleisig
+Möchte man ein Modul auf der Unterseite bearbeiten (um zB die Elektronik zu verdrahten), so muss man das Modul mit den Schienen oder der Landschaft auf den Tisch legen. Um dies zu vermeiden, werden links und rechts (also "Ost" und "West") Stützen montiert, auf denen das Modul dann ruht.   
+
+__Freecad-Datei__: [ModulStützeZweigleisig_251109.FCStd](/fab/3d/ModulStützeZweigleisig_251109.FCStd)   
+![Hilfswerkzeug Stütze zweigleisig](/images/3d/300_ModulStuetzeZweigleisig_251109.png "Hilfswerkzeug Stütze zweigleisig")   
+_Bild 11: Hilfswerkzeug zweigleisige Stütze_   
+
+<a name="x120"></a>   
 
 # Hilfswerkzeug Klammer 265 mm
 __Freecad-Datei__: [Klammer265.FCStd](/fab/3d/Klammer265.FCStd)   
 ![Hilfswerkzeug Klammer 265 mm](/images/3d/300_Klammer265.png "Hilfswerkzeug Klammer 265 mm")   
-_Bild 10: Hilfswerkzeug Klammer 265 mm_   
+_Bild 12: Hilfswerkzeug Klammer 265 mm_   
 
-<a name="x100"></a>   
+<a name="x130"></a>   
 
 # Hilfswerkzeug Bohrhilfe 0,8 mm
 __Freecad-Datei__: [Bohrhilfe_klein_251114.FCStd](/fab/3d/Bohrhilfe_klein_251114.FCStd)   
 ![Bohrhilfe klein 0,8 mm](/images/3d/200_Bohrhilfe_klein_251114.png "Bohrhilfe klein 0,8 mm")   
-_Bild 11: Hilfswerkzeug Bohrhilfe klein 0,8 mm_   
+_Bild 13: Hilfswerkzeug Bohrhilfe klein 0,8 mm_   
 
 [Zum Seitenanfang](#up)
