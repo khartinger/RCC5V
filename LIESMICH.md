@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 20.11.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 21.11.2025 <a name="up"></a><br>   
 <h1>Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -89,7 +89,7 @@ __Anwendungsbeispiele__
 * [Umbau des Moduls 01: "Gleis 1 auf 2 mit G&uuml;terschuppen (2010)"](/examples/module01/LIESMICH.md)   
 
 __Weitere praktische Ideen rund um Module__   
-* [Plexiglasabdeckung als Staubschutz f&uuml;r Module](/demo/dust_cover/LIESMICH.md)   
+* [Plexiglasabdeckung als Staubschutz f&uuml;r Module](/info/dust_cover/LIESMICH.md)   
 
 [Zum Seitenanfang](#up)
 <a name="x30"></a>   

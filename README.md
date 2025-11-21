@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Last modified: 2025-11-20 <a name="up"></a><br>   
+Last modified: 2025-11-21 <a name="up"></a><br>   
 <h1>Controlling model railroad components with DCC, MQTT and manually</h1>
 <a href="LIESMICH.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -89,7 +89,7 @@ __Examples, use of the system__
 * [Conversion of module M01: “Track 1 to 2 with goods shed (2010)”](/examples/module01/README.md)   
 
 __Other practical ideas for modules and the like__   
-* [module dust cover](/demo/dust_cover/README.md)   
+* [module dust cover](/info/dust_cover/README.md)   
 
 [To the top of the page](#up)   
 <a name="x30"></a>   
