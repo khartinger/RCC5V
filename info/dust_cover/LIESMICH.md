@@ -1,5 +1,5 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 20.11.2025 <a name="up"></a><br>   
+Letzte &Auml;nderung: 21.11.2025 <a name="up"></a><br>   
 <h1>Staubabdeckung f&uuml;r Modelleisenbahn-Module</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
@@ -13,7 +13,7 @@ Das Bild zeigt das Modul mit der Abdeckung.
 ![Modul M14 mit Abdeckung](./images/300_m14_cover1.png "Modul M14 mit Abdeckung")   
 _Bild 1: Modul M14 mit Staubabdeckung._   
 
-Auf dem Bild sieht man an der Forderfront links die Anzeige, in der Mitte den Weichenschalter und links und rechts am Rand die R&auml;ndelschrauben (schwarze Kreise).   
+Auf dem Bild sieht man an der Forderfront links die Anzeige, in der Mitte den Weichenschalter und links und rechts am Rand die R&auml;ndelschrauben (schwarze Kreise), mit denen die Frontplatte gehalten wird.   
 Eine wesentliche Eigenschaft der Abdeckung ist die eine einfache Montage bzw. Demontage ohne Werkzeug (falls ein Zug entgleist etc.).   
 
 <a name="x05"></a>   
@@ -31,13 +31,18 @@ Eine wesentliche Eigenschaft der Abdeckung ist die eine einfache Montage bzw. De
 * 1 St&uuml;ck Pappelsperrholz 500 x 230 x 10 mm³   
 * 1 St&uuml;ck Plexiglas 500 x 230 x 5 mm³   
 * 1 St&uuml;ck Plexiglas 500 x 265 x 5 mm³   
-* 4 St&uuml;ck Gleisn&auml;gel 12 x 0,75 mm (Fleischmann 9409)   
-* 4 St&uuml;ck 6-Kant-Abstandsbolzen M3 x 10 mm + 6 mm (zB [Amazon https://www.amazon.de/dp/B00AH8D1HO?ref=ppx_yo2ov_dt_b_fed_asin_title](https://www.amazon.de/dp/B00AH8D1HO?ref=ppx_yo2ov_dt_b_fed_asin_title))   
+* 4 St&uuml;ck Gleisn&auml;gel 0,75 x 12 mm (Fleischmann 9409)   
+* 4 St&uuml;ck Sechskant-Abstandsbolzen M3 x 10 mm + 6 mm   
+  zB [Amazon https://www.amazon.de/dp/B00AH8D1HO?ref=ppx_yo2ov_dt_b_fed_asin_title](https://www.amazon.de/dp/B00AH8D1HO?ref=ppx_yo2ov_dt_b_fed_asin_title)   
 * 4 St&uuml;ck Muttern M3   
-* 4 St&uuml;ck Beilagenscheiben M3 x 9 mm (zB [Amazon https://www.amazon.de/dp/B0BJZDJ6L8?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1](https://www.amazon.de/dp/B0BJZDJ6L8?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1))   
-* 2 St&uuml;ck Flache R&auml;ndelschraube M 3 x 10 mm (zB [Amazon https://www.amazon.de/dp/B0CRYT4ND9?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1](https://www.amazon.de/dp/B0CRYT4ND9?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1))   
-* 2 St&uuml;ck R&auml;ndelschraube M3 x 16 mm (zB [Amazon https://www.amazon.de/dp/B0CRYSXBRZ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1](https://www.amazon.de/dp/B0CRYSXBRZ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1))   
-* 1 St&uuml;ck Selbstklebende Dekorfolie (M&ouml;belfolie) Wolken blau 560 x 225 mm² (zB [Amazon https://www.amazon.de/dp/B00USPYF5I?ref=ppx_yo2ov_dt_b_fed_asin_title](https://www.amazon.de/dp/B00USPYF5I?ref=ppx_yo2ov_dt_b_fed_asin_title))   
+* 4 St&uuml;ck Beilagenscheiben M3 x 9 mm   
+  zB [Amazon https://www.amazon.de/dp/B0BJZDJ6L8?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1](https://www.amazon.de/dp/B0BJZDJ6L8?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)   
+* 2 St&uuml;ck Flache R&auml;ndelschraube M 3 x 10 mm   
+  zB [Amazon https://www.amazon.de/dp/B0CRYT4ND9?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1](https://www.amazon.de/dp/B0CRYT4ND9?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)   
+* 2 St&uuml;ck R&auml;ndelschraube M3 x 16 mm   
+  zB [Amazon https://www.amazon.de/dp/B0CRYSXBRZ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1](https://www.amazon.de/dp/B0CRYSXBRZ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)   
+* 1 St&uuml;ck Selbstklebende Dekorfolie (M&ouml;belfolie) Wolken blau 560 x 225 mm²   
+  zB [Amazon https://www.amazon.de/dp/B00USPYF5I?ref=ppx_yo2ov_dt_b_fed_asin_title](https://www.amazon.de/dp/B00USPYF5I?ref=ppx_yo2ov_dt_b_fed_asin_title)    
 
 Lieferant f&uuml;r Plexiglas zB Fa. [PlasticExpress (https://plasticexpress.at)](https://plasticexpress.at).   
 
@@ -52,7 +57,7 @@ Lieferant f&uuml;r Plexiglas zB Fa. [PlasticExpress (https://plasticexpress.at)]
 ## 1.3 3D-gedruckte Hilfswerkzeuge
 Die folgenden Hilfswerkzeuge sind nicht unbedingt erforderlich, sind aber beim Zusammenbau hilfreich:   
 * Klammer 265 mm   
-* Bohrhilfe 0,8 mm   
+* Bohrschablone (Bohrhilfe) 0,8 mm   
 
 Die Freecad-Files finden sich hier:   
 * [/fab/3d/Klammer265.FCStd](/fab/3d/Klammer265.FCStd)   
@@ -81,7 +86,7 @@ In die R&uuml;ckwand werden zwei 3 mm Bohrungen gebohrt, die jeweils 25 mm von b
 <a name="x22"></a>   
 
 ## 2.2 Frontplatte   
-Aus der 500 x 230 mm² gro&szlig;e Plexiglas-Frontplatte werden unten zwei Ausnehmungen f&uuml;r die Anzeige und die Weichensteuerung herausgeschnitten. An sich w&uuml;rde es reichen, zwei rechteckf&ouml;rmige Fenster aus der Platte herauszuschneiden, allerdings ist es leichter, die Ausnehmungen bis zum Rand der Platte gehen zu lassen.    
+Aus der 500 x 230 mm² gro&szlig;e Plexiglas-Frontplatte werden unten zwei Ausnehmungen f&uuml;r die Anzeige und die Weichensteuerung herausgeschnitten. An sich w&uuml;rde es reichen, zwei rechteckf&ouml;rmige Fenster aus der Platte herauszuschneiden, allerdings ist es leichter, die Ausnehmungen bis zum Rand der Platte reichen zu lassen.    
 
 ![Modul M14 Ma&szlig;e Frontplatte](./images/300_m14_dim_front1.png "Modul M14 Ma&szlig;e Frontplatte")   
 _Bild 3: Ma&szlig;e der Ausnehmungen und Bohrungen in der Frontplatte_   
@@ -94,10 +99,10 @@ _Bild 4: Frontplatte mit Ausnehmungen und 3 mm-Bohrungen_
 <a name="x23"></a>   
 
 ## 2.3 Abstandsbolzen mit 3mm-Gewinde im Modulrahmen
-Damit das Entfernen der Abdeckung ohne Werkzeug m&ouml;glich ist, werden zum Befestigen der Front- und Hintergrundplatte (flache) 3 mm-R&auml;ndelschrauben verwendet. Dazu ben&ouml;tigt man im Rahmen des Moduls M3 Gewinde. Da das Verschrauben von M3 Schrauben im Holz nicht gut m&ouml;glich ist, werden Abstandsbolzen M3 x 10 mm + 6 mm in den Holzrahmen eingepresst.   
+Damit das Entfernen der Abdeckung ohne Werkzeug m&ouml;glich ist, werden zum Befestigen der Front- und Hintergrundplatte (flache) 3 mm-R&auml;ndelschrauben verwendet. Daf&uuml;r ben&ouml;tigt man im Rahmen des Moduls M3 Gewinde. Da das Verschrauben von M3 Schrauben im Holz nicht gut m&ouml;glich ist, werden Abstandsbolzen M3 x 10 mm + 6 mm in den Holzrahmen eingepresst.   
 
 Damit die Abstandsbolzen gut zu den Bohrungen in der Frontplatte passen, wird diese als "Bohrvorlage" an den Modul angelegt und es werden durch die Frontplatte die beiden 3 mm Bohrungen in den Rahmen gebohrt. Das gleiche macht man mit der Hintergrundplatte. Anschlie&szlig;end werden die vier Bohrungen mit einem 4,8 mm Bohrer aufgebohrt.   
-Die vier Bohrungen werden innen an der Bohrungswand mit Wei&szlig;leim beschichtet, die Abstandsbolzen M3 x 10 mm + 6 mm werden eingedr&uuml;ckt und zus&auml;tzlich innen mit einer 9 mm Beilagscheibe und 3 mm Mutter verschraubt. Die folgenden Bilder zeigen das Ergebnis:   
+Die vier Bohrungen werden innen an der Bohrungswand mit Wei&szlig;leim beschichtet, die Abstandsbolzen M3 x 10 mm + 6 mm werden eingedr&uuml;ckt und zus&auml;tzlich auf der Rahmeninnenseite mit einer 9 mm Beilagscheibe und 3 mm Mutter verschraubt. Die folgenden Bilder zeigen das Ergebnis:   
 
 ![Abstandsbolzen Rahmeninnenseite](./images/300_m14_standoff_inside1.png "Abstandsbolzen Rahmeninnenseite")   
 _Bild 5: Verschraubung des Abstandsbolzens an der Rahmeninnenseite_   
@@ -112,6 +117,8 @@ Auf der 500 x 265 mm² gro&szlig;e Deckplatte werden mit einem Stift die Positio
 
 ![Bohrung f&uuml;r Gleisnagel](./images/300_m14_hole_for_track_nail1.png "Bohrung f&uuml;r Gleisnagel")   
 _Bild 8: Lage der Bohrungen f&uuml;r die Gleisn&auml;gel_   
+
+_**Anmerkung**_: Das Anzeichnen kann entfallen, wenn man eine Bohrhilfe verwendet.   
 
 Vor dem Bohren der Deckplatte m&uuml;ssen die Front- und Hintergrundplatte an den Modul angeschraubt werden. Dabei verwendet man f&uuml;r die Fontplatte zwei M3 x 10 mm R&auml;ndelschrauben, f&uuml;r die Hintergrundplatte zwei M3 x 16 mm R&auml;ndelschrauben.   
 
