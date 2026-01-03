@@ -15,8 +15,8 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_99     "2025-06-18 rcc_demo1"
-#define  VERSION_99_1   "Version 2025-06-18"
+#define  VERSION_99     "2026-01-03 rcc_demo1"
+#define  VERSION_99_1   "Version 2026-01-03"
 
 #define  INFOLINES_SEC  20             // time to show one page
 
@@ -26,7 +26,7 @@
 #define  _PASS_         "12345678"
 #define  _HOST_         "10.1.1.1"
 #define  TOPIC_BASE     "rcc/demo1"
-#define  TOPIC_GET      "?,help,version,ip,signal,topicbase,eeprom,byname,bydcc"
+#define  TOPIC_GET      "?,help,version,ip,signal,topicbase,eeprom,byname,bydcc,status"
 #define  TOPIC_SET      "topicbase,eeprom0"
 #define  TOPIC_SUB      ""
 #define  TOPIC_PUB      ""

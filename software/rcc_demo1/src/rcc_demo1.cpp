@@ -68,6 +68,8 @@
 // 2025-01-03 Change TOPIC_BASE, add #define CON_...
 // 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
 // 2025-06-18 Add "signal", DEBUG_99_SHOW_ALL
+// 2026-01-03 Add MQTT-message if a value has changed, query of
+//            single DCC address, bydcc returns numerical value
 // Released into the public domain.
 
 // #include <Arduino.h>
@@ -258,74 +260,118 @@ String simpleGet(String sPayload)
   p1+="\"}";
   return p1;
  }
-
+ 
  //-------------------------------------------------------------
- //------is it a get command for one or all railway components?-
-  if(sPayload=="byname" || sPayload=="bydcc") {
+ String sUndef0=TT_UNDEF0;
+ String sUndef1=TT_UNDEF1;
+ String sStright=TT_STRIGHT;
+ String sCurved=TT_CURVED;
+ String sUnknown=TT_UNKNOWN;
+ String sON=TT_ON;
+ String sOFF=TT_OFF;
+ //-------------------------------------------------------------
+ //------is it a get command for all railway components?--------
+ if(sPayload=="byname" || sPayload=="bydcc" || sPayload=="status") {
+  if(sPayload=="status")
+  {
+   sUndef0=T_UNDEF0;
+   sUndef1=T_UNDEF1;
+   sStright=T_STRIGHT;
+   sCurved=T_CURVED;
+   sUnknown=T_UNKNOWN;
+   sON=T_ON;
+   sOFF=T_OFF;
+  }
   p1="{";
-  for(int i=0; i<RCOMP_NUM; i++) {
+  for(int i=0; i<RCOMP_NUM; i++) { // ...for all components.....
    if(i>0) p1+=",";
    if(sPayload=="byname") p1+="\"" + aRcomp[i].name + "\":\"";
    else p1+="\"" + String(aRcomp[i].dcc) + "\":\"";
-   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_T3) {
+   if(aRcomp[i].type==RC_TYPE_T3) {
     switch(aRcmd[i].inValue) {
-     case 0: if(aRcomp[i].type==RC_TYPE_T3) p1+=T_STRIGHT;
-             else p1+=T_UNDEF0;
-             break;                          // BA=00
-     case 1:  p1+=T_STRIGHT;  break; // BA=01 (stright)
-     case 2:  p1+=T_CURVED;   break; // BA=10 (curved)
-     case 3:  p1+=T_UNDEF1;   break; // BA=11
-     default: p1+=T_UNKNOWN;  break; // ?? impossible
-    }
-   } else {
-    if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
-     aRcmd[i].inValue ? p1+=T_ON : p1+=T_OFF;
-    } else {
-     if(aRcomp[i].type==RC_TYPE_UC) {
-     aRcmd[i].inValue ? p1+=T_ON : p1+=T_OFF;
-     } else {
-      p1+=String(aRcmd[i].inValue);
-     }
+     case 0:  p1+=sStright; break; // BA=00
+     case 1:  p1+=sCurved;  break; // BA=01
+     case 2:  p1+=sStright; break; // BA=10
+     case 3:  p1+=sUndef1;  break; // BA=11
+     default: p1+=sUnknown; break; // ?? impossible
     }
    }
+   if(aRcomp[i].type==RC_TYPE_TO) {
+    switch(aRcmd[i].inValue) {
+     case 0:  p1+=sUndef0;  break; // BA=00
+      case 1:  p1+=sStright; break; // BA=01
+      case 2:  p1+=sCurved;  break; // BA=10
+      case 3:  p1+=sUndef1;  break; // BA=11
+      default: p1+=sUnknown; break; // ?? impossible
+    }
+   }
+   if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
+    aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_UC) {
+    aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_BL) {
+    // aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+    if(aRcmd[i].iCmd==CMD_BLINK) p1+=sON; else p1+=sOFF;
+   }
    p1+="\"";
-  }
+  } // END OF for all components................................
   p1+="}";
   return p1;
  }
 
- //------is it a get command for one railway component?---------
- for(int i=0; i<RCOMP_NUM; i++) {
+//-------------------------------------------------------------
+ //------is it a get command for ONE railway component by dcc or name?
+ for(int i=0; i<RCOMP_NUM; i++) { // ...for all components.....
   String s1=String(aRcomp[i].name);
   s1.toLowerCase();
-  if(sPayload==s1 || sPayload==String(aRcomp[i].dcc)) {
-   p1="{\""+aRcomp[i].name+"\":\"";
-      if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_T3) {
+  String s2=String(aRcomp[i].dcc);
+  p1="";
+  if(sPayload==s1) p1="{\""+s1+"\":\""; // by name
+  if(sPayload==s2) { // by dcc
+   p1="{\""+s2+"\":\"";
+   sUndef0=T_UNDEF0;
+   sUndef1=T_UNDEF1;
+   sStright=T_STRIGHT;
+   sCurved=T_CURVED;
+   sUnknown=T_UNKNOWN;
+   sON=T_ON;
+   sOFF=T_OFF;
+  }
+  if(p1.length()>0) {
+   if(aRcomp[i].type==RC_TYPE_T3) {
     switch(aRcmd[i].inValue) {
-     case 0: if(aRcomp[i].type==RC_TYPE_T3) p1+=T_STRIGHT;
-             else p1+=T_UNDEF0;
-             break;                          // BA=00
-     case 1:  p1+=T_STRIGHT;  break; // BA=01 (stright)
-     case 2:  p1+=T_CURVED;   break; // BA=10 (curved)
-     case 3:  p1+=T_UNDEF1;   break; // BA=11
-     default: p1+=T_UNKNOWN;  break; // ?? impossible
+     case 0:  p1+=sStright; break; // BA=00
+     case 1:  p1+=sCurved;  break; // BA=01
+     case 2:  p1+=sStright; break; // BA=10
+     case 3:  p1+=sUndef1;  break; // BA=11
+     default: p1+=sUnknown; break; // ?? impossible
     }
-   } else {
-    if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
-     aRcmd[i].inValue ? p1+=T_ON : p1+=T_OFF;
-    } else {
-     if(aRcomp[i].type==RC_TYPE_UC) {
-     aRcmd[i].inValue ? p1+=T_ON : p1+=T_OFF;
-     } else {
-      p1+=String(aRcmd[i].inValue);
-     }
+   }
+   if(aRcomp[i].type==RC_TYPE_TO) {
+    switch(aRcmd[i].inValue) {
+     case 0:  p1+=sUndef0;  break; // BA=00
+      case 1:  p1+=sStright; break; // BA=01
+      case 2:  p1+=sCurved;  break; // BA=10
+      case 3:  p1+=sUndef1;  break; // BA=11
+      default: p1+=sUnknown; break; // ?? impossible
     }
+   }
+   if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
+    aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_UC) {
+    aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_BL) {
+    if(aRcmd[i].iCmd==CMD_BLINK) p1+=sON; else p1+=sOFF;
+    //aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
    }
    p1+="\"}";
    return p1;
   }
- }
-
+ } // END OF for all components.................................
  //-------------------------------------------------------------
  return String("");                         // wrong Get command
 }
@@ -735,13 +781,17 @@ int updateInputValues() {
    if(iBit!=NO_PIN) iBitsBA+=(*pIOEx[iIOEx]).getBit(iBit);
    iBit=aRcomp[i].inBitB;
    if(iBit!=NO_PIN) iBitsBA+=2*(*pIOEx[iIOEx]).getBit(iBit);
-   //.....save input value......................................
+   //....save input value.......................................
    if(aRcmd[i].inValue!=iBitsBA) 
    {
     aRcmd[i].inValueChanged=true;
-    if(aRcmd[i].iCmd!=CMD_BLINK) {
+    if(aRcmd[i].iCmd!=CMD_BLINK) 
+    { // Not a BLINK command....................................
      aRcmd[i].inValue=iBitsBA;
      iReturn=i;
+     //..value changed: prepare sending a mqtt message..........
+     String s2=String(aRcomp[i].dcc);
+     client.simpleMqttDo("get", s2, s2);
     }
    } else {
     aRcmd[i].inValueChanged=false;
@@ -965,7 +1015,7 @@ void setup() {
    if(DEBUG_99) Serial.println("setup(): WiFi " + client.getsSSID() + "NOT FOUND!");
    iConn=CON_NO_WIFI;                        // NO WiFi
    bUseWiFi=false;                           // don´t use WiFi
-   s2=T_NO_MQTT;                             // No control via MQTT
+   s2=TT_NO_MQTT;                             // No control via MQTT
    s2=s2.substring(0,SCREEN_LINE_LEN);       // max. 21 character
   }
   s1="WiFi "+ sConn[iConn]+ " " + String(_SSID_);
@@ -975,7 +1025,7 @@ void setup() {
 #else
  //------Dont use WiFi anyway-----------------------------------
  iConn=CON_NO_WIFI;                        // NO WiFi
- s1=T_NO_MQTT;
+ s1=TT_NO_MQTT;
  s1=s1.substring(0,SCREEN_LINE_LEN);       // max. 21 character
  showLine(2, s1);
  showLine(3, "");
@@ -1001,6 +1051,7 @@ void loop() {
  int state=stm.loopBegin();                 // state begin
  String s1;                                 // help value
  String sSerial=String(state);              // collect serial output
+ int retDCC_=-1;                            // if value changed
 
  //======(2) do, independent on the network, ...================
  
@@ -1037,6 +1088,7 @@ void loop() {
 
  //------(2.4) update display, if there was an input change-----
  if(iRcomp_>=0) { // yes, input changed
+  //.....prepare display........................................
   int iRcompGroup_=int(iRcomp_/5);
   if(iRcompGroup_== iRcompGroupNow)
   { // change in current displayed group: show change-----------
@@ -1075,6 +1127,11 @@ void loop() {
  //======(3) process mqtt actions===============================
  #if _USE_WIFI_ == true
  if(bUseWiFi) {
+  //.....Force an MQTT get message because a value has changed..
+  //if(retDCC_>=0) {
+  // client.publish_P((String(TOPIC_BASE)+"/get").c_str(),String(retDCC_).c_str(),false);
+  //}
+  //.....process mqtt actions...................................
   client.doLoop();                          // mqtt loop
   //=====(4) do, depending on the network access, ...===========
   if(client.isWiFiConnectedNew())    iConn=CON_WIFI_OK;// "WiFi OK   ";
