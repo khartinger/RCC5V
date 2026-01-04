@@ -7,6 +7,7 @@
 // 2024-11-28 Change program name
 // 2025-01-03 Change TOPIC_BASE
 // 2025-06-18 Add "signal"
+// 2026-01-04 Add RC_TYPE_TX, RC_TYPE_DD
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -15,8 +16,8 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_99     "2026-01-03 rcc_demo1"
-#define  VERSION_99_1   "Version 2026-01-03"
+#define  VERSION_99     "2026-01-04 rcc_demo1"
+#define  VERSION_99_1   "Version 2026-01-04"
 
 #define  INFOLINES_SEC  20             // time to show one page
 
@@ -53,7 +54,9 @@ PCF8574 *pIOEx[IOEX_NUM]={&pcf8574_out, &pcf8574_in}; // IO expander
 #define  RC_TYPE_TO     2    // turnout (Weiche)
 #define  RC_TYPE_T3     3    // 3way turnout (Dreiwegweiche)
 #define  RC_TYPE_DT     4    // disconnectable track (Fahrstrom)
-#define  RC_TYPE_BL     5    // blink light (Blinklicht)
+#define  RC_TYPE_TX     5    // double slip turnout/switch (Doppelkreuzungsweiche)
+#define  RC_TYPE_DD     6    // double pole, double throw (2x UM)
+#define  RC_TYPE_BL     9    // blink light (Blinklicht)
 
 //.......All properties of a railroad component.................
 struct strRcomp {
@@ -90,6 +93,12 @@ struct strRcomp {
 #define  RCOMP_4        RC_TYPE_DT,"DT", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
 //-------blink light (Blinklicht)-------------------------------
 #define  RCOMP_5        RC_TYPE_BL,"BL", 51, EX0,PIN7,NO_PIN, EX1,NO_PIN,NO_PIN, 500,500
+
+//...if you want to test TX and/or DD: replace RCOMP_2/RCOMP_4..
+//-------double slip turnout/switch (Doppelkreuzungsweiche)-----
+//#define  RCOMP_2        RC_TYPE_TX,"TX", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
+//-------double pole, double throw (2x UM)----------------------
+//#define  RCOMP_4        RC_TYPE_DD,"DD", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
 
 //.......Array of all railway components........................
 #define  RCOMP_NUM      6

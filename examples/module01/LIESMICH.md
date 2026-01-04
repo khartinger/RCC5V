@@ -152,6 +152,8 @@ Als Basis f&uuml;r die Steuersoftware im ESP32 dient die Demo-Software. Es m&uum
 // Changes:
 // 2024-11-28 Change program name
 // 2025-01-03 Change TOPIC_BASE
+// 2025-06-18 Add "signal"
+// 2026-01-04 Add RC_TYPE_TX, RC_TYPE_DD
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -171,7 +173,7 @@ Als Basis f&uuml;r die Steuersoftware im ESP32 dient die Demo-Software. Es m&uum
 #define  _PASS_         "12345678"
 #define  _HOST_         "10.1.1.1"
 #define  TOPIC_BASE     "rcc/module01"
-#define  TOPIC_GET      "?,help,version,ip,topicbase,eeprom,byname,bydcc"
+#define  TOPIC_GET      "?,help,version,ip,signal,topicbase,eeprom,byname,bydcc,status"
 #define  TOPIC_SET      "topicbase,eeprom0"
 #define  TOPIC_SUB      ""
 #define  TOPIC_PUB      ""
@@ -198,7 +200,9 @@ PCF8574 *pIOEx[IOEX_NUM]={&pcf8574_out, &pcf8574_in}; // IO expander
 #define  RC_TYPE_TO     2    // turnout (Weiche)
 #define  RC_TYPE_T3     3    // 3way turnout (Dreiwegweiche)
 #define  RC_TYPE_DT     4    // disconnectable track (Fahrstrom)
-#define  RC_TYPE_BL     5    // blink light (Blinklicht)
+#define  RC_TYPE_TX     5    // double slip turnout/switch (Doppelkreuzungsweiche)
+#define  RC_TYPE_DD     6    // double pole, double throw (2x UM)
+#define  RC_TYPE_BL     9    // blink light (Blinklicht)
 
 //.......All properties of a railroad component.................
 struct strRcomp {
@@ -251,6 +255,18 @@ strRcomp aRcomp[RCOMP_NUM] = {
  #define CON_WIFI_OK         4
  #define CON_MQTT_OK         5
  #define CON_WIFI_NOT_USED   6
+
+ //----status defines as string numbers-------------------------
+ #define T1_UNDEF0           "-2"
+ #define T1_UNDEF1           "-1"
+ #define T1_STRIGHT          "1"
+ #define T1_CURVED           "0"
+ #define T1_UNKNOWN          "-9"
+ #define T1_ON               "1"
+ #define T1_OFF              "0"
+ #define T1_NO_MQTT          "-8"
+ #define T1_DPDT_0_NC        "13"
+ #define T1_DPDT_1_NO        "15"
 
  #if LANGUAGE == 'd'
   // =========Deutsche Texte (German)===========================

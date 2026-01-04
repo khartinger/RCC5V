@@ -68,8 +68,9 @@
 // 2025-01-03 Change TOPIC_BASE, add #define CON_...
 // 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
 // 2025-06-18 Add "signal", DEBUG_99_SHOW_ALL
-// 2026-01-03 Add MQTT-message if a value has changed, query of
-//            single DCC address, bydcc returns numerical value
+// 2026-01-04 Update ../get bydcc, byname, one value
+//            Add send MQTT-message if a value has changed
+//            Add ../get status, RC_TYPE_TX, RC_TYPE_DCC
 // Released into the public domain.
 
 // #include <Arduino.h>
@@ -262,25 +263,25 @@ String simpleGet(String sPayload)
  }
  
  //-------------------------------------------------------------
- String sUndef0=TT_UNDEF0;
- String sUndef1=TT_UNDEF1;
- String sStright=TT_STRIGHT;
- String sCurved=TT_CURVED;
- String sUnknown=TT_UNKNOWN;
- String sON=TT_ON;
- String sOFF=TT_OFF;
+ String sUndef0=T_UNDEF0;
+ String sUndef1=T_UNDEF1;
+ String sStright=T_STRIGHT;
+ String sCurved=T_CURVED;
+ String sUnknown=T_UNKNOWN;
+ String sON=T_ON;
+ String sOFF=T_OFF;
  //-------------------------------------------------------------
  //------is it a get command for all railway components?--------
  if(sPayload=="byname" || sPayload=="bydcc" || sPayload=="status") {
   if(sPayload=="status")
   {
-   sUndef0=T_UNDEF0;
-   sUndef1=T_UNDEF1;
-   sStright=T_STRIGHT;
-   sCurved=T_CURVED;
-   sUnknown=T_UNKNOWN;
-   sON=T_ON;
-   sOFF=T_OFF;
+   sUndef0=T1_UNDEF0;
+   sUndef1=T1_UNDEF1;
+   sStright=T1_STRIGHT;
+   sCurved=T1_CURVED;
+   sUnknown=T1_UNKNOWN;
+   sON=T1_ON;
+   sOFF=T1_OFF;
   }
   p1="{";
   for(int i=0; i<RCOMP_NUM; i++) { // ...for all components.....
@@ -296,7 +297,7 @@ String simpleGet(String sPayload)
      default: p1+=sUnknown; break; // ?? impossible
     }
    }
-   if(aRcomp[i].type==RC_TYPE_TO) {
+   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_TX) {
     switch(aRcmd[i].inValue) {
      case 0:  p1+=sUndef0;  break; // BA=00
       case 1:  p1+=sStright; break; // BA=01
@@ -307,6 +308,9 @@ String simpleGet(String sPayload)
    }
    if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
     aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_DD) { // double pole, double throw (2x UM)
+    aRcmd[i].inValue ? p1+=T1_DPDT_1_NO : p1+=T1_DPDT_0_NC;
    }
    if(aRcomp[i].type==RC_TYPE_UC) {
     aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
@@ -331,13 +335,13 @@ String simpleGet(String sPayload)
   if(sPayload==s1) p1="{\""+s1+"\":\""; // by name
   if(sPayload==s2) { // by dcc
    p1="{\""+s2+"\":\"";
-   sUndef0=T_UNDEF0;
-   sUndef1=T_UNDEF1;
-   sStright=T_STRIGHT;
-   sCurved=T_CURVED;
-   sUnknown=T_UNKNOWN;
-   sON=T_ON;
-   sOFF=T_OFF;
+   sUndef0=T1_UNDEF0;
+   sUndef1=T1_UNDEF1;
+   sStright=T1_STRIGHT;
+   sCurved=T1_CURVED;
+   sUnknown=T1_UNKNOWN;
+   sON=T1_ON;
+   sOFF=T1_OFF;
   }
   if(p1.length()>0) {
    if(aRcomp[i].type==RC_TYPE_T3) {
@@ -349,7 +353,7 @@ String simpleGet(String sPayload)
      default: p1+=sUnknown; break; // ?? impossible
     }
    }
-   if(aRcomp[i].type==RC_TYPE_TO) {
+   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_TX) {
     switch(aRcmd[i].inValue) {
      case 0:  p1+=sUndef0;  break; // BA=00
       case 1:  p1+=sStright; break; // BA=01
@@ -360,6 +364,9 @@ String simpleGet(String sPayload)
    }
    if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
     aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_DD) { // double pole, double throw (2x UM)
+    aRcmd[i].inValue ? p1+=T1_DPDT_1_NO : p1+=T1_DPDT_0_NC;
    }
    if(aRcomp[i].type==RC_TYPE_UC) {
     aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
@@ -426,7 +433,8 @@ String simpleSet(String sTopic, String sPayload)
   s1.toLowerCase();
   if(sTopic==String(aRcomp[i].dcc) || sTopic==s1) {
    int iCmdValue=-1;
-   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_T3) {
+   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_TX 
+     || aRcomp[i].type==RC_TYPE_T3) {
     if(sPayload=="0" ||  sPayload=="a" || sPayload=="b") iCmdValue=0;
     if(sPayload=="1" || sPayload=="g") iCmdValue=1;
    } else {
@@ -516,27 +524,42 @@ void prepareScreenLine4to6(int iRcompGroup) {
      default: aScreenText[4]+="??  ";  break; // ?? impossible
     } // END OF switch
    } else { //......not RC_TYPE_TO or RC_TYPE_T3.................
-    if(aRcomp[iRc].type==RC_TYPE_DT) { // discon track (fahrstrom)
-     aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
-    } else { //.....not RC_TYPE_DT...............................
-     if(aRcomp[iRc].type==RC_TYPE_UC) {
+    if(aRcomp[iRc].type==RC_TYPE_TX){ // double slip turnout/switch
+     switch(aRcmd[iRc].inValue) {
+      case 0:  aScreenText[4]+="0?  ";  break; // BA=00
+      case 1:  aScreenText[4]+="_X_ ";  break; // BA=01 (stright)
+      case 2:  aScreenText[4]+=")(  ";  break; // BA=10 (curved)
+      case 3:  aScreenText[4]+="1?  ";  break; // BA=11
+      default: aScreenText[4]+="??  ";  break; // ?? impossible
+     } // END OF switch
+    } else { //......not RC_TYPE_TO or RC_TYPE_T3 or RC_TYPE_TX.
+     if(aRcomp[iRc].type==RC_TYPE_DT) { // discon track (fahrstrom)
       aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
-     } else { //....not RC_TYPE_UC...............................
-      if(aRcomp[iRc].type==RC_TYPE_BL) {
-       if(aRcmd[iRc].iCmd==CMD_BLINK)
-       {
-        aScreenText[4]+="run ";
-       } else {
-        aScreenText[4]+="--- ";
-       }
-       //aRcmd[iRc].inValue ? aScreenText[4]+="1_0 " : aScreenText[4]+="0_1 ";
-       //aScreenText[4]+="0|1 ";
-      } else { //...not RC_TYPE_BL...............................
-       aScreenText[4]+=(" "+String(aRcmd[iRc].inValue)+"   ").substring(0,4);
-      } // END OF not RC_TYPE_BL
-     } // END OF not RC_TYPE_UC
-    } // END OF not RC_TYPE_DT
-   } // END OF not RC_TYPE_TO
+     }
+     else { //.....not RC_TYPE_DT...............................
+      if(aRcomp[iRc].type==RC_TYPE_DD) { // 
+       aRcmd[iRc].inValue ? aScreenText[4]+="1-5" : aScreenText[4]+="1-3";
+      } else { //....not RC_TYPE_DD.............................
+       if(aRcomp[iRc].type==RC_TYPE_UC) {
+        aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
+       } else { //....not RC_TYPE_UC...............................
+        if(aRcomp[iRc].type==RC_TYPE_BL) {
+         if(aRcmd[iRc].iCmd==CMD_BLINK)
+         {
+          aScreenText[4]+="run ";
+         } else {
+          aScreenText[4]+="--- ";
+         }
+         //aRcmd[iRc].inValue ? aScreenText[4]+="1_0 " : aScreenText[4]+="0_1 ";
+         //aScreenText[4]+="0|1 ";
+        } else { //...not RC_TYPE_BL...............................
+         aScreenText[4]+=(" "+String(aRcmd[iRc].inValue)+"   ").substring(0,4);
+        } // END OF not RC_TYPE_BL
+       } // END OF not RC_TYPE_UC
+      } // END OF not RC_TYPE_DD
+     } // END OF not RC_TYPE_DT
+    } // END OF not RC_TYPE_TO
+   } // END OF double slip turnout/switch
   } // END OF not RC_TYPE_T3
   //-----dcc number of railway element--------------------------
   aScreenText[5]+=(String(aRcomp[iRc].dcc)+"    ").substring(0,4);
@@ -624,7 +647,8 @@ void showLine6WaitMaxXXs(int iSec, String line6) {
 // uses: aRcomp[]
 // return: answer string e.g. for WiFi answer
 String setRcompCmd(int iRcomp, int iCmdValue, String sReturn) {
- if(aRcomp[iRcomp].type==RC_TYPE_TO || aRcomp[iRcomp].type==RC_TYPE_T3) {
+ if(aRcomp[iRcomp].type==RC_TYPE_TO || aRcomp[iRcomp].type==RC_TYPE_TX 
+    || aRcomp[iRcomp].type==RC_TYPE_T3) {
   //...it is a turnout command (2 bits, 2cmds)................
   if(iCmdValue==0) {
    aRcmd[iRcomp].stateToDo=STATE_NOW;
@@ -662,7 +686,7 @@ String setRcompCmd(int iRcomp, int iCmdValue, String sReturn) {
   }
  } // END OF it is a uncoupler command (1 bit, 2cmds)...........
 
- if(aRcomp[iRcomp].type==RC_TYPE_DT) {
+ if(aRcomp[iRcomp].type==RC_TYPE_DT || aRcomp[iRcomp].type==RC_TYPE_DD) {
   //...it is a disconn track command (1 bit, 1cmd)............
   if(iCmdValue==0) {                        // turn current off
    aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
@@ -1015,7 +1039,7 @@ void setup() {
    if(DEBUG_99) Serial.println("setup(): WiFi " + client.getsSSID() + "NOT FOUND!");
    iConn=CON_NO_WIFI;                        // NO WiFi
    bUseWiFi=false;                           // don´t use WiFi
-   s2=TT_NO_MQTT;                             // No control via MQTT
+   s2=T_NO_MQTT;                             // No control via MQTT
    s2=s2.substring(0,SCREEN_LINE_LEN);       // max. 21 character
   }
   s1="WiFi "+ sConn[iConn]+ " " + String(_SSID_);

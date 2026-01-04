@@ -13,25 +13,27 @@
  #define CON_WIFI_NOT_USED   6
 
  //----status defines as string numbers-------------------------
- #define T_UNDEF0           "-2"
- #define T_UNDEF1           "-1"
- #define T_STRIGHT          "1"
- #define T_CURVED           "0"
- #define T_UNKNOWN          "-9"
- #define T_ON               "1"
- #define T_OFF              "0"
- #define T_NO_MQTT          "-8"
+ #define T1_UNDEF0           "-2"
+ #define T1_UNDEF1           "-1"
+ #define T1_STRIGHT          "1"
+ #define T1_CURVED           "0"
+ #define T1_UNKNOWN          "-9"
+ #define T1_ON               "1"
+ #define T1_OFF              "0"
+ #define T1_NO_MQTT          "-8"
+ #define T1_DPDT_0_NC        "13"
+ #define T1_DPDT_1_NO        "15"
 
  #if LANGUAGE == 'd'
   // =========Deutsche Texte (German)===========================
-  #define TT_UNDEF0          "undefiniert_0?"
-  #define TT_UNDEF1          "undefiniert_1?"
-  #define TT_STRIGHT         "Gerade"
-  #define TT_CURVED          "Abzweig"
-  #define TT_UNKNOWN         "unmoeglich"
-  #define TT_ON              "Ein"
-  #define TT_OFF             "Aus"
-  #define TT_NO_MQTT         "Keine MQTT Steuerung!"
+  #define T_UNDEF0           "undefiniert_0?"
+  #define T_UNDEF1           "undefiniert_1?"
+  #define T_STRIGHT          "Gerade"
+  #define T_CURVED           "Abzweig"
+  #define T_UNKNOWN          "unmoeglich"
+  #define T_ON               "Ein"
+  #define T_OFF              "Aus"
+  #define T_NO_MQTT          "Keine MQTT Steuerung!"
   const    String sConn[]={"-unknown--", "verbinden_", 
          "-No WiFi--", "-No MQTT--", "WiFi OK   ", "MQTT OK   ",
         "Ohne WiFi "};
@@ -62,14 +64,14 @@
   #ifndef LANGUAGE
    #define LANGUAGE          'e'
   #endif
-  #define TT_UNDEF0          "undefined_0?"
-  #define TT_UNDEF1          "undefined_1?"
-  #define TT_STRIGHT         "stright"
-  #define TT_CURVED          "curved"
-  #define TT_UNKNOWN         "impossible"
-  #define TT_ON              "On"
-  #define TT_OFF             "Off"
-  #define TT_NO_MQTT         "*No control via MQTT*"
+  #define T_UNDEF0           "undefined_0?"
+  #define T_UNDEF1           "undefined_1?"
+  #define T_STRIGHT          "stright"
+  #define T_CURVED           "curved"
+  #define T_UNKNOWN          "impossible"
+  #define T_ON               "On"
+  #define T_OFF              "Off"
+  #define T_NO_MQTT          "*No control via MQTT*"
   const    String sConn[]={"-unknown--", "connecting", 
          "-No WiFi--", "-No MQTT--", "WiFi OK   ", "MQTT OK   ",
         "Unused WiFi"};
