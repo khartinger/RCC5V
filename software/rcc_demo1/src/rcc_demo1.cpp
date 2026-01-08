@@ -68,7 +68,7 @@
 // 2025-01-03 Change TOPIC_BASE, add #define CON_...
 // 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
 // 2025-06-18 Add "signal", DEBUG_99_SHOW_ALL
-// 2026-01-04 Update ../get bydcc, byname, one value
+// 2026-01-08 Update ../get bydcc, byname, one value
 //            Add send MQTT-message if a value has changed
 //            Add ../get status, RC_TYPE_TX, RC_TYPE_DCC
 // Released into the public domain.
@@ -441,7 +441,8 @@ String simpleSet(String sTopic, String sPayload)
     if(sPayload=="0") iCmdValue=0;
     if(sPayload=="1") iCmdValue=1;
    }
-   return(setRcompCmd(i, iCmdValue, sPayload));
+   String s2=setRcompCmd(i, iCmdValue, sPayload);
+   return("{\""+String(aRcomp[i].dcc)+"\":\""+s2+"\"}");
   } // END OF if: set command for a railway component
  } // END OF for-loop
  //-------------------------------------------------------------
@@ -815,7 +816,7 @@ int updateInputValues() {
      iReturn=i;
      //..value changed: prepare sending a mqtt message..........
      String s2=String(aRcomp[i].dcc);
-     client.simpleMqttDo("get", s2, s2);
+     client.simpleMqttDo("get", s2, s2); // type, topic, payload
     }
    } else {
     aRcmd[i].inValueChanged=false;

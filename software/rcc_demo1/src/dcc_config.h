@@ -7,7 +7,7 @@
 // 2024-11-28 Change program name
 // 2025-01-03 Change TOPIC_BASE
 // 2025-06-18 Add "signal"
-// 2026-01-04 Add RC_TYPE_TX, RC_TYPE_DD
+// 2026-01-08 Add RC_TYPE_TX, RC_TYPE_DD
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -16,8 +16,8 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_99     "2026-01-04 rcc_demo1"
-#define  VERSION_99_1   "Version 2026-01-04"
+#define  VERSION_99     "2026-01-08 rcc_demo1"
+#define  VERSION_99_1   "Version 2026-01-08"
 
 #define  INFOLINES_SEC  20             // time to show one page
 
