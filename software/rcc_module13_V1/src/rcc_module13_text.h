@@ -12,6 +12,18 @@
  #define CON_MQTT_OK         5
  #define CON_WIFI_NOT_USED   6
 
+ //----status defines as string numbers-------------------------
+ #define T1_UNDEF0           "-2"
+ #define T1_UNDEF1           "-1"
+ #define T1_STRIGHT          "1"
+ #define T1_CURVED           "0"
+ #define T1_UNKNOWN          "-9"
+ #define T1_ON               "1"
+ #define T1_OFF              "0"
+ #define T1_NO_MQTT          "-8"
+ #define T1_DPDT_0_NC        "13"
+ #define T1_DPDT_1_NO        "15"
+
  #if LANGUAGE == 'd'
   // =========Deutsche Texte (German)===========================
   #define T_UNDEF0           "undefiniert_0?"
@@ -32,7 +44,7 @@
    "Modul 13:            ", \
    "Kehrschleife West    ", \
    "mit Abstellgleis     ", \
-   VERSION_13_1, \
+   VERSION_99_1, \
    " Weiter: Taste IO19  ", \
    "DCC 131,132 Dreiweg- ", \
    "    Weiche Einfahrt  ", \
@@ -69,7 +81,7 @@
    "Module 13:           ", \
    "West reversing loop  ", \
    "with siding          ", \
-   VERSION_13_1, \
+   VERSION_99_1, \
    " Next: Button IO19   ", \
    "DCC 131,132 3-Way-   ", \
    "    Turnout Entrance ", \
