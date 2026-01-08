@@ -6,6 +6,8 @@
 // Changes:
 // 2024-11-28 Change program name
 // 2025-01-03 Change TOPIC_BASE
+// 2025-06-18 Add "signal"
+// 2026-01-08 Add RC_TYPE_TX, RC_TYPE_DD
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -14,8 +16,8 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_14     "2025-04-06 rcc_module14"
-#define  VERSION_14_1   "Version 2025-04-06"
+#define  VERSION_99     "2026-01-08 rcc_module14"
+#define  VERSION_99_1   "Version 2026-01-08"
 
 #define  INFOLINES_SEC  20             // time to show one page
 
@@ -25,7 +27,7 @@
 #define  _PASS_         "12345678"
 #define  _HOST_         "10.1.1.1"
 #define  TOPIC_BASE     "rcc/module14"
-#define  TOPIC_GET      "?,help,version,ip,topicbase,eeprom,byname,bydcc"
+#define  TOPIC_GET      "?,help,version,ip,signal,topicbase,eeprom,byname,bydcc,status"
 #define  TOPIC_SET      "topicbase,eeprom0"
 #define  TOPIC_SUB      ""
 #define  TOPIC_PUB      ""
@@ -52,7 +54,9 @@ PCF8574 *pIOEx[IOEX_NUM]={&pcf8574_out, &pcf8574_in}; // IO expander
 #define  RC_TYPE_TO     2    // turnout (Weiche)
 #define  RC_TYPE_T3     3    // 3way turnout (Dreiwegweiche)
 #define  RC_TYPE_DT     4    // disconnectable track (Fahrstrom)
-#define  RC_TYPE_BL     5    // blink light (Blinklicht)
+#define  RC_TYPE_TX     5    // double slip turnout/switch (Doppelkreuzungsweiche)
+#define  RC_TYPE_DD     6    // double pole, double throw (2x UM)
+#define  RC_TYPE_BL     9    // blink light (Blinklicht)
 
 //.......All properties of a railroad component.................
 struct strRcomp {
