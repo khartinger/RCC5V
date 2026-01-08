@@ -1,7 +1,7 @@
-//_____rcc_demo1_text.h__________________________khartinger_____
+//_____rcc_module01_V1_text.h____________________khartinger_____
 // define text in English and German
-#ifndef RCC_DEMO1_TEXT_H
- #define RCC_DEMO1_TEXT_H
+#ifndef RCC_MODULE01_TEXT_H
+ #define RCC_MODULE01_TEXT_H
  #include <Arduino.h>                  // String, int32_t
  //-----------(index of) connection states----------------------
  #define CON_UNKNOWN         0
@@ -11,6 +11,18 @@
  #define CON_WIFI_OK         4
  #define CON_MQTT_OK         5
  #define CON_WIFI_NOT_USED   6
+
+  //----status defines as string numbers-------------------------
+ #define T1_UNDEF0           "-2"
+ #define T1_UNDEF1           "-1"
+ #define T1_STRIGHT          "1"
+ #define T1_CURVED           "0"
+ #define T1_UNKNOWN          "-9"
+ #define T1_ON               "1"
+ #define T1_OFF              "0"
+ #define T1_NO_MQTT          "-8"
+ #define T1_DPDT_0_NC        "13"
+ #define T1_DPDT_1_NO        "15"
 
  #if LANGUAGE == 'd'
   // =========Deutsche Texte (German)===========================
@@ -32,7 +44,7 @@
    "Gleis 2 auf 1, Ladegl", \
    "DCC 11 Fahrstrom 1/0 ", \
    "DCC 12 Zweiwegweiche ", \
-   VERSION_01_1, \
+   VERSION_99_1, \
    " Weiter: Taste IO19  ", \
   }
 
@@ -60,7 +72,7 @@
    "Track 2 to 1 + Loading", \
     "DCC 11 Disconn. Track", \
    "DCC 12 2-Way-Turnout ", \
-   VERSION_01_1, \
+   VERSION_99_1, \
    " Next: Button IO19   ", \
   }
 

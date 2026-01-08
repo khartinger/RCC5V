@@ -64,13 +64,18 @@
 // Created by Karl Hartinger, November 02, 2024
 // Changes:
 // 2025-03-12 Version 2025-01-18: Customization for module 12
+// 2025-06-18 Add "signal", DEBUG_99_SHOW_ALL
+// 2026-01-08 Update ../get bydcc, byname, one value
+//            Add send MQTT-message if a value has changed
+//            Add ../get status, RC_TYPE_TX, RC_TYPE_DCC
 // Released into the public domain.
 
 // #include <Arduino.h>
 // #include "src/pcf8574/D1_class_PCF8574.h"
 //#define D1MINI          1              // ESP8266 D1mini +pro
 #define  ESP32D1        2                   // ESP32 D1mini
-#define  DEBUG_01       true                // true OR false
+#define  DEBUG_99       true                // true OR false
+#define  DEBUG_99_SHOW_ALL  false           // true OR false
 #define  LANGUAGE      'd'                  // 'd' or 'e'
 #include "rcc_module01_V1_text.h"           // AFTER LANGUAGE
 #include "pre_config.h"                     // common defines
@@ -174,7 +179,7 @@ void onAccessoryPacket(unsigned int linearDecoderAddress, bool enabled) {
    setRcompCmd(i, dccValue, "");
   }
  }
- if(DEBUG_01) {
+ if(DEBUG_99) {
   Serial.print("***Change in Accessory: ");
   Serial.print(dccAddress);
   Serial.print(" -> ");
@@ -217,12 +222,17 @@ String simpleGet(String sPayload)
  }
  //-------------------------------------------------------------
   if(sPayload=="version") {
-  p1="{\"version\":\""; p1+= String(VERSION_01); p1+="\"}";
+  p1="{\"version\":\""; p1+= String(VERSION_99); p1+="\"}";
   return p1;
  }
  //-------------------------------------------------------------
  if(sPayload=="ip") {
   p1="{\"ip\":\""; p1+= client.getsLocalIP(); p1+="\"}";
+  return p1;
+ }
+ //-------------------------------------------------------------
+ if(sPayload=="signal") {
+  p1="{\"signal\":"; p1+=client.getsSignal(); p1+="}";
   return p1;
  }
  //-------------------------------------------------------------
@@ -248,74 +258,124 @@ String simpleGet(String sPayload)
   p1+="\"}";
   return p1;
  }
-
+ 
  //-------------------------------------------------------------
- //------is it a get command for one or all railway components?-
-  if(sPayload=="byname" || sPayload=="bydcc") {
+ String sUndef0=T_UNDEF0;
+ String sUndef1=T_UNDEF1;
+ String sStright=T_STRIGHT;
+ String sCurved=T_CURVED;
+ String sUnknown=T_UNKNOWN;
+ String sON=T_ON;
+ String sOFF=T_OFF;
+ //-------------------------------------------------------------
+ //------is it a get command for all railway components?--------
+ if(sPayload=="byname" || sPayload=="bydcc" || sPayload=="status") {
+  if(sPayload=="status")
+  {
+   sUndef0=T1_UNDEF0;
+   sUndef1=T1_UNDEF1;
+   sStright=T1_STRIGHT;
+   sCurved=T1_CURVED;
+   sUnknown=T1_UNKNOWN;
+   sON=T1_ON;
+   sOFF=T1_OFF;
+  }
   p1="{";
-  for(int i=0; i<RCOMP_NUM; i++) {
+  for(int i=0; i<RCOMP_NUM; i++) { // ...for all components.....
    if(i>0) p1+=",";
    if(sPayload=="byname") p1+="\"" + aRcomp[i].name + "\":\"";
    else p1+="\"" + String(aRcomp[i].dcc) + "\":\"";
-   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_T3) {
+   if(aRcomp[i].type==RC_TYPE_T3) {
     switch(aRcmd[i].inValue) {
-     case 0: if(aRcomp[i].type==RC_TYPE_T3) p1+=T_STRIGHT;
-             else p1+=T_UNDEF0;
-             break;                          // BA=00
-     case 1:  p1+=T_STRIGHT;  break; // BA=01 (stright)
-     case 2:  p1+=T_CURVED;   break; // BA=10 (curved)
-     case 3:  p1+=T_UNDEF1;   break; // BA=11
-     default: p1+=T_UNKNOWN;  break; // ?? impossible
-    }
-   } else {
-    if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
-     aRcmd[i].inValue ? p1+=T_ON : p1+=T_OFF;
-    } else {
-     if(aRcomp[i].type==RC_TYPE_UC) {
-     aRcmd[i].inValue ? p1+=T_ON : p1+=T_OFF;
-     } else {
-      p1+=String(aRcmd[i].inValue);
-     }
+     case 0:  p1+=sStright; break; // BA=00
+     case 1:  p1+=sCurved;  break; // BA=01
+     case 2:  p1+=sStright; break; // BA=10
+     case 3:  p1+=sUndef1;  break; // BA=11
+     default: p1+=sUnknown; break; // ?? impossible
     }
    }
+   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_TX) {
+    switch(aRcmd[i].inValue) {
+     case 0:  p1+=sUndef0;  break; // BA=00
+      case 1:  p1+=sStright; break; // BA=01
+      case 2:  p1+=sCurved;  break; // BA=10
+      case 3:  p1+=sUndef1;  break; // BA=11
+      default: p1+=sUnknown; break; // ?? impossible
+    }
+   }
+   if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
+    aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_DD) { // double pole, double throw (2x UM)
+    aRcmd[i].inValue ? p1+=T1_DPDT_1_NO : p1+=T1_DPDT_0_NC;
+   }
+   if(aRcomp[i].type==RC_TYPE_UC) {
+    aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_BL) {
+    // aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+    if(aRcmd[i].iCmd==CMD_BLINK) p1+=sON; else p1+=sOFF;
+   }
    p1+="\"";
-  }
+  } // END OF for all components................................
   p1+="}";
   return p1;
  }
 
- //------is it a get command for one railway component?---------
- for(int i=0; i<RCOMP_NUM; i++) {
+//-------------------------------------------------------------
+ //------is it a get command for ONE railway component by dcc or name?
+ for(int i=0; i<RCOMP_NUM; i++) { // ...for all components.....
   String s1=String(aRcomp[i].name);
   s1.toLowerCase();
-  if(sPayload==s1 || sPayload==String(aRcomp[i].dcc)) {
-   p1="{\""+aRcomp[i].name+"\":\"";
-      if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_T3) {
+  String s2=String(aRcomp[i].dcc);
+  p1="";
+  if(sPayload==s1) p1="{\""+s1+"\":\""; // by name
+  if(sPayload==s2) { // by dcc
+   p1="{\""+s2+"\":\"";
+   sUndef0=T1_UNDEF0;
+   sUndef1=T1_UNDEF1;
+   sStright=T1_STRIGHT;
+   sCurved=T1_CURVED;
+   sUnknown=T1_UNKNOWN;
+   sON=T1_ON;
+   sOFF=T1_OFF;
+  }
+  if(p1.length()>0) {
+   if(aRcomp[i].type==RC_TYPE_T3) {
     switch(aRcmd[i].inValue) {
-     case 0: if(aRcomp[i].type==RC_TYPE_T3) p1+=T_STRIGHT;
-             else p1+=T_UNDEF0;
-             break;                          // BA=00
-     case 1:  p1+=T_STRIGHT;  break; // BA=01 (stright)
-     case 2:  p1+=T_CURVED;   break; // BA=10 (curved)
-     case 3:  p1+=T_UNDEF1;   break; // BA=11
-     default: p1+=T_UNKNOWN;  break; // ?? impossible
+     case 0:  p1+=sStright; break; // BA=00
+     case 1:  p1+=sCurved;  break; // BA=01
+     case 2:  p1+=sStright; break; // BA=10
+     case 3:  p1+=sUndef1;  break; // BA=11
+     default: p1+=sUnknown; break; // ?? impossible
     }
-   } else {
-    if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
-     aRcmd[i].inValue ? p1+=T_ON : p1+=T_OFF;
-    } else {
-     if(aRcomp[i].type==RC_TYPE_UC) {
-     aRcmd[i].inValue ? p1+=T_ON : p1+=T_OFF;
-     } else {
-      p1+=String(aRcmd[i].inValue);
-     }
+   }
+   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_TX) {
+    switch(aRcmd[i].inValue) {
+     case 0:  p1+=sUndef0;  break; // BA=00
+      case 1:  p1+=sStright; break; // BA=01
+      case 2:  p1+=sCurved;  break; // BA=10
+      case 3:  p1+=sUndef1;  break; // BA=11
+      default: p1+=sUnknown; break; // ?? impossible
     }
+   }
+   if(aRcomp[i].type==RC_TYPE_DT) { // discon track (fahrstrom)
+    aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_DD) { // double pole, double throw (2x UM)
+    aRcmd[i].inValue ? p1+=T1_DPDT_1_NO : p1+=T1_DPDT_0_NC;
+   }
+   if(aRcomp[i].type==RC_TYPE_UC) {
+    aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
+   }
+   if(aRcomp[i].type==RC_TYPE_BL) {
+    if(aRcmd[i].iCmd==CMD_BLINK) p1+=sON; else p1+=sOFF;
+    //aRcmd[i].inValue ? p1+=sON : p1+=sOFF;
    }
    p1+="\"}";
    return p1;
   }
- }
-
+ } // END OF for all components.................................
  //-------------------------------------------------------------
  return String("");                         // wrong Get command
 }
@@ -370,14 +430,16 @@ String simpleSet(String sTopic, String sPayload)
   s1.toLowerCase();
   if(sTopic==String(aRcomp[i].dcc) || sTopic==s1) {
    int iCmdValue=-1;
-   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_T3) {
+   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_TX 
+     || aRcomp[i].type==RC_TYPE_T3) {
     if(sPayload=="0" ||  sPayload=="a" || sPayload=="b") iCmdValue=0;
     if(sPayload=="1" || sPayload=="g") iCmdValue=1;
    } else {
     if(sPayload=="0") iCmdValue=0;
     if(sPayload=="1") iCmdValue=1;
    }
-   return(setRcompCmd(i, iCmdValue, sPayload));
+   String s2=setRcompCmd(i, iCmdValue, sPayload);
+   return("{\""+String(aRcomp[i].dcc)+"\":\""+s2+"\"}");
   } // END OF if: set command for a railway component
  } // END OF for-loop
  //-------------------------------------------------------------
@@ -460,27 +522,42 @@ void prepareScreenLine4to6(int iRcompGroup) {
      default: aScreenText[4]+="??  ";  break; // ?? impossible
     } // END OF switch
    } else { //......not RC_TYPE_TO or RC_TYPE_T3.................
-    if(aRcomp[iRc].type==RC_TYPE_DT) { // discon track (fahrstrom)
-     aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
-    } else { //.....not RC_TYPE_DT...............................
-     if(aRcomp[iRc].type==RC_TYPE_UC) {
+    if(aRcomp[iRc].type==RC_TYPE_TX){ // double slip turnout/switch
+     switch(aRcmd[iRc].inValue) {
+      case 0:  aScreenText[4]+="0?  ";  break; // BA=00
+      case 1:  aScreenText[4]+="_X_ ";  break; // BA=01 (stright)
+      case 2:  aScreenText[4]+=")(  ";  break; // BA=10 (curved)
+      case 3:  aScreenText[4]+="1?  ";  break; // BA=11
+      default: aScreenText[4]+="??  ";  break; // ?? impossible
+     } // END OF switch
+    } else { //......not RC_TYPE_TO or RC_TYPE_T3 or RC_TYPE_TX.
+     if(aRcomp[iRc].type==RC_TYPE_DT) { // discon track (fahrstrom)
       aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
-     } else { //....not RC_TYPE_UC...............................
-      if(aRcomp[iRc].type==RC_TYPE_BL) {
-       if(aRcmd[iRc].iCmd==CMD_BLINK)
-       {
-        aScreenText[4]+="run ";
-       } else {
-        aScreenText[4]+="--- ";
-       }
-       //aRcmd[iRc].inValue ? aScreenText[4]+="1_0 " : aScreenText[4]+="0_1 ";
-       //aScreenText[4]+="0|1 ";
-      } else { //...not RC_TYPE_BL...............................
-       aScreenText[4]+=(" "+String(aRcmd[iRc].inValue)+"   ").substring(0,4);
-      } // END OF not RC_TYPE_BL
-     } // END OF not RC_TYPE_UC
-    } // END OF not RC_TYPE_DT
-   } // END OF not RC_TYPE_TO
+     }
+     else { //.....not RC_TYPE_DT...............................
+      if(aRcomp[iRc].type==RC_TYPE_DD) { // 
+       aRcmd[iRc].inValue ? aScreenText[4]+="1-5" : aScreenText[4]+="1-3";
+      } else { //....not RC_TYPE_DD.............................
+       if(aRcomp[iRc].type==RC_TYPE_UC) {
+        aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
+       } else { //....not RC_TYPE_UC...............................
+        if(aRcomp[iRc].type==RC_TYPE_BL) {
+         if(aRcmd[iRc].iCmd==CMD_BLINK)
+         {
+          aScreenText[4]+="run ";
+         } else {
+          aScreenText[4]+="--- ";
+         }
+         //aRcmd[iRc].inValue ? aScreenText[4]+="1_0 " : aScreenText[4]+="0_1 ";
+         //aScreenText[4]+="0|1 ";
+        } else { //...not RC_TYPE_BL...............................
+         aScreenText[4]+=(" "+String(aRcmd[iRc].inValue)+"   ").substring(0,4);
+        } // END OF not RC_TYPE_BL
+       } // END OF not RC_TYPE_UC
+      } // END OF not RC_TYPE_DD
+     } // END OF not RC_TYPE_DT
+    } // END OF not RC_TYPE_TO
+   } // END OF double slip turnout/switch
   } // END OF not RC_TYPE_T3
   //-----dcc number of railway element--------------------------
   aScreenText[5]+=(String(aRcomp[iRc].dcc)+"    ").substring(0,4);
@@ -517,7 +594,7 @@ void showInfolines() {
  int iPageMax=1+int((INFOLINES_NUM-1)/5);
  //-----------for all pages-------------------------------------
  for(int iPage=0; iPage<iPageMax; iPage++) {
-  if(DEBUG_01) { Serial.println("  Show Info Page "+String(1+iPage)); }
+  if(DEBUG_99) { Serial.println("  Show Info Page "+String(1+iPage)); }
   int iStartline=iPage*5;
   int iEndline=iStartline+5;
   if(iEndline > INFOLINES_NUM) iEndline=INFOLINES_NUM;
@@ -568,7 +645,8 @@ void showLine6WaitMaxXXs(int iSec, String line6) {
 // uses: aRcomp[]
 // return: answer string e.g. for WiFi answer
 String setRcompCmd(int iRcomp, int iCmdValue, String sReturn) {
- if(aRcomp[iRcomp].type==RC_TYPE_TO || aRcomp[iRcomp].type==RC_TYPE_T3) {
+ if(aRcomp[iRcomp].type==RC_TYPE_TO || aRcomp[iRcomp].type==RC_TYPE_TX 
+    || aRcomp[iRcomp].type==RC_TYPE_T3) {
   //...it is a turnout command (2 bits, 2cmds)................
   if(iCmdValue==0) {
    aRcmd[iRcomp].stateToDo=STATE_NOW;
@@ -606,7 +684,7 @@ String setRcompCmd(int iRcomp, int iCmdValue, String sReturn) {
   }
  } // END OF it is a uncoupler command (1 bit, 2cmds)...........
 
- if(aRcomp[iRcomp].type==RC_TYPE_DT) {
+ if(aRcomp[iRcomp].type==RC_TYPE_DT || aRcomp[iRcomp].type==RC_TYPE_DD) {
   //...it is a disconn track command (1 bit, 1cmd)............
   if(iCmdValue==0) {                        // turn current off
    aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
@@ -725,13 +803,17 @@ int updateInputValues() {
    if(iBit!=NO_PIN) iBitsBA+=(*pIOEx[iIOEx]).getBit(iBit);
    iBit=aRcomp[i].inBitB;
    if(iBit!=NO_PIN) iBitsBA+=2*(*pIOEx[iIOEx]).getBit(iBit);
-   //.....save input value......................................
+   //....save input value.......................................
    if(aRcmd[i].inValue!=iBitsBA) 
    {
     aRcmd[i].inValueChanged=true;
-    if(aRcmd[i].iCmd!=CMD_BLINK) {
+    if(aRcmd[i].iCmd!=CMD_BLINK) 
+    { // Not a BLINK command....................................
      aRcmd[i].inValue=iBitsBA;
      iReturn=i;
+     //..value changed: prepare sending a mqtt message..........
+     String s2=String(aRcomp[i].dcc);
+     client.simpleMqttDo("get", s2, s2); // type, topic, payload
     }
    } else {
     aRcmd[i].inValueChanged=false;
@@ -836,7 +918,7 @@ void setup() {
  int button_;
  String s1="", s2="", s3="", s2oled="";
  //------Serial, just for debug---------------------------------
- if(DEBUG_01) {
+ if(DEBUG_99) {
   Serial.begin(115200);
   Serial.flush();
   Serial.println("\nsetup(): --Start--");
@@ -871,7 +953,7 @@ void setup() {
   s3=s3.substring(0,SCREEN_LINE_LEN);       // max. 21 character
   showLine(3,s3);
   while (!(*pIOEx[i]).begin(bfirstComp)) {  // I2C started
-   if(DEBUG_01) {
+   if(DEBUG_99) {
     Serial.println("Error: "+(*pIOEx[i]).getsStatus());
     Serial.print(" - Could not find PCF8574 at 0x");
     Serial.print((*pIOEx[i]).getAddress(), 16);
@@ -885,7 +967,7 @@ void setup() {
   s2oled+=" 0x"+s1;                         // add address to found
   (*pIOEx[i]).setByte(0xFF);
   showLine(5,s2oled);                       // show found addresses
-  if(DEBUG_01) { Serial.println(s2); }      // show found addresses
+  if(DEBUG_99) { Serial.println(s2); }      // show found addresses
  }
  showLine(4, "");                           // clear "search"-line
 
@@ -910,7 +992,7 @@ void setup() {
   s1=s1.substring(0,SCREEN_LINE_LEN);        // max. 21 character
   screen_.screen15(2,s1);                    // line 2: begin connect
   screen_.screen15(4,"Button: skip WiFi -->");   // line4: 
-  if(DEBUG_01) Serial.print("setup(): "+s1+String("\n"));
+  if(DEBUG_99) Serial.print("setup(): "+s1+String("\n"));
   client.connectingWiFiBegin();              // begin connecting
   int iUseWiFi=30;
   //.....waiting for WiFi connection............................
@@ -919,11 +1001,11 @@ void setup() {
    bRet=client.connectingWiFi();             // try to connect
    screen_.screen15Dot(3);                   // line 3: waiting dot
    iUseWiFi--;
-   if(DEBUG_01) Serial.println("  Waiting for WiFi: "+String(iUseWiFi));
+   if(DEBUG_99) Serial.println("  Waiting for WiFi: "+String(iUseWiFi));
   } while(!bRet && iUseWiFi>0);
   //.....END OF waiting for WiFi connection.....................
   if(iUseWiFi>0) {
-   if(DEBUG_01) Serial.println("setup(): FOUND WiFi " + client.getsSSID());
+   if(DEBUG_99) Serial.println("setup(): FOUND WiFi " + client.getsSSID());
    //----WiFi ok (no timeout)-----------------------------------
    iConn=CON_WIFI_OK;                        // WiFi OK
    bUseWiFi=true;                            // use WiFi 
@@ -933,7 +1015,7 @@ void setup() {
    while (!client.isMQTTConnected() && !client.isMQTTConnectedNew() && iMqttReady>0)
    {
     iMqttReady--;
-    if(DEBUG_01) Serial.println("  Waiting for MQTT: "+String(iMqttReady));
+    if(DEBUG_99) Serial.println("  Waiting for MQTT: "+String(iMqttReady));
     delay(500);
     client.doLoop();                          // mqtt loop
    };
@@ -942,8 +1024,9 @@ void setup() {
     //----WiFi and MQTT OK: publish start info-------------------
     iConn=CON_MQTT_OK;                      // MQTT OK
     //client.bAllowMQTTStartInfo(false);     //NO mqtt (re)start info
-    if(DEBUG_01) Serial.println("setup(): Connected to MQTT-broker: "+s2);
-    client.publish_P("rcc/start/mqtt",("{\"topicbase\":\""+s2+"\"}").c_str(),false);
+    if(DEBUG_99) Serial.println("setup(): Connected to MQTT-broker: "+s2);
+    String s3="{\"topicbase\":\""+s2+"\",\"signal\":"+client.getsSignal()+"}";
+    client.publish_P("rcc/start/mqtt",s3.c_str(),false);
    }
    else
    {
@@ -951,7 +1034,7 @@ void setup() {
    }
   } else {
    //----WiFi timeout-------------------------------------------
-   if(DEBUG_01) Serial.println("setup(): WiFi " + client.getsSSID() + "NOT FOUND!");
+   if(DEBUG_99) Serial.println("setup(): WiFi " + client.getsSSID() + "NOT FOUND!");
    iConn=CON_NO_WIFI;                        // NO WiFi
    bUseWiFi=false;                           // don´t use WiFi
    s2=T_NO_MQTT;                             // No control via MQTT
@@ -964,7 +1047,7 @@ void setup() {
 #else
  //------Dont use WiFi anyway-----------------------------------
  iConn=CON_NO_WIFI;                        // NO WiFi
- s1=T_NO_MQTT;
+ s1=TT_NO_MQTT;
  s1=s1.substring(0,SCREEN_LINE_LEN);       // max. 21 character
  showLine(2, s1);
  showLine(3, "");
@@ -972,10 +1055,10 @@ void setup() {
 
  //------DCC: register pin and callback routine-----------------
  DccAccessoryDecoder.begin(PIN_DCC, onAccessoryPacket);
- if(DEBUG_01) Serial.println("setup(): DccAccessoryDecoder OK");
+ if(DEBUG_99) Serial.println("setup(): DccAccessoryDecoder OK");
  //------Finish setup-------------------------------------------
  int iTemp=updateInputValues();
- if(DEBUG_01) Serial.println("setup(): --Finished--\n");
+ if(DEBUG_99) Serial.println("setup(): --Finished--\n");
 }
 
 int32_t reset_countdown=-1;            // -1 no count down
@@ -990,6 +1073,7 @@ void loop() {
  int state=stm.loopBegin();                 // state begin
  String s1;                                 // help value
  String sSerial=String(state);              // collect serial output
+ int retDCC_=-1;                            // if value changed
 
  //======(2) do, independent on the network, ...================
  
@@ -1026,6 +1110,7 @@ void loop() {
 
  //------(2.4) update display, if there was an input change-----
  if(iRcomp_>=0) { // yes, input changed
+  //.....prepare display........................................
   int iRcompGroup_=int(iRcomp_/5);
   if(iRcompGroup_== iRcompGroupNow)
   { // change in current displayed group: show change-----------
@@ -1064,6 +1149,11 @@ void loop() {
  //======(3) process mqtt actions===============================
  #if _USE_WIFI_ == true
  if(bUseWiFi) {
+  //.....Force an MQTT get message because a value has changed..
+  //if(retDCC_>=0) {
+  // client.publish_P((String(TOPIC_BASE)+"/get").c_str(),String(retDCC_).c_str(),false);
+  //}
+  //.....process mqtt actions...................................
   client.doLoop();                          // mqtt loop
   //=====(4) do, depending on the network access, ...===========
   if(client.isWiFiConnectedNew())    iConn=CON_WIFI_OK;// "WiFi OK   ";
@@ -1094,9 +1184,14 @@ void loop() {
  }
  uint32_t ms=stm.loopEnd();                   // state end
  //------print serial data--------------------------------------
- if(DEBUG_01) {
-  Serial.print(sSerial+" | "); Serial.print(ms); 
-  if(ms>STATE_DELAY) Serial.println("ms-Too long!!");
-  else Serial.println("ms");
+ if(DEBUG_99) {
+ sSerial+=" | ";
+  sSerial+=String(ms);
+  if(ms>STATE_DELAY) sSerial+=" ms-Too long!!";
+  else sSerial+=" ms";
+  if(DEBUG_99_SHOW_ALL) Serial.println(sSerial);
+  else {
+   if(sSerial.length()>14) Serial.println(sSerial);
+  }
  }
 }
