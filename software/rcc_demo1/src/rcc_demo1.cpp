@@ -1048,6 +1048,11 @@ void setup() {
 #if _USE_WIFI_ == true
  if(bUseWiFi) {
   //----------WiFi (wlan) data from eeprom?---------------------
+  bRet=client.eepromBegin();
+  if(DEBUG_99){
+    if(bRet) Serial.println("EEPROM initial OK");
+    else     Serial.println("EEPROM initial ERROR");
+  }
   int iRet_=0;
   String sWlan=client.eepromReadMyData(iRet_);
   if(iRet_>0) {
