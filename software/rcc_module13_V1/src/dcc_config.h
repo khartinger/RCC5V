@@ -16,8 +16,8 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_99     "2026-01-10 rcc_module13_V1"
-#define  VERSION_99_1   "Version 2026-01-10"
+#define  VERSION_99     "2026-01-11 rcc_module13_V1"
+#define  VERSION_99_1   "Version 2026-01-11"
 
 #define  INFOLINES_SEC  20             // time to show one page
 
