@@ -73,8 +73,8 @@
 // #include "src/pcf8574/D1_class_PCF8574.h"
 //#define D1MINI          1              // ESP8266 D1mini +pro
 #define  ESP32D1        2                   // ESP32 D1mini
-#define  DEBUG_99       false               // true OR false
-#define  DEBUG_99_SHOW_ALL  false           // true OR false
+#define  DEBUG_99       true               // true OR false
+#define  DEBUG_99_SHOW_ALL  true           // true OR false
 #define  LANGUAGE      'd'                  // 'd' or 'e'
 #include "rcc_module14_text.h"              // AFTER LANGUAGE
 #include "pre_config.h"                     // common defines

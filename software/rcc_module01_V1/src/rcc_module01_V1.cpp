@@ -1,16 +1,21 @@
-//_____rcc_module14_________________________________khartinger_____
-// This program for an ESP32 is used to switch a two-way-turnout.
-// The block is controlled via the I/O pins of two 
-// I²C PCF8574 I/O expanders, whereby 
+//_____rcc_module01_V1___________________________khartinger_____
+// This program for an ESP32 is used to test various self-built 
+// model railroad switching blocks. The blocks are controlled 
+// via the I/O pins of two I²C PCF8574 I/O expanders, whereby 
 // the PCF8574 with the I2C address 0x20 (IO expander #0) is 
 // used for control and the PCF8574 with the I2C address 0x21 
 // (IO expander #1) for feedback. The IO pins for control and 
 // feedback each have the same pin number.
 //
-// 1. DCC 141, IO expander pin 0,1: Two-way turnout (switch)
+// 1. DCC 11, IO expander pin 0: Decoupler (uncoupler)
+// 2. DCC 21, IO expander pin 1,2: Two-way switch 
 //    (with limit switch)
+// 3. DCC 31,32, IO expander pin 3,4,5: Three-way switch
+//    (with limit switching)
+// 4. DCC 41, IO expander pin 6: Disconnectable track
+// 5. DCC 51, IO expander pin 7: Flashing light
 //
-// The switching status of the component is shown 
+// The switching status of the components is shown 
 // on a 1.54” OLED display.
 //
 // A button on pin D6 (IO19) can be used to skip the individual
@@ -40,10 +45,10 @@
 //
 // Electrical components
 // The electrical components depend on what you want to test.
-// Example two-way crossover:
-// 1. a two-way turnout with limit switching   
-// 2. self-assembly block “RW_5V_W2” consisting of the two 
-//    circuit boards `RW_5V_W2_STRG` and `RW_5V_W2_LED`
+// Example three-way crossover:
+// 1. a three-way crossover with limit switching   
+// 2. self-assembly block “RW_5V_W3” consisting of the two 
+//    circuit boards `RW_5V_W3_STRG` and `RW_5V_W3_LED`
 //    for controlling the points with 5V   
 // 3. a transformer with 16V alternating voltage (V+, V-)
 // 4. a DCC source for sending turnout commands (e.g. Roco 
@@ -58,11 +63,8 @@
 // Important: Example needs a MQTT-broker!
 // Created by Karl Hartinger, November 02, 2024
 // Changes:
-// 2024-11-14 2-way-turnout number 1=stright <-> 2=curved changed
-// 2024-11-28 Change program name
-// 2025-01-03 Change TOPIC_BASE, add #define CON_...
-// 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
-// 2025-04-06 add DEBUG_14_SHOW_ALL
+// 2025-03-12 Version 2025-01-18: Customization for module 12
+// 2025-06-18 Add "signal", DEBUG_99_SHOW_ALL
 // 2026-01-08 Update ../get bydcc, byname, one value
 //            Add send MQTT-message if a value has changed
 //            Add ../get status, RC_TYPE_TX, RC_TYPE_DCC
@@ -76,7 +78,7 @@
 #define  DEBUG_99       false               // true OR false
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 #define  LANGUAGE      'd'                  // 'd' or 'e'
-#include "rcc_module14_text.h"              // AFTER LANGUAGE
+#include "rcc_module01_V1_text.h"           // AFTER LANGUAGE
 #include "pre_config.h"                     // common defines
 #include "dcc_config.h"                     // hardware defines
 #include <DccAccessoryDecoder.h>
