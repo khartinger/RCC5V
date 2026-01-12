@@ -66,13 +66,14 @@
 // 2026-01-08 Update ../get bydcc, byname, one value
 //            Add send MQTT-message if a value has changed
 //            Add ../get status, RC_TYPE_TX, RC_TYPE_DCC
+// 2026-01-11 Add ../set/wlan: get wlan data from eeprom
 // Released into the public domain.
 
 // #include <Arduino.h>
 // #include "src/pcf8574/D1_class_PCF8574.h"
 //#define D1MINI          1              // ESP8266 D1mini +pro
 #define  ESP32D1        2                   // ESP32 D1mini
-#define  DEBUG_99       true                // true OR false
+#define  DEBUG_99       false               // true OR false
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 #define  LANGUAGE      'd'                  // 'd' or 'e'
 #include "rcc_module10_text.h"              // AFTER LANGUAGE
@@ -147,11 +148,11 @@ strRcmd aRcmd[RCOMP_NUM];
 //_______State machine__________________________________________
 #define STATE_MAX           180000     // 180000*20ms = 1 hour
 #define STATE_DELAY             20     // state delay in ms
-#define STATES_SCREEN_REFRESH   251     // 251*20ms=5,2s
+#define STATES_SCREEN_REFRESH  251     // 251*20ms=5,2s
 #define STATES_SHOW_SCREEN_MIN  75     // show screen min 1.5 sec
 #define STATES_BLINK            25     // 25*20ms =0,5s
 #define STATES_BEFORE_RESET     50     // 25*20ms =1s
-Statemachine stm(STATE_MAX, STATE_DELAY); //1..36000
+Statemachine stm(STATE_MAX, STATE_DELAY); //1..180000
 
 //_______dcc access_____________________________________________
 unsigned int dccAddress=0;             // dcc address
@@ -185,6 +186,52 @@ void onAccessoryPacket(unsigned int linearDecoderAddress, bool enabled) {
   Serial.println("***");
  }
 }
+
+#if _USE_WIFI_ == true
+// *************************************************************
+// Control functions for WLAN data
+// *************************************************************
+//_______Check IP-Address_______________________________________
+// return: true = valid IP address, false: not valid
+bool isValidIPv4(const String &ip) {
+  int parts = 0;
+  int last = 0;
+  for (int i = 0; i <= ip.length(); i++) {
+    if (i == ip.length() || ip[i] == '.') {
+      if (i == last) return false;  // leerer Block
+      int num = 0;
+      for (int j = last; j < i; j++) {
+        if (!isDigit(ip[j])) return false;
+        num = num * 10 + (ip[j] - '0');
+        if (num > 255) return false;
+      }
+      parts++;
+      last = i + 1;
+    }
+  }
+  return parts == 4;
+}
+
+//_______check WLAN input string________________________________
+// input: ssid|password|ip
+// if password ist empty: ssid||ip
+bool validateWlanString(const String &s) {
+  int i1 = s.indexOf('|');
+  if (i1 < 0) return false;
+  int i2 = s.indexOf('|', i1 + 1);
+  if (i2 < 0) return false;
+  // kein drittes '|'
+  if (s.indexOf('|', i2 + 1) >= 0) return false;
+  // ssid & password dürfen nicht leer sein
+  if (i1 == 0) return false;                // ssid leer
+  // if (i2 == i1 + 1) return false;        // password leer
+  if (i2 == s.length() - 1) return false;   // ip leer
+  // ip prüfen
+  String ip = s.substring(i2 + 1);
+  if (!isValidIPv4(ip)) return false;
+  return true;
+}
+#endif
 
 // *************************************************************
 // MQTT Functions
@@ -384,6 +431,7 @@ String simpleGet(String sPayload)
 String simpleSet(String sTopic, String sPayload)
 {
  String p1=String("");                      // help string
+ String sPayload0=sPayload;                 // original
  sTopic.toLowerCase();
  sPayload.toLowerCase();                    // for easy compare
  //-------------------------------------------------------------
@@ -394,6 +442,28 @@ String simpleSet(String sTopic, String sPayload)
   p1+="\"}";                                // end json
   showLine(3, client.getsTopicBase());      // show on display
   return p1;                                // return new base
+ }
+ //-------------------------------------------------------------
+ if(sTopic=="wlan") {                       // erase eeprom?
+  //----------check syntax sPayload0: ip|ssid|password-----------
+  if(validateWlanString(sPayload0)) {
+   int iRet_=client.eepromWriteMyData(sPayload0);
+   if(iRet_>0) {
+    int iRet2=0;
+    String s1=client.eepromReadMyData(iRet2);
+    if(iRet2<0) s1="EEPROM READ Error "+ String(iRet2);
+    p1="{\"wlan\":\"" + s1 + "\"}";          // start json
+   } else {
+    p1="{\"wlan\":\"";                       // start json
+    p1+="EEPROM WRITE Error "+ String(iRet_);
+    p1+="\"}";                               // end json
+   }
+  } else {
+   p1="{\"wlan\":\"";                       // start json
+   p1+="syntax: ssid|password|IP or ssid||IP";
+   p1+="\"}";                               // end json
+  }
+  return p1;                                // return result
  }
  //-------------------------------------------------------------
  if(sTopic=="eeprom0") {                    // erase eeprom?
@@ -972,7 +1042,24 @@ void setup() {
  //------Setup WiFi/MQTT client---------------------------------
 #if _USE_WIFI_ == true
  if(bUseWiFi) {
-  client.setLanguage(LANGUAGE);           //e=english,d=german
+  //----------WiFi (wlan) data from eeprom?---------------------
+  bRet=client.eepromBegin();
+  if(DEBUG_99){
+    if(bRet) Serial.println("EEPROM initial OK");
+    else     Serial.println("EEPROM initial ERROR");
+  }
+  int iRet_=0;
+  String sWlan=client.eepromReadMyData(iRet_);
+  if(iRet_>0) {
+   int i1 = sWlan.indexOf('|');
+   int i2 = sWlan.indexOf('|', i1 + 1);
+   if(i1>0 && i2>0) {
+    client.setWlanData(sWlan.substring(0, i1),
+      sWlan.substring(i1+1,i2) ,sWlan.substring(i2+1));
+   }
+  }
+  //----------other WiFi settings-------------------------------
+  client.setLanguage(LANGUAGE);              //e=english,d=german
   client.setCallback(callback);              // mqtt receiver
   client.setTopicBaseDefault(TOPIC_BASE);    // topic base
   client.setWiFiWaitingTime(1000);           // set a short time (1s)
@@ -986,7 +1073,7 @@ void setup() {
   //client.setRetainedIndex("get",3,true);
   client.begin();                            // setup objects
   //------Show connecting procedure-----------------------------
-  s1="WiFi "+String(_SSID_)+" connecting...";
+  s1="WiFi "+client.getsSSID()+" connecting...";
   s1=s1.substring(0,SCREEN_LINE_LEN);        // max. 21 character
   screen_.screen15(2,s1);                    // line 2: begin connect
   screen_.screen15(4,"Button: skip WiFi -->");   // line4: 
@@ -1038,7 +1125,7 @@ void setup() {
    s2=T_NO_MQTT;                             // No control via MQTT
    s2=s2.substring(0,SCREEN_LINE_LEN);       // max. 21 character
   }
-  s1="WiFi "+ sConn[iConn]+ " " + String(_SSID_);
+  s1="WiFi "+ sConn[iConn]+ " " + client.getsSSID();
   showLine(2, s1);
   showLine(3, s2);
  }
@@ -1165,7 +1252,7 @@ void loop() {
  if(iConn!=iConnOld) {
   iConnOld=iConn;
   sSerial+=" | "+sConn[iConn];
-  showLine(2,sConn[iConn]+" "+String(_SSID_));
+  showLine(2,sConn[iConn]+" "+client.getsSSID());
  }
  #endif
 
