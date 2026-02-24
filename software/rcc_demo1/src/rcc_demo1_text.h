@@ -41,17 +41,17 @@
 // "---------|---------|-" line length = 21
   #define  INFOLINES_NUM     15
   #define  INFOLINES { \
-   "Test von Eisenbahn-  ", \
+   "Test von RCC-     1/3", \
    "Schaltbloecken mit   ", \
    "DCC - MQTT - Hand    ", \
    VERSION_99_1, \
    " Weiter: Taste IO19  ", \
-   "DCC 11 Entkuppler    ", \
+   "DCC 11 Entkuppler 2/3", \
    "DCC 21 Zweiwegweiche ", \
    "DCC 31,32 3-Wegweiche", \
    "DCC 41 Fahrstrom 1/0 ", \
    " Weiter: Taste IO19  ", \
-   "DCC 51 Blinklicht    ", \
+   "DCC 51 Blinklicht 3/3", \
    " ",\
    "Es folgt: IO-Expander", \
    " und Wifi-Suche      ", \

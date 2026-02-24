@@ -72,6 +72,7 @@
 //            Add send MQTT-message if a value has changed
 //            Add ../get status, RC_TYPE_TX, RC_TYPE_DCC
 // 2026-01-10 Add ../set/wlan: get wlan data from eeprom
+// 2026-02-24 Add ../get mac, setWiFiHostName()
 // Released into the public domain.
 
 // #include <Arduino.h>
@@ -81,6 +82,7 @@
 #define  DEBUG_99       false               // true OR false
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 #define  LANGUAGE      'd'                  // 'd' or 'e'
+
 #include "rcc_demo1_text.h"                 // AFTER LANGUAGE
 #include "pre_config.h"                     // common defines
 #include "dcc_config.h"                     // hardware defines
@@ -273,6 +275,13 @@ String simpleGet(String sPayload)
  //-------------------------------------------------------------
   if(sPayload=="version") {
   p1="{\"version\":\""; p1+= String(VERSION_99); p1+="\"}";
+  return p1;
+ }
+ //-------------------------------------------------------------
+ if(sPayload=="mac") {
+  p1="{\"mac\":\""; p1+= client.getsMac();
+  p1+="\",\"hostname\":\"" + client.getWiFiHostName();
+  p1+="\"}";
   return p1;
  }
  //-------------------------------------------------------------
@@ -1064,7 +1073,8 @@ void setup() {
    }
   }
   //----------other WiFi settings-------------------------------
-  client.setLanguage(LANGUAGE);              //e=english,d=german
+  client.setWiFiHostName(_ESP_NAME_);        // device name
+  client.setLanguage(LANGUAGE);              // e=english,d=german
   client.setCallback(callback);              // mqtt receiver
   client.setTopicBaseDefault(TOPIC_BASE);    // topic base
   client.setWiFiWaitingTime(1000);           // set a short time (1s)
@@ -1134,6 +1144,9 @@ void setup() {
   showLine(2, s1);
   showLine(3, s2);
  }
+ if(DEBUG_99) Serial.println("setup(): IP-Adresse: " + WiFi.localIP().toString());
+ if(DEBUG_99) Serial.println("setup(): Hostname nach Verbindung: " + String(WiFi.getHostname()));
+
 #else
  //------Dont use WiFi anyway-----------------------------------
  iConn=CON_NO_WIFI;                        // NO WiFi

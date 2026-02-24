@@ -8,6 +8,7 @@
 // 2025-01-03 Change TOPIC_BASE
 // 2025-06-18 Add "signal"
 // 2026-01-08 Add RC_TYPE_TX, RC_TYPE_DD
+// 2026-02-24 Add mac
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -16,18 +17,20 @@
  #include "src/pcf8574/D1_class_PCF8574.h"
 
 //_______program version________________________________________
-#define  VERSION_99     "2026-01-11 rcc_demo1"
-#define  VERSION_99_1   "Version 2026-01-11"
+#define  VERSION_99     "2026-02-24 rcc_demo1"
+#define  VERSION_99_1   "Version 2026-02-24"
 
 #define  INFOLINES_SEC  20             // time to show one page
 
-//_______Network and MQTT data__________________________________
+//_______Network data___________________________________________
 #define  _USE_WIFI_     true
 #define  _SSID_         "Raspi11"
 #define  _PASS_         "12345678"
 #define  _HOST_         "10.1.1.1"
+#define  _ESP_NAME_     "rccdemo1"
+//_______MQTT data______________________________________________
 #define  TOPIC_BASE     "rcc/demo1"
-#define  TOPIC_GET      "?,help,version,ip,signal,topicbase,eeprom,byname,bydcc,status"
+#define  TOPIC_GET      "?,help,version,mac,ip,signal,topicbase,eeprom,byname,bydcc,status"
 #define  TOPIC_SET      "topicbase,wlan,eeprom0"
 #define  TOPIC_SUB      ""
 #define  TOPIC_PUB      ""
