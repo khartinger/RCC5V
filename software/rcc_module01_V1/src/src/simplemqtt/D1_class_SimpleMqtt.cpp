@@ -1,4 +1,4 @@
-//_____D1_class_SimpleMqtt.cpp_____________201208-210418_____
+//_____D1_class_SimpleMqtt.cpp_____________201208-260224_____
 // The SimpleMqtt class is suitable for D1 mini (ESP8266)
 // The SimpleMqtt class is suitable for D1 mini (ESP8266)
 // and ESP32 and extends the classes PubSubClient and
@@ -59,6 +59,7 @@
 // 2021-04-18 add virtual to doLoop(), getsLocalIP(), 
 //            constructor 6+7, replace delay(), set hostname
 // 2026-01-11 add setWlanData(), eepromBegin()
+// 2026-02-24 add sWiFiHostName, set.., get..
 // Released into the public domain.
 
 #include "D1_class_SimpleMqtt.h"
@@ -164,8 +165,17 @@ void SimpleMqtt::setup()
  sMyIP=NO_IP;                          // invalid IP
  startinfo_allow=STARTINFO_ALLOW;      // send mqtt start info
  randomSeed(micros());                 // start random numbers
- sMQTTClientName="D1_";                //
- sMQTTClientName+=String(random(0xffff), HEX);
+ sMQTTClientName="XXX_";                //
+#if defined(ESP8266) || defined(D1MINI)
+ sMQTTClientName="D1m_";
+#endif
+#if defined(ESP32) || defined(ESP32D1)
+ sMQTTClientName="E32_";
+#endif
+ String s1=getsMac();                  // aa:bb:cc:dd:ee:ff
+ // sMQTTClientName+=String(random(0xffff), HEX);
+ sMQTTClientName+=s1.charAt(12)+s1.charAt(13)+s1.charAt(15)+s1.charAt(16);
+ sWiFiHostName=sMQTTClientName;        //
  conState=CON_RESET;                   // WiFi + MQTT connection
  eepromSize_=EEPROM_SIZE;              //
  iGet=NOTHING_TODO;                    // no get answers to do
@@ -485,8 +495,6 @@ String SimpleMqtt::getsRetainedAll()
  return s1;
 }
 
-
-
 // *************************************************************
 // methods for Wifi (WLAN)
 // *************************************************************
@@ -514,32 +522,29 @@ bool SimpleMqtt::connectingWiFiBegin()
   conState|=BIT_CONN_ERROR;                 // set error bit
   return false;
  }
- //delay(20);
- unsigned long _millisStart_=millis();
- while(millis()-_millisStart_<20) yield();  // wait 20ms
  if(DEBUG_MQTT) Serial.print("connectingWiFiBegin(): ");
+
 #if defined(ESP8266) || defined(D1MINI)
  if(DEBUG_MQTT) Serial.print("mode() OK - ");  
+ WiFi.mode(WIFI_OFF);
+ delay(500);
+ WiFi.hostname(getWiFiHostName().c_str());
  WiFi.mode(WIFI_STA);                  // D1mini is station
- WiFi.hostname(sMQTTClientName.c_str());
- wifi_station_set_hostname(sMQTTClientName.c_str());
+ wifi_station_set_hostname(getWiFiHostName().c_str());
 #endif
+
 #if defined(ESP32) || defined(ESP32D1)
- // WiFi.config(ip, gateway, subnet);  // skipp for dhcp
  WiFi.config(INADDR_NONE, INADDR_NONE, INADDR_NONE, INADDR_NONE); // required to set hostname properly
- WiFi.setHostname(sMQTTClientName.c_str());
+ WiFi.mode(WIFI_OFF);
+ delay(500);
+ WiFi.setHostname((const char*)(getWiFiHostName().c_str()));
  WiFi.mode(WIFI_STA);                  // uC is station
+ Serial.println("Hostname vor begin(): " + String(WiFi.getHostname()));
 #endif
- // WiFi.config(ip, gateway, subnet);  // skipp for dhcp
- //wifi_station_set_auto_connect(true);
- //wifi_station_set_hostname(sWifiHostname.c_str());
- //WiFi.hostname(ota_hostname_.c_str());
- //wifi_station_set_hostname(ota_hostname_.c_str());
+
  //-----try to connect to WiFi (access point)-------------------
- String s1=String(ssid_);              // WLAN name
- //WiFi.begin(ssid_, pass_);           // start connecting!
  WiFi.begin((char*) ssid_.c_str(), (const char *)pass_.c_str());    // start connecting!
- if(DEBUG_MQTT) Serial.println("WiFi connecting to "+s1); 
+ if(DEBUG_MQTT) Serial.println("WiFi connecting to "+ssid_); 
  if(isWiFiConnected()) 
  {//-----normally no such quick connection...-------------------
   sMyIP=getsLocalIP();                      // get ip
@@ -610,10 +615,9 @@ bool SimpleMqtt::disconnectWiFi()
  while(isWiFiConnected() && (i>0))
  {
   i--;                                      // increment trials
-  WiFi.disconnect();                        // disconnect WLAN 
-  //delay(50);                                // wait a litte bit
+  WiFi.disconnect(true, true);              // erase + disconnect
   unsigned long _millisStart_=millis();
-  while(millis()-_millisStart_<50) yield(); // wait 50ms
+  while(millis()-_millisStart_< 1000) yield(); // wait 1000ms
  }
  //------disconnected-------------------------------------------
  if(WiFi.status()==WL_DISCONNECTED) {

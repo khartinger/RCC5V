@@ -1,4 +1,4 @@
-//_____D1_class_SimpleMqtt.h_______________201208-210418_____
+//_____D1_class_SimpleMqtt.h_______________201208-260224_____
 // The SimpleMqtt class is suitable for D1 mini (ESP8266)
 // and ESP32 and extends the classes PubSubClient and
 //  SimpleMqtt to make MQTT easy to use.
@@ -59,6 +59,7 @@
 //            constructor 6+7, replace delay(), set hostname
 // 2024-06-16 TOPIC_MAX set from 32 to 48
 // 2026-01-11 add setWlanData, eepromBegin()
+// 2026-02-24 add sWiFiHostName, set.., get..
 // Released into the public domain.
 
 #ifndef D1_CLASS_SIMPLEMQTT_H
@@ -128,6 +129,7 @@ class SimpleMqtt : public PubSubClient {
   char   language_;                    // e=english, d=deutsch
   WiFiClient d1miniClient;             // WiFi client for MQTT
   String sMQTTClientName;              // MQTT client name
+  String sWiFiHostName;                // WiFi host name
   String sMyIP;                        // client IP address
   int    wifiWaitMsMax;                // WiFi waiting time connect
   int    wifiConnectingCounter;        // connectings counter
@@ -191,12 +193,16 @@ class SimpleMqtt : public PubSubClient {
   void   setWiFiConnectingCounter(int number);
   //_____set MQTT client name___________________________________
   void   setMQTTClientName(String sName) {sMQTTClientName=sName;};
+  //_____set WiFi host name_____________________________________
+  void   setWiFiHostName(String sName) {sWiFiHostName=sName;};
   //_____set WLAN data__________________________________________
   void   setWlanData(String sssid, String spwd, String smqtt_server);
   //_____allow/forbit sending mqtt start info___________________
   void   allowMQTTStartInfo(bool allow);
   //_____get MQTT client name___________________________________
   String getMQTTClientName() { return sMQTTClientName; };
+  //_____get WiFi host name_____________________________________
+  String getWiFiHostName() { return sWiFiHostName; };
   //_____get MQTT client state as string________________________
   String getsState();
   //_____client name of WiFi network____________________________

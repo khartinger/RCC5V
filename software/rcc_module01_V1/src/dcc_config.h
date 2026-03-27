@@ -21,13 +21,15 @@
 
 #define  INFOLINES_SEC  20             // time to show one page
 
-//_______Network and MQTT data__________________________________
+//_______Network data___________________________________________
 #define  _USE_WIFI_     true
 #define  _SSID_         "Raspi11"
 #define  _PASS_         "12345678"
 #define  _HOST_         "10.1.1.1"
+#define  _ESP_NAME_     "module01"
+//_______MQTT data______________________________________________
 #define  TOPIC_BASE     "rcc/module01"
-#define  TOPIC_GET      "?,help,version,ip,signal,topicbase,eeprom,byname,bydcc,status"
+#define  TOPIC_GET      "?,help,version,mac,ip,signal,topicbase,eeprom,byname,bydcc,status"
 #define  TOPIC_SET      "topicbase,wlan,eeprom0"
 #define  TOPIC_SUB      ""
 #define  TOPIC_PUB      ""
