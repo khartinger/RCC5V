@@ -1,7 +1,7 @@
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 Last modified: 2026-04-05 <a name="up"></a><br>   
-<h1>Translation of Terms German - English</h1>
-&nbsp; 
+<h1>Model Railway Module Terminology German - English</h1>
+*Compiled with ChatGPT, April 2026*   
 </td></tr></table>    
 
 ## 🏗️ Modulrahmen / Unterbau
