@@ -1,6 +1,6 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 07.01.2025 <a name="up"></a><br>   
-<h1>Gestaltung der Frontseite eines Moduls</h1>
+<h1>Gestaltung der Frontseite eines Moduls ohne 3D-Druckteile</h1>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 

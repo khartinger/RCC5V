@@ -1,15 +1,15 @@
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 20.7.2025 <a name="up"></a><br>   
-<h1>Bauanleitungen f&uuml;r Module, Platinen und 3D-Teile</h1>
-<a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
+Letzte &Auml;nderung: 7.7.2026 <a name="up"></a><br>   
+<h1>Bauanleitungen für Module, Platinen und 3D-Teile</h1><h3></h3>
+<a href="#TableOfContents">==> Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp;  &nbsp; 
+<a href="README.md">==> English version</a>
 </td></tr></table>   
 
-[Hier geht es direkt zur Inhalts&uuml;bersicht](#x05)   
-
-# &Uuml;bersicht
+# Worum geht es?
 Das Verzeichnis `fab` (f&uuml;r "_fabrication_") ist das "Fertigungszentrum" des RCC-Systems (RCC = Railway Component Control). Es enth&auml;lt Herstellungsdaten, Bauanleitungen, Zeichnungen und Beschreibungen von Teilen, die f&uuml;r das RCC-System ben&ouml;tigt werden. Die Daten sind auf folgende Unterverzeichnisse aufgeteilt:   
 
 <a name="x05"></a>   
+<a name="TableOfContents"></a>   
 
 * [1. 3d](#x10)   
 * [2. kicad](#x20)   
@@ -20,6 +20,7 @@ Das Verzeichnis `fab` (f&uuml;r "_fabrication_") ist das "Fertigungszentrum" des
 * [7. rcc3_i2c](#x70)   
 * [8. rcc4_block](#x80)   
 * [9. rcc5_add_ons](#x90)   
+* [10. rcc6_additional_components](#x100)   
 
 Der folgende Text beschreibt den Inhalt der Verzeichnisse und enth&auml;lt Links zu den entsprechenden Anleitungen.   
 
@@ -105,8 +106,13 @@ Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das
 <a name="x90"></a>   
 
 # 9. rcc5_add_ons
-In diesem Verzeichnis werden die Herstellung von Zusatzplatinen beschrieben.   
-Diese Erg&auml;nzungsplatinen sind Platinen, die f&uuml;r den Betrieb des RCC-Systems nicht unbedingt notwendig sind, allerdings die Handhabung oder Verkabelung einfacher und &uuml;bersichtlicher machen. So kann man zB die I²C-Signale eines Blocks entweder direkt am 10-poligen Wannenstecker J4 abgreifen oder aber ein 10-poliges Flachbandkabel und das Erg&auml;nzungsboard `CON_10pol_PIN` verwenden.   
+In diesem Verzeichnis wird die Herstellung von RCC-Erg&auml;nzungsplatinen beschrieben.   
+Diese Platinen sind f&uuml;r den Betrieb des RCC-Systems nicht unbedingt notwendig, allerdings vereinfachen sie die Verkabelung.   
+__*Beispiel*__:   
+Die I²C-Leitungen für die I²C-PCF8574-I/O-Platinen kann man entweder   
+* einzeln am 10-poligen Wannenstecker J4 eines Blocks anstecken oder   
+* am Erg&auml;nzungsboard `CON_10pol_PIN` anstecken und dann gemeinsam am 10-poligen Wannenstecker J4 eines Blocks anschließen.   
+
 Unter anderem werden folgende Erg&auml;nzungsplatinen beschrieben:   
 * [Halterung f&uuml;r Schaltbl&ouml;cke (RW_LEER_LED)](/fab/rcc5_add_ons/LIESMICH.md#x20)   
 * [Fahrstromverteiler (CON_2pol_141)](/fab/rcc5_add_ons/LIESMICH.md#x30)   
@@ -115,5 +121,11 @@ Unter anderem werden folgende Erg&auml;nzungsplatinen beschrieben:
 * [Fahrstromschalter einfach (CON_1xIO)](/fab/rcc5_add_ons/LIESMICH.md#x60)   
 * [Fahrstromschalter zweifach (CON_2xIO)](/fab/rcc5_add_ons/LIESMICH.md#x70)   
 * [Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_2x4)](/fab/rcc5_add_ons/LIESMICH.md#x80)   
+
+[Zum Seitenanfang](#up)   
+<a name="x100"></a>   
+
+# 10. rcc6_additional_components
+Dieses Verzeichnis enthält zusätzliche, ergänzende Komponenten für ein RCC-System, wie Pulserkennung oder Fahrstromerkennung.   
 
 [Zum Seitenanfang](#up)   

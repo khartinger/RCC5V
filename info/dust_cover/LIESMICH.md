@@ -81,7 +81,7 @@ Bei diesem Modul wird die Pappelsperrholz-R&uuml;ckwand mit einer Wolken-Dekorfo
 ![Modul M14 Rueckwand](./images/300_m14_cover_back1.png "Modul M14 Rueckwand")   
 _Bild 2: R&uuml;ckseite der R&uuml;ckwand mit R&auml;ndelschrauben_   
 
-In die R&uuml;ckwand werden zwei 3 mm Bohrungen gebohrt, die jeweils 25 mm von beiden R&auml;ndern entfernt sind.   
+In die R&uuml;ckwand werden zwei 3 mm Bohrungen gebohrt, die jeweils 25 mm von beiden R&auml;ndern entfernt sind. Besteht der Rahmen aus 3D-gedruckten Teilen, so ist die Lage der Bohrungen 30 mm vom unteren und 25 mm vom seitlichen Rand.   
 
 <a name="x22"></a>   
 
@@ -91,7 +91,7 @@ Aus der 500 x 230 mm² gro&szlig;e Plexiglas-Frontplatte werden unten zwei Ausne
 ![Modul M14 Ma&szlig;e Frontplatte](./images/300_m14_dim_front1.png "Modul M14 Ma&szlig;e Frontplatte")   
 _Bild 3: Ma&szlig;e der Ausnehmungen und Bohrungen in der Frontplatte_   
 
-Zus&auml;tzlich zu den Ausnehmungen f&uuml;r die Bedienelemente werden zwei 3 mm Bohrungen gebohrt, die jeweils 25 mm von beiden R&auml;ndern entfernt sind.   
+Zus&auml;tzlich zu den Ausnehmungen f&uuml;r die Bedienelemente werden zwei 3 mm Bohrungen gebohrt, die jeweils 25 mm von beiden R&auml;ndern entfernt sind. Besteht der Rahmen aus 3D-gedruckten Teilen, so ist die Lage der Bohrungen 30 mm vom unteren und 15 mm vom seitlichen Rand.   
 Die zugeschnittene, fertige Frontplatte sieht so aus:   
 ![Modul M14 Frontplatte](./images/300_m14_cover_front1.png "Modul M14 Frontolatte")   
 _Bild 4: Frontplatte mit Ausnehmungen und 3 mm-Bohrungen_   
