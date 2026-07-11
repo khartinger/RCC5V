@@ -7591,7 +7591,7 @@
 				)
 			)
 		)
-		(property "Value" "4k7"
+		(property "Value" "1k"
 			(at -3.683 0 0)
 			(layer "F.SilkS")
 			(uuid "6b9142f9-be2f-45a8-9a0a-7a126ddec2b1")
@@ -8830,7 +8830,7 @@
 				)
 			)
 		)
-		(property "Value" "33k"
+		(property "Value" "47k"
 			(at 3.683 0 90)
 			(layer "F.SilkS")
 			(uuid "04f1f21e-2258-49f8-8977-6d5a4e6cb563")
@@ -9745,7 +9745,7 @@
 		(descr "Resistor, Axial_DIN0204 series, Axial, Vertical, pin pitch=2.54mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0204 series Axial Vertical pin pitch 2.54mm 0.167W length 3.6mm diameter 1.6mm")
 		(property "Reference" "C5"
-			(at 0.254 -3.048 0)
+			(at 0.508 -2.794 0)
 			(layer "F.SilkS")
 			(uuid "3b708a65-8065-42c6-8965-9ed0c4b9801d")
 			(effects
@@ -9756,7 +9756,7 @@
 			)
 		)
 		(property "Value" "10u"
-			(at 1.778 -3.048 0)
+			(at 2.032 -3.048 0)
 			(layer "F.SilkS")
 			(uuid "9f811d33-af8b-4212-be8f-0025b114bc60")
 			(effects
@@ -9878,7 +9878,7 @@
 			(uuid "ffa96aaf-7177-4009-b875-43925dfce187")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0.254 -3.048 0)
+			(at 0.508 -2.794 0)
 			(layer "F.Fab")
 			(uuid "5131704c-8f43-41fa-9c8c-88b51397eca8")
 			(effects
@@ -11894,7 +11894,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "260709KH"
+	(gr_text "260710KH"
 		(at 59.944 82.169 0)
 		(layer "F.Cu")
 		(uuid "366002d7-7761-4bd8-8631-46e5955660da")
@@ -11943,7 +11943,7 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "260709 KH"
+	(gr_text "260710 KH"
 		(at 60.198 82.169 0)
 		(layer "B.Cu")
 		(uuid "389f10c9-fa0c-4b13-a130-da8b7fb83fb8")
@@ -12042,7 +12042,7 @@
 			)
 		)
 	)
-	(gr_text "260709KH"
+	(gr_text "260710KH"
 		(at 108.204 81.534 0)
 		(layer "F.SilkS")
 		(uuid "8349d828-cfb6-457a-83a7-3d428cb47cb7")
@@ -12067,7 +12067,7 @@
 		)
 	)
 	(gr_text "DCC1_OUT"
-		(at 144.018 60.706 0)
+		(at 144.018 60.198 0)
 		(layer "F.SilkS")
 		(uuid "cfbbe25c-91e8-4f8b-ad69-23b90be9514c")
 		(effects
@@ -12098,6 +12098,32 @@
 			(font
 				(size 1.5 1.5)
 				(thickness 0.1875)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "+"
+		(at 97.536 72.136 0)
+		(layer "F.SilkS")
+		(uuid "97202d55-9713-4a7d-92f0-c6be91c5458f")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "+"
+		(at 137.668 63.246 0)
+		(layer "F.SilkS")
+		(uuid "3c4ab774-450f-450c-a791-d3d571aba07a")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
 			)
 			(justify left bottom)
 		)
@@ -12212,7 +12238,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "260709KH"
+	(gr_text "260710KH"
 		(at 108.204 81.534 0)
 		(layer "B.SilkS")
 		(uuid "6545ffa1-4f67-4faf-9f78-c32d09f622a1")
