@@ -12,6 +12,9 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 <a name="TableOfContents"></a>   
 ##  Inhalt
 1. [DCC-Gleis-Spannungs- und Strom-Erkennung](#x10)   
+2. [RGY-Anzeige](#x20)   
+3. [UI-Steuerungsplatine](#x30)   
+4. [Pulsspeicher-Platine](#x40)   
 
 <a name="x10"></a>   
 <a name="x11"></a>   
@@ -142,13 +145,13 @@ KiCad-Schaltplan der "dcc_track_UI_detection"-Platine:
 Bild der Platine zur DCC-Gleis-Spannungs-/Strom-Erkennunng (Version 1):   
 ![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_dcc_track_UI_detection_V1.png "Platine Gleis-UI-Erkennung")   
 
-![](/images/300_dcc_track_UI_detection_V1_assembled.png "")   
 Best&uuml;ckte Platine "dcc_track_UI_detection"   
+![Bestückte Platine dcc_track_UI_detection](/images/300_dcc_track_UI_detection_V1_assembled.png "Bestückte Platine dcc_track_UI_detection")   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
-| 5 | C1, C2, C4, C7, C8 | 1 &micro;F, 16 V, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 5 | C1, C2, C4, C7, C8 | Kondensator 1 &micro;F, 16 V, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
 | 2 | C3, C5 | Tantal-Elko 10 &micro;F, 16 V, Raster 2,54 mm | C_L4.32mm_D3.81mm_P2.54mm_kh |   
 | 1 | C6 | Elko 33 &micro;F, 35 V, Raster 2,54 mm | CP_Radial_D8.0mm_P2.50mm |   
 | 2 | D1, D2 | Diode SB240 | D_DO-15_P3.81mm_Vertical_AnodeUp |   
@@ -225,10 +228,10 @@ Stiftleisten auf der Unterseite nach UNTEN anlöten.
 
 ## 1.8 Inbetriebnahme und Test
 1. Versorgungsspannung anlegen: 5V an Pin 3 vom 6-poligen Wannenstecker J5, GND an Pin 5 von J5   
-  ► Es sollte keine der beiden LEDs leuchten.   
+   ► Es sollte keine der beiden LEDs leuchten.   
 2. DCC-Spannung am Eingang der Schaltung anlegen:   
-  ► Die grüne LED leuchtet.   
-3. Verstärkung des INA333-Boards bis zum Anschlag gegen den Uhrzeigersinn drehen (volle Verstärkung)   
+   ► Die grüne LED leuchtet.   
+3. Verstärkung des INA333-Boards bis zum Anschlag **gegen den Uhrzeigersinn** drehen (volle Verstärkung)   
 4. Jumper J3 aufstecken   
 5. Je nach Trimmer-Stellung die Schaltschwelle einstellen:   
    * Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet. Jumper J3 abziehen: rote LED erlischt.   
@@ -252,5 +255,320 @@ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise
   * Testwiderstand Rs4 (220 k&Omega;) an DCC0 und DCC1 (statt richtig __an SS und NN__) angeschlossen,
   *  Widerstand R14 mit 1 k&Omega; angeschrieben (statt richtig __R14 = 47 k&Omega;__)   
 * V2 (260710): OK   
+
+
+<a name="x20"></a>   
+<a name="x21"></a>   
+
+# 2. RGY-Anzeige
+## 2.1 Einleitung
+Die Platine `RW_5V_RGY_LED` zeigt den Status eines Gleises mit LEDs an:  
+
+- **Grün:** Gleis ist frei.  
+- **Gelb:** Gleis ist besetzt.  
+- **Rot:** Es liegt ein Fehler vor.  
+
+Die LED-Anzeige erfolgt durch rot/grün-Duo-LEDs.   
+Es können bis zu **drei LEDs** gleichzeitig angeschlossen werden.   
+
+Optional lassen sich die beiden Taster **SW1** und **SW3** bestücken. Diese können von einer Steuerplatine ausgewertet werden, zum Beispiel zum Testen der **SET-** und **RESET-Eingänge** einer PULS-Platine.   
+
+<a name="x22"></a>   
+
+## 2.2 Schaltplan
+Die RGY-Anzeige besteht aus drei Teilen:   
+1. Die LED-Anzeige   
+2. die Rückmeldeschaltung   
+3. Zwei Taster für Testzwecke   
+
+### Led-Anzeige
+![rcc6_RGY_LED_circuit](/images/300_rcc6_RGY_LED_circuit_V1.png "rcc6_RGY_LED_circuit")   
+
+Die Ansteuerung der Platine erfolgt über die Signale **TRV** (J1-Pin 7) und **FRE** (J1-Pin 7):   
+- TRV = 0: Led leuchtet rot.   
+- TRV = 5V und FRE = 5V: LED leuchtet gelb (= rot + grün).   
+- TRV = 5V und FRE = 0V: LED leuchtet grün.   
+
+### Rückmeldeschaltung
+![rcc6_RGY_LED_feedback_circuit](/images/300_rcc6_RGY_LED_feedback_circuit_V1.png "rcc6_RGY_LED_feedback_circuit")   
+
+#### OK-Rückmeldung (ROK)
+
+Das interne Signal **ROKi** wird für den externen Ausgang (**ROK**) etwas aufbereitet.   
+
+- Die Diode **D4** verhindert, dass die Duo-LED belastet wird, wenn der Transistor **T5** gesperrt ist. Gleichzeitig zieht **R10** den Ausgang **ROK** auf **5 V**.   
+- Schaltet **T5** durch, begrenzt **R9** einen möglichen Fehlerstrom von außen.   
+
+#### Gleisfrei-Rückmeldung (RFR)
+
+Das interne Signal **RFRi** wird mit dem Transistor **T6** invertiert und als **RFR** ausgegeben.   
+
+### Optionale Taster oder Schalter
+
+Auf der Platine können an den Positionen **SW1** und **SW3** optional Taster oder Schalter eingebaut werden.  
+
+Im Ruhezustand sind die Ausgänge **offen**.  
+Beim Betätigen werden sie mit **0 V (Masse)** verbunden.  
+
+### Gesamtschaltplan
+
+KiCad-Schaltplan der Platine **`RW_5V_RGY_LED`**:   
+![RW_5V_RGY_LED_circuit](/images/600_RW_5V_RGY_LED_circuit_V1.png "RW_5V_RGY_LED_circuit")  
+
+Die Stromversorgung und alle Ein- und Ausgangssignale befinden sich an der Stiftleiste J1.  
+
+<a name="x23"></a>   
+
+## 2.3 Bestückung der Platine
+Bild der Platine "`RW_5V_RGY_LED`"" (Version 1):   
+![Platine RW_5V_RGY_LED](/images/pcb_f/PCB_F_RW_5V_RGY_LED_V1.png "Platine RW_5V_RGY_LED")   
+
+Best&uuml;ckte Platine "`RW_5V_RGY_LED`"   
+![Bestückte Platine RW_5V_RGY_LED](/images/300_RW_5V_RGY_LED_assembled.png "Bestückte Platine RW_5V_RGY_LED")   
+
+### St&uuml;ckliste   
+
+| Anzahl | Referenz | Wert | Geh&auml;use |   
+|-----|-----|-----|-----|   
+| 1 | C1 | Kondensator 1 &micro;F, 16 V, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 3 | D1, D2, D3 | Dual-LED rot-gr&uuml;n, gemeinsame Kathode | LED_D5.0mm-3 |   
+| 3 | D1, D2, D3 | Buchsenleiste 3-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs |   
+| 1 | D4 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
+| 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
+| 4 | Q1, Q4, Q5, Q6 | Transistor BC337-40 (npn) | TO-92_Inline_Wide_custom |   
+| 2 | Q2, Q3 | Transistor BC327-40 (pnp) | TO-92_Inline_Wide_custom |   
+| 1 | R1 | 680 &Omega;..1 k&Omega; (2) | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R11 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R3 | 3,9 k&Omega;..10 k&Omega; (3) | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R13 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R9 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R10, R12 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R6, R8 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R2, R5 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R7 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 3 | R4, R14, R15 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 2 | SW1, SW2 | Taster SW_Push_DPDT_8x8 | SW_Push_DPDT_8x8 |   
+| 2 | SW1, SW2 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe je nach Anwendung |    
+
+### Anmerkungen
+(1) Es ist sinnvoll, die 3-poligen Buchsenleisten an alle 3 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb weniger LEDs eingesetzt werden.  
+(2) Widerstand R1: 680 &Omega; bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
+(3) Widerstand R3: 3,9 k&Omega; bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
+   
+### Vorbereitung
+1. Von einer langen, einreihigen Buchsenleiste 3x 3-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D3).   
+2. Die äußeren LED-Anschl&uuml;sse farblich kennzeichnen:  
+   * kurzen Anschluss grün färben, mittleren Anschluss rot
+3. LED-Anschl&uuml;sse auf 26 mm abschneiden und Ecken biegen ("Feder"). Länge dann ca. 22 mm.   
+4. Falls Taster verwendet werden: 10 mm-Tasterkn&ouml;pfe SW1, SW2 eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
+
+Bauteile der Platine "RW_5V_RGY_LED"   
+![RW_5V_RGY_LED_parts](/images/300_RW_5V_RGY_LED_parts.png "RW_5V_RGY_STRG_parts")   
+
+### Best&uuml;ckung   
+**Lötseite** (!):  
+
+1. Die dreipoligen Buchsenleisten (D1 bis D3) mit gedrehten Pins auf die **L&ouml;tseite** des Prints l&ouml;ten.   
+
+Auf die **Bauteilseite** l&ouml;ten:   
+
+2. Widerstände R1, R11 und R13 (liegend, 680 &Omega; ... 1 k&Omega;, 100 k&Omega;, 47 &Omega;)   
+3. Transistoren Q1, Q4, Q5, Q6 (BC337-40)   
+4. Transistoren Q2, Q3 (BC327-40)   
+5. Kondensator C1 (1 &micro;F)   
+6. Diode D4 (BAT48, auf Polung achten: Kathode unten beim Kreis)   
+7. Widerstand R3 (3,9 k&Omega; ... 10 k&Omega;)   
+8. Widerstand R9 (47 &Omega;)
+9. Widerst&auml;nde R10, R12 (1 k&Omega;, stehend)   
+10. Widerst&auml;nde R6, R8 (4,7 k&Omega;, stehend)   
+11. Widerst&auml;nde R2, R5, R7 (10 k&Omega;, stehend)   
+12. Widerst&auml;nde R4, R14, R15 (100 k&Omega;, stehend)   
+13. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
+
+Optional: Auf die **L&ouml;tseite** l&ouml;ten:   
+
+14. Taster SW1, SW3   
+
+### Print vervollständigen
+Duo-LED(s) einstecken.   
+
+<a name="x24"></a>   
+
+## 2.4 Test
+### Vorbereitung
+* 5x Kabel Stecker-Buchse (rot, schwarz, grün, violett, weiß)   
+* Netzgerät 5 V   
+* Voltmeter (Bereich 20VDC)   
+
+### Durchführung
+Print auf die Bauteilseite legen. Alle erforderlichen Anschlüsse befinden sich an den langen Kontakten der der Buchsenleiste J1:   
+
+![rcc6_RGY_LED_J1](/images/300_rcc6_RGY_LED_J1.png "rcc6_RGY_LED_J1")   
+
+1. Versorgungsspannung anlegen: Pin 1 mit Netzgerät +5V, Pin 2 mit GND verbinden.   
+   ► Die LEDs leuchten rot.   
+2. Voltmeter an GND anschließen. Messen: Pin ROK = +5V, Pin RFR = 0V   
+3. Pin TRV mit 5V verbinden.   
+   ► Die LEDs leuchten gelb (orange).   
+4. Messen: Pin ROK = 5V (3,5V), Pin RFR = 0V   
+5. Pin FRE mit 0V verbinden.   
+   ► Die LEDs leuchten grün.   
+6. Messen: Pin ROK = 5V (4,3V), Pin RFR = 3,5V   
+
+<a name="x25"></a>   
+
+## 2.5 Versionen
+* V1 (260704): Siebdruckmaske: Werte für R4 (100 k&Omega;) und R9 (47 &Omega;) falsch. SW2 in SW3 umbenannt. Widerstandsänderungen: R1 = 680 &Omega; bis 1 k&Omega; (statt 1 k&Omega;), R3 = 3,9 k&Omega; bis 10 k&Omega; (statt 10 k&Omega;), R7 = 10 k&Omega; (statt 4,7 k&Omega;), R9 = 47 &Omega; (statt 10 k&Omega;), R10 = 1 k&Omega; (statt 4,7 k&Omega;), R12 = 1 k&Omega; (statt 4,7 k&Omega;)
+* V2 (260712): OK   
+
+<a name="x30"></a>   
+<a name="x31"></a>   
+
+# 3. UI-Steuerungsplatine
+## 3.1 Einleitung
+Die UI-Steuerungsplatine `RW_5V_UI_STRG` dient zum Anpassen der DCC-Gleis-UI-Erkennung an das RCC-Blocksystem. Sie   
+* versorgt die `dcc_track_UI_detection`-Platine mit der 5V-Versorgungsspannung,   
+* leitet die Steuersignale `FRE1` und `TRV1` weiter zur LED-Anzeige und   
+* leitet die LED-Rückmeldesignale `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
+
+<a name="x32"></a>   
+
+## 3.2 Schaltplan
+KiCad-Schaltplan der Platine "RW_5V_UI_STRG" (Version 1):   
+![RW_5V_UI_STRG_circuit](/images/600_RW_5V_UI_STRG_circuit_V1.png "RW_5V_UI_STRG_circuit")   
+
+<a name="x33"></a>   
+
+## 3.3 Bestückung der Platine
+Bild der Anpassungsplatine `RW_5V_UI_STRG` (Version 1):   
+![UI-Steuerungsplatine](/images/pcb_f/PCB_F_UI_STRG_V1.png "UI-Steuerungsplatine")   
+
+Best&uuml;ckte Platine "RW_5V_UI_STRG"   
+![RW_5V_UI_STRG bestückt](/images/300_RW_5V_UI_STRG_V1_assembled.png "RW_5V_UI_STRG bestückt")   
+
+### St&uuml;ckliste   
+| Anzahl | Referenz | Wert | Geh&auml;use |   
+|-----|-----|-----|-----|   
+| 1 | C1 | 100 nF, Raster 5,08 mm | C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
+| 2 | D1, D2 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
+| 2 | D3, D4 | Diode BAT48 | D_DO-35_SOD27_P5.08mm_Vertical_AnodeUp |   
+| 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_kh |   
+| 2 | J3, J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
+| 1 | J4 | Wannenstecker 10-polig, stehend | Box_02x05_P2.54mm_Vertical_kh |   
+| 1 | R1 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R2 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical |   
+
+Bauteile der Platine `RW_5V_UI_STRG` (C1 fehlt):   
+![RW_5V_UI_STRG_parts](/images/300_RW_5V_UI_STRG_parts_V1.png "RW_5V_UI_STRG_parts")   
+
+### Best&uuml;ckung   
+1. Diode D1, D2 (stehend, 2,54 mm, Kathode in den Kreis)   
+2. Diode D3, D4 (stehend, 5,08 mm, Kathode in den Kreis)   
+3. Kondensator C1 (100 nF)   
+4. Widerst&auml;nde R1, R2 (stehend)   
+5. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
+6. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
+
+<a name="x34"></a>   
+
+## 3.4 Inbetriebnahme und Test
+Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit der Platine `RW_5V_RGY_LED`.   
+
+<a name="x35"></a>   
+
+## 3.5 Versionen
+* V1 (260704): OK   
+
+<a name="x40"></a>   
+<a name="x41"></a>   
+
+# 4. Pulsspeicher-Platine
+## 4.1 Einleitung
+Die Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG` dient zum Speichern von Pulsen. Sie hat an J5 die beiden Eingänge SET0V und RST0V zum Setzen und Rücksetzen des Ausgangs.   
+![RW_5V_PULS_STRG_J5](/images/300_RW_5V_PULS_STRG_J5.png "RW_5V_PULS_STRG_J5")   
+Weiters leitet sie   
+* die Steuersignale `FRE1` und `TRV1` weiter zur LED-Anzeige und   
+* die LED-Rückmeldesignale `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
+
+<a name="x42"></a>   
+
+## 4.2 Schaltplan
+KiCad-Schaltplan der Platine "RW_5V_PULS_STRG" (Version 1):   
+![RW_5V_PULS_STRG_circuit](/images/600_RW_5V_PULS_STRG_circuit_V1.png "RW_5V_PULS_STRG_circuit")   
+
+<a name="x43"></a>   
+
+## 4.3 Bestückung der Platine
+Bild der Platine `RW_5V_PULS_STRG` (Version 1):   
+![PULS-Platine](/images/pcb_f/PCB_F_RW_5V_PULS_STRG_V1.png "PULS-Platine")   
+
+Best&uuml;ckte Platine "RW_5V_PULS_STRG"   
+![RW_5V_PULS_STRG bestückt](/images/300_RW_5V_PULS_STRG_V1_assembled.png "RW_5V_PULS_STRG bestückt")   
+
+### St&uuml;ckliste   
+| Anzahl | Referenz | Wert | Geh&auml;use |   
+|-----|-----|-----|-----|   
+| 1 | C1 | 100 nF, Raster 5,08 mm | C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
+| 2 | C2, C4 | 10 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 2 | C3, C5 | 100 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 1 | C6 | Elko 10 &micro;F, 16 V, Raster 2,54 mm | ELKO_L7.88mm_D4.57mm_P2.54mm_kh |   
+| 3 | D1, D2, D4 | Diode BAT48 | D_DO-35_P1.778mm_Vertical_AnodeUp_kh |   
+| 2 | D3, D6 | Diode  BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
+| 1 | D5 | Diode BAT48 | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
+| 1 | D7 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
+| 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_kh |   
+| 2 | J3, J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
+| 1 | J4 | Wannenstecker 10-polig, stehend | Box_02x05_P2.54mm_Vertical_kh |   
+| 1 | J6 | DRV8833-Board [1] | DRV8833_Board |   
+| 2 | J6 | Buchsenleiste 6 Pin [2] |   |   
+| 1 | J7 | Stiftleiste 2-polig (Jumper_2) [3] | PinSocket_1x02_P2.54mm_Vertical_kh |   
+| 1 | K1 | Relais IM41, 3 V, 2x UM | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
+| 2 | R21, R24 | 100 &Omega; | R_Axial_P1.778mm_Vertical_kh |   
+| 1 | R27 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 4 | R22, R23, R25, R26 | 100 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
+| 2 | R28, R29 | 100 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | U1 | 4-fach NAND mit Schmitt-Trigger HEF4093B | DIP-14_W7.62mm_Socket_kh |   
+| 1 | U1 | Fassung DIL 14 (2x7 Pin), gedrehte Kontakte |   |   
+
+Bauteile der Platine `RW_5V_PULS_STRG`:   
+![RW_5V_PULS_STRG_parts](/images/300_RW_5V_PULS_STRG_parts_V1.png "RW_5V_PULS_STRG_parts")   
+
+### Vorbereitung
+[1] Auf dem DRV8833_Board J6 die Verbindung bei J1 **auftrennen**.   
+[2] Entweder von einer flachen, einreihigen Buchsenleiste 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6) oder   
+    zB eine DIL 14 Fassung mit Federkontakten auseinanderschneiden und 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6)   
+[3] Von einer langen, einreihigen Stiftleiste 1x 2-poliges St&uuml;ck abtrennen (f&uuml;r J7).   
+
+### Best&uuml;ckung   
+1. Widerstand R27 (100 k&Omega;, liegend)   
+2. Diode D3, D6 (BAT48, liegend, Kathode beim weißen Strich)   
+3. Elko C6 (10 &micro;F, liegend, auf Polung achten!)   
+4. Fassung U1 (DIL 14, , auf Polung/Kerbe achten!)   
+5. Buchsenleisten J6 (2x 6 Pin)   
+7. Relais K1 (IM41, 3V, auf Polung achten)   
+8. Diode D1, D2, D4, D5, D7 (BAT48, stehend, Kathode in den Kreis)   
+9. Kondensatoren C2, C4 (10 nF = 103)   
+10. Kondensatoren C3, C5 (100 nF = 104)   
+11. Kondensator C1 (100 nF)   
+12. Stiftleiste J7 (2-polig)   
+13. Widerst&auml;nde R21, R24, R28, R29 (100 &Omega;, stehend)   
+14. Widerst&auml;nde R22, R23, R25, R26 (100 k&Omega;, stehend)   
+15. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
+16. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
+
+### Print vervollständigen
+* 4-fach NAND HEF4093B einstecken.   
+* DRV8833_Board aufstecken.   
+
+<a name="x44"></a>   
+
+## 4.4 Inbetriebnahme und Test
+Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit der Platine `RW_5V_RGY_LED`.   
+
+<a name="x45"></a>   
+
+## 4.5 Versionen
+* V1 (260704): OK   
+
 
 [Zum Seitenanfang](#up)   

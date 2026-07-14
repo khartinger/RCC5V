@@ -1,0 +1,18 @@
+"ID";"Bezeichner";"Footprint";"Stückzahl";"Bezeichnung";"Anbieter und Referenz";
+1;"C1";"C_L4mm_D3mm_P2.54mm_kh";1;"1u";;;
+2;"D1, D2, D3";"LED_D5.0mm-3";3;"LED_Dual_AKA";;;
+3;"D4";"D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp";1;"BAT48";;;
+4;"J1, J2";"PinSocket_1x08_P2.54mm_Vertical_11mm_kh";2;"Conn_01x08_Pin";;;
+5;"Q1, Q4, Q5, Q6";"TO-92_Inline_Wide_custom";4;"BC337";;;
+6;"Q2, Q3";"TO-92_Inline_Wide_custom";2;"BC327";;;
+7;"R1";"R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal";1;"680..1k";;;
+8;"R2, R5";"R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh";2;"10k";;;
+9;"R3";"R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh";1;"3k9..10k";;;
+10;"R4, R14, R15";"R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical";3;"100k";;;
+11;"R6, R8";"R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh";2;"4k7";;;
+12;"R7";"R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh";1;"10k";;;
+13;"R9";"R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh";1;"47";;;
+14;"R10, R12";"R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh";2;"1k";;;
+15;"R11";"R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal";1;"100k";;;
+16;"R13";"R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal";1;"47";;;
+17;"SW1, SW3";"SW_Push_DPDT_8x8";2;"SW_Push_DPDT_8x8";;;
