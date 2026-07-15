@@ -510,7 +510,7 @@ Best&uuml;ckte Platine "RW_5V_PULS_STRG"
 |-----|-----|-----|-----|   
 | 1 | C1 | 100 nF, Raster 5,08 mm | C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
 | 2 | C2, C4 | 10 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
-| 2 | C3, C5 | 10 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 2 | C3, C5 | 100 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
 | 1 | C6 | Elko 10 &micro;F, 16 V, Raster 2,54 mm | ELKO_L7.88mm_D4.57mm_P2.54mm_kh |   
 | 3 | D1, D2, D4 | Diode BAT48 | D_DO-35_P1.778mm_Vertical_AnodeUp_kh |   
 | 2 | D3, D6 | Diode  BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
@@ -523,10 +523,9 @@ Best&uuml;ckte Platine "RW_5V_PULS_STRG"
 | 2 | J6 | Buchsenleiste 6 Pin [2] |   |   
 | 1 | J7 | Stiftleiste 2-polig (Jumper_2) [3] | PinSocket_1x02_P2.54mm_Vertical_kh |   
 | 1 | K1 | Relais IM41, 3 V, 2x UM | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
-| 2 | R21, R24 | 47 &Omega; | R_Axial_P1.778mm_Vertical_kh |   
+| 2 | R21, R24 | 100 &Omega; | R_Axial_P1.778mm_Vertical_kh |   
 | 1 | R27 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 2 | R22, R25 | 100 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
-| 2 | R23, R26 | 220 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
+| 4 | R22, R23, R25, R26 | 100 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
 | 2 | R28, R29 | 100 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | U1 | 4-fach NAND mit Schmitt-Trigger HEF4093B | DIP-14_W7.62mm_Socket_kh |   
 | 1 | U1 | Fassung DIL 14 (2x7 Pin), gedrehte Kontakte |   |   
@@ -544,20 +543,18 @@ Bauteile der Platine `RW_5V_PULS_STRG`:
 1. Widerstand R27 (100 k&Omega;, liegend)   
 2. Diode D3, D6 (BAT48, liegend, Kathode beim weißen Strich)   
 3. Elko C6 (10 &micro;F, liegend, auf Polung achten!)   
-4. Fassung U1 (DIL 14, auf Polung/Kerbe achten!)   
+4. Fassung U1 (DIL 14, , auf Polung/Kerbe achten!)   
 5. Buchsenleisten J6 (2x 6 Pin)   
 7. Relais K1 (IM41, 3V, auf Polung achten)   
 8. Diode D1, D2, D4, D5, D7 (BAT48, stehend, Kathode in den Kreis)   
 9. Kondensatoren C2, C4 (10 nF = 103)   
-10. Kondensatoren C3, C5 (10 nF = 103)   
+10. Kondensatoren C3, C5 (100 nF = 104)   
 11. Kondensator C1 (100 nF)   
 12. Stiftleiste J7 (2-polig)   
-13. Widerst&auml;nde R21, R24 (47 &Omega;, stehend)   
-14. Widerst&auml;nde R28, R29 (100 &Omega;, stehend)   
-15. Widerst&auml;nde R22, R25 (100 k&Omega;, stehend)   
-16. Widerst&auml;nde R23, R26 (220 k&Omega;, stehend)   
-17. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
-18. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
+13. Widerst&auml;nde R21, R24, R28, R29 (100 &Omega;, stehend)   
+14. Widerst&auml;nde R22, R23, R25, R26 (100 k&Omega;, stehend)   
+15. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
+16. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
 
 ### Print vervollständigen
 * 4-fach NAND HEF4093B einstecken.   
