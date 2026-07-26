@@ -178,6 +178,8 @@ Das RCC-System besteht aus sechs Baugruppen:
 5. RCC-Steuerblöcke
 6. Modellbahn-Komponenten
 
+<a name="x31"></a>   
+
 ### 3.1 Einspeisung (FEED-IN)
 Versorgung der Anlage bzw. der Module mit   
 * Wechselspannung und  
@@ -192,7 +194,9 @@ Für die [elektrische Verbindung von Eisenbahn-Modulen nach NEM 908D](/info/con_
 ![Aufbau Einspeisung](/images/300_RCC5V_Feed-In_Roco.png)  
 *Bild 4: Einspeisung (FEED-IN)*  
 
-### 3.2 Stromversorgung Modul (SUPPLY)
+<a name="x32"></a>   
+
+### 3.2 Modul-Stromversorgung (SUPPLY)
 Dem 25-poligen Stecker nach NEM908 werden
 * die Wechselspannung, 
 * der DCC-Fahrstrom und 
@@ -201,6 +205,8 @@ Dem 25-poligen Stecker nach NEM908 werden
 
 ![Aufbau Einspeisung](/images/300_RCC5V_supply.png)  
 *Bild 5: Stromversorgung im Modul (SUPPLY)*  
+
+<a name="x33"></a>   
 
 ### 3.3 ESP32-Steuerung
 Der ESP32 ist das Herzstück des Systems.
@@ -213,6 +219,8 @@ Er
 
 Dazu ist er mit zwei zusätzlichen Shields ausgestattet.  
 
+<a name="x34"></a>   
+
 ### 3.4 I²C-Bus
 Der ESP32 steuert zwei getrennte I²C-Busse für  
 * das Display und
@@ -224,6 +232,8 @@ Dadurch kann das System einfach erweitert werden.
 ![RCC5V_BlockDiagram3x](./images/300_RCC5V_BlockDiagramm_3x_V2.png "RCC5V_BlockDiagram3x")   
 _Bild 6: Schalten von mehreren Eisenbahnkomponenten mit 5V_   
 
+<a name="x35"></a>   
+
 ### 3.5 RCC-Steuerblöcke
 Die Steuerblöcke bilden die Schnittstelle zwischen der Elektronik und den Modellbahn-Komponenten. Sie haben lokalen Bedien- und Anzeige-Elemente.  
 
@@ -234,6 +244,8 @@ Je nach Aufgabe stehen verschiedene Steuerblöcke zur Verfügung, zum Beispiel f
 - Entkuppler
 - abschaltbare Gleise
 - Beleuchtung
+
+<a name="x36"></a>   
 
 ### 3.6 Modellbahn-Komponenten
 Beispiele für __Modellbahnkomponenten__ sind Weichen, Entkuppler, abschaltbare Gleise, Beleuchtungen.   
