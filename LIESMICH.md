@@ -83,7 +83,7 @@ Für den Aufbau eines RCC-Systems sind folgende Kenntnisse hilfreich:
    - Wie viele davon?
    - Welche DCC-Adressen sollen verwendet werden?
 
-   **Beispiel Demo-Programm:**
+   **Beispiel ["Blocktester"](https://github.com/khartinger/RCC5V/blob/main/examples/blocktester/LIESMICH.md):**
    - 1 Entkuppler (DCC 11)
    - 1 Zweiwegweiche (DCC 21)
    - 1 Dreiwegweiche (DCC 31 und 32)
