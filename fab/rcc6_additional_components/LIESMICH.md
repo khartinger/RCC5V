@@ -453,10 +453,11 @@ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise
 <a name="x29"></a>   
 
 ## 2.9 Versionen
-* V1 (260628): C8 ergänzen, 2 Fehler:   
-  * Testwiderstand Rs4 (220 k&Omega;) an DCC0 und DCC1 (statt richtig __an SS und NN__) angeschlossen,
-  * Widerstand R14 mit 1 k&Omega; angeschrieben (statt richtig __R14 = 47 k&Omega;__)   
-  * Platinengröße auf 29,5 x 84 mm verkleinert   
+* V1 (260628) -  Verbesserungen:  
+  * C8 ergänzen,
+  * Testwiderstand Rs4 (220 k&Omega;) an __an SS und NN__ (statt DCC0 und DCC1) anschließen,
+  * Widerstand __R14 = 47 k&Omega;__  anschreiben (statt 1 k&Omega;),   
+  * Platinengröße auf 29,5 x 84 mm verkleinern.   
 * V2 (260717): OK   
 
 
@@ -465,7 +466,7 @@ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise
 
 # 3. UI-Steuerungsplatine
 ## 3.1 Einleitung
-Die UI-Steuerungsplatine `RW_5V_UI_STRG` dient zum Anpassen der DCC-Gleis-UI-Erkennung an das RCC-Blocksystem. Sie   
+Die UI-Steuerungsplatine `RW_5V_UI_STRG` dient zum Anpassen der [DCC-Gleis-UI-Erkennung](#x20) an das RCC-Blocksystem. Sie   
 * versorgt die `dcc_track_UI_detection`-Platine mit der 5V-Versorgungsspannung,   
 * leitet die Steuersignale `FRE1` und `TRV1` weiter zur LED-Anzeige und   
 * leitet die LED-Rückmeldesignale `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
@@ -511,7 +512,11 @@ Bauteile der Platine `RW_5V_UI_STRG` (C1 fehlt):
 <a name="x34"></a>   
 
 ## 3.4 Inbetriebnahme und Test
-Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit der Platine `RW_5V_RGY_LED`.   
+Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x20). Für den realen Test in der Blocksteuerumgebung benötigt man folgendes:  
+* 
+
+
+
 
 <a name="x35"></a>   
 
