@@ -1,9 +1,20 @@
+<a name="up"></a>
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
 <h1>RCC – Railway Component Control</h1><b><big>Open-Source-Steuerung für Modellbahnen</big></b><br>  
+<table><tr><td>Stand: 28.7.2026</td>
+<td><a href="#TableOfContents">→ Inhaltsverzeichnis</a></td>
+<td><a href="README.md">→ English version</a></td></tr></table>
+</td></tr></table>
+
+---   
+
 <a name="up"></a>
-<a href="#TableOfContents">==> Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp;  &nbsp; 
-<a href="README.md">==> English version</a>
-</td></tr></table>   
+<table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
+<h1>RCC – Railway Component Control</h1><b><big>Open-Source-Steuerung für Modellbahnen</big></b><br>  
+Stand: 28.7.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+<a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
+<a href="README.md">→ English version</a>
+</td></tr></table>
 
 # 1. Was ist RCC?
 

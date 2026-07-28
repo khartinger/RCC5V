@@ -131,8 +131,8 @@ Screen154 screen_;
 #define  CMD_BIT2_A     4    // bits BA = 10
 #define  CMD_BIT2_B     5    // bits BA = 01
 #define  CMD_BIT2_OFF   6    // bits BA = 11
-#define  CMD_BLINK      7    // start blink light
-#define  CMD_BLINK_END  8    // stopp blink light
+#define  CMD_BLINK      7    // start blinking light
+#define  CMD_BLINK_END  8    // stop blinking light
 
 //.......All properties of a railroad command...................
 // command: 0=out, 1=stright, 2=curved, 3=undefined (switching)
@@ -199,7 +199,12 @@ void onAccessoryPacket(unsigned int linearDecoderAddress, bool enabled) {
 // Control functions for WLAN data
 // *************************************************************
 //_______Check IP-Address_______________________________________
-// return: true = valid IP address, false: not valid
+/**
+ * Checks whether a string contains a valid IPv4 address.
+ *
+ * @param ip IP address string
+ * @return true if valid
+ */
 bool isValidIPv4(const String &ip) {
   int parts = 0;
   int last = 0;
