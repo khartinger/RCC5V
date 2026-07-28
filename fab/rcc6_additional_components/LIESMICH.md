@@ -6,14 +6,6 @@ Stand: 28.7.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
 
----   
-
-<table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 7.7.2026 <a name="up"></a><br>   
-<h1>Weitere RCC Komponenten</h1>
-<a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
-</td></tr></table>   
-
 <a name="x01"></a>   
 
 # Worum geht es?
