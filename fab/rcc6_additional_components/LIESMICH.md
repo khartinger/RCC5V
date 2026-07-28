@@ -27,12 +27,12 @@ Die Platine `RW_5V_RGY_LED` ist eine **41 × 41 mm²** große Anzeigeplatine im 
 
 Sie enthält bis zu **drei parallel geschaltete rot/grün-Duo-LEDs**. Die LEDs zeigen den Zustand der Eingangssignale **TRV** und **FRE** an.  
 
-| TRV | FRE | LED-Farbe |  
-|:---:|:---:|:---------:|  
-| 0 V | 0 V | Rot |  
-| 0 V | 5 V | Rot |  
-| 5 V | 0 V | Grün |  
-| 5 V | 5 V | Gelb (Orange) |  
+| TRV | FRE |   LED-Farbe   | # | ROK | RFR |  
+|:---:|:---:|:-------------:|---|:---:|:---:|  
+| 0 V | 0 V | Rot           | # | 5 V | 0 V |  
+| 0 V | 5 V | Rot           | # | 5 V | 0 V |  
+| 5 V | 0 V | Grün          | # | 0 V | 5 V |  
+| 5 V | 5 V | Gelb (Orange) | # | 0 V | 0 V |  
 
 **Bedeutung der Eingänge**
 
@@ -542,11 +542,29 @@ Achtung beim Anschluss der Platine `dcc_track_UI_detection` auf die Richtung:
 
 # 4. Pulsspeicher-Platine
 ## 4.1 Einleitung
-Die Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG` dient zum Speichern von Pulsen (auch bei Stromausfall). Sie hat an J5 die beiden Eingänge SET0V und RST0V zum Setzen und Rücksetzen des Ausgangs.   
-![RW_5V_PULS_STRG_J5](/images/300_RW_5V_PULS_STRG_J5.png "RW_5V_PULS_STRG_J5")   
-Weiters leitet sie   
-* die Steuersignale `FRE1` und `TRV1` weiter zur LED-Anzeige und   
-* die LED-Rückmeldesignale `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
+Die Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG` dient zum Speichern von Pulsen (auch bei Stromausfall).  
+
+### Eingänge
+Sie hat je drei Eingänge zum Setzen und Rücksetzen:  
+* 6-poliger Stecker J5  
+* Taster (zB auf Platine `RW_5V_RGY_LED`)  
+* 10-poliger Stecker J4 (I²C-Anschluss)  
+
+![RW_5V_PULS_STRG_IN](/images/300_RW_5V_PULS_STRG_IN.png "RW_5V_PULS_STRG_IN")   
+
+
+Pinbelegnug des 6-poligen Steckers J5:   
+
+![RW_5V_PULS_STRG_J5](/images/150_RW_5V_PULS_STRG_J5.png "RW_5V_PULS_STRG_J5")   
+
+Pinbelegnug des 10-poligen Steckers J4:   
+
+![RW_5V_PULS_STRG_J4](/images/150_RW_5V_PULS_STRG_J4.png "RW_5V_PULS_STRG_J4")   
+
+### Ausgänge
+Die Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG` erzeugt  
+* die Steuersignale `FRE1` und `TRV1` für die LED-Anzeige und   
+* leitet die LED-Anzeige-Rückmeldung `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
 
 <a name="x42"></a>   
 
@@ -558,8 +576,9 @@ Die Puls-Steuerung besteht aus 5 Stufen:
 * H-Brücken-Treiber (DRV8833)  
 * Bistabiles Relais (IM41)  
 
-KiCad-Schaltplan der Platine "RW_5V_PULS_STRG" (Version 1):   
-![RW_5V_PULS_STRG_circuit](/images/600_RW_5V_PULS_STRG_circuit_V1.png "RW_5V_PULS_STRG_circuit")   
+KiCad-Schaltplan der Platine "RW_5V_PULS_STRG" (Version 3):   
+
+![RW_5V_PULS_STRG_circuit](/images/600_RW_5V_PULS_STRG_circuit_V3.png "RW_5V_PULS_STRG_circuit")   
 
 <a name="x43"></a>   
 
@@ -636,6 +655,6 @@ Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit der Platine
 ## 4.5 Versionen
 * V1 (260704): D4, D5 falsche Richtung. D8, D9 ergänzt. C2 bis C5 100 nF.   
 * V2 (260717): C2, C3 etwas gegeneinander versetzen.   
-* V2 (260727): OK.   
+* V3 (260727): OK.   
 
 [Zum Seitenanfang](#up)   
