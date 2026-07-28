@@ -16,7 +16,6 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 3. [UI-Steuerungsplatine `RW_5V_UI_STRG`](#x30)   
 4. [Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG`](#x40)   
 
-
 <a name="x10"></a>   
 <a name="x11"></a>   
 
@@ -213,7 +212,10 @@ Print auf die Bauteilseite legen. Alle erforderlichen Anschlüsse befinden sich 
 <a name="x15"></a>   
 
 ## 1.5 Versionen
-* V1 (260704): Siebdruckmaske: Werte für R4 (100 k&Omega;) und R9 (47 &Omega;) falsch. SW2 in SW3 umbenannt. Widerstandsänderungen: R1 = 680 &Omega; bis 1 k&Omega; (statt 1 k&Omega;), R3 = 3,9 k&Omega; bis 10 k&Omega; (statt 10 k&Omega;), R7 = 10 k&Omega; (statt 4,7 k&Omega;), R9 = 47 &Omega; (statt 10 k&Omega;), R10 = 1 k&Omega; (statt 4,7 k&Omega;), R12 = 1 k&Omega; (statt 4,7 k&Omega;)
+* V1 (260704) -  Print brauchbar, aber **Änderungen** erforderlich:  
+  * Siebdruckmaske: falsche Werte für R4 (10 k&Omega; statt **richtig 100 k&Omega;**) und R9 (100 k&Omega; statt **richtig 47 &Omega;**).  
+  * SW2 in SW3 umbenennen.  
+  * Neue Widerstandswerte: R1 = 680 &Omega; bis 1 k&Omega; (statt 1 k&Omega;), R3 = 3,9 k&Omega; bis 10 k&Omega; (statt 10 k&Omega;), R7 = 10 k&Omega; (statt 4,7 k&Omega;), R9 = 47 &Omega; (statt 10 k&Omega;), R10 = 1 k&Omega; (statt 4,7 k&Omega;), R12 = 1 k&Omega; (statt 4,7 k&Omega;)
 * V2 (260712): OK   
 
 <a name="x20"></a>   
@@ -446,7 +448,7 @@ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise
 1. Messgerät auf Spannungsmessung stellen, den COM-Anschluss an Pin 6 vom 6-poligen Wannenstecker J5, V an Pin 2 von J5 (TRV) anschließen.   
 2. DCC-Versorgung angeschlossen: TRV = 5 V (grüne LED ein), DCC-Versorgung abgeklemmt: TRV = 0 V (grüne LED aus).   
 3. Messgerät mit COM an an Pin 6 vom 6-poligen Wannenstecker J5, V an Pin 1 von J5 (FRE) anschließen.   
-4. DCC-Versorgung anschließen. Jumper J3 offen: FRE = 0 V (rote LED aus), Jumper J3 gesteckt: FRE = 5 V (rote LED leuchtet).   
+4. DCC-Versorgung am ""Booster"-Eingang anschließen. Jumper J3 offen: FRE = 0 V (rote LED aus), Jumper J3 gesteckt: FRE = 5 V (rote LED leuchtet).   
 
 **Ruhezustand**: Bei offenem Jumper und ohne Lok (bzw. Last, Waggon) am Gleis darf die rote LED nicht leuchten.   
 
@@ -512,12 +514,23 @@ Bauteile der Platine `RW_5V_UI_STRG` (C1 fehlt):
 <a name="x34"></a>   
 
 ## 3.4 Inbetriebnahme und Test
-Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x20). Für den realen Test in der Blocksteuerumgebung benötigt man folgendes:  
-* [Einspeisung (FEED-IN)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x31)  
-* [Modul-Stromversorgung (SUPPLY)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x32)  
-* 
+Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x20). Für den realen Test in der Blocksteuerungsumgebung benötigt man folgendes:  
+* 1x [Einspeisung (FEED-IN)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x31) und Kabel mit 2x 25-poligen SUB-D-Buchsen  
+* 1x [Modul-Stromversorgung (SUB25_10)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x32)  
+* 2x 6-poliges Flachbandkabel, Länge 15 cm oder länger  
+* 4x Draht, Länge 20 cm oder länger (oder Kroko-Klemmen)  
+* Platine `dcc_track_UI_detection`  
+* Platine `RW_5V_UI_STRG` mit aufgesteckter Platine  `RW_5V_RGY_LED`  
+* Gleis und DCC-Lok  
 
+Achtung beim Anschluss der Platine `dcc_track_UI_detection` auf die Richtung:  
+* "BOOSTER"-Anschluss an die Modul-Stromversorgung,  
+* "TRACK"-Anschluss zum überwachten Gleis  
 
+![RW_5V_UI_detection_test1](/images/300_RW_5V_UI_detection_test1.png "RW_5V_UI_detection_test1")   
+
+![RW_5V_UI_detection_test2](/images/300_RW_5V_UI_detection_test2.png "RW_5V_UI_detection_test2")   
+![RW_5V_UI_detection_test3](/images/300_RW_5V_UI_detection_test3.png "RW_5V_UI_detection_test3")   
 
 <a name="x35"></a>   
 
@@ -529,7 +542,7 @@ Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit den Platine
 
 # 4. Pulsspeicher-Platine
 ## 4.1 Einleitung
-Die Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG` dient zum Speichern von Pulsen. Sie hat an J5 die beiden Eingänge SET0V und RST0V zum Setzen und Rücksetzen des Ausgangs.   
+Die Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG` dient zum Speichern von Pulsen (auch bei Stromausfall). Sie hat an J5 die beiden Eingänge SET0V und RST0V zum Setzen und Rücksetzen des Ausgangs.   
 ![RW_5V_PULS_STRG_J5](/images/300_RW_5V_PULS_STRG_J5.png "RW_5V_PULS_STRG_J5")   
 Weiters leitet sie   
 * die Steuersignale `FRE1` und `TRV1` weiter zur LED-Anzeige und   
@@ -538,71 +551,78 @@ Weiters leitet sie
 <a name="x42"></a>   
 
 ## 4.2 Schaltplan
+Die Puls-Steuerung besteht aus 5 Stufen:   
+* Eingänge  
+* Impulserzeugung  
+* Flipflop (HEF4093)  
+* H-Brücken-Treiber (DRV8833)  
+* Bistabiles Relais (IM41)  
+
 KiCad-Schaltplan der Platine "RW_5V_PULS_STRG" (Version 1):   
 ![RW_5V_PULS_STRG_circuit](/images/600_RW_5V_PULS_STRG_circuit_V1.png "RW_5V_PULS_STRG_circuit")   
 
 <a name="x43"></a>   
 
 ## 4.3 Bestückung der Platine
-Bild der Platine `RW_5V_PULS_STRG` (Version 1):   
-![PULS-Platine](/images/pcb_f/PCB_F_RW_5V_PULS_STRG_V1.png "PULS-Platine")   
+Bild der Platine `RW_5V_PULS_STRG` (Version 2):   
+![PULS-Platine](/images/pcb_f/PCB_F_RW_5V_PULS_STRG_V2.png "PULS-Platine")   
 
-Best&uuml;ckte Platine "RW_5V_PULS_STRG"   
-![RW_5V_PULS_STRG bestückt](/images/300_RW_5V_PULS_STRG_V1_assembled.png "RW_5V_PULS_STRG bestückt")   
+Best&uuml;ckte Platine "RW_5V_PULS_STRG_V2"   
+![RW_5V_PULS_STRG bestückt1](/images/300_RW_5V_PULS_STRG_V2_assembled1.png "RW_5V_PULS_STRG bestückt1") ![RW_5V_PULS_STRG bestückt2](/images/300_RW_5V_PULS_STRG_V2_assembled2.png "RW_5V_PULS_STRG bestückt2")   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz | Wert | Geh&auml;use |   
 |-----|-----|-----|-----|   
-| 1 | C1 | 100 nF, Raster 5,08 mm | C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
-| 2 | C3, C5 | 10 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
-| 2 | C2, C4 | 100 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 5 | C1, C2, C3, C4, C5 | 100 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
 | 1 | C6 | Elko 10 &micro;F, 16 V, Raster 2,54 mm | ELKO_L7.88mm_D4.57mm_P2.54mm_kh |   
-| 5 | D1, D2, D4, D8, D9 | Diode BAT48 | D_DO-35_P1.778mm_Vertical_AnodeUp_kh |   
-| 2 | D3, D6 | Diode  BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
-| 1 | D5 | Diode BAT48 | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
+| 3 | D1, D2, D4 | Diode BAT48 | D_DO-35_P1.778mm_Vertical_AnodeUp_kh |   
+| 2 | D3, D6 | Diode BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
+| 3 | D5, D8, D9 | Diode BAT48 | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
 | 1 | D7 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
-| 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_kh |   
+| 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_Back_kh |   
 | 2 | J3, J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
 | 1 | J4 | Wannenstecker 10-polig, stehend | Box_02x05_P2.54mm_Vertical_kh |   
-| 1 | J6 | DRV8833-Board [1] | DRV8833_Board |   
+| 1 | J6 | DRV8833_Board [1]| DRV8833_Board |   
 | 2 | J6 | Buchsenleiste 6 Pin [2] |   |   
 | 1 | J7 | Stiftleiste 2-polig (Jumper_2) [3] | PinSocket_1x02_P2.54mm_Vertical_kh |   
-| 1 | K1 | Relais IM41, 3 V, 2x UM | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
+| 1 | J7 | Jumper (2-polig) |   |   
+| 1 | K1 | Relais IM41, 3 V, 2x UM, bistabil | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
 | 2 | R21, R24 | 100 &Omega; | R_Axial_P1.778mm_Vertical_kh |   
-| 1 | R27 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 4 | R22, R23, R25, R26 | 100 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
+| 1 | R27 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 2 | R28, R29 | 100 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | U1 | 4-fach NAND mit Schmitt-Trigger HEF4093B | DIP-14_W7.62mm_Socket_kh |   
 | 1 | U1 | Fassung DIL 14 (2x7 Pin), gedrehte Kontakte |   |   
 
 Bauteile der Platine `RW_5V_PULS_STRG`:   
-![RW_5V_PULS_STRG_parts](/images/300_RW_5V_PULS_STRG_parts_V1.png "RW_5V_PULS_STRG_parts")   
+![RW_5V_PULS_STRG_parts](/images/300_RW_5V_PULS_STRG_parts_V2.png "RW_5V_PULS_STRG_parts")   
 
 ### Vorbereitung
-[1] Auf dem DRV8833_Board J6 die Verbindung bei J1 **auftrennen**.   
-[2] Entweder von einer flachen, einreihigen Buchsenleiste 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6) oder   
-    zB eine DIL 14 Fassung mit Federkontakten auseinanderschneiden und 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6)   
+[1] 1. Auf dem DRV8833_Board J6 die Verbindung bei J1 **auftrennen**.   
+&nbsp; &nbsp; &nbsp;2. 2x 6polige Stiftleisten zu den Bauteilen hin anlöten.   
+[2] Von einer flachen, einreihigen Buchsenleiste 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6) oder   
+    zB eine DIL 14 Fassung mit Federkontakten auseinanderschneiden und 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6).   
 [3] Von einer langen, einreihigen Stiftleiste 1x 2-poliges St&uuml;ck abtrennen (f&uuml;r J7).   
 
 ### Best&uuml;ckung   
+![](/images/480_RW_5V_PULS_STRG_Fsilk_V2.png)  
 1. Widerstand R27 (100 k&Omega;, liegend)   
 2. Diode D3, D6 (BAT48, liegend, Kathode beim weißen Strich)   
 3. Elko C6 (10 &micro;F, liegend, auf Polung achten!)   
 4. Fassung U1 (DIL 14, auf Polung/Kerbe achten!)   
 5. Buchsenleisten J6 (2x 6 Pin)   
-7. Relais K1 (IM41, 3V, auf Polung achten)   
-8. Diode D1, D2, D4, D5, D7, D8, D9 (BAT48, stehend, Kathode in den Kreis)   
-9. Kondensatoren C2, C4 (100 nF = 104)   
-10. Kondensatoren C3, C5 (10 nF = 103)   
-11. Kondensator C1 (100 nF)   
-12. Stiftleiste J7 (2-polig)   
-13. Widerst&auml;nde R21, R24 (100 &Omega;, stehend)   
-14. Widerst&auml;nde R28, R29 (100 &Omega;, stehend)   
-15. Widerst&auml;nde R22, R23, R25, R26 (100 k&Omega;, stehend)   
-16. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
-17. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
+6. Relais K1 (IM41, 3V, auf Polung achten)   
+7. Diode D1, D2, D4, D5, D7, D8, D9 (BAT48, stehend, Kathode in den Kreis)   
+8. Kondensatoren C1, C3, C4, C5 (100 nF = 104, Raster 2,54 mm, stehend)   
+9. Stiftleiste J7 (2-polig)   
+10. Widerst&auml;nde R21, R24, R28, R29 (100 &Omega;, stehend)   
+11. Widerst&auml;nde R22, R23, R25, R26 (100 k&Omega;, stehend)   
+12. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
+13. Kondensator C2 (100 nF = 104, Raster 2,54 mm, stehend)   
+14. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
 
 ### Print vervollständigen
+* Jumper auf Stifte J7 aufstecken.   
 * 4-fach NAND HEF4093B einstecken.   
 * DRV8833_Board aufstecken.   
 
@@ -615,7 +635,7 @@ Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit der Platine
 
 ## 4.5 Versionen
 * V1 (260704): D4, D5 falsche Richtung. D8, D9 ergänzt. C2 bis C5 100 nF.   
-* V2 (260717): OK   
-
+* V2 (260717): C2, C3 etwas gegeneinander versetzen.   
+* V2 (260727): OK.   
 
 [Zum Seitenanfang](#up)   
