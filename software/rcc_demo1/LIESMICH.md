@@ -1,22 +1,34 @@
-<table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 5.1.2025 <a name="up"></a><br>   
-<h1>&Uuml;berblick &uuml;ber die Demo-Software zum Steuern von Modellbahn-Komponenten mit DCC, MQTT und manuell</h1>
-<a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
-</td></tr></table>   
+<a name="up"></a>
+<table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
+<h1>RCC Demo-Software</h1><b><big>Überblick über die Demo-Software zum Steuern von Modellbahn-Komponenten</big></b><br>  
+Stand: 28.7.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+<a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
+<a href="README.md">→ English version</a>
+</td></tr></table>
 
-# Ziel
-Dieses Programm f&uuml;r einen ESP32 dient zum Testen von verschiedenen, selbst gebauten Modelleisenbahn-Schaltbl&ouml;cken.   
-Jeder Schaltblock hat drei Anschl&uuml;sse:   
-* einen 10-poligen Anschluss f&uuml;r die Steuerung durch den Mikrocontroller,   
-* einen 6-poligen Anschluss f&uuml;r die Eisenbahn-Komponenten (Weichenantriebe etc.),   
-* einen 6-poligen Anschluss f&uuml;r die Stromversorgung (im _Bild 1_ unten, senkrecht).   
+# Einführung
+Die Steuerung jedes Eisenbahn-Moduls erfolgt durch einen ESP32. Das Programm `rcc_demo1.cpp` ist das Basisprogramm für jeden ESP32. Es dient zum Testen von selbst gebauten Steuerblöcken zum Beispiel mit der Hardware [RCC-Blocktester](https://github.com/khartinger/RCC5V/blob/main/examples/blocktester/LIESMICH.md).   
 
-![Anschl&uuml;sse_W2-Block](/images/300_connections_w2_block.png "Anschl&uuml;sse_W2-Block")   
-_Bild 1: Anschl&uuml;sse am Beispiel des Zweiwegweichen-Schaltblocks_   
+Folgende Blöcke werden durch die Software angesteuert:   
+1. Entkuppler   
+2. Zweiwegweiche (mit Endabschaltung)   
+3. Dreiwegweiche (mit Endabschaltung)   
+4. Fahrstrom-Schalter   
+5. Blinklicht   
 
-F&uuml;r die Ansteuerung durch den Mikrocontroller ist der 10-polige Anschluss von Interesse.   
+Zum Verständnis der Software ist eine grundsätzliche Kenntnis der Funktion der Hardware erforderlich. Dies wird [weiter unten](#x10) beschrieben.   
+Details zur Software finden sich in https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo1/DETAILS_D.md
 
-Die Verbindung zum Mikrocontroller erfolgt &uuml;ber I²C-PCF8574-I/O-Expander-Boards, wobei immer eine gerade Anzahl erforderlich ist. Dies ergibt sich daraus, dass immer   
+<a name="TableOfContents"></a>   
+
+## Inhaltsübersicht
+1. Hardware  
+2. Software  
+
+<a name="x10"></a>
+
+# 1. Hardware
+Die Ansteuerung der Schaltblöcke erfolgt über den I²C-Bus und I²C-PCF8574-I/O-Expander-Boards, wobei immer eine gerade Anzahl erforderlich ist. Dies ergibt sich daraus, dass immer   
 * ein Board zur Ansteuerung der Komponenten (I2C-Adresse 0x20, IO-Expander #0) und   
 * ein Board f&uuml;r die R&uuml;ckmeldesignale (I2C-Adresse 0x21, IO-Expander #1)   
 verantwortlich ist.   
@@ -29,6 +41,17 @@ Folgende Bl&ouml;cke und Pin-Nummern sind in der Demo-Software vorgesehen:
 3. DCC 31,32, IO-Expander Pin 3,4,5: Dreiwegweiche (mit Endabschaltung)   
 4. DCC 41, IO-Expander Pin 6: Fahrstrom   
 5. DCC 51, IO-Expander Pin 7: Blinklicht   
+
+F&uuml;r die Ansteuerung durch den Mikrocontroller ist der 10-polige Anschluss J4 von Interesse.   
+
+**Beispiel:** Ansteuerung einer Zweiweg-Weiche:  
+![pinlayout_2-Weg-Weiche_J4](/images/150_sw_pinlayout_W2_J4.png "pinlayout_2-Weg-Weiche_J4")   
+
+<a name="x20"></a>
+
+# 2. Software
+
+
 
 __*Weitere Funktionen der Software:*__   
 * Der Schaltzustand der Komponenten wird auf einem 1,54"-OLED-Display angezeigt.   

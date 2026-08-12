@@ -73,10 +73,9 @@
 //            Add ../get status, RC_TYPE_TX, RC_TYPE_DCC
 // 2026-01-10 Add ../set/wlan: get wlan data from eeprom
 // 2026-02-24 Add ../get mac, setWiFiHostName()
+// 2026-08-12 Add getSymbol4Line5(), rename CMD_BIT*
 // Released into the public domain.
 
-// #include <Arduino.h>
-// #include "src/pcf8574/D1_class_PCF8574.h"
 //#define D1MINI          1              // ESP8266 D1mini +pro
 #define  ESP32D1        2                   // ESP32 D1mini
 #define  DEBUG_99       false               // true OR false
@@ -125,12 +124,12 @@ Screen154 screen_;
 //_______Railroad commands______________________________________
 //.......PCF8574 lines B A to control 2way turnout (active low!)
 #define  CMD_NONE       -1   // no command
-#define  CMD_BITA_ON    1    // set bit A=0 (inverted)
-#define  CMD_BITA_OFF   2    // set bit A=1 (inverted)
-#define  CMD_BIT2_ON    3    // bits BA = 00
-#define  CMD_BIT2_A     4    // bits BA = 10
-#define  CMD_BIT2_B     5    // bits BA = 01
-#define  CMD_BIT2_OFF   6    // bits BA = 11
+#define  CMD_BIT_A_0    1    // set bit A=0 (inverted)
+#define  CMD_BIT_A_1    2    // set bit A=1 (inverted)
+#define  CMD_BIT_BA_00  3    // bits BA = 00
+#define  CMD_BIT_BA_10  4    // bits BA = 10
+#define  CMD_BIT_BA_01  5    // bits BA = 01
+#define  CMD_BIT_BA_11  6    // bits BA = 11
 #define  CMD_BLINK      7    // start blinking light
 #define  CMD_BLINK_END  8    // stop blinking light
 
@@ -152,44 +151,72 @@ struct strRcmd {
 // same index for a command.
 strRcmd aRcmd[RCOMP_NUM];
 
-//_______State machine__________________________________________
-#define STATE_MAX           180000     // 180000*20ms = 1 hour
-#define STATE_DELAY             20     // state delay in ms
-#define STATES_SCREEN_REFRESH   251     // 251*20ms=5,2s
-#define STATES_SHOW_SCREEN_MIN  75     // show screen min 1.5 sec
-#define STATES_BLINK            25     // 25*20ms =0,5s
-#define STATES_BEFORE_RESET     50     // 25*20ms =1s
-Statemachine stm(STATE_MAX, STATE_DELAY); //1..180000
+//******* State machine *************************************************
+//------- Duration of intervals in milliseconds -------------------------
+constexpr uint32_t STATE_TICK_MS      = 20;      // state delay in ms
+constexpr uint32_t RESET_DELAY_MS     = 1000;    // press button 1 s
+constexpr uint32_t SCREEN_REFRESH_MS  = 5200;    // refresh screen
+constexpr uint32_t SHOW_SCREEN_MIN_MS = 1500;
+constexpr uint32_t BLINK_MS           = 500;     // 0.5 s
+//------- Duration of intervals in state steps ---------------------------
+constexpr uint32_t STATE_MAX          = 3600000 / STATE_TICK_MS; // 1h
+constexpr uint32_t STATES_SCREEN_REFRESH = SCREEN_REFRESH_MS / STATE_TICK_MS;
+constexpr uint32_t STATES_SHOW_SCREEN_MIN = SHOW_SCREEN_MIN_MS / STATE_TICK_MS;
+constexpr uint32_t STATES_BLINK = BLINK_MS / STATE_TICK_MS;
+constexpr uint32_t STATES_BEFORE_RESET = RESET_DELAY_MS / STATE_TICK_MS;
+Statemachine stm(STATE_MAX, STATE_TICK_MS);  // 1 .. 180000
+
+//_______dcc command____________________________________________
+
+/**
+ * @brief Represents a DCC command.
+ *
+ * Contains the DCC address and the command value.
+ * A value of -1 indicates that no valid command is available.
+ */
+struct DccCommand
+{
+    uint16_t address = 0;  ///< DCC address; 0 means no address assigned.
+    int value = -1;       ///< Command value: -1 = invalid, 0 = OFF, 1 = ON.
+};
+
+DccCommand lastDcc;
 
 //_______dcc access_____________________________________________
-unsigned int dccAddress=0;             // dcc address
-int dccValue=-1;                       // dcc input value
+// unsigned int dccAddress=0;             // dcc address
+// int dccValue=-1;                       // dcc input value
 
 // *************************************************************
 // DCC Callback Function
 // *************************************************************
 
 //_______DCC request____________________________________________
-// Generate a command if the DCC address received belongs to a 
-// component of the RW module.
-// uses : aRcomp[]
-// calls: setRcompCmd()
+
+/**
+ * Generates a command if the DCC address received belongs to a 
+ * component of the RCC module.
+ *
+ * @param linearDecoderAddress DCC address of railway component
+ * @param enabled Received DCC value: true (-> 1) or false (-> 0)
+ * @see uses: aRcomp[]
+ * @see calls: setRcompCmd()
+ */
 void onAccessoryPacket(unsigned int linearDecoderAddress, bool enabled) {
  digitalWrite(BUILTIN_LED, enabled ? 1 : 0);
- dccAddress=(int)linearDecoderAddress + DCC_OFFSET;
- dccValue=enabled ? 1 : 0;
+ lastDcc.address=(int)linearDecoderAddress + DCC_OFFSET;
+ lastDcc.value=enabled ? 1 : 0;
  //------is it a DCC address for this module?-------------------
  for(int i=0; i<RCOMP_NUM; i++) {
-  if(aRcomp[i].dcc==dccAddress) {
+  if(aRcomp[i].dcc==lastDcc.address) {
    //----railroad component found-------------------------------
-   setRcompCmd(i, dccValue, "");
+   setRcompCmd(i, lastDcc.value, "");
   }
  }
  if(DEBUG_99) {
   Serial.print("***Change in Accessory: ");
-  Serial.print(dccAddress);
+  Serial.print(lastDcc.address);
   Serial.print(" -> ");
-  Serial.print(dccValue);
+  Serial.print(lastDcc.value);
   Serial.println("***");
  }
 }
@@ -198,7 +225,9 @@ void onAccessoryPacket(unsigned int linearDecoderAddress, bool enabled) {
 // *************************************************************
 // Control functions for WLAN data
 // *************************************************************
+
 //_______Check IP-Address_______________________________________
+
 /**
  * Checks whether a string contains a valid IPv4 address.
  *
@@ -225,20 +254,32 @@ bool isValidIPv4(const String &ip) {
 }
 
 //_______check WLAN input string________________________________
-// input: ssid|password|ip
-// if password ist empty: ssid||ip
+
+/**
+ * @brief Validates a WLAN configuration string.
+ *
+ * Checks whether the specified string is valid for use as a WLAN
+ * configuration parameter.
+ *
+ * @param s String to validate (ssid|password|ip)
+ * or ssid||ip if password is empty.
+ * @return true if the string is valid, otherwise false.
+ */
 bool validateWlanString(const String &s) {
+  // ----check for exactly 2x | --------------------------------
   int i1 = s.indexOf('|');
   if (i1 < 0) return false;
   int i2 = s.indexOf('|', i1 + 1);
   if (i2 < 0) return false;
   // kein drittes '|'
   if (s.indexOf('|', i2 + 1) >= 0) return false;
-  // ssid & password dürfen nicht leer sein
-  if (i1 == 0) return false;                // ssid leer
-  // if (i2 == i1 + 1) return false;        // password leer
-  if (i2 == s.length() - 1) return false;   // ip leer
-  // ip prüfen
+  // ----SSID cannot be empty-----------------------------------
+  if (i1 == 0) return false;                // ssid empty
+  // ----If the password cannot be blank: enable the next line--
+  // if (i2 == i1 + 1) return false;        // password empty
+  // ip cannot be empty-----------------------------------------
+  if (i2 == s.length() - 1) return false;   // ip empty
+  // ----Check whether “ip” is a valid value--------------------
   String ip = s.substring(i2 + 1);
   if (!isValidIPv4(ip)) return false;
   return true;
@@ -257,15 +298,42 @@ bool validateWlanString(const String &s) {
                    String(_HOST_), String(TOPIC_BASE));
 
 //_______MQTT: inspect all subscribed incoming messages_________
+
+/**
+ * @brief MQTT call back routine
+ * 
+ * @details Checks whether a received message matches the syntax 
+ * TOPIC_BASE/get, TOPIC_BASE/set/TOPIC_SET, or TOPIC_SUB.
+ * If so, the system triggers the generation of a response.
+ * 
+ * @note client.callback_() must be called!
+ * 
+ * @param topic 
+ * @param payload 
+ * @param length length of payload
+ */
 void callback(char* topic, byte* payload, unsigned int length)
 {
  client.callback_(topic, payload, length);  // must be called!
 }
 
 //_______Answer get requests____________________________________
-// sPayload: payload to message from TOPIC_GET
-// auto answer: for help (+), version, ip (can be overwritten)
-// return: ret answer payload for get request
+
+/**
+ * @brief Generates a response (string) to a GET request
+ * 
+ * @details The generated string is automatically sent as a
+ * payload to the reply (answer) topic. 
+ * The reply topic is the same as the get topic, 
+ * except that "../ret/payload" is used instead of "../get".
+ * 
+ * For the topics "help", "version" and "ip" a response is 
+ * automatically generated, which can also be expanded 
+ * (generated string must start with "+") or overwritten.
+ * @param sPayload The payload of the GET message, whose topic
+ * must be included in the constant TOPIC_GET.
+ * @return Payload for the response message (as String)
+ */
 String simpleGet(String sPayload)
 {
  String p1=String("");                      // help string
@@ -445,8 +513,22 @@ String simpleGet(String sPayload)
 }
 
 //_______Execute set requests___________________________________
-// sTopic from TOPIC_SET, sPayload: payload to topic
-// return: ret answer payload for set command
+
+/**
+ * @brief Processes SET request and generates a response
+ * 
+ * @details The generated string is automatically sent as a
+ * payload to the reply (answer) topic. 
+ * The reply topic is the same as the set topic, 
+ * except that "../ret/xx" is used instead of "../set/xx".
+ * 
+ * @param sTopic The last part of the SET request after
+ * "../set/" i.e., the entry from TOPIC_SET that is to 
+ * be modified.
+ * @param sPayload The new value to which the SET value 
+ * should be set.
+ * @return Payload for the response message (as String)
+ */
 String simpleSet(String sTopic, String sPayload)
 {
  String p1=String("");                      // help string
@@ -534,8 +616,13 @@ String simpleSet(String sTopic, String sPayload)
 }
 
 //_______Execute sub requests___________________________________
-// sTopic from TOPIC_SUB, sPayload: payload to topic
-// return: no automatic answer
+/**
+ * @brief Executes sub requests
+ * 
+ * @param sTopic A topic listed in the constant TOPIC_SUB
+ * @param sPayload payload string for the topic
+ * @return This function generates no automatic answer
+ */
 void simpleSub(String sTopic, String sPayload)
 {
  //-------------------------------------------------------------
@@ -547,10 +634,16 @@ void simpleSub(String sTopic, String sPayload)
 // *************************************************************
 
 //_______Save line content, write it to display and show screen_
-// line_: 0 ... SCREEN_LINE_MAX (6)
-// uses: screen_, aScreenSign[], aScreenText[]
-// function saves the text (in aScreenText[])
-//    BUT DOES NOT change the sign of a line (invert text)
+
+/**
+ * Saves the given text and displays it on the screen.
+ * Function saves the text in aScreenText[], but 
+ * DOES NOT change the sign of a line (invert text).
+ *
+ * @param line_ line number 0 to SCREEN_LINE_MAX (e.g. 6)
+ * @param text_ text to be saved and displayed
+ * @see uses: screen_, aScreenSign[], aScreenText[]
+ */
 void showLine(int line_, String text_) {
  //------Save line for refeshScreen()---------------------------
  int lineAbs=line_;
@@ -570,8 +663,76 @@ void showLine(int line_, String text_) {
  }
 }
 
+//_______symbol in line 5 as 4-char-String______________________
+
+/**
+ * Creates a text symbol for the LED display on line 5
+ *
+ * @param iType type of railway component
+ * @param iValue (input) value of railway component
+ * @return 4-char-symbol as String, "??? " on Error
+ */
+String getSymbol4Line5(int iType, int iValue)
+{
+  const String ERR="??? ";
+  switch(iType)
+ {
+  case RC_TYPE_T3: // -------3-way-turnout (Dreiwegweiche)------
+   switch(iValue) { 
+    case 0:  return "__  "; // BA=00
+    case 1:  return "_/  "; // BA=01 (stright)
+    case 2:  return "__  "; // BA=10 (curved)
+    case 3:  return "1?  "; // BA=11
+    default: return ERR;    // ?? impossible
+   } // END OF switch(iValue)
+   break;
+  case RC_TYPE_TO: // -------2-way-turnout (Weiche)-------------
+   switch(iValue) { 
+    case 0:  return "0?  "; // BA=00
+    case 1:  return "__  "; // BA=01 (stright)
+    case 2:  return "_/  "; // BA=10 (curved)
+    case 3:  return "1?  "; // BA=11
+    default: return ERR;    // ?? impossible
+   } // END OF switch(iValue)
+   break;
+  case RC_TYPE_TX: // -------double slip turnout/switch (Doppelkreuzungsweiche)
+   switch(iValue) { 
+    case 0:  return "0?  "; // BA=00
+    case 1:  return "_X_ "; // BA=01 (stright)
+    case 2:  return ")(  "; // BA=10 (curved)
+    case 3:  return "1?  "; // BA=11
+    default: return ERR;    // ?? impossible
+   } // END OF switch(iValue)
+   break;
+  case RC_TYPE_DT: // -------disconnectable track (Fahrstrom)---
+   if(iValue != 0) return (String(T_ON)  + "    ").substring(0,4);
+   return (String(T_OFF)  + "    ").substring(0,4);
+   break;
+  case RC_TYPE_DD: // -------double pole, double throw (2x UM)--
+   if(iValue != 0) return "1-5 ";
+   return "1-3 ";
+   break;
+  case RC_TYPE_UC: // -------uncoupler (Entkuppler)-------------
+   if(iValue != 0) return (String(T_ON)  + "    ").substring(0,4);
+   return (String(T_OFF)  + "    ").substring(0,4);
+   break;
+  case RC_TYPE_BL: // -------blink light (Blinklicht)-----------
+   if(iValue==CMD_BLINK) return "run ";
+   return "--- ";
+   break;
+   default: break;
+ }
+ return "????";
+}
+
 //_______Fill the screen lines with current content_____________
-// uses: aScreenText[], aRcomp[]
+
+/**
+ * Fill the screen lines with current content
+ *
+ * @param iRcompGroup Group of components (max. 5 items) to be displayed
+ * @see uses: aScreenText[], aRcomp[]
+*/
 void prepareScreenLine4to6(int iRcompGroup) {
  String s1="";                              // help string
  aScreenText[3]="";                         // clear line 4
@@ -580,79 +741,26 @@ void prepareScreenLine4to6(int iRcompGroup) {
  int iRcStart=5*iRcompGroup;                // RComp start index
  int imax=RCOMP_NUM-iRcStart;               // last element to show
  if(imax>5) imax = 5;                       // max. 5 elements
- //------Format "On" or "Off"-----------------------------------
- String t_on  = (String(T_ON)  + "    ").substring(0,4);
- String t_off = (String(T_OFF) + "    ").substring(0,4);
  //------for max. 5 elements------------------------------------
  for(int i=0; i<imax; i++) { // for max. 5 group elements
   int iRc=iRcStart+i;
   //-----railway component name max. 3 chars + blank = 4 chars--
   aScreenText[3]+=(aRcomp[iRc].name.substring(0,3)+"    ").substring(0,4);
-  //-----generate symbol or value (line 5 of screen)------------
-  if(aRcomp[iRc].type==RC_TYPE_T3) { // 3-way-turnout RC_TYPE_T3
-   switch(aRcmd[iRc].inValue) { 
-    case 0:  aScreenText[4]+="__  ";  break;  // BA=00
-    case 1:  aScreenText[4]+="_/  ";  break; // BA=01 (stright)
-    case 2:  aScreenText[4]+="__  ";  break; // BA=10 (curved)
-    case 3:  aScreenText[4]+="1?  ";  break; // BA=11
-    default: aScreenText[4]+="??  ";  break; // ?? impossible
-   } // END OF switch
-  } // END OF 3-way-turnout RC_TYPE_T3
-  else
-  { // .-.-.-.not RC_TYPE_T3.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-   if(aRcomp[iRc].type==RC_TYPE_TO){ // 2-way-turnout
-    switch(aRcmd[iRc].inValue) {
-     case 0:  aScreenText[4]+="0?  ";  break; // BA=00
-     case 1:  aScreenText[4]+="__  ";  break; // BA=01 (stright)
-     case 2:  aScreenText[4]+="_/  ";  break; // BA=10 (curved)
-     case 3:  aScreenText[4]+="1?  ";  break; // BA=11
-     default: aScreenText[4]+="??  ";  break; // ?? impossible
-    } // END OF switch
-   } else { //......not RC_TYPE_TO or RC_TYPE_T3.................
-    if(aRcomp[iRc].type==RC_TYPE_TX){ // double slip turnout/switch
-     switch(aRcmd[iRc].inValue) {
-      case 0:  aScreenText[4]+="0?  ";  break; // BA=00
-      case 1:  aScreenText[4]+="_X_ ";  break; // BA=01 (stright)
-      case 2:  aScreenText[4]+=")(  ";  break; // BA=10 (curved)
-      case 3:  aScreenText[4]+="1?  ";  break; // BA=11
-      default: aScreenText[4]+="??  ";  break; // ?? impossible
-     } // END OF switch
-    } else { //......not RC_TYPE_TO or RC_TYPE_T3 or RC_TYPE_TX.
-     if(aRcomp[iRc].type==RC_TYPE_DT) { // discon track (fahrstrom)
-      aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
-     }
-     else { //.....not RC_TYPE_DT...............................
-      if(aRcomp[iRc].type==RC_TYPE_DD) { // 
-       aRcmd[iRc].inValue ? aScreenText[4]+="1-5" : aScreenText[4]+="1-3";
-      } else { //....not RC_TYPE_DD.............................
-       if(aRcomp[iRc].type==RC_TYPE_UC) {
-        aRcmd[iRc].inValue ? aScreenText[4]+=t_on : aScreenText[4]+=t_off;
-       } else { //....not RC_TYPE_UC...............................
-        if(aRcomp[iRc].type==RC_TYPE_BL) {
-         if(aRcmd[iRc].iCmd==CMD_BLINK)
-         {
-          aScreenText[4]+="run ";
-         } else {
-          aScreenText[4]+="--- ";
-         }
-         //aRcmd[iRc].inValue ? aScreenText[4]+="1_0 " : aScreenText[4]+="0_1 ";
-         //aScreenText[4]+="0|1 ";
-        } else { //...not RC_TYPE_BL...............................
-         aScreenText[4]+=(" "+String(aRcmd[iRc].inValue)+"   ").substring(0,4);
-        } // END OF not RC_TYPE_BL
-       } // END OF not RC_TYPE_UC
-      } // END OF not RC_TYPE_DD
-     } // END OF not RC_TYPE_DT
-    } // END OF not RC_TYPE_TO
-   } // END OF double slip turnout/switch
-  } // END OF not RC_TYPE_T3
+  int iValue=aRcmd[iRc].inValue;
+  if(aRcomp[iRc].type==RC_TYPE_BL) iValue=aRcmd[iRc].iCmd;
+  aScreenText[4]+=getSymbol4Line5(aRcomp[iRc].type, iValue);
   //-----dcc number of railway element--------------------------
   aScreenText[5]+=(String(aRcomp[iRc].dcc)+"    ").substring(0,4);
  } // END OF for max. 5 elements
 }
 
 //_______Refresh screen to avoid damage_________________________
-// uses: screen_, aScreenSign[], aScreenText[]
+
+/**
+ * Refresh the screen periodically to prevent damage
+ *
+ * @see uses: screen_, aScreenSign[], aScreenText[]
+*/
 void refreshScreen() {
  //------Clear screen-------------------------------------------
  screen_.screen15Clear(0,aScreenText[0],'c'); // centered title
@@ -664,7 +772,12 @@ void refreshScreen() {
 }
 
 //_______Show line 4 to 6 on OLED_______________________________
-// uses: screen_, aScreenSign[], aScreenText[]
+
+/**
+ * @brief Shows line 4 to 6 on OLED
+ *
+ * @see uses: screen_, aScreenSign[], aScreenText[]
+*/
 void showScreenLine4to6() {
  screen_.screen15(aScreenSign[3]*4,aScreenText[3]);
  screen_.screen15(aScreenSign[4]*5,aScreenText[4]);
@@ -674,8 +787,15 @@ void showScreenLine4to6() {
 }
 
 //_______show information on OLED at progam start_______________
-// uses: INFOLINES_NUM, infolines[], showLine6WaitMaxXXs()
-//       screen15Clear(), screen15()
+
+/**
+ * Shows information on OLED at progam start.
+ * The information is contained in the array `infolines[]` 
+ * (file `rcc_demo1_text.h`).
+ *
+ * @see uses: INFOLINES_NUM, infolines[], showLine6WaitMaxXXs(),
+ * screen15Clear(), screen15()
+ */
 void showInfolines() {
  if(INFOLINES_NUM<=0) return;               // nothing to show
  int iPageMax=1+int((INFOLINES_NUM-1)/5);
@@ -694,7 +814,17 @@ void showInfolines() {
  } // END OF for all pages--------------------------------------
 }
 
-//_______wait iSec seconds or stopp display by push button______
+//_______wait iSec seconds or stop display by push button_______
+
+/**
+ * Displays line 6 for a maximum of iSec seconds. 
+ * You can stop the display by pressing the PIN_BUTTON. 
+ *
+ * @param iSec (Maximum) number of seconds for the display
+ * @param line6 Line displaying the remaining seconds plus 
+ * the previous content of line 6 (inverted)
+ * @see uses: screen_, digitalRead()
+*/
 void showLine6WaitMaxXXs(int iSec, String line6) {
  int    wait_XXs=iSec;
  int    iButton_=1;
@@ -719,36 +849,46 @@ void showLine6WaitMaxXXs(int iSec, String line6) {
 // *************************************************************
 
 //_______prepare a set command for a railway component__________
-// Set the values of the strRcmd structure for the selected 
-// array element aRcmd[iRcomp] depending on the 
-// RR component type and command value.
-// Result: an array element aRcmd[iRcomp] with a valid state 
-// number and an answer string e.g. for WiFi answer
-// Input values:
-// * iRcomp......index of railway component (0...RCOMP_NUM-1)
-// * iCmdValue...command value (usually 0 or 1)
-// * sReturn.....start text of return text
-// Called by onAccessoryPacket(), simpleSet()
-// uses: aRcomp[]
-// return: answer string e.g. for WiFi answer
+
+/**
+ * @brief Create a railway command for a railway component
+ * 
+ * Set the values of the strRcmd structure for the selected 
+ * array element aRcmd[iRcomp] depending on the 
+ * railway component type and command value.
+ * Result: an array element aRcmd[iRcomp] with a valid state 
+ * number and an answer string e.g. for WiFi answer
+ *
+ * aRcomp[] array of railway components (max. RCOMP_NUM).
+ * aRcmd[]  Array of railway commands associated with the 
+ * components. Each component has exactly one command entry
+ * with the same index.
+ * 
+ * @see uses: aRcomp[], aRcmd[]
+ * @see Called by onAccessoryPacket(), simpleSet()
+ * @param iRcomp index of railway component (0...RCOMP_NUM-1)
+ * @param iCmdValue command value (usually 0 or 1)
+ * @param sReturn start text of return text
+ * @return String answer string e.g. for WiFi answer
+ */
 String setRcompCmd(int iRcomp, int iCmdValue, String sReturn) {
  if(aRcomp[iRcomp].type==RC_TYPE_TO || aRcomp[iRcomp].type==RC_TYPE_TX 
     || aRcomp[iRcomp].type==RC_TYPE_T3) {
   //...it is a turnout command (2 bits, 2cmds)................
   if(iCmdValue==0) {
    aRcmd[iRcomp].stateToDo=STATE_NOW;
-   aRcmd[iRcomp].iCmd=CMD_BIT2_A;             // turnout curved
+   aRcmd[iRcomp].iCmd=CMD_BIT_BA_10;             // turnout curved
    //aRcmd[iRcomp].stateOffset=STATES_TURNOUT_ON;
-   aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/STATE_DELAY;
-   aRcmd[iRcomp].iCmdOffset=CMD_BIT2_OFF;     // turnout off
+   aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/STATE_TICK_MS;
+   aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;     // turnout off
    return sReturn+String(" received");
   } else {
   //. .command turnout stright?. . . . . . . . . . . . . . . .
    if(iCmdValue==1) { 
     aRcmd[iRcomp].stateToDo=STATE_NOW;
-    aRcmd[iRcomp].iCmd=CMD_BIT2_B;            // turnout stright
-    aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/STATE_DELAY;
-    aRcmd[iRcomp].iCmdOffset=CMD_BIT2_OFF;    // turnout off
+    aRcmd[iRcomp].iCmd=CMD_BIT_BA_01;            // turnout stright
+    aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/STATE_TICK_MS;
+    aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;    // turnout off
     return sReturn+String(" received");
    }
   }
@@ -757,16 +897,16 @@ String setRcompCmd(int iRcomp, int iCmdValue, String sReturn) {
   //...it is a uncoupler command (1 bit, 2cmds).................
   if(iCmdValue==0) {                        // turn current off
    aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
-   aRcmd[iRcomp].iCmd=CMD_BITA_OFF;         // turn current off
+   aRcmd[iRcomp].iCmd=CMD_BIT_A_1;         // turn current off
    aRcmd[iRcomp].stateOffset=STATE_NONE;    // no state to do
    aRcmd[iRcomp].iCmdOffset=CMD_NONE;       // nothing to do
    return sReturn+String(" received");
   }
   if(iCmdValue==1) {
    aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
-   aRcmd[iRcomp].iCmd=CMD_BITA_ON;          // turn current on
-   aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/STATE_DELAY; // after some time
-   aRcmd[iRcomp].iCmdOffset=CMD_BITA_OFF;   // turn current off
+   aRcmd[iRcomp].iCmd=CMD_BIT_A_0;          // turn current on
+   aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/STATE_TICK_MS; // after some time
+   aRcmd[iRcomp].iCmdOffset=CMD_BIT_A_1;   // turn current off
    return sReturn+String(" received");
   }
  } // END OF it is a uncoupler command (1 bit, 2cmds)...........
@@ -775,14 +915,14 @@ String setRcompCmd(int iRcomp, int iCmdValue, String sReturn) {
   //...it is a disconn track command (1 bit, 1cmd)............
   if(iCmdValue==0) {                        // turn current off
    aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
-   aRcmd[iRcomp].iCmd=CMD_BITA_OFF;         // turn current off
+   aRcmd[iRcomp].iCmd=CMD_BIT_A_1;         // turn current off
    aRcmd[iRcomp].stateOffset=STATE_NONE;    // no state to do
    aRcmd[iRcomp].iCmdOffset=CMD_NONE;       // nothing to do
    return sReturn+String(" received");
   }
   if(iCmdValue==1) {
    aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
-   aRcmd[iRcomp].iCmd=CMD_BITA_ON;          // turn current on
+   aRcmd[iRcomp].iCmd=CMD_BIT_A_0;          // turn current on
    aRcmd[iRcomp].stateOffset=STATE_NONE;    // no state to do
    aRcmd[iRcomp].iCmdOffset=CMD_NONE;       // nothing to do
    return sReturn+String(" received");
@@ -812,16 +952,23 @@ String setRcompCmd(int iRcomp, int iCmdValue, String sReturn) {
 }
 
 //_______act on a command_______________________________________
-// Search the command field aRcmd[] to see whether a first or 
-// second command is to be executed for the current state number.
-// If yes, execute the hardware access using actOnCmdHardware()
-// and the corresponding values.
-// Called by loop()
-// Uses:   aRcomp[] (railway components)
-//         actOnCmdHardware() (aIOEx[] = PCF8574)
-//         stm.add (state machine)
-// Return: command string (for serial output)
-//         or return "" if there was nothing to do
+
+/**
+ * @brief Checks whether a command should be executed
+ * 
+ * Search the entire command field aRcmd[] to see whether a 
+ * first or second command is to be executed for the current
+ * state number.
+ * If yes, execute the hardware access using actOnCmdHardware()
+ * and the corresponding values.
+ * @see Uses: aRcomp[] (railway components), 
+ * actOnCmdHardware() (aIOEx[] = PCF8574), 
+ * stm.add (state machine)
+ * @see Called by loop()
+ * @param state Current state number
+ * @return command string (e.g. for serial output) 
+ * or "" if there was nothing to do
+ */
 String actOnCmd(int32_t state) {
  String sSerial_="";
  for(int i=0; i<RCOMP_NUM; i++) { // for all railway components
@@ -838,10 +985,10 @@ String actOnCmd(int32_t state) {
     //...prepare next blink command.............................
     if(inBit_>0) {
      aRcmd[i].inValue=0;
-     aRcmd[i].stateToDo=stm.add(aRcomp[i].msOff/STATE_DELAY);
+     aRcmd[i].stateToDo=stm.add(aRcomp[i].msOff/STATE_TICK_MS);
     } else {
      aRcmd[i].inValue=1;
-     aRcmd[i].stateToDo=stm.add(aRcomp[i].msOn/STATE_DELAY);
+     aRcmd[i].stateToDo=stm.add(aRcomp[i].msOn/STATE_TICK_MS);
     }
    } else {
     //...1st part of command is done: delete it.................
@@ -863,21 +1010,25 @@ String actOnCmd(int32_t state) {
  return sSerial_;
 }
 
+
 // *************************************************************
 // Hardware Access Functions
 // *************************************************************
 
 //_______Update input values____________________________________
-// Read the value of the input pins of all components.
-// For non-blinkers, the value (0..3) is stored in the command
-// array element. 
-// Set iValueChanged to true if the value has changed.
-// The index of the last changed element is returned
-// (unless it was a blink component).
-// If nothing has changed, -1 is returned.
-// Uses: aRcomp[]
-// Return: (last) index of Rcomp, where input value has changed
-//         -1: no change (or only a blink component has changed)
+
+/**
+ * @brief Reads and updates input values
+ * 
+ * Read the value of the input pins of all components.
+ * For non-blinkers, the value (0..3) is stored in the command
+ * array element aRcmd[i].inValue.
+ * Set aRcmd[i].iValueChanged to true if the value has changed.
+ *
+ * @see Uses: aRcomp[]
+ * @return (last) index of Rcomp, where input value has changed
+ * or -1 if there was no change or only a blink component has changed
+ */
 int updateInputValues() {
  int iReturn=-1;                            // no changes
  //------update input values------------------------------------
@@ -914,15 +1065,20 @@ int updateInputValues() {
 }
 
 //_______act on a command, Hardware_____________________________
-// called by actOnCmd()
-// input : iCmd_   : command number, what to do
-//         iOutPCF_: index (offset) of output expander
-//         outBitA_: number of output bit A
-//         outBitB_: number of output bit B
-//         more_   : used by blink light
-// uses  : aIOEx[] (PCF8574)
-// return: command string (for serial output)
-//         or return "" if there was nothing to do
+
+/**
+ * @brief Executes the hardware access part of a command
+ * 
+ * @see Called by actOnCmd()
+ * @see Uses aIOEx[] (PCF8574)
+ * @param iCmd_ command number, what to do
+ * @param iOutPCF_ index (offset) of output expander
+ * @param outBitA_ number of output bit A
+ * @param outBitB_ number of output bit B
+ * @param more_ used by blink light
+ * @return command string (e.g. for serial output)
+ * or return "" if there was nothing to do
+ */
 String actOnCmdHardware(int iCmd_, int iOutPCF_, 
                         int outBitA_, int outBitB_, int more_) {
  String sSerial_="";
@@ -930,19 +1086,19 @@ String actOnCmdHardware(int iCmd_, int iOutPCF_,
   case CMD_NONE:                            // No command
    sSerial_="cmd: No comnmand";
    break;
-  case CMD_BITA_ON:                         // A=0 (active low)
+  case CMD_BIT_A_0:                         // A=0 (active low)
    if(outBitA_!=NO_PIN) {
     (*pIOEx[iOutPCF_]).setBit(outBitA_, 0); // OK
     sSerial_="cmd: Pin A 0V";
    } else sSerial_="No pin A";
    break;
-  case CMD_BITA_OFF:                        // A=1
+  case CMD_BIT_A_1:                        // A=1
    if(outBitA_!=NO_PIN) {
     (*pIOEx[iOutPCF_]).setBit(outBitA_, 1);
     sSerial_="cmd: Pin A 5V";
    } else sSerial_="No pin A";
    break;
-  case CMD_BIT2_ON:                         // BA=00 (active low)
+  case CMD_BIT_BA_00:                         // BA=00 (active low)
    if(outBitA_!=NO_PIN) {
     (*pIOEx[iOutPCF_]).setBit(outBitA_, 0);
     sSerial_="cmd: Pin A 0V, ";
@@ -952,7 +1108,7 @@ String actOnCmdHardware(int iCmd_, int iOutPCF_,
     sSerial_+="Pin B 0V";
    } else sSerial_+="No pin B";
    break;
-  case CMD_BIT2_A:                         // BA=10 (active low)
+  case CMD_BIT_BA_10:                         // BA=10 (active low)
    if(outBitA_!=NO_PIN) {
     (*pIOEx[iOutPCF_]).setBit(outBitA_, 0);
     sSerial_="cmd: Pin A 0V, ";
@@ -962,7 +1118,7 @@ String actOnCmdHardware(int iCmd_, int iOutPCF_,
     sSerial_+="Pin B 5V";
    } else sSerial_+="No pin B";
    break;
-  case CMD_BIT2_B:                         // BA=01 (active low)
+  case CMD_BIT_BA_01:                         // BA=01 (active low)
    if(outBitA_!=NO_PIN) {
     (*pIOEx[iOutPCF_]).setBit(outBitA_, 1);
     sSerial_="cmd: Pin A 5V, ";
@@ -972,7 +1128,7 @@ String actOnCmdHardware(int iCmd_, int iOutPCF_,
     sSerial_+="Pin B 0V";
    } else sSerial_+="No pin B";
    break;
-  case CMD_BIT2_OFF:                        // BA=11 (active low)
+  case CMD_BIT_BA_11:                        // BA=11 (active low)
    if(outBitA_!=NO_PIN) {
     (*pIOEx[iOutPCF_]).setBit(outBitA_, 1);
     sSerial_="cmd: Pin A 5V, ";
@@ -1286,16 +1442,16 @@ void loop() {
 
  //======(5) do at the end of the loop ...======================
  DccAccessoryDecoder.loop();
- if(dccAddress>=0 && dccAddress<2048) {
-  sSerial+=" | DCC Adresse="+String(dccAddress)+" Wert="+String(dccValue);
-  dccAddress=-1;
+ if(lastDcc.address>=0 && lastDcc.address<2048) {
+  sSerial+=" | DCC Adresse="+String(lastDcc.address)+" Wert="+String(lastDcc.value);
+  lastDcc.address=-1;
  }
  uint32_t ms=stm.loopEnd();                   // state end
  //------print serial data--------------------------------------
  if(DEBUG_99) {
  sSerial+=" | ";
   sSerial+=String(ms);
-  if(ms>STATE_DELAY) sSerial+=" ms-Too long!!";
+  if(ms>STATE_TICK_MS) sSerial+=" ms-Too long!!";
   else sSerial+=" ms";
   if(DEBUG_99_SHOW_ALL) Serial.println(sSerial);
   else {
