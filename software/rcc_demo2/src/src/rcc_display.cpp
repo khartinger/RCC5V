@@ -124,6 +124,15 @@ String getSymbol4Line5(int iType, int iValue)
    if(iValue != 0) return (String(T_ON)  + "    ").substring(0,4);
    return (String(T_OFF)  + "    ").substring(0,4);
    break;
+  case RC_TYPE_P2: // -------pulse 2 inputs (reset, set)--------
+   switch(iValue) { 
+    case 0: return "OCC "; // "=0= " BA=00
+    case 1: return "FRE "; // "=1= " BA=01
+    case 2: return " 0V "; // "=2= " BA=10
+    case 3: return "00V "; // "=3= " BA=11
+    default: return ERR;    // ?? impossible
+   } // END OF switch(iValue)
+   break;
   case RC_TYPE_BL: // -------blink light (Blinklicht)-----------
    if(iValue==CMD_BLINK) return "run ";
    return "--- ";
@@ -196,7 +205,7 @@ void showScreenLine4to6() {
  * @brief Shows information on OLED at progam start.
  * 
  * The information is contained in the array `infolines[]` 
- * (file `rcc_demo1a_text.h`).
+ * (file `rcc_demo2_text.h`).
  *
  * @see uses: INFOLINES_NUM, infolines[], showLine6WaitMaxXXs(),
  * screen15Clear(), screen15()

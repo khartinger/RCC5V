@@ -1,12 +1,12 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 4.1.2026 <a name="up"></a><br>   
 <h1>Anpassen des Demo-Programms an eigene Bed&uuml;rfnisse</h1>
-<a href="/software/rcc_demo1a/CUSTOMIZE_E.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
+<a href="/software/rcc_demo2/CUSTOMIZE_E.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # Einleitung
-F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src/dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `src/rcc_demo1a.text.h`](#x30) anzupassen.   
-Das Steuerprogramm `rcc_demo1a.cpp` muss im Normalfall nicht ver&auml;ndert werden. Falls man die Steuerung erweitern m&ouml;chte, so findet man eine detaillierte Beschreibung der Demo-Software unter [/software/rcc_demo1a/DETAILS_D.md](/software/rcc_demo1a/DETAILS_D.md).   
+F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src/dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `src/rcc_demo2.text.h`](#x30) anzupassen.   
+Das Steuerprogramm `rcc_demo2.cpp` muss im Normalfall nicht ver&auml;ndert werden. Falls man die Steuerung erweitern m&ouml;chte, so findet man eine detaillierte Beschreibung der Demo-Software unter [/software/rcc_demo2/DETAILS_D.md](/software/rcc_demo2/DETAILS_D.md).   
 
 <a name="x20"></a>   
 
@@ -21,8 +21,8 @@ In der Konfigurationsdatei `dcc_config.h` werden alle wesentlichen Projekteigens
 * die Anzahl der I²C-I/O-Expander, ihre Namen, Adressen und Startwerte   
 * die Anzahl der Eisenbahnkomponenten und deren Typ, Name, DCC-Adresse, Expander-Nummer und -Pinbelegung sowie Schaltzeiten   
 
-## Beispiel Demo-Programm "dcc_demo1a"   
-Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in der Konfigurationsdatei abgebildet werden. F&uuml;r das Demo-Programm `dcc_demo1a` wird von folgender Verdrahtung ausgegangen:   
+## Beispiel Demo-Programm "dcc_demo2"   
+Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in der Konfigurationsdatei abgebildet werden. F&uuml;r das Demo-Programm `dcc_demo2` wird von folgender Verdrahtung ausgegangen:   
 * 2x I²C-Expander mit den Namen `pcf8574_out` (7-Bit-Adresse 0x20) und `pcf8574_in` (7-Bit-Adresse 0x21)., d.h. je ein Expanderboard f&uuml;r Ausg&auml;nge und ein Expanderboard f&uuml;r Eing&auml;nge   
 * 1x Entkuppler (Name "UC", DCC-Adresse 11) an Pin 0 der I²C-Expander   
 * 1x Zweiwegweiche (Name "T2", DCC-Adresse 21) an Pin 1 und 2 der I²C-Expander   
@@ -32,15 +32,15 @@ Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in de
 
 Das folgende _Bild 1_ veranschaulicht nochmals diese Daten.   
 
-![circuit_rcc_demo1a](../../images/480_rcc_demo1a_i2c_circuit.png "circuit_rcc_demo1a")   
-_Bild 1: Verdrahtung des Beispiels `rcc_demo1a`_   
+![circuit_rcc_demo2](../../images/480_rcc_demo2_i2c_circuit.png "circuit_rcc_demo2")   
+_Bild 1: Verdrahtung des Beispiels `rcc_demo2`_   
 
 Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeilennummern__. Danach wird erkl&auml;rt, welche Zeilen angepasst werden m&uuml;ssen.   
 
 ```   
 1	//_____dcc_config.h______________________________khartinger_____
 2	// Configure file for ESP32 railroad DCC decoder program
-3	// rcc_demo1a
+3	// rcc_demo2
 4	//
 5	// Created by Karl Hartinger, November 14, 2024
 6	// Changes:
@@ -56,7 +56,7 @@ Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeile
 16	 #include "src/pcf8574/D1_class_PCF8574.h"
 17	
 18	//_______program version________________________________________
-19	#define  VERSION_99     "2026-01-04 rcc_demo1a"
+19	#define  VERSION_99     "2026-01-04 rcc_demo2"
 20	#define  VERSION_99_1   "Version 2026-01-04"
 21	
 22	#define  SHOW_INFOPAGE_SEC  20             // time to show one page
@@ -176,8 +176,8 @@ Die folgende Tabelle erkl&auml;rt die Bedeutung der einzelnen Zeilen in der Demo
 
 <a name="x30"></a>   
 
-# Die Textdatei dcc_demo1a_text.h
-Die Datei `dcc_demo1a_text.h` enth&auml;lt Texte in deutscher und englischer Sprache f&uuml;r die OLED-Anzeige.   
+# Die Textdatei dcc_demo2_text.h
+Die Datei `dcc_demo2_text.h` enth&auml;lt Texte in deutscher und englischer Sprache f&uuml;r die OLED-Anzeige.   
 Anzupassen sind die Texte, die sich in den Zeilen 42 bis 58 (Deutsch) und 80 bis 96 (Englisch) befinden. Dabei werden jeweils 5 Zeilen f&uuml;r 20 Sekunden (`SHOW_INFOPAGE_SEC`) angezeigt.   
 Die Texte k&ouml;nnen auch gel&ouml;scht werden, dann ist die Konstante `INFOLINES_NUM` auf 0 zu setzen:   
 ```   

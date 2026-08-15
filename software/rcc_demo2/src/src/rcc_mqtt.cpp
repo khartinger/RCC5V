@@ -437,14 +437,29 @@ String simpleSet(String sTopic, String sPayload)
   s1.toLowerCase();
   if(sTopic==String(aRcomp[i].dcc) || sTopic==s1) {
    int iCmdValue=-1;
+   //...........................................................
    if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_TX 
-     || aRcomp[i].type==RC_TYPE_T3) {
+     || aRcomp[i].type==RC_TYPE_T3) 
+   { //.......for turnout commands..............................
     if(sPayload=="0" ||  sPayload=="a" || sPayload=="b") iCmdValue=0;
     if(sPayload=="1" || sPayload=="g") iCmdValue=1;
-   } else {
-    if(sPayload=="0") iCmdValue=0;
-    if(sPayload=="1") iCmdValue=1;
-   }
+   } else 
+   { //.......NOT a turnout command..............................
+    if(aRcomp[i].type==RC_TYPE_P2)
+    { //......specifically for command type PULSE 2.............
+      if(sPayload=="0" || sPayload == "rst" || sPayload == "reset"
+         || sPayload == "fre" || sPayload == "green") iCmdValue=0;
+      if(sPayload=="1" || sPayload == "set"
+         || sPayload == "occ" || sPayload == "yellow") iCmdValue=1;
+    }
+    else
+   { 
+     //***Insert additional SET commands for non-turnouts here**
+     //.......for all other command types.......................
+     if(sPayload=="0") iCmdValue=0;
+     if(sPayload=="1") iCmdValue=1;
+    }
+   } // END OF if(aRcomp[i].type==RC_TYPE_TO...
    addJson(p1, String(aRcomp[i].dcc), setRcmd(i, iCmdValue, sPayload));
    return p1;
   } // END OF if: set command for a railroad component
@@ -534,6 +549,15 @@ String getValueForComp(strRcomp Rcomp_, strRcmd Rcmd_, bool byName) {
  if(Rcomp_.type==RC_TYPE_UC) {
   if(Rcmd_.inValue) return byName ? T_ON : T1_ON;
   else return byName ? T_OFF : T1_OFF;
+ }
+ if(Rcomp_.type==RC_TYPE_P2) {
+  switch(Rcmd_.inValue) {
+   case 0:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=00
+   case 1:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=01
+   case 2:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=10
+   case 3:  return byName ? T_TRACK_00V : T1_TRACK_00V; // BA=11
+   default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
+  }
  }
  if(Rcomp_.type==RC_TYPE_BL) {
   // Rcmd_.inValue ? return T1_ON : return T1_OFF;

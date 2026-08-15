@@ -1,11 +1,13 @@
-//_____rcc_demo1a.cpp____________________________khartinger_____
+//_____rcc_demo2.cpp____________________________khartinger_____
 // This program for an ESP32 is used to test various self-built 
 // model railroad switching blocks. The blocks are controlled 
-// via the I/O pins of two I²C PCF8574 I/O expanders, whereby 
-// the PCF8574 with the I2C address 0x20 (IO expander #0) is 
-// used for control and the PCF8574 with the I2C address 0x21 
-// (IO expander #1) for feedback. The IO pins for control and 
-// feedback each have the same pin number.
+// via the I/O pins of four I²C PCF8574 I/O expanders, whereby 
+// the PCF8574 with the I2C addresses 
+// 0x20, 0x22 (IO expander #0, #2) is used for control and 
+// the PCF8574 with the I2C address 
+// 0x21, 0x23 (IO expander #1, #3) for feedback.
+// The IO pins for control and feedback each have the same 
+// pin number.
 //
 // 1. DCC 11, IO expander pin 0: Decoupler (uncoupler)
 // 2. DCC 21, IO expander pin 1,2: Two-way switch 
@@ -14,6 +16,7 @@
 //    (with limit switching)
 // 4. DCC 41, IO expander pin 6: Disconnectable track
 // 5. DCC 51, IO expander pin 7: Flashing light
+// 6. DCC 61, IO expander #3 pin 0,1: Puls 2
 //
 // The switching status of the components is shown 
 // on a 1.54” OLED display.
@@ -61,26 +64,17 @@
 // Note: When PubSubClient lib is installed,
 //       delete PubSubClient files in directory src/simplemqtt
 // Important: Example needs a MQTT-broker!
-// Created by Karl Hartinger, November 02, 2024
+// Based on rcc_demo1a
+// Created by Karl Hartinger, August 15, 2026
 // Changes:
-// 2024-11-14 2-way-turnout number 1=straight <-> 2=curved changed
-// 2024-11-28 Change program name
-// 2025-01-03 Change TOPIC_BASE, add #define CON_...
-// 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
-// 2025-06-18 Add "signal", DEBUG_99_SHOW_ALL
-// 2026-01-08 Update ../get bydcc, byname, one value
-//            Add send MQTT-message if a value has changed
-//            Add ../get status, RC_TYPE_TX, RC_TYPE_DCC
-// 2026-01-10 Add ../set/wlan: get wlan data from eeprom
-// 2026-02-24 Add ../get mac, setWiFiHostName()
-// 2026-08-15 Redesign in multi files
+// 2026-08-15 New
 // Released into the public domain.
 
  //#define D1MINI          1              // ESP8266 D1mini +pro
 #define  ESP32D1        2                   // ESP32 D1mini
 #define  LANGUAGE      'd'                  // 'd' or 'e'
 
-#include "rcc_demo1a_text.h"                // AFTER LANGUAGE
+#include "rcc_demo2_text.h"                // AFTER LANGUAGE
 #include "pre_config.h"                     // common defines
 #include "dcc_config.h"                     // hardware defines
 #include <DccAccessoryDecoder.h>            // receive dcc commands

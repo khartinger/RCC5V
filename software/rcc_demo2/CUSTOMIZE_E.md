@@ -1,12 +1,12 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Last modified: 2026-01-04 <a name="up"></a><br>   
 <h1>Adapt the demo program to your own needs</h1>
-<a href="/software/rcc_demo1a/CUSTOMIZE_D.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
+<a href="/software/rcc_demo2/CUSTOMIZE_D.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
 # Introduction
-For many applications of the RCC system, it is sufficient to specify the components used and their wiring in the [configuration file `src/dcc_config.h`](#x20) and to adapt the text of the information pages at program start in the [file `src/rcc_demo1a.text.h`](#x30).   
-The control program `rcc_demo1a.cpp` does not normally need to be changed. If you want to extend the control system, you will find a detailed description of the demo software under [/software/rcc_demo1a/DETAILS_E.md](/software/rcc_demo1a/DETAILS_E.md).   
+For many applications of the RCC system, it is sufficient to specify the components used and their wiring in the [configuration file `src/dcc_config.h`](#x20) and to adapt the text of the information pages at program start in the [file `src/rcc_demo2.text.h`](#x30).   
+The control program `rcc_demo2.cpp` does not normally need to be changed. If you want to extend the control system, you will find a detailed description of the demo software under [/software/rcc_demo2/DETAILS_E.md](/software/rcc_demo2/DETAILS_E.md).   
 
 <a name="x20"></a>   
 
@@ -21,8 +21,8 @@ In the configuration file `dcc_config.h` all essential project properties are de
 * the number of I²C I/O expanders, their names, addresses and start values   
 * the number of railroad components and their type, name, DCC address, expander number and pin assignment as well as switching times   
 
-## Example demo program “dcc_demo1a”   
-The electrical wiring of the components in particular must be known and mapped in the configuration file. The following wiring is assumed for the demo program `dcc_demo1a`:   
+## Example demo program “dcc_demo2”   
+The electrical wiring of the components in particular must be known and mapped in the configuration file. The following wiring is assumed for the demo program `dcc_demo2`:   
 * 2x I²C expanders with the names `pcf8574_out` (7-bit address 0x20) and `pcf8574_in` (7-bit address 0x21), i.e. one expander board for outputs and one expander board for inputs.   
 * 1x uncoupler (name “UC”, DCC address 11) on pin 0 of the I²C expander   
 * 1x two-way crossover (name “T2”, DCC address 21) on pins 1 and 2 of the I²C expanders   
@@ -32,15 +32,15 @@ The electrical wiring of the components in particular must be known and mapped i
 
 The following _Figure 1_ illustrates this data again.   
 
-![circuit_rcc_demo1a](../../images/480_rcc_demo1a_i2c_circuit.png "circuit_rcc_demo1a")   
-_Figure 1: Wiring of the example `rcc_demo1a`_   
+![circuit_rcc_demo2](../../images/480_rcc_demo2_i2c_circuit.png "circuit_rcc_demo2")   
+_Figure 1: Wiring of the example `rcc_demo2`_   
 
 The listing shows the configuration file for the demo program __with line numbers__. It then explains which lines need to be adapted.   
 
 ```   
 1	//_____dcc_config.h______________________________khartinger_____
 2	// Configure file for ESP32 railroad DCC decoder program
-3	// rcc_demo1a
+3	// rcc_demo2
 4	//
 5	// Created by Karl Hartinger, November 14, 2024
 6	// Changes:
@@ -56,7 +56,7 @@ The listing shows the configuration file for the demo program __with line number
 16	 #include "src/pcf8574/D1_class_PCF8574.h"
 17	
 18	//_______program version________________________________________
-19	#define  VERSION_99     "2026-01-04 rcc_demo1a"
+19	#define  VERSION_99     "2026-01-04 rcc_demo2"
 20	#define  VERSION_99_1   "Version 2026-01-04"
 21	
 22	#define  SHOW_INFOPAGE_SEC  20             // time to show one page
@@ -176,8 +176,8 @@ The following table explains the meaning of the individual lines in the demo con
 
 <a name="x30"></a>   
 
-# The text file dcc_demo1a_text.h
-The file `dcc_demo1a_text.h` contains texts in German and English for the OLED display.   
+# The text file dcc_demo2_text.h
+The file `dcc_demo2_text.h` contains texts in German and English for the OLED display.   
 The texts in lines 30 to 47 (German) and 70 to 85 (English) are to be adapted. In each case, 5 lines are displayed for 20 seconds (`SHOW_INFOPAGE_SEC`).   
 The texts can also be deleted, in which case the constant `INFOLINES_NUM` must be set to 0:   
 ```   

@@ -437,11 +437,16 @@ String simpleSet(String sTopic, String sPayload)
   s1.toLowerCase();
   if(sTopic==String(aRcomp[i].dcc) || sTopic==s1) {
    int iCmdValue=-1;
+   //...........................................................
    if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_TX 
-     || aRcomp[i].type==RC_TYPE_T3) {
+     || aRcomp[i].type==RC_TYPE_T3)
+   { //.......for turnout commands..............................
     if(sPayload=="0" ||  sPayload=="a" || sPayload=="b") iCmdValue=0;
     if(sPayload=="1" || sPayload=="g") iCmdValue=1;
-   } else {
+   } else 
+   {
+     //***Insert additional SET commands for non-turnouts here**
+     //.......for all other command types.......................
     if(sPayload=="0") iCmdValue=0;
     if(sPayload=="1") iCmdValue=1;
    }

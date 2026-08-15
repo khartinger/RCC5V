@@ -1,13 +1,13 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
-<h1>RCC Demo-Software</h1><b><big>Überblick über die Demo-Software zum Steuern von Modellbahn-Komponenten</big></b><br>  
-Stand: 28.7.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+<h1>RCC Demo-Software Version 2</h1><b><big>Überblick über die Demo-Software zum Steuern von Modellbahn-Komponenten</big></b><br>  
+Stand: 15.8.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
 
-# Einführung
-Die Steuerung jedes Eisenbahn-Moduls erfolgt durch einen ESP32. Das Programm `rcc_demo1a.cpp` ist das Basisprogramm für jeden ESP32. Es dient zum Testen von selbst gebauten Steuerblöcken zum Beispiel mit der Hardware [RCC-Blocktester](https://github.com/khartinger/RCC5V/blob/main/examples/blocktester/LIESMICH.md).   
+# 1. Einführung
+Die Steuerung der Komponenten jedes Eisenbahn-Moduls erfolgt durch einen ESP32. Das ESP32-Programm `rcc_demo2.cpp` erweitert das Basisprogramm `rcc_demo1a.cpp` um weitere Steuerblöcke. Es dient zum Testen von selbst gebauten Steuerblöcken zum Beispiel mit der Hardware [RCC-Blocktester](https://github.com/khartinger/RCC5V/blob/main/examples/blocktester/LIESMICH.md).   
 
 Folgende Blöcke werden durch die Software angesteuert:   
 1. Entkuppler   
@@ -15,15 +15,176 @@ Folgende Blöcke werden durch die Software angesteuert:
 3. Dreiwegweiche (mit Endabschaltung)   
 4. Fahrstrom-Schalter   
 5. Blinklicht   
+6. Pulserkennung mit zwei Eingängen (set, reset).   
 
 Zum Verständnis der Software ist eine grundsätzliche Kenntnis der Funktion der Hardware erforderlich. Dies wird [weiter unten](#x10) beschrieben.   
-Details zur Software finden sich in https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo1a/DETAILS_D.md
+Details zur Software finden sich in https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo2/DETAILS_D.md
 
 <a name="TableOfContents"></a>   
 
 ## Inhaltsübersicht
 1. Hardware  
 2. Software  
+
+
+# Ergänzung eines Schaltblocks
+Die Version 1a der Demosoftware reicht zum Ansteuern von Standard-Komponenten wie Weichen, Entkuppler usw.   
+In der Version 2 sind weitere Steuerblöcke wie zB zur Impulserkennung oder zur Gleisbesetztmeldung enthalten.   
+
+Hier die Schritte zum Einbau einer neuen Komponente am Beispiel Pulserkennung mit zwei Eingängen (set, reset).   
+
+## 1. Konfiguration anpassen `dcc_config.h`
+* Version, `_ESP_NAME_`, `TOPIC_BASE[]` anpassen.
+* IO-Expander-Zahl erhöhen  
+`#define  IOEX_NUM       4         // number of IO expander 2|4|6|8`
+* Typ des neuen Blocks definieren  
+`constexpr int  RC_TYPE_P2 = 7;    // pulse 2 inputs (reset, set)`
+* Hardware-Komponente definieren, zB  
+```
+// ------pulse with 2 inputs (reset, set)-----------------------
+// Two expander pins B | A for set | reset (active low!)
+// Pulse duration: 200 ms
+#define  RCOMP_6        RC_TYPE_P2,"P2", 61, EX2,PIN0,PIN1,   EX3,PIN0,PIN1, 200,0
+```
+* Komponenten-Array vorbereiten (zB Zweiwegweiche + Pulserkennung)  
+```
+//.......Preparing the Array of all railroad components..........
+#define  RCOMP_NUM  2
+#define  RCOMP_LIST {RCOMP_2},{RCOMP_6}
+```
+
+## 2. Texte definieren `rcc_demo2_text.h`
+### 2.1 Text-Konstante
+status defines as string numbers:  
+```
+ constexpr char T1_TRACK_OCC[] = "0";
+ constexpr char T1_TRACK_FRE[] = "1";
+ constexpr char T1_TRACK__0V[] = "2";
+ constexpr char T1_TRACK_00V[] = "3";
+```
+
+Deutsche Texte   
+```  
+  #define T_TRACK_OCC        "Gleis besetzt"
+  #define T_TRACK_FRE        "Gleis frei"
+  #define T_TRACK__0V        "Keine Fahrspannung"
+  #define T_TRACK_00V        "Keine Fahrspannung"
+```  
+
+Englische Texte
+```  
+  #define T_TRACK_OCC        "track occupied"
+  #define T_TRACK_FRE        "track free"
+  #define T_TRACK__0V        "no voltage"
+  #define T_TRACK_00V        "no voltage"
+```  
+
+### 2.2 Infotext anpassen
+Deutsch   
+```  
+  #define  INFOLINES_NUM     10
+  #define  INFOLINES { \
+  "Test von RCC-     1/2", \
+  "Schaltbloecken mit   ", \
+  "DCC - MQTT - Hand    ", \
+  VERSION_99_1, \
+  " Weiter: Taste IO19  ", \
+  "DCC 21 2-Weg-Weiche  ", \
+  "DCC 61 Puls2         ",\
+  "Es folgt: IO-Expander", \
+  " und Wifi-Suche      ", \
+  " Weiter: Taste IO19  ", \
+  }
+```  
+
+Englisch   
+```  
+  #define  INFOLINES_NUM     10
+  #define  INFOLINES { \
+   "Test of railway      ", \
+   "switch blocks by     ", \
+   "DCC - MQTT - Hand    ", \
+   VERSION_99_1, \
+   " Next: Button IO19   ", \
+   "DCC 21 2-Way-Turnout ", \
+   "DCC 61 Puls2         ", \
+   "Next up: IO-Expander ", \
+   " and Wifi search     ", \
+   " Next: Button IO19   ", \
+  }
+```  
+
+## 3. P2-Befehl einbauen `rcc_command.cpp`
+```  
+ if(aRcomp[iRcomp].type==RC_TYPE_P2) {
+  //...it is a pulse 2 command (2 bits, 2 cmd)..................
+  if(iCmdValue==0) { // 0 = reset = LED green . . . . . . . . . 
+   aRcmd[iRcomp].stateToDo=STATE_NOW;
+   aRcmd[iRcomp].iCmd=CMD_BIT_BA_10;             //  reset
+   aRcmd[iRcomp].stateOffset==aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
+   if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1; // after some time
+   aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;     // ready for next pulse
+   return sReturn+String(" received");
+  } else 
+  {
+   if(iCmdValue==1) { // 1 = set = LED yellow . . . . . . . . . 
+    aRcmd[iRcomp].stateToDo=STATE_NOW;
+    aRcmd[iRcomp].iCmd=CMD_BIT_BA_01;            // set
+    aRcmd[iRcomp].stateOffset==aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
+   if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1; // after some time
+    aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;    // ready for next pulse
+    return sReturn+String(" received");
+   }
+  }
+ } // END OF it is a turnout command (2 bits, 2cmds)............
+```  
+
+## 4. Textgrafik-Symbol `rcc_display.cpp`
+```
+  case RC_TYPE_P2: // -------pulse 2 inputs (reset, set)--------
+   switch(iValue) { 
+    case 0: return "OCC "; // "=0= " BA=00
+    case 1: return "FRE "; // "=1= " BA=01
+    case 2: return " 0V "; // "=2= " BA=10
+    case 3: return "00V "; // "=3= " BA=11
+    default: return ERR;    // ?? impossible
+   } // END OF switch(iValue)
+   break;
+```
+
+## 5. GET-Command `rcc_mqtt.cpp`
+In der Funktion `getValueForComp(...)`   
+```  
+ if(Rcomp_.type==RC_TYPE_P2) {
+  switch(Rcmd_.inValue) {
+   case 0:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=00
+   case 1:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=01
+   case 2:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=10
+   case 3:  return byName ? T_TRACK_00V : T1_TRACK_00V; // BA=11
+   default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
+  }
+ }
+```  
+
+## 5. SET-Command `rcc_mqtt.cpp`
+In der Funktion `simpleSet(...)`   
+```  
+ { //.......NOT a turnout command..............................
+    if(aRcomp[i].type==RC_TYPE_P2)
+    { //......specifically for command type PULSE 2.............
+      if(sPayload=="0" || sPayload == "rst" || sPayload == "reset"
+         || sPayload == "fre" || sPayload == "green") iCmdValue=0;
+      if(sPayload=="1" || sPayload == "set"
+         || sPayload == "occ" || sPayload == "yellow") iCmdValue=1;
+    }
+    else
+    { //......for all other command types.......................
+     if(sPayload=="0") iCmdValue=0;
+     if(sPayload=="1") iCmdValue=1;
+    }
+```  
+
+
 
 <a name="x10"></a>
 

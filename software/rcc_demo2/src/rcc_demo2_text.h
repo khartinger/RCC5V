@@ -1,7 +1,7 @@
-//_____rcc_demo1a_text.h_________________________khartinger_____
+//_____rcc_demo2_text.h_________________________khartinger_____
 // define text in English and German
-#ifndef RCC_DEMO1_TEXT_H
- #define RCC_DEMO1_TEXT_H
+#ifndef RCC_DEMO2_TEXT_H
+ #define RCC_DEMO2_TEXT_H
  #include <Arduino.h>                  // String, int32_t
 
 #ifndef LANGUAGE
@@ -20,7 +20,7 @@
  //----status defines as string numbers-------------------------
  constexpr char T1_UNDEF0[]    = "-2";
  constexpr char T1_UNDEF1[]    = "-1";
- constexpr char T1_STRAIGHT[]   = "1";
+ constexpr char T1_STRAIGHT[]  = "1";
  constexpr char T1_CURVED[]    = "0";
  constexpr char T1_UNKNOWN[]   = "-9";
  constexpr char T1_ON[]        = "1";
@@ -28,6 +28,10 @@
  constexpr char T1_NO_MQTT[]   = "-8";
  constexpr char T1_DPDT_0_NC[] = "13";
  constexpr char T1_DPDT_1_NO[] = "15";
+ constexpr char T1_TRACK_OCC[] = "0";
+ constexpr char T1_TRACK_FRE[] = "1";
+ constexpr char T1_TRACK__0V[] = "2";
+ constexpr char T1_TRACK_00V[] = "3";
 
  #if LANGUAGE == 'd'
   // =========Deutsche Texte (German)===========================
@@ -43,7 +47,27 @@
          "-No WiFi--", "-No MQTT--", "WiFi OK   ", "MQTT OK   ",
         "Ohne WiFi "};
 
+  #define T_TRACK_OCC        "Gleis besetzt"
+  #define T_TRACK_FRE        "Gleis frei"
+  #define T_TRACK__0V        "Keine Fahrspannung"
+  #define T_TRACK_00V        "Keine Fahrspannung"
+
 // "---------|---------|-" line length = 21
+  #define  INFOLINES_NUM     10
+  #define  INFOLINES { \
+  "Test von RCC-     1/2", \
+  "Schaltbloecken mit   ", \
+  "DCC - MQTT - Hand    ", \
+  VERSION_99_1, \
+  " Weiter: Taste IO19  ", \
+  "DCC 21 2-Weg-Weiche  ", \
+  "DCC 61 Puls2         ",\
+  "Es folgt: IO-Expander", \
+  " und Wifi-Suche      ", \
+  " Weiter: Taste IO19  ", \
+  }
+
+/*
   #define  INFOLINES_NUM     15
   #define  INFOLINES { \
    "Test von RCC-     1/3", \
@@ -62,6 +86,7 @@
    " und Wifi-Suche      ", \
    " Weiter: Taste IO19  ", \
   }
+*/
 
  #else
 
@@ -81,8 +106,28 @@
          "-No WiFi--", "-No MQTT--", "WiFi OK   ", "MQTT OK   ",
         "Unused WiFi"};
 
+  #define T_TRACK_OCC        "track occupied"
+  #define T_TRACK_FRE        "track free"
+  #define T_TRACK__0V        "no voltage"
+  #define T_TRACK_00V        "no voltage"
+
 // "---------|---------|-" line length = 21
-  #define  INFOLINES_NUM     15
+  #define  INFOLINES_NUM     10
+  #define  INFOLINES { \
+   "Test of railway      ", \
+   "switch blocks by     ", \
+   "DCC - MQTT - Hand    ", \
+   VERSION_99_1, \
+   " Next: Button IO19   ", \
+   "DCC 21 2-Way-Turnout ", \
+   "DCC 61 Puls2         ", \
+   "Next up: IO-Expander ", \
+   " and Wifi search     ", \
+   " Next: Button IO19   ", \
+  }
+
+/*
+#define  INFOLINES_NUM     15
   #define  INFOLINES { \
    "Test of railroad      ", \
    "switch blocks by     ", \
@@ -100,5 +145,6 @@
    " and Wifi search     ", \
    " Next: Button IO19   ", \
   }
+*/
  #endif
  #endif
