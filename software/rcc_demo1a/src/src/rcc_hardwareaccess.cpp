@@ -170,7 +170,9 @@ String actOnRcmdHardware(int iCmd_, int iOutPCF_,
 //______________________________________________________________
 /**
  * @brief Init all 8-Bit I/O Expander PCF8574
- * 
+ *
+// @note If an expected PCF8574 is not detected, 
+ * startup is stopped until the hardware is available.
  */
 void initAllIOExpander() {
  String s1, s3;
@@ -192,6 +194,8 @@ void initAllIOExpander() {
    }
    showLine(4,s1+" NOT found - Check wiring!");
    delay(5000);                             // wait 5s
+   // NOTE: If an expected PCF8574 is not detected, 
+   //       startup is stopped until the hardware is available.
   }
   bfirstComp=false;
   s2+=" 0x"+s1;                             // add address to found

@@ -227,10 +227,10 @@ struct strRcomp {
   String name;          // short name like T1, U1, D1, W1, E1...
   int    dcc;           // dcc address of the component
   int    outPCF;        // aIOEx index of PCF8574 output device
-  int    outBitA;       // bit PCF8574 for turnout stright (Gerade)
+  int    outBitA;       // bit PCF8574 for turnout straight (Gerade)
   int    outBitB;       // bit PCF8574 for turnout curved (Abzweig)
   int    inPCF;         // aIOEx index of PCF8574 input device
-  int    inBitA;        // bit number at PCF8574 input stright=1
+  int    inBitA;        // bit number at PCF8574 input straight=1
   int    inBitB;        // bit number at PCF8574 input curved=1
 };
 

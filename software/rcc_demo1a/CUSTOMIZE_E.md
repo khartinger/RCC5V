@@ -104,10 +104,10 @@ The listing shows the configuration file for the demo program __with line number
 64	  String name;          // short name like T1, U1, D1, W1, E1...
 65	  int    dcc;           // dcc address of the component
 66	  int    outPCF;        // aIOEx index of PCF8574 output device
-67	  int    outBitA;       // bit PCF8574 for turnout stright (Gerade)
+67	  int    outBitA;       // bit PCF8574 for turnout straight (Gerade)
 68	  int    outBitB;       // bit PCF8574 for turnout curved (Abzweig)
 69	  int    inPCF;         // aIOEx index of PCF8574 input device
-70	  int    inBitA;        // bit number at PCF8574 input stright=1
+70	  int    inBitA;        // bit number at PCF8574 input straight=1
 71	  int    inBitB;        // bit number at PCF8574 input curved=1
 72	  int32_t msOn;         // ms on
 73	  int32_t msOff;        // ms off
@@ -123,10 +123,10 @@ The listing shows the configuration file for the demo program __with line number
 83	#define  RCOMP_1        RC_TYPE_UC,"UC", 11, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 1500,0
 84	// ------two way turnout (Zweiwegweiche = Standardweiche)-------
 85	// Two expander pins A B to control 2way turnout (active low!)
-86	// A=0: curved, B=0: stright
+86	// A=0: curved, B=0: straight
 87	#define  RCOMP_2        RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
 88	//-------three way turnout (Dreiwegweiche)----------------------
-89	// A=0: curved, B=0: stright (@ 3 pin: middle pin=0V -> stright)
+89	// A=0: curved, B=0: straight (@ 3 pin: middle pin=0V -> straight)
 90	#define  RCOMP_3L       RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
 91	#define  RCOMP_3R       RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
 92	//-------disconnectable track (Fahrstrom)-----------------------

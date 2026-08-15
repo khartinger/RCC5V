@@ -20,7 +20,7 @@
  //----status defines as string numbers-------------------------
  constexpr char T1_UNDEF0[]    = "-2";
  constexpr char T1_UNDEF1[]    = "-1";
- constexpr char T1_STRIGHT[]   = "1";
+ constexpr char T1_STRAIGHT[]   = "1";
  constexpr char T1_CURVED[]    = "0";
  constexpr char T1_UNKNOWN[]   = "-9";
  constexpr char T1_ON[]        = "1";
@@ -33,7 +33,7 @@
   // =========Deutsche Texte (German)===========================
   #define T_UNDEF0           "undefiniert_0?"
   #define T_UNDEF1           "undefiniert_1?"
-  #define T_STRIGHT          "Gerade"
+  #define T_STRAIGHT          "Gerade"
   #define T_CURVED           "Abzweig"
   #define T_UNKNOWN          "unmoeglich"
   #define T_ON               "Ein"
@@ -71,7 +71,7 @@
   #endif
   #define T_UNDEF0           "undefined_0?"
   #define T_UNDEF1           "undefined_1?"
-  #define T_STRIGHT          "stright"
+  #define T_STRAIGHT          "straight"
   #define T_CURVED           "curved"
   #define T_UNKNOWN          "impossible"
   #define T_ON               "On"

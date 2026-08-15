@@ -88,7 +88,7 @@ String getSymbol4Line5(int iType, int iValue)
   case RC_TYPE_T3: // -------3-way-turnout (Dreiwegweiche)------
    switch(iValue) { 
     case 0:  return "__  "; // BA=00
-    case 1:  return "_/  "; // BA=01 (stright)
+    case 1:  return "_/  "; // BA=01 (straight)
     case 2:  return "__  "; // BA=10 (curved)
     case 3:  return "1?  "; // BA=11
     default: return ERR;    // ?? impossible
@@ -97,7 +97,7 @@ String getSymbol4Line5(int iType, int iValue)
   case RC_TYPE_TO: // -------2-way-turnout (Weiche)-------------
    switch(iValue) { 
     case 0:  return "0?  "; // BA=00
-    case 1:  return "__  "; // BA=01 (stright)
+    case 1:  return "__  "; // BA=01 (straight)
     case 2:  return "_/  "; // BA=10 (curved)
     case 3:  return "1?  "; // BA=11
     default: return ERR;    // ?? impossible
@@ -106,7 +106,7 @@ String getSymbol4Line5(int iType, int iValue)
   case RC_TYPE_TX: // -------double slip turnout/switch (Doppelkreuzungsweiche)
    switch(iValue) { 
     case 0:  return "0?  "; // BA=00
-    case 1:  return "_X_ "; // BA=01 (stright)
+    case 1:  return "_X_ "; // BA=01 (straight)
     case 2:  return ")(  "; // BA=10 (curved)
     case 3:  return "1?  "; // BA=11
     default: return ERR;    // ?? impossible
@@ -260,7 +260,7 @@ void showLine6WaitMaxXXs(int iSec, String line6) {
  * The system then checks whether it is time for a refresh and,
  * if so, performs the refresh.
  */
-void loopUpdateDisplay(int iRcomp_, int32_t state, Statemachine stm) {
+void loopUpdateDisplay(int iRcomp_, int32_t state, Statemachine &stm) {
  static int32_t stateNextScreenRefresh=1;
  static int32_t stateNextScreenMin=STATE_NONE;
  static int     iRcompGroupNow=-1;                // group shown now

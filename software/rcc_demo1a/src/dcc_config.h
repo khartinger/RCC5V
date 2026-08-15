@@ -63,7 +63,7 @@ constexpr int CMD_BLINK = 7;      // start blinking light
 constexpr int CMD_BLINK_END =8;   // stop blinking light
 
 //.......All properties of a railroad command...................
-// command: 0=out, 1=stright, 2=curved, 3=undefined (switching)
+// command: 0=out, 1=straight, 2=curved, 3=undefined (switching)
 struct strRcmd {
   int     iCmd;         // command - what to do (now)
   int     inValue;      // current input value
@@ -110,10 +110,10 @@ struct strRcomp {
   String name;          // short name like T1, U1, D1, W1, E1...
   int    dcc;           // dcc address of the component
   int    outPCF;        // aIOEx index of PCF8574 output device
-  int    outBitA;       // bit PCF8574 for turnout stright (Gerade)
+  int    outBitA;       // bit PCF8574 for turnout straight (Gerade)
   int    outBitB;       // bit PCF8574 for turnout curved (Abzweig)
   int    inPCF;         // aIOEx index of PCF8574 input device
-  int    inBitA;        // bit number at PCF8574 input stright=1
+  int    inBitA;        // bit number at PCF8574 input straight=1
   int    inBitB;        // bit number at PCF8574 input curved=1
   int32_t msOn;         // ms on
   int32_t msOff;        // ms off
@@ -134,10 +134,10 @@ struct strRcomp {
 #define  RCOMP_1   RC_TYPE_UC,"UC", 11, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 1500,0
 // ------two way turnout (Zweiwegweiche = Standardweiche)-------
 // Two expander pins A B to control 2way turnout (active low!)
-// A=0: curved, B=0: stright
+// A=0: curved, B=0: straight
 #define  RCOMP_2   RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
 //-------three way turnout (Dreiwegweiche)----------------------
-// A=0: curved, B=0: stright (@ 3 pin: middle pin=0V -> stright)
+// A=0: curved, B=0: straight (@ 3 pin: middle pin=0V -> straight)
 #define  RCOMP_3L  RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
 #define  RCOMP_3R  RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
 //-------disconnectable track (Fahrstrom)-----------------------

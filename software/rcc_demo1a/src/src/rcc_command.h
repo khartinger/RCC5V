@@ -8,5 +8,5 @@
 
  //______Declaration of functions to edit/execute commands______
 String setRcmd(int iRcomp, int iCmdValue, String sReturn);
-String loopActOnRcmd(Statemachine stm, int32_t state);
-void loopRcmdReplaceStateNow(int32_t state, Statemachine stm);
+String loopActOnRcmd(int32_t state, Statemachine &stm);
+void loopRcmdReplaceStateNow(int32_t state, Statemachine &stm);

@@ -40,10 +40,10 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
    aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;     // turnout off
    return sReturn+String(" received");
   } else {
-  //. .command turnout stright?. . . . . . . . . . . . . . . .
+  //. .command turnout straight?. . . . . . . . . . . . . . . .
    if(iCmdValue==1) { 
     aRcmd[iRcomp].stateToDo=STATE_NOW;
-    aRcmd[iRcomp].iCmd=CMD_BIT_BA_01;            // turnout stright
+    aRcmd[iRcomp].iCmd=CMD_BIT_BA_01;            // turnout straight
     aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
     if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1;
     aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;    // turnout off
@@ -127,7 +127,7 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
  * @return command string (e.g. for serial output) 
  * or "" if there was nothing to do
  */
-String loopActOnRcmd(Statemachine stm, int32_t state) {
+String loopActOnRcmd(int32_t state, Statemachine &stm) {
  String sSerial_="";
  for(int i=0; i<RCOMP_NUM; i++) { // for all railroad components
   //.....is this a 1st state to do something?...................
@@ -173,7 +173,7 @@ String loopActOnRcmd(Statemachine stm, int32_t state) {
  * @brief Checks whether a command should be executed
  * 
  */
-void loopRcmdReplaceStateNow(int32_t state, Statemachine stm) {
+void loopRcmdReplaceStateNow(int32_t state, Statemachine &stm) {
  //------For all comp: replace STATE_NOW by current state-------
  for(int i=0; i<RCOMP_NUM; i++) { // for all components
   if(aRcmd[i].stateToDo==STATE_NOW) {

@@ -63,7 +63,7 @@
 // Important: Example needs a MQTT-broker!
 // Created by Karl Hartinger, November 02, 2024
 // Changes:
-// 2024-11-14 2-way-turnout number 1=stright <-> 2=curved changed
+// 2024-11-14 2-way-turnout number 1=straight <-> 2=curved changed
 // 2024-11-28 Change program name
 // 2025-01-03 Change TOPIC_BASE, add #define CON_...
 // 2025-01-18 setup() add s2oled, prepareScreenLine4to6()
@@ -111,6 +111,8 @@ void setup() {
  initHardwareAccess1(screen_);
  initDisplay1();
  initHardwareAccess2(screen_);
+ // NOTE: If an expected PCF8574 is not detected, 
+ //       startup is stopped until the hardware is available.
  initRccWiFi(screen_);
  //------DCC: register pin and callback routine-----------------
  DccAccessoryDecoder.begin(PIN_DCC, onAccessoryPacket);
@@ -134,7 +136,7 @@ void loop() {
  //======(3) process mqtt actions===============================
  loopMqtt(sSerial);
  //======(4) do things after mqtt access========================
- s1=loopActOnRcmd(stm, state);
+ s1=loopActOnRcmd(state, stm);               // 
  if(s1!="") sSerial+=" | "+s1;
  //======(5) do at the end of the loop ...======================
   if(lastDcc.address>=0 && lastDcc.address<2048) {

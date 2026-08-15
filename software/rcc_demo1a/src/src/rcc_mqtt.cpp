@@ -507,9 +507,9 @@ void loopMqtt(String &sSerial) {
 String getValueForComp(strRcomp Rcomp_, strRcmd Rcmd_, bool byName) {
   if(Rcomp_.type==RC_TYPE_T3) {
   switch(Rcmd_.inValue) {
-   case 0:  return byName ? T_STRIGHT : T1_STRIGHT; // BA=00
+   case 0:  return byName ? T_STRAIGHT : T1_STRAIGHT; // BA=00
    case 1:  return byName ? T_CURVED : T1_CURVED;   // BA=01
-   case 2:  return byName ? T_STRIGHT : T1_STRIGHT; // BA=10
+   case 2:  return byName ? T_STRAIGHT : T1_STRAIGHT; // BA=10
    case 3:  return byName ? T_UNDEF1 : T1_UNDEF1;   // BA=11
    default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
   }
@@ -517,7 +517,7 @@ String getValueForComp(strRcomp Rcomp_, strRcmd Rcmd_, bool byName) {
  if(Rcomp_.type==RC_TYPE_TO || Rcomp_.type==RC_TYPE_TX) {
   switch(Rcmd_.inValue) {
    case 0:  return byName ? T_UNDEF0 : T1_UNDEF0;   // BA=00
-   case 1:  return byName ? T_STRIGHT : T1_STRIGHT; // BA=01
+   case 1:  return byName ? T_STRAIGHT : T1_STRAIGHT; // BA=01
    case 2:  return byName ? T_CURVED : T1_CURVED;   // BA=10
    case 3:  return byName ? T_UNDEF1 : T1_UNDEF1;   // BA=11
    default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible

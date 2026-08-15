@@ -20,4 +20,4 @@ void showScreenLine4to6();
 void showInfolines();
 void showLine6WaitMaxXXs(int iSec, String line6);
 
-void loopUpdateDisplay(int iRcomp_, int32_t state, Statemachine stm);
+void loopUpdateDisplay(int iRcomp_, int32_t state, Statemachine &stm);
