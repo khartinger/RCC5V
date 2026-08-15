@@ -1,4 +1,4 @@
-//_____D1_class_SimpleMqtt.cpp_____________201208-260224_____
+//_____D1_class_SimpleMqtt.cpp_____________201208-260815_____
 // The SimpleMqtt class is suitable for D1 mini (ESP8266)
 // The SimpleMqtt class is suitable for D1 mini (ESP8266)
 // and ESP32 and extends the classes PubSubClient and
@@ -60,6 +60,7 @@
 //            constructor 6+7, replace delay(), set hostname
 // 2026-01-11 add setWlanData(), eepromBegin()
 // 2026-02-24 add sWiFiHostName, set.., get..
+// 2026-08-15 update bit mask (uint64_t)
 // Released into the public domain.
 
 #include "D1_class_SimpleMqtt.h"

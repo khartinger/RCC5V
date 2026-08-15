@@ -1,4 +1,4 @@
-//_____D1_class_SimpleMqtt.h_______________201208-260224_____
+//_____D1_class_SimpleMqtt.h_______________201208-260815_____
 // The SimpleMqtt class is suitable for D1 mini (ESP8266)
 // and ESP32 and extends the classes PubSubClient and
 //  SimpleMqtt to make MQTT easy to use.
@@ -60,6 +60,7 @@
 // 2024-06-16 TOPIC_MAX set from 32 to 48
 // 2026-01-11 add setWlanData, eepromBegin()
 // 2026-02-24 add sWiFiHostName, set.., get..
+// 2026-08-15 update bit mask (uint64_t)
 // Released into the public domain.
 
 #ifndef D1_CLASS_SIMPLEMQTT_H
@@ -139,12 +140,12 @@ class SimpleMqtt : public PubSubClient {
   EEPROMClass *eeprom_;                // new EEPROMClass;
   unsigned long eepromSize_;           // EEPROM size (256|512)
   bool eepromInitialized;              // EEPROM.begin() done?
-  unsigned long iGet;                  // mask for get topics
-  unsigned long iSet;                  // mask for set topics
-  unsigned long iRet;                  // mask for ret topics
-  unsigned long iRetSet;               // mask for retset topics
-  unsigned long iSub;                  // mask for sub topics
-  unsigned long iPub;                  // mask for pub topics
+  uint64_t iGet;                       // mask for get topics
+  uint64_t iSet;                       // mask for set topics
+  uint64_t iRet;                       // mask for ret topics
+  uint64_t iRetSet;                    // mask for retset topics
+  uint64_t iSub;                       // mask for sub topics
+  uint64_t iPub;                       // mask for pub topics
   int    numTopicGet;                  // numer of get topics
   int    numTopicSet;                  // numer of set topics
   int    numTopicSub;                  // numer of sub topics
