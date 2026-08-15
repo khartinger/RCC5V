@@ -35,7 +35,8 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
   if(iCmdValue==0) {
    aRcmd[iRcomp].stateToDo=STATE_NOW;
    aRcmd[iRcomp].iCmd=CMD_BIT_BA_10;             // turnout curved
-   aRcmd[iRcomp].stateOffset=max<int32_t>(1,aRcomp[iRcomp].msOn/STATE_TICK_MS);
+   aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
+   if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1;
    aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;     // turnout off
    return sReturn+String(" received");
   } else {
@@ -43,7 +44,8 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
    if(iCmdValue==1) { 
     aRcmd[iRcomp].stateToDo=STATE_NOW;
     aRcmd[iRcomp].iCmd=CMD_BIT_BA_01;            // turnout stright
-    aRcmd[iRcomp].stateOffset=max<int32_t>(1,aRcomp[iRcomp].msOn/STATE_TICK_MS);
+    aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
+    if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1;
     aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;    // turnout off
     return sReturn+String(" received");
    }
@@ -61,7 +63,8 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
   if(iCmdValue==1) {
    aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
    aRcmd[iRcomp].iCmd=CMD_BIT_A_0;          // turn current on
-   aRcmd[iRcomp].stateOffset=max<int32_t>(1,aRcomp[iRcomp].msOn/STATE_TICK_MS); // after some time
+   aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
+   if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1; // after some time
    aRcmd[iRcomp].iCmdOffset=CMD_BIT_A_1;   // turn current off
    return sReturn+String(" received");
   }
