@@ -1,12 +1,12 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Letzte &Auml;nderung: 4.1.2026 <a name="up"></a><br>   
 <h1>Anpassen des Demo-Programms an eigene Bed&uuml;rfnisse</h1>
-<a href="/software/rcc_demo2/CUSTOMIZE_E.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
+<a href="/software/rcc_demo1a/CUSTOMIZE_E.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
 # Einleitung
-F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src/dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `src/rcc_demo2.text.h`](#x30) anzupassen.   
-Das Steuerprogramm `rcc_demo2.cpp` muss im Normalfall nicht ver&auml;ndert werden. Falls man die Steuerung erweitern m&ouml;chte, so findet man eine detaillierte Beschreibung der Demo-Software unter [/software/rcc_demo2/DETAILS_D.md](/software/rcc_demo2/DETAILS_D.md).   
+F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src/dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `src/rcc_demo1a.text.h`](#x30) anzupassen.   
+Das Steuerprogramm `rcc_demo1a.cpp` muss im Normalfall nicht ver&auml;ndert werden. Falls man die Steuerung erweitern m&ouml;chte, so findet man eine detaillierte Beschreibung der Demo-Software unter [/software/rcc_demo1a/DETAILS_D.md](/software/rcc_demo1a/DETAILS_D.md).   
 
 <a name="x20"></a>   
 
@@ -21,8 +21,8 @@ In der Konfigurationsdatei `dcc_config.h` werden alle wesentlichen Projekteigens
 * die Anzahl der I²C-I/O-Expander, ihre Namen, Adressen und Startwerte   
 * die Anzahl der Eisenbahnkomponenten und deren Typ, Name, DCC-Adresse, Expander-Nummer und -Pinbelegung sowie Schaltzeiten   
 
-## Beispiel Demo-Programm "dcc_demo2"   
-Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in der Konfigurationsdatei abgebildet werden. F&uuml;r das Demo-Programm `dcc_demo2` wird von folgender Verdrahtung ausgegangen:   
+## Beispiel Demo-Programm "dcc_demo1a"   
+Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in der Konfigurationsdatei abgebildet werden. F&uuml;r das Demo-Programm `dcc_demo1a` wird von folgender Verdrahtung ausgegangen:   
 * 2x I²C-Expander mit den Namen `pcf8574_out` (7-Bit-Adresse 0x20) und `pcf8574_in` (7-Bit-Adresse 0x21)., d.h. je ein Expanderboard f&uuml;r Ausg&auml;nge und ein Expanderboard f&uuml;r Eing&auml;nge   
 * 1x Entkuppler (Name "UC", DCC-Adresse 11) an Pin 0 der I²C-Expander   
 * 1x Zweiwegweiche (Name "T2", DCC-Adresse 21) an Pin 1 und 2 der I²C-Expander   
@@ -32,15 +32,15 @@ Speziell die elektrische Verdrahtung der Komponenten muss bekannt sein und in de
 
 Das folgende _Bild 1_ veranschaulicht nochmals diese Daten.   
 
-![circuit_rcc_demo2](../../images/480_rcc_demo2_i2c_circuit.png "circuit_rcc_demo2")   
-_Bild 1: Verdrahtung des Beispiels `rcc_demo2`_   
+![circuit_rcc_demo1a](../../images/480_rcc_demo1a_i2c_circuit.png "circuit_rcc_demo1a")   
+_Bild 1: Verdrahtung des Beispiels `rcc_demo1a`_   
 
 Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeilennummern__. Danach wird erkl&auml;rt, welche Zeilen angepasst werden m&uuml;ssen.   
 
 ```   
 1	//_____dcc_config.h______________________________khartinger_____
 2	// Configure file for ESP32 railroad DCC decoder program
-3	// rcc_demo2
+3	// rcc_demo1a
 4	//
 5	// Created by Karl Hartinger, November 14, 2024
 6	// Changes:
@@ -56,24 +56,24 @@ Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeile
 16	 #include "src/pcf8574/D1_class_PCF8574.h"
 17	
 18	//_______program version________________________________________
-19	#define  VERSION_99     "2026-01-04 rcc_demo2"
+19	#define  VERSION_99     "2026-01-04 rcc_demo1a"
 20	#define  VERSION_99_1   "Version 2026-01-04"
 21	
-22	#define  INFOLINES_SEC  20             // time to show one page
+22	#define  SHOW_INFOPAGE_SEC  20             // time to show one page
 23	
 24	//_______Network and MQTT data__________________________________
 25	#define  _USE_WIFI_     true
 26	#define  _SSID_         "Raspi11"
 27	#define  _PASS_         "12345678"
 28	#define  _HOST_         "10.1.1.1"
-29	#define  TOPIC_BASE     "rcc/demo2"
+29	#define  TOPIC_BASE     "rcc/demo1"
 30	#define  TOPIC_GET      "?,help,version,ip,signal,topicbase,eeprom,byname,bydcc,status"
 31	#define  TOPIC_SET      "topicbase,eeprom0"
 32	#define  TOPIC_SUB      ""
 33	#define  TOPIC_PUB      ""
 34	
 35	//_______1.54" display data (SSD1309, 128x64 pixel, I2C)________
-36	#define  SCREEN_TITLE   "RCC_Demo2"
+36	#define  SCREEN_TITLE   "RCC_Demo1"
 37	#define  SCREEN_LINE_MAX 6
 38	#define  SCREEN_LINE_LEN 21
 39	
@@ -104,29 +104,29 @@ Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeile
 64	  String name;          // short name like T1, U1, D1, W1, E1...
 65	  int    dcc;           // dcc address of the component
 66	  int    outPCF;        // aIOEx index of PCF8574 output device
-67	  int    outBitA;       // bit PCF8574 for turnout stright (Gerade)
+67	  int    outBitA;       // bit PCF8574 for turnout straight (Gerade)
 68	  int    outBitB;       // bit PCF8574 for turnout curved (Abzweig)
 69	  int    inPCF;         // aIOEx index of PCF8574 input device
-70	  int    inBitA;        // bit number at PCF8574 input stright=1
+70	  int    inBitA;        // bit number at PCF8574 input straight=1
 71	  int    inBitB;        // bit number at PCF8574 input curved=1
 72	  int32_t msOn;         // ms on
 73	  int32_t msOff;        // ms off
 74	};
 75	
 76	//_______Railroad commands______________________________________
-77	// railway components:  type,name (max 3 char),dcc,
+77	// railroad components:  type,name (max 3 char),dcc,
 78	//                      pIOEx-out-index,outBitA,outBitB, 
 79	//                      pIOEx-in-index inBitA inBitB
 80	//                      msOn,msOff
-81	// railway component name max. 3 chars
+81	// railroad component name max. 3 chars
 82	// ------uncoupler (Entkuppler)---------------------------------
 83	#define  RCOMP_1        RC_TYPE_UC,"UC", 11, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 1500,0
 84	// ------two way turnout (Zweiwegweiche = Standardweiche)-------
 85	// Two expander pins A B to control 2way turnout (active low!)
-86	// A=0: curved, B=0: stright
+86	// A=0: curved, B=0: straight
 87	#define  RCOMP_2        RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
 88	//-------three way turnout (Dreiwegweiche)----------------------
-89	// A=0: curved, B=0: stright (@ 3 pin: middle pin=0V -> stright)
+89	// A=0: curved, B=0: straight (@ 3 pin: middle pin=0V -> straight)
 90	#define  RCOMP_3L       RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
 91	#define  RCOMP_3R       RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
 92	//-------disconnectable track (Fahrstrom)-----------------------
@@ -140,7 +140,7 @@ Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeile
 100	//-------double pole, double throw (2x UM)----------------------
 101	//#define  RCOMP_4        RC_TYPE_DD,"DD", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
 102	
-103	//.......Array of all railway components........................
+103	//.......Array of all railroad components........................
 104	#define  RCOMP_NUM      6
 105	strRcomp aRcomp[RCOMP_NUM] = {
 106	 {RCOMP_1},{RCOMP_2},{RCOMP_3L},{RCOMP_3R},{RCOMP_4},{RCOMP_5}
@@ -176,9 +176,9 @@ Die folgende Tabelle erkl&auml;rt die Bedeutung der einzelnen Zeilen in der Demo
 
 <a name="x30"></a>   
 
-# Die Textdatei dcc_demo2_text.h
-Die Datei `dcc_demo2_text.h` enth&auml;lt Texte in deutscher und englischer Sprache f&uuml;r die OLED-Anzeige.   
-Anzupassen sind die Texte, die sich in den Zeilen 42 bis 58 (Deutsch) und 80 bis 96 (Englisch) befinden. Dabei werden jeweils 5 Zeilen f&uuml;r 20 Sekunden (`INFOLINES_SEC`) angezeigt.   
+# Die Textdatei dcc_demo1a_text.h
+Die Datei `dcc_demo1a_text.h` enth&auml;lt Texte in deutscher und englischer Sprache f&uuml;r die OLED-Anzeige.   
+Anzupassen sind die Texte, die sich in den Zeilen 42 bis 58 (Deutsch) und 80 bis 96 (Englisch) befinden. Dabei werden jeweils 5 Zeilen f&uuml;r 20 Sekunden (`SHOW_INFOPAGE_SEC`) angezeigt.   
 Die Texte k&ouml;nnen auch gel&ouml;scht werden, dann ist die Konstante `INFOLINES_NUM` auf 0 zu setzen:   
 ```   
 #define  INFOLINES_NUM     0

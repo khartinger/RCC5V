@@ -1,12 +1,12 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Last modified: 2026-01-04 <a name="up"></a><br>   
 <h1>Adapt the demo program to your own needs</h1>
-<a href="/software/rcc_demo2/CUSTOMIZE_D.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
+<a href="/software/rcc_demo1a/CUSTOMIZE_D.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
 # Introduction
-For many applications of the RCC system, it is sufficient to specify the components used and their wiring in the [configuration file `src/dcc_config.h`](#x20) and to adapt the text of the information pages at program start in the [file `src/rcc_demo2.text.h`](#x30).   
-The control program `rcc_demo2.cpp` does not normally need to be changed. If you want to extend the control system, you will find a detailed description of the demo software under [/software/rcc_demo2/DETAILS_E.md](/software/rcc_demo2/DETAILS_E.md).   
+For many applications of the RCC system, it is sufficient to specify the components used and their wiring in the [configuration file `src/dcc_config.h`](#x20) and to adapt the text of the information pages at program start in the [file `src/rcc_demo1a.text.h`](#x30).   
+The control program `rcc_demo1a.cpp` does not normally need to be changed. If you want to extend the control system, you will find a detailed description of the demo software under [/software/rcc_demo1a/DETAILS_E.md](/software/rcc_demo1a/DETAILS_E.md).   
 
 <a name="x20"></a>   
 
@@ -21,8 +21,8 @@ In the configuration file `dcc_config.h` all essential project properties are de
 * the number of I²C I/O expanders, their names, addresses and start values   
 * the number of railroad components and their type, name, DCC address, expander number and pin assignment as well as switching times   
 
-## Example demo program “dcc_demo2”   
-The electrical wiring of the components in particular must be known and mapped in the configuration file. The following wiring is assumed for the demo program `dcc_demo2`:   
+## Example demo program “dcc_demo1a”   
+The electrical wiring of the components in particular must be known and mapped in the configuration file. The following wiring is assumed for the demo program `dcc_demo1a`:   
 * 2x I²C expanders with the names `pcf8574_out` (7-bit address 0x20) and `pcf8574_in` (7-bit address 0x21), i.e. one expander board for outputs and one expander board for inputs.   
 * 1x uncoupler (name “UC”, DCC address 11) on pin 0 of the I²C expander   
 * 1x two-way crossover (name “T2”, DCC address 21) on pins 1 and 2 of the I²C expanders   
@@ -32,15 +32,15 @@ The electrical wiring of the components in particular must be known and mapped i
 
 The following _Figure 1_ illustrates this data again.   
 
-![circuit_rcc_demo2](../../images/480_rcc_demo2_i2c_circuit.png "circuit_rcc_demo2")   
-_Figure 1: Wiring of the example `rcc_demo2`_   
+![circuit_rcc_demo1a](../../images/480_rcc_demo1a_i2c_circuit.png "circuit_rcc_demo1a")   
+_Figure 1: Wiring of the example `rcc_demo1a`_   
 
 The listing shows the configuration file for the demo program __with line numbers__. It then explains which lines need to be adapted.   
 
 ```   
 1	//_____dcc_config.h______________________________khartinger_____
 2	// Configure file for ESP32 railroad DCC decoder program
-3	// rcc_demo2
+3	// rcc_demo1a
 4	//
 5	// Created by Karl Hartinger, November 14, 2024
 6	// Changes:
@@ -56,24 +56,24 @@ The listing shows the configuration file for the demo program __with line number
 16	 #include "src/pcf8574/D1_class_PCF8574.h"
 17	
 18	//_______program version________________________________________
-19	#define  VERSION_99     "2026-01-04 rcc_demo2"
+19	#define  VERSION_99     "2026-01-04 rcc_demo1a"
 20	#define  VERSION_99_1   "Version 2026-01-04"
 21	
-22	#define  INFOLINES_SEC  20             // time to show one page
+22	#define  SHOW_INFOPAGE_SEC  20             // time to show one page
 23	
 24	//_______Network and MQTT data__________________________________
 25	#define  _USE_WIFI_     true
 26	#define  _SSID_         "Raspi11"
 27	#define  _PASS_         "12345678"
 28	#define  _HOST_         "10.1.1.1"
-29	#define  TOPIC_BASE     "rcc/demo2"
+29	#define  TOPIC_BASE     "rcc/demo1"
 30	#define  TOPIC_GET      "?,help,version,ip,signal,topicbase,eeprom,byname,bydcc,status"
 31	#define  TOPIC_SET      "topicbase,eeprom0"
 32	#define  TOPIC_SUB      ""
 33	#define  TOPIC_PUB      ""
 34	
 35	//_______1.54" display data (SSD1309, 128x64 pixel, I2C)________
-36	#define  SCREEN_TITLE   "RCC_Demo2"
+36	#define  SCREEN_TITLE   "RCC_Demo1"
 37	#define  SCREEN_LINE_MAX 6
 38	#define  SCREEN_LINE_LEN 21
 39	
@@ -104,29 +104,29 @@ The listing shows the configuration file for the demo program __with line number
 64	  String name;          // short name like T1, U1, D1, W1, E1...
 65	  int    dcc;           // dcc address of the component
 66	  int    outPCF;        // aIOEx index of PCF8574 output device
-67	  int    outBitA;       // bit PCF8574 for turnout stright (Gerade)
+67	  int    outBitA;       // bit PCF8574 for turnout straight (Gerade)
 68	  int    outBitB;       // bit PCF8574 for turnout curved (Abzweig)
 69	  int    inPCF;         // aIOEx index of PCF8574 input device
-70	  int    inBitA;        // bit number at PCF8574 input stright=1
+70	  int    inBitA;        // bit number at PCF8574 input straight=1
 71	  int    inBitB;        // bit number at PCF8574 input curved=1
 72	  int32_t msOn;         // ms on
 73	  int32_t msOff;        // ms off
 74	};
 75	
 76	//_______Railroad commands______________________________________
-77	// railway components:  type,name (max 3 char),dcc,
+77	// railroad components:  type,name (max 3 char),dcc,
 78	//                      pIOEx-out-index,outBitA,outBitB, 
 79	//                      pIOEx-in-index inBitA inBitB
 80	//                      msOn,msOff
-81	// railway component name max. 3 chars
+81	// railroad component name max. 3 chars
 82	// ------uncoupler (Entkuppler)---------------------------------
 83	#define  RCOMP_1        RC_TYPE_UC,"UC", 11, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 1500,0
 84	// ------two way turnout (Zweiwegweiche = Standardweiche)-------
 85	// Two expander pins A B to control 2way turnout (active low!)
-86	// A=0: curved, B=0: stright
+86	// A=0: curved, B=0: straight
 87	#define  RCOMP_2        RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
 88	//-------three way turnout (Dreiwegweiche)----------------------
-89	// A=0: curved, B=0: stright (@ 3 pin: middle pin=0V -> stright)
+89	// A=0: curved, B=0: straight (@ 3 pin: middle pin=0V -> straight)
 90	#define  RCOMP_3L       RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
 91	#define  RCOMP_3R       RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
 92	//-------disconnectable track (Fahrstrom)-----------------------
@@ -140,7 +140,7 @@ The listing shows the configuration file for the demo program __with line number
 100	//-------double pole, double throw (2x UM)----------------------
 101	//#define  RCOMP_4        RC_TYPE_DD,"DD", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
 102	
-103	//.......Array of all railway components........................
+103	//.......Array of all railroad components........................
 104	#define  RCOMP_NUM      6
 105	strRcomp aRcomp[RCOMP_NUM] = {
 106	 {RCOMP_1},{RCOMP_2},{RCOMP_3L},{RCOMP_3R},{RCOMP_4},{RCOMP_5}
@@ -176,9 +176,9 @@ The following table explains the meaning of the individual lines in the demo con
 
 <a name="x30"></a>   
 
-# The text file dcc_demo2_text.h
-The file `dcc_demo2_text.h` contains texts in German and English for the OLED display.   
-The texts in lines 30 to 47 (German) and 70 to 85 (English) are to be adapted. In each case, 5 lines are displayed for 20 seconds (`INFOLINES_SEC`).   
+# The text file dcc_demo1a_text.h
+The file `dcc_demo1a_text.h` contains texts in German and English for the OLED display.   
+The texts in lines 30 to 47 (German) and 70 to 85 (English) are to be adapted. In each case, 5 lines are displayed for 20 seconds (`SHOW_INFOPAGE_SEC`).   
 The texts can also be deleted, in which case the constant `INFOLINES_NUM` must be set to 0:   
 ```   
 #define  INFOLINES_NUM     0

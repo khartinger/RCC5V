@@ -1,7 +1,7 @@
 <table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
 Last modified: 2025-01-05 <a name="up"></a><br>   
-<h1>The demo program rcc_demo2 in detail</h1>
-<a href="/software/rcc_demo2/DETAILS_D.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
+<h1>The demo program rcc_demo1a in detail</h1>
+<a href="/software/rcc_demo1a/DETAILS_D.md">==> Deutsche Version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>    
 
 # ...ToDo...

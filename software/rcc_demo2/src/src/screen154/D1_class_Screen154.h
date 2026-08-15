@@ -17,6 +17,9 @@
 
 //extern const uint8_t u8g2_font_KH_cp437_6x8_mf[] U8G2_FONT_SECTION("u8g2_font_KH_cp437_6x8_mf");
 
+#ifndef RCC_CLASS_SCREEN154_H
+ #define RCC_CLASS_SCREEN154_H
+
 #include <Arduino.h>
 #include "src/cppsrc/U8g2lib.h"
 
@@ -396,3 +399,5 @@ const uchar table_cp437_utf8[] PROGMEM = {
 0xFE,0xE2,0x96,0xA0,
 0xFF,0xC2,0xA0,0x00,
 };
+
+#endif

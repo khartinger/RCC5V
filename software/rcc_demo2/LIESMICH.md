@@ -7,7 +7,7 @@ Stand: 28.7.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 </td></tr></table>
 
 # Einführung
-Die Steuerung jedes Eisenbahn-Moduls erfolgt durch einen ESP32. Das Programm `rcc_demo2.cpp` ist das Basisprogramm für jeden ESP32. Es dient zum Testen von selbst gebauten Steuerblöcken zum Beispiel mit der Hardware [RCC-Blocktester](https://github.com/khartinger/RCC5V/blob/main/examples/blocktester/LIESMICH.md).   
+Die Steuerung jedes Eisenbahn-Moduls erfolgt durch einen ESP32. Das Programm `rcc_demo1a.cpp` ist das Basisprogramm für jeden ESP32. Es dient zum Testen von selbst gebauten Steuerblöcken zum Beispiel mit der Hardware [RCC-Blocktester](https://github.com/khartinger/RCC5V/blob/main/examples/blocktester/LIESMICH.md).   
 
 Folgende Blöcke werden durch die Software angesteuert:   
 1. Entkuppler   
@@ -17,7 +17,7 @@ Folgende Blöcke werden durch die Software angesteuert:
 5. Blinklicht   
 
 Zum Verständnis der Software ist eine grundsätzliche Kenntnis der Funktion der Hardware erforderlich. Dies wird [weiter unten](#x10) beschrieben.   
-Details zur Software finden sich in https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo2/DETAILS_D.md
+Details zur Software finden sich in https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo1a/DETAILS_D.md
 
 <a name="TableOfContents"></a>   
 
@@ -227,19 +227,19 @@ struct strRcomp {
   String name;          // short name like T1, U1, D1, W1, E1...
   int    dcc;           // dcc address of the component
   int    outPCF;        // aIOEx index of PCF8574 output device
-  int    outBitA;       // bit PCF8574 for turnout stright (Gerade)
+  int    outBitA;       // bit PCF8574 for turnout straight (Gerade)
   int    outBitB;       // bit PCF8574 for turnout curved (Abzweig)
   int    inPCF;         // aIOEx index of PCF8574 input device
-  int    inBitA;        // bit number at PCF8574 input stright=1
+  int    inBitA;        // bit number at PCF8574 input straight=1
   int    inBitB;        // bit number at PCF8574 input curved=1
 };
 
 //_______Railroad commands______________________________________
-// railway components:  type,name,dcc,
+// railroad components:  type,name,dcc,
 //                      pIOEx-out-index,outBitA,outBitB, 
 //                      pIOEx-in-index inBitA inBitB
 #define  RCOMP_1        RC_TYPE_TO,"T1",11, 0,0,1, 1,0,1
-//.......Array of all railway components........................
+//.......Array of all railroad components........................
 #define  RCOMP_MAX      1
 strRcomp aRcomp[RCOMP_MAX] = {{RCOMP_1}};
 #endif

@@ -9,8 +9,8 @@
 #include "Arduino.h"              // bool, ...
 #include <Wire.h>                 // i2c bus
 
-//#ifndef D1_CLASS_PCF8574_H
-//#define D1_CLASS_PCF8574_H
+#ifndef D1_CLASS_PCF8574_H
+#define D1_CLASS_PCF8574_H
 #define PIN_SDA               21   // IO21=D2
 #define PIN_SCL               22   // IO22=D1
 #define PIN_SDA2              17   // D3=17 or 33 (default i2c_2)
@@ -72,4 +72,4 @@ class PCF8574 {
   bool   readIoByte();            // read all 8 io pins
 
 };
-//#endif
+#endif
