@@ -139,12 +139,12 @@ class SimpleMqtt : public PubSubClient {
   EEPROMClass *eeprom_;                // new EEPROMClass;
   unsigned long eepromSize_;           // EEPROM size (256|512)
   bool eepromInitialized;              // EEPROM.begin() done?
-  unsigned long iGet;                  // mask for get topics
-  unsigned long iSet;                  // mask for set topics
-  unsigned long iRet;                  // mask for ret topics
-  unsigned long iRetSet;               // mask for retset topics
-  unsigned long iSub;                  // mask for sub topics
-  unsigned long iPub;                  // mask for pub topics
+  uint64_t iGet;                       // mask for get topics
+  uint64_t iSet;                       // mask for set topics
+  uint64_t iRet;                       // mask for ret topics
+  uint64_t iRetSet;                    // mask for retset topics
+  uint64_t iSub;                       // mask for sub topics
+  uint64_t iPub;                       // mask for pub topics
   int    numTopicGet;                  // numer of get topics
   int    numTopicSet;                  // numer of set topics
   int    numTopicSub;                  // numer of sub topics

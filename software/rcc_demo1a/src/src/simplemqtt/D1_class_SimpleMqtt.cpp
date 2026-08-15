@@ -181,6 +181,7 @@ void SimpleMqtt::setup()
  iGet=NOTHING_TODO;                    // no get answers to do
  iSet=NOTHING_TODO;                    // no set commands to do
  iRet=NOTHING_TODO;                    //
+ iRetSet=NOTHING_TODO;                 //
  iSub=NOTHING_TODO;                    //
  iPub=NOTHING_TODO;                    //
  numTopicGet=0;                        // no get topics yet
@@ -846,15 +847,15 @@ bool SimpleMqtt::doLoop(bool tryToReconnect)
  {
   for(int i=0; i<numTopicSet; i++)
   {
-   if((iSet&(1<<i))>0)
+   if((iSet&(UINT64_C(1)<<i))>0)
    {
     String s1=simpleSet(aTopicSet[i],aPayloadSet[i]);
     if(s1.length()>0)
     {
      aPayloadSet[i]=s1;
-     iRetSet|=(1<<i);
+     iRetSet|=(UINT64_C(1)<<i);
     }
-    iSet&=(~(1<<i));
+    iSet&=(~(UINT64_C(1)<<i));
    }  
   }
  }
@@ -863,10 +864,10 @@ bool SimpleMqtt::doLoop(bool tryToReconnect)
  {
   for(int i=0; i<numTopicSub; i++)
   {
-   if((iSub&(1<<i))>0)
+   if((iSub&(UINT64_C(1)<<i))>0)
    {
     simpleSub(aTopicSub[i],aPayloadSub[i]);
-    iSub&=(~(1<<i));
+    iSub&=(~(UINT64_C(1)<<i));
    }  
   }
  }
@@ -915,7 +916,7 @@ void SimpleMqtt::callback_(char* topic, byte* payload, unsigned int length)
    if(strcmp(aTopicGet[i].c_str(), cPayload)==0)
    { 
     if(DEBUG_MQTT) Serial.printf("callback_(): ==> MQTT process get '%s'\n",cPayload);
-    iGet|=(1<<i); 
+    iGet|=(UINT64_C(1)<<i);
     i=-1;                               // finish for
     break; 
    }
@@ -935,7 +936,7 @@ void SimpleMqtt::callback_(char* topic, byte* payload, unsigned int length)
    if(strcmp(settype,aTopicSet[i].c_str())==0)
    {
     if(DEBUG_MQTT) Serial.printf("callback_(): ==> MQTT command set %s=%s\n",(aTopicSet[i]).c_str(),cPayload);
-    iSet|=(1<<i);                      // trigger get request
+    iSet|=(UINT64_C(1)<<i);            // trigger get request
     aPayloadSet[i]=String(cPayload);   // save payload
     i=-1;                              // finish for
     break;                             // set-command?
@@ -947,7 +948,7 @@ void SimpleMqtt::callback_(char* topic, byte* payload, unsigned int length)
  for(i=0; i<numTopicSub; i++) {
   if(strcmp(aTopicSub[i].c_str(),topic)==0){
    if(DEBUG_MQTT) Serial.printf("callback_(): ==> MQTT special: topic %s, payload %s\n",(aTopicSub[i]).c_str(),cPayload);
-   iSub|=(1<<i);                       // trigger get request
+   iSub|=(UINT64_C(1)<<i);             // trigger get request
    aPayloadSub[i]=String(cPayload);    // save payload
    break;                              // set-command?
   }
@@ -999,7 +1000,7 @@ bool SimpleMqtt::changeTopicBase(String oldBase, String newBase)
 void SimpleMqtt::sendPubIndex(int index, String payload)
 {
  if((index<0) || (index>=TOPIC_MAX)) return;
- iPub|=(1<<index);
+ iPub|=(UINT64_C(1)<<index);
  aPayloadPub[index]=payload;
 }
 
@@ -1010,7 +1011,7 @@ bool SimpleMqtt::simpleMqttDo(String type, String topic, String payload)
  if(type=="get") {
   for(int i=0; i<numTopicGet; i++) {
    if(topic==aTopicGet[i]) {
-    iGet|=(1<<i);
+    iGet|=(UINT64_C(1)<<i);
     return true;
    }
   }
@@ -1021,7 +1022,7 @@ bool SimpleMqtt::simpleMqttDo(String type, String topic, String payload)
   for(int i=0; i<numTopicSet; i++) {
    if(topic==aTopicSet[i]) {
     aPayloadSet[i]=payload;
-    iSet|=(1<<i);
+    iSet|=(UINT64_C(1)<<i);
     return true;
    }
   }
@@ -1032,7 +1033,7 @@ bool SimpleMqtt::simpleMqttDo(String type, String topic, String payload)
   for(int i=0; i<numTopicSub; i++) {
    if(topic==aTopicSub[i]) {
     aPayloadSub[i]=payload;
-    iSub|=(1<<i);
+    iSub|=(UINT64_C(1)<<i);
     return true;
    }
   }
@@ -1043,7 +1044,7 @@ bool SimpleMqtt::simpleMqttDo(String type, String topic, String payload)
   for(int i=0; i<numTopicPub; i++) {
    if(topic==aTopicPub[i]) {
     aPayloadPub[i]=payload;
-    iPub|=(1<<i);
+    iPub|=(UINT64_C(1)<<i);
     return true;
    }
   }
@@ -1185,38 +1186,38 @@ void SimpleMqtt::sendRet()
  //------send (ret) answers for get request---------------------
  for(int i=0; i<numTopicGet; i++)
  {
-  if((iRet&(1<<i))>0) 
+  if((iRet&(UINT64_C(1)<<i))>0)
   {
    String t1=sTopicBase;
    t1+="/ret/";
    t1+=aTopicGet[i];
    if(publish(t1.c_str(),aPayloadRet[i].c_str(), aRetainedGet[i]))
-    iRet&=(~(1<<i));
+    iRet&=(~(UINT64_C(1)<<i));
   }
  }
  //------send (retset) answers for set requests-----------------
  for(int i=0; i<numTopicSet; i++)
  {
-  if((iRetSet&(1<<i))>0) 
+  if((iRetSet&(UINT64_C(1)<<i))>0)
   {
    String t1=sTopicBase;
    t1+="/ret/";
    t1+=aTopicSet[i];
    if(publish(t1.c_str(),aPayloadSet[i].c_str(), aRetainedSet[i]))
    {
-    iRetSet&=(~(1<<i));
-    iSet&=(~(1<<i));
+    iRetSet&=(~(UINT64_C(1)<<i));
+    iSet&=(~(UINT64_C(1)<<i));
    }
   }
  }
  //------send publish message-----------------------------------
  for(int i=0; i<numTopicPub; i++)
  {
-  if((iPub&(1<<i))>0) 
+  if((iPub&(UINT64_C(1)<<i))>0)
   {
    if(publish(aTopicPub[i].c_str(),aPayloadPub[i].c_str(), aRetainedPub[i]))
    {
-    iPub&=(~(1<<i));
+    iPub&=(~(UINT64_C(1)<<i));
    }
   }
  }
@@ -1330,7 +1331,7 @@ void SimpleMqtt::createGetAnswer()
  {
   for(int i=0; i<numTopicGet; i++)
   {
-   if((iGet&(1<<i))>0)
+   if((iGet&(UINT64_C(1)<<i))>0)
    {
     //-----"automatic" get answers-----------------------------
     if((aTopicGet[i]=="help") || (aTopicGet[i]=="?") ||
@@ -1345,17 +1346,17 @@ void SimpleMqtt::createGetAnswer()
      for(int i=0; i<numTopicPub; i++) p1+=aTopicPub[i]+"|";
      p1+="\r\n";
      aPayloadRet[i]=p1; 
-     iRet|=(1<<i);
+     iRet|=(UINT64_C(1)<<i);
     }
     if(aTopicGet[i]=="version") {
      String p1="SimpleMqtt Version ";
      p1+=SIMPLEMQTT_VERSION;
      aPayloadRet[i]=p1;
-     iRet|=(1<<i);
+     iRet|=(UINT64_C(1)<<i);
     }
     if(aTopicGet[i]=="ip") {
      aPayloadRet[i]=getsMyIP(); 
-     iRet|=(1<<i);
+     iRet|=(UINT64_C(1)<<i);
     }
     //-----user answers [from global function doGetAnswer()]----
     String s1=simpleGet(aTopicGet[i]);
@@ -1368,7 +1369,7 @@ void SimpleMqtt::createGetAnswer()
        s1=aPayloadRet[i]+s1.substring(1);    // append to help 
      }
      aPayloadRet[i]=s1;
-     iRet|=(1<<i);
+     iRet|=(UINT64_C(1)<<i);
     }
    }
   }
