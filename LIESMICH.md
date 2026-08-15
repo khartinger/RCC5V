@@ -1,6 +1,6 @@
 <a name="up"></a>
 <table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-<h1>RCC – Railway Component Control</h1><b><big>Open-Source-Steuerung für Modellbahnen</big></b><br>  
+<h1>RCC – Railway Component Control</h1><b><big>Open-Source-Steuerung für Modellbahn-Komponenten</big></b><br>  
 Stand: 28.7.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
@@ -8,7 +8,7 @@ Stand: 28.7.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 
 # 1. Was ist RCC?
 
-RCC (**Railway Component Control**) ist ein modulares Steuerungssystem für Modellbahnen.
+RCC (**Railway Component Control**) ist ein modulares Steuerungssystem für Modellbahn-Komponenten.
 
 Mit RCC lassen sich unter anderem
 
