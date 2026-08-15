@@ -155,8 +155,12 @@ String actOnRcmdHardware(int iCmd_, int iOutPCF_,
    } else sSerial_+="No pin B";
    break;
   case CMD_BLINK: case CMD_BLINK_END:
-   (*pIOEx[iOutPCF_]).setBit(outBitA_, more_);
-   sSerial_+="Blink="+String(more_);
+   if(outBitA_ != NO_PIN) {
+    (*pIOEx[iOutPCF_]).setBit(outBitA_, more_);
+    sSerial_ += "Blink=" + String(more_);
+    } else {
+     sSerial_ = "No pin A";
+   }
    break;
 
   default:
