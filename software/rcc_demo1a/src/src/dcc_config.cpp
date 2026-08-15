@@ -28,7 +28,7 @@ strRcomp aRcomp[RCOMP_NUM] = { RCOMP_LIST };
   #error "IOEX_NUM must be 2, 4, 6 or 8"
  #endif
  #if IOEX_NUM == 2
-  // ......for 2 pcf8574 boards.(IOEX_NUM must be 4)............
+  // ......for 2 pcf8574 boards.(IOEX_NUM must be 2)............
   PCF8574  pcf8574_out1(1,IOEX_ADDRESS1,0xFF); // 8 digital OUT
   PCF8574  pcf8574_in_1(1,IOEX_ADDRESS2,0xFF); // 8 digital IN
   PCF8574 *pIOEx[IOEX_NUM]={&pcf8574_out1, &pcf8574_in_1}; // IO expander
