@@ -287,15 +287,14 @@ void loopUpdateDisplay(int iRcomp_, int32_t state, Statemachine stm) {
    refreshScreen();
    stateNextScreenRefresh=stm.add(STATES_SCREEN_REFRESH);
    stateNextScreenMin=stm.add(STATES_SHOW_SCREEN_MIN);
+   iRcompGroupNow=iRcompGroupNext;
    iRcompGroupNext = DISPLAY_NO_GROUP;
-   if(iRcompGroupNow>0) iRcompGroupNow--;
-   else iRcompGroupNow=int((RCOMP_NUM-1)/5);
   }
  } // END OF screen refresh allowed
  if(state >= stateNextScreenRefresh)
  { // .......standard screen refresh............................
   iRcompGroupNow++;
-  if(5*iRcompGroupNow > RCOMP_NUM) iRcompGroupNow=0;
+  if(5*iRcompGroupNow >= RCOMP_NUM) iRcompGroupNow=0;
   prepareScreenLine4to6(iRcompGroupNow);
   refreshScreen();
   iRcompGroupNext = DISPLAY_NO_GROUP;
