@@ -9,7 +9,7 @@
 // 2025-06-18 Add "signal"
 // 2026-01-08 Add RC_TYPE_TX, RC_TYPE_DD
 // 2026-02-24 Add mac
-// 2026-08-14 Add dcc_config.cpp, Redesign constexpr, ...
+// 2026-08-15 Add dcc_config.cpp, Redesign constexpr, ...
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -24,8 +24,8 @@
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 
 //_______program version________________________________________
-constexpr char VERSION_99[] = "2026-08-14 rcc_demo1a";
-constexpr char VERSION_99_1[] = "Version 2026-08-14";
+constexpr char VERSION_99[] = "2026-08-15 rcc_demo1a";
+constexpr char VERSION_99_1[] = "Version 2026-08-15";
 
 //_______Network data___________________________________________
 #define _USE_WIFI_      true

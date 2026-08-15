@@ -95,6 +95,9 @@ int updateInputValues() {
 String actOnRcmdHardware(int iCmd_, int iOutPCF_, 
   int outBitA_, int outBitB_, int more_) {
  String sSerial_="";
+ if(iOutPCF_ < 0 || iOutPCF_ >= IOEX_NUM) {
+  return "Error: invalid IO expander";
+ }
  switch(iCmd_){
   case CMD_NONE:                            // No command
    sSerial_="cmd: No comnmand";

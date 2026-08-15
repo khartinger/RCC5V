@@ -73,7 +73,7 @@
 //            Add ../get status, RC_TYPE_TX, RC_TYPE_DCC
 // 2026-01-10 Add ../set/wlan: get wlan data from eeprom
 // 2026-02-24 Add ../get mac, setWiFiHostName()
-// 2026-08-14 Redesign in multi files
+// 2026-08-15 Redesign in multi files
 // Released into the public domain.
 
  //#define D1MINI          1              // ESP8266 D1mini +pro

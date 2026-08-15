@@ -307,7 +307,7 @@ String simpleGet(String sPayload)
   addJson(p1, "topicbase", sVal);
   //..........EEPROM read MyData................................
   sVal=client.eepromReadMyData(iResult);
-  if(sVal=="") sVal=="(no data)";
+  if(sVal=="") sVal="(no data)";
   addJson(p1, "mydata", sVal);
   return p1;
  }
@@ -529,7 +529,7 @@ String getValueForComp(strRcomp Rcomp_, strRcmd Rcmd_, bool byName) {
  }
  if(Rcomp_.type==RC_TYPE_DD) { // double pole, double throw (2x UM)
   if(Rcmd_.inValue) return T1_DPDT_1_NO;
-  else T1_DPDT_0_NC;
+  else return T1_DPDT_0_NC;
  }
  if(Rcomp_.type==RC_TYPE_UC) {
   if(Rcmd_.inValue) return byName ? T_ON : T1_ON;
@@ -569,9 +569,9 @@ void addJson(String &sJson, const String &sKey, const String &sValue)
     if (sJson != "{") sJson += ",";
   }
   sJson += "\"";
-  sJson += sKey;
+  sJson += jsonEscape(sKey);
   sJson += "\":\"";
-  sJson += sValue;
+  sJson += jsonEscape(sValue);
   sJson += "\"}";       // close JSON object
 }
 
