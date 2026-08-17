@@ -60,7 +60,7 @@
 //            constructor 6+7, replace delay(), set hostname
 // 2026-01-11 add setWlanData(), eepromBegin()
 // 2026-02-24 add sWiFiHostName, set.., get..
-// 2026-08-15 update bit mask (uint64_t)
+// 2026-08-17 update bit mask (uint64_t)
 // Released into the public domain.
 
 #include "D1_class_SimpleMqtt.h"
