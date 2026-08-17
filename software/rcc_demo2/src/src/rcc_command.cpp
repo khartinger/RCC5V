@@ -92,8 +92,8 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
   //...it is a pulse 2 command (2 bits, 2 cmd)..................
   if(iCmdValue==0) { // 0 = reset = LED green . . . . . . . . . 
    aRcmd[iRcomp].stateToDo=STATE_NOW;
-   aRcmd[iRcomp].iCmd=CMD_BIT_BA_10;             //  reset
-   aRcmd[iRcomp].stateOffset==aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
+   aRcmd[iRcomp].iCmd=CMD_BIT_BA_10;        //  reset
+   aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
    if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1; // after some time
    aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;     // ready for next pulse
    return sReturn+String(" received");
@@ -101,10 +101,31 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
   {
    if(iCmdValue==1) { // 1 = set = LED yellow . . . . . . . . . 
     aRcmd[iRcomp].stateToDo=STATE_NOW;
-    aRcmd[iRcomp].iCmd=CMD_BIT_BA_01;            // set
-    aRcmd[iRcomp].stateOffset==aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
+    aRcmd[iRcomp].iCmd=CMD_BIT_BA_01;       // set
+    aRcmd[iRcomp].stateOffset=aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
    if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1; // after some time
-    aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;    // ready for next pulse
+    aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11; // ready for next pulse
+    return sReturn+String(" received");
+   }
+  }
+ } // END OF it is a turnout command (2 bits, 2cmds)............
+
+ if(aRcomp[iRcomp].type==RC_TYPE_UI) {
+  //...it is a pulse 2 command (2 bits, 2 cmd)..................
+  if(iCmdValue==0) { // 0 = UI off = LED red . . . . . . . . . .
+   aRcmd[iRcomp].stateToDo=STATE_NOW;
+   aRcmd[iRcomp].iCmd=CMD_BIT_BA_01;        //  voltage is off
+   aRcmd[iRcomp].stateOffset=STATE_NONE;    // no state to do
+   aRcmd[iRcomp].iCmdOffset=CMD_NONE;       // nothing to do
+   return sReturn+String(" received");
+  } else 
+  {
+   if(iCmdValue==1) { // 1 . . . . . . . . . . . . . . . . . . .
+    aRcmd[iRcomp].stateToDo=STATE_NOW;
+    aRcmd[iRcomp].iCmd=CMD_BIT_BA_11;       // voltage is on
+    aRcmd[iRcomp].stateOffset=STATE_NONE;   // no state to do
+    aRcmd[iRcomp].iCmdOffset=CMD_NONE;      // nothing to do
+   // ready for next pulse
     return sReturn+String(" received");
    }
   }

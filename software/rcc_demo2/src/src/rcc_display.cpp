@@ -124,7 +124,8 @@ String getSymbol4Line5(int iType, int iValue)
    if(iValue != 0) return (String(T_ON)  + "    ").substring(0,4);
    return (String(T_OFF)  + "    ").substring(0,4);
    break;
-  case RC_TYPE_P2: // -------pulse 2 inputs (reset, set)--------
+  case RC_TYPE_P2: case RC_TYPE_UI: // -------------------------
+   // pulse 2 inputs (reset, set), UI display
    switch(iValue) { 
     case 0: return "OCC "; // "=0= " BA=00
     case 1: return "FRE "; // "=1= " BA=01

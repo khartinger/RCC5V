@@ -204,7 +204,11 @@ void initAllIOExpander() {
   bfirstComp=false;
   s2+=" 0x"+s1;                             // add address to found
   s2oled+=" 0x"+s1;                         // add address to found
-  (*pIOEx[i]).setByte(0xFF);
+  // (*pIOEx[i]).setByte(0xFF); // error
+  // (*pIOEx[i]).setByte((*pIOEx[i]).getByte()); // ok
+  if (!(*pIOEx[i]).setByte((*pIOEx[i]).getByte())) {
+   Serial.println((*pIOEx[i]).getsStatus());
+  }
   showLine(5,s2oled);                       // show found addresses
   if(DEBUG_99) { Serial.println(s2); }      // show found addresses
  }

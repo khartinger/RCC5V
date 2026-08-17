@@ -9,7 +9,7 @@
 // 2025-06-18 Add "signal"
 // 2026-01-08 Add RC_TYPE_TX, RC_TYPE_DD
 // 2026-02-24 Add mac
-// 2026-08-15 Add dcc_config.cpp, Redesign constexpr, ...
+// 2026-08-17 Add dcc_config.cpp, Redesign constexpr, ...
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -24,8 +24,8 @@
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 
 //_______program version________________________________________
-constexpr char VERSION_99[] = "2026-08-15 rcc_demo2";
-constexpr char VERSION_99_1[] = "Version 2026-08-15";
+constexpr char VERSION_99[] = "2026-08-17 rcc_demo2";
+constexpr char VERSION_99_1[] = "Version 2026-08-17";
 
 //_______Network data___________________________________________
 #define _USE_WIFI_      true
@@ -103,6 +103,7 @@ constexpr int  RC_TYPE_DT = 4;    // disconnectable track (Fahrstrom)
 constexpr int  RC_TYPE_TX = 5;    // double slip turnout/switch (Doppelkreuzungsweiche)
 constexpr int  RC_TYPE_DD = 6;    // double pole, double throw (2x UM)
 constexpr int  RC_TYPE_P2 = 7;    // pulse 2 inputs (reset, set)
+constexpr int  RC_TYPE_UI = 8;    // current (I)-voltage (U)-indicator
 constexpr int  RC_TYPE_BL = 9;    // blink light (Blinklicht)
 
 //.......All properties of a railroad component.................
@@ -158,10 +159,21 @@ struct strRcomp {
 // ------pulse with 2 inputs (reset, set)-----------------------
 // Two expander pins B | A for set | reset (active low!)
 // Pulse duration: 200 ms
-#define  RCOMP_6        RC_TYPE_P2,"P2", 61, EX2,PIN0,PIN1,   EX3,PIN0,PIN1, 200,0
+#define  RCOMP_6   RC_TYPE_P2,"P2", 61, EX2,PIN0,PIN1,   EX3,PIN0,PIN1, 200,0
+// ------voltage (U)-current (I)-indicator----------------------
+// No current flow means that the track is unoccupied (free).
+// Note: Input free: Pin=0, Output free: Pin=1 (i.e., inverted!)
+// Two pins and two consecutive DCC addresses are required for 
+// control and display:
+// The lower address for the current flow (or whether the track
+// is free), and the higher address for the track voltage or 
+// whether the current flow signal is correct (OK=1). 
+// Input: Two expander pins A for voltage (1) and free (I=0)
+// Output: Two expander pins A for free (1) and OK (1)
+#define  RCOMP_7   RC_TYPE_UI,"UI1", 71, EX2,PIN2,PIN3,   EX3,PIN2,PIN3, 0,0
 
 //.......Preparing the Array of all railroad components..........
-#define  RCOMP_NUM  2
-#define  RCOMP_LIST {RCOMP_2},{RCOMP_6}
+#define  RCOMP_NUM  3
+#define  RCOMP_LIST {RCOMP_2},{RCOMP_6}, {RCOMP_7}
 
 #endif

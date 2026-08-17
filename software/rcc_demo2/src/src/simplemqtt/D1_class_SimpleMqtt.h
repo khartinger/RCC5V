@@ -60,7 +60,7 @@
 // 2024-06-16 TOPIC_MAX set from 32 to 48
 // 2026-01-11 add setWlanData, eepromBegin()
 // 2026-02-24 add sWiFiHostName, set.., get..
-// 2026-08-15 update bit mask (uint64_t)
+// 2026-08-17 update bit mask (uint64_t)
 // Released into the public domain.
 
 #ifndef D1_CLASS_SIMPLEMQTT_H

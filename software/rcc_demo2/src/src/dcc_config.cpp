@@ -36,7 +36,7 @@ strRcomp aRcomp[RCOMP_NUM] = { RCOMP_LIST };
   // ......for 4 pcf8574 boards (IOEX_NUM must be 4)............
   PCF8574  pcf8574_out1(1,IOEX_ADDRESS1,0xFF); // 8 digital OUT
   PCF8574  pcf8574_in_1(1,IOEX_ADDRESS2,0xFF); // 8 digital IN
-  PCF8574  pcf8574_out2(1,IOEX_ADDRESS3,0xFF); // 8 digital OUT
+  PCF8574  pcf8574_out2(1,IOEX_ADDRESS3,0xF7); // 8 digital OUT
   PCF8574  pcf8574_in_2(1,IOEX_ADDRESS4,0xFF); // 8 digital IN
   PCF8574 *pIOEx[IOEX_NUM]={&pcf8574_out1, &pcf8574_in_1, 
    &pcf8574_out2, &pcf8574_in_2};

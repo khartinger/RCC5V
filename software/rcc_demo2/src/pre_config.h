@@ -4,7 +4,7 @@
 // easier to read
 // Created by Karl Hartinger, October 31, 2024
 // Changes:
-// 2026-08-15 replace #define by constexpr int
+// 2026-08-17 replace #define by constexpr int
 // Released into the public domain.
 
 #ifndef PRE_CONFIG_H

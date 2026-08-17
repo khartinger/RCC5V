@@ -16,6 +16,7 @@ Folgende Blöcke werden durch die Software angesteuert:
 4. Fahrstrom-Schalter   
 5. Blinklicht   
 6. Pulserkennung mit zwei Eingängen (set, reset).   
+7. Gleis-Spannung und Gleisstrom-Anzeige (UI)   
 
 Zum Verständnis der Software ist eine grundsätzliche Kenntnis der Funktion der Hardware erforderlich. Dies wird [weiter unten](#x10) beschrieben.   
 Details zur Software finden sich in https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo2/DETAILS_D.md
@@ -25,11 +26,11 @@ Details zur Software finden sich in https://github.com/khartinger/RCC5V/blob/mai
 ## Inhaltsübersicht
 1. Hardware  
 2. Software  
-
+3. Software: Ergänzung eines Schaltblocks   
 
 # Ergänzung eines Schaltblocks
-Die Version 1a der Demosoftware reicht zum Ansteuern von Standard-Komponenten wie Weichen, Entkuppler usw.   
-In der Version 2 sind weitere Steuerblöcke wie zB zur Impulserkennung oder zur Gleisbesetztmeldung enthalten.   
+Die Version 1a der Demosoftware ermöglicht das Ansteuern von Standard-Komponenten wie Weichen, Entkuppler usw.   
+In der Version 2 sind weitere Steuerblöcke wie zB zur Impulserkennung (P2) oder zur Gleisbesetztmeldung (UI) enthalten.   
 
 Hier die Schritte zum Einbau einer neuen Komponente am Beispiel Pulserkennung mit zwei Eingängen (set, reset).   
 
@@ -37,7 +38,7 @@ Hier die Schritte zum Einbau einer neuen Komponente am Beispiel Pulserkennung mi
 * Version, `_ESP_NAME_`, `TOPIC_BASE[]` anpassen.
 * IO-Expander-Zahl erhöhen  
 `#define  IOEX_NUM       4         // number of IO expander 2|4|6|8`
-* Typ des neuen Blocks definieren  
+* __Typ des neuen Blocks definieren__  
 `constexpr int  RC_TYPE_P2 = 7;    // pulse 2 inputs (reset, set)`
 * Hardware-Komponente definieren, zB  
 ```
@@ -55,14 +56,6 @@ Hier die Schritte zum Einbau einer neuen Komponente am Beispiel Pulserkennung mi
 
 ## 2. Texte definieren `rcc_demo2_text.h`
 ### 2.1 Text-Konstante
-status defines as string numbers:  
-```
- constexpr char T1_TRACK_OCC[] = "0";
- constexpr char T1_TRACK_FRE[] = "1";
- constexpr char T1_TRACK__0V[] = "2";
- constexpr char T1_TRACK_00V[] = "3";
-```
-
 Deutsche Texte   
 ```  
   #define T_TRACK_OCC        "Gleis besetzt"
@@ -78,6 +71,15 @@ Englische Texte
   #define T_TRACK__0V        "no voltage"
   #define T_TRACK_00V        "no voltage"
 ```  
+
+Status Definitionen als String-Nummern:  
+```
+ constexpr char T1_TRACK_OCC[] = "0";
+ constexpr char T1_TRACK_FRE[] = "1";
+ constexpr char T1_TRACK__0V[] = "2";
+ constexpr char T1_TRACK_00V[] = "3";
+```
+
 
 ### 2.2 Infotext anpassen
 Deutsch   

@@ -444,20 +444,29 @@ String simpleSet(String sTopic, String sPayload)
     if(sPayload=="0" ||  sPayload=="a" || sPayload=="b") iCmdValue=0;
     if(sPayload=="1" || sPayload=="g") iCmdValue=1;
    } else 
-   { //.......NOT a turnout command..............................
+   { //.......NOT a turnout command.TO, TX, T3..................
     if(aRcomp[i].type==RC_TYPE_P2)
     { //......specifically for command type PULSE 2.............
       if(sPayload=="0" || sPayload == "rst" || sPayload == "reset"
          || sPayload == "fre" || sPayload == "green") iCmdValue=0;
       if(sPayload=="1" || sPayload == "set"
          || sPayload == "occ" || sPayload == "yellow") iCmdValue=1;
-    }
+    } 
     else
-   { 
-     //***Insert additional SET commands for non-turnouts here**
-     //.......for all other command types.......................
-     if(sPayload=="0") iCmdValue=0;
-     if(sPayload=="1") iCmdValue=1;
+    { // NOT TO, TX, T3, P2.....................................
+     if(aRcomp[i].type==RC_TYPE_UI)
+     { //......specifically for command type UI.................
+       if(sPayload=="0" || sPayload == "off"
+          || sPayload == "red") iCmdValue=0;
+       if(sPayload=="1" || sPayload == "on") iCmdValue=1;
+     }
+     else
+     { // NOT TO, TX, T3, P2, UI................................
+      //***Insert additional SET commands for non-turnouts here**
+      //.......for all other command types.......................
+      if(sPayload=="0") iCmdValue=0;
+      if(sPayload=="1") iCmdValue=1;
+     }
     }
    } // END OF if(aRcomp[i].type==RC_TYPE_TO...
    addJson(p1, String(aRcomp[i].dcc), setRcmd(i, iCmdValue, sPayload));
@@ -550,7 +559,7 @@ String getValueForComp(strRcomp Rcomp_, strRcmd Rcmd_, bool byName) {
   if(Rcmd_.inValue) return byName ? T_ON : T1_ON;
   else return byName ? T_OFF : T1_OFF;
  }
- if(Rcomp_.type==RC_TYPE_P2) {
+ if(Rcomp_.type==RC_TYPE_P2 || Rcomp_.type==RC_TYPE_UI) {
   switch(Rcmd_.inValue) {
    case 0:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=00
    case 1:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=01
