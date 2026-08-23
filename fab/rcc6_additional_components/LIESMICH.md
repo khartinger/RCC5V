@@ -29,18 +29,18 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 
 Die Platine `RW_5V_RGY_LED` ist eine **41 × 41 mm²** große Anzeigeplatine im Format der RCC-Blöcke.  
 
-Sie enthält bis zu **drei parallel geschaltete rot/grün-Duo-LEDs**. Die LEDs zeigen den Zustand der Eingangssignale **TRV** und **FRE** an.  
+Sie enthält bis zu **drei parallel geschaltete rot/grün-Duo-LEDs**. Die LEDs zeigen den Zustand der Eingangssignale **TVn** und **FRE** an.  
 
-| TRV | FRE |   LED-Farbe   | # | ROK | RFR |  
+| TVn | FRE |   LED-Farbe   | # | ROK | RFR |  
 |:---:|:---:|:-------------:|---|:---:|:---:|  
-| 0 V | 0 V | Rot           | # | 5 V | 0 V |  
-| 0 V | 5 V | Rot           | # | 5 V | 0 V |  
-| 5 V | 0 V | Grün          | # | 0 V | 5 V |  
-| 5 V | 5 V | Gelb (Orange) | # | 0 V | 0 V |  
+| 0 V | 0 V | Grün          | # | 0 V | 5 V |  
+| 0 V | 5 V | Gelb (Orange) | # | 0 V | 0 V |  
+| 5 V | 0 V | Rot           | # | 5 V | 0 V |  
+| 5 V | 5 V | Rot           | # | 5 V | 0 V |  
 
 **Bedeutung der Eingänge**
 
-- **TRV** – Gleisspannung vorhanden (*Track Voltage*, 5 V)  
+- **TVn** – Gleisspannung vorhanden (*Track Voltage*, 0 V)  
 - **FRE** – Gleis frei (*Track Free*, 0 V)  
 
 Damit zeigt die Platine den Zustand eines Gleises an:  
@@ -688,6 +688,208 @@ Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit der Platine
 Bei der ersten Version wurde das Anliegen der Gleisspannung über **TRV = 5 V** signalisiert.  
 
 Dadurch muss der entsprechende Ausgangspin in der Software mit **0 V** initialisiert werden. Da die übrigen Pins des PCF8574 üblicherweise mit **5 V** initialisiert werden, entsteht dadurch eine unnötige Fehlerquelle.  
+
+## x.1. RGY-Anzeige
+
+### x.1.1 Einleitung
+
+Die Platine `RW_5V_RGY_LED` ist eine **41 × 41 mm²** große Anzeigeplatine im Format der RCC-Blöcke.  
+
+Sie enthält bis zu **drei parallel geschaltete rot/grün-Duo-LEDs**. Die LEDs zeigen den Zustand der Eingangssignale **TRV** und **FRE** an.  
+
+| TRV | FRE |   LED-Farbe   | # | ROK | RFR |  
+|:---:|:---:|:-------------:|---|:---:|:---:|  
+| 0 V | 0 V | Rot           | # | 5 V | 0 V |  
+| 0 V | 5 V | Rot           | # | 5 V | 0 V |  
+| 5 V | 0 V | Grün          | # | 0 V | 5 V |  
+| 5 V | 5 V | Gelb (Orange) | # | 0 V | 0 V |  
+
+**Bedeutung der Eingänge**
+
+- **TRV** – Gleisspannung vorhanden (*Track Voltage*, 5 V)  
+- **FRE** – Gleis frei (*Track Free*, 0 V)  
+
+Damit zeigt die Platine den Zustand eines Gleises an:  
+
+- 🟢 **Grün:** Gleis ist frei.
+- 🟡 **Gelb:** Gleis ist besetzt.
+- 🔴 **Rot:** Es liegt ein Fehler vor.
+
+#### Rückmeldesignale
+
+Zusätzlich zur LED-Anzeige stehen zwei Rückmeldesignale zur Verfügung:  
+
+- **ROK** – Rückmeldung ist gültig (*Response OK* = *Response Valid*, 0 V)  
+- **RFR** – Gleis ist frei (*Response Track Free*, 5 V)  
+
+**Anmerkung**: Das Signal RFR wird gegenüber FRE invertiert.   
+
+![rcc6_RGY_LED_blockdiagram](/images/300_rcc6_RGY_LED_blockdiagram.png "rcc6_RGY_LED_blockdiagram")   
+
+#### Optionale Taster
+
+An den Positionen **SW1** und **SW3** können optional Taster oder Schalter eingebaut werden. Sie können von einer Steuerplatine ausgewertet werden, zum Beispiel zum Testen der **SET-** und **RESET-Eingänge** einer [Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG`](#x40).
+
+<a name="x12"></a>   
+
+### x.1.2 Schaltplan
+Die RGY-Anzeige besteht aus drei Teilen:   
+1. Die LED-Anzeige   
+2. die Rückmeldeschaltung   
+3. Zwei Taster für Testzwecke   
+
+#### Led-Anzeige
+![rcc6_RGY_LED_circuit](/images/300_rcc6_RGY_LED_circuit_V1.png "rcc6_RGY_LED_circuit")   
+
+Die Ansteuerung der Platine erfolgt über die Signale **TRV** (J1-Pin 7) und **FRE** (J1-Pin 8):   
+- TRV = 0 V: Led leuchtet rot.  
+  (Transistor T4 sperrt, T1 leitet → "LED rot"; T5 sperrt, T2 sperrt)  
+- TRV = 5 V und FRE = 5 V: LED leuchtet gelb.  
+  (T4 leitet, T3 sperrt, T1 Leitet → "LED rot"; T5 leitet, T2 leitet → "LED grün" → = rot + grün = gelb).  
+- TRV = 5 V und FRE = 0 V: LED leuchtet grün.  
+   (T4 leitet, T3 leitet, T1 sperrt; T5 leitet, T2 leitet → "LED grün")  
+
+__Anmerkungen__
+* Widerstand R1: 680 Ω bei drei Duo-LEDs, 1 kΩ bei einer Duo-LED   
+* Widerstand R3: 3,9 kΩ bei drei Duo-LEDs, 10 kΩ bei einer Duo-LED   
+
+#### Rückmeldeschaltung
+![rcc6_RGY_LED_feedback_circuit](/images/300_rcc6_RGY_LED_feedback_circuit_V1.png "rcc6_RGY_LED_feedback_circuit")   
+
+#### OK-Rückmeldung (ROK)
+
+Das interne Signal **ROKi** wird für den externen Ausgang (**ROK**) etwas aufbereitet.   
+
+- Die Diode **D4** verhindert, dass die Duo-LED belastet wird, wenn der Transistor **T5** gesperrt ist. Gleichzeitig zieht **R10** den Ausgang **ROK** auf **5 V**.   
+- Schaltet **T5** durch, begrenzt **R9** einen möglichen Fehlerstrom von außen.   
+
+#### Gleisfrei-Rückmeldung (RFR)
+
+Das interne Signal **RFRi** wird mit dem Transistor **T6** invertiert und als **RFR** ausgegeben.   
+
+#### Optionale Taster oder Schalter
+
+Auf der Platine können an den Positionen **SW1** und **SW3** optional Taster oder Schalter eingebaut werden.  
+
+Im Ruhezustand sind die Ausgänge **offen**.  
+Beim Betätigen werden sie mit **0 V (Masse)** verbunden.  
+
+#### Gesamtschaltplan
+
+KiCad-Schaltplan der Platine **`RW_5V_RGY_LED`**:   
+![RW_5V_RGY_LED_circuit](/images/600_RW_5V_RGY_LED_circuit_V1.png "RW_5V_RGY_LED_circuit")  
+
+Die Stromversorgung und alle Ein- und Ausgangssignale befinden sich an der Stiftleiste J1.  
+
+<a name="x13"></a>   
+
+### x.1.3 Bestückung der Platine
+Bild der Platine "`RW_5V_RGY_LED`"" (Version 2):   
+![Platine RW_5V_RGY_LED](/images/pcb_f/PCB_F_RW_5V_RGY_LED_V2.png "Platine RW_5V_RGY_LED")   
+
+Best&uuml;ckte Platine "`RW_5V_RGY_LED`"   
+![Bestückte Platine RW_5V_RGY_LED](/images/300_RW_5V_RGY_LED_assembled.png "Bestückte Platine RW_5V_RGY_LED")   
+
+#### St&uuml;ckliste   
+
+| Anzahl | Referenz | Wert | Geh&auml;use |   
+|-----|-----|-----|-----|   
+| 1 | C1 | Kondensator 1 &micro;F, 16 V, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 3 | D1, D2, D3 | Dual-LED rot-gr&uuml;n, gemeinsame Kathode | LED_D5.0mm-3 |   
+| 3 | D1, D2, D3 | Buchsenleiste 3-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs |   
+| 1 | D4 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
+| 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
+| 4 | Q1, Q4, Q5, Q6 | Transistor BC337-40 (npn) | TO-92_Inline_Wide_custom |   
+| 2 | Q2, Q3 | Transistor BC327-40 (pnp) | TO-92_Inline_Wide_custom |   
+| 1 | R1 | 680 &Omega;..1 k&Omega; (2) | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R11 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R3 | 3,9 k&Omega;..10 k&Omega; (3) | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R13 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R9 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R10, R12 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R6, R8 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R2, R5 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R7 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 3 | R4, R14, R15 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 2 | SW1, SW2 | Taster SW_Push_DPDT_8x8 | SW_Push_DPDT_8x8 |   
+| 2 | SW1, SW2 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe je nach Anwendung |    
+
+#### Anmerkungen
+(1) Es ist sinnvoll, die 3-poligen Buchsenleisten an alle 3 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb weniger LEDs eingesetzt werden.  
+(2) Widerstand R1: 680 &Omega; bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
+(3) Widerstand R3: 3,9 k&Omega; bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
+   
+#### Vorbereitung
+1. Von einer langen, einreihigen Buchsenleiste 3x 3-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D3).   
+2. Die äußeren LED-Anschl&uuml;sse farblich kennzeichnen:  
+   * kurzen Anschluss grün färben, mittleren Anschluss rot
+3. LED-Anschl&uuml;sse auf 17 mm abschneiden und Ecken biegen ("Feder", mittleren Anschluss nach vorne oder hinten). Länge dann ca. 13 mm.   
+![RW_5V_DUOLED1](/images/300_RW_5V_DUOLED1.png "RW_5V_DUOLED1") 
+![RW_5V_DUOLED2](/images/300_RW_5V_DUOLED2.png "RW_5V_DUOLED2")   
+
+4. NUR wenn Taster verwendet werden: 10 mm-Tasterkn&ouml;pfe SW1, SW2 eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
+
+Bauteile der Platine "RW_5V_RGY_LED"   
+![RW_5V_RGY_LED_parts](/images/300_RW_5V_RGY_LED_parts.png "RW_5V_RGY_STRG_parts")   
+
+#### Best&uuml;ckung   
+**Lötseite** (!):  
+
+1. Die dreipoligen Buchsenleisten (D1 bis D3) mit gedrehten Pins auf die **L&ouml;tseite** des Prints l&ouml;ten.   
+
+Auf die **Bauteilseite** l&ouml;ten:   
+
+2. Widerstände R1, R11 und R13 (liegend, 680 &Omega; ... 1 k&Omega;, 100 k&Omega;, 47 &Omega;)   
+3. Transistoren Q1, Q4, Q5, Q6 (BC337-40)   
+4. Transistoren Q2, Q3 (BC327-40)   
+5. Kondensator C1 (1 &micro;F)   
+6. Diode D4 (BAT48, auf Polung achten: Kathode unten beim Kreis)   
+7. Widerstand R3 (3,9 k&Omega; ... 10 k&Omega;)   
+8. Widerstand R9 (47 &Omega;)
+9. Widerst&auml;nde R10, R12 (1 k&Omega;, stehend)   
+10. Widerst&auml;nde R6, R8 (4,7 k&Omega;, stehend)   
+11. Widerst&auml;nde R2, R5, R7 (10 k&Omega;, stehend)   
+12. Widerst&auml;nde R4, R14, R15 (100 k&Omega;, stehend)   
+13. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
+
+Optional: Auf die **L&ouml;tseite** l&ouml;ten:   
+
+14. Taster SW1, SW3   
+
+#### Print vervollständigen
+Duo-LED(s) einstecken.   
+
+<a name="x14"></a>   
+
+### x.1.4 Test
+### Vorbereitung
+* 5x Kabel Stecker-Buchse (rot, schwarz, grün, violett, weiß)   
+* Netzgerät 5 V   
+* Voltmeter (Bereich 20VDC)   
+
+#### Durchführung
+Print auf die Bauteilseite legen. Alle erforderlichen Anschlüsse befinden sich an den langen Kontakten der der Buchsenleiste J1:   
+
+![rcc6_RGY_LED_J1](/images/300_rcc6_RGY_LED_J1.png "rcc6_RGY_LED_J1")   
+
+1. Versorgungsspannung anlegen: Pin 1 mit Netzgerät +5V, Pin 2 mit GND verbinden.   
+   ► Die LEDs leuchten rot.   
+2. Voltmeter an GND anschließen. Messen: Pin ROK = +5V, Pin RFR = 0V   
+3. Pin TRV mit 5V verbinden.   
+   ► Die LEDs leuchten gelb (orange).   
+4. Messen: Pin ROK = 5V (3,5V), Pin RFR = 0V   
+5. Pin FRE mit 0V verbinden.   
+   ► Die LEDs leuchten grün.   
+6. Messen: Pin ROK = 5V (4,3V), Pin RFR = 3,5V   
+
+<a name="x15"></a>   
+
+### x.1.5 Versionen
+* V1 (260704) -  Print brauchbar, aber **Änderungen** erforderlich:  
+  * Siebdruckmaske: falsche Werte für R4 (10 k&Omega; statt **richtig 100 k&Omega;**) und R9 (100 k&Omega; statt **richtig 47 &Omega;**).  
+  * SW2 in SW3 umbenennen.  
+  * Neue Widerstandswerte: R1 = 680 &Omega; bis 1 k&Omega; (statt 1 k&Omega;), R3 = 3,9 k&Omega; bis 10 k&Omega; (statt 10 k&Omega;), R7 = 10 k&Omega; (statt 4,7 k&Omega;), R9 = 47 &Omega; (statt 10 k&Omega;), R10 = 1 k&Omega; (statt 4,7 k&Omega;), R12 = 1 k&Omega; (statt 4,7 k&Omega;)
+* V2 (260712): OK   
 
 
 
