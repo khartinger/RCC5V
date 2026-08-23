@@ -516,6 +516,19 @@ Bauteile der Platine `RW_5V_UI_STRG` (C1 fehlt):
 <a name="x34"></a>   
 
 ## 3.4 Inbetriebnahme und Test
+Der Test der Platine `RW_5V_UI_STRG` kann auf zwei Arten erfolgen:  
+1. gemeinsam mit der Platine [`RW_5V_RGY_LED`](#x10)   
+2. gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x20) unter realen Bedingungen.   
+
+In beiden Fällen ist die richtige Anzeige im Einsatz.   
+
+### 3.4.1 Einfacher Test
+..ToDo..
+
+
+### 3.4.2 Test unter realen Bedingungen
+Für den realen Test in der Blocksteuerungsumgebung benötigt man folgendes:  
+
 Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x20). Für den realen Test in der Blocksteuerungsumgebung benötigt man folgendes:  
 * 1x [Einspeisung (FEED-IN)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x31) und Kabel mit 2x 25-poligen SUB-D-Buchsen  
 * 1x [Modul-Stromversorgung (SUB25_10)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x32)  
