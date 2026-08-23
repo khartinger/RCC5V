@@ -2151,7 +2151,7 @@
 		)
 		(uuid "85ae9d10-fa4d-45ce-bec3-dbfbbfa72de2")
 	)
-	(text "RCC_RGY_TVn_LED_V1\n2026-08-20"
+	(text "RCC_RGY_TVn_LED_V2\n2026-08-23"
 		(exclude_from_sim no)
 		(at 229.362 132.08 0)
 		(effects
@@ -4283,7 +4283,7 @@
 			(uuid "bad66a68-e493-46b2-9212-0792a00bc9e9")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D4")
 					(unit 1)
@@ -4362,7 +4362,7 @@
 			(uuid "964d371d-3dd9-4fbe-a2a0-1871ba9be368")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R8")
 					(unit 1)
@@ -4447,7 +4447,7 @@
 			(uuid "d534216e-953a-435a-9343-a9945d4584c8")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D2")
 					(unit 1)
@@ -4528,7 +4528,7 @@
 			(uuid "65fadbec-766b-4d5c-9592-454fe0c32972")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R12")
 					(unit 1)
@@ -4607,7 +4607,7 @@
 			(uuid "1f4d0f7c-6499-411e-9a95-6ebfd8b8f1f3")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R7")
 					(unit 1)
@@ -4695,7 +4695,7 @@
 			(uuid "60449b61-6dc2-432a-a8ec-d2f3f678664e")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "Q6")
 					(unit 1)
@@ -4776,7 +4776,7 @@
 			(uuid "58c60279-1ae5-407f-b382-9e6bceda1ca8")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R2")
 					(unit 1)
@@ -4861,7 +4861,7 @@
 			(uuid "8c26ecad-5e18-4930-aecf-35c1da36e232")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D1")
 					(unit 1)
@@ -4942,7 +4942,7 @@
 			(uuid "b99b9d7e-ed9e-49bc-8057-1ea064a2fa16")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R5")
 					(unit 1)
@@ -5023,7 +5023,7 @@
 			(uuid "329efbde-3332-4831-ae53-50b82c90552b")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R1")
 					(unit 1)
@@ -5104,7 +5104,7 @@
 			(uuid "a346e20c-3411-4e01-90ed-9cb28bf7350d")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R14")
 					(unit 1)
@@ -5183,7 +5183,7 @@
 			(uuid "4fec952d-bebf-44a5-8168-098086c110b3")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R11")
 					(unit 1)
@@ -5268,7 +5268,7 @@
 			(uuid "5c6b1ebf-6284-40c5-802a-796246e96e89")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D3")
 					(unit 1)
@@ -5344,7 +5344,7 @@
 			)
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "H1")
 					(unit 1)
@@ -5363,7 +5363,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7b8a36d0-e120-4fa1-aba5-3d9a5ab9028e")
-		(property "Reference" "SW2"
+		(property "Reference" "SW3"
 			(at 247.396 75.946 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5436,9 +5436,9 @@
 			(uuid "b5fc6809-dcfb-4eee-b5e5-f1c12450f79a")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "SW2")
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -5546,7 +5546,7 @@
 			(uuid "cfb5d678-3f61-4903-b0d6-00aadbaeab91")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "Q4")
 					(unit 1)
@@ -5656,7 +5656,7 @@
 			(uuid "2d1845a7-7aa1-434f-8a00-ffde018c4163")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "Q3")
 					(unit 1)
@@ -5765,7 +5765,7 @@
 			(uuid "7d3517c1-9df0-460e-9960-2d893fe7fa18")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "Q2")
 					(unit 1)
@@ -5846,7 +5846,7 @@
 			(uuid "5219e1d5-30f9-4232-b237-85d28c2fc0ea")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R15")
 					(unit 1)
@@ -5922,7 +5922,7 @@
 			)
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "H3")
 					(unit 1)
@@ -5998,7 +5998,7 @@
 			)
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "H2")
 					(unit 1)
@@ -6074,7 +6074,7 @@
 			)
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "H4")
 					(unit 1)
@@ -6153,7 +6153,7 @@
 			(uuid "518dbd8a-21ef-4a28-8b4a-2a7e5b38d425")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R13")
 					(unit 1)
@@ -6250,7 +6250,7 @@
 			(uuid "877323a4-1ed4-4d71-a6f3-9f91cb72aeb9")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "J2")
 					(unit 1)
@@ -6332,7 +6332,7 @@
 			(uuid "ad8fda34-05d6-4137-8482-9b4a9a272102")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "C1")
 					(unit 1)
@@ -6413,7 +6413,7 @@
 			(uuid "e5db979f-cee0-4e75-ac73-af9fd6b42aa3")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R10")
 					(unit 1)
@@ -6501,7 +6501,7 @@
 			(uuid "6a2f5884-41e4-45b1-ad5a-4004655fe2e5")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "Q1")
 					(unit 1)
@@ -6580,7 +6580,7 @@
 			(uuid "0cd4852c-f455-4160-b927-a1a62f600a8d")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R6")
 					(unit 1)
@@ -6661,7 +6661,7 @@
 			(uuid "b5f0aa74-826f-4438-9a4e-04c18f65dd02")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R3")
 					(unit 1)
@@ -6753,7 +6753,7 @@
 			(uuid "966d874b-da7a-40a9-a9cb-7893e3781559")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "SW1")
 					(unit 1)
@@ -6834,7 +6834,7 @@
 			(uuid "ae4796dc-8239-400e-b0f8-6da4bde2d882")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R4")
 					(unit 1)
@@ -6863,7 +6863,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "47"
 			(at 163.83 66.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6913,7 +6913,7 @@
 			(uuid "63681e2a-7ff7-4c2e-bc3f-909e7454000a")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R9")
 					(unit 1)
@@ -7022,7 +7022,7 @@
 			(uuid "e2445091-dc1b-4c69-a6b6-62990a616580")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "Q5")
 					(unit 1)
@@ -7119,7 +7119,7 @@
 			(uuid "aa9a346c-63f6-4e2c-8e9f-833c074d0f93")
 		)
 		(instances
-			(project "RCC_RGY_TVn_LED_V1"
+			(project "RCC_RGY_TVn_LED_V2"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "J1")
 					(unit 1)

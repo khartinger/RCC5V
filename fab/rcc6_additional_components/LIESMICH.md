@@ -27,21 +27,21 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 
 ## 1.1 Einleitung
 
-Die Platine `RW_5V_RGY_LED` ist eine **41 × 41 mm²** große Anzeigeplatine im Format der RCC-Blöcke.  
+Die Platine `RCC_RGY_TVn_LED` ist eine **41 × 41 mm²** große Anzeigeplatine im Format der RCC-Blöcke.  
 
-Sie enthält bis zu **drei parallel geschaltete rot/grün-Duo-LEDs**. Die LEDs zeigen den Zustand der Eingangssignale **TVn** und **FRE** an.  
+Sie enthält bis zu **drei parallel geschaltete rot/grün-Duo-LEDs**. Die LEDs zeigen den Zustand der Eingangssignale **TVn** und **FREn** an.  
 
-| TVn | FRE |   LED-Farbe   | # | ROK | RFR |  
-|:---:|:---:|:-------------:|---|:---:|:---:|  
-| 0 V | 0 V | Grün          | # | 0 V | 5 V |  
-| 0 V | 5 V | Gelb (Orange) | # | 0 V | 0 V |  
-| 5 V | 0 V | Rot           | # | 5 V | 0 V |  
-| 5 V | 5 V | Rot           | # | 5 V | 0 V |  
+| TVn | FREn |   LED-Farbe   | # | ROK | RFR |  
+|:---:|:----:|:-------------:|---|:---:|:---:|  
+| 0 V |  0 V | Grün          | # | 0 V | 5 V |  
+| 0 V |  5 V | Gelb (Orange) | # | 0 V | 0 V |  
+| 5 V |  0 V | Rot           | # | 5 V | 0 V |  
+| 5 V |  5 V | Rot           | # | 5 V | 0 V |  
 
 **Bedeutung der Eingänge**
 
 - **TVn** – Gleisspannung vorhanden (*Track Voltage*, 0 V)  
-- **FRE** – Gleis frei (*Track Free*, 0 V)  
+- **FREn** – Gleis frei (*Track Free*, 0 V)  
 
 Damit zeigt die Platine den Zustand eines Gleises an:  
 
@@ -53,12 +53,12 @@ Damit zeigt die Platine den Zustand eines Gleises an:
 
 Zusätzlich zur LED-Anzeige stehen zwei Rückmeldesignale zur Verfügung:  
 
-- **ROK** – Rückmeldung ist gültig (*Response OK* = *Response Valid*, 0 V)  
-- **RFR** – Gleis ist frei (*Response Track Free*, 5 V)  
+- **ROKn** – Rückmeldung ist gültig (*Response OK* = *Response Valid*, 0 V)  
+- **RFRE** – Gleis ist frei (*Response Track Free*, 5 V)  
 
-**Anmerkung**: Das Signal RFR wird gegenüber FRE invertiert.   
+**Anmerkung**: Das Ausgangssignal RFRE wird gegenüber FREn invertiert.   
 
-![rcc6_RGY_LED_blockdiagram](/images/300_rcc6_RGY_LED_blockdiagram.png "rcc6_RGY_LED_blockdiagram")   
+![rcc6_RGY_TVn_LED_blockdiagram](/images/150_rcc6_RGY_TVn_LED_blockdiagram.png "rcc6_RGY_TVn_LED_blockdiagram")   
 
 ### Optionale Taster
 
@@ -73,14 +73,14 @@ Die RGY-Anzeige besteht aus drei Teilen:
 3. Zwei Taster für Testzwecke   
 
 ### Led-Anzeige
-![rcc6_RGY_LED_circuit](/images/300_rcc6_RGY_LED_circuit_V1.png "rcc6_RGY_LED_circuit")   
+![rcc6_RGY_LED_circuit](/images/300_rcc6_RGY_LED_circuit_V2.png "rcc6_RGY_LED_circuit")   
 
-Die Ansteuerung der Platine erfolgt über die Signale **TRV** (J1-Pin 7) und **FRE** (J1-Pin 8):   
-- TRV = 0 V: Led leuchtet rot.  
+Die Ansteuerung der Platine erfolgt über die Signale **TVn** (J1-Pin 7) und **FREn** (J1-Pin 8):   
+- TVn = 5 V: Led leuchtet rot.  
   (Transistor T4 sperrt, T1 leitet → "LED rot"; T5 sperrt, T2 sperrt)  
-- TRV = 5 V und FRE = 5 V: LED leuchtet gelb.  
+- TVn = 5 V und FREn = 5 V: LED leuchtet gelb.  
   (T4 leitet, T3 sperrt, T1 Leitet → "LED rot"; T5 leitet, T2 leitet → "LED grün" → = rot + grün = gelb).  
-- TRV = 5 V und FRE = 0 V: LED leuchtet grün.  
+- TVn = 5 V und FREn = 0 V: LED leuchtet grün.  
    (T4 leitet, T3 leitet, T1 sperrt; T5 leitet, T2 leitet → "LED grün")  
 
 __Anmerkungen__
@@ -88,18 +88,18 @@ __Anmerkungen__
 * Widerstand R3: 3,9 kΩ bei drei Duo-LEDs, 10 kΩ bei einer Duo-LED   
 
 ### Rückmeldeschaltung
-![rcc6_RGY_LED_feedback_circuit](/images/300_rcc6_RGY_LED_feedback_circuit_V1.png "rcc6_RGY_LED_feedback_circuit")   
+![rcc6_RGY_LED_feedback_circuit](/images/300_rcc6_RGY_LED_feedback_circuit_V2.png "rcc6_RGY_LED_feedback_circuit")   
 
-#### OK-Rückmeldung (ROK)
+#### OK-Rückmeldung (ROKn)
 
-Das interne Signal **ROKi** wird für den externen Ausgang (**ROK**) etwas aufbereitet.   
+Das interne Signal **ROKi** wird für den externen Ausgang (**ROKn**) etwas aufbereitet.   
 
-- Die Diode **D4** verhindert, dass die Duo-LED belastet wird, wenn der Transistor **T5** gesperrt ist. Gleichzeitig zieht **R10** den Ausgang **ROK** auf **5 V**.   
+- Die Diode **D4** verhindert, dass die Duo-LED belastet wird, wenn der Transistor **T5** gesperrt ist. Gleichzeitig zieht **R10** den Ausgang **ROKn** auf **5 V**.   
 - Schaltet **T5** durch, begrenzt **R9** einen möglichen Fehlerstrom von außen.   
 
 #### Gleisfrei-Rückmeldung (RFR)
 
-Das interne Signal **RFRi** wird mit dem Transistor **T6** invertiert und als **RFR** ausgegeben.   
+Das interne Signal **RFRi** wird mit dem Transistor **T6** invertiert und als **RFRE** ausgegeben.   
 
 ### Optionale Taster oder Schalter
 
@@ -110,8 +110,8 @@ Beim Betätigen werden sie mit **0 V (Masse)** verbunden.
 
 ### Gesamtschaltplan
 
-KiCad-Schaltplan der Platine **`RW_5V_RGY_LED`**:   
-![RW_5V_RGY_LED_circuit](/images/600_RW_5V_RGY_LED_circuit_V1.png "RW_5V_RGY_LED_circuit")  
+KiCad-Schaltplan der Platine **`RW_5V_RGY_TVn_LED`**:   
+![RCC_RGY_TVn_LED_circuit](/images/600_RCC_RGY_TVn_LED_circuit_V2.png "RCC_RGY_TVn_LED_circuit")  
 
 Die Stromversorgung und alle Ein- und Ausgangssignale befinden sich an der Stiftleiste J1.  
 
@@ -208,22 +208,19 @@ Print auf die Bauteilseite legen. Alle erforderlichen Anschlüsse befinden sich 
 
 1. Versorgungsspannung anlegen: Pin 1 mit Netzgerät +5V, Pin 2 mit GND verbinden.   
    ► Die LEDs leuchten rot.   
-2. Voltmeter an GND anschließen. Messen: Pin ROK = +5V, Pin RFR = 0V   
-3. Pin TRV mit 5V verbinden.   
+2. Voltmeter an GND anschließen. Messen: Pin ROKn = +5V, Pin RFR = 0V   
+3. Pin TVn mit 5V verbinden.   
    ► Die LEDs leuchten gelb (orange).   
-4. Messen: Pin ROK = 5V (3,5V), Pin RFR = 0V   
-5. Pin FRE mit 0V verbinden.   
+4. Messen: Pin ROKn = 0V, Pin RFRE = 0V   
+5. Pin FREn mit 0V verbinden.   
    ► Die LEDs leuchten grün.   
-6. Messen: Pin ROK = 5V (4,3V), Pin RFR = 3,5V   
+6. Messen: Pin ROKn = 0V, Pin RFR = 3,5V   
 
 <a name="x15"></a>   
 
 ## 1.5 Versionen
-* V1 (260704) -  Print brauchbar, aber **Änderungen** erforderlich:  
-  * Siebdruckmaske: falsche Werte für R4 (10 k&Omega; statt **richtig 100 k&Omega;**) und R9 (100 k&Omega; statt **richtig 47 &Omega;**).  
-  * SW2 in SW3 umbenennen.  
-  * Neue Widerstandswerte: R1 = 680 &Omega; bis 1 k&Omega; (statt 1 k&Omega;), R3 = 3,9 k&Omega; bis 10 k&Omega; (statt 10 k&Omega;), R7 = 10 k&Omega; (statt 4,7 k&Omega;), R9 = 47 &Omega; (statt 10 k&Omega;), R10 = 1 k&Omega; (statt 4,7 k&Omega;), R12 = 1 k&Omega; (statt 4,7 k&Omega;)
-* V2 (260712): OK   
+* V1 (2608..): OK  
+
 
 <a name="x20"></a>   
 <a name="x21"></a>   
