@@ -1,11 +1,12 @@
-(footprint "SW_Push_DPDT_8x8"
+(footprint "SW_Push_DPDT_5.8x5.8"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
 	(layer "F.Cu")
-	(tags "tact pb sw push PVA2 DPDT")
+	(descr "momentary / push-push button, h=17.5mm C&K PVA2 https://www.ckswitches.com/media/1343/pva.pdf")
+	(tags "tact sw push PVA2 DPDT")
 	(property "Reference" "REF**"
-		(at 2.54 -8.255 0)
+		(at 2.286 -6.096 0)
 		(layer "F.SilkS")
 		(uuid "f6ee98b5-4773-4eeb-a825-33c1705abace")
 		(effects
@@ -16,7 +17,7 @@
 		)
 	)
 	(property "Value" "SW_Push_DPDT_8x8"
-		(at 2.54 2.54 0)
+		(at 1.905 1.651 0)
 		(layer "F.Fab")
 		(uuid "5994a946-119f-4db4-aafe-00ae73b5b800")
 		(effects
@@ -67,8 +68,8 @@
 	)
 	(attr through_hole)
 	(fp_line
-		(start -1.5 0.6)
-		(end -1 1.1)
+		(start -1.05 0.5)
+		(end -0.7 0.85)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -77,8 +78,8 @@
 		(uuid "dd2f6b13-9e35-4a67-90ac-cf0d1ea34e5a")
 	)
 	(fp_rect
-		(start -1.62 -7.02)
-		(end 6.62 1.22)
+		(start -1.05 0.85)
+		(end 5.05 -5.3)
 		(stroke
 			(width 0.12)
 			(type default)
@@ -88,8 +89,8 @@
 		(uuid "7af04d19-045a-41b2-880e-032f2683ad70")
 	)
 	(fp_rect
-		(start 0.65 -1.05)
-		(end 4.35 -4.75)
+		(start 0.275 -3.6)
+		(end 3.725 -0.9)
 		(stroke
 			(width 0.12)
 			(type default)
@@ -99,8 +100,8 @@
 		(uuid "743a5dd9-9856-4f09-a3d9-e5174890cd9f")
 	)
 	(fp_rect
-		(start 1.5 -1.4)
-		(end 3.5 -4.4)
+		(start 0.775 -3.25)
+		(end 3.225 -1.25)
 		(stroke
 			(width 0.12)
 			(type default)
@@ -110,8 +111,8 @@
 		(uuid "15071b57-80f0-4c3f-98a7-e7b74508ceb4")
 	)
 	(fp_rect
-		(start -1.75 -7.15)
-		(end 6.75 1.35)
+		(start -0.9 0.65)
+		(end 4.9 -5.15)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -121,8 +122,8 @@
 		(uuid "fdc55c77-7515-4b72-89ee-f3693490a9e5")
 	)
 	(fp_rect
-		(start -1.5 -6.9)
-		(end 6.5 1.1)
+		(start -0.9 0.65)
+		(end 4.9 -5.15)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -132,7 +133,7 @@
 		(uuid "a6d4c93c-1765-4b84-ac2d-62549656069c")
 	)
 	(fp_text user "${REFERENCE}"
-		(at 2.54 -3.175 0)
+		(at 2.032 -2.286 0)
 		(layer "F.Fab")
 		(uuid "be0953c0-632d-4dd2-85e9-4d41239f22d2")
 		(effects
@@ -143,9 +144,9 @@
 		)
 	)
 	(pad "1" thru_hole roundrect
-		(at 0.04 0)
-		(size 1.6 1.6)
-		(drill 0.9)
+		(at 0 0)
+		(size 1.4 1.4)
+		(drill 0.8)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0)
@@ -154,9 +155,9 @@
 		(uuid "c5a1761e-3391-4e74-90c9-947fd66e1fc6")
 	)
 	(pad "2" thru_hole roundrect
-		(at 2.54 0)
-		(size 1.6 1.6)
-		(drill 0.9)
+		(at 2 0)
+		(size 1.4 1.4)
+		(drill 0.8)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0)
@@ -165,9 +166,9 @@
 		(uuid "3dd05e0a-6fe4-4de6-81df-97b26be40fb4")
 	)
 	(pad "3" thru_hole roundrect
-		(at 5.04 0)
-		(size 1.6 1.6)
-		(drill 0.9)
+		(at 4 0)
+		(size 1.4 1.4)
+		(drill 0.8)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0)
@@ -176,9 +177,9 @@
 		(uuid "681bd495-c396-44ce-92bd-4b397cd48c04")
 	)
 	(pad "4" thru_hole roundrect
-		(at 5 -5.8)
-		(size 1.6 1.6)
-		(drill 0.9)
+		(at 4 -4.5)
+		(size 1.4 1.4)
+		(drill 0.8)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0)
@@ -187,9 +188,9 @@
 		(uuid "b680b4a7-6cb0-40b5-a7ec-a02910a0daa4")
 	)
 	(pad "5" thru_hole roundrect
-		(at 2.5 -5.8)
-		(size 1.6 1.6)
-		(drill 0.9)
+		(at 2 -4.5)
+		(size 1.4 1.4)
+		(drill 0.8)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0)
@@ -198,25 +199,14 @@
 		(uuid "fcb90f38-f221-4e19-8961-a534ced69fbc")
 	)
 	(pad "6" thru_hole roundrect
-		(at 0 -5.8)
-		(size 1.6 1.6)
-		(drill 0.9)
+		(at 0 -4.5)
+		(size 1.4 1.4)
+		(drill 0.6)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0)
 		(chamfer_ratio 0.2)
 		(chamfer top_left top_right bottom_left bottom_right)
 		(uuid "a1c7b1f5-f895-4192-9484-2357882c73e0")
-	)
-	(model "G:/work3/Kicad/3D/SW_Push_DPDT_8x8_v3.step"
-		(offset
-			(xyz 0 0 -3.55)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
 	)
 )

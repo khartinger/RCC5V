@@ -1,9 +1,9 @@
-(footprint "SW_Push_DPDT_8x8"
+(footprint "SW_Switch_DPDT_8x8"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
 	(layer "F.Cu")
-	(tags "tact pb sw push PVA2 DPDT")
+	(tags "tact sw push PVA2 DPDT")
 	(property "Reference" "REF**"
 		(at 2.54 -8.255 0)
 		(layer "F.SilkS")
@@ -15,7 +15,7 @@
 			)
 		)
 	)
-	(property "Value" "SW_Push_DPDT_8x8"
+	(property "Value" "SW_Switch_DPDT_8x8"
 		(at 2.54 2.54 0)
 		(layer "F.Fab")
 		(uuid "5994a946-119f-4db4-aafe-00ae73b5b800")

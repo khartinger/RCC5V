@@ -36,6 +36,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -48,6 +49,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -60,6 +62,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -119,8 +122,8 @@
 		(uuid "b9fc58ca-2048-41a4-ae3e-921048847dfc")
 	)
 	(fp_line
-		(start -1.01 -2.73)
-		(end -1.01 2.01)
+		(start -0.889 -2.667)
+		(end -0.889 1.905)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -129,8 +132,8 @@
 		(uuid "653b8027-3b3e-49d6-ace9-ad5db41582d3")
 	)
 	(fp_line
-		(start -1.01 -2.73)
-		(end 6.09 -2.73)
+		(start -0.889 -2.667)
+		(end 5.969 -2.667)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -139,8 +142,8 @@
 		(uuid "45c40f84-ffad-447e-ae97-3005f572fb43")
 	)
 	(fp_line
-		(start 6.09 2.01)
-		(end -1.01 2.01)
+		(start 5.969 1.905)
+		(end -0.889 1.905)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -149,8 +152,8 @@
 		(uuid "b68eedd9-bbd5-44d9-bf28-634847d00c47")
 	)
 	(fp_line
-		(start 6.09 2.01)
-		(end 6.09 -2.73)
+		(start 5.969 1.905)
+		(end 5.969 -2.667)
 		(stroke
 			(width 0.05)
 			(type solid)

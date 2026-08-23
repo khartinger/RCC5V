@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
-<h1>Weitere RCC Komponenten</h1><b><big>Optionale Komponenten für das RCC-System</big></b><br>  
-Stand: 28.7.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+<h1>Weitere RCC Komponenten</h1><b><big>RCC6: Optionale Komponenten für das RCC-System</big></b><br>  
+Stand: 23.8.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -17,6 +17,8 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 2. [DCC-Gleis-Spannungs- und Strom-Erkennung `dcc_track_UI_detection`](#x20)   
 3. [UI-Steuerungsplatine `RW_5V_UI_STRG`](#x30)   
 4. [Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG`](#x40)   
+---
+5. [Ältere Platinen mit Gleisspannungssignal TRV = 5 V](#xold)   
 
 <a name="x10"></a>   
 <a name="x11"></a>   
@@ -155,8 +157,11 @@ Best&uuml;ckte Platine "`RW_5V_RGY_LED`"
 1. Von einer langen, einreihigen Buchsenleiste 3x 3-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D3).   
 2. Die äußeren LED-Anschl&uuml;sse farblich kennzeichnen:  
    * kurzen Anschluss grün färben, mittleren Anschluss rot
-3. LED-Anschl&uuml;sse auf 26 mm abschneiden und Ecken biegen ("Feder"). Länge dann ca. 22 mm.   
-4. Falls Taster verwendet werden: 10 mm-Tasterkn&ouml;pfe SW1, SW2 eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
+3. LED-Anschl&uuml;sse auf 17 mm abschneiden und Ecken biegen ("Feder", mittleren Anschluss nach vorne oder hinten). Länge dann ca. 13 mm.   
+![RW_5V_DUOLED1](/images/300_RW_5V_DUOLED1.png "RW_5V_DUOLED1") 
+![RW_5V_DUOLED2](/images/300_RW_5V_DUOLED2.png "RW_5V_DUOLED2")   
+
+4. NUR wenn Taster verwendet werden: 10 mm-Tasterkn&ouml;pfe SW1, SW2 eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 Bauteile der Platine "RW_5V_RGY_LED"   
 ![RW_5V_RGY_LED_parts](/images/300_RW_5V_RGY_LED_parts.png "RW_5V_RGY_STRG_parts")   
@@ -671,5 +676,19 @@ Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit der Platine
 * V1 (260704): D4, D5 falsche Richtung. D8, D9 ergänzt. C2 bis C5 100 nF.   
 * V2 (260717): C2, C3 etwas gegeneinander versetzen.   
 * V3 (260727): OK.   
+
+
+---  
+<a name="xold"></a>   
+
+# Ältere Platinen mit Gleisspannungssignal TRV = 5 V
+
+## Einleitung
+
+Bei der ersten Version wurde das Anliegen der Gleisspannung über **TRV = 5 V** signalisiert.  
+
+Dadurch muss der entsprechende Ausgangspin in der Software mit **0 V** initialisiert werden. Da die übrigen Pins des PCF8574 üblicherweise mit **5 V** initialisiert werden, entsteht dadurch eine unnötige Fehlerquelle.  
+
+
 
 [Zum Seitenanfang](#up)   

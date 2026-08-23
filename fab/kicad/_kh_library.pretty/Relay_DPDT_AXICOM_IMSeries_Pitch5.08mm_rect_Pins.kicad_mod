@@ -36,6 +36,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -48,6 +49,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -60,6 +62,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -439,15 +442,15 @@
 		(remove_unused_layers no)
 		(uuid "19e960b0-42cd-4d94-83c7-66ca3c5b3c12")
 	)
-	(model "${KICAD8_3DMODEL_DIR}/Relay_THT.3dshapes/Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm.wrl"
+	(model "G:/work3/Kicad/3D/im03ts_relay.wrl"
 		(offset
-			(xyz 0 0 0)
+			(xyz 2.54 -3.81 -0.3)
 		)
 		(scale
-			(xyz 1 1 1)
+			(xyz 0.4 0.4 0.4)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz -90 0 90)
 		)
 	)
 )

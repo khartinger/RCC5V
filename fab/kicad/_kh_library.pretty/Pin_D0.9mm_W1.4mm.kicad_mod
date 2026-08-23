@@ -1,0 +1,125 @@
+(footprint "Pin_D0.9mm_W1.4mm"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "solder Pin, hole diameter 0.9mm, width 1.4mm")
+	(tags "solder Pin")
+	(property "Reference" "REF**"
+		(at 0 1.778 0)
+		(layer "F.SilkS")
+		(uuid "aca2ee18-2ef4-4b5a-b80a-6a772483833d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Pin_D0.9mm_W1.4mm"
+		(at 0 -1.524 0)
+		(layer "F.Fab")
+		(uuid "5ee87f1a-2283-4f11-9395-f0750d042383")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "814d1d73-8cdc-49cb-80a4-1e1054bea0d4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bd95f8e4-42a3-4c17-8495-fdf22ada9350")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "55d38b0e-565d-43a8-97df-13fd8ff969fa")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -0.762 -0.762)
+		(end 0.762 0.762)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "db89392f-1f04-44ee-b74b-348289d16825")
+	)
+	(fp_rect
+		(start -0.762 -0.762)
+		(end 0.762 0.762)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "F.Fab")
+		(uuid "464756b0-66d1-4a9b-8361-404003f2d6db")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 1.778 0)
+		(layer "F.Fab")
+		(uuid "76f6d352-cdb5-4e78-9645-a402b73a4740")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole roundrect
+		(at 0 0)
+		(size 1.4 1.4)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0)
+		(chamfer_ratio 0.2)
+		(chamfer top_left top_right bottom_left bottom_right)
+		(uuid "5a5aa227-c308-40b8-9d98-f8c404d4d165")
+	)
+	(model "${KICAD8_3DMODEL_DIR}/Connector_Pin.3dshapes/Pin_D0.9mm_L10.0mm_W2.4mm_FlatFork.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

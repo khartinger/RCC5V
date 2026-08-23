@@ -1,0 +1,171 @@
+(footprint "DCDC_StepDown_LM2596_PinsOnly"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0.635 2.54 0)
+		(layer "F.SilkS")
+		(uuid "eddff7bf-09e1-4cc7-8bdf-d67b6bfc8eaf")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "DCDC_StepDown_LM2596"
+		(at 20.32 18.415 0)
+		(layer "F.Fab")
+		(uuid "314ebb74-0aa7-41c6-84ab-9d237b477aa7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f9dc557f-fb09-42ad-8e13-73dc669c42f6")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8a631f93-ff13-4ecb-b8e3-9fb631c8306d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5cfd9bba-9b50-4cc8-9118-3c17747123ea")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -1.48 -1.76)
+		(end 42.12 19.54)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.Fab")
+		(uuid "cb9f9aa5-bd70-491c-bda2-7ab94edba7ae")
+	)
+	(fp_text user "OUT+"
+		(at 34.925 0 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "19ef550b-5b9c-4a80-8cf8-fc4f25f29cf6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "IN-"
+		(at 1.905 19.05 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5c524416-a140-4651-8a8a-3e8def5e42df")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "IN+"
+		(at 1.905 0 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "d01b1adc-1321-4beb-859c-afe73e06c159")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "OUT-"
+		(at 34.925 19.05 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "f9790005-caa0-4a0f-906e-db04fec81c85")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 2.54 2.54)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6c72db6a-006c-4861-b966-9c6daf7bad3a")
+	)
+	(pad "2" thru_hole circle
+		(at 0 17.78)
+		(size 2.54 2.54)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e7daf757-4b57-4544-9342-0fe6428a8116")
+	)
+	(pad "3" thru_hole circle
+		(at 40.64 17.78)
+		(size 2.54 2.54)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "757f017c-7abc-4b9f-9c7a-c0b4a628d201")
+	)
+	(pad "4" thru_hole circle
+		(at 40.64 0)
+		(size 2.54 2.54)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9f742677-6910-48da-b2f3-83cef5479941")
+	)
+	(model "D:/Users/admin/Documents/KiCad/Libraries/Packages3d/Modules/DCDC_StepDown_LM2596/YAAJ_DCDC_StepDown_LM2596_PinHeaders_cp.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
