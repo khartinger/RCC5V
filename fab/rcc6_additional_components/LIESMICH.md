@@ -674,8 +674,9 @@ Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit der Platine
 * V2 (260717): C2, C3 etwas gegeneinander versetzen.   
 * V3 (260727): OK.   
 
+<br><br><br><hr><h1>*** ALTE VERSIONEN *** ALTE VERSIONEN ***</h1><br><br>  
 
----  
+
 <a name="xold"></a>   
 
 # Ältere Platinen mit Gleisspannungssignal TRV = 5 V
