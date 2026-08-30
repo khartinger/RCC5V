@@ -4,6 +4,7 @@
 // Created by Karl Hartinger, April 06, 2023
 // Updates
 // 2024-06-09 add TwoWire i2c_ property
+// 2026-08-30 add getIoByte()
 //
 // Released into the public domain.
 #include "Arduino.h"              // bool, ...
@@ -60,6 +61,7 @@ class PCF8574 {
   int    getAddress();            // return i2c address
   int    getStatus();             // status as int (0=OK)
   String getsStatus();            // status as text
+  int    getIoByte();             // only get the io byte
   int    getByte();               // get pcf8574 inputs
   int    getBit(int bitnumber);
   bool   getInvertOutput();

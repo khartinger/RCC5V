@@ -67,7 +67,7 @@
 // Based on rcc_demo1a
 // Created by Karl Hartinger, August 15, 2026
 // Changes:
-// 2026-08-17 New
+// 2026-08-30 Add PCF8574::getIoByte()
 // Released into the public domain.
 
  //#define D1MINI          1              // ESP8266 D1mini +pro

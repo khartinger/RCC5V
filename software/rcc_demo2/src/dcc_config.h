@@ -20,7 +20,7 @@
  #include "src/statemachine/D1_class_Statemachine.h" // STATE_NONE
 
 //_______show debug information_________________________________
-#define  DEBUG_99       true                // true OR false
+#define  DEBUG_99       false               // true OR false
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 
 //_______program version________________________________________
@@ -140,6 +140,7 @@ struct strRcomp {
 // Two expander pins A B to control 2way turnout (active low!)
 // A=0: curved, B=0: straight
 #define  RCOMP_2   RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
+
 /*
 //-------three way turnout (Dreiwegweiche)----------------------
 // A=0: curved, B=0: straight (@ 3 pin: middle pin=0V -> straight)
@@ -159,7 +160,9 @@ struct strRcomp {
 // ------pulse with 2 inputs (reset, set)-----------------------
 // Two expander pins B | A for set | reset (active low!)
 // Pulse duration: 200 ms
-#define  RCOMP_6   RC_TYPE_P2,"P2", 61, EX2,PIN0,PIN1,   EX3,PIN0,PIN1, 200,0
+
+ #define  RCOMP_6   RC_TYPE_P2,"P2", 61, EX2,PIN0,PIN1,   EX3,PIN0,PIN1, 200,0
+
 // ------voltage (U)-current (I)-indicator----------------------
 // No current flow means that the track is unoccupied (free).
 // Note: Input free: Pin=0, Output free: Pin=1 (i.e., inverted!)
@@ -170,10 +173,14 @@ struct strRcomp {
 // whether the current flow signal is correct (OK=1). 
 // Input: Two expander pins A for voltage (1) and free (I=0)
 // Output: Two expander pins A for free (1) and OK (1)
-#define  RCOMP_7   RC_TYPE_UI,"UI1", 71, EX2,PIN2,PIN3,   EX3,PIN2,PIN3, 0,0
+
+ #define  RCOMP_7   RC_TYPE_UI,"UI1", 71, EX2,PIN2,PIN3,   EX3,PIN2,PIN3, 0,0
 
 //.......Preparing the Array of all railroad components..........
+//#define  RCOMP_NUM  2
+//#define  RCOMP_LIST {RCOMP_2},{RCOMP_Q}
+
 #define  RCOMP_NUM  3
-#define  RCOMP_LIST {RCOMP_2},{RCOMP_6}, {RCOMP_7}
+#define  RCOMP_LIST {RCOMP_2},{RCOMP_6},{RCOMP_7}
 
 #endif

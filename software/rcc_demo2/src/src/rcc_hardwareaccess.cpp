@@ -180,8 +180,13 @@ String actOnRcmdHardware(int iCmd_, int iOutPCF_,
  */
 void initAllIOExpander() {
  String s1, s3;
-  String s2="setup(): Found I2C device at ";
+ String s2="setup(): Found I2C device at ";
  String s2oled="I2C found ";
+ //------read the start values----------------------------------
+ byte aIOExStartByte[IOEX_NUM];
+ for(int i=0; i<IOEX_NUM; i++) 
+   aIOExStartByte[i]=(*pIOEx[i]).getIoByte();
+ //------Search for PCF8574 Boards------------------------------
  bool bfirstComp=true;
  for(int i=0; i<IOEX_NUM; i++) {
   //aIOEx[i].setInvertOutput(true);
@@ -206,12 +211,15 @@ void initAllIOExpander() {
   s2oled+=" 0x"+s1;                         // add address to found
   // (*pIOEx[i]).setByte(0xFF); // error
   // (*pIOEx[i]).setByte((*pIOEx[i]).getByte()); // ok
-  if (!(*pIOEx[i]).setByte((*pIOEx[i]).getByte())) {
+  //if (!(*pIOEx[i]).setByte((*pIOEx[i]).getByte())) {
+  // Serial.println((*pIOEx[i]).getsStatus());
+  if (!((*pIOEx[i]).setByte(aIOExStartByte[i]))) {
    Serial.println((*pIOEx[i]).getsStatus());
   }
   showLine(5,s2oled);                       // show found addresses
   if(DEBUG_99) { Serial.println(s2); }      // show found addresses
  }
+ // END OF Search for PCF8574 Boards----------------------------
  showLine(4, "");                           // clear "search"-line
 }
 

@@ -4,6 +4,7 @@
 // Created by Karl Hartinger, April 06, 2023
 // Updates
 // 2024-06-09 add TwoWire i2c_ property
+// 2026-08-30 add getIoByte()
 //
 // Released into the public domain.
 #include "D1_class_PCF8574.h"
@@ -173,6 +174,11 @@ String PCF8574::getsStatus() {
    return String("Unknown error number ")+String(status);
  }
  return String("Serious, unknown error");
+}
+
+//_______get ioByte (only value, no read ord write action)______
+int PCF8574::getIoByte() {
+ return ioByte;
 }
 
 //_______get pcf8574 inputs_____________________________________
