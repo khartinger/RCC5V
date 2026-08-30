@@ -151,15 +151,18 @@ Für den Wannenstecker mit Netzteil gibt es zwei Varianten:
 ### Bestückung
 ![rcc7_CON_20_2x6pol_V1_pcb](/images/pcb_f/PCB_F_CON_20_2x6pol_V1.png "rcc7_CON_20_2x6pol_V1_pcb")   
 
-1. Leistungswiderstand R1  
-2. Diode D1  
-3. 8-polige Stiftleisten J3, J5 und J6  
-4. Wannenstecker J1, J2 und J4  
-5. Schraubklemmen J7 bis J9  
-6. Elko C1  
+1. Wannenstacker J4 (20-polig) auf die **Lötseite** der Platine (auf Polung achten)  
+2. Leistungswiderstand R1  
+3. Diode D1 (auf Polung achten)  
+4. 8-polige Stiftleisten J3, J5 und J6  
+5. 6-polige Wannenstecker J1, J2 (auf Polung achten)  
+6. Schraubklemmen J7 (grün)  
+7. Schraubklemmen J8, J9 (schwarz)  
+8. Elko C1  
 
 ### Versionen
-* V1 (260820): OK  
+* V1 (260820): Bild von J7 auf Siebdruck-Bauteilseite um 180° verdreht. Funktion OK.  
+* V2 (260827): OK
 
 <a name="x33"></a>   
 
