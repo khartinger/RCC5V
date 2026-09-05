@@ -8,902 +8,6 @@
 		(date "2026-09-05")
 	)
 	(lib_symbols
-		(symbol "BC337_1"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "BC337"
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-				(at 5.08 -1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "0.8A Ic, 45V Vce, NPN Transistor, TO-92"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "NPN Transistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO?92*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "BC337_1_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0.635 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778) (xy 1.27 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "BC337_1_1_1"
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -5.08 0 0)
-					(length 5.08)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "BC337_2"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "BC337"
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-				(at 5.08 -1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "0.8A Ic, 45V Vce, NPN Transistor, TO-92"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "NPN Transistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO?92*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "BC337_2_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0.635 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778) (xy 1.27 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "BC337_2_1_1"
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -5.08 0 0)
-					(length 5.08)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "BC337_3"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "BC337"
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-				(at 5.08 -1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "0.8A Ic, 45V Vce, NPN Transistor, TO-92"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "NPN Transistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO?92*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "BC337_3_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0.635 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778) (xy 1.27 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "BC337_3_1_1"
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -5.08 0 0)
-					(length 5.08)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "BC337_4"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "BC337"
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-				(at 5.08 -1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "0.8A Ic, 45V Vce, NPN Transistor, TO-92"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "NPN Transistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO?92*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "BC337_4_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0.635 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778) (xy 1.27 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "BC337_4_1_1"
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -5.08 0 0)
-					(length 5.08)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:Conn_01x08_Pin"
 			(pin_names
 				(offset 1.016)
@@ -1661,12 +765,8 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_BJT:BC337"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "_kh_library:BS170_kh"
 			(pin_names
-				(offset 0)
 				(hide yes)
 			)
 			(exclude_from_sim no)
@@ -1675,7 +775,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "Q"
-				(at 5.08 1.905 0)
+				(at 4.318 1.016 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1685,8 +785,8 @@
 					(justify left)
 				)
 			)
-			(property "Value" "BC337"
-				(at 5.08 0 0)
+			(property "Value" "BS170_kh"
+				(at 4.318 -1.27 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1696,8 +796,8 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-				(at 5.08 -1.905 0)
+			(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
+				(at -9.144 -3.302 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1709,8 +809,8 @@
 					(justify left)
 				)
 			)
-			(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-				(at 0 0 0)
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
+				(at 5.08 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1721,8 +821,8 @@
 					(justify left)
 				)
 			)
-			(property "Description" "0.8A Ic, 45V Vce, NPN Transistor, TO-92"
-				(at 0 0 0)
+			(property "Description" "0.5A Id, 60V Vds, N-Channel MOSFET, TO-92"
+				(at -0.254 -3.302 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1732,7 +832,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "NPN Transistor"
+			(property "ki_keywords" "N-Channel MOSFET"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1754,58 +854,11 @@
 					)
 				)
 			)
-			(symbol "BC337_0_1"
+			(symbol "BS170_kh_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0.635 0)
+						(xy 0.254 1.905) (xy 0.254 -1.905)
 					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 0.635) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 0)
-					(radius 2.8194)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -1816,7 +869,67 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778) (xy 1.27 -1.778)
+						(xy 0.254 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
 					)
 					(stroke
 						(width 0)
@@ -1826,12 +939,82 @@
 						(type outline)
 					)
 				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
-			(symbol "BC337_1_1"
+			(symbol "BS170_kh_1_1"
 				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "C"
+					(at 2.54 3.81 270)
+					(length 1.27)
+					(name "D"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1847,9 +1030,9 @@
 					)
 				)
 				(pin input line
-					(at -5.08 0 0)
-					(length 5.08)
-					(name "B"
+					(at -1.27 0 0)
+					(length 1.27)
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1865,9 +1048,9 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "E"
+					(at 2.54 -3.81 90)
+					(length 1.27)
+					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2625,7 +1808,7 @@
 		)
 		(uuid "d9f7e51e-a77c-4e4a-a515-b61a85c6b399")
 	)
-	(text "RCC_TUI_B_LED_V1\n2026-09-05"
+	(text "RCC_TUI_M_LED_V1\n2026-09-05"
 		(exclude_from_sim no)
 		(at 157.988 116.078 0)
 		(effects
@@ -2656,22 +1839,34 @@
 		(uuid "f0e4606b-d6f0-431f-8e6f-2b12d13289ba")
 	)
 	(junction
-		(at 38.1 80.01)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0014c69f-3cd7-4104-be6b-8442a157cb0e")
-	)
-	(junction
 		(at 151.13 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0432ff77-b332-4af9-95d4-a6401ad1bf2e")
 	)
 	(junction
-		(at 59.69 63.5)
+		(at 120.65 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "049077dd-73eb-417d-b6f3-b1b7f95e7fe0")
+		(uuid "059c8515-7c55-49e9-aae8-77a3f0bbdc02")
+	)
+	(junction
+		(at 59.69 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "090d59e9-b0b5-441b-b42f-48b14160dbd2")
+	)
+	(junction
+		(at 87.63 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "139ff0a5-3db6-40de-9508-1e5869f3e169")
+	)
+	(junction
+		(at 110.49 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1600f3a0-7b56-49e4-afce-61502c22e4ee")
 	)
 	(junction
 		(at 162.56 63.5)
@@ -2680,16 +1875,22 @@
 		(uuid "16c89923-a2f0-4a12-8b54-f8bc1ba3ab1b")
 	)
 	(junction
-		(at 85.09 67.31)
+		(at 78.74 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "27e98c98-6028-4a39-908c-665f7d5bb953")
+		(uuid "3886df36-c187-4fb8-b3b2-310b05aae7e9")
+	)
+	(junction
+		(at 130.81 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "39809a75-0a34-4df7-b205-2df06b393da8")
 	)
 	(junction
 		(at 59.69 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2f44277a-cc9d-4dd4-8288-33edd86dfc3a")
+		(uuid "3be50ed1-5877-4fa1-abbf-ae168b21510a")
 	)
 	(junction
 		(at 130.81 73.66)
@@ -2698,10 +1899,22 @@
 		(uuid "3eda0fb4-5ae5-47f3-98ec-a0c6c9d8d442")
 	)
 	(junction
+		(at 69.85 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "437ffae6-9e7b-40fd-9c05-b2184c676c5e")
+	)
+	(junction
 		(at 193.04 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "489b32c0-09bc-4917-9bd4-b03b1df82bed")
+	)
+	(junction
+		(at 69.85 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4bec49d3-bf38-45cb-9d62-fafdaed947b7")
 	)
 	(junction
 		(at 273.05 77.47)
@@ -2710,22 +1923,16 @@
 		(uuid "51efda7a-3149-4bfa-aea9-4ece5a7f4a83")
 	)
 	(junction
+		(at 148.59 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "54823ac5-13ae-468b-8caa-4156eecc8349")
+	)
+	(junction
 		(at 254 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5da349e1-3c36-4dc5-bf20-a60fa2d13ccd")
-	)
-	(junction
-		(at 59.69 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "611fc473-bc5a-49ca-af89-6c0729bef169")
-	)
-	(junction
-		(at 38.1 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "78270a9e-e755-45ad-b49b-5abeb7be5936")
 	)
 	(junction
 		(at 226.06 53.34)
@@ -2734,16 +1941,34 @@
 		(uuid "7e842cc7-3af6-4000-bb11-42ba8c5dbcfc")
 	)
 	(junction
+		(at 36.83 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "830a29ad-d2a7-47d6-92c9-bf21f603c0ab")
+	)
+	(junction
 		(at 110.49 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "84145a83-ab1d-4b49-b2be-37d53d227ec2")
 	)
 	(junction
-		(at 46.99 53.34)
+		(at 45.72 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "85a7dfc7-d5f3-44a9-ab6c-486ecd0b6a2d")
+	)
+	(junction
+		(at 50.8 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "866fa3e5-1d6e-4a30-892a-a6b314d194d1")
+	)
+	(junction
+		(at 78.74 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8a255164-2177-460d-b1d5-1330c79c40bd")
 	)
 	(junction
 		(at 162.56 73.66)
@@ -2758,16 +1983,22 @@
 		(uuid "94c1456b-55cf-4fc6-a525-5f9be066e88c")
 	)
 	(junction
+		(at 87.63 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b6e5be2-6d83-4da4-a509-51990ab72e95")
+	)
+	(junction
 		(at 254 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c7d3827-5909-4789-a375-830a2b87c489")
 	)
 	(junction
-		(at 87.63 100.33)
+		(at 36.83 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9ef589cb-dfc7-4be0-91ef-dc85c92c3d82")
+		(uuid "a12f40dc-f0ae-4cef-8d4c-96165d5bb530")
 	)
 	(junction
 		(at 130.81 53.34)
@@ -2776,10 +2007,16 @@
 		(uuid "a4ad284e-5821-4dda-a5c2-79c04a4ee96f")
 	)
 	(junction
-		(at 66.04 73.66)
+		(at 120.65 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ac89f7a0-165e-4cea-ae02-85af031e7681")
+		(uuid "a5b5ce82-d371-4a82-910b-a36af2bdf926")
+	)
+	(junction
+		(at 50.8 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ad8e79fa-6944-4797-804f-68a083d0917a")
 	)
 	(junction
 		(at 193.04 80.01)
@@ -2788,22 +2025,16 @@
 		(uuid "c3c1eb35-7546-4a8e-94fc-811fe769343f")
 	)
 	(junction
-		(at 85.09 100.33)
+		(at 78.74 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c7f6110f-d06f-45f6-881e-64e8bd78a801")
+		(uuid "cee902d7-61e0-47b4-b426-d53d1c7d11e5")
 	)
 	(junction
-		(at 59.69 110.49)
+		(at 50.8 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cd4bcd34-a1b8-4887-8a29-a103c40be774")
-	)
-	(junction
-		(at 148.59 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d55f59e6-3ce9-45b9-a93a-b6efb10bb5b7")
+		(uuid "d6dd2321-3998-4337-9871-c91829df0702")
 	)
 	(junction
 		(at 59.69 53.34)
@@ -2818,6 +2049,12 @@
 		(uuid "e42dcabe-0029-4c6e-9211-e9fe3d6594c2")
 	)
 	(junction
+		(at 59.69 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e65d2b2c-d6b3-4f0b-8de1-6d4d7a5c7deb")
+	)
+	(junction
 		(at 162.56 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2830,22 +2067,10 @@
 		(uuid "f06636b2-7f3f-4a5b-816f-23b16949caec")
 	)
 	(junction
-		(at 148.59 87.63)
+		(at 148.59 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f722555c-1df1-40af-a535-a28aa4b613bb")
-	)
-	(junction
-		(at 85.09 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f83382d6-d6e5-425b-a59d-e1b54c34f119")
-	)
-	(junction
-		(at 110.49 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fea0f6e4-7d61-4c52-8160-fe6dbcb336f6")
+		(uuid "fbcbd988-0b82-4280-a9eb-f3205c8061bb")
 	)
 	(polyline
 		(pts
@@ -2857,16 +2082,6 @@
 			(color 0 0 0 1)
 		)
 		(uuid "026879c8-c3cc-414b-8ec7-ceda912e7033")
-	)
-	(wire
-		(pts
-			(xy 59.69 110.49) (xy 85.09 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "03c147dd-fdc7-42b4-8bcd-d864f20b58e1")
 	)
 	(polyline
 		(pts
@@ -2892,7 +2107,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 100.33) (xy 226.06 100.33)
+			(xy 87.63 100.33) (xy 120.65 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2923,7 +2138,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 63.5) (xy 49.53 63.5)
+			(xy 45.72 63.5) (xy 48.26 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2944,7 +2159,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 78.74) (xy 85.09 100.33)
+			(xy 78.74 77.47) (xy 78.74 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3015,6 +2230,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 80.01) (xy 50.8 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b46af51-59a5-4e33-a8db-e5f9cb56f35e")
+	)
+	(wire
+		(pts
 			(xy 162.56 72.39) (xy 162.56 73.66)
 		)
 		(stroke
@@ -3036,17 +2261,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 106.68) (xy 59.69 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "21abe4c6-8d69-4853-aa1c-db7b36aa6aab")
-	)
-	(wire
-		(pts
-			(xy 119.38 80.01) (xy 123.19 80.01)
+			(xy 119.38 80.01) (xy 120.65 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3056,7 +2271,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 53.34) (xy 85.09 53.34)
+			(xy 36.83 53.34) (xy 78.74 53.34)
 		)
 		(stroke
 			(width 0)
@@ -3096,7 +2311,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 62.23) (xy 85.09 67.31)
+			(xy 78.74 62.23) (xy 78.74 67.31)
 		)
 		(stroke
 			(width 0)
@@ -3126,13 +2341,13 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 85.09) (xy 130.81 87.63)
+			(xy 120.65 99.06) (xy 120.65 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2cd89a8f-57d5-4427-a67f-4dc9920d9ef5")
+		(uuid "2dd41379-6c4a-4cfb-b977-04418d8b3c80")
 	)
 	(wire
 		(pts
@@ -3166,7 +2381,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 72.39) (xy 38.1 80.01)
+			(xy 36.83 72.39) (xy 36.83 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3176,13 +2391,23 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 100.33) (xy 87.63 100.33)
+			(xy 78.74 100.33) (xy 87.63 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "33ba36bf-bb80-48a4-9c54-0732dde24662")
+	)
+	(wire
+		(pts
+			(xy 50.8 100.33) (xy 50.8 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "342d8048-3c88-4aa3-88e8-8472aadd2baf")
 	)
 	(wire
 		(pts
@@ -3196,13 +2421,23 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 80.01) (xy 52.07 80.01)
+			(xy 49.53 80.01) (xy 50.8 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "383654a4-e0f4-41f5-8b44-c136491db460")
+	)
+	(wire
+		(pts
+			(xy 120.65 80.01) (xy 127 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b95d985-cfc8-4c82-ba97-ae0f56ef45ee")
 	)
 	(polyline
 		(pts
@@ -3217,13 +2452,13 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 87.63) (xy 162.56 87.63)
+			(xy 50.8 80.01) (xy 55.88 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "495d490d-26a9-41ff-afe8-8204529e23d7")
+		(uuid "40d77bf0-b460-4462-a908-3486ecf3c780")
 	)
 	(polyline
 		(pts
@@ -3235,6 +2470,16 @@
 			(color 0 0 0 1)
 		)
 		(uuid "4b5eca31-40dc-4bcf-b4ef-541d9f54936a")
+	)
+	(wire
+		(pts
+			(xy 69.85 99.06) (xy 69.85 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b6f7b16-4bf6-4e9e-9dab-84b0ca480351")
 	)
 	(wire
 		(pts
@@ -3269,6 +2514,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 67.31) (xy 92.71 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50ef7e10-ef80-4b24-a8e8-9e9479f85b88")
+	)
+	(wire
+		(pts
 			(xy 193.04 80.01) (xy 193.04 86.36)
 		)
 		(stroke
@@ -3289,17 +2544,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 87.63) (xy 162.56 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5702fd0c-3cb3-4d27-b38e-97df68916346")
-	)
-	(wire
-		(pts
-			(xy 85.09 110.49) (xy 85.09 124.46)
+			(xy 85.09 109.22) (xy 85.09 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3309,13 +2554,23 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 73.66) (xy 66.04 73.66)
+			(xy 69.85 73.66) (xy 69.85 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5b287ca8-275c-4510-96d0-66f08718c410")
+		(uuid "5a04635d-3740-4fa5-b2f6-4e1c3e289028")
+	)
+	(wire
+		(pts
+			(xy 69.85 73.66) (xy 74.93 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5bc05f28-6225-4dce-897b-b8e47abbd705")
 	)
 	(wire
 		(pts
@@ -3329,7 +2584,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 73.66) (xy 68.58 73.66)
+			(xy 59.69 73.66) (xy 69.85 73.66)
 		)
 		(stroke
 			(width 0)
@@ -3350,17 +2605,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 93.98) (xy 66.04 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5e4eed21-d786-4017-b160-f6c6c67371a1")
-	)
-	(wire
-		(pts
-			(xy 95.25 67.31) (xy 102.87 67.31)
+			(xy 100.33 67.31) (xy 102.87 67.31)
 		)
 		(stroke
 			(width 0)
@@ -3370,7 +2615,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 63.5) (xy 59.69 63.5)
+			(xy 55.88 63.5) (xy 59.69 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3391,16 +2636,6 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 73.66) (xy 77.47 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "62380fc8-22f7-4a29-b379-682b9f17df04")
-	)
-	(wire
-		(pts
 			(xy 97.79 109.22) (xy 97.79 124.46)
 		)
 		(stroke
@@ -3411,7 +2646,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 80.01) (xy 154.94 80.01)
+			(xy 148.59 80.01) (xy 158.75 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3442,7 +2677,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 53.34) (xy 110.49 53.34)
+			(xy 78.74 53.34) (xy 110.49 53.34)
 		)
 		(stroke
 			(width 0)
@@ -3462,7 +2697,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 53.34) (xy 85.09 54.61)
+			(xy 78.74 53.34) (xy 78.74 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3480,16 +2715,6 @@
 			(color 0 0 0 1)
 		)
 		(uuid "69bad156-4de7-4d7f-a5e5-aa359aaa22f1")
-	)
-	(wire
-		(pts
-			(xy 59.69 85.09) (xy 59.69 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6a2d9d40-a76b-4358-b5f8-5e6706d040ba")
 	)
 	(wire
 		(pts
@@ -3525,7 +2750,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 73.66) (xy 59.69 74.93)
+			(xy 59.69 73.66) (xy 59.69 76.2)
 		)
 		(stroke
 			(width 0)
@@ -3573,6 +2798,16 @@
 		)
 		(uuid "79373f1f-b61d-4189-bbd7-625ce1a5f5da")
 	)
+	(wire
+		(pts
+			(xy 50.8 109.22) (xy 85.09 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79411114-56e4-4a4a-a273-68b803c878f2")
+	)
 	(polyline
 		(pts
 			(xy 102.87 114.935) (xy 102.235 113.03)
@@ -3586,16 +2821,6 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 100.33) (xy 148.59 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7d067223-494d-405d-bca9-53faed6ba040")
-	)
-	(wire
-		(pts
 			(xy 182.88 102.87) (xy 182.88 73.66)
 		)
 		(stroke
@@ -3606,7 +2831,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 53.34) (xy 34.29 53.34)
+			(xy 36.83 53.34) (xy 33.02 53.34)
 		)
 		(stroke
 			(width 0)
@@ -3666,6 +2891,16 @@
 		)
 		(uuid "851a4dea-12bf-4765-9077-69f038790ed5")
 	)
+	(wire
+		(pts
+			(xy 148.59 80.01) (xy 148.59 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "854231cd-e669-42bc-96ba-8ae5cbca4b0d")
+	)
 	(polyline
 		(pts
 			(xy 95.885 112.395) (xy 94.615 112.395)
@@ -3679,6 +2914,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 100.33) (xy 148.59 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88bab559-50c0-4fab-b01b-fd792d99de68")
+	)
+	(wire
+		(pts
 			(xy 265.43 77.47) (xy 273.05 77.47)
 		)
 		(stroke
@@ -3689,7 +2934,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 80.01) (xy 38.1 107.95)
+			(xy 36.83 80.01) (xy 36.83 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3721,7 +2966,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 73.66) (xy 162.56 74.93)
+			(xy 162.56 73.66) (xy 162.56 76.2)
 		)
 		(stroke
 			(width 0)
@@ -3741,7 +2986,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 67.31) (xy 85.09 68.58)
+			(xy 78.74 67.31) (xy 78.74 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3803,33 +3048,13 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 73.66) (xy 130.81 74.93)
+			(xy 130.81 73.66) (xy 130.81 76.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "97d0086b-a30f-4918-a634-60b0162632cd")
-	)
-	(wire
-		(pts
-			(xy 148.59 99.06) (xy 148.59 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9919f62b-9be8-4388-9590-6ac905a8c3e1")
-	)
-	(wire
-		(pts
-			(xy 59.69 100.33) (xy 59.69 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "992f283f-b1cf-4d36-bbb3-0454d2a5f315")
 	)
 	(wire
 		(pts
@@ -3853,17 +3078,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 93.98) (xy 140.97 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9eb2ff31-2e6c-4b17-b184-de822db5695c")
-	)
-	(wire
-		(pts
-			(xy 38.1 107.95) (xy 100.33 107.95)
+			(xy 36.83 107.95) (xy 100.33 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3883,7 +3098,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 73.66) (xy 138.43 73.66)
+			(xy 130.81 73.66) (xy 148.59 73.66)
 		)
 		(stroke
 			(width 0)
@@ -3923,6 +3138,16 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 100.33) (xy 50.8 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a691dbb3-e38f-4435-8663-913c06435317")
+	)
+	(wire
+		(pts
 			(xy 265.43 72.39) (xy 273.05 72.39)
 		)
 		(stroke
@@ -3952,6 +3177,16 @@
 		)
 		(uuid "a9149722-4633-4058-9f9a-df91cde6c99e")
 	)
+	(wire
+		(pts
+			(xy 148.59 99.06) (xy 148.59 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "abbcdc48-00bb-4858-8046-36d9a57de2b6")
+	)
 	(polyline
 		(pts
 			(xy 100.33 114.935) (xy 100.33 110.49)
@@ -3965,7 +3200,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 67.31) (xy 87.63 67.31)
+			(xy 78.74 67.31) (xy 87.63 67.31)
 		)
 		(stroke
 			(width 0)
@@ -3975,7 +3210,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 100.33) (xy 85.09 100.33)
+			(xy 59.69 100.33) (xy 69.85 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3992,6 +3227,16 @@
 			(type default)
 		)
 		(uuid "b30353ce-890d-4260-8c17-58c90a2d0360")
+	)
+	(wire
+		(pts
+			(xy 130.81 87.63) (xy 162.56 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b50f7e5e-d910-4648-af27-ddf00ccbe2f9")
 	)
 	(wire
 		(pts
@@ -4047,7 +3292,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 80.01) (xy 43.18 80.01)
+			(xy 36.83 80.01) (xy 41.91 80.01)
 		)
 		(stroke
 			(width 0)
@@ -4087,13 +3332,13 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 87.63) (xy 148.59 88.9)
+			(xy 59.69 83.82) (xy 59.69 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bf76fff1-e758-4c62-8ae5-4dc1eee002b3")
+		(uuid "bf9b201c-7450-46df-8b1e-f4bee9fd905f")
 	)
 	(polyline
 		(pts
@@ -4139,6 +3384,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 87.63) (xy 87.63 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c47db77e-540b-410a-bf75-c998a2d84c1b")
+	)
+	(wire
+		(pts
 			(xy 255.27 80.01) (xy 254 80.01)
 		)
 		(stroke
@@ -4168,6 +3423,16 @@
 		)
 		(uuid "ca7df7a9-f29e-48d8-931e-5e921b7c7def")
 	)
+	(wire
+		(pts
+			(xy 120.65 80.01) (xy 120.65 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d013ba29-380d-4643-af73-e8d66daa2c63")
+	)
 	(polyline
 		(pts
 			(xy 92.075 113.03) (xy 93.345 113.03)
@@ -4181,13 +3446,23 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 87.63) (xy 148.59 87.63)
+			(xy 162.56 83.82) (xy 162.56 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d68002fd-36e6-4808-9f34-a483c8081a5b")
+		(uuid "d284465d-b891-4b06-ae54-190ea747587b")
+	)
+	(wire
+		(pts
+			(xy 69.85 100.33) (xy 78.74 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8ec9ba3-0cbe-463c-80bf-a7d421b5b74f")
 	)
 	(wire
 		(pts
@@ -4232,6 +3507,36 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 83.82) (xy 130.81 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dede773c-0f5a-4fce-8c43-869b85cb0dfd")
+	)
+	(wire
+		(pts
+			(xy 50.8 106.68) (xy 50.8 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dee5b65f-c50d-47d5-b671-a71e15afcf9e")
+	)
+	(wire
+		(pts
+			(xy 87.63 87.63) (xy 130.81 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e029595a-6094-4b0b-998c-950595d5d503")
+	)
+	(wire
+		(pts
 			(xy 111.76 80.01) (xy 110.49 80.01)
 		)
 		(stroke
@@ -4239,6 +3544,16 @@
 			(type default)
 		)
 		(uuid "e047e3bd-5b32-43d1-875c-905b720023b4")
+	)
+	(wire
+		(pts
+			(xy 148.59 100.33) (xy 226.06 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0b0b779-b6dd-44ca-8f84-27ad8462a07b")
 	)
 	(polyline
 		(pts
@@ -4284,7 +3599,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 53.34) (xy 38.1 64.77)
+			(xy 36.83 53.34) (xy 36.83 64.77)
 		)
 		(stroke
 			(width 0)
@@ -4294,7 +3609,17 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 53.34) (xy 34.29 110.49)
+			(xy 50.8 100.33) (xy 50.8 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4b4a7d9-97ac-474e-a8f1-465e00bb130d")
+	)
+	(wire
+		(pts
+			(xy 33.02 53.34) (xy 33.02 109.22)
 		)
 		(stroke
 			(width 0)
@@ -4332,16 +3657,6 @@
 		)
 		(uuid "e6daf7f2-d86e-4a73-bda6-3aff9a028496")
 	)
-	(wire
-		(pts
-			(xy 146.05 73.66) (xy 148.59 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e6f0d7fb-c644-469a-b48b-2c7cfb8cff7a")
-	)
 	(polyline
 		(pts
 			(xy 90.17 114.935) (xy 90.17 110.49)
@@ -4375,7 +3690,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 63.5) (xy 46.99 53.34)
+			(xy 45.72 63.5) (xy 45.72 53.34)
 		)
 		(stroke
 			(width 0)
@@ -4402,16 +3717,6 @@
 			(type default)
 		)
 		(uuid "f4f2fc87-a661-4255-bc26-f62a5382782c")
-	)
-	(wire
-		(pts
-			(xy 66.04 93.98) (xy 66.04 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f526b78a-029d-4f4d-b4d9-d57c8feaa4d5")
 	)
 	(wire
 		(pts
@@ -4445,23 +3750,13 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 110.49) (xy 59.69 110.49)
+			(xy 33.02 109.22) (xy 50.8 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "fd8f9e70-4678-4475-a0cb-586619690ac7")
-	)
-	(label "Q4B"
-		(at 149.86 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "17c2627c-3be7-482c-bfa0-6a4e8001bac4")
 	)
 	(label "S1ii"
 		(at 219.71 69.85 0)
@@ -4484,7 +3779,7 @@
 		(uuid "20814e59-2cfc-42a3-a855-ad02a69ff37c")
 	)
 	(label "V_I2C"
-		(at 39.37 53.34 0)
+		(at 38.1 53.34 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4526,7 +3821,7 @@
 		(uuid "30934365-e5a1-4495-ab46-f3e769bd323d")
 	)
 	(label "RTVin"
-		(at 96.52 67.31 0)
+		(at 100.33 67.31 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4677,6 +3972,16 @@
 		)
 		(uuid "9c0b9a28-f8a4-40fd-8e80-b3ad99647f08")
 	)
+	(label "RTViin"
+		(at 81.28 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9d394ac5-73a0-4330-af09-f2c301da21b2")
+	)
 	(label "V_I2C"
 		(at 266.7 80.01 0)
 		(effects
@@ -4738,16 +4043,6 @@
 		)
 		(uuid "cca58b55-8e86-4938-a6e0-f33d97b809e0")
 	)
-	(label "Q1B"
-		(at 50.8 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d4f6b711-ac65-45bd-b514-89f5df94edfa")
-	)
 	(label "0V"
 		(at 266.7 72.39 0)
 		(effects
@@ -4757,26 +4052,6 @@
 			(justify left bottom)
 		)
 		(uuid "d816db82-f0d4-4f17-9374-bd633052d5ad")
-	)
-	(label "TVii"
-		(at 128.27 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "dac006d5-5c48-461e-bf99-8e87be04835b")
-	)
-	(label "TViin"
-		(at 149.86 87.63 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "daf01360-c4b7-4a95-9a54-c7b0fdb2fe9a")
 	)
 	(label "RFREin"
 		(at 92.71 123.19 90)
@@ -4809,7 +4084,7 @@
 		(uuid "f4f60cb6-e566-482b-ac1a-241b6450dfe3")
 	)
 	(label "TVin"
-		(at 39.37 80.01 0)
+		(at 38.1 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4820,19 +4095,9 @@
 		)
 		(uuid "fb312f69-d911-4132-b980-2eff12b45537")
 	)
-	(label "Q3B"
-		(at 120.65 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fd921209-ab80-43b5-8a7b-7b645c563e07")
-	)
 	(symbol
-		(lib_id "Device:R")
-		(at 72.39 73.66 90)
+		(lib_id "_kh_library:BS170_kh")
+		(at 57.15 80.01 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4840,29 +4105,44 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "0348a211-01d4-4164-9e8d-416ab416d327")
-		(property "Reference" "R5"
-			(at 72.644 69.088 90)
+		(uuid "106012e5-2d8a-44ac-9efe-432e6cf8fd99")
+		(property "Reference" "Q1"
+			(at 61.468 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "47k"
-			(at 72.644 71.12 90)
+		(property "Value" "BS170"
+			(at 61.722 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "_kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh"
-			(at 72.39 75.438 90)
+		(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
+			(at 48.006 83.312 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
+			(at 62.23 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4870,21 +4150,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Datasheet" ""
-			(at 72.39 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 72.39 73.66 0)
+		(property "Description" "0.5A Id, 60V Vds, N-Channel MOSFET, TO-92"
+			(at 56.896 83.312 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4895,15 +4165,18 @@
 			)
 		)
 		(pin "2"
-			(uuid "d79c2f7f-3d50-4f5b-a55e-07f8d2df1805")
+			(uuid "e40b858e-9603-46e1-9451-4a452613463c")
 		)
 		(pin "1"
-			(uuid "e6f5d845-f6ff-487f-8bca-8d8bf98a0b5d")
+			(uuid "0f992bc0-e2b4-40c1-9ba2-0e4a8c2618b4")
+		)
+		(pin "3"
+			(uuid "acdb486a-7d1e-4bb6-864b-151a6cc4e334")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R5")
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -4982,7 +4255,7 @@
 			(uuid "f0eb79d7-3bdf-4de7-97d5-3d87c61efce5")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D6")
 					(unit 1)
@@ -4991,9 +4264,8 @@
 		)
 	)
 	(symbol
-		(lib_name "BC337_3")
-		(lib_id "Transistor_BJT:BC337")
-		(at 160.02 80.01 0)
+		(lib_id "Device:R")
+		(at 69.85 95.25 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5001,9 +4273,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "1e49484f-44bf-4b40-9f88-23d6cfae1583")
-		(property "Reference" "Q4"
-			(at 165.1 81.28 0)
+		(uuid "2e01ec7f-30aa-4174-a955-103fa9367804")
+		(property "Reference" "R6"
+			(at 71.882 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5013,8 +4285,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BC337"
-			(at 164.084 83.566 0)
+		(property "Value" "100k"
+			(at 71.882 96.52 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5024,21 +4296,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
-			(at 165.1 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-			(at 160.02 80.01 0)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical"
+			(at 68.072 95.25 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5046,11 +4305,21 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(property "Description" ""
-			(at 160.02 80.01 0)
+			(at 69.85 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5059,196 +4328,17 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "2"
-			(uuid "ec782dbb-e3b6-4435-8633-4b3f6f03bf75")
 		)
 		(pin "1"
-			(uuid "220f9419-9f59-442a-87f5-9a2e5f7b920f")
-		)
-		(pin "3"
-			(uuid "e5df02a9-07a8-444a-a00b-ce1c331e9b3e")
-		)
-		(instances
-			(project "RCC_TUI_B_LED_V1"
-				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "Q4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "BC337_4")
-		(lib_id "Transistor_BJT:BC337")
-		(at 146.05 93.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1fa97876-2287-408c-863d-7e078b3197b0")
-		(property "Reference" "Q5"
-			(at 151.13 95.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BC337"
-			(at 150.114 97.536 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
-			(at 151.13 95.885 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-			(at 146.05 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" ""
-			(at 146.05 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
+			(uuid "3c25eacd-5c4a-4ee9-add5-8f7778888aa3")
 		)
 		(pin "2"
-			(uuid "56c26103-f734-4a5c-af6d-eb5b27538c65")
-		)
-		(pin "1"
-			(uuid "bdeecbca-d545-485c-b142-edf3e1973747")
-		)
-		(pin "3"
-			(uuid "bdeaf1a8-01ea-4f6b-b033-d4b0ce9d7705")
+			(uuid "ed5db019-3b49-4915-bcd6-224254cb4f7d")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "Q5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "BC337_2")
-		(lib_id "Transistor_BJT:BC337")
-		(at 128.27 80.01 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "32a011fc-aef8-4b3a-9a78-39a345dbf858")
-		(property "Reference" "Q3"
-			(at 133.35 81.28 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BC337"
-			(at 132.334 83.566 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
-			(at 133.35 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-			(at 128.27 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" ""
-			(at 128.27 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "f1b67123-487e-4cbf-a514-17667521aef4")
-		)
-		(pin "1"
-			(uuid "3015cdd8-58de-4dea-8bf0-e2720faed770")
-		)
-		(pin "3"
-			(uuid "3934affc-60b4-45ae-ab90-15243b743e7f")
-		)
-		(instances
-			(project "RCC_TUI_B_LED_V1"
-				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "Q3")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -5327,7 +4417,7 @@
 			(uuid "6a286f8e-7e15-41a9-a223-85084808eb38")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D1")
 					(unit 1)
@@ -5337,7 +4427,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 85.09 58.42 0)
+		(at 78.74 58.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5346,8 +4436,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "42009a88-b043-428c-aae1-6f0fd5cda0a1")
-		(property "Reference" "R6"
-			(at 87.122 57.15 0)
+		(property "Reference" "R7"
+			(at 80.772 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5358,7 +4448,7 @@
 			)
 		)
 		(property "Value" "4k7"
-			(at 87.122 59.69 0)
+			(at 80.772 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5369,7 +4459,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical"
-			(at 83.312 58.42 90)
+			(at 76.962 58.42 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5380,7 +4470,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 58.42 0)
+			(at 78.74 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5391,7 +4481,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 85.09 58.42 0)
+			(at 78.74 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5408,86 +4498,7 @@
 			(uuid "dfda9177-02a8-4bb8-8909-040dbc0464c3")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
-				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 115.57 93.98 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4614d91b-e2e8-4641-842b-d6f25fc79c90")
-		(property "Reference" "R7"
-			(at 115.316 89.154 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 115.57 91.44 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "_kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh"
-			(at 115.57 95.758 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 115.57 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 115.57 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "daddb262-008e-4abf-b625-d240a301e621")
-		)
-		(pin "1"
-			(uuid "40bb1000-fbe6-41e1-a51d-c17b42b6b0ca")
-		)
-		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R7")
 					(unit 1)
@@ -5496,8 +4507,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 142.24 73.66 90)
+		(lib_id "_kh_library:C_Small")
+		(at 50.8 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5505,29 +4516,32 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "588c6165-a040-4cde-9391-97803caa2949")
-		(property "Reference" "R12"
-			(at 142.494 69.088 90)
+		(fields_autoplaced yes)
+		(uuid "53c52528-ff08-4ed4-837e-99f2c47a2887")
+		(property "Reference" "C1"
+			(at 53.34 102.8762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "47k"
-			(at 142.494 71.12 90)
+		(property "Value" "1u"
+			(at 53.34 105.4162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "_kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh"
-			(at 142.24 75.438 90)
+		(property "Footprint" "_kh_library:C_L4mm_D3mm_P2.54mm_kh"
+			(at 50.8 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5538,7 +4552,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 73.66 0)
+			(at 50.8 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5548,8 +4562,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 142.24 73.66 0)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 50.8 99.822 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5560,15 +4574,96 @@
 			)
 		)
 		(pin "2"
-			(uuid "fb1f31ef-3bfa-45b0-a6ca-c191d05f831a")
+			(uuid "b47510fc-32b1-4f0f-bc59-932e1ead5ab9")
 		)
 		(pin "1"
-			(uuid "64816a08-8928-4e66-bbb3-e6ba1ebefbad")
+			(uuid "e5e156f9-43da-4977-99fe-f4cce85da0f1")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R12")
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 50.8 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6d10074d-0298-4917-8615-b41413eee11d")
+		(property "Reference" "R3"
+			(at 52.832 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 52.832 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical"
+			(at 49.022 95.25 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 50.8 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "210cf790-29db-4ba4-b5f8-e74b466bd622")
+		)
+		(pin "2"
+			(uuid "7f9aa803-5f0a-4fa7-9819-1a72e765de8d")
+		)
+		(instances
+			(project "RCC_TUI_M_LED_V1"
+				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -5642,7 +4737,7 @@
 			)
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "H1")
 					(unit 1)
@@ -5673,7 +4768,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "10k"
 			(at 113.03 69.8499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5724,7 +4819,7 @@
 			(uuid "24072a5c-efdf-4901-a9be-d92e16b50a89")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R8")
 					(unit 1)
@@ -5743,7 +4838,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "78c984ad-ff0a-4b40-9ad4-be2577db0221")
-		(property "Reference" "R16"
+		(property "Reference" "R17"
 			(at 175.514 69.088 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5803,9 +4898,9 @@
 			(uuid "3810f7bd-188f-4a52-a540-b8445db18551")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R16")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -5832,7 +4927,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "1k"
 			(at 115.57 77.47 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5882,7 +4977,7 @@
 			(uuid "c2f89e4c-32d8-4d1e-bf42-7e4998246c5a")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R9")
 					(unit 1)
@@ -5974,7 +5069,7 @@
 			(uuid "b5fc6809-dcfb-4eee-b5e5-f1c12450f79a")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "SW2")
 					(unit 1)
@@ -6055,7 +5150,7 @@
 			(uuid "1bf0d591-8da3-4c57-98f6-5adc80761145")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D3")
 					(unit 1)
@@ -6065,7 +5160,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 46.99 80.01 90)
+		(at 45.72 80.01 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6075,7 +5170,7 @@
 		(dnp no)
 		(uuid "7ec9bef7-bc8d-4359-b1d5-45fce125500c")
 		(property "Reference" "R2"
-			(at 46.736 75.184 90)
+			(at 45.466 75.184 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6084,8 +5179,8 @@
 				)
 			)
 		)
-		(property "Value" "10k"
-			(at 46.99 77.47 90)
+		(property "Value" "1k"
+			(at 45.72 77.47 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6095,7 +5190,7 @@
 			)
 		)
 		(property "Footprint" "_kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh"
-			(at 46.99 81.788 90)
+			(at 45.72 81.788 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6106,7 +5201,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 46.99 80.01 0)
+			(at 45.72 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6117,7 +5212,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 46.99 80.01 0)
+			(at 45.72 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6134,7 +5229,7 @@
 			(uuid "77b3d14a-5354-46d2-927b-969592cbddd4")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R2")
 					(unit 1)
@@ -6153,7 +5248,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "81ecc252-768d-4903-87f3-4b244778f8e7")
-		(property "Reference" "R10"
+		(property "Reference" "R11"
 			(at 124.206 58.674 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6213,9 +5308,9 @@
 			(uuid "525da1df-8a50-4af2-aa44-67a737279d8e")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R10")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -6232,7 +5327,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "827e5278-e85e-48d3-b88b-c476593a5075")
-		(property "Reference" "R11"
+		(property "Reference" "R12"
 			(at 132.842 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6294,98 +5389,9 @@
 			(uuid "2d0f95bf-1f14-44c9-a3ff-7bbb1a19fb91")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "BC337_1")
-		(lib_id "Transistor_BJT:BC337")
-		(at 82.55 73.66 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "84d1d87e-8a04-4c2d-8d6f-e7dc5dfb9756")
-		(property "Reference" "Q2"
-			(at 87.63 72.3899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BC337"
-			(at 87.63 74.9299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
-			(at 87.63 75.565 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-			(at 82.55 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" ""
-			(at 82.55 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "1e1e3acc-eda6-4a74-b3ed-aaab7e041a6e")
-		)
-		(pin "1"
-			(uuid "7a59a616-acdd-46f3-ad24-e84413217d19")
-		)
-		(pin "3"
-			(uuid "b47bf5bb-88b2-4b07-a369-046e5e4ee411")
-		)
-		(instances
-			(project "RCC_TUI_B_LED_V1"
-				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "Q2")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -6464,7 +5470,7 @@
 			(uuid "1153695a-c08b-4b67-93cb-f03563fd7660")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R23")
 					(unit 1)
@@ -6483,7 +5489,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "871e8ef5-f4ab-4b51-afa2-7d36ebf30348")
-		(property "Reference" "R4"
+		(property "Reference" "R5"
 			(at 61.722 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6545,96 +5551,9 @@
 			(uuid "4bdc00d4-6747-4d03-8d46-a7bce137661a")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:BC337")
-		(at 57.15 80.01 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "90752655-faa8-4d38-bab5-78ddb7f5692d")
-		(property "Reference" "Q1"
-			(at 62.484 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BC337"
-			(at 50.038 84.582 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
-			(at 62.23 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf"
-			(at 57.15 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" ""
-			(at 57.15 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "f036558e-dd6d-47ca-800e-d7dd60413789")
-		)
-		(pin "1"
-			(uuid "3ea9e291-3cb8-4330-b5c1-5b647b33dfb2")
-		)
-		(pin "3"
-			(uuid "40fc357c-d7bf-435b-9f9a-957ecac055fa")
-		)
-		(instances
-			(project "RCC_TUI_B_LED_V1"
-				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "Q1")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -6713,9 +5632,177 @@
 			(uuid "855aa093-730f-4b8d-8d2d-de3011661e81")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 120.65 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9343318d-d8d7-477b-917a-21fd11fd4391")
+		(property "Reference" "R10"
+			(at 122.682 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 122.682 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical"
+			(at 118.872 95.25 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 120.65 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 120.65 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "94fa874d-6bf9-48a0-a7fc-1ba4f752dfd2")
+		)
+		(pin "2"
+			(uuid "85d88b91-283c-4301-96c4-12daae3f23c1")
+		)
+		(instances
+			(project "RCC_TUI_M_LED_V1"
+				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "_kh_library:BS170_kh")
+		(at 128.27 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9604e0d9-bbd9-408a-b77d-63d282585a76")
+		(property "Reference" "Q3"
+			(at 132.334 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BS170"
+			(at 132.588 81.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
+			(at 119.126 83.312 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
+			(at 133.35 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.5A Id, 60V Vds, N-Channel MOSFET, TO-92"
+			(at 128.016 83.312 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4387e49f-e232-43c1-9b2e-dee26bb79893")
+		)
+		(pin "3"
+			(uuid "0efa6ecb-1f4b-4fbd-96da-8a50e6e34822")
+		)
+		(pin "1"
+			(uuid "f347ffb5-39aa-4453-9dd5-d09ebe3dc0c8")
+		)
+		(instances
+			(project "RCC_TUI_M_LED_V1"
+				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -6789,7 +5876,7 @@
 			)
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "H3")
 					(unit 1)
@@ -6865,9 +5952,96 @@
 			)
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "_kh_library:BS170_kh")
+		(at 76.2 73.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9ddc5c73-74af-4095-8790-6f3bca795976")
+		(property "Reference" "Q2"
+			(at 80.264 72.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BS170"
+			(at 80.518 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
+			(at 67.056 76.962 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
+			(at 81.28 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.5A Id, 60V Vds, N-Channel MOSFET, TO-92"
+			(at 75.946 76.962 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "afcd34c3-b914-4344-8afa-8f7d90c1df01")
+		)
+		(pin "3"
+			(uuid "b86486d2-e9bc-4357-b8d5-69f232a3bf6c")
+		)
+		(pin "1"
+			(uuid "73055777-93dd-49b4-91d3-2a0e0947ce3a")
+		)
+		(instances
+			(project "RCC_TUI_M_LED_V1"
+				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -6941,7 +6115,7 @@
 			)
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "H4")
 					(unit 1)
@@ -7022,7 +6196,7 @@
 			(uuid "560865ef-2da5-4945-9943-737e88583f6b")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R21")
 					(unit 1)
@@ -7119,91 +6293,9 @@
 			(uuid "877323a4-1ed4-4d71-a6f3-9f91cb72aeb9")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "_kh_library:C_Small")
-		(at 59.69 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a933fae2-f02a-4e9e-b706-1d742c607be1")
-		(property "Reference" "C1"
-			(at 62.23 102.8762 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1u"
-			(at 62.23 105.4162 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "_kh_library:C_L4mm_D3mm_P2.54mm_kh"
-			(at 59.69 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 59.69 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 59.69 99.822 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "5f584c57-18c2-44d1-a868-88eaed855708")
-		)
-		(pin "1"
-			(uuid "d98a2341-3cf6-4992-b055-4ebc1aa792a0")
-		)
-		(instances
-			(project "RCC_TUI_B_LED_V1"
-				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -7282,7 +6374,7 @@
 			(uuid "3ea9dc2b-ff88-4efd-a392-6ea490ccedb8")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D4")
 					(unit 1)
@@ -7364,7 +6456,7 @@
 			(uuid "9d239ba5-5686-4b4a-8bb0-9c9fd92e50c3")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "D5")
 					(unit 1)
@@ -7445,7 +6537,7 @@
 			(uuid "b0f0eb49-25b7-4a6f-81d2-8e487b9bc756")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R22")
 					(unit 1)
@@ -7455,7 +6547,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 91.44 67.31 90)
+		(at 96.52 67.31 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7464,8 +6556,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d1ac54b1-0502-4fe9-92c6-1b79544afa91")
-		(property "Reference" "R15"
-			(at 91.694 62.738 90)
+		(property "Reference" "R16"
+			(at 96.774 62.738 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7475,7 +6567,7 @@
 			)
 		)
 		(property "Value" "47"
-			(at 91.694 64.77 90)
+			(at 96.774 64.77 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7485,7 +6577,7 @@
 			)
 		)
 		(property "Footprint" "_kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh"
-			(at 91.44 69.088 90)
+			(at 96.52 69.088 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7496,7 +6588,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 91.44 67.31 0)
+			(at 96.52 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7507,7 +6599,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 91.44 67.31 0)
+			(at 96.52 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7524,9 +6616,9 @@
 			(uuid "c968f0b8-8078-4011-bf1e-7e089d7d920d")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R15")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -7534,7 +6626,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 53.34 63.5 90)
+		(at 52.07 63.5 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7543,8 +6635,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "db9d4b7e-e814-412a-b13e-08064e4baf02")
-		(property "Reference" "R3"
-			(at 53.086 58.674 90)
+		(property "Reference" "R4"
+			(at 51.816 58.674 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7554,7 +6646,7 @@
 			)
 		)
 		(property "Value" "4k7"
-			(at 53.34 60.96 90)
+			(at 52.07 60.96 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7564,7 +6656,7 @@
 			)
 		)
 		(property "Footprint" "_kh_library:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh"
-			(at 53.34 65.278 90)
+			(at 52.07 65.278 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7575,7 +6667,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 63.5 0)
+			(at 52.07 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7586,7 +6678,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 53.34 63.5 0)
+			(at 52.07 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7603,9 +6695,96 @@
 			(uuid "b3ca795f-c3c9-46fd-ad75-b0eff7c3cdb7")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R3")
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "_kh_library:BS170_kh")
+		(at 160.02 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dde80a09-d253-4ec6-9a1e-a7fb3276ccca")
+		(property "Reference" "Q4"
+			(at 164.084 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BS170"
+			(at 164.338 81.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "_kh_library:TO-92_Inline_Wide_custom"
+			(at 150.876 83.312 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BS170-D.PDF"
+			(at 165.1 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "0.5A Id, 60V Vds, N-Channel MOSFET, TO-92"
+			(at 159.766 83.312 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "eb7dc713-0aa8-448a-81b1-1469f3dc37ef")
+		)
+		(pin "3"
+			(uuid "c205d275-8c0d-4920-914b-580de6d40f6c")
+		)
+		(pin "1"
+			(uuid "7f105a3c-00d0-44fa-92f5-67d8474d4f3e")
+		)
+		(instances
+			(project "RCC_TUI_M_LED_V1"
+				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -7622,7 +6801,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "de32187d-0be1-4bd0-9112-20b588665e4c")
-		(property "Reference" "R13"
+		(property "Reference" "R14"
 			(at 155.956 58.674 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7682,7 +6861,88 @@
 			(uuid "0bce4a8c-bdf1-4b3c-a14d-b5b5ffa3b587")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
+				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 148.59 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e694fa3c-5e20-49a8-9802-8156f722860d")
+		(property "Reference" "R13"
+			(at 150.622 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 150.622 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical"
+			(at 146.812 95.25 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 148.59 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 148.59 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d0ffbb20-5c5f-4d5d-bf3c-ab12a5c37db3")
+		)
+		(pin "2"
+			(uuid "44da950a-ba32-4c33-9a88-02707995414a")
+		)
+		(instances
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R13")
 					(unit 1)
@@ -7774,7 +7034,7 @@
 			(uuid "966d874b-da7a-40a9-a9cb-7893e3781559")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "SW1")
 					(unit 1)
@@ -7784,7 +7044,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 38.1 68.58 0)
+		(at 36.83 68.58 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7794,7 +7054,7 @@
 		(dnp no)
 		(uuid "f1372d5b-77c8-4d01-9f7b-728cb3f6185d")
 		(property "Reference" "R1"
-			(at 40.132 67.31 0)
+			(at 38.862 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7804,8 +7064,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100k"
-			(at 40.132 69.85 0)
+		(property "Value" "10k"
+			(at 38.862 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7816,7 +7076,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical"
-			(at 36.322 68.58 90)
+			(at 35.052 68.58 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7827,7 +7087,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 38.1 68.58 0)
+			(at 36.83 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7838,7 +7098,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 38.1 68.58 0)
+			(at 36.83 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7855,7 +7115,7 @@
 			(uuid "3c2957bf-71c8-4bd0-9495-70f2d730f32c")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "R1")
 					(unit 1)
@@ -7952,7 +7212,7 @@
 			(uuid "aa9a346c-63f6-4e2c-8e9f-833c074d0f93")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
 					(reference "J1")
 					(unit 1)
@@ -7971,7 +7231,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ffb1929d-9d46-481c-9e41-00fbb513a1df")
-		(property "Reference" "R14"
+		(property "Reference" "R15"
 			(at 164.592 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8033,9 +7293,9 @@
 			(uuid "6e17541e-1dd4-4197-aab8-ad3966c32f0d")
 		)
 		(instances
-			(project "RCC_TUI_B_LED_V1"
+			(project "RCC_TUI_M_LED_V1"
 				(path "/4d39acef-efca-4909-8928-de8e022e1cdc"
-					(reference "R14")
+					(reference "R15")
 					(unit 1)
 				)
 			)

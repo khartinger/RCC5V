@@ -511,7 +511,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "RCC_TUI_B_LED_V1.kicad_pro",
+    "filename": "RCC_TUI_M_LED_V1.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -677,18 +677,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "RCC_TUI_B_LED_V1.kicad_sch",
-        "name": "RCC_TUI_B_LED_V1",
+        "filename": "RCC_TUI_M_LED_V1.kicad_sch",
+        "name": "RCC_TUI_M_LED_V1",
         "uuid": "4d39acef-efca-4909-8928-de8e022e1cdc"
       }
     ],
-    "used_designators": "Q2-5,D7,R7,R9-11,R13-14,R16-17,C7",
+    "used_designators": "Q1-5,D7,R5,R7,R9-11,R13-17,C1",
     "variants": []
   },
   "sheets": [
     [
       "4d39acef-efca-4909-8928-de8e022e1cdc",
-      "RCC_TUI_B_LED_V1"
+      "RCC_TUI_M_LED_V1"
     ]
   ],
   "text_variables": {},
