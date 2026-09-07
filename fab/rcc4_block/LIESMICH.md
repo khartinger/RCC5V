@@ -1,8 +1,10 @@
-<table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 7.4.2025 <a name="up"></a><br>   
-<h1>Herstellung von RCC Schaltbl&ouml;cken</h1>
-<a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
-</td></tr></table>   
+<a name="up"></a>
+<table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
+<h1>Herstellung von RCC Schaltbl&ouml;cken</h1><b><big>RCC4: Basis-Blöcke für das RCC-System</big></b><br>  
+Stand: 7.9.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+<a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
+<a href="README.md">→ English version</a>
+</td></tr></table>
 
 <a name="x10"></a>   
 
@@ -14,6 +16,7 @@ Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das
 * [Block Entkuppler (1OUT)](#x40)   
 * [Block Abschaltbares Gleis (2IO)](#x50)   
 * [Block Zweifachumschalter (DPDT)](#x60)   
+* [Block Abschaltbares Gleis mit Strommessung (TUI)](#x70)   
 
 <a name="x12"></a>   
 
@@ -872,7 +875,7 @@ _Bild 55: Schaltplan der "RW_5V_DPDT_STRG"-Platine_
 _Bild 56: Platine zum zweipoligen Umschalten einer Spannung_   
 
 ![RW_5V_DPDT_STRG](/images/300_RW_5V_DPDT_STRG_V1.png "RW_5V_DPDT_STRG")   
-_Bild 57: Best&uuml;ckte Platine "300_RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
+_Bild 57: Best&uuml;ckte Platine "RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -985,5 +988,318 @@ _Anmerkung_: Leuchtet keine der beiden gr&uuml;nen LEDs, so liegt wahrscheinlich
 
 ### Versionen
 * V1 (241124): OK   
+
+[Zum Seitenanfang](#up)   
+<a name="x70"></a>   
+<a name="x71"></a>   
+
+# 7. Abschaltbares Gleis mit Strommessung (TUI)
+
+## 7.1 Prinzip
+
+Der Block **TUI** ist eine Weiterentwicklung des Blocks [Abschaltbares Gleis (2IO)](#x50).
+
+Zusätzlich zum Ein- und Ausschalten der Fahrspannung und der dazugehörenden Anzeige wird überprüft, ob ein Fahrstrom fließt. Fließt Strom, leuchtet statt der grünen LED eine gelbe LED.
+
+Im Gegensatz zu den oben beschriebenen Blöcken besteht der Block **TUI** aus drei Teilen:
+
+* Zusätzliche Fahrstrom-Schalt-/Erkennungsplatine `RCC_TUI_EXT`
+* Steuerungs-/Verbindungsplatine `RCC_TUI_STRG`
+* Anzeigeplatine `RCC_TUI_LED`
+
+<a name="x72"></a>   
+
+## 7.2 Externe Platine zum Fahrstrom-Schalten und -Erkennen
+### 7.2.1 Einleitung
+Die Platine `RCC_TUI_EXT` kann die Fahrspannung über ein Relais **ein- und ausschalten**. Weiters erkennt sie, ob  
+1. **Gleisspannung** (SCC-Fahrspannung) anliegt und ob  
+2. **Fahrstrom** fließt.
+
+Der Status wird über **LEDs angezeigt** und steht zusätzlich an **zwei digitalen Ausgängen** zur Verfügung:   
+* **Gleisspannung (DCC)** liegt an: **grüne LED** leuchtet.  
+* **Fahrstrom** fließt: **rote LED** leuchtet, Gleis ist **besetzt**.   
+
+Die Stromversorgung, der digitale Eingang und die beiden digitalen Ausgänge sind über einen **6-poligen Stecker** angeschlossen.   
+![UI_pin_J5](/images/200_rcc4_TUI_pin_J5.png "UI_pin_J5")   
+
+TONn ... Set Track Voltage ON (0V) = Schalte Fahrspannung ein (0V)  
+TVn ...... Track Voltage is ON (0V) = Fahrspannung ist ein (0V)   
+FREn .... Track Free (0V) = Gleis frei (0V)   
+
+<a name="x722"></a>   
+
+### 7.2.2 Schalten der Fahrspannung
+Das Schalten der Fahrspannung erfolgt mit einem monostabilen Relais IM03TS oder HFD4-3:  
+![rcc4_TUI_EXT_relay](/images/300_rcc4_TUI_EXT_relay.png "rcc4_TUI_EXT_relay")   
+
+<a name="x722"></a>   
+
+### 7.2.3 Gewinnung des Fahrstrom-Signals
+Der Fahrstrom (maximal 2 A) wird durch einen Shunt in eine Spannung umgewandelt:   
+
+![Schaltung Fahrstromsignal](/images/300_rcc4_TUI_EXT_shunt.png "Schaltung Fahrstromsignal")   
+
+Für kleine DCC-Ströme ergibt der Laststrom einen Spannungsabfall an Rs1, für größere Ströme wird durch die Dioden eine Spannung von 0,3 V bis 0,5 V erzeugt. Durch die Antiparallelschaltung der Dioden wird die Spannung auf diesen Wert begrenzt.   
+Die Widerstände Rs2 und Rs3 sorgen dafür, dass nur die Differenzspannung verstärkt wird.   
+
+#### Maximaler und minimaler Fahrstrom   
+Lokomotiven benötigen Ströme von einigen 100 mA. Der Gesamtstrom auf der Zuleitung wird durch den Booster festgelegt und ist - für N-Spur - üblicherweise 2 A (manchmal auch 3 A).   
+
+Bei einem Widerstand Rs1 von 10 kΩ und einer Spannung U<sub>Rs1</sub> von 0,5 V ergibt sich ein erkannter Strom von   
+I<sub>min</sub> = U<sub>Rs1</sub> / Rs1 = 0,5 / 10k = 50 μA.   
+
+Somit beträgt der Strombereich, der von der Schaltung erkannt werden soll, ca. 50 μA bis zu 2 A.   
+
+#### Grenzen für den Lastwiderstand   
+Für eine DCC-Spannung von zB ±20 V ergibt ein maximaler Laststrom von 2 A einen minimalen Lastwiderstand von 10 Ω. (Leistung 40 W!)   
+
+Um abgestellte Wagen ebenfalls zu erkennen, muss die Isolierung der Räder mit Widerstandslack (zB Uhlenbrock 40410) überbrückt werden. Der Widerstand sollte mindestens 10 kΩ betragen (keinesfalls weniger als 4 kΩ, da sonst Brandgefahr besteht). Bei einer DCC-Spannung von max. ±20V ergibt dies einen Strom von   
+$\ I_{max} = U_{DCC} / R_{min} = 20 / 10k = 2 mA. $   
+
+Maximaler Lastwiderstand bei einer DCC-Spannung von zB ±14V:   
+R<sub>Lmax</sub> = (14 - 0,6) / 60μ = 220 kΩ   
+Dies bedeutet, dass der Widerstandslack an einem Rad zwischen 10 kΩ und 220 kΩ groß sein soll.   
+
+<a name="x724"></a>   
+
+### 7.2.4 Signalverstärkung
+Die vom Shunt erzeugte Spannung wird mit einem INA333-Instrumentenverstärker-Board (CJMCU-333) verstärkt. Die Verstärkung ist von 1 bis zu ca. 1000 einstellbar.    
+Lässt man den Referenzpin VREF offen, so wird eine interne Referenzspannung von 3,3 V /2 = 1,65 V verwendet. Die Ausgangsspannung sollte daher eine Gleichspannung von 1,65 V sein.   
+
+Ohne Beschaltung und ohne Last sieht ein typisches Ausgangssignal allerdings oft so aus:   
+![Ausgangsspannung INA333 leer](/images/300_rcc6_ui_INA333_Uout_no_load.png "Ausgangsspannung INA333 leer")   
+
+Im Bild erkennt man eine Störspannung von 50 Hz mit diversen Überlagerungen.   
+**Beispielwerte**   
+Maximale Spannung: 2,26V   
+Spitze-Spitze-Spannung: 1,46 V   
+Gleichspannung zwischen den Impulsen: 1,6 V   
+Pulsfrequenz: 50 Hz (alle 20 ms)   
+__Anmerkung__: Vertauscht man die Eingänge DCC1 und DCC2, so wird das Signal invertiert...   
+
+Vergrößert man mit dem Trimmer auf dem INA333-Board die Verstärkung auf den Maximalwert, so erhält man folgendes Signal:   
+![Ausgangsspannung INA333 leer vmax](/images/o_rcc6_ui_INA333_Uout_no_load_vmax.png "Ausgangsspannung INA333 leer vmax")   
+
+Im Bild erkennt man, dass der Verstärker übersteuert ist (unten bei der 0V-Linie).   
+**Beispielwerte**   
+Maximale Spannung: 2,86V   
+Spitze-Spitze-Spannung: 2,86 V   
+Gleichspannung zwischen den Impulsen: 1,65 V   
+Pulsfrequenz: 50 Hz (alle 20 ms)   
+
+Beschaltet man den Ausgang des INA333 mit einem Spitzenspannungsspeicher (D3-C1) und RC-Tiefpass, so ändert sich der Ausgang des INA333 nicht (d.h. es gibt keine Rückwirkung).   
+![INA333 Schaltung Ausgangsfilter](/images/300_rcc6_ui_schematic_INA333_output_filter.png "INA333 Schaltung Ausgangsfilter")   
+
+Am Ausgang des Filters liegt eine Gleichspannung, die durch eine Störspannung überlagert ist (zB 0,26 mV). Die folgende Tabelle enthält einige Messwerte für die Spannung UF2.   
+
+| Lastwiderstand <br> kΩ | UF2 <br> V |   
+|:----:|:-----:|   
+| unendlich | 0,755 |   
+| 330k | 0,798 |   
+| 220k | 0,821 |   
+| 100k | 0,933 |   
+|  47k | 1,042 |   
+|  22k | 1,068 |   
+|  10k | 1,076 |   
+|   1k | 1,085 |   
+| 0,1k | 1,100 |   
+| 0,02k | 1,112 |   
+
+Die grafische Darstellung der Werte zeigt, dass bei hohen Lastwiderständen der Shunt-Widerstand und bei kleinen Lastwiderständen die Shunt-Dioden für den Wert der Filterspannung verantwortlich sind.   
+![INA333 Filterausgang lin](/images/300_rcc6_ui_INA333_filter_output_lin.png "INA333 Filterausgang lin")   
+![INA333 Filterausgang log](/images/300_rcc6_ui_INA333_filter_output_log.png "INA333 Filterausgang log")   
+
+<a name="x725"></a>   
+
+### 7.2.5 Erzeugen des Frei-Signals
+Da das Ausgangssignals des Filters stark verrauscht ist, erfolgt die Erzeugung des Digitalsignals in zwei Stufen:   
+* In einem ersten Schritt wird die Spannung mit einem Sollwert verglichen.   
+* Im zweiten Schritt wird diese Spannung UK1 mit einem Tiefpass geglättet und nochmals mit der halben Versorgungsspannung verglichen.   
+
+==> Eine Ausgangsspannung von 0 V bedeutet, dass kein Fahrstrom fließt bzw. das Gleis nicht belegt ist.    
+==> Eine Ausgangsspannung von 5 V bedeutet, dass ein Fahrstrom fließt bzw. das Gleis besetzt ist.    
+
+Die Ausgangsspannung wird (von einem Transistor invertiert) durch eine rote LED angezeigt:  
+* Rote LED ein = Fahrstrom fließt = Gleis besetzt.   
+* Rote LED aus = kein Fahrstrom = Gleis frei oder kein Fahrstrom.   
+
+![LM393 Schaltung Digitalsignal](/images/300_rcc4_ui_schematic_LM393_comparator.png "LM393 Schaltung Digitalsignal")   
+
+<a name="x726"></a>   
+
+### 7.2.6 DCC-Spannungserkennung
+Für die Gleisspannungserkennung wird das Gleissignal gleichgerichtet (1N4007), geglättet (100 &Omega;, 33 &micro;F) und einem Optokoppler zugeführt (1 k&Omega;, SFH615A). Der Optokoppler schaltet die **grüne LED** und mit T2 wird das Signal entkoppelt.   
+![dcc_track_U_detection_circuit](/images/300_rcc4_track_U_detection_circuit.png "dcc_track_U_detection_circuit")   
+
+<a name="x727"></a>   
+
+### 7.2.7 Gesamtschaltung
+KiCad-Schaltplan der "RCC_TUI_EXT_V1"-Platine:   
+![RCC_TUI_EXT_V1_circuit](/images/600_RCC_TUI_EXT_V1_circuit.png "RCC_TUI_EXT_V1_circuit")   
+
+<a name="x728"></a>   
+
+### 7.2.8 Bestücken der Platine
+Bild der Platine `RCC_TUI_EXT_V1` zur DCC-Gleis-Spannungs-/Strom-Erkennung:   
+![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_RCC_TUI_EXT_V1.png "Platine Gleis-UI-Erkennung")   
+
+Best&uuml;ckte Platine "`RCC_TUI_EXT_V1`"   
+![Bestückte Platine RCC_TUI_EXT_V1](/images/300_RCC_TUI_EXT_V1_assembled.png "Bestückte Platine RCC_TUI_EXT_V1)   
+
+#### St&uuml;ckliste   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
+|--------|-------------------|---------------------|-------------------------|   
+| 5 | C1, C2, C4, C7, C8 | Kondensator 1 &micro;F, 16 V, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 2 | C3, C5 | Tantal-Elko 10 &micro;F, 16 V, Raster 2,54 mm | C_L4.32mm_D3.81mm_P2.54mm_kh |   
+| 1 | C6 | Elko 33 &micro;F, 35 V, Raster 2,54 mm | CP_Radial_D8.0mm_P2.50mm |   
+| 2 | D1, D2 | Diode SB240 | D_DO-15_P3.81mm_Vertical_AnodeUp |   
+| 1 | D3 | Diode BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
+| 1 | D4 | LED rot, 3 mm, 2 mA | LED_D3.0mm |   
+| 1 | D5 | Diode 1N4007 | D_DO-41_SOD81_P2.54mm_Vertical_AnodeUp_rect8 |   
+| 1 | D6 | LED gr&uuml;n, 3 mm, 2 mA | LED_D3.0mm |   
+| 1 | D7 | Diode 1N4148 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
+| 2 | D4, D6 | gedrehte Buchsen, 2-polig |   |   
+| 2 | J1, J2 | Schraubklemme, 2-polig, schwarz, 5 mm | Screw_Terminal_01x02_P5 |   
+| 1 | J3 | Stiftleiste 2-polig | PinSocket_1x02_P2.54mm_Vertical_kh |   
+| 1 | J3 | Jumper 2-polig |    |   
+| 1 | J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
+| 1 | K1 | Monostabiles Relais IM03TS 3VDC | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
+| 1 | Q1, Q2 | npn-Transistor BC337-40 | TO-92_Inline_Wide_custom |   
+| 1 | Q3 | pnp-Transistor BC327-40 | TO-92_Inline_Wide_2.2225 |   
+| 2 | R16, R18 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R11 | 100 &Omega;| R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 5 | R4, R8, R10, R12, R13 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R14, R15 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 4 | R2, R6, R7, R20 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | Rs1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 3 | R1, Rs2, Rs3 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R3 | 33 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R5 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 2 | R9, R17 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R19 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | Rs4 | 220 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P10,16mm_Horizontal |   
+| 1 | RV1 | 10-Gang-Trimmer 10 k&Omega; stehend | Trim_Bourns_3296W_Vertical |   
+| 1 | U1 | INA333_Board | INA333-Board |   
+| 2 | U1 | Stiftleiste 4-Pin |   |   
+| 2 | U1 | Buchsenleiste 4-Pin |   |   
+| 1 | U2 | 2-fach-Komparator LM393 | DIP-8_W7.62mm_Socket_LongPads |   
+| 1 | U2 | Präzisionssockel 8 Pin (2x 4 Pin, Abstand 7,62 mm) |   |    
+| 1 | U3 | Optokoppler SFH615A | DIP-4_W7.62mm |   
+| 1 | U3 | Präzisionssockel 4 Pin (2x 2 Pin, Abstand 7,62 mm) |   |    
+
+Bauteile der "RCC_TUI_EXT_V1"-Platine (Version 1):   
+![rcc6_RCC_TUI_EXT_V1_parts](/images/300_rcc6_RCC_TUI_EXT_V1.png "rcc6_RCC_TUI_EXT_V1")   
+
+#### Vorbereitung   
+* 2x gedrehte, 2-polige Buchsen für die LEDs: Diese von den meist 40-poligen Buchsenleisten herunterschneiden.   
+* 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.   
+* 2x 4-polige Buchsenleiste für das INA333-Board: Von 8- bzw. 10-poligen Buchsenleisten herunterschneiden.    
+
+#### Best&uuml;ckung   
+1. Widerst&auml;nde R1, Rs2, Rs3 (liegend, möglichst flach, 10 k&Omega;)   
+2. Widerstand R5 (liegend, 47 k&Omega;)   
+3. Widerstand Rs4 (liegend, 220 k&Omega;)   
+4. Diode D3 (BAT48, liegend, auf Polung achten: Kathode bei weißer Linie)   
+5. Kondensatoren C1, C2, C4, C7, C8 (1 &micro;F, Raster 2,54 mm)   
+6. Buchsenleisten U1 2x 4-Pin   
+7. gedrehte Buchsen D4, D6 für die LEDs   
+8. Fassungen U2 (2x 4 Pin) und U3 (2x 2 Pin, auf Einbaurichtung achten!)   
+9. Diode D5 (1N4007, stehend, auf Polung achten: Kathode unten beim Kreis)   
+10. Tantal-Elko C3, C5 (10 &micro;F, auf + Polung achten)   
+
+10. Widerst&auml;nde R16, R17 (47 &Omega;)   
+11. Widerstand R11 (100 &Omega;)   
+12. Widerst&auml;nde R4, R8, R10, R12, R13, R15 (1 k&Omega;)   
+13. Widerst&auml;nde R2, R6, R7, Rs1 (10 k&Omega;)   
+14. Widerstand R3 (33 k&Omega;)   
+15. Widerst&auml;nde R9, R14 (47 k&Omega;)   
+16. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
+17. Transistor Q1, Q2 (BC337-40)   
+18. Stiftleiste 2-polig J3   
+19. Diode D1, D2 (SB240, auf Polung achten: Kathode unten beim Kreis)   
+
+21. Wannenstecker 6-polig J5 (auf Polung achten)   
+22. Schraubklemme J1, J2 (2-polig)   
+23. 10-Gang-Trimmer RV1 (10 k&Omega; stehend, Schraube Richtung Printmitte)   
+
+##### Stiftleisten ans INA333_Board anlöten
+Stiftleisten auf der Unterseite nach UNTEN anlöten.   
+
+##### Print vervollständigen
+1. ICs bestücken (LM393, SFH615A, auf richtige Polung achten!)   
+2. INA333_Board aufstecken   
+3. LEDs auf passende Länge kürzen und in die Fassungen stecken   
+
+<a name="x729"></a>   
+
+### 7.2.9 Inbetriebnahme und Test
+
+![UI_pin_J5](/images/200_rcc4_TUI_pin_J5.png "UI_pin_J5")   
+
+1. Versorgungsspannung anlegen: 5V an Pin 4 vom 6-poligen Wannenstecker J5, GND (0 V) an Pin 6 von J5   
+   ► Die rote LED (FRE) leuchtet nicht.   
+   ► Die grüne LED (DCC) leuchtet nicht.   
+2. DCC-Spannung am Eingang der Schaltung anlegen:   
+   ► Die grüne LED (DCC) leuchtet (noch) nicht.   
+3. DCC-Spannung durchschalten: GND an Pin 5 von J5 anlegen.  
+   ► Die grüne LED (DCC) leuchtet.   
+4. Verstärkung des INA333-Boards bis zum Anschlag **gegen den Uhrzeigersinn** drehen (volle Verstärkung)   
+5. Jumper J3 aufstecken   
+6. Je nach Trimmer-Stellung die Schaltschwelle einstellen:   
+   * Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet. Jumper J3 abziehen: rote LED erlischt.   
+   * Wenn die rote LED __nicht leuchtet__: Trimmer __gegen den Uhrzeigersinn__ drehen, bis die rote LED zu leuchten beginnt. Jumper J3 abziehen: rote LED erlischt.   
+
+Der Jumper J3 dient nur zum Einstellen. Im Betrieb muss er entfernt werden.   
+Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise mit dem Finger verbindet.   
+
+#### Kontrolle der Digitalausgänge
+1. Messgerät auf Spannungsmessung stellen, den COM-Anschluss an Pin 6 vom 6-poligen Wannenstecker J5, V an Pin 2 von J5 (TVn) anschließen.   
+2. DCC-Versorgung angeschlossen: TVn = 5 V (grüne LED ein), DCC-Versorgung abgeklemmt: TVn = 0 V (grüne LED aus).   
+3. Messgerät mit COM an an Pin 6 vom 6-poligen Wannenstecker J5, V an Pin 1 von J5 (FREn) anschließen.   
+4. DCC-Versorgung am ""Booster"-Eingang anschließen. Jumper J3 offen: FREn = 0 V (rote LED aus), Jumper J3 gesteckt: FREn = 5 V (rote LED leuchtet).   
+
+**Ruhezustand**: Bei offenem Jumper und ohne Lok (bzw. Last, Waggon) am Gleis darf die **rote LED nicht** leuchten.   
+
+<a name="x72A"></a>   
+
+### 7.2.10 Versionen
+* V1 (260902): OK   
+
+<a name="x73"></a>   
+
+## 7.3 Steuerungsplatine zum Fahrstrom-Schalten und -Erkennen
+
+Da die Hauptarbeit von der externen Platine übernommen wird, muss die Steuerplatine lediglich die Signale zur Anzeigeplatine weiterleiten.  
+Zusätzlich werden die Datenleitungen geschützt:  
+* **Eingänge** (`IONn`, `TV1n`, `FRE1n`): Diode und `100 kΩ`-Widerstand nach `+5 V`  
+* **Ausgänge** (I²C-Rückmeldungen `RTVn`, `RFREn`): Diode und `4,7 kΩ`-Widerstand nach `+5 V`  
+
+![TUI_STRG_circuit1](/images/300_rcc4_TUI_STRG_circuit1.png "TUI_STRG_circuit1") 
+![TUI_STRG_circuit2](/images/300_rcc4_TUI_STRG_circuit2.png "TUI_STRG_circuit2")  
+
+KiCad-Schaltplan der `RCC_TUI_STRG_V1`-Platine:  
+![RCC_TUI_STRG_V1_circuit](/images/600_RCC_TUI_STRG_V1_circuit.png "RCC_TUI_STRG_V1_circuit")   
+
+![Platine zum Fahrstrom-Schalten und -Erkennen](/images/pcb_f/PCB_F_RCC_TUI_STRG_V1.png "Platine zum Fahrstrom-Schalten und -Erkennen")   
+
+Best&uuml;ckte Platine "RCC_TUI_STRG_V1"   
+![Bestückte Platine RCC_TUI_STRG](/images/300_RCC_TUI_STRG_V1_assembled.png "Bestückte Platine RCC_TUI_STRG")   
+
+
+
+__St&uuml;ckliste__   
+| Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
+|:------:|:-------------|:-----------------------|:------------------------|   
+| 1 | C1 | Kondensator 100 nF | C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
+| 4 | D1, D2, D3, D4 | Schottky-Diode BAT48 | D_DO-35_P7.62mm_Horizontal_kh |   
+| 1 | D5 | Schottky-Diode BAT48 | D_DO-35_P12.7mm_Horizontal_kh |   
+| 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_kh |   
+| 2 | J3, J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
+| 1 | J4 | Wannenstecker 10-polig, stehend | Box_02x05_P2.54mm_Vertical_kh |   
+| 1 | R1 | 100 k&Omega; | R_Axial_P5.08_Vertical_kh |   
+| 2 | R2, R3 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | JP1 | Jumper_2_Bridged | SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm |   
+
+
 
 [Zum Seitenanfang](#up)   
