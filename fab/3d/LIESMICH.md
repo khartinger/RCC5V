@@ -5,7 +5,8 @@ Letzte &Auml;nderung: 31.3.2025 <a name="up"></a><br>
 </td></tr></table>   
 
 # Einleitung
-Dieses Verzeichnis enth&auml;lt 3mf-Dateien f&uuml;r verschiedene Bauteile von Eisenbahnmodulen.   
+Dieses Verzeichnis enth&auml;lt FreeCad- und 3mf-Dateien f&uuml;r verschiedene Bauteile von Eisenbahnmodulen.   
+Die 3mf-Dateien befinden sich im Unterverzeichnis `3mf`.
 
 <a name="x10"></a>   
 

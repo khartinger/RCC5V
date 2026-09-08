@@ -219,6 +219,7 @@ _Bild 17: Bauteile f&uuml;r die "Shield_I2C_5V_3V3_big"-Platine_
 ### Best&uuml;ckung   
 1. Die beiden gelben 4-poligen Stiftleisten sowohl in die Konverter- als auch in in die I2C-Platine stecken und beidseitig auf der Bauteilseite des Prints verl&ouml;ten.  
    __Wichtig__: Die Konverter-Platine so drehen, dass die Bauteile nach unten zeigen und die 3V- und 5V-Anschl&uuml;sse auf der jeweils richtigen Seite sind!   
+   Siehe _Bild 15_ (Bestückte Platine "Shield_I2C_5V_3V3_big")  
 2. 8-polige Stiftleisten Stiftleisten U1 nach unten (auf L&ouml;tseite)   
 3. 4-polige Stiftleisten J5 und J6 nach unten (auf L&ouml;tseite), auf senkrechte Ausrichtung achten!   
 4. 4-polige Buchsenleiste J4 auf die Bauteilseite l&ouml;ten, auf senkrechte Ausrichtung achten!   
@@ -229,14 +230,16 @@ _Bild 17: Bauteile f&uuml;r die "Shield_I2C_5V_3V3_big"-Platine_
 * V2 (250126): OK   
 
 ### Montage   
-Die "Shield_I2C_5V_3V3_big"-Platine wird mit der Bauteilseite (Buchse) auf die vormontierte OLED-Fassung aufgesteckt.   
+Das OLED-Display mitvier 2 x 4 mm Schrauben vorsichtig an der OLED-Fassung anschrauben (Vorsicht Bruchgefahr!).  
 
 ![OLED_mount](/images/300_OLED_mount.png "OLED_mount")   
 _Bild 18: vormontierte OLED-Fassung_   
 
+Die "Shield_I2C_5V_3V3_big"-Platine mit der Bauteilseite (Buchse) auf die 4-polige Stiftleiste des Displays stecken.   
+
 ![OLED_mount2](/images/300_OLED_mount_i2c_big.png "OLED_mount2")   
 _Bild 19: "Shield_I2C_5V_3V3_big"-Platine auf OLED-Fassung aufgesteckt_   
 
-Die Verschraubung erfolgt mit M 2,6 x 8 mm Schrauben.   
+Die "Shield_I2C_5V_3V3_big"-Platine mit vier M 2,6 x 8 mm Schrauben an der Fassung festschrauben.   
 
 [Zum Seitenanfang](#up)   

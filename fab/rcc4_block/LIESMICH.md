@@ -752,18 +752,33 @@ _Nicht vergessen_: Optokoppler U1 richtig herum in die Fassung stecken...
 <a name="x52"></a>   
 
 ## 5.2 LED-Anzeige f&uuml;r Fahrstromabschaltung (2IO)
-Diese Platine dient zum Bedienen der Schaltplatine "RW_5V_2IO_STRG".   
-Im Ruhezustand (beide _*Schalter*_ nicht gedr&uuml;ckt) leuchtet die gelbe LED und entweder die rote oder gr&uuml;ne LED, je nachdem, ob der Fahrstrom &uuml;ber DCC oder MQTT aus- oder eingeschaltet ist.   
-Wird der Schalter "AUS" bet&auml;tigt, ist der Fahrstrom auf jeden Fall ausgeschaltet, bei "EIN" (ohne "AUS") ist der Fahrstrom eingeschaltet. Sind beide Schalter nicht bet&auml;tigt, erfolgt die Steuerung &uuml;ber den I²C-Bus.   
+Diese Platine ist das User-Interface zur Schaltplatine "RW_5V_2IO_STRG". Sie hat zwei Schalter sowie fünf LEDs.    
+
+![Blockpanel DisconTrack](/images/300_rcc4_Blockpanel_DisconTrack2.png "Blockpanel DisconTrack")   
+_Bild 49: Bedienpanel für die Fahrstromabschaltung 2IO_   
+
+* Im Ruhezustand sind beide _*Schalter*_ nicht gedr&uuml;ckt:  
+  - 🟡 Die **mittlere, gelbe** LED leuchtet: Fernsteuerung über DCC bzw. I²C (Remote).  
+  - 🔴🟢 Die **rote oder gr&uuml;ne** LED leuchtet, je nachdem, ob der Fahrstrom &uuml;ber DCC oder MQTT aus- oder eingeschaltet ist.   
+
+* Wird der obere, rote **Schalter "AUS"** bet&auml;tigt, ist der Fahrstrom **auf jeden Fall** ausgeschaltet.  
+  - 🟡 Die **obere, gelbe** LED leuchtet.  
+  - 🔴 Die **rote** LED leuchtet.
+
+* Wird der untere, grüne **Schalter "EIN"** bet&auml;tigt, hängt das Ergebnis vom oberen, roten Schalter "AUS" ab. Wenn dieser nicht betätigt ist:  
+  - 🟡 Die **untere, gelbe** LED leuchtet.  
+  - 🟢 Die **grüne** LED leuchtet.
+
+#### Schaltplan
 
 ![RW_5V_2IO_LED_circuit](/images/600_RW_5V_2IO_LED_circuit.png "RW_5V_2IO_LED_circuit")   
-_Bild 49: Schaltplan der "RW_5V_2IO_LED"-Platine_   
+_Bild 50: KiCad-Schaltplan der "RW_5V_2IO_LED"-Platine_   
 
 ![Platine 2-poliges Schalten](/images/pcb_f/PCB_F_RW_5V_2IO_LED_V2.png "Platine 2-poliges Schalten")   
-_Bild 50: Platine zum Schalten des Fahrstroms_   
+_Bild 51: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_LED](/images/300_RW_5V_2IO_LED.png "RW_5V_2IO_LED")   
-_Bild 51: Best&uuml;ckte Platine "RW_5V_2IO_LED"_   
+_Bild 52: Best&uuml;ckte Platine "RW_5V_2IO_LED"_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -788,7 +803,7 @@ _Bild 51: Best&uuml;ckte Platine "RW_5V_2IO_LED"_
 
 Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs und Widerst&auml;nde.   
 ![RW_5V_2IO_LED_parts](/images/300_RW_5V_2IO_LED_parts.png "RW_5V_2IO_LED_parts")   
-_Bild 52: Bauteile der "RW_5V_2IO_LED"-Platine_   
+_Bild 53: Bauteile der "RW_5V_2IO_LED"-Platine_   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D4, D5, D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -832,7 +847,7 @@ _Zum Beispiel:_
 * gelb: R1 von J4-7 zum Voltmeter COM (-)   
 
 ![2IO Testverkabelung](/images/300_2IO_test_wiring.png "2IO Testverkabelung") &nbsp; ![2IO Testverkabelung2](/images/300_2IO_test_wiring_img.png "2IO Testverkabelung2")   
-_Bild 53: Verkabelung zum Testen des 2IO-Blocks_   
+_Bild 54: Verkabelung zum Testen des 2IO-Blocks_   
 
 Statt der beiden eingezeichneten Voltmeter kann nat&uuml;rlich auch nur eines verwendet werden.   
 
@@ -853,7 +868,7 @@ Das bedeutet: Kein Ausgangssignal ergibt die R&uuml;ckmeldung R1 = 0 V.
 4. Funktionstest: wie oben beschrieben.   
 
 ![Pinbelegung_2IO-J5](/images/200_J5_pins_2IO.png "Pinbelegung 2IO-J5")   
-_Bild 54: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
+_Bild 55: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
 
 ### Versionen
 * V1 (241022): spiegelverkehrte Anordnung der LEDs.   
@@ -869,13 +884,13 @@ _Bild 54: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_
 Diese Platine dient zum zweipoligen Umschalten 2x Um (engl. Double Pole Double Throw, kurz DPDT) einer Spannung. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber zwei Optokoppler (je einer f&uuml;r den Zustand NC = normally closed und NO = normally open).   
 
 ![RW_5V_DPDT_STRG_circuit](/images/600_RW_5V_DPDT_STRG_circuit.png "RW_5V_DPDT_STRG_circuit")   
-_Bild 55: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
+_Bild 56: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
 
 ![Platine DPDT](/images/pcb_f/PCB_F_RW_5V_DPDT_STRG_V1.png "Platine DPDT")   
-_Bild 56: Platine zum zweipoligen Umschalten einer Spannung_   
+_Bild 57: Platine zum zweipoligen Umschalten einer Spannung_   
 
 ![RW_5V_DPDT_STRG](/images/300_RW_5V_DPDT_STRG_V1.png "RW_5V_DPDT_STRG")   
-_Bild 57: Best&uuml;ckte Platine "RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
+_Bild 58: Best&uuml;ckte Platine "RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -930,13 +945,13 @@ Diese Platine dient zum Ansteuern und Anzeigen der Zust&auml;nde der Schaltplati
 * eine gr&uuml;ne LED links unten zur Anzeige einer Ausgangsspannung an den Pins NO (normally open) J5-Pin 5 f&uuml;r Vout+ und J5-Pin 6 f&uuml;r Vout-
 
 ![RW_5V_DPDT_LED](/images/300_DPDT_LED_front.png "RW_5V_DPDT_LED") ![RW_5V_DPDT_LED](/images/300_DPDT_LED_back.png "RW_5V_DPDT_LED")     
-_Bild 58: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
+_Bild 59: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
 
 ![RW_5V_DPDT_LED_circuit](/images/600_RW_5V_DPDT_LED_circuit.png "RW_5V_DPDT_LED_circuit")   
-_Bild 59: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
+_Bild 60: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
 
 ![Platine 2-poliges Umschalten](/images/pcb_f/PCB_F_RW_5V_DPDT_LED_V1.png "Platine 2-poliges Umschalten")   
-_Bild 60: Bedien-Platine zum 2-poligen Umschalten_   
+_Bild 61: Bedien-Platine zum 2-poligen Umschalten_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -972,7 +987,7 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 ### Test   
 Die Eingangsspannung IN+ und IN- sowie die Ausgangsspannung NC ("Normally Closed") bzw. NO ("Normally Open") des DPDT-Blocks liegen am 6-poligen Stecker J5 von RW_5V_DPDT_STRG.   
 ![Pinbelegung_DPDT-J5](/images/200_J5_pins_DPDT.png "Pinbelegung DPDT-J5")   
-_Bild 61: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
+_Bild 62: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
 
 1. Einstecken der LEDs: Die rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
 2. Aufsetzen des Prints _RW_5V_DPDT_LED_ auf die Steuerungsplatine _RW_5V_DPDT_STRG_.   
@@ -1010,6 +1025,7 @@ Im Gegensatz zu den oben beschriebenen Blöcken besteht der Block **TUI** aus dr
 <a name="x72"></a>   
 
 ## 7.2 Externe Platine zum Fahrstrom-Schalten und -Erkennen
+
 ### 7.2.1 Einleitung
 Die Platine `RCC_TUI_EXT` kann die Fahrspannung über ein Relais **ein- und ausschalten**. Weiters erkennt sie, ob  
 1. **Gleisspannung** (SCC-Fahrspannung) anliegt und ob  
@@ -1020,7 +1036,9 @@ Der Status wird über **LEDs angezeigt** und steht zusätzlich an **zwei digital
 * **Fahrstrom** fließt: **rote LED** leuchtet, Gleis ist **besetzt**.   
 
 Die Stromversorgung, der digitale Eingang und die beiden digitalen Ausgänge sind über einen **6-poligen Stecker** angeschlossen.   
+
 ![UI_pin_J5](/images/200_rcc4_TUI_pin_J5.png "UI_pin_J5")   
+_Bild 62: Belegung des 6-poligen Anschlusses der `RCC_TUI_EXT`-Platine_
 
 TONn ... Set Track Voltage ON (0V) = Schalte Fahrspannung ein (0V)  
 TVn ...... Track Voltage is ON (0V) = Fahrspannung ist ein (0V)   
@@ -1031,6 +1049,7 @@ FREn .... Track Free (0V) = Gleis frei (0V)
 ### 7.2.2 Schalten der Fahrspannung
 Das Schalten der Fahrspannung erfolgt mit einem monostabilen Relais IM03TS oder HFD4-3:  
 ![rcc4_TUI_EXT_relay](/images/300_rcc4_TUI_EXT_relay.png "rcc4_TUI_EXT_relay")   
+_Bild 63: Einschalten der Fahrspannung mit Relais_
 
 <a name="x722"></a>   
 
@@ -1038,6 +1057,7 @@ Das Schalten der Fahrspannung erfolgt mit einem monostabilen Relais IM03TS oder 
 Der Fahrstrom (maximal 2 A) wird durch einen Shunt in eine Spannung umgewandelt:   
 
 ![Schaltung Fahrstromsignal](/images/300_rcc4_TUI_EXT_shunt.png "Schaltung Fahrstromsignal")   
+_Bild 64: Shunt zur Gewinnung des Fahr**strom**signals_
 
 Für kleine DCC-Ströme ergibt der Laststrom einen Spannungsabfall an Rs1, für größere Ströme wird durch die Dioden eine Spannung von 0,3 V bis 0,5 V erzeugt. Durch die Antiparallelschaltung der Dioden wird die Spannung auf diesen Wert begrenzt.   
 Die Widerstände Rs2 und Rs3 sorgen dafür, dass nur die Differenzspannung verstärkt wird.   
@@ -1068,6 +1088,7 @@ Lässt man den Referenzpin VREF offen, so wird eine interne Referenzspannung von
 
 Ohne Beschaltung und ohne Last sieht ein typisches Ausgangssignal allerdings oft so aus:   
 ![Ausgangsspannung INA333 leer](/images/300_rcc6_ui_INA333_Uout_no_load.png "Ausgangsspannung INA333 leer")   
+_Bild 65: Verstärkte Shunt-Spannung ohne Last_
 
 Im Bild erkennt man eine Störspannung von 50 Hz mit diversen Überlagerungen.   
 **Beispielwerte**   
@@ -1079,6 +1100,7 @@ __Anmerkung__: Vertauscht man die Eingänge DCC1 und DCC2, so wird das Signal in
 
 Vergrößert man mit dem Trimmer auf dem INA333-Board die Verstärkung auf den Maximalwert, so erhält man folgendes Signal:   
 ![Ausgangsspannung INA333 leer vmax](/images/o_rcc6_ui_INA333_Uout_no_load_vmax.png "Ausgangsspannung INA333 leer vmax")   
+_Bild 66: Stark verstärkte Shunt-Spannung ohne Last_
 
 Im Bild erkennt man, dass der Verstärker übersteuert ist (unten bei der 0V-Linie).   
 **Beispielwerte**   
@@ -1089,6 +1111,7 @@ Pulsfrequenz: 50 Hz (alle 20 ms)
 
 Beschaltet man den Ausgang des INA333 mit einem Spitzenspannungsspeicher (D3-C1) und RC-Tiefpass, so ändert sich der Ausgang des INA333 nicht (d.h. es gibt keine Rückwirkung).   
 ![INA333 Schaltung Ausgangsfilter](/images/300_rcc6_ui_schematic_INA333_output_filter.png "INA333 Schaltung Ausgangsfilter")   
+_Bild 67: Spitzenspannungsspeicher_
 
 Am Ausgang des Filters liegt eine Gleichspannung, die durch eine Störspannung überlagert ist (zB 0,26 mV). Die folgende Tabelle enthält einige Messwerte für die Spannung UF2.   
 
@@ -1108,6 +1131,7 @@ Am Ausgang des Filters liegt eine Gleichspannung, die durch eine Störspannung �
 Die grafische Darstellung der Werte zeigt, dass bei hohen Lastwiderständen der Shunt-Widerstand und bei kleinen Lastwiderständen die Shunt-Dioden für den Wert der Filterspannung verantwortlich sind.   
 ![INA333 Filterausgang lin](/images/300_rcc6_ui_INA333_filter_output_lin.png "INA333 Filterausgang lin")   
 ![INA333 Filterausgang log](/images/300_rcc6_ui_INA333_filter_output_log.png "INA333 Filterausgang log")   
+_Bild 68: Spitzenspannung in Abhängigkeit vom Lastwiderstand_
 
 <a name="x725"></a>   
 
@@ -1124,27 +1148,32 @@ Die Ausgangsspannung wird (von einem Transistor invertiert) durch eine rote LED 
 * Rote LED aus = kein Fahrstrom = Gleis frei oder kein Fahrstrom.   
 
 ![LM393 Schaltung Digitalsignal](/images/300_rcc4_ui_schematic_LM393_comparator.png "LM393 Schaltung Digitalsignal")   
+_Bild 69: Schaltung zur Erzeugung des Gleis-Frei-Signals_
 
 <a name="x726"></a>   
 
 ### 7.2.6 DCC-Spannungserkennung
 Für die Gleisspannungserkennung wird das Gleissignal gleichgerichtet (1N4007), geglättet (100 &Omega;, 33 &micro;F) und einem Optokoppler zugeführt (1 k&Omega;, SFH615A). Der Optokoppler schaltet die **grüne LED** und mit T2 wird das Signal entkoppelt.   
 ![dcc_track_U_detection_circuit](/images/300_rcc4_track_U_detection_circuit.png "dcc_track_U_detection_circuit")   
+_Bild 70: DCC-Gleis**spannungs**erkennung_
 
 <a name="x727"></a>   
 
 ### 7.2.7 Gesamtschaltung
-KiCad-Schaltplan der "RCC_TUI_EXT_V1"-Platine:   
+
 ![RCC_TUI_EXT_V1_circuit](/images/600_RCC_TUI_EXT_V1_circuit.png "RCC_TUI_EXT_V1_circuit")   
+_Bild 71: KiCad-Schaltplan der "RCC_TUI_EXT_V1"-Platine_
 
 <a name="x728"></a>   
 
 ### 7.2.8 Bestücken der Platine
 Bild der Platine `RCC_TUI_EXT_V1` zur DCC-Gleis-Spannungs-/Strom-Erkennung:   
 ![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_RCC_TUI_EXT_V1.png "Platine Gleis-UI-Erkennung")   
+_Bild 72: Platine `RCC_TUI_EXT_V1` zur DCC-Gleis-Spannungs-/Strom-Erkennung_
 
 Best&uuml;ckte Platine "`RCC_TUI_EXT_V1`"   
-![Bestückte Platine RCC_TUI_EXT_V1](/images/300_RCC_TUI_EXT_V1_assembled.png "Bestückte Platine RCC_TUI_EXT_V1)   
+![Bestückte Platine RCC_TUI_EXT_V1](/images/300_RCC_TUI_EXT_V1_assembled.png "Bestückte Platine RCC_TUI_EXT_V1")   
+_Bild 73: Best&uuml;ckte Platine `RCC_TUI_EXT_V1`_  
 
 #### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -1189,6 +1218,7 @@ Best&uuml;ckte Platine "`RCC_TUI_EXT_V1`"
 
 Bauteile der "RCC_TUI_EXT_V1"-Platine (Version 1):   
 ![rcc6_RCC_TUI_EXT_V1_parts](/images/300_rcc6_RCC_TUI_EXT_V1.png "rcc6_RCC_TUI_EXT_V1")   
+_Bild 74: Bauteile der "RCC_TUI_EXT_V1"-Platine_   
 
 #### Vorbereitung   
 * 2x gedrehte, 2-polige Buchsen für die LEDs: Diese von den meist 40-poligen Buchsenleisten herunterschneiden.   
@@ -1235,6 +1265,7 @@ Stiftleisten auf der Unterseite nach UNTEN anlöten.
 ### 7.2.9 Inbetriebnahme und Test
 
 ![UI_pin_J5](/images/200_rcc4_TUI_pin_J5.png "UI_pin_J5")   
+_Bild 75: Belegung des 6-poligen Anschlusses der `RCC_TUI_EXT`-Platine_
 
 1. Versorgungsspannung anlegen: 5V an Pin 4 vom 6-poligen Wannenstecker J5, GND (0 V) an Pin 6 von J5   
    ► Die rote LED (FRE) leuchtet nicht.   
@@ -1266,26 +1297,34 @@ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise
 * V1 (260902): OK   
 
 <a name="x73"></a>   
+<a name="x731"></a>   
 
 ## 7.3 Steuerungsplatine zum Fahrstrom-Schalten und -Erkennen
+
+### 7.3.1 Schaltung
 
 Da die Hauptarbeit von der externen Platine übernommen wird, muss die Steuerplatine lediglich die Signale zur Anzeigeplatine weiterleiten.  
 Zusätzlich werden die Datenleitungen geschützt:  
 * **Eingänge** (`IONn`, `TV1n`, `FRE1n`): Diode und `100 kΩ`-Widerstand nach `+5 V`  
 * **Ausgänge** (I²C-Rückmeldungen `RTVn`, `RFREn`): Diode und `4,7 kΩ`-Widerstand nach `+5 V`  
 
-![TUI_STRG_circuit1](/images/300_rcc4_TUI_STRG_circuit1.png "TUI_STRG_circuit1") 
-![TUI_STRG_circuit2](/images/300_rcc4_TUI_STRG_circuit2.png "TUI_STRG_circuit2")  
+![TUI_STRG_circuit12](/images/300_rcc4_TUI_STRG_circuit12.png "TUI_STRG_circuit12") 
+_Bild 76: Schutzbeschaltung der Ein- und Ausgangsleitungen_
 
-KiCad-Schaltplan der `RCC_TUI_STRG_V1`-Platine:  
+Gesamtschaltung:  
+
 ![RCC_TUI_STRG_V1_circuit](/images/600_RCC_TUI_STRG_V1_circuit.png "RCC_TUI_STRG_V1_circuit")   
+_Bild 77: KiCad-Schaltplan der `RCC_TUI_STRG_V1`-Platine_  
+
+<a name="x732"></a>   
+
+### 7.3.2 Bestücken der Platine
 
 ![Platine zum Fahrstrom-Schalten und -Erkennen](/images/pcb_f/PCB_F_RCC_TUI_STRG_V1.png "Platine zum Fahrstrom-Schalten und -Erkennen")   
+_Bild 78: Platine `RCC_TUI_STRG_V1`_  
 
-Best&uuml;ckte Platine "RCC_TUI_STRG_V1"   
 ![Bestückte Platine RCC_TUI_STRG](/images/300_RCC_TUI_STRG_V1_assembled.png "Bestückte Platine RCC_TUI_STRG")   
-
-
+_Bild 79: Bestückte Platine `RCC_TUI_STRG`_  
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -1298,8 +1337,144 @@ __St&uuml;ckliste__
 | 1 | J4 | Wannenstecker 10-polig, stehend | Box_02x05_P2.54mm_Vertical_kh |   
 | 1 | R1 | 100 k&Omega; | R_Axial_P5.08_Vertical_kh |   
 | 2 | R2, R3 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R4, R5 | 4,7  k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | JP1 | Jumper_2_Bridged | SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm |   
 
+
+#### Best&uuml;ckung   
+1. Dioden D1 bis D5 (BAT48, liegend, auf Polung achten: Kathode bei weißer Linie)  
+2. Kondensator C1 (100 nF)  
+3. Widerstände R1, R2, R3 (100 k&Omega;, stehend)  
+4. Widerstände R4, R5 (4,7 k&Omega;, stehend)  
+5. Wannenstecker J3 bis J5   
+
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
+6. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
+
+<a name="x733"></a>   
+
+### 7.3.3 Test
+Die Platine ist sehr einfach. Der Test erfolgt daher gemeinsam mit `RCC_TUI_LED`.
+
+<a name="x734"></a>   
+
+#### 7.3.4 Versionen
+V1 (260905): OK
+
+<a name="x74"></a>   
+<a name="x741"></a>   
+
+## 7.4 LED-Anzeige f&uuml;r Fahrstromabschaltung und Besetztanzeige (TUI)
+### 7.4.1 Beschreibung
+
+Diese Platine ist das User-Interface zur Schaltplatine "RW_5V_2IO_STRG". Sie hat zwei Schalter sowie sechs LEDs.    
+
+![Blockpanel RCC_TUI_LED](/images/300_rcc4_Blockpanel_TUI_LED.png "Blockpanel RCC_TUI_LED")   
+_Bild 80: Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
+
+* Im Ruhezustand sind beide _*Schalter*_ nicht gedr&uuml;ckt:  
+  - 🟡 Die **linke, mittlere, gelbe** LED leuchtet: Fernsteuerung über DCC bzw. I²C (Remote).  
+  - 🔴🟠🟢 Die **rote, (rechte) gelbe oder gr&uuml;ne** LED leuchtet, je nachdem, ob der Fahrstrom &uuml;ber DCC oder MQTT aus- oder eingeschaltet ist bzw. das Gleis frei ist.   
+
+* Wird der obere, rote **Schalter "AUS"** bet&auml;tigt, ist der Fahrstrom **auf jeden Fall** ausgeschaltet.  
+  - 🟡 Die **linke, obere, gelbe** LED leuchtet.  
+  - 🔴 Die **rote** LED leuchtet.
+
+* Wird der untere, grüne **Schalter "EIN"** bet&auml;tigt, hängt das Ergebnis vom oberen, roten Schalter "AUS" ab. Wenn dieser nicht betätigt ist:  
+  - 🟡 Die **linke, untere, gelbe** LED leuchtet.  
+  - 🟠 Die **rechte, mittlere, gelbe** LED leuchtet, wenn das Gleis besetzt ist.   
+  - 🟢 Die **grüne** LED leuchtet, wenn das Gleis frei ist.  
+
+<a name="x742"></a>   
+
+### 7.4.2 Schaltplan
+Den Schaltplan zum Schalten der LEDs gibt es in zwei Versionen:  
+* mit bipolaren Transistoren (BC337)  
+* mit MOSFET (BS170)  
+
+Mit Transistoren:   
+![RCC_TUI_LED_B_circuit](/images/600_RCC_TUI_B_LED_circuit.png "RCC_TUI_LED_B_circuit")   
+_Bild 81: KiCad-Schaltplan der "RCC_TUI_B_LED"-Platine mit bipolaren Transistoren_   
+
+Mit MOSFET:  
+![RCC_TUI_LED_M_circuit](/images/600_RCC_TUI_M_LED_circuit.png "RCC_TUI_LED_M_circuit")   
+_Bild 82: KiCad-Schaltplan der "RCC_TUI_M_LED"-Platine mit MOSFET_   
+
+<a name="x743"></a>   
+
+### 7.4.3 Bestückung
+Bild links: Schalten/Anzeige-Platine mit Transistoren (`RCC_TUI_B_LED_V1`), rechts mit MOSFET (`RCC_TUI_M_LED_V1`)  
+
+![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_B_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms") ![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_M_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms")   
+_Bild 83: Platinen zum Schalten und Anzeige des Fahrstroms_   
+
+# ..ToDo.. ..ToDo..
+
+![RCC_TUI_M_LED](/images/300_RCC_TUI_M_LED_assembled.png "RCC_TUI_M_LED")   
+_Bild 84: Best&uuml;ckte Platine "RCC_TUI_M_LED"_   
+
+#### St&uuml;ckliste MOSFET-Version   
+| Anzahl | Referenz          | Wert                | Geh&auml;use            |   
+|--------|-------------------|---------------------|--------------------|   
+| 1 | C1 | Kondensator 1 &micro;F, 16 V, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 1 | D1 | LED rot, 2 mA | LED_D3.0mm_kh |   
+| 4 | D2, D4, D5, D6 | LED gelb, 2 mA | LED_D3.0mm_kh |   
+| 1 | D3 | LED gr&uuml;n, 2 mA  | LED_D3.0mm_kh |   
+| 6 | D1,D2,D3,D4,D5,D6  | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs  |   
+| 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
+| 4 | Q1, Q2, Q3, Q4 | n-Kanal MOSFET BS170 | TO-92_Inline_Wide_custom |   
+| 1 | R16 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 1 | R17 | 47 &Omega; | R_Axial_DIN0207_L6.3mm_D2.5mm_P12.7mm_Horizontal_kh |   
+| 6 | R2, R5, R9, R21, R22, R23 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R12, R15 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 3 | R4, R11, R14 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R7 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R8 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 4 | R3, R6, R10, R13 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 2 | SW1,SW2           | _*Schalter*_ SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
+| 2 | SW1,SW2           | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe rot,
+
+#### Vorbereitung   
+1. Von einer langen, einreihigen Buchsenleiste 6x 2-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D6).   
+2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
+3. 10 mm-Tasterkn&ouml;pfe SW1 (rot), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
+
+Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs und Widerst&auml;nde.   
+![RCC_TUI_M_LED_parts](/images/300_RCC_TUI_M_LED_parts.png "RCC_TUI_M_LED_parts")   
+_Bild 85: Bauteile der "RCC_TUI_M_LED"-Platine_   
+
+#### Best&uuml;ckungsvorgang   
+1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1 bis D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
+
+Auf die _*Bauteilseite*_ l&ouml;ten:   
+
+2. Widerstand R8 (47 &Omega;, liegend)   
+3. Transistor Q1 (BC337-40)   
+4. Die Widerst&auml;nde R2 (10 k&Omega;) und R7 (100 k&Omega;)   
+5. Die restlichen Widerst&auml;nde R1, R3, R4, R5, R6 (1 k&Omega;)   
+6. Buchsenleisten J1 und J2   
+
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
+
+7. __SCHALTER__ SW1, SW2 (Anleitung [siehe Kapitel 1.6](#x16))   
+
+<a name="x744"></a>   
+
+### 7.4.4 Versionen
+V1 (260905): OK  
+
+<a name="x75"></a>   
+
+## 7.5 Zusammenbau des TUI-Blocks
+1. Aufstecken des Steuerungsprints `RCC_TUI_STRG` auf die Anzeigeplatine `RCC_TUI_LED`.   
+2. Einstecken der LEDs. F&uuml;r alle LEDs gilt: Anode = Pluspol = rot markiert immer __nach au&szlig;en__ zum Leiterplattenrand.   
+3. Aufstecken der Schalter-Kn&ouml;pfe.   
+4. Falls vorhanden: Print `RW_LEER_LED` auf den Anzeigeprint stecken.   
+
+<a name="x76"></a>   
+
+## 7.6 Test des TUI-Blocks   
 
 
 [Zum Seitenanfang](#up)   
