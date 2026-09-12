@@ -1183,18 +1183,19 @@ _Bild 73: Best&uuml;ckte Platine `RCC_TUI_EXT_V1`_
 | 1 | C6 | Elko 33 &micro;F, 35 V, Raster 2,54 mm | CP_Radial_D8.0mm_P2.50mm |   
 | 2 | D1, D2 | Diode SB240 | D_DO-15_P3.81mm_Vertical_AnodeUp |   
 | 1 | D3 | Diode BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
-| 1 | D4 | LED rot, 3 mm, 2 mA | LED_D3.0mm |   
 | 1 | D5 | Diode 1N4007 | D_DO-41_SOD81_P2.54mm_Vertical_AnodeUp_rect8 |   
-| 1 | D6 | LED gr&uuml;n, 3 mm, 2 mA | LED_D3.0mm |   
 | 1 | D7 | Diode 1N4148 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
-| 2 | D4, D6 | gedrehte Buchsen, 2-polig |   |   
+| 1 | D4 | LED rot, 3 mm, 2 mA | LED_D3.0mm |   
+| 1 | D6 | LED gr&uuml;n, 3 mm, 2 mA | LED_D3.0mm |   
+| 2 | D4, D6 | Buchsenleiste (gedrehte Buchsen), 2-polig (1) |   |   
 | 2 | J1, J2 | Schraubklemme, 2-polig, schwarz, 5 mm | Screw_Terminal_01x02_P5 |   
-| 1 | J3 | Stiftleiste 2-polig | PinSocket_1x02_P2.54mm_Vertical_kh |   
+| 1 | J3 | Stiftleiste 2-polig (2) | PinSocket_1x02_P2.54mm_Vertical_kh |   
 | 1 | J3 | Jumper 2-polig |    |   
 | 1 | J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
-| 1 | K1 | Monostabiles Relais IM03TS 3VDC | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
-| 1 | Q1, Q2 | npn-Transistor BC337-40 | TO-92_Inline_Wide_custom |   
-| 1 | Q3 | pnp-Transistor BC327-40 | TO-92_Inline_Wide_2.2225 |   
+| 1 | K1 | Monostabiles Relais IM03TS 3VDC oder HFD4/3 | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
+| 2 | K1 | Buchsenleiste (gedrehte Buchsen), 4-polig | (3)  |   
+| 1 | Q1 | npn-Transistor BC337-40 | TO-92_Inline_Wide_custom |   
+| 1 | Q2, Q3 | pnp-Transistor BC327-40 | TO-92_Inline_Wide_2.2225 |   
 | 2 | R16, R18 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R11 | 100 &Omega;| R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 5 | R4, R8, R10, R12, R13 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
@@ -1209,87 +1210,114 @@ _Bild 73: Best&uuml;ckte Platine `RCC_TUI_EXT_V1`_
 | 1 | Rs4 | 220 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P10,16mm_Horizontal |   
 | 1 | RV1 | 10-Gang-Trimmer 10 k&Omega; stehend | Trim_Bourns_3296W_Vertical |   
 | 1 | U1 | INA333_Board | INA333-Board |   
-| 2 | U1 | Stiftleiste 4-Pin |   |   
-| 2 | U1 | Buchsenleiste 4-Pin |   |   
+| 2 | U1 | Buchsenleiste 4-Pin, gedrehte Pins (4) |   |   
+| 2 | U1 | Stiftleiste 4-Pin, gedrehte Pins (5) |   |   
 | 1 | U2 | 2-fach-Komparator LM393 | DIP-8_W7.62mm_Socket_LongPads |   
 | 1 | U2 | Präzisionssockel 8 Pin (2x 4 Pin, Abstand 7,62 mm) |   |    
 | 1 | U3 | Optokoppler SFH615A | DIP-4_W7.62mm |   
 | 1 | U3 | Präzisionssockel 4 Pin (2x 2 Pin, Abstand 7,62 mm) |   |    
+
+1) Fassung für Relais  
 
 Bauteile der "RCC_TUI_EXT_V1"-Platine (Version 1):   
 ![rcc6_RCC_TUI_EXT_V1_parts](/images/300_rcc6_RCC_TUI_EXT_V1.png "rcc6_RCC_TUI_EXT_V1")   
 _Bild 74: Bauteile der "RCC_TUI_EXT_V1"-Platine_   
 
 #### Vorbereitung   
-* 2x gedrehte, 2-polige Buchsen für die LEDs: Diese von den meist 40-poligen Buchsenleisten herunterschneiden.   
-* 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.   
-* 2x 4-polige Buchsenleiste für das INA333-Board: Von 8- bzw. 10-poligen Buchsenleisten herunterschneiden.    
+(1) 2x gedrehte, 2-polige Buchsen für die LEDs: Von einer (meist 40-poligen) Buchsenleiste herunterschneiden.   
+(2) 1x 2-polige Stiftleiste von Stiftleiste herunterschneiden   
+(3) 2x gedrehte, 4-polige Buchsen als Relais-Fassung: Von einer (meist 40-poligen) Buchsenleiste herunterschneiden.   
+(4) 2x 4-polige Buchsenleiste für das INA333-Board: Von 8- bzw. 10-poligen Buchsenleisten herunterschneiden.    
+(5) 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.   
+(6) 2x 4-polige Stiftleisten auf der Unterseite des INA333-Boards nach UNTEN anlöten (siehe Bild).   
 
-#### Best&uuml;ckung   
-1. Widerst&auml;nde R1, Rs2, Rs3 (liegend, möglichst flach, 10 k&Omega;)   
-2. Widerstand R5 (liegend, 47 k&Omega;)   
-3. Widerstand Rs4 (liegend, 220 k&Omega;)   
-4. Diode D3 (BAT48, liegend, auf Polung achten: Kathode bei weißer Linie)   
-5. Kondensatoren C1, C2, C4, C7, C8 (1 &micro;F, Raster 2,54 mm)   
-6. Buchsenleisten U1 2x 4-Pin   
-7. gedrehte Buchsen D4, D6 für die LEDs   
-8. Fassungen U2 (2x 4 Pin) und U3 (2x 2 Pin, auf Einbaurichtung achten!)   
-9. Diode D5 (1N4007, stehend, auf Polung achten: Kathode unten beim Kreis)   
-10. Tantal-Elko C3, C5 (10 &micro;F, auf + Polung achten)   
+![rcc6_INA333_Board](/images/300_rcc6_INA333_Board.png "rcc6_INA333_Board")   
+_Bild 75: INA-Board mit angelöteten Stiften_  
 
-10. Widerst&auml;nde R16, R17 (47 &Omega;)   
-11. Widerstand R11 (100 &Omega;)   
-12. Widerst&auml;nde R4, R8, R10, R12, R13, R15 (1 k&Omega;)   
-13. Widerst&auml;nde R2, R6, R7, Rs1 (10 k&Omega;)   
-14. Widerstand R3 (33 k&Omega;)   
-15. Widerst&auml;nde R9, R14 (47 k&Omega;)   
-16. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
-17. Transistor Q1, Q2 (BC337-40)   
-18. Stiftleiste 2-polig J3   
-19. Diode D1, D2 (SB240, auf Polung achten: Kathode unten beim Kreis)   
-
-21. Wannenstecker 6-polig J5 (auf Polung achten)   
-22. Schraubklemme J1, J2 (2-polig)   
-23. 10-Gang-Trimmer RV1 (10 k&Omega; stehend, Schraube Richtung Printmitte)   
-
-##### Stiftleisten ans INA333_Board anlöten
-Stiftleisten auf der Unterseite nach UNTEN anlöten.   
+#### Best&uuml;ckung  
+1. Widerst&auml;nde R1, Rs2, Rs3 (liegend, möglichst flach, 10 k&Omega;)  
+2. Widerstand R5 (liegend, 47 k&Omega;)  
+3. Widerstand Rs4 (liegend, 220 k&Omega;)  
+4. Diode D3 (BAT48, liegend, auf Polung achten: Kathode bei weißer Linie)  
+5. Buchsenleisten 2x 4 Pin für U1 (INA333 Board)  
+6. gedrehte Buchsen 2x 2 Pin für die LEDs D4, D6  
+7. gedrehte Buchsen 2x 4-Pin für Relais K1 (Pin 1 und 8 etwas verbiegen)  
+8. Fassungen U2 (2x 4 Pin) und U3 (2x 2 Pin, auf Einbaurichtung achten!)  
+9. Kondensatoren C1, C2, C4, C7, C8 (1 &micro;F, Raster 2,54 mm)  
+10. Diode D7 (1N4148, stehend, auf Polung achten: Kathode unten beim Kreis)  
+11. Diode D5 (1N4007, stehend, auf Polung achten: Kathode unten beim Kreis)  
+12. Tantal-Elko C3, C5 (10 &micro;F, auf + Polung achten)  
+---  
+13. Widerst&auml;nde R16, R18 (47 &Omega;)   
+14. Widerstand R11 (100 &Omega;)   
+15. Widerst&auml;nde R4, R8, R10, R12, R13 (1 k&Omega;)   
+16. Widerst&auml;nde R14, R15 (4,7 k&Omega;)   
+17. Widerst&auml;nde R2, R6, R7, R20, Rs1 (10 k&Omega;)   
+18. Widerstand R3 (33 k&Omega;)   
+19. Widerst&auml;nde R9, R17 (47 k&Omega;)   
+20. Widerstand R19 (100 k&Omega;)   
+---  
+21. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
+22. Transistor Q1 (BC337-40)   
+23. Transistor Q2, Q3 (BC327-40)   
+24. Stiftleiste 2-polig J3   
+25. Diode D1, D2 (SB240, auf Polung achten: Kathode unten beim Kreis)   
+26. Wannenstecker 6-polig J5 (auf Polung achten)   
+27. Schraubklemme J1, J2 (2-polig)   
+28. 10-Gang-Trimmer RV1 (10 k&Omega; stehend, Schraube in Richtung LM393)   
 
 ##### Print vervollständigen
-1. ICs bestücken (LM393, SFH615A, auf richtige Polung achten!)   
-2. INA333_Board aufstecken   
-3. LEDs auf passende Länge kürzen und in die Fassungen stecken   
+1. ICs bestücken (LM393, SFH615A, auf richtige Polung achten!)  
+2. Relais K1 bestücken  
+2. INA333_Board aufstecken (mit Potenziometer zum Print-Rand)  
+3. LEDs auf passende Länge kürzen (zB 10 mm) und in die Fassungen stecken (auf richtige Polung achten!)  
+![rcc4_LED_Polung](/images/200_rcc4_LED_Polung.png "rcc4_LED_Polung")   
+
 
 <a name="x729"></a>   
 
 ### 7.2.9 Inbetriebnahme und Test
 
 ![UI_pin_J5](/images/200_rcc4_TUI_pin_J5.png "UI_pin_J5")   
-_Bild 75: Belegung des 6-poligen Anschlusses der `RCC_TUI_EXT`-Platine_
+_Bild 76: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
 
-1. Versorgungsspannung anlegen: 5V an Pin 4 vom 6-poligen Wannenstecker J5, GND (0 V) an Pin 6 von J5   
-   ► Die rote LED (FRE) leuchtet nicht.   
-   ► Die grüne LED (DCC) leuchtet nicht.   
+1. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
+   ► 🔴🟤 Die rote LED (FRE) leuchtet oder leuchtet nicht (siehe Punkt 6).   
+   ► ⚫ Die grüne LED (DCC) leuchtet nicht.   
+
 2. DCC-Spannung am Eingang der Schaltung anlegen:   
-   ► Die grüne LED (DCC) leuchtet (noch) nicht.   
-3. DCC-Spannung durchschalten: GND an Pin 5 von J5 anlegen.  
-   ► Die grüne LED (DCC) leuchtet.   
-4. Verstärkung des INA333-Boards bis zum Anschlag **gegen den Uhrzeigersinn** drehen (volle Verstärkung)   
-5. Jumper J3 aufstecken   
-6. Je nach Trimmer-Stellung die Schaltschwelle einstellen:   
-   * Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet. Jumper J3 abziehen: rote LED erlischt.   
-   * Wenn die rote LED __nicht leuchtet__: Trimmer __gegen den Uhrzeigersinn__ drehen, bis die rote LED zu leuchten beginnt. Jumper J3 abziehen: rote LED erlischt.   
+   ► ⚫ Die grüne LED (DCC) leuchtet (noch) nicht.   
 
-Der Jumper J3 dient nur zum Einstellen. Im Betrieb muss er entfernt werden.   
-Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise mit dem Finger verbindet.   
+3. DCC-Spannung durchschalten: GND (0 V) an Pin 5 von J5 anlegen.  
+   ► 🧲 Das Relais zieht an.   
+   ► 🟢 Die grüne LED (DCC) **leuchtet**.   
+
+4. Verstärkung des INA333-Boards voll aufdrehen:   
+   ► ⚙️ Potenziometer bis zum Anschlag **gegen den Uhrzeigersinn** drehen   
+
+5. Jumper J3 aufstecken   
+
+6. Je nach Trimmer-Stellung die Schaltschwelle einstellen:   
+   * 🔴 Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet. Jumper J3 abziehen: rote LED erlischt.   
+   * 🟤 Wenn die rote LED __nicht leuchtet__: Trimmer __gegen den Uhrzeigersinn__ drehen, bis die rote LED zu leuchten beginnt. Jumper J3 abziehen: rote LED erlischt.   
+
+⚠️ Der Jumper J3 dient nur zum Einstellen. Im Betrieb muss er entfernt werden.   
+ℹ️ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise mit dem Finger verbindet.   
 
 #### Kontrolle der Digitalausgänge
-1. Messgerät auf Spannungsmessung stellen, den COM-Anschluss an Pin 6 vom 6-poligen Wannenstecker J5, V an Pin 2 von J5 (TVn) anschließen.   
-2. DCC-Versorgung angeschlossen: TVn = 5 V (grüne LED ein), DCC-Versorgung abgeklemmt: TVn = 0 V (grüne LED aus).   
-3. Messgerät mit COM an an Pin 6 vom 6-poligen Wannenstecker J5, V an Pin 1 von J5 (FREn) anschließen.   
-4. DCC-Versorgung am ""Booster"-Eingang anschließen. Jumper J3 offen: FREn = 0 V (rote LED aus), Jumper J3 gesteckt: FREn = 5 V (rote LED leuchtet).   
+1. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
+2. Messgerät auf Spannungsmessung stellen, COM-Anschluss mit GND verbinden , V/Ω an **Pin 2** von J5 (TVn) anschließen.   
+3. Funktionstest **Ausgang TVn** (Track Voltage):   
+   ► DCC-Versorgung abgeschaltet oder abgeklemmt: TVn = 5 V (⚫ grüne LED aus).   
+   ► DCC-Versorgung angeschlossen **und** J5-Pin 5 auf 0 V (TONn): TVn = 0,7 V (🟢 grüne LED ein).  
+---  
+4. Messgerät COM mit GND verbinden, V/Ω an **Pin 1** von J5 (FREn) anschließen.   
+5. Funktionstest **Ausgang FREn** (Track Free):   
+   ► DCC-Versorgung am ""Booster"-Eingang anschließen, J5-Pin 5 auf 0 V (TONn).  
+   ► Jumper J3 offen: FREn = 0,2 V (🟤 rote LED aus),  
+   ► Jumper J3 gesteckt: FREn = 5 V (🔴 rote LED leuchtet).  
 
-**Ruhezustand**: Bei offenem Jumper und ohne Lok (bzw. Last, Waggon) am Gleis darf die **rote LED nicht** leuchten.   
+⚠️ **Ruhezustand**: Bei offenem Jumper und ohne Lok (bzw. Last, Waggon) am Gleis darf die **rote LED nicht** leuchten.   
 
 <a name="x72A"></a>   
 
@@ -1309,22 +1337,22 @@ Zusätzlich werden die Datenleitungen geschützt:
 * **Ausgänge** (I²C-Rückmeldungen `RTVn`, `RFREn`): Diode und `4,7 kΩ`-Widerstand nach `+5 V`  
 
 ![TUI_STRG_circuit12](/images/300_rcc4_TUI_STRG_circuit12.png "TUI_STRG_circuit12") 
-_Bild 76: Schutzbeschaltung der Ein- und Ausgangsleitungen_
+_Bild 77: Schutzbeschaltung der Ein- und Ausgangsleitungen_
 
 Gesamtschaltung:  
 
 ![RCC_TUI_STRG_V1_circuit](/images/600_RCC_TUI_STRG_V1_circuit.png "RCC_TUI_STRG_V1_circuit")   
-_Bild 77: KiCad-Schaltplan der `RCC_TUI_STRG_V1`-Platine_  
+_Bild 78: KiCad-Schaltplan der `RCC_TUI_STRG_V1`-Platine_  
 
 <a name="x732"></a>   
 
 ### 7.3.2 Bestücken der Platine
 
 ![Platine zum Fahrstrom-Schalten und -Erkennen](/images/pcb_f/PCB_F_RCC_TUI_STRG_V1.png "Platine zum Fahrstrom-Schalten und -Erkennen")   
-_Bild 78: Platine `RCC_TUI_STRG_V1`_  
+_Bild 79: Platine `RCC_TUI_STRG_V1`_  
 
 ![Bestückte Platine RCC_TUI_STRG](/images/300_RCC_TUI_STRG_V1_assembled.png "Bestückte Platine RCC_TUI_STRG")   
-_Bild 79: Bestückte Platine `RCC_TUI_STRG`_  
+_Bild 80: Bestückte Platine `RCC_TUI_STRG`_  
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -1370,7 +1398,7 @@ V1 (260905): OK
 Diese Platine ist das User-Interface zur Schaltplatine "RW_5V_2IO_STRG". Sie hat zwei Schalter sowie sechs LEDs.    
 
 ![Blockpanel RCC_TUI_LED](/images/300_rcc4_Blockpanel_TUI_LED.png "Blockpanel RCC_TUI_LED")   
-_Bild 80: Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
+_Bild 81: Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
 
 * Im Ruhezustand sind beide _*Schalter*_ nicht gedr&uuml;ckt:  
   - 🟡 Die **linke, mittlere, gelbe** LED leuchtet: Fernsteuerung über DCC bzw. I²C (Remote).  
@@ -1394,11 +1422,11 @@ Den Schaltplan zum Schalten der LEDs gibt es in zwei Versionen:
 
 Mit Transistoren:   
 ![RCC_TUI_LED_B_circuit](/images/600_RCC_TUI_B_LED_circuit.png "RCC_TUI_LED_B_circuit")   
-_Bild 81: KiCad-Schaltplan der "RCC_TUI_B_LED"-Platine mit bipolaren Transistoren_   
+_Bild 82: KiCad-Schaltplan der "RCC_TUI_B_LED"-Platine mit bipolaren Transistoren_   
 
 Mit MOSFET:  
 ![RCC_TUI_LED_M_circuit](/images/600_RCC_TUI_M_LED_circuit.png "RCC_TUI_LED_M_circuit")   
-_Bild 82: KiCad-Schaltplan der "RCC_TUI_M_LED"-Platine mit MOSFET_   
+_Bild 83: KiCad-Schaltplan der "RCC_TUI_M_LED"-Platine mit MOSFET_   
 
 <a name="x743"></a>   
 
@@ -1406,12 +1434,12 @@ _Bild 82: KiCad-Schaltplan der "RCC_TUI_M_LED"-Platine mit MOSFET_
 Bild links: Schalten/Anzeige-Platine mit Transistoren (`RCC_TUI_B_LED_V1`), rechts mit MOSFET (`RCC_TUI_M_LED_V1`)  
 
 ![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_B_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms") ![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_M_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms")   
-_Bild 83: Platinen zum Schalten und Anzeige des Fahrstroms_   
+_Bild 84: Platinen zum Schalten und Anzeige des Fahrstroms_   
 
 # ..ToDo.. ..ToDo..
 
 ![RCC_TUI_M_LED](/images/300_RCC_TUI_M_LED_assembled.png "RCC_TUI_M_LED")   
-_Bild 84: Best&uuml;ckte Platine "RCC_TUI_M_LED"_   
+_Bild 85: Best&uuml;ckte Platine "RCC_TUI_M_LED"_   
 
 #### St&uuml;ckliste MOSFET-Version   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -1442,7 +1470,7 @@ _Bild 84: Best&uuml;ckte Platine "RCC_TUI_M_LED"_
 
 Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs und Widerst&auml;nde.   
 ![RCC_TUI_M_LED_parts](/images/300_RCC_TUI_M_LED_parts.png "RCC_TUI_M_LED_parts")   
-_Bild 85: Bauteile der "RCC_TUI_M_LED"-Platine_   
+_Bild 86: Bauteile der "RCC_TUI_M_LED"-Platine_   
 
 #### Best&uuml;ckungsvorgang   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1 bis D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
