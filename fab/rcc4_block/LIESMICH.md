@@ -1366,15 +1366,13 @@ __St&uuml;ckliste__
 | 1 | R1 | 100 k&Omega; | R_Axial_P5.08_Vertical_kh |   
 | 2 | R2, R3 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 2 | R4, R5 | 4,7  k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 1 | JP1 | Jumper_2_Bridged | SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm |   
-
 
 #### Best&uuml;ckung   
 1. Dioden D1 bis D5 (BAT48, liegend, auf Polung achten: Kathode bei weißer Linie)  
 2. Kondensator C1 (100 nF)  
 3. Widerstände R1, R2, R3 (100 k&Omega;, stehend)  
 4. Widerstände R4, R5 (4,7 k&Omega;, stehend)  
-5. Wannenstecker J3 bis J5   
+5. Wannenstecker J3 bis J5 (auf Polung achten!)  
 
 Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 6. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
@@ -1395,7 +1393,7 @@ V1 (260905): OK
 ## 7.4 LED-Anzeige f&uuml;r Fahrstromabschaltung und Besetztanzeige (TUI)
 ### 7.4.1 Beschreibung
 
-Diese Platine ist das User-Interface zur Schaltplatine "RW_5V_2IO_STRG". Sie hat zwei Schalter sowie sechs LEDs.    
+Diese Platine ist das User-Interface zur Schaltplatine "RCC_TUI_STRG". Sie hat zwei Schalter sowie sechs LEDs.    
 
 ![Blockpanel RCC_TUI_LED](/images/300_rcc4_Blockpanel_TUI_LED.png "Blockpanel RCC_TUI_LED")   
 _Bild 81: Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
@@ -1436,8 +1434,6 @@ Bild links: Schalten/Anzeige-Platine mit Transistoren (`RCC_TUI_B_LED_V1`), rech
 ![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_B_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms") ![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_M_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms")   
 _Bild 84: Platinen zum Schalten und Anzeige des Fahrstroms_   
 
-# ..ToDo.. ..ToDo..
-
 ![RCC_TUI_M_LED](/images/300_RCC_TUI_M_LED_assembled.png "RCC_TUI_M_LED")   
 _Bild 85: Best&uuml;ckte Platine "RCC_TUI_M_LED"_   
 
@@ -1468,20 +1464,24 @@ _Bild 85: Best&uuml;ckte Platine "RCC_TUI_M_LED"_
 2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
 3. 10 mm-Tasterkn&ouml;pfe SW1 (rot), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
-Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs und Widerst&auml;nde.   
+Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs.   
 ![RCC_TUI_M_LED_parts](/images/300_RCC_TUI_M_LED_parts.png "RCC_TUI_M_LED_parts")   
 _Bild 86: Bauteile der "RCC_TUI_M_LED"-Platine_   
 
 #### Best&uuml;ckungsvorgang   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1 bis D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
-Auf die _*Bauteilseite*_ l&ouml;ten:   
+Auf die _*Bauteilseite*_ l&ouml;ten:  
 
-2. Widerstand R8 (47 &Omega;, liegend)   
-3. Transistor Q1 (BC337-40)   
-4. Die Widerst&auml;nde R2 (10 k&Omega;) und R7 (100 k&Omega;)   
-5. Die restlichen Widerst&auml;nde R1, R3, R4, R5, R6 (1 k&Omega;)   
-6. Buchsenleisten J1 und J2   
+2. Widerstand R17 (47 &Omega;, liegend)  
+3. Kondensator C1 (1 &micro;F, 16 V)  
+4. MOSFET Q1 bis Q4 (BS170)  
+5. Widerstand R16 (47 &Omega;)  
+6. Widerst&auml;nde R2, R5, R9, R21, R22, R23; R12, R15 (1 k&Omega;)  
+7. Widerst&auml;nde R4, R11, R14; R7 (4,7 k&Omega;)  
+8. Widerst&auml;nde R1, R8 (10 k&Omega;)  
+9. Widerst&auml;nde R3, R6, R10, R13 (100 k&Omega;)  
+10. Buchsenleisten J1 und J2 (8-polig, lange Kontakte)  
 
 Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 
@@ -1503,6 +1503,28 @@ V1 (260905): OK
 <a name="x76"></a>   
 
 ## 7.6 Test des TUI-Blocks   
+### Vorbereitung  
+(1) Stecke ein 10-poliges Flachbandkabel am **10-poligen Stecker J4-Pin 1** an und stecke am anderen Kabelende einen Stift-Stift-Draht in **Pin 1**.  
+   Oder: Stecke DIREKT am **10-poligen Stecker J4-Pin 1** einen Buchsen-Buchsen-Draht an.  
+(2) Lege an den TUI-Block die Versorgungsspannung an (6-poliger Stecker J3)  
+(3) Verbinde das `RCC_TUI_EXT`-Board mit dem TUI-Block mit einem 6-poligen Flachbandkabel.  
+(4) Lege an den BOOSTER-Eingang des `RCC_TUI_EXT`-Boards die DCC-Gleisspannung an.  
+   ► Beide LEDs auf dem `RCC_TUI_EXT`-Board leuchten nicht.  
+
+### Testdurchführung
+Die folgende Tabelle zeigt alle möglichen Anzeigen auf dem RCC_TUI_LED-Panel.  
+_Beachte_:  
+ℹ️ Der Zustand **"Gleis besetzt - ja"** kann durch **Setzen des Jumpers J3** auf dem `RCC_TUI_EXT`-Board simuliert werden.  
+ℹ️ Der Eingang **TONn** ist **Pin 1** am 10-poligen Stecker J4 von `RCC_TUI_STRG`, 5 V liegt am J4-Pin 6, **0 V liegt an J4-Pin 5**.  
+
+| Schalter <br> rot | Schalter <br> grün | Eingang <br> TONn | Gleis <br> besetzt | TUI-Panel | LED am <br> Ausgang |  
+|:---:|:---:|:---:|:---:|:---:|:---:|  
+| ein | aus | egal | egal | ![TUI_LED_panel_red_red](/images/50_TUI_LED_panel_red_red.png "TUI_LED_panel_red_red")  | rot |  
+| aus | ein | egal | ja | ![TUI_LED_panel_green_yellow](/images/50_TUI_LED_panel_green_yellow.png "TUI_LED_panel_green_yellow")  | gelb |  
+| aus | ein | egal | nein | ![TUI_LED_panel_green_green](/images/50_TUI_LED_panel_green_green.png "TUI_LED_panel_green_green")  | grün |  
+| aus | aus | 5 V oder offen| egal | ![TUI_LED_panel_no_red](/images/50_TUI_LED_panel_no_red.png "TUI_LED_panel_no_red")  | rot |  
+| aus | aus | 0 V | ja | ![TUI_LED_panel_no_yellow](/images/50_TUI_LED_panel_no_yellow.png "TUI_LED_panel_no_yellow")  | gelb |  
+| aus | aus | 0 V | nein | ![TUI_LED_panel_no_green](/images/50_TUI_LED_panel_no_green.png "TUI_LED_panel_no_green")  | grün |  
 
 
 [Zum Seitenanfang](#up)   
