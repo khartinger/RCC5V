@@ -1,7 +1,6 @@
 //_____dcc_config.h______________________________khartinger_____
 // Configure file for ESP32 railroad DCC decoder program
 // rcc_demo2
-//
 // Created by Karl Hartinger, November 14, 2024
 // Changes:
 // 2024-11-28 Change program name
@@ -10,6 +9,7 @@
 // 2026-01-08 Add RC_TYPE_TX, RC_TYPE_DD
 // 2026-02-24 Add mac
 // 2026-08-17 Add dcc_config.cpp, Redesign constexpr, ...
+// 2026-09-13 Add RC_TYPE_TUI
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -24,8 +24,8 @@
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 
 //_______program version________________________________________
-constexpr char VERSION_99[] = "2026-08-17 rcc_demo2";
-constexpr char VERSION_99_1[] = "Version 2026-08-17";
+constexpr char VERSION_99[] = "2026-09-13 rcc_demo2";
+constexpr char VERSION_99_1[] = "Version 2026-09-13";
 
 //_______Network data___________________________________________
 #define _USE_WIFI_      true
@@ -102,9 +102,10 @@ constexpr int  RC_TYPE_T3 = 3;    // 3way turnout (Dreiwegweiche)
 constexpr int  RC_TYPE_DT = 4;    // disconnectable track (Fahrstrom)
 constexpr int  RC_TYPE_TX = 5;    // double slip turnout/switch (Doppelkreuzungsweiche)
 constexpr int  RC_TYPE_DD = 6;    // double pole, double throw (2x UM)
-constexpr int  RC_TYPE_P2 = 7;    // pulse 2 inputs (reset, set)
-constexpr int  RC_TYPE_UI = 8;    // current (I)-voltage (U)-indicator
-constexpr int  RC_TYPE_BL = 9;    // blink light (Blinklicht)
+constexpr int  RC_TYPE_TUI = 7;   // Track voltage current
+constexpr int  RC_TYPE_P2 = 8;    // pulse 2 inputs (reset, set)
+constexpr int  RC_TYPE_UI = 9;    // current (I)-voltage (U)-indicator
+constexpr int  RC_TYPE_BL = 10;   // blink light (Blinklicht)
 
 //.......All properties of a railroad component.................
 struct strRcomp {
@@ -124,44 +125,97 @@ struct strRcomp {
 // ***** CHECK this! *******************************************
 //_______Railroad components____________________________________
 /**
- * @brief Definition of Railroad Components
+ * @brief Definition of all Railroad Components
  * 
- * railroad components: type,name (max 3 char),dcc,
- *                      pIOEx-out-index,outBitA,outBitB, 
- *                      pIOEx-in-index inBitA inBitB
- *                      msOn,msOff
- * railroad component name max. 3 chars
+ * Every railroad component has 11 parameters:
+ *       type,name (max 3 char),dcc,
+ *       pIOEx-out-index,outBitA,outBitB,
+ *       pIOEx-in-index,inBitA,inBitB
+ *       msOn,msOff
 */
-/*
-// ------uncoupler (Entkuppler)---------------------------------
+// -------------------------------------------------------------
+/**
+ * @brief uncoupler (Entkuppler)
+ * Output Pin 0: start uncoupler for 1500 ms (1) or stop it (0)
+ * Input  Pin 0: status uncoupler (1=on, 0=off)
+ */
 #define  RCOMP_1   RC_TYPE_UC,"UC", 11, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 1500,0
-*/
-// ------two way turnout (Zweiwegweiche = Standardweiche)-------
-// Two expander pins A B to control 2way turnout (active low!)
-// A=0: curved, B=0: straight
+
+// -------------------------------------------------------------
+/**
+ * @brief two way turnout (Zweiwegweiche = Standardweiche)
+ * Output Pin 1 = A: 0 = curved   (active low), 500 ms on
+ *        Pin 2 = B: 0 = straight (active low), 500 ms on
+ * Input  The feedback from Pin 2 and Pin 1 yields the value BA:
+ *        BA = 1 (01) = stright, BA = 2 (10) = curved
+ */
 #define  RCOMP_2   RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
 
-/*
-//-------three way turnout (Dreiwegweiche)----------------------
-// A=0: curved, B=0: straight (@ 3 pin: middle pin=0V -> straight)
+// -------------------------------------------------------------
+/**
+ * @brief three way turnout (Dreiwegweiche)
+ * NOTE: TWO components must be defined for 3 pins (B is shared)
+ * Output Pin 3|5 (A) = 0: curved (active low), 500 ms on
+ *        Both Pin 4 (B) = 0: straight (active low), 500 ms on
+ * Input  Pin 3 (A) = 0 turnout curved (left)
+ *        Pin 4 (B) = 0 turnout straight
+ *        Pin 5 (A) = 0 turnout curved (right)
+ */
 #define  RCOMP_3L  RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
 #define  RCOMP_3R  RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
-//-------disconnectable track (Fahrstrom)-----------------------
+
+// -------------------------------------------------------------
+/**
+ * @brief disconnectable track (Fahrstrom)
+ * Output Pin 6: 1 = on, 0 = off
+ * Input  Pin 6: status track voltage (1 = on, 0 = off)
+ */
 #define  RCOMP_4   RC_TYPE_DT,"DT", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
-//-------blink light (Blinklicht)-------------------------------
+
+// -------------------------------------------------------------
+/**
+ * @brief blink light (Blinklicht)
+ * Output Pin 7: 1 = on (500 ms), 0 = off (500 ms)
+ * Input: none
+ */
 #define  RCOMP_5   RC_TYPE_BL,"BL", 51, EX0,PIN7,NO_PIN, EX1,NO_PIN,NO_PIN, 500,500
-*/
+
+// -------------------------------------------------------------
 //...if you want to test TX and/or DD: replace RCOMP_2/RCOMP_4..
-//-------double slip turnout/switch (Doppelkreuzungsweiche)-----
+
+// -------------------------------------------------------------
+/**
+ * @brief double slip turnout/switch (Doppelkreuzungsweiche)
+ * Output Pin 1 = A: 0 = curved   (active low), 500 ms on
+ *        Pin 2 = B: 0 = straight X (active low), 500 ms on
+ * Input  The feedback from Pin 2 and Pin 1 yields the value BA:
+ *        BA = 1 (01) = stright X, BA = 2 (10) = curved
+ */
 //#define  RCOMP_2   RC_TYPE_TX,"TX", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
-//-------double pole, double throw (2x UM)----------------------
+
+// -------------------------------------------------------------
+/**
+ * @brief double pole, double throw (2x UM)
+*/
 //#define  RCOMP_4   RC_TYPE_DD,"DD", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
 
-// ------pulse with 2 inputs (reset, set)-----------------------
-// Two expander pins B | A for set | reset (active low!)
-// Pulse duration: 200 ms
+// -------------------------------------------------------------
+/**
+ * @brief Track voltage (U) switch and current (I) indicator
+ * Output Pin 0: TONn ... switch track voltage on (0) or off (1)
+ * Input  Pin 0: RTVn ... track voltage is on (0) or off (1)
+ *        Pin 1: RFREn .. track is free (0) or occupied (1)
+ */
+#define  RCOMP_6   RC_TYPE_TUI,"TUI", 61, EX2,PIN0,NO_PIN,   EX3,PIN0,PIN1, 0,0
 
- #define  RCOMP_6   RC_TYPE_P2,"P2", 61, EX2,PIN0,PIN1,   EX3,PIN0,PIN1, 200,0
+// -------------------------------------------------------------
+/**
+ * @brief pulse with 2 inputs (reset, set)
+ * Output: Pin 3 (B) = 0: simulate set pulse (200 ms) by software (active low!)
+ *         Pin 2 (A) = 0: simulate reset pulse (200 mas) by software (active low!)
+ * Input :
+ */
+ #define  RCOMP_7   RC_TYPE_P2,"P2", 71, EX2,PIN2,PIN3,   EX3,PIN2,PIN3, 200,0
 
 // ------voltage (U)-current (I)-indicator----------------------
 // No current flow means that the track is unoccupied (free).
@@ -174,13 +228,11 @@ struct strRcomp {
 // Input: Two expander pins A for voltage (1) and free (I=0)
 // Output: Two expander pins A for free (1) and OK (1)
 
- #define  RCOMP_7   RC_TYPE_UI,"UI1", 71, EX2,PIN2,PIN3,   EX3,PIN2,PIN3, 0,0
+ #define  RCOMP_8   RC_TYPE_UI,"UI1", 81, EX2,PIN4,PIN5,   EX3,PIN4,PIN5, 0,0
 
+// ***** CHECK this! *******************************************
 //.......Preparing the Array of all railroad components..........
-//#define  RCOMP_NUM  2
-//#define  RCOMP_LIST {RCOMP_2},{RCOMP_Q}
-
-#define  RCOMP_NUM  3
-#define  RCOMP_LIST {RCOMP_2},{RCOMP_6},{RCOMP_7}
+#define  RCOMP_NUM  4
+#define  RCOMP_LIST {RCOMP_2},{RCOMP_6},{RCOMP_7},{RCOMP_8}
 
 #endif

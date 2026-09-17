@@ -377,9 +377,6 @@ String simpleSet(String sTopic, String sPayload)
  if(sTopic=="topicbase") {                  // new topic base?
   client.changeTopicBase(sPayload);         // change base
   addJson(p1, "topicbase", client.getsTopicBase());
-//  p1="{\"topicbase\":\"";                   // start json
-//  p1+=client.getsTopicBase();               // read new base
-//  p1+="\"}";                                // end json
   showLine(3, client.getsTopicBase());      // show on display
   return p1;                                // return new base
  }
@@ -444,7 +441,7 @@ String simpleSet(String sTopic, String sPayload)
     if(sPayload=="0" ||  sPayload=="a" || sPayload=="b") iCmdValue=0;
     if(sPayload=="1" || sPayload=="g") iCmdValue=1;
    } else 
-   { //.......NOT a turnout command.TO, TX, T3..................
+   { //.......NOT a turnout command TO, TX, T3..................
     if(aRcomp[i].type==RC_TYPE_P2)
     { //......specifically for command type PULSE 2.............
       if(sPayload=="0" || sPayload == "rst" || sPayload == "reset"
@@ -462,10 +459,19 @@ String simpleSet(String sTopic, String sPayload)
      }
      else
      { // NOT TO, TX, T3, P2, UI................................
-      //***Insert additional SET commands for non-turnouts here**
-      //.......for all other command types.......................
-      if(sPayload=="0") iCmdValue=0;
-      if(sPayload=="1") iCmdValue=1;
+      if(aRcomp[i].type==RC_TYPE_TUI)
+      { //......specifically for command type UI.................
+        if(sPayload=="0" || sPayload == "off") iCmdValue=0;
+        if(sPayload=="1" || sPayload == "on") iCmdValue=1;
+      }
+      else
+      { // NOT TO, TX, T3, P2, UI, TUI..........................
+       //***Insert additional SET commands *********************
+       // ..ToDo..
+       //.......for all other command types.......................
+       if(sPayload=="0") iCmdValue=0;
+       if(sPayload=="1") iCmdValue=1;
+      }
      }
     }
    } // END OF if(aRcomp[i].type==RC_TYPE_TO...
@@ -564,6 +570,15 @@ String getValueForComp(strRcomp Rcomp_, strRcmd Rcmd_, bool byName) {
    case 0:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=00
    case 1:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=01
    case 2:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=10
+   case 3:  return byName ? T_TRACK_00V : T1_TRACK_00V; // BA=11
+   default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
+  }
+ }
+ if(Rcomp_.type==RC_TYPE_TUI) {
+  switch(Rcmd_.inValue) {
+   case 0:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=00
+   case 1:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=01
+   case 2:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=10
    case 3:  return byName ? T_TRACK_00V : T1_TRACK_00V; // BA=11
    default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
   }

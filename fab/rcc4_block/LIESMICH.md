@@ -1051,7 +1051,7 @@ Das Schalten der Fahrspannung erfolgt mit einem monostabilen Relais IM03TS oder 
 ![rcc4_TUI_EXT_relay](/images/300_rcc4_TUI_EXT_relay.png "rcc4_TUI_EXT_relay")   
 _Bild 63: Einschalten der Fahrspannung mit Relais_
 
-<a name="x722"></a>   
+<a name="x723"></a>   
 
 ### 7.2.3 Gewinnung des Fahrstrom-Signals
 Der Fahrstrom (maximal 2 A) wird durch einen Shunt in eine Spannung umgewandelt:   
@@ -1495,7 +1495,7 @@ V1 (260905): OK
 <a name="x75"></a>   
 
 ## 7.5 Zusammenbau des TUI-Blocks
-1. Aufstecken des Steuerungsprints `RCC_TUI_STRG` auf die Anzeigeplatine `RCC_TUI_LED`.   
+1. Aufstecken des Steuerungsboards `RCC_TUI_STRG` auf das Anzeigeboard `RCC_TUI_LED`.   
 2. Einstecken der LEDs. F&uuml;r alle LEDs gilt: Anode = Pluspol = rot markiert immer __nach au&szlig;en__ zum Leiterplattenrand.   
 3. Aufstecken der Schalter-Kn&ouml;pfe.   
 4. Falls vorhanden: Print `RW_LEER_LED` auf den Anzeigeprint stecken.   
@@ -1518,13 +1518,14 @@ _Beachte_:
 ℹ️ Der Eingang **TONn** ist **Pin 1** am 10-poligen Stecker J4 von `RCC_TUI_STRG`, 5 V liegt am J4-Pin 6, **0 V liegt an J4-Pin 5**.  
 
 | Schalter <br> rot | Schalter <br> grün | Eingang <br> TONn | Gleis <br> besetzt | TUI-Panel | LED am <br> Ausgang |  
-|:---:|:---:|:---:|:---:|:---:|:---:|  
-| ein | aus | egal | egal | ![TUI_LED_panel_red_red](/images/50_TUI_LED_panel_red_red.png "TUI_LED_panel_red_red")  | rot |  
-| aus | ein | egal | ja | ![TUI_LED_panel_green_yellow](/images/50_TUI_LED_panel_green_yellow.png "TUI_LED_panel_green_yellow")  | gelb |  
-| aus | ein | egal | nein | ![TUI_LED_panel_green_green](/images/50_TUI_LED_panel_green_green.png "TUI_LED_panel_green_green")  | grün |  
-| aus | aus | 5 V oder offen| egal | ![TUI_LED_panel_no_red](/images/50_TUI_LED_panel_no_red.png "TUI_LED_panel_no_red")  | rot |  
-| aus | aus | 0 V | ja | ![TUI_LED_panel_no_yellow](/images/50_TUI_LED_panel_no_yellow.png "TUI_LED_panel_no_yellow")  | gelb |  
-| aus | aus | 0 V | nein | ![TUI_LED_panel_no_green](/images/50_TUI_LED_panel_no_green.png "TUI_LED_panel_no_green")  | grün |  
+|:---:|:---:|:---:|:---:|:---:|:----|  
+| **ein** | aus | egal | egal | ![TUI_LED_panel_red_red](/images/50_TUI_LED_panel_red_red.png "TUI_LED_panel_red_red")  | 🔴 rot |  
+| aus | **ein** | egal | ja | ![TUI_LED_panel_green_yellow](/images/50_TUI_LED_panel_green_yellow.png "TUI_LED_panel_green_yellow")  | 🟡 gelb |  
+| aus | **ein** | egal | nein | ![TUI_LED_panel_green_green](/images/50_TUI_LED_panel_green_green.png "TUI_LED_panel_green_green")  | 🟢 grün |  
+| aus | aus | 5 V oder offen| egal | ![TUI_LED_panel_no_red](/images/50_TUI_LED_panel_no_red.png "TUI_LED_panel_no_red")  | 🔴 rot |  
+| aus | aus | 0 V | ja | ![TUI_LED_panel_no_yellow](/images/50_TUI_LED_panel_no_yellow.png "TUI_LED_panel_no_yellow")  | 🟡 gelb |  
+| aus | aus | 0 V | nein | ![TUI_LED_panel_no_green](/images/50_TUI_LED_panel_no_green.png "TUI_LED_panel_no_green")  | 🟢 grün |  
 
+Bei einem Fehler oder Ausfall der Gleisspannung (zB durch Kurzschluss) leuchtet auf jeden Fall die rote LED (RTVn = 5V, RFREn = 5V).  
 
 [Zum Seitenanfang](#up)   

@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>Weitere RCC Komponenten</h1><b><big>RCC6: Optionale Komponenten für das RCC-System</big></b><br>  
-Stand: 23.8.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 16.9.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -13,12 +13,13 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 
 <a name="TableOfContents"></a>   
 ##  Inhalt
-1. [RGY-Anzeige `RW_5V_RGY_LED`](#x10)   
-2. [DCC-Gleis-Spannungs- und Strom-Erkennung `dcc_track_UI_detection`](#x20)   
-3. [UI-Steuerungsplatine `RW_5V_UI_STRG`](#x30)   
-4. [Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG`](#x40)   
+1. [RGY-Anzeige `RW_5V_RGY_LED`](#x10)  
+2. [Pulsflanken-Erkennung Typ 1](#x20)  
+3. [Set-/Reset-Pulsflanken-Erkennung (Typ 2)](#x30)  
+4. [DCC-Gleis-Spannungs- und Strom-Erkennung ohne Schalten](#x40)   
+5. [UI-Steuerungsplatine `RW_5V_UI_STRG`](#x50)   
 ---
-5. [Ältere Platinen mit Gleisspannungssignal TRV = 5 V](#xold)   
+6. [Ältere Platinen mit Gleisspannungssignal TRV = 5 V](#xold)   
 
 <a name="x10"></a>   
 <a name="x11"></a>   
@@ -27,18 +28,21 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 
 ## 1.1 Einleitung
 
-Die Platine `RCC_RGY_TVn_LED` ist eine **41 × 41 mm²** große Anzeigeplatine im Format der RCC-Blöcke.  
+Das Board `RCC_RGY_TVn_LED` ist eine **41 × 41 mm²** große Anzeigeplatine passend zu RCC-Blöcken.  
+Sie enthält bis zu **drei parallel geschaltete rot/grün-Duo-LEDs** und optional zwei Taster.  
 
-Sie enthält bis zu **drei parallel geschaltete rot/grün-Duo-LEDs**. Die LEDs zeigen den Zustand der Eingangssignale **TVn** und **FREn** an.  
+![rcc6_RGY_TVn_LED_Front](/images/300_rcc6_RGY_TVn_LED_assembledFront.png "rcc6_RGY_TVn_LED_Front")   
 
-| TVn | FREn |   LED-Farbe   | # | ROK | RFR |  
-|:---:|:----:|:-------------:|---|:---:|:---:|  
-| 0 V |  0 V | Grün          | # | 0 V | 5 V |  
-| 0 V |  5 V | Gelb (Orange) | # | 0 V | 0 V |  
-| 5 V |  0 V | Rot           | # | 5 V | 0 V |  
-| 5 V |  5 V | Rot           | # | 5 V | 0 V |  
+Die LEDs zeigen den Zustand der Eingangssignale **TVn** und **FREn** an.  
 
-**Bedeutung der Eingänge**
+| TVn | FREn |   LED-Farbe   | LED | ROKn | RFR |  
+|:---:|:----:|:-------------:|:---:|:---:|:---:|  
+| 0 V |  0 V | Grün          | 🟢 | 0 V | 5 V |  
+| 0 V |  5 V | Gelb (Orange) | 🟡 | 0 V | 0 V |  
+| 5 V |  0 V | Rot           | 🔴 | 5 V | 0 V |  
+| 5 V |  5 V | Rot           | 🔴 | 5 V | 0 V |  
+
+### Bedeutung der Eingänge
 
 - **TVn** – Gleisspannung vorhanden (*Track Voltage*, 0 V)  
 - **FREn** – Gleis frei (*Track Free*, 0 V)  
@@ -47,7 +51,7 @@ Damit zeigt die Platine den Zustand eines Gleises an:
 
 - 🟢 **Grün:** Gleis ist frei.
 - 🟡 **Gelb:** Gleis ist besetzt.
-- 🔴 **Rot:** Es liegt ein Fehler vor.
+- 🔴 **Rot:** Es liegt ein Fehler vor (kein Fahrstrom etc.).
 
 ### Rückmeldesignale
 
@@ -62,7 +66,7 @@ Zusätzlich zur LED-Anzeige stehen zwei Rückmeldesignale zur Verfügung:
 
 ### Optionale Taster
 
-An den Positionen **SW1** und **SW3** können optional Taster oder Schalter eingebaut werden. Sie können von einer Steuerplatine ausgewertet werden, zum Beispiel zum Testen der **SET-** und **RESET-Eingänge** einer [Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG`](#x40).
+An den Positionen **SW1** und **SW3** können optional Taster oder Schalter eingebaut werden. Diese können von einer Steuerplatine ausgewertet werden, zum Beispiel zum Testen der **SET-** und **RESET-Eingänge** einer [Pulsspeicher-Steuerungsplatine `RCC_PULS2_STRG`](#x30).
 
 <a name="x12"></a>   
 
@@ -110,7 +114,7 @@ Beim Betätigen werden sie mit **0 V (Masse)** verbunden.
 
 ### Gesamtschaltplan
 
-KiCad-Schaltplan der Platine **`RW_5V_RGY_TVn_LED`**:   
+KiCad-Schaltplan der Platine **`RCC_RGY_TVn_LED`**:   
 ![RCC_RGY_TVn_LED_circuit](/images/600_RCC_RGY_TVn_LED_circuit_V2.png "RCC_RGY_TVn_LED_circuit")  
 
 Die Stromversorgung und alle Ein- und Ausgangssignale befinden sich an der Stiftleiste J1.  
@@ -118,11 +122,11 @@ Die Stromversorgung und alle Ein- und Ausgangssignale befinden sich an der Stift
 <a name="x13"></a>   
 
 ## 1.3 Bestückung der Platine
-Bild der Platine "`RW_5V_RGY_LED`"" (Version 2):   
-![Platine RW_5V_RGY_LED](/images/pcb_f/PCB_F_RW_5V_RGY_LED_V2.png "Platine RW_5V_RGY_LED")   
+Bild der Platine "`RCC_RGY_TVn_LED`" (Version 1):   
+![Platine RW_5V_RGY_LED](/images/pcb_f/PCB_F_RCC_RGY_TVn_LED_V1.png "Platine RW_5V_RGY_LED")   
 
-Best&uuml;ckte Platine "`RW_5V_RGY_LED`"   
-![Bestückte Platine RW_5V_RGY_LED](/images/300_RW_5V_RGY_LED_assembled.png "Bestückte Platine RW_5V_RGY_LED")   
+Best&uuml;ckte Platine "`RCC_RGY_TVn_LED`"   
+![Bestückte Platine RW_5V_RGY_LED](/images/300_RCC_RGY_TVn_LED_assembled.png "Bestückte Platine RW_5V_RGY_LED")   
 
 ### St&uuml;ckliste   
 
@@ -133,31 +137,31 @@ Best&uuml;ckte Platine "`RW_5V_RGY_LED`"
 | 3 | D1, D2, D3 | Buchsenleiste 3-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs |   
 | 1 | D4 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
 | 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
-| 4 | Q1, Q4, Q5, Q6 | Transistor BC337-40 (npn) | TO-92_Inline_Wide_custom |   
-| 2 | Q2, Q3 | Transistor BC327-40 (pnp) | TO-92_Inline_Wide_custom |   
+| 4 | Q1, Q6 | Transistor BC337-40 (npn) | TO-92_Inline_Wide_custom |   
+| 2 | Q2, Q3, Q4, Q5 | Transistor BC327-40 (pnp) | TO-92_Inline_Wide_custom |   
 | 1 | R1 | 680 &Omega;..1 k&Omega; (2) | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | R11 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | R3 | 3,9 k&Omega;..10 k&Omega; (3) | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R13 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | R9 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 2 | R10, R12 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 2 | R6, R8 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 4 | R6, R8, R10, R12 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R7 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 | 2 | R2, R5 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 1 | R7 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 | 3 | R4, R14, R15 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
-| 2 | SW1, SW2 | Taster SW_Push_DPDT_8x8 | SW_Push_DPDT_8x8 |   
-| 2 | SW1, SW2 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe je nach Anwendung |    
+| 2 | SW1, SW3 | Taster SW_Push_DPDT_8x8 | SW_Push_DPDT_8x8 |   
+| 2 | SW1, SW3 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe je nach Anwendung |    
 
 ### Anmerkungen
 (1) Es ist sinnvoll, die 3-poligen Buchsenleisten an alle 3 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb weniger LEDs eingesetzt werden.  
-(2) Widerstand R1: 680 &Omega; bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
-(3) Widerstand R3: 3,9 k&Omega; bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
+(2) Widerstand R1: **680 &Omega;** bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
+(3) Widerstand R3: **3,9 k&Omega;** bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
    
 ### Vorbereitung
 1. Von einer langen, einreihigen Buchsenleiste 3x 3-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D3).   
 2. Die äußeren LED-Anschl&uuml;sse farblich kennzeichnen:  
-   * kurzen Anschluss grün färben, mittleren Anschluss rot
-3. LED-Anschl&uuml;sse auf 17 mm abschneiden und Ecken biegen ("Feder", mittleren Anschluss nach vorne oder hinten). Länge dann ca. 13 mm.   
+   * kurzen Anschluss grün färben, mittellangen Anschluss rot  
+3. Schrumpfschlauch 11 mm auf jeden LED-Anschluss aufschrumpfen  
+4. LED-Anschl&uuml;sse auf 17 bis 18 mm abschneiden und Ecken biegen ("Feder", mittleren Anschluss nach vorne oder hinten). Länge dann ca. 13 mm.   
 ![RW_5V_DUOLED1](/images/300_RW_5V_DUOLED1.png "RW_5V_DUOLED1") 
 ![RW_5V_DUOLED2](/images/300_RW_5V_DUOLED2.png "RW_5V_DUOLED2")   
 
@@ -174,58 +178,341 @@ Bauteile der Platine "RW_5V_RGY_LED"
 Auf die **Bauteilseite** l&ouml;ten:   
 
 2. Widerstände R1, R11 und R13 (liegend, 680 &Omega; ... 1 k&Omega;, 100 k&Omega;, 47 &Omega;)   
-3. Transistoren Q1, Q4, Q5, Q6 (BC337-40)   
-4. Transistoren Q2, Q3 (BC327-40)   
+3. Transistoren Q1, Q6 (BC337-40)   
+4. Transistoren Q2, Q3, Q4, Q5 (BC327-40)   
 5. Kondensator C1 (1 &micro;F)   
 6. Diode D4 (BAT48, auf Polung achten: Kathode unten beim Kreis)   
 7. Widerstand R3 (3,9 k&Omega; ... 10 k&Omega;)   
 8. Widerstand R9 (47 &Omega;)
-9. Widerst&auml;nde R10, R12 (1 k&Omega;, stehend)   
-10. Widerst&auml;nde R6, R8 (4,7 k&Omega;, stehend)   
-11. Widerst&auml;nde R2, R5, R7 (10 k&Omega;, stehend)   
-12. Widerst&auml;nde R4, R14, R15 (100 k&Omega;, stehend)   
-13. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
+9. Widerst&auml;nde R6, R7, R8, R10, R12 (4,7 k&Omega;, stehend)   
+10. Widerst&auml;nde R2, R5 (10 k&Omega;, stehend)   
+11. Widerst&auml;nde R4, R14, R15 (100 k&Omega;, stehend)   
+12. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
 
 Optional: Auf die **L&ouml;tseite** l&ouml;ten:   
 
-14. Taster SW1, SW3   
+13. Taster SW1, SW3   
 
 ### Print vervollständigen
-Duo-LED(s) einstecken.   
+Duo-LED(s) einstecken (auf Polung achten).   
 
 <a name="x14"></a>   
 
 ## 1.4 Test
 ### Vorbereitung
-* 5x Kabel Stecker-Buchse (rot, schwarz, grün, violett, weiß)   
+* 5x Kabel Stecker-Buchse (schwarz, rot, gelb, grün, violett)   
+* Steckbrett zum Verteilen der 0V und 5V
 * Netzgerät 5 V   
 * Voltmeter (Bereich 20VDC)   
 
 ### Durchführung
 Print auf die Bauteilseite legen. Alle erforderlichen Anschlüsse befinden sich an den langen Kontakten der der Buchsenleiste J1:   
 
-![rcc6_RGY_LED_J1](/images/300_rcc6_RGY_LED_J1.png "rcc6_RGY_LED_J1")   
+![rcc6_RGY_LED_J1](/images/200_rcc6_RGY_LED_J1.png "rcc6_RGY_LED_J1")   
 
-1. Versorgungsspannung anlegen: Pin 1 mit Netzgerät +5V, Pin 2 mit GND verbinden.   
-   ► Die LEDs leuchten rot.   
-2. Voltmeter an GND anschließen. Messen: Pin ROKn = +5V, Pin RFR = 0V   
-3. Pin TVn mit 5V verbinden.   
-   ► Die LEDs leuchten gelb (orange).   
-4. Messen: Pin ROKn = 0V, Pin RFRE = 0V   
-5. Pin FREn mit 0V verbinden.   
-   ► Die LEDs leuchten grün.   
-6. Messen: Pin ROKn = 0V, Pin RFR = 3,5V   
+1. Versorgungsspannung am Steckbrett anschließen.
+
+2. Versorgungsspannung am Board anlegen: Pin 1 mit 5V, Pin 2 mit GND verbinden:   
+   ► 🔴🔴🔴 Die LEDs leuchten rot.   
+
+3. Voltmeter an GND anschließen. Messen: Pin ROKn = +5V, Pin RFR = 0V   
+
+4. Pin TVn mit 0 V verbinden (active low):   
+   ► 🟡🟡🟡 Die LEDs leuchten gelb (orange).   
+
+5. Messen: Pin ROKn = 0V, Pin RFRE = 0,9V   
+
+6. Pin FREn mit 0V verbinden:   
+   ► 🟢🟢🟢 Die LEDs leuchten grün.   
+
+7. Messen: Pin ROKn = 0,9V, Pin RFRE = 3,7V   
 
 <a name="x15"></a>   
 
-## 1.5 Versionen
-* V1 (2608..): OK  
+## 1.5 Hinweise zur Montage
+Duo-LEDs mit drei Anschlüssen passen nicht in Standard-LED-Fassungen.  
+Die Montage des `RCC_RGY_TVn_LED`-Boards erfolgt daher mit dem Board `RW_LEER_DUOLED`. Bei diesem sind die Bohrungen für LED2 und LED5 vergrößert.   
+Steht kein `RW_LEER_DUOLED`-Board zur Verfügung, kann man auch das `RW_LEER_LED`-Board verwenden und die Bohrungen LED2 und LED5 auf 8 mm aufbohren (gleich groß wie die Bohrungen für die Taster).
+
+![Befestigungsplatine DUOLED](/images/300_RW_LEER_DUOLED.png "Befestigungsplatine DUOLED") ![Befestigungsplatine DUOLED auf RGY_LED](/images/300_RW_LEER_DUOLED_RGY_LED.png "Befestigungsplatine DUOLED  auf RGY_LED")   
+
+
+## 1.6 Versionen
+* V1 (260823): OK  
 
 <a name="x20"></a>   
 <a name="x21"></a>   
 
-# 2. DCC-Gleis-Spannungs-/Strom-Erkennung
-## 2.1 Einleitung
+# 2. Puls-Erkennung Typ 1
+
+## 2.1 Prinzip
+
+Die Puls-Erkennung Typ 1 (kurz "PULS1") reagiert auf eine fallende Flanke am Eingang und erzeugt einen Puls vorgegebener Länge. Die Pulslänge ist mit einem Potenziometer zwischen Millisekunden und Sekunden einstellbar. Es sind zwei voneinander unabhängige Kanäle verfügbar.  
+Bleibt ein Impulseingang länger auf 0, so bleibt auch das Ausgangssignal auf 0.  
+
+<a name="x22"></a>   
+
+## 2.2 Steuerung Puls-Erkennung Typ 1 (`RCC_PULS1_STRG`)
+
+### Schaltplan
+![Schaltplan RCC_PULS1_STRG](/images/600_RCC_PULS1_STRG_circuit.png "Schaltplan RCC_PULS1_STRG")  
+
+### St&uuml;ckliste   
+| Anzahl | Referenz | Wert | Geh&auml;use |   
+|-----|-----|-----|-----|   
+| 2 | C1, C2 | 100 nF, 5,08 mm | C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
+| 2 | C3, C4 | Tantal-Elko 10 &micro;F, 16 V, 2,54 mm| ELKO_L4.32mm_D3.81mm_P2.54mm_kh |   
+| 3 | D1, D2, D3 | BAT48 | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
+| 7 | D4, D5, D6, D7, D8, D9, D10 | BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp_kh |   
+| 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_kh |   
+| 2 | J3, J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
+| 1 | J4 | Wannenstecker 10-polig, stehend | Box_02x05_P2.54mm_Vertical_kh |   
+| 2 | Q1, Q2 | npn-Transistor BC337 | TO-92_Inline_Wide_custom |   
+| 2 | R7, R8 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R3 | 4,7 k&Omega;| R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R4 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 2 | R1, R5 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 2 | R2, R6 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | RV1, RV2 | Trimmer 500 k&Omega; stehend | Trim_RM-063_Horizontal_kh |   
+| 1 | U1 | CD4538  Dual Precision Monostable Multivibrator (Monoflop), retriggerbar |  |   
+| 1 | U1 | IC-Fassung 16-polig, gedrehte Pins | DIP-16_W7.62mm_kh |   
+
+### Bestückung
+1. IC-Fassung U1 (auf Polung = Kerbe achten)  
+2. Dioden D1 bis D10 (stehend, auf Polung achten: Kathode im weißen Kreis!)  
+3. Transistoren Q1, Q2 (BC337)  
+4 Tantal-Elko C3, C4 (auf Polung achten!)  
+5 Trimmer RV1, RV2  
+6. Alle Widerstände R1 bis R8  
+7. Kondensatoren C1, C2 (100 nF)  
+8. Wannenstecker J3 bis J5 (auf Polung achten!)  
+
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
+9. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
+
+## Versionen
+* V1 (260824): OK  
+
+<a name="x23"></a>   
+
+## 2.3 LED-Anzeige Puls-Erkennung Typ 1 (`RCC_PULS1_LED`)
+
+### Schaltplan
+![Schaltplan RCC_PULS1_LED](/images/600_RCC_PULS1_LED_circuit.png "Schaltplan RCC_PULS1_LED")  
+
+### St&uuml;ckliste   
+| Anzahl | Referenz | Wert | Geh&auml;use |   
+|-----|-----|-----|-----|   
+| 1 | C1 | Kondensator 100 nF | C_L4mm_D3mm_P2.54mm_kh |   
+| 2 | D1, D4 | LED gelb | LED_D3.0mm |   
+| 2 | D2, D5 | LED grün | LED_D3.0mm |   
+| 4 | D1, D2, D4, D5 | Buchsenleiste (gedrehte Buchsen), 2-polig (1) |   |   
+| 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
+| 2 | Q1, Q2 | npn-Transistor BC337 | TO-92_Inline_Wide_custom |   
+| 1 | R5 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R10 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 3 | R1, R6, R8 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P10,16mm_Horizontal |   
+| 1 | R3 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R4, R9 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R2 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 1 | R7 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+
+#### Vorbereitung   
+1. 4x gedrehte, 2-polige Buchsen für die LEDs: Von einer (meist 40-poligen) Buchsenleiste herunterschneiden.   
+2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
+
+### Bestückung
+1. Die zweipoligen Buchsenleisten (D1, D2, D4, D5) mit gedrehten Pins auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
+
+Auf die _*Bauteilseite*_ l&ouml;ten:   
+2. Widerstände R1, R6, R8 (1 k&Omega; liegend, 10 mm)  
+3. Widerstand R7 (100 k&Omega; liegend, 7,6 mm)  
+4. Transistoren Q1, Q2 (BC337)   
+5. Kindensator C1 (100 nF, 2,54 mm Raster)  
+6. Widerstände R5, R10 (47 &Omega;, stehend)  
+7. Widerstand R3 (1 k&Omega;, stehend)  
+8. Widerstände R4, R9 (10 k&Omega;, stehend)  
+9. Widerstand R2 (100 k&Omega;, stehend)  
+10. Buchsenleisten J1 und J2   
+
+### Versionen
+* V1 (260824): OK  
+
+<a name="x24"></a>   
+
+## 2.4 Zusammenbau des PULS1-Blocks
+1. Aufstecken des Steuerungsboards `RCC_PULS1_STRG` auf das Anzeigeboard `RCC_PULS1_LED`.   
+2. Einstecken der LEDs. F&uuml;r alle LEDs gilt: Anode = Pluspol = rot markiert immer __nach au&szlig;en__ zum Leiterplattenrand.   
+3. Falls vorhanden: Print `RW_LEER_LED` auf das Anzeigeboard stecken.   
+
+<a name="x25"></a>   
+
+## 2.5 Test des PULS1-Blocks
+### Pinbelegung der Stecker am STRG-Board
+![Pinbelegung PULS1 Stecker J4 J5](/images/200_rcc6_puls1_J4_J5.png "Pinbelegung PULS1 Stecker J4 J5")  
+
+### Vorbereitung
+(1) Stecke ein 6-poliges Flachbandkabel am **6-poligen Stecker J5-Pin 1** an und stecke am anderen Kabelende einen Stift-Stift-Draht in **Pin 1** (Reedkontakt-Eingang 1).  
+   Oder: Stecke DIREKT am **6-poligen Stecker J5-Pin 1** einen Buchsen-Buchsen-Draht an.  
+(2) Lege an den PULS1-Block die Versorgungsspannung an (6-poliger Stecker J3)  
+   ► die beiden grünen LEDs 🟢 leuchten
+
+### Testdurchführung
+#### Puls-Eingang 1
+* Verbinde J5-Pin 1 kurz mit GND an J5-Pin 5:  
+  ► die linke, gelbe LED 🟡 leuchtet kurz auf.  
+  Die Leuchtdauer kann mit dem Trimmer RV1 eingestellt werden.  
+
+Bleibt der Eingang länger auf 0, so bleibt auch das Ausgangssignal so lange auf 0.  
+
+#### Puls-Eingang 2
+* Verbinde J5-Pin 2 kurz mit GND an J5-Pin 5:  
+  ► die rechte, gelbe LED 🟡 leuchtet kurz auf.  
+  Die Leuchtdauer kann mit dem Trimmer RV2 eingestellt werden.  
+
+Bleibt der Eingang länger auf 0, so bleibt auch das Ausgangssignal so lange auf 0.  
+
+#### I²C-Rückmeldung
+**Kanal 1**  
+* Verbinde das Voltmeter mit J4-Pin 1 (V) und J4-Pin 5 (COM = GND = 0V):  
+  ► Anzeige 5 V  
+* Erzeuge einen Puls am Eingang 1, d.h. verbinde J5-Pin 1 kurz mit GND an J5-Pin 5:  
+  ► Anzeige 0 V, solange der Puls dauert.  
+
+Führe den Test auch für Kanal 2 durch.  
+
+<a name="x30"></a>   
+<a name="x31"></a>   
+
+# 3. Set-/Reset-Pulsflanken-Erkennung (Typ 2)
+
+## 3.1 Prinzip
+
+Die Puls-Erkennung Typ 2 (kurz "PULS2") reagiert auf fallende Flanken am SET- und RESET-Eingang. Der letzte Zustand wird gespeichert und steht auch nach einem Stromausfall zur Verfügung.  
+
+### Eingänge
+
+SET- und RESET-Eingang können auf 3 Arten getriggert werden:  
+* 6-poliger Stecker J5  
+* Taster (zB auf Platine `RCC_RGY_TVn_LED`)  
+* 10-poliger Stecker J4 (I²C-Anschluss)  
+
+![RW_5V_PULS_STRG_IN](/images/300_RW_5V_PULS_STRG_IN.png "RW_5V_PULS_STRG_IN")   
+
+### Ausgänge
+
+Die Pulsspeicher-Steuerungsplatine `RCC_PULS_TVn_STRG` erzeugt  
+* die Steuersignale `FRE` und `TVn` für die LED-Anzeige und   
+* leitet die LED-Anzeige-Rückmeldung `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
+
+Zur Anzeige wird das Board `RCC_RGY_TVn_LED` verwendet.   
+
+<a name="x32"></a>   
+<a name="x321"></a>   
+
+## 3.2 Steuerung Puls-Erkennung Typ 2 (`RCC_PULS2_TVn_STRG`)
+
+### 3.2.1 Schaltplan
+Die Puls-Steuerung besteht aus 5 Stufen:   
+* Eingänge  
+* Impulserzeugung  
+* Flipflop (HEF4093)  
+* H-Brücken-Treiber (DRV8833)  
+* Bistabiles Relais (IM41)  
+
+KiCad-Schaltplan der Platine "RCC_PULS2_TVn_STRG" (Version 1):   
+
+![RCC_PULS2_TVn_STRG_circuit](/images/600_RCC_PULS2_TVn_STRG_V1_circuit.png "RCC_PULS2_TVn_STRG_circuit")   
+
+<a name="x322"></a>   
+
+### 3.2.2 Bestückung der Platine
+Bild der Platine `RCC_PULS2_TVn_STRG` (Version 1):   
+![PULS2-Platine](/images/pcb_f/PCB_F_RCC_PULS2_TVn_STRG_V1.png "PULS2-Platine")   
+
+Best&uuml;ckte Platine "RCC_PULS2_TVn_STRG_V1"   
+![RCC_PULS2_TVn_STRG bestückt1](/images/300_RCC_PULS2_TVn_STRG_V1_assembled1.png "RCC_PULS2_TVn_STRG")  
+
+#### St&uuml;ckliste   
+| Anzahl | Referenz | Wert | Geh&auml;use |   
+|-----|-----|-----|-----|   
+| 3 | C1, C2, C4 | 100 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 2 | C3, C5 | 10 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 1 | C6 | Elko 10 &micro;F, 16 V, Raster 2,54 mm | ELKO_L7.88mm_D4.57mm_P2.54mm_kh |   
+| 3 | D1, D2, D4 | BAT48 | D_DO-35_P1.778mm_Vertical_AnodeUp_kh |   
+| 2 | D3, D6 | BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
+| 3 | D5, D8, D9 | BAT48 | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
+| 1 | D7 | BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
+| 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_Back_kh |   
+| 2 | J3, J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
+| 1 | J4 | Wannenstecker 10-polig, stehend | Box_02x05_P2.54mm_Vertical_kh |   
+| 1 | J6 | DRV8833_Board [1] | DRV8833_Board |   
+| 2 | J6 | Buchsenleiste 6 Pin [2] |   |   
+| 1 | J7 | Stiftleiste 2-polig (Jumper_2) [3] | PinSocket_1x02_P2.54mm_Vertical_kh |   
+| 1 | J7 | Jumper (2-polig) |   |   
+| 1 | K1 | Relais IM41, 3 V, 2x UM, bistabil | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
+| 2 | R21, R24 | 100 &Omega; | R_Axial_P1.778mm_Vertical_kh |   
+| 2 | R28, R29 | 100 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 4 | R22, R23, R25, R26 | 100 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
+| 1 | R27 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | U1 | 4-fach NAND mit Schmitt-Trigger HEF4093B | DIP-14_W7.62mm_Socket_kh |   
+| 1 | U1 | Fassung DIL 14 (2x7 Pin), gedrehte Kontakte |   |   
+
+Bauteile der Platine `RCC_PULS2_TVn_STRG`:   
+![RCC_PULS2_TVn_STRG_parts](/images/300_RCC_PULS2_TVn_STRG_parts_V1.png "RCC_PULS2_TVn_STRG_parts")   
+
+#### Vorbereitung
+[1] 1. Auf dem DRV8833_Board J6 die Verbindung bei J1 **auftrennen**.   
+&nbsp; &nbsp; &nbsp;2. 2x 6polige Stiftleisten zu den Bauteilen hin anlöten.   
+[2] Von einer flachen, einreihigen Buchsenleiste 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6) oder   
+    zB eine DIL 14 Fassung mit Federkontakten auseinanderschneiden und 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6).   
+[3] Von einer langen, einreihigen Stiftleiste 1x 2-poliges St&uuml;ck abtrennen (f&uuml;r J7).   
+
+#### Best&uuml;ckung   
+![](/images/480_RCC_PULS2_TVn_STRG_Fsilk_V1.png)  
+1. Widerstand R27 (100 k&Omega;, liegend)   
+2. Diode D3, D6 (BAT48, liegend, Kathode beim weißen Strich)   
+3. Elko C6 (10 &micro;F, liegend, auf Polung achten!)   
+4. Fassung U1 (DIL 14, auf Polung/Kerbe achten!)   
+5. Buchsenleisten J6 (2x 6 Pin)   
+6. **Bistabiles** Relais K1 (IM41, 3V, auf Polung achten)   
+7. Diode D1, D2, D4, D5, D7, D8, D9 (BAT48, stehend, Kathode in den Kreis)   
+8. Kondensatoren C3, C5 (10 nF = 103, Raster 2,54 mm, stehend)   
+9. Kondensatoren C1, C2, C4 (100 nF = 104, Raster 2,54 mm, stehend)   
+10. Stiftleiste J7 (2-polig)   
+11. Widerst&auml;nde R21, R24, R28, R29 (100 &Omega;, stehend)   
+12. Widerst&auml;nde R22, R23, R25, R26 (100 k&Omega;, stehend)   
+13. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
+14. Kondensator C2 (100 nF = 104, Raster 2,54 mm, stehend)   
+15. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
+
+#### Print vervollständigen
+* Jumper auf Stifte J7 aufstecken.   
+* 4-fach NAND HEF4093B einstecken.   
+* DRV8833_Board aufstecken.   
+
+<a name="x323"></a>   
+
+## 3.2.3 Versionen
+* V1 (260727): OK.   
+
+<a name="x33"></a>   
+
+## 3.3 Inbetriebnahme und Test
+
+#### Pinbelegung des 6-poligen Steckers J5:   
+![RW_5V_PULS_STRG_J5](/images/150_RW_5V_PULS_STRG_J5.png "RW_5V_PULS_STRG_J5")   
+
+#### Pinbelegung des 10-poligen Steckers J4:   
+![RW_5V_PULS_STRG_J4](/images/150_RW_5V_PULS_STRG_J4.png "RW_5V_PULS_STRG_J4")   
+
+Der Test der Platine `RCC_PULS2_TVn_STRG` erfolgt gemeinsam mit der Platine `RCC_RGY_TVn_LED`.   
+
+<a name="x40"></a>   
+<a name="x41"></a>   
+
+# 4. DCC-Gleis-Spannungs-/Strom-Erkennung
+## 4.1 Einleitung
 Die DCC-Gleis-UI-Erkennung überwacht ein Gleis. Sie erkennt, ob  
 1. **Gleisspannung** anliegt und ob  
 2. **Fahrstrom** fließt.
@@ -239,114 +526,18 @@ Die Stromversorgung und die beiden digitalen Ausgänge sind über einen **6-poli
 TVn ... Track Voltage ON (0V) = Fahrspannung ein (0V)   
 FREn ... Track Free (0V) = Gleis frei (0V)   
 
-<a name="x22"></a>   
+Die technische Funktion ist weitgehend mit `RCC_TUI_EXT` identisch (bis auf das Schalten des Fahrstroms) und hier beschrieben:  
+[https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md](https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md#x72)
 
-## 2.2 Gewinnung des Fahrstrom-Signals
-Der Fahrstrom (maximal 2 A) wird durch einen Shunt in eine Spannung umgewandelt:   
+<a name="x42"></a>   
 
-![Schaltung Fahrstromsignal](/images/300_rcc6_ui_schematic_track_occupancy_detection.png "Schaltung Fahrstromsignal")   
-
-Für kleine DCC-Ströme ergibt der Laststrom einen Spannungsabfall an Rs1, für größere Ströme wird durch die Dioden eine Spannung von 0,3 V bis 0,5 V erzeugt. Durch die Antiparallelschaltung der Dioden wird die Spannung auf diesen Wert begrenzt.   
-Die Widerstände Rs2 und Rs3 sorgen dafür, dass nur die Differenzspannung verstärkt wird.   
-
-### Maximaler und minimaler Fahrstrom   
-Lokomotiven benötigen Ströme von einigen 100 mA. Der Gesamtstrom auf der Zuleitung wird durch den Booster festgelegt und ist - für N-Spur - üblicherweise 2 A (manchmal auch 3 A).   
-
-Bei einem Widerstand Rs1 von 10 kΩ und einer Spannung U<sub>Rs1</sub> von 0,5 V ergibt sich ein erkannter Strom von   
-I<sub>min</sub> = U<sub>Rs1</sub> / Rs1 = 0,5 / 10k = 50 μA.   
-
-Somit beträgt der Strombereich, der von der Schaltung erkannt werden soll, ca. 50 μA bis zu 2 A.   
-
-### Grenzen für den Lastwiderstand   
-Für eine DCC-Spannung von zB ±20 V ergibt ein maximaler Laststrom von 2 A einen minimalen Lastwiderstand von 10 Ω. (Leistung 40 W!)   
-
-Um abgestellte Wagen ebenfalls zu erkennen, muss die Isolierung der Räder mit Widerstandslack (zB Uhlenbrock 40410) überbrückt werden. Der Widerstand sollte mindestens 10 kΩ betragen (keinesfalls weniger als 4 kΩ, da sonst Brandgefahr besteht). Bei einer DCC-Spannung von max. ±20V ergibt dies einen Strom von   
-$\ I_{max} = U_{DCC} / R_{min} = 20 / 10k = 2 mA. $   
-
-Maximaler Lastwiderstand bei einer DCC-Spannung von zB ±14V:   
-R<sub>Lmax</sub> = (14 - 0,6) / 60μ = 220 kΩ   
-Dies bedeutet, dass der Widerstandslack an einem Rad zwischen 10 kΩ und 220 kΩ groß sein soll.   
-
-<a name="x23"></a>   
-
-## 2.3 Signalverstärkung
-Die vom Shunt erzeugte Spannung wird mit einem INA333-Instrumentenverstärker-Board (CJMCU-333) verstärkt. Die Verstärkung ist von 1 bis zu ca. 1000 einstellbar.    
-Lässt man den Referenzpin VREF offen, so wird eine interne Referenzspannung von 3,3 V /2 = 1,65 V verwendet. Die Ausgangsspannung sollte daher eine Gleichspannung von 1,65 V sein.   
-
-Ohne Beschaltung und ohne Last sieht ein typisches Ausgangssignal allerdings oft so aus:   
-![Ausgangsspannung INA333 leer](/images/300_rcc6_ui_INA333_Uout_no_load.png "Ausgangsspannung INA333 leer")   
-
-Im Bild erkennt man eine Störspannung von 50 Hz mit diversen Überlagerungen.   
-**Beispielwerte**   
-Maximale Spannung: 2,26V   
-Spitze-Spitze-Spannung: 1,46 V   
-Gleichspannung zwischen den Impulsen: 1,6 V   
-Pulsfrequenz: 50 Hz (alle 20 ms)   
-__Anmerkung__: Vertauscht man die Eingänge DCC1 und DCC2, so wird das Signal invertiert...   
-
-Vergrößert man mit dem Trimmer auf dem INA333-Board die Verstärkung auf den Maximalwert, so erhält man folgendes Signal:   
-![Ausgangsspannung INA333 leer vmax](/images/o_rcc6_ui_INA333_Uout_no_load_vmax.png "Ausgangsspannung INA333 leer vmax")   
-
-Im Bild erkennt man, dass der Verstärker übersteuert ist (unten bei der 0V-Linie).   
-**Beispielwerte**   
-Maximale Spannung: 2,86V   
-Spitze-Spitze-Spannung: 2,86 V   
-Gleichspannung zwischen den Impulsen: 1,65 V   
-Pulsfrequenz: 50 Hz (alle 20 ms)   
-
-Beschaltet man den Ausgang des INA333 mit einem Spitzenspannungsspeicher (D3-C1) und RC-Tiefpass, so ändert sich der Ausgang des INA333 nicht (d.h. es gibt keine Rückwirkung).   
-![INA333 Schaltung Ausgangsfilter](/images/300_rcc6_ui_schematic_INA333_output_filter.png "INA333 Schaltung Ausgangsfilter")   
-
-Am Ausgang des Filters liegt eine Gleichspannung, die durch eine Störspannung überlagert ist (zB 0,26 mV). Die folgende Tabelle enthält einige Messwerte für die Spannung UF2.   
-
-| Lastwiderstand <br> kΩ | UF2 <br> V |   
-|:----:|:-----:|   
-| unendlich | 0,755 |   
-| 330k | 0,798 |   
-| 220k | 0,821 |   
-| 100k | 0,933 |   
-|  47k | 1,042 |   
-|  22k | 1,068 |   
-|  10k | 1,076 |   
-|   1k | 1,085 |   
-| 0,1k | 1,100 |   
-| 0,02k | 1,112 |   
-
-Die grafische Darstellung der Werte zeigt, dass bei hohen Lastwiderständen der Shunt-Widerstand und bei kleinen Lastwiderständen die Shunt-Dioden für den Wert der Filterspannung verantwortlich sind.   
-![INA333 Filterausgang lin](/images/300_rcc6_ui_INA333_filter_output_lin.png "INA333 Filterausgang lin")   
-![INA333 Filterausgang log](/images/300_rcc6_ui_INA333_filter_output_log.png "INA333 Filterausgang log")   
-
-<a name="x24"></a>   
-
-## 2.4 Erzeugen des Digitalsignals
-Da das Ausgangssignals des Filters stark verrauscht ist, erfolgt die Erzeugung des Digitalsignals in zwei Stufen:   
-* In einem ersten Schritt wird die Spannung mit einem Sollwert verglichen.   
-* Im zweiten Schritt wird diese Spannung UK1 mit einem Tiefpass geglättet und nochmals mit der halben Versorgungsspannung verglichen.   
-
-==> Eine Ausgangsspannung von 0 V bedeutet, dass kein Fahrstrom fließt bzw. das Gleis nicht belegt ist.    
-==> Eine Ausgangsspannung von 5 V bedeutet, dass ein Fahrstrom fließt bzw. das Gleis besetzt ist.    
-
-Die Ausgangsspannung wird (von einem Transistor invertiert) durch eine LED angezeigt:  
-* LED ein = Fahrstrom fließt = Gleis besetzt.   
-* LED aus = kein Fahrstrom = Gleis frei oder kein Fahrstrom.   
-
-![LM393 Schaltung Digitalsignal](/images/300_rcc6_ui_schematic_LM393_comparator.png "LM393 Schaltung Digitalsignal")   
-
-<a name="x25"></a>   
-
-## 2.5 DCC-Spannungserkennung
-Für die Gleisspannungserkennung wird das Gleissignal gleichgerichtet (1N4007), geglättet (100 &Omega;, 33 &micro;F) und einem Optokoppler zugeführt (1 k&Omega;, SFH615A). Der Optokoppler schaltet die grüne LED und das invertierte Ausgangssignal TRV.   
-![dcc_track_U_detection_circuit](/images/300_rcc6_track_U_detection_circuit_V2.png "dcc_track_U_detection_circuit")   
-
-<a name="x26"></a>   
-
-## 2.6 Gesamtschaltung
+## 4.2 Gesamtschaltung
 KiCad-Schaltplan der "dcc_track_UI_detection"-Platine:   
 ![dcc_track_UI_detection_circuit](/images/600_dcc_track_UI_detection_circuit_V2a.png "dcc_track_UI_detection_circuit")   
 
-<a name="x27"></a>   
+<a name="x43"></a>   
 
-## 2.7 Bestücken der Platine
+## 4.3 Bestücken der Platine
 Bild der Platine zur DCC-Gleis-Spannungs-/Strom-Erkennung (Version 2):   
 ![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_dcc_track_UI_detection_V2.png "Platine Gleis-UI-Erkennung")   
 
@@ -431,9 +622,9 @@ Stiftleisten auf der Unterseite nach UNTEN anlöten.
 2. INA333_Board aufstecken   
 3. LEDs auf passende Länge kürzen und in die Fassungen stecken   
 
-<a name="x28"></a>   
+<a name="x44"></a>   
 
-## 2.8 Inbetriebnahme und Test
+## 4.4 Inbetriebnahme und Test
 1. Versorgungsspannung anlegen: 5V an Pin 3 vom 6-poligen Wannenstecker J5, GND an Pin 5 von J5   
    ► Die grüne LED leuchtet nicht.   
 2. DCC-Spannung am Eingang der Schaltung anlegen:   
@@ -455,9 +646,9 @@ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise
 
 **Ruhezustand**: Bei offenem Jumper und ohne Lok (bzw. Last, Waggon) am Gleis darf die rote LED nicht leuchten.   
 
-<a name="x29"></a>   
+<a name="x45"></a>   
 
-## 2.9 Versionen
+## 4.5 Versionen
 * V1 (260628) -  Verbesserungen:  
   * C8 ergänzen,
   * Testwiderstand Rs4 (220 k&Omega;) an __an SS und NN__ (statt DCC0 und DCC1) anschließen,
@@ -466,25 +657,25 @@ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise
 * V2 (260717): OK   
 
 
-<a name="x30"></a>   
-<a name="x31"></a>   
+<a name="x50"></a>   
+<a name="x51"></a>   
 
-# 3. UI-Steuerungsplatine
-## 3.1 Einleitung
-Die UI-Steuerungsplatine `RW_5V_UI_STRG` dient zum Anpassen der [DCC-Gleis-UI-Erkennung](#x20) an das RCC-Blocksystem. Sie   
+# 5. UI-Steuerungsplatine
+## 5.1 Einleitung
+Die UI-Steuerungsplatine `RW_5V_UI_STRG` dient zum Anpassen der [DCC-Gleis-UI-Erkennung](#x40) an das RCC-Blocksystem. Sie   
 * versorgt die `dcc_track_UI_detection`-Platine mit der 5V-Versorgungsspannung,   
 * leitet die Steuersignale `FRE1` und `TRV1` weiter zur LED-Anzeige und   
 * leitet die LED-Rückmeldesignale `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
 
-<a name="x32"></a>   
+<a name="x52"></a>   
 
-## 3.2 Schaltplan
+## 5.2 Schaltplan
 KiCad-Schaltplan der Platine "RW_5V_UI_STRG" (Version 1):   
 ![RW_5V_UI_STRG_circuit](/images/600_RW_5V_UI_STRG_circuit_V1.png "RW_5V_UI_STRG_circuit")   
 
-<a name="x33"></a>   
+<a name="x53"></a>   
 
-## 3.3 Bestückung der Platine
+## 5.3 Bestückung der Platine
 Bild der Anpassungsplatine `RW_5V_UI_STRG` (Version 1):   
 ![UI-Steuerungsplatine](/images/pcb_f/PCB_F_UI_STRG_V1.png "UI-Steuerungsplatine")   
 
@@ -514,20 +705,20 @@ Bauteile der Platine `RW_5V_UI_STRG` (C1 fehlt):
 5. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
 6. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
 
-<a name="x34"></a>   
+<a name="x54"></a>   
 
-## 3.4 Inbetriebnahme und Test
+## 5.4 Inbetriebnahme und Test
 Der Test der Platine `RW_5V_UI_STRG` kann auf zwei Arten erfolgen:  
 1. gemeinsam mit der Platine [`RW_5V_RGY_LED`](#x10)   
-2. gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x20) unter realen Bedingungen.   
+2. gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x40) unter realen Bedingungen.   
 
 In beiden Fällen ist die richtige Anzeige im Einsatz.   
 
-### 3.4.1 Einfacher Test
+### 5.4.1 Einfacher Test
 ..ToDo..
+![]()
 
-
-### 3.4.2 Test unter realen Bedingungen
+### 5.4.2 Test unter realen Bedingungen
 Für den realen Test in der Blocksteuerungsumgebung benötigt man folgendes:  
 
 Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x20). Für den realen Test in der Blocksteuerungsumgebung benötigt man folgendes:  
@@ -548,139 +739,15 @@ Achtung beim Anschluss der Platine `dcc_track_UI_detection` auf die Richtung:
 ![RW_5V_UI_detection_test2](/images/300_RW_5V_UI_detection_test2.png "RW_5V_UI_detection_test2")   
 ![RW_5V_UI_detection_test3](/images/300_RW_5V_UI_detection_test3.png "RW_5V_UI_detection_test3")   
 
-<a name="x35"></a>   
+<a name="x55"></a>   
 
-## 3.5 Versionen
+## 5.5 Versionen
 * V1 (260704): OK   
 
 <a name="x40"></a>   
 <a name="x41"></a>   
 
-# 4. Pulsspeicher-Platine
-## 4.1 Einleitung
-Die Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG` dient zum Speichern von Pulsen (auch bei Stromausfall).  
-
-### Eingänge
-Sie hat je drei Eingänge zum Setzen und Rücksetzen:  
-* 6-poliger Stecker J5  
-* Taster (zB auf Platine `RW_5V_RGY_LED`)  
-* 10-poliger Stecker J4 (I²C-Anschluss)  
-
-![RW_5V_PULS_STRG_IN](/images/300_RW_5V_PULS_STRG_IN.png "RW_5V_PULS_STRG_IN")   
-
-
-Pinbelegnug des 6-poligen Steckers J5:   
-
-![RW_5V_PULS_STRG_J5](/images/150_RW_5V_PULS_STRG_J5.png "RW_5V_PULS_STRG_J5")   
-
-Pinbelegnug des 10-poligen Steckers J4:   
-
-![RW_5V_PULS_STRG_J4](/images/150_RW_5V_PULS_STRG_J4.png "RW_5V_PULS_STRG_J4")   
-
-### Ausgänge
-Die Pulsspeicher-Steuerungsplatine `RW_5V_PULS_STRG` erzeugt  
-* die Steuersignale `FRE1` und `TRV1` für die LED-Anzeige und   
-* leitet die LED-Anzeige-Rückmeldung `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
-
-<a name="x42"></a>   
-
-## 4.2 Schaltplan
-Die Puls-Steuerung besteht aus 5 Stufen:   
-* Eingänge  
-* Impulserzeugung  
-* Flipflop (HEF4093)  
-* H-Brücken-Treiber (DRV8833)  
-* Bistabiles Relais (IM41)  
-
-KiCad-Schaltplan der Platine "RW_5V_PULS_STRG" (Version 3):   
-
-![RW_5V_PULS_STRG_circuit](/images/600_RW_5V_PULS_STRG_circuit_V3.png "RW_5V_PULS_STRG_circuit")   
-
-<a name="x43"></a>   
-
-## 4.3 Bestückung der Platine
-Bild der Platine `RW_5V_PULS_STRG` (Version 2):   
-![PULS-Platine](/images/pcb_f/PCB_F_RW_5V_PULS_STRG_V2.png "PULS-Platine")   
-
-Best&uuml;ckte Platine "RW_5V_PULS_STRG_V2"   
-![RW_5V_PULS_STRG bestückt1](/images/300_RW_5V_PULS_STRG_V2_assembled1.png "RW_5V_PULS_STRG bestückt1") ![RW_5V_PULS_STRG bestückt2](/images/300_RW_5V_PULS_STRG_V2_assembled2.png "RW_5V_PULS_STRG bestückt2")   
-
-### St&uuml;ckliste   
-| Anzahl | Referenz | Wert | Geh&auml;use |   
-|-----|-----|-----|-----|   
-| 5 | C1, C2, C3, C4, C5 | 100 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
-| 1 | C6 | Elko 10 &micro;F, 16 V, Raster 2,54 mm | ELKO_L7.88mm_D4.57mm_P2.54mm_kh |   
-| 3 | D1, D2, D4 | Diode BAT48 | D_DO-35_P1.778mm_Vertical_AnodeUp_kh |   
-| 2 | D3, D6 | Diode BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
-| 3 | D5, D8, D9 | Diode BAT48 | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
-| 1 | D7 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
-| 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_Back_kh |   
-| 2 | J3, J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
-| 1 | J4 | Wannenstecker 10-polig, stehend | Box_02x05_P2.54mm_Vertical_kh |   
-| 1 | J6 | DRV8833_Board [1]| DRV8833_Board |   
-| 2 | J6 | Buchsenleiste 6 Pin [2] |   |   
-| 1 | J7 | Stiftleiste 2-polig (Jumper_2) [3] | PinSocket_1x02_P2.54mm_Vertical_kh |   
-| 1 | J7 | Jumper (2-polig) |   |   
-| 1 | K1 | Relais IM41, 3 V, 2x UM, bistabil | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
-| 2 | R21, R24 | 100 &Omega; | R_Axial_P1.778mm_Vertical_kh |   
-| 4 | R22, R23, R25, R26 | 100 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
-| 1 | R27 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 2 | R28, R29 | 100 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 1 | U1 | 4-fach NAND mit Schmitt-Trigger HEF4093B | DIP-14_W7.62mm_Socket_kh |   
-| 1 | U1 | Fassung DIL 14 (2x7 Pin), gedrehte Kontakte |   |   
-
-Bauteile der Platine `RW_5V_PULS_STRG`:   
-![RW_5V_PULS_STRG_parts](/images/300_RW_5V_PULS_STRG_parts_V2.png "RW_5V_PULS_STRG_parts")   
-
-### Vorbereitung
-[1] 1. Auf dem DRV8833_Board J6 die Verbindung bei J1 **auftrennen**.   
-&nbsp; &nbsp; &nbsp;2. 2x 6polige Stiftleisten zu den Bauteilen hin anlöten.   
-[2] Von einer flachen, einreihigen Buchsenleiste 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6) oder   
-    zB eine DIL 14 Fassung mit Federkontakten auseinanderschneiden und 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6).   
-[3] Von einer langen, einreihigen Stiftleiste 1x 2-poliges St&uuml;ck abtrennen (f&uuml;r J7).   
-
-### Best&uuml;ckung   
-![](/images/480_RW_5V_PULS_STRG_Fsilk_V2.png)  
-1. Widerstand R27 (100 k&Omega;, liegend)   
-2. Diode D3, D6 (BAT48, liegend, Kathode beim weißen Strich)   
-3. Elko C6 (10 &micro;F, liegend, auf Polung achten!)   
-4. Fassung U1 (DIL 14, auf Polung/Kerbe achten!)   
-5. Buchsenleisten J6 (2x 6 Pin)   
-6. Relais K1 (IM41, 3V, auf Polung achten)   
-7. Diode D1, D2, D4, D5, D7, D8, D9 (BAT48, stehend, Kathode in den Kreis)   
-8. Kondensatoren C1, C3, C4, C5 (100 nF = 104, Raster 2,54 mm, stehend)   
-9. Stiftleiste J7 (2-polig)   
-10. Widerst&auml;nde R21, R24, R28, R29 (100 &Omega;, stehend)   
-11. Widerst&auml;nde R22, R23, R25, R26 (100 k&Omega;, stehend)   
-12. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
-13. Kondensator C2 (100 nF = 104, Raster 2,54 mm, stehend)   
-14. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
-
-### Print vervollständigen
-* Jumper auf Stifte J7 aufstecken.   
-* 4-fach NAND HEF4093B einstecken.   
-* DRV8833_Board aufstecken.   
-
-<a name="x44"></a>   
-
-## 4.4 Inbetriebnahme und Test
-Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit der Platine `RW_5V_RGY_LED`.   
-
-<a name="x45"></a>   
-
-## 4.5 Versionen
-* V1 (260704): D4, D5 falsche Richtung. D8, D9 ergänzt. C2 bis C5 100 nF.   
-* V2 (260717): C2, C3 etwas gegeneinander versetzen.   
-* V3 (260727): OK.   
-
 <br><br><br><hr><h1>*** ALTE VERSIONEN *** ALTE VERSIONEN ***</h1><br><br>  
-
-# 5. Puls2-Platine
-
-# ..ToDo..
-
-
-
 
 <a name="xold"></a>   
 

@@ -124,6 +124,15 @@ String getSymbol4Line5(int iType, int iValue)
    if(iValue != 0) return (String(T_ON)  + "    ").substring(0,4);
    return (String(T_OFF)  + "    ").substring(0,4);
    break;
+  case RC_TYPE_TUI: // track switch and UI indicator-------------
+   switch(iValue) { 
+    case 0: return "=== "; // "FRE " BA=00   RTVn=0,  RFREn=0
+    case 1: return "=|: "; // "NOU " BA=01   RTVn=5V, RFREn=0
+    case 2: return "OCC "; // "OCC " BA=10   RTVn=0,  RFREn=5V
+    case 3: return "=|_ "; // "NOV " BA=11   RTVn=5V, RFREn=5V
+    default: return ERR;    // ?? impossible
+   } // END OF switch(iValue)
+   break;
   case RC_TYPE_P2: case RC_TYPE_UI: // -------------------------
    // pulse 2 inputs (reset, set), UI display
    switch(iValue) { 

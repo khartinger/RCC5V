@@ -70,7 +70,8 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
   }
  } // END OF it is a uncoupler command (1 bit, 2cmds)...........
 
- if(aRcomp[iRcomp].type==RC_TYPE_DT || aRcomp[iRcomp].type==RC_TYPE_DD) {
+ if(aRcomp[iRcomp].type==RC_TYPE_DT || aRcomp[iRcomp].type==RC_TYPE_DD
+  || aRcomp[iRcomp].type==RC_TYPE_TUI) {
   //...it is a disconn track command (1 bit, 1cmd)............
   if(iCmdValue==0) {                        // turn current off
    aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
@@ -87,7 +88,25 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
    return sReturn+String(" received");
   }
  } // END OF it is a disconn track command (1 bit, 1cmd)......
-
+/*
+ if(aRcomp[iRcomp].type==RC_TYPE_TUI) {
+  //...it is a track UI command (1 bit, 1cmd).................
+  if(iCmdValue==0) {                        // turn current off
+   aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
+   aRcmd[iRcomp].iCmd=CMD_BIT_A_0;         // turn current off
+   aRcmd[iRcomp].stateOffset=STATE_NONE;    // no state to do
+   aRcmd[iRcomp].iCmdOffset=CMD_NONE;       // nothing to do
+   return sReturn+String(" received");
+  }
+  if(iCmdValue==1) {
+   aRcmd[iRcomp].stateToDo=STATE_NOW;       // now...
+   aRcmd[iRcomp].iCmd=CMD_BIT_A_1;          // turn current on
+   aRcmd[iRcomp].stateOffset=STATE_NONE;    // no state to do
+   aRcmd[iRcomp].iCmdOffset=CMD_NONE;       // nothing to do
+   return sReturn+String(" received");
+  }
+ } // END OF it is a disconn track command (1 bit, 1cmd)......
+*/
  if(aRcomp[iRcomp].type==RC_TYPE_P2) {
   //...it is a pulse 2 command (2 bits, 2 cmd)..................
   if(iCmdValue==0) { // 0 = reset = LED green . . . . . . . . . 

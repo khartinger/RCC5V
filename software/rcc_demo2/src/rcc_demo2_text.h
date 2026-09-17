@@ -54,9 +54,6 @@
   #define T_TRACK_FRE        "Gleis frei"
   #define T_TRACK__0V        "Keine Fahrspannung"
   #define T_TRACK_00V        "Keine Fahrspannung"
-//  #define T_TRACK__NA        "Nicht ermittelbar"
-//  #define T_TRACK__OK        "OK"
-//  #define T_TRACK_NOK        "Nicht OK"
 
   // "---------|---------|-" line length = 21
   #define  INFOLINES_NUM     15
@@ -66,10 +63,10 @@
   "DCC - MQTT - Hand    ", \
   VERSION_99_1, \
   " Weiter: Taste IO19  ", \
-  "                  2/3", \
-  "DCC 21 2-Weg-Weiche  ", \
-  "DCC 61 Puls2         ", \
-  "DCC 71 IU-Anzeige    ", \
+  "DCC 21 2-Weg-Weiche 2", \
+  "DCC 61 Fahrspg ein UI", \
+  "DCC 71 Puls2         ", \
+  "DCC 81 IU-Anzeige    ", \
   " Weiter: Taste IO19  ", \
   "                  3/3", \
    " ",\
@@ -133,10 +130,10 @@
    "DCC - MQTT - Hand    ", \
    VERSION_99_1, \
    " Next: Button IO19   ", \
-   "                  2/3", \
-   "DCC 21 2-Way-Turnout ", \
-   "DCC 61 Puls2         ", \
-   "DCC 71 IU-Display    ", \
+   "DCC 21 2Way-Turnout 2", \
+   "DCC 61 track voltage ", \
+   "DCC 71 Puls2         ", \
+   "DCC 81 IU-Display    ", \
    " Next: Button IO19   ", \
    "                  3/3", \
    " ",\
