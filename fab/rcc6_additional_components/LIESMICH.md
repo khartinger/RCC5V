@@ -16,7 +16,7 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 1. [RGY-Anzeige `RW_5V_RGY_LED`](#x10)  
 2. [Pulsflanken-Erkennung Typ 1](#x20)  
 3. [Set-/Reset-Pulsflanken-Erkennung (Typ 2)](#x30)  
-4. [DCC-Gleis-Spannungs- und Strom-Erkennung ohne Schalten](#x40)   
+4. [DCC-Fahrstromerkennung ohne Schalten](#x40)   
 5. [UI-Steuerungsplatine `RW_5V_UI_STRG`](#x50)   
 ---
 6. [Ältere Platinen mit Gleisspannungssignal TRV = 5 V](#xold)   
@@ -511,13 +511,28 @@ Der Test der Platine `RCC_PULS2_TVn_STRG` erfolgt gemeinsam mit der Platine `RCC
 <a name="x40"></a>   
 <a name="x41"></a>   
 
-# 4. DCC-Gleis-Spannungs-/Strom-Erkennung
+# 4. DCC-Fahrstromerkennung ohne Schalten
 ## 4.1 Einleitung
+Die DCC-Fahrstromerkennung **ohne Schalten** besteht aus drei Platinen:  
+* UI-Erkennung `dcc_track_UI_TVn_V1`  
+* Steuerungsplatine (Anschlussplatine) `RCC_UI_TVn_STRG_V1`  
+* Anzeigeplatine `RCC_RGY_TVn_LED_V1`  
+
+<a name="x42"></a>   
+<a name="x421"></a>   
+
+## 4.2 UI-Erkennung `dcc_track_UI_TVn_V1`
+
+### 4.2.1 Funktion
+
 Die DCC-Gleis-UI-Erkennung überwacht ein Gleis. Sie erkennt, ob  
 1. **Gleisspannung** anliegt und ob  
 2. **Fahrstrom** fließt.
 
-Der Status wird über **LEDs angezeigt** und steht zusätzlich an **zwei digitalen Ausgängen** zur Verfügung.   
+Der Status wird über  
+- **LEDs angezeigt** und steht zusätzlich an 
+- **zwei digitalen Ausgängen** zur Verfügung.   
+
 So kann man erkennen, ob ein Gleis **besetzt** ist.   
 
 Die Stromversorgung und die beiden digitalen Ausgänge sind über einen **6-poligen Stecker** angeschlossen.   
@@ -526,25 +541,27 @@ Die Stromversorgung und die beiden digitalen Ausgänge sind über einen **6-poli
 TVn ... Track Voltage ON (0V) = Fahrspannung ein (0V)   
 FREn ... Track Free (0V) = Gleis frei (0V)   
 
-Die technische Funktion ist weitgehend mit `RCC_TUI_EXT` identisch (bis auf das Schalten des Fahrstroms) und hier beschrieben:  
+Die technische Funktion ist weitgehend identisch mit `RCC_TUI_EXT` (bis auf das Schalten des Fahrstroms) und ist hier beschrieben:  
 [https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md](https://github.com/khartinger/RCC5V/blob/main/fab/rcc4_block/LIESMICH.md#x72)
 
-<a name="x42"></a>   
+<a name="x422"></a>   
 
-## 4.2 Gesamtschaltung
-KiCad-Schaltplan der "dcc_track_UI_detection"-Platine:   
-![dcc_track_UI_detection_circuit](/images/600_dcc_track_UI_detection_circuit_V2a.png "dcc_track_UI_detection_circuit")   
+### 4.2.2 Gesamtschaltung
 
-<a name="x43"></a>   
+KiCad-Schaltplan der "dcc_track_UI_TVn"-Platine:   
 
-## 4.3 Bestücken der Platine
+![dcc_track_UI_TVn_V1_circuit](/images/600_dcc_track_UI_TVn_V1_circuit.png "dcc_track_UI_TVn_V1_circuit")   
+
+<a name="x423"></a>   
+
+### 4.2.3 Bestücken der Platine
 Bild der Platine zur DCC-Gleis-Spannungs-/Strom-Erkennung (Version 2):   
-![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_dcc_track_UI_detection_V2.png "Platine Gleis-UI-Erkennung")   
+![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_dcc_track_UI_TVn_V1.png "Platine Gleis-UI-Erkennung")   
 
 Best&uuml;ckte Platine "dcc_track_UI_detection"   
-![Bestückte Platine dcc_track_UI_detection](/images/300_dcc_track_UI_detection_V1_assembled.png "Bestückte Platine dcc_track_UI_detection")   
+![Bestückte Platine dcc_track_UI_TVn](/images/300_dcc_track_UI_TVn_V1_assembled.png "Bestückte Platine dcc_track_UI_TVn")   
 
-### St&uuml;ckliste   
+#### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
 |--------|-------------------|---------------------|--------------------|   
 | 5 | C1, C2, C4, C7, C8 | Kondensator 1 &micro;F, 16 V, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
@@ -552,24 +569,27 @@ Best&uuml;ckte Platine "dcc_track_UI_detection"
 | 1 | C6 | Elko 33 &micro;F, 35 V, Raster 2,54 mm | CP_Radial_D8.0mm_P2.50mm |   
 | 2 | D1, D2 | Diode SB240 | D_DO-15_P3.81mm_Vertical_AnodeUp |   
 | 1 | D3 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
-| 1 | D4 | LED rot, 3 mm, 2 mA | LED_D3.0mm |   
 | 1 | D5 | Diode 1N4007 | D_DO-41_SOD81_P3.81mm_Vertical_AnodeUp_kh |   
+| 1 | D4 | LED rot, 3 mm, 2 mA | LED_D3.0mm |   
 | 1 | D6 | LED gr&uuml;n, 3 mm, 2 mA | LED_D3.0mm |   
 | 2 | D4, D6 | gedrehte Buchsen, 2-polig |   |   
 | 2 | J1, J2 | Schraubklemme, 2-polig, schwarz, 5 mm | Screw_Terminal_01x02_P5 |   
 | 1 | J3 | Stiftleiste 2-polig | PinSocket_1x02_P2.54mm_Vertical_kh |   
 | 1 | J3 | Jumper 2-polig |    |   
 | 1 | J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
-| 2 | Q1, Q2 | npn-Transistor BC337-40 | TO-92_Inline_Wide_custom |   
-| 2 | R16, R17 | 47 &Omega;| R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | Q1 | npn-Transistor BC337-40 | TO-92_Inline_Wide_custom |   
+| 1 | Q2 | pnp-Transistor BC327-40 | TO-92_Inline_Wide_custom |   
+| 2 | R16, R18 | 47 &Omega;| R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R11 | 100 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
-| 6 | R4, R8, R10, R12, R13, R15 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 1 | Rs2 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal |   
-| 1 | Rs3 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 5 | R1, R2, R6, R7, Rs1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 4 | R4, R8, R10, R13 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R12 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 2 | R14, R15 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 3 | R1, Rs2, Rs3 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 4 | R2, R6, R7, Rs1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R3 | 33 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 3 | R5, R9, R14 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 1 | Rs4 | 220 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R5 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 2 | R9, R17 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | Rs4 | 220 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | RV1 | 10-Gang-Trimmer 10 k&Omega; stehend | Trim_Bourns_3296W_Vertical |   
 | 1 | U1 | INA333_Board | INA333-Board |   
 | 2 | U1 | Stiftleiste 4-Pin |   |   
@@ -579,15 +599,20 @@ Best&uuml;ckte Platine "dcc_track_UI_detection"
 | 1 | U3 | Optokoppler SFH615A | DIP-4_W7.62mm |   
 | 1 | U3 | Präzisionssockel 4 Pin (2x 2 Pin, Abstand 7,62 mm) |   |    
 
-Bauteile der "ui_detection"-Platine (Version 1):   
-![rcc6_ui_detection_parts](/images/300_rcc6_ui_detection_parts_V1.png "rcc6_ui_detection_parts")   
+Bauteile der "dcc_track_UI_TVn"-Platine (Version 1):   
+![rcc6_dcc_track_UI_TVn_V1_parts](/images/300_rcc6_dcc_track_UI_TVn_V1_parts.png "rcc6_dcc_track_UI_TVn_V1_parts")   
 
-### Vorbereitung   
-* 2x gedrehte, 2-polige Buchsen für die LEDs: Diese von den meist 40-poligen Buchsenleisten herunterschneiden.   
-* 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.   
-* 2x 4-polige Buchsenleiste für das INA333-Board: Von 8- bzw. 10-poligen Buchsenleisten herunterschneiden.    
+#### Vorbereitung   
+(1) 2x gedrehte, 2-polige Buchsen für die LEDs: Von einer (meist 40-poligen) Buchsenleiste herunterschneiden.   
+(2) 1x 2-polige Stiftleiste von Stiftleiste herunterschneiden (für J3)   
+(3) 2x 4-polige Buchsenleiste für das INA333-Board: Von 8- bzw. 10-poligen Buchsenleisten herunterschneiden.    
+(4) 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.   
+(5) 2x 4-polige Stiftleisten auf der Unterseite des INA333-Boards nach UNTEN anlöten (siehe Bild).   
 
-### Best&uuml;ckung   
+![rcc6_INA333_Board](/images/300_rcc6_INA333_Board.png "rcc6_INA333_Board")   
+_Bild: INA-Board mit angelöteten Stiften_  
+
+#### Best&uuml;ckung   
 1. Widerst&auml;nde R1, Rs2, Rs3 (liegend, möglichst flach, 10 k&Omega;)   
 2. Widerstand R5 (liegend, 47 k&Omega;)   
 3. Widerstand Rs4 (liegend, 220 k&Omega;)   
@@ -598,70 +623,84 @@ Bauteile der "ui_detection"-Platine (Version 1):
 8. Fassungen U2 (2x 4 Pin) und U3 (2x 2 Pin, auf Einbaurichtung achten!)   
 9. Diode D5 (1N4007, stehend, auf Polung achten: Kathode unten beim Kreis)   
 10. Tantal-Elko C3, C5 (10 &micro;F, auf + Polung achten)   
-
-10. Widerst&auml;nde R16, R17 (47 &Omega;)   
-11. Widerstand R11 (100 &Omega;)   
-12. Widerst&auml;nde R4, R8, R10, R12, R13, R15 (1 k&Omega;)   
-13. Widerst&auml;nde R2, R6, R7, Rs1 (10 k&Omega;)   
-14. Widerstand R3 (33 k&Omega;)   
-15. Widerst&auml;nde R9, R14 (47 k&Omega;)   
-16. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
-17. Transistor Q1, Q2 (BC337-40)   
-18. Stiftleiste 2-polig J3   
-19. Diode D1, D2 (SB240, auf Polung achten: Kathode unten beim Kreis)   
-
-21. Wannenstecker 6-polig J5 (auf Polung achten)   
-22. Schraubklemme J1, J2 (2-polig)   
-23. 10-Gang-Trimmer RV1 (10 k&Omega; stehend, Schraube Richtung Printmitte)   
+---  
+11. Widerst&auml;nde R16, R18 (47 &Omega;)   
+12. Widerstand R11 (100 &Omega;)   
+13. Widerst&auml;nde R4, R8, R10, R12, R13 (1 k&Omega;)   
+14. Widerst&auml;nde $14, R15 (4,7 k&Omega;)   
+15. Widerst&auml;nde R2, R6, R7, Rs1 (10 k&Omega;)   
+16. Widerstand R3 (33 k&Omega;)   
+17. Widerst&auml;nde R9, R14 (47 k&Omega;)   
+18. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
+19. Transistor Q1 (BC337-40)   
+20. Transistor Q2 (BC327-40)   
+21. Stiftleiste 2-polig J3   
+22. Diode D1, D2 (SB240, auf Polung achten: Kathode unten beim Kreis)   
+---  
+23. Wannenstecker 6-polig J5 (auf Polung achten)   
+24. Schraubklemme J1, J2 (2-polig)   
+25. 10-Gang-Trimmer RV1 (10 k&Omega; stehend, Schraube Richtung U2 LM393)   
 
 #### Stiftleisten ans INA333_Board anlöten
 Stiftleisten auf der Unterseite nach UNTEN anlöten.   
 
 #### Print vervollständigen
 1. ICs bestücken (LM393, SFH615A, auf richtige Polung achten!)   
-2. INA333_Board aufstecken   
-3. LEDs auf passende Länge kürzen und in die Fassungen stecken   
+2. INA333_Board aufstecken (Trimmer Richtung Print-Rand)   
+3. LEDs auf passende Länge kürzen (zB 10 mm) und in die Fassungen stecken (auf richtige Polung achten!)  
+![rcc4_LED_Polung](/images/200_rcc4_LED_Polung.png "rcc4_LED_Polung")   
 
-<a name="x44"></a>   
+<a name="x424"></a>   
 
-## 4.4 Inbetriebnahme und Test
-1. Versorgungsspannung anlegen: 5V an Pin 3 vom 6-poligen Wannenstecker J5, GND an Pin 5 von J5   
-   ► Die grüne LED leuchtet nicht.   
+### 4.2.4 Inbetriebnahme und Test
+
+![UI_pin_J5](/images/200_rcc6_UI_pin_J5.png "UI_pin_J5")   
+
+1. Versorgungsspannung anlegen: +5V an Pin 4 vom 6-poligen Wannenstecker J5, 0V = GND an J5-Pin 6   
+   ► ⚫ Die grüne LED leuchtet nicht.   
+
 2. DCC-Spannung am Eingang der Schaltung anlegen:   
-   ► Die grüne LED leuchtet.   
-3. Verstärkung des INA333-Boards bis zum Anschlag **gegen den Uhrzeigersinn** drehen (volle Verstärkung)   
-4. Jumper J3 aufstecken   
-5. Je nach Trimmer-Stellung die Schaltschwelle einstellen:   
-   * Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet. Jumper J3 abziehen: rote LED erlischt.   
-   * Wenn die rote LED __nicht leuchtet__: Trimmer __gegen den Uhrzeigersinn__ drehen, bis die rote LED zu leuchten beginnt. Jumper J3 abziehen: rote LED erlischt.   
+   ► 🟢 Die grüne LED leuchtet.   
 
-Der Jumper J3 dient nur zum Einstellen. Im Betrieb muss er entfernt werden.   
-Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise mit dem Finger verbindet.   
+3. Verstärkung des INA333-Boards voll aufdrehen:   
+   ► ⚙️ Potenziometer bis zum Anschlag **gegen den Uhrzeigersinn** drehen   
+
+4. Jumper J3 aufstecken   
+
+5. Je nach Trimmer-Stellung die Schaltschwelle einstellen:   
+   * 🔴 Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet.  
+   ► Jumper J3 abziehen: rote LED erlischt.   
+   * 🟤 Wenn die rote LED __nicht leuchtet__: Trimmer __gegen den Uhrzeigersinn__ drehen, bis die rote LED zu leuchten beginnt.  
+   ► Jumper J3 abziehen: rote LED erlischt.   
+
+⚠️ Der Jumper J3 dient nur zum Einstellen. Im Betrieb muss er entfernt werden.   
+ℹ️ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise mit dem Finger verbindet.   
 
 #### Kontrolle der Digitalausgänge
-1. Messgerät auf Spannungsmessung stellen, den COM-Anschluss an Pin 6 vom 6-poligen Wannenstecker J5, V an Pin 2 von J5 (TRV) anschließen.   
-2. DCC-Versorgung angeschlossen: TRV = 5 V (grüne LED ein), DCC-Versorgung abgeklemmt: TRV = 0 V (grüne LED aus).   
-3. Messgerät mit COM an an Pin 6 vom 6-poligen Wannenstecker J5, V an Pin 1 von J5 (FRE) anschließen.   
-4. DCC-Versorgung am ""Booster"-Eingang anschließen. Jumper J3 offen: FRE = 0 V (rote LED aus), Jumper J3 gesteckt: FRE = 5 V (rote LED leuchtet).   
+1. Messgerät auf Spannungsmessung stellen, COM-Anschluss mit GND verbinden, V/Ω an **Pin 2** von J5 (TVn) anschließen.   
+2. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
+3. Funktionstest **Ausgang TVn** (Track Voltage):   
+   ► DCC-Versorgung abgeschaltet oder abgeklemmt: TVn = 5 V (⚫ grüne LED aus).   
+   ► DCC-Versorgung am "Booster"-Eingang anschließen: TVn = 0,7 V (🟢 grüne LED ein).  
+---  
+4. Messgerät COM mit GND verbinden, V/Ω an **Pin 1** von J5 (FREn) anschließen.   
+5. Funktionstest **Ausgang FREn** (Track Free):   
+   ► DCC-Versorgung am "Booster"-Eingang anschließen.  
+   ► Jumper J3 offen: FREn = 0,2 V (🟤 rote LED aus),  
+   ► Jumper J3 gesteckt: FREn = 5 V (🔴 rote LED leuchtet).  
 
-**Ruhezustand**: Bei offenem Jumper und ohne Lok (bzw. Last, Waggon) am Gleis darf die rote LED nicht leuchten.   
+⚠️ **Ruhezustand**: Bei offenem Jumper und ohne Lok (bzw. Last, Waggon) am Gleis darf die **rote LED nicht** leuchten.   
 
-<a name="x45"></a>   
+<a name="x425"></a>   
 
-## 4.5 Versionen
-* V1 (260628) -  Verbesserungen:  
-  * C8 ergänzen,
-  * Testwiderstand Rs4 (220 k&Omega;) an __an SS und NN__ (statt DCC0 und DCC1) anschließen,
-  * Widerstand __R14 = 47 k&Omega;__  anschreiben (statt 1 k&Omega;),   
-  * Platinengröße auf 29,5 x 84 mm verkleinern.   
-* V2 (260717): OK   
+## 4.2.5 Versionen
+* V1 (260820): OK  
 
+<a name="x43"></a>   
+<a name="x431"></a>   
 
-<a name="x50"></a>   
-<a name="x51"></a>   
-
-# 5. UI-Steuerungsplatine
-## 5.1 Einleitung
+# 4.3 UI-Steuerungsplatine
+## 4.3.1 Einleitung
 Die UI-Steuerungsplatine `RW_5V_UI_STRG` dient zum Anpassen der [DCC-Gleis-UI-Erkennung](#x40) an das RCC-Blocksystem. Sie   
 * versorgt die `dcc_track_UI_detection`-Platine mit der 5V-Versorgungsspannung,   
 * leitet die Steuersignale `FRE1` und `TRV1` weiter zur LED-Anzeige und   

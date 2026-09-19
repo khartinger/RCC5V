@@ -1225,7 +1225,7 @@ _Bild 74: Bauteile der "RCC_TUI_EXT_V1"-Platine_
 
 #### Vorbereitung   
 (1) 2x gedrehte, 2-polige Buchsen für die LEDs: Von einer (meist 40-poligen) Buchsenleiste herunterschneiden.   
-(2) 1x 2-polige Stiftleiste von Stiftleiste herunterschneiden   
+(2) 1x 2-polige Stiftleiste von Stiftleiste herunterschneiden (für J3)   
 (3) 2x gedrehte, 4-polige Buchsen als Relais-Fassung: Von einer (meist 40-poligen) Buchsenleiste herunterschneiden.   
 (4) 2x 4-polige Buchsenleiste für das INA333-Board: Von 8- bzw. 10-poligen Buchsenleisten herunterschneiden.    
 (5) 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.   
@@ -1269,7 +1269,7 @@ _Bild 75: INA-Board mit angelöteten Stiften_
 ##### Print vervollständigen
 1. ICs bestücken (LM393, SFH615A, auf richtige Polung achten!)  
 2. Relais K1 bestücken  
-2. INA333_Board aufstecken (mit Potenziometer zum Print-Rand)  
+2. INA333_Board aufstecken (mit Trimmer zum Print-Rand)  
 3. LEDs auf passende Länge kürzen (zB 10 mm) und in die Fassungen stecken (auf richtige Polung achten!)  
 ![rcc4_LED_Polung](/images/200_rcc4_LED_Polung.png "rcc4_LED_Polung")   
 
@@ -1298,22 +1298,24 @@ _Bild 76: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
 5. Jumper J3 aufstecken   
 
 6. Je nach Trimmer-Stellung die Schaltschwelle einstellen:   
-   * 🔴 Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet. Jumper J3 abziehen: rote LED erlischt.   
-   * 🟤 Wenn die rote LED __nicht leuchtet__: Trimmer __gegen den Uhrzeigersinn__ drehen, bis die rote LED zu leuchten beginnt. Jumper J3 abziehen: rote LED erlischt.   
+   * 🔴 Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet.  
+   ► Jumper J3 abziehen: rote LED erlischt.   
+   * 🟤 Wenn die rote LED __nicht leuchtet__: Trimmer __gegen den Uhrzeigersinn__ drehen, bis die rote LED zu leuchten beginnt.  
+   ► Jumper J3 abziehen: rote LED erlischt.   
 
 ⚠️ Der Jumper J3 dient nur zum Einstellen. Im Betrieb muss er entfernt werden.   
 ℹ️ Bei optimaler Einstellung leuchtet die rote LED bereits auf, wenn man die Gleise mit dem Finger verbindet.   
 
 #### Kontrolle der Digitalausgänge
-1. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
-2. Messgerät auf Spannungsmessung stellen, COM-Anschluss mit GND verbinden , V/Ω an **Pin 2** von J5 (TVn) anschließen.   
+1. Messgerät auf Spannungsmessung stellen, COM-Anschluss mit GND verbinden, V/Ω an **Pin 2** von J5 (TVn) anschließen.   
+2. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
 3. Funktionstest **Ausgang TVn** (Track Voltage):   
    ► DCC-Versorgung abgeschaltet oder abgeklemmt: TVn = 5 V (⚫ grüne LED aus).   
-   ► DCC-Versorgung angeschlossen **und** J5-Pin 5 auf 0 V (TONn): TVn = 0,7 V (🟢 grüne LED ein).  
+   ► DCC-Versorgung am "Booster"-Eingang anschließen **und** J5-Pin 5 auf 0 V (TONn): TVn = 0,7 V (🟢 grüne LED ein).  
 ---  
 4. Messgerät COM mit GND verbinden, V/Ω an **Pin 1** von J5 (FREn) anschließen.   
 5. Funktionstest **Ausgang FREn** (Track Free):   
-   ► DCC-Versorgung am ""Booster"-Eingang anschließen, J5-Pin 5 auf 0 V (TONn).  
+   ► DCC-Versorgung am "Booster"-Eingang anschließen, J5-Pin 5 auf 0 V (TONn).  
    ► Jumper J3 offen: FREn = 0,2 V (🟤 rote LED aus),  
    ► Jumper J3 gesteckt: FREn = 5 V (🔴 rote LED leuchtet).  
 
