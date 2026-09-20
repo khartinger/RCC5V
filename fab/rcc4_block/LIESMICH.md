@@ -16,7 +16,7 @@ Auf dieser Seite wird - nach einigen allgemeinen Hinweisen zu Bl&ouml;cken - das
 * [Block Entkuppler (1OUT)](#x40)   
 * [Block Abschaltbares Gleis (2IO)](#x50)   
 * [Block Zweifachumschalter (DPDT)](#x60)   
-* [Block Abschaltbares Gleis mit Strommessung (TUI)](#x70)   
+* [DCC-Fahrstromerkennung **mit** Schalten (TUI)](#x70)   
 
 <a name="x12"></a>   
 
@@ -1008,11 +1008,11 @@ _Anmerkung_: Leuchtet keine der beiden gr&uuml;nen LEDs, so liegt wahrscheinlich
 <a name="x70"></a>   
 <a name="x71"></a>   
 
-# 7. Abschaltbares Gleis mit Strommessung (TUI)
+# 7. DCC-Fahrstromerkennung **mit** Schalten (TUI)
 
 ## 7.1 Prinzip
 
-Der Block **TUI** ist eine Weiterentwicklung des Blocks [Abschaltbares Gleis (2IO)](#x50).
+Der Block **TUI** ist eine Weiterentwicklung des Blocks [Abschaltbares Gleis (2IO)](#x50): Ein abschaltbares Gleis **mit zusätzlicher Fahrstromerkennung**.  
 
 Zusätzlich zum Ein- und Ausschalten der Fahrspannung und der dazugehörenden Anzeige wird überprüft, ob ein Fahrstrom fließt. Fließt Strom, leuchtet statt der grünen LED eine gelbe LED.
 
@@ -1021,6 +1021,10 @@ Im Gegensatz zu den oben beschriebenen Blöcken besteht der Block **TUI** aus dr
 * Zusätzliche Fahrstrom-Schalt-/Erkennungsplatine `RCC_TUI_EXT`
 * Steuerungs-/Verbindungsplatine `RCC_TUI_STRG`
 * Anzeigeplatine `RCC_TUI_LED`
+
+Die Anzeigeplatine `RCC_TUI_LED` gibt es in zwei gleichwertigen technischen Ausführungen:  
+* Aufbau mit **bipolaren Transistoren** `RCC_TUI_B_LED` (BC337, BC327)  
+* Aufbau mit **MOSFET** `RCC_TUI_M_LED` (BS170)  
 
 <a name="x72"></a>   
 
@@ -1203,7 +1207,7 @@ _Bild 73: Best&uuml;ckte Platine `RCC_TUI_EXT_V1`_
 | 4 | R2, R6, R7, R20 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | Rs1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 | 3 | R1, Rs2, Rs3 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 1 | R3 | 33 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R3 | 33 k&Omega; oder 22 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R5 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 2 | R9, R17 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R19 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
@@ -1253,7 +1257,7 @@ _Bild 75: INA-Board mit angelöteten Stiften_
 15. Widerst&auml;nde R4, R8, R10, R12, R13 (1 k&Omega;)   
 16. Widerst&auml;nde R14, R15 (4,7 k&Omega;)   
 17. Widerst&auml;nde R2, R6, R7, R20, Rs1 (10 k&Omega;)   
-18. Widerstand R3 (33 k&Omega;)   
+18. Widerstand R3 (22 k&Omega; oder 33 k&Omega;)   
 19. Widerst&auml;nde R9, R17 (47 k&Omega;)   
 20. Widerstand R19 (100 k&Omega;)   
 ---  

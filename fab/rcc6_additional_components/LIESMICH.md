@@ -13,10 +13,10 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 
 <a name="TableOfContents"></a>   
 ##  Inhalt
-1. [RGY-Anzeige `RW_5V_RGY_LED`](#x10)  
+1. [RGY-Anzeige `RCC_RGY_TVn_LED`](#x10)  
 2. [Pulsflanken-Erkennung Typ 1](#x20)  
 3. [Set-/Reset-Pulsflanken-Erkennung (Typ 2)](#x30)  
-4. [DCC-Fahrstromerkennung ohne Schalten](#x40)   
+4. [DCC-Fahrstromerkennung **ohne** Schalten](#x40)   
 5. [UI-Steuerungsplatine `RW_5V_UI_STRG`](#x50)   
 ---
 6. [Ältere Platinen mit Gleisspannungssignal TRV = 5 V](#xold)   
@@ -123,7 +123,7 @@ Die Stromversorgung und alle Ein- und Ausgangssignale befinden sich an der Stift
 
 ## 1.3 Bestückung der Platine
 Bild der Platine "`RCC_RGY_TVn_LED`" (Version 1):   
-![Platine RW_5V_RGY_LED](/images/pcb_f/PCB_F_RCC_RGY_TVn_LED_V1.png "Platine RW_5V_RGY_LED")   
+![Platine RW_5V_RGY_LED](/images/pcb_f/PCB_F_RCC_RGY_TVn_LED_V2.png "Platine RW_5V_RGY_LED")   
 
 Best&uuml;ckte Platine "`RCC_RGY_TVn_LED`"   
 ![Bestückte Platine RW_5V_RGY_LED](/images/300_RCC_RGY_TVn_LED_assembled.png "Bestückte Platine RW_5V_RGY_LED")   
@@ -177,12 +177,12 @@ Bauteile der Platine "RW_5V_RGY_LED"
 
 Auf die **Bauteilseite** l&ouml;ten:   
 
-2. Widerstände R1, R11 und R13 (liegend, 680 &Omega; ... 1 k&Omega;, 100 k&Omega;, 47 &Omega;)   
+2. Widerstände R1, R11 und R13 (liegend, **680 &Omega;** ... 1 k&Omega;, 100 k&Omega;, 47 &Omega;)   
 3. Transistoren Q1, Q6 (BC337-40)   
 4. Transistoren Q2, Q3, Q4, Q5 (BC327-40)   
 5. Kondensator C1 (1 &micro;F)   
 6. Diode D4 (BAT48, auf Polung achten: Kathode unten beim Kreis)   
-7. Widerstand R3 (3,9 k&Omega; ... 10 k&Omega;)   
+7. Widerstand R3 (**3,9 k&Omega;** ... 10 k&Omega;)   
 8. Widerstand R9 (47 &Omega;)
 9. Widerst&auml;nde R6, R7, R8, R10, R12 (4,7 k&Omega;, stehend)   
 10. Widerst&auml;nde R2, R5 (10 k&Omega;, stehend)   
@@ -215,17 +215,23 @@ Print auf die Bauteilseite legen. Alle erforderlichen Anschlüsse befinden sich 
 2. Versorgungsspannung am Board anlegen: Pin 1 mit 5V, Pin 2 mit GND verbinden:   
    ► 🔴🔴🔴 Die LEDs leuchten rot.   
 
-3. Voltmeter an GND anschließen. Messen: Pin ROKn = +5V, Pin RFR = 0V   
+3. Voltmeter an GND anschließen. Messen:  
+   ► Pin 5 = ROKn = +5V  
+   ► Pin 6 = RFR = 0V   
 
-4. Pin TVn mit 0 V verbinden (active low):   
+4. Pin 7 = TVn mit 0 V verbinden (active low):   
    ► 🟡🟡🟡 Die LEDs leuchten gelb (orange).   
 
-5. Messen: Pin ROKn = 0V, Pin RFRE = 0,9V   
+5. Messen:  
+   ► Pin 5 = ROKn = 0,9V  
+   ► Pin 6 = RFRE = 0,1V  
 
-6. Pin FREn mit 0V verbinden:   
+6. Pin 8 = FREn mit 0V verbinden:   
    ► 🟢🟢🟢 Die LEDs leuchten grün.   
 
-7. Messen: Pin ROKn = 0,9V, Pin RFRE = 3,7V   
+7. Messen:  
+   ► Pin 5 = ROKn = 0,9V  
+   ► Pin 6 = RFRE = 3,8V  
 
 <a name="x15"></a>   
 
@@ -238,7 +244,8 @@ Steht kein `RW_LEER_DUOLED`-Board zur Verfügung, kann man auch das `RW_LEER_LED
 
 
 ## 1.6 Versionen
-* V1 (260823): OK  
+* V1 (260820): OK  
+* V2 (260823): OK  
 
 <a name="x20"></a>   
 <a name="x21"></a>   
@@ -521,7 +528,7 @@ Die DCC-Fahrstromerkennung **ohne Schalten** besteht aus drei Platinen:
 <a name="x42"></a>   
 <a name="x421"></a>   
 
-## 4.2 UI-Erkennung `dcc_track_UI_TVn_V1`
+## 4.2 UI-Erkennung `dcc_track_UI_TVn_V1` (ohne Schalten)
 
 ### 4.2.1 Funktion
 
@@ -558,7 +565,7 @@ KiCad-Schaltplan der "dcc_track_UI_TVn"-Platine:
 Bild der Platine zur DCC-Gleis-Spannungs-/Strom-Erkennung (Version 2):   
 ![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_dcc_track_UI_TVn_V1.png "Platine Gleis-UI-Erkennung")   
 
-Best&uuml;ckte Platine "dcc_track_UI_detection"   
+Best&uuml;ckte Platine "dcc_track_UI_TVn_V1"   
 ![Bestückte Platine dcc_track_UI_TVn](/images/300_dcc_track_UI_TVn_V1_assembled.png "Bestückte Platine dcc_track_UI_TVn")   
 
 #### St&uuml;ckliste   
@@ -586,7 +593,7 @@ Best&uuml;ckte Platine "dcc_track_UI_detection"
 | 2 | R14, R15 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 3 | R1, Rs2, Rs3 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 4 | R2, R6, R7, Rs1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 1 | R3 | 33 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R3 | 33 k&Omega; oder 22 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | R5 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 2 | R9, R17 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | Rs4 | 220 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
@@ -629,7 +636,7 @@ _Bild: INA-Board mit angelöteten Stiften_
 13. Widerst&auml;nde R4, R8, R10, R12, R13 (1 k&Omega;)   
 14. Widerst&auml;nde $14, R15 (4,7 k&Omega;)   
 15. Widerst&auml;nde R2, R6, R7, Rs1 (10 k&Omega;)   
-16. Widerstand R3 (33 k&Omega;)   
+16. Widerstand R3 (22 k&Omega; oder 33 k&Omega;)   
 17. Widerst&auml;nde R9, R14 (47 k&Omega;)   
 18. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
 19. Transistor Q1 (BC337-40)   
@@ -693,35 +700,36 @@ Stiftleisten auf der Unterseite nach UNTEN anlöten.
 
 <a name="x425"></a>   
 
-## 4.2.5 Versionen
+### 4.2.5 Versionen
 * V1 (260820): OK  
 
 <a name="x43"></a>   
 <a name="x431"></a>   
 
-# 4.3 UI-Steuerungsplatine
-## 4.3.1 Einleitung
-Die UI-Steuerungsplatine `RW_5V_UI_STRG` dient zum Anpassen der [DCC-Gleis-UI-Erkennung](#x40) an das RCC-Blocksystem. Sie   
-* versorgt die `dcc_track_UI_detection`-Platine mit der 5V-Versorgungsspannung,   
+## 4.3 UI-Steuerungsplatine
+### 4.3.1 Einleitung
+Die UI-Steuerungsplatine `RCC_UI_TVn_STRG` dient zum Anpassen der [UI-Erkennung `dcc_track_UI_TVn_V1` (ohne Schalten)](#x42) an das RCC-Blocksystem. Sie   
+
+* versorgt die `dcc_track_UI_TVn_V1`-Platine mit der 5V-Versorgungsspannung,   
 * leitet die Steuersignale `FRE1` und `TRV1` weiter zur LED-Anzeige und   
 * leitet die LED-Rückmeldesignale `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
 
-<a name="x52"></a>   
+<a name="x432"></a>   
 
-## 5.2 Schaltplan
-KiCad-Schaltplan der Platine "RW_5V_UI_STRG" (Version 1):   
-![RW_5V_UI_STRG_circuit](/images/600_RW_5V_UI_STRG_circuit_V1.png "RW_5V_UI_STRG_circuit")   
+### 4.3.2 Schaltplan
+KiCad-Schaltplan der Platine "RCC_UI_TVn_STRG" (Version 1):   
+![RCC_UI_TVn_STRG_circuit](/images/600_RCC_UI_TVn_STRG_circuit_V1.png "RCC_UI_TVn STRG_circuit")   
 
-<a name="x53"></a>   
+<a name="x433"></a>   
 
-## 5.3 Bestückung der Platine
-Bild der Anpassungsplatine `RW_5V_UI_STRG` (Version 1):   
-![UI-Steuerungsplatine](/images/pcb_f/PCB_F_UI_STRG_V1.png "UI-Steuerungsplatine")   
+### 4.3.3 Bestückung der Platine
+Bild der Anpassungsplatine `RCC_UI_TVn_STRG` (Version 1):   
+![UI-Steuerungsplatine](/images/pcb_f/PCB_F_RCC_UI_TVn_STRG_V1.png "UI-Steuerungsplatine")   
 
-Best&uuml;ckte Platine "RW_5V_UI_STRG"   
-![RW_5V_UI_STRG bestückt](/images/300_RW_5V_UI_STRG_V1_assembled.png "RW_5V_UI_STRG bestückt")   
+Best&uuml;ckte Platine "RCC_UI_TVn_STRG"   
+![RCC_UI_TVn_STRG bestückt](/images/300_RCC_UI_TVn_STRG_V1_assembled.png "RCC_UI_TVn_STRG bestückt")   
 
-### St&uuml;ckliste   
+#### St&uuml;ckliste   
 | Anzahl | Referenz | Wert | Geh&auml;use |   
 |-----|-----|-----|-----|   
 | 1 | C1 | 100 nF, Raster 5,08 mm | C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
@@ -736,55 +744,83 @@ Best&uuml;ckte Platine "RW_5V_UI_STRG"
 Bauteile der Platine `RW_5V_UI_STRG` (C1 fehlt):   
 ![RW_5V_UI_STRG_parts](/images/300_RW_5V_UI_STRG_parts_V1.png "RW_5V_UI_STRG_parts")   
 
-### Best&uuml;ckung   
+#### Best&uuml;ckung   
 1. Diode D1, D2 (stehend, 2,54 mm, Kathode in den Kreis)   
 2. Diode D3, D4 (stehend, 5,08 mm, Kathode in den Kreis)   
 3. Kondensator C1 (100 nF)   
 4. Widerst&auml;nde R1, R2 (stehend)   
 5. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
+
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
 6. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
 
-<a name="x54"></a>   
+<a name="x435"></a>   
 
-## 5.4 Inbetriebnahme und Test
-Der Test der Platine `RW_5V_UI_STRG` kann auf zwei Arten erfolgen:  
-1. gemeinsam mit der Platine [`RW_5V_RGY_LED`](#x10)   
-2. gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x40) unter realen Bedingungen.   
+### 4.3.5 Inbetriebnahme und Test
+Da die Platine sehr einfach aufgebaut ist, erfolgt der Test gemeinsam mit den Platinen  
+* UI-Erkennung `dcc_track_UI_TVn_V1` und  
+* Anzeigeplatine `RCC_RGY_TVn_LED_V1`  
 
-In beiden Fällen ist die richtige Anzeige im Einsatz.   
+Der Test ist [weiter unten](#x44) beschrieben.  
 
-### 5.4.1 Einfacher Test
-..ToDo..
-![]()
+<a name="x436"></a>   
 
-### 5.4.2 Test unter realen Bedingungen
-Für den realen Test in der Blocksteuerungsumgebung benötigt man folgendes:  
+### 4.3.6 Versionen
+* V1 (260820): OK   
 
-Der Test der Platine `RW_5V_UI_STRG` erfolgt am besten gemeinsam mit den Platinen [`RW_5V_RGY_LED`](#x10) und [`dcc_track_UI_detection`](#x20). Für den realen Test in der Blocksteuerungsumgebung benötigt man folgendes:  
-* 1x [Einspeisung (FEED-IN)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x31) und Kabel mit 2x 25-poligen SUB-D-Buchsen  
-* 1x [Modul-Stromversorgung (SUB25_10)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x32)  
-* 2x 6-poliges Flachbandkabel, Länge 15 cm oder länger  
-* 4x Draht, Länge 20 cm oder länger (oder Kroko-Klemmen)  
-* Platine `dcc_track_UI_detection`  
-* Platine `RW_5V_UI_STRG` mit aufgesteckter Platine  `RW_5V_RGY_LED`  
-* Gleis und DCC-Lok  
+<a name="x44"></a>   
 
-Achtung beim Anschluss der Platine `dcc_track_UI_detection` auf die Richtung:  
-* "BOOSTER"-Anschluss an die Modul-Stromversorgung,  
-* "TRACK"-Anschluss zum überwachten Gleis  
+## 4.4 Zusammenbau des UI_TVn-Blocks
+1. Aufstecken des Steuerungsboards `RCC_UI_TVn_STRG` auf das Anzeigeboard `RCC_RGY_TVn_LED`.   
+2. Einstecken der LEDs. Auf richtige Polung achten (rot - grün).  
+3. Aufstecken der Schalter-Kn&ouml;pfe, falls gewünscht.  
+4. Falls vorhanden: Print `RW_LEER_DUOLED` auf den Anzeigeprint stecken.   
+
+<a name="x45"></a>   
+
+## 4.5 Test
+### Vorbereitung
+
+Für den Test der DCC-Fahrstromerkennung ohne Schalten benötigt man folgendes:  
+
+1. 1x [Einspeisung (FEED-IN)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x31) und Kabel mit 2x 25-poligen SUB-D-Buchsen  
+
+2. 1x [Modul-Stromversorgung (SUB25_10)](https://github.com/khartinger/RCC5V/blob/main/LIESMICH.md#x32)  
+
+3. 2x 6-poliges Flachbandkabel, Länge 15 cm oder länger  
+
+4. 4x Draht, Länge 20 cm oder länger (oder Kroko-Klemmen)  
+
+5. Platine `dcc_track_UI_TVn`  
+
+6. UI_TVn-Block aus Platine `RCC_UI_TVn_STRG` und aufgesteckter Anzeige-Platine `RCC_RGY_TVn_LED`  
+
+7. Gleis und DCC-Lok  
+
+### Verdrahtung
+Die Verdrahtung erfolgt nach dem folgenden Schema:  
 
 ![RW_5V_UI_detection_test1](/images/300_RW_5V_UI_detection_test1.png "RW_5V_UI_detection_test1")   
 
 ![RW_5V_UI_detection_test2](/images/300_RW_5V_UI_detection_test2.png "RW_5V_UI_detection_test2")   
 ![RW_5V_UI_detection_test3](/images/300_RW_5V_UI_detection_test3.png "RW_5V_UI_detection_test3")   
 
-<a name="x55"></a>   
+1. Verbinde die Einspeisung (SUB25_10) mit der übergeordneten, nicht eingeschalteten Steuerung (SUB-D-Stecker).  
+2. Verbinde den UI-TVn-Block-Stecker J3 mit dem Power-Stecker der SUB25_10 Einspeisung mit einem 6-poligen Flachbandkabel.  
+3. Verbinde den UI-TVn-Block-Stecker J5 mit dem `dcc_track_UI_TVn`-Board mit einem 6-poligen Flachbandkabel.  
+4. Verbinde die DCC-Gleisspannung vom SUB25_10 mit dem **BOOSTER**-Eingang des `dcc_track_UI_TVn`-Boards und mit dem Gleis, das **nicht** überwacht werden soll.  
+5. Verbinde das Gleis, das überwacht werden soll, mit dem **TRACK**-Ausgang des `dcc_track_UI_TVn`-Boards.  
 
-## 5.5 Versionen
-* V1 (260704): OK   
+### Testdurchführung
+1. Schalte die übergeordnete Steuerung ein:  
+   ► 🟢🟢🟢 Die LEDs leuchten grün.  
+2. Stelle eine Lok auf das nicht überwachte Gleis und fahre in den überwachten Bereich:  
+   ► 🟡🟡🟡 Die LEDs leuchten gelb (orange).   
+3. Stecke am UI-TVn-Block die Verbindung zum `dcc_track_UI_TVn`-Board ab (Stecker J3):  
+   ► 🔴🔴🔴 Die LEDs leuchten rot.   
 
-<a name="x40"></a>   
-<a name="x41"></a>   
+
+
 
 <br><br><br><hr><h1>*** ALTE VERSIONEN *** ALTE VERSIONEN ***</h1><br><br>  
 
