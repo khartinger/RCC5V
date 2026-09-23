@@ -591,7 +591,8 @@ Best&uuml;ckte Platine "dcc_track_UI_TVn_V1"
 | 4 | R4, R8, R10, R13 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R12 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 | 2 | R14, R15 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 3 | R1, Rs2, Rs3 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 2 | Rs2, Rs3 | 100 k&Omega; (alt: 10 k&Omega;) | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 4 | R2, R6, R7, Rs1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R3 | 33 k&Omega; oder 22 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | R5 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
@@ -610,46 +611,44 @@ Bauteile der "dcc_track_UI_TVn"-Platine (Version 1):
 ![rcc6_dcc_track_UI_TVn_V1_parts](/images/300_rcc6_dcc_track_UI_TVn_V1_parts.png "rcc6_dcc_track_UI_TVn_V1_parts")   
 
 #### Vorbereitung   
-(1) 2x gedrehte, 2-polige Buchsen für die LEDs: Von einer (meist 40-poligen) Buchsenleiste herunterschneiden.   
-(2) 1x 2-polige Stiftleiste von Stiftleiste herunterschneiden (für J3)   
-(3) 2x 4-polige Buchsenleiste für das INA333-Board: Von 8- bzw. 10-poligen Buchsenleisten herunterschneiden.    
-(4) 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.   
-(5) 2x 4-polige Stiftleisten auf der Unterseite des INA333-Boards nach UNTEN anlöten (siehe Bild).   
+(1) 2x gedrehte, 2-polige Buchsen für die LEDs: Von einer (meist 40-poligen) Buchsenleiste herunterschneiden.  
+(2) 2x 4-polige Buchsenleiste für das INA333-Board: Von 8- bzw. 10-poligen Buchsenleisten herunterschneiden.  
+(3) 1x 2-polige Stiftleiste von Stiftleiste herunterschneiden (für J3)  
+(4) 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.  
+(5) 2x 4-polige Stiftleisten auf der Unterseite des INA333-Boards nach UNTEN anlöten (siehe Bild).  
 
 ![rcc6_INA333_Board](/images/300_rcc6_INA333_Board.png "rcc6_INA333_Board")   
 _Bild: INA-Board mit angelöteten Stiften_  
 
 #### Best&uuml;ckung   
-1. Widerst&auml;nde R1, Rs2, Rs3 (liegend, möglichst flach, 10 k&Omega;)   
-2. Widerstand R5 (liegend, 47 k&Omega;)   
-3. Widerstand Rs4 (liegend, 220 k&Omega;)   
-4. Diode D3 (BAT48, liegend, auf Polung achten: Kathode bei weißer Linie)   
-5. Kondensatoren C1, C2, C4, C7, C8 (1 &micro;F, Raster 2,54 mm)   
-6. Buchsenleisten U1 2x 4-Pin   
-7. gedrehte Buchsen D4, D6 für die LEDs   
-8. Fassungen U2 (2x 4 Pin) und U3 (2x 2 Pin, auf Einbaurichtung achten!)   
-9. Diode D5 (1N4007, stehend, auf Polung achten: Kathode unten beim Kreis)   
-10. Tantal-Elko C3, C5 (10 &micro;F, auf + Polung achten)   
+1. Widerstand R1 (liegend, möglichst flach, 10 k&Omega;)  
+2. Widerst&auml;nde Rs2, Rs3 (liegend, möglichst flach, 100 k&Omega;)  
+3. Widerstand R5 (liegend, 47 k&Omega;)   
+4. Widerstand Rs4 (liegend, 220 k&Omega;)   
+5. Diode D3 (BAT48, liegend, auf Polung achten: Kathode bei weißer Linie)   
+6. Kondensatoren C1, C2, C4, C7, C8 (1 &micro;F, Raster 2,54 mm)   
+7. Buchsenleisten U1 2x 4-Pin (Eventuell INA-Board kurz aufstecken, damit Abstand gut passt.)  
+8. gedrehte Buchsen D4, D6 für die LEDs   
+9. Fassungen U2 (2x 4 Pin) und U3 (2x 2 Pin, auf Einbaurichtung achten!)   
+10. Diode D5 (1N4007, stehend, auf Polung achten: Kathode unten beim Kreis)   
+11. Tantal-Elko C3, C5 (10 &micro;F, auf + Polung achten)   
 ---  
-11. Widerst&auml;nde R16, R18 (47 &Omega;)   
-12. Widerstand R11 (100 &Omega;)   
-13. Widerst&auml;nde R4, R8, R10, R12, R13 (1 k&Omega;)   
-14. Widerst&auml;nde $14, R15 (4,7 k&Omega;)   
-15. Widerst&auml;nde R2, R6, R7, Rs1 (10 k&Omega;)   
-16. Widerstand R3 (22 k&Omega; oder 33 k&Omega;)   
-17. Widerst&auml;nde R9, R14 (47 k&Omega;)   
-18. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
-19. Transistor Q1 (BC337-40)   
-20. Transistor Q2 (BC327-40)   
-21. Stiftleiste 2-polig J3   
-22. Diode D1, D2 (SB240, auf Polung achten: Kathode unten beim Kreis)   
+12. Widerst&auml;nde R16, R18 (47 &Omega;)   
+13. Widerstand R11 (100 &Omega;)   
+14. Widerst&auml;nde R4, R8, R10, R12, R13 (1 k&Omega;)   
+15. Widerst&auml;nde R14, R15 (4,7 k&Omega;)   
+16. Widerst&auml;nde R2, R6, R7, Rs1 (10 k&Omega;)   
+17. Widerstand R3 (22 k&Omega; oder 33 k&Omega;)   
+18. Widerst&auml;nde R9, R17 (47 k&Omega;)   
+19. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
+20. Transistor Q1 (BC337-40)   
+21. Transistor Q2 (BC327-40)   
+22. Stiftleiste 2-polig J3   
+23. Diode D1, D2 (SB240, auf Polung achten: Kathode unten beim Kreis)   
 ---  
-23. Wannenstecker 6-polig J5 (auf Polung achten)   
-24. Schraubklemme J1, J2 (2-polig)   
-25. 10-Gang-Trimmer RV1 (10 k&Omega; stehend, Schraube Richtung U2 LM393)   
-
-#### Stiftleisten ans INA333_Board anlöten
-Stiftleisten auf der Unterseite nach UNTEN anlöten.   
+24. Wannenstecker 6-polig J5 (auf Polung achten)   
+25. Schraubklemme J1, J2 (2-polig)   
+26. 10-Gang-Trimmer RV1 (10 k&Omega; stehend, Schraube Richtung U2 LM393)   
 
 #### Print vervollständigen
 1. ICs bestücken (LM393, SFH615A, auf richtige Polung achten!)   
@@ -670,7 +669,7 @@ Stiftleisten auf der Unterseite nach UNTEN anlöten.
    ► 🟢 Die grüne LED leuchtet.   
 
 3. Verstärkung des INA333-Boards voll aufdrehen:   
-   ► ⚙️ Potenziometer bis zum Anschlag **gegen den Uhrzeigersinn** drehen   
+   ► ⚙️ Potenziometer **fast** bis zum Anschlag **gegen den Uhrzeigersinn** drehen   
 
 4. Jumper J3 aufstecken   
 
