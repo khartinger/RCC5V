@@ -1018,9 +1018,9 @@ Zusätzlich zum Ein- und Ausschalten der Fahrspannung und der dazugehörenden An
 
 Im Gegensatz zu den oben beschriebenen Blöcken besteht der Block **TUI** aus drei Teilen:
 
-* Zusätzliche Fahrstrom-Schalt-/Erkennungsplatine `RCC_TUI_EXT`
-* Steuerungs-/Verbindungsplatine `RCC_TUI_STRG`
-* Anzeigeplatine `RCC_TUI_LED`
+* [Zusätzliche Fahrstrom-Schalt-/Erkennungsplatine `RCC_TUI_EXT`](#x72)  
+* [Steuerungs-/Verbindungsplatine `RCC_TUI_STRG`](#x73)  
+* [Anzeigeplatine `RCC_TUI_LED`](#74)  
 
 Die Anzeigeplatine `RCC_TUI_LED` gibt es in zwei gleichwertigen technischen Ausführungen:  
 * Aufbau mit **bipolaren Transistoren** `RCC_TUI_B_LED` (BC337, BC327)  
