@@ -163,6 +163,8 @@ void SimpleMqtt::setup()
  wifiWaitMsMax=TIMEOUT_WIFI_CONNECT_MS;
  wifiConnectingCounterMax=WIFI_CONNECTING_COUNTER;
  wifiConnectingCounter=0;              // start with connectingWiFiBegin
+ mqttReconnectLastMs=0;
+ mqttReconnectDelayMs=MQTT_RECONNECT_MIN_MS;
  sMyIP=NO_IP;                          // invalid IP
  startinfo_allow=STARTINFO_ALLOW;      // send mqtt start info
  randomSeed(micros());                 // start random numbers
@@ -185,6 +187,7 @@ void SimpleMqtt::setup()
  iRetSet=NOTHING_TODO;                 //
  iSub=NOTHING_TODO;                    //
  iPub=NOTHING_TODO;                    //
+ eepromInitialized=false;              // EEPROM.begin() not called
  numTopicGet=0;                        // no get topics yet
  numTopicSet=0;                        // no set topics yet
  numTopicSub=0;                        // no sub topics yet
@@ -617,7 +620,7 @@ bool SimpleMqtt::disconnectWiFi()
  while(isWiFiConnected() && (i>0))
  {
   i--;                                      // increment trials
-  WiFi.disconnect(true, true);              // erase + disconnect
+  WiFi.disconnect(false, false);             // disconnect without erasing config
   unsigned long _millisStart_=millis();
   while(millis()-_millisStart_< 1000) yield(); // wait 1000ms
  }
@@ -880,7 +883,17 @@ bool SimpleMqtt::doLoop(bool tryToReconnect)
  }
  else
  {//-----not connected! Try to connect--------------------------
-  if(tryToReconnect) connectWiFiMQTT();
+  if(tryToReconnect &&
+     (millis()-mqttReconnectLastMs>=mqttReconnectDelayMs)) {
+   mqttReconnectLastMs=millis();
+   if(connectWiFiMQTT())
+    mqttReconnectDelayMs=MQTT_RECONNECT_MIN_MS;
+   else if(mqttReconnectDelayMs<MQTT_RECONNECT_MAX_MS) {
+    mqttReconnectDelayMs*=2;
+    if(mqttReconnectDelayMs>MQTT_RECONNECT_MAX_MS)
+     mqttReconnectDelayMs=MQTT_RECONNECT_MAX_MS;
+   }
+  }
  }
  //------send messages------------------------------------------
  if((iRet>0)||(iRetSet>0)||(iPub>0)) sendRet();
@@ -903,20 +916,20 @@ void SimpleMqtt::callback_(char* topic, byte* payload, unsigned int length)
  int i=-1;
  //======SECTION 1: convert payload to array (and show message)=
  //------build get/set/...topic---------------------------------
- int lenTopic=strlen(topic);
- char cTopic[5+lenTopic];
- sprintf(cTopic,"%s/get",sTopicBase.c_str()); // "get" topic
- char cPayload[length+1];                   //char-array payload
- strncpy(cPayload,(char*)payload,length);   // copy payload bytes
- cPayload[length]=0;                        // set end char
- if(DEBUG_MQTT) Serial.printf("callback_(): topic '%s': %s\n",topic,cPayload);
+ String cGetTopic=sTopicBase+"/get";
+ String cSetTopic=sTopicBase+"/set/";
+ String cPayload;
+ cPayload.reserve(length);
+ for(unsigned int payloadIndex=0; payloadIndex<length; payloadIndex++)
+  cPayload+=(char)payload[payloadIndex];
+ if(DEBUG_MQTT) Serial.printf("callback_(): topic '%s': %s\n",topic,cPayload.c_str());
  //======SECTION 2: GET request -> trigger answer===============
- if(strcmp(topic,cTopic)==0)
+ if(strcmp(topic,cGetTopic.c_str())==0)
  {//-----check for valid get request (see array sGet[]----------
   for(i=0; i<numTopicGet; i++) {
-   if(strcmp(aTopicGet[i].c_str(), cPayload)==0)
+  if(strcmp(aTopicGet[i].c_str(), cPayload.c_str())==0)
    { 
-    if(DEBUG_MQTT) Serial.printf("callback_(): ==> MQTT process get '%s'\n",cPayload);
+    if(DEBUG_MQTT) Serial.printf("callback_(): ==> MQTT process get '%s'\n",cPayload.c_str());
     iGet|=(UINT64_C(1)<<i);
     i=-1;                               // finish for
     break; 
@@ -926,9 +939,8 @@ void SimpleMqtt::callback_(char* topic, byte* payload, unsigned int length)
  }
  //======SECTION 3: SET request -> trigger action===============
  // do action in main loop to save time in callback function (!)
- sprintf(cTopic,"%s/set/",sTopicBase.c_str()); // "set" topic
- lenTopic=strlen(cTopic);              // len of ".../set/"
- if(strncmp(topic,cTopic,lenTopic)==0) // check first part
+ int lenTopic=cSetTopic.length();      // len of ".../set/"
+ if(strncmp(topic,cSetTopic.c_str(),lenTopic)==0) // check first part
  {//-----correct first part of set topic found------------------
   // check for valid 2nd part of set request (= aTopicSet[])
   char* settype=topic;                 // point to topic begin
@@ -936,9 +948,9 @@ void SimpleMqtt::callback_(char* topic, byte* payload, unsigned int length)
   for(i=0; i<numTopicSet; i++) {
    if(strcmp(settype,aTopicSet[i].c_str())==0)
    {
-    if(DEBUG_MQTT) Serial.printf("callback_(): ==> MQTT command set %s=%s\n",(aTopicSet[i]).c_str(),cPayload);
+    if(DEBUG_MQTT) Serial.printf("callback_(): ==> MQTT command set %s=%s\n",(aTopicSet[i]).c_str(),cPayload.c_str());
     iSet|=(UINT64_C(1)<<i);            // trigger get request
-    aPayloadSet[i]=String(cPayload);   // save payload
+    aPayloadSet[i]=cPayload;           // save payload
     i=-1;                              // finish for
     break;                             // set-command?
    }
@@ -948,9 +960,9 @@ void SimpleMqtt::callback_(char* topic, byte* payload, unsigned int length)
  //======SECTION 4: special MQTT (input) messages===============
  for(i=0; i<numTopicSub; i++) {
   if(strcmp(aTopicSub[i].c_str(),topic)==0){
-   if(DEBUG_MQTT) Serial.printf("callback_(): ==> MQTT special: topic %s, payload %s\n",(aTopicSub[i]).c_str(),cPayload);
+  if(DEBUG_MQTT) Serial.printf("callback_(): ==> MQTT special: topic %s, payload %s\n",(aTopicSub[i]).c_str(),cPayload.c_str());
    iSub|=(UINT64_C(1)<<i);             // trigger get request
-   aPayloadSub[i]=String(cPayload);    // save payload
+  aPayloadSub[i]=cPayload;            // save payload
    break;                              // set-command?
   }
  }
@@ -1385,9 +1397,10 @@ void SimpleMqtt::createGetAnswer()
 //_____eeprom begin___________________________________________
 bool SimpleMqtt::eepromBegin() {
  bool bRet=false;
-  if (!eepromInitialized) {
-  bRet=EEPROM.begin(eepromSize_);
-  eepromInitialized=true;
+ if (!eepromInitialized) {
+  (void)eeprom_->begin(eepromSize_);
+  bRet=true;
+  eepromInitialized=bRet;
  }
  return bRet;
 }

@@ -66,10 +66,10 @@
 #ifndef D1_CLASS_SIMPLEMQTT_H
 #define D1_CLASS_SIMPLEMQTT_H
 #include "Arduino.h"                   // D1, ...
-#if defined(ESP8266) || defined(D1MINI)
+#if defined(ESP8266)
  #include <ESP8266WiFi.h>              // network connection
 #endif
-#if defined(ESP32) || defined(ESP32D1)
+#if defined(ESP32)
  #include <WiFi.h>                     // network connection
 #endif
 #include "PubSubClient.h"              // MQTT basic methods
@@ -99,6 +99,8 @@ void   simpleSub(String sTopic, String sPayload);
 #define  TOPIC_MAX                  48 // max. topics to sub
 #define  NOTHING_TODO                0 // # mqtt do nothing
 #define  MQTT_RECONNECT_MS         200 //
+#define  MQTT_RECONNECT_MIN_MS    1000 // minimum delay between reconnect attempts
+#define  MQTT_RECONNECT_MAX_MS   30000 // maximum delay between reconnect attempts
 #define  TIMEOUT_WIFI_CONNECT_MS  8000 // wait for WLAN
 #define  WIFI_CONNECTING_COUNTER     1 // connecting after begin
 #define  PAYLOAD_MAXLEN            200 //
@@ -135,6 +137,8 @@ class SimpleMqtt : public PubSubClient {
   int    wifiWaitMsMax;                // WiFi waiting time connect
   int    wifiConnectingCounter;        // connectings counter
   int    wifiConnectingCounterMax;     // connectings after begin
+  unsigned long mqttReconnectLastMs;   // last MQTT reconnect attempt 260924
+  unsigned long mqttReconnectDelayMs;  // current MQTT reconnect delay 260924
   bool   startinfo_allow;              // send mqtt start info
   unsigned long conState;              // connection state
   EEPROMClass *eeprom_;                // new EEPROMClass;

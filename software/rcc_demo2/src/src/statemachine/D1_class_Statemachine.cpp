@@ -83,18 +83,19 @@ bool Statemachine::setStateMax(int32_t state_max)
 //_____set state delay (if >=0)_________________________________
 bool Statemachine::setStateDelay(int32_t state_delay)
 {
- if(stateDelay>=0) { stateDelay=state_delay; return true; }
+ if(state_delay>=0) { stateDelay=state_delay; return true; }
  return false;
 }
 
 //_____set state (convert to range stateMin...stateMax)_________
 bool Statemachine::setState(int32_t new_state)
 {
- int32_t numberAllStates=stateMax-stateMin+1;
+ int64_t numberAllStates=(int64_t)stateMax-stateMin+1;
+ if(numberAllStates<=0) return false;
  //-----transform new_state to range stateMin...stateMax--------
- if(new_state>stateMax) new_state=stateMin+((new_state-stateMax-1)%numberAllStates);
- if(new_state<stateMin) new_state=stateMax-((stateMin-new_state-1)%numberAllStates);
- stateCounter=new_state;
+ int64_t offset=((int64_t)new_state-stateMin)%numberAllStates;
+ if(offset<0) offset+=numberAllStates;
+ stateCounter=(int32_t)((int64_t)stateMin+offset);
  return true;
 } 
 
@@ -104,9 +105,9 @@ bool Statemachine::setState(int32_t new_state)
 
 int32_t Statemachine::getStateMin()   { return stateMin; }
 int32_t Statemachine::getStateMax()   { return stateMax; }
-int32_t Statemachine::getStateDelay() { return stateDelay; }
+uint32_t Statemachine::getStateDelay() { return stateDelay; }
 int32_t Statemachine::getState()      { return stateCounter; }
-int32_t Statemachine::getDuration() {return(millis()-millisBegin);}
+uint32_t Statemachine::getDuration() {return(millis()-millisBegin);}
 uint32_t Statemachine::getBeginMillis(){ return millisBegin; }
 
 //**************************************************************
@@ -127,16 +128,15 @@ uint32_t Statemachine::loopEnd()
 {
  stateCounter=this->add(1);
  uint32_t millisEnd=millis();
- uint32_t duration=0xFFFFFFFF;    // -1=0xFFFFFFFF
- //------duration of this state---------------------------------
- if(millisEnd>=millisBegin) duration=millisEnd-millisBegin;
- else duration=millisEnd+(duration-millisBegin);
+ uint32_t duration=millisEnd-millisBegin;
  //------wait a little bit if necessary-------------------------
- if((duration + delayed) > stateDelay)
+ uint64_t elapsed=(uint64_t)duration+delayed;
+ if(elapsed > stateDelay)
  {//-----state machine is delayed: dont wait, prepare next state
-  delayed = duration + delayed - stateDelay;
+  uint64_t overdue=elapsed-stateDelay;
+  uint64_t maxDelayed=100ULL*stateDelay;
   //.....limit for making up the delay: 100*stateDelay..........
-  if(delayed > 100*stateDelay) delayed = 100*stateDelay;
+  delayed=(overdue>maxDelayed) ? (uint32_t)maxDelayed : (uint32_t)overdue;
  } else
  {//-----wait a little until the next state can be started------
   while(millis()-millisEnd < stateDelay) yield();
@@ -158,24 +158,17 @@ int32_t Statemachine::add(int32_t numberOfStates)
 // Note: Method does NOT change the stateCounter!
 int32_t Statemachine::add(int32_t state, int32_t numberOfStates)
 {
- int32_t ret=state;
- if(numberOfStates==0) return ret;
- int32_t numberAllStates=stateMax-stateMin+1;
- if(numberOfStates<0) 
-  numberOfStates=numberAllStates-(-numberOfStates)%numberAllStates;
+ int64_t numberAllStates=(int64_t)stateMax-stateMin+1;
+ if(numberAllStates<=0) return stateCounter;
+ if(numberOfStates==0) return state;
  //-----transform state to range stateMin...stateMax------------
- if(ret>stateMax)ret=stateMin+((ret-stateMax-1)%numberAllStates);
- if(ret<stateMin)ret=stateMax-((stateMin-ret-1)%numberAllStates);
+ int64_t offset=((int64_t)state-stateMin)%numberAllStates;
+ if(offset<0) offset+=numberAllStates;
  //-----transform numberOfStates to range 0...(Max-Min+1)-------
- if(numberOfStates>=0)
-  numberOfStates=numberOfStates%numberAllStates;
- else
-  numberOfStates=numberAllStates-((-numberOfStates)%numberAllStates);
+ int64_t steps=(int64_t)numberOfStates%numberAllStates;
+ if(steps<0) steps+=numberAllStates;
  //-----add value to state--------------------------------------
- ret=ret+numberOfStates;
- if(ret>stateMax) ret=ret-numberAllStates;
- if(ret<stateMin) ret=ret+numberAllStates;
- return ret;
+ return (int32_t)((int64_t)stateMin+(offset+steps)%numberAllStates);
 }
 
 //_____return difference between stateCounter and old_state_____
@@ -185,13 +178,14 @@ int32_t Statemachine::add(int32_t state, int32_t numberOfStates)
 // on error: return -1;
 int32_t Statemachine::diff(int32_t oldState)
 {
- int32_t numberAllStates=stateMax-stateMin+1; 
+ int64_t numberAllStates=(int64_t)stateMax-stateMin+1;
+ if(numberAllStates<=0) return -1;
  //-----transform oldState to range stateMin...stateMax---------
- if(oldState>stateMax) oldState=stateMin+((oldState-stateMax-1)%numberAllStates);
- if(oldState<stateMin) oldState=stateMax-((stateMin-oldState-1)%numberAllStates);
- int32_t ret=stateCounter-oldState;
- if(ret>=0) return ret;
- return ret+numberAllStates;
+ int64_t oldOffset=((int64_t)oldState-stateMin)%numberAllStates;
+ if(oldOffset<0) oldOffset+=numberAllStates;
+ int64_t currentOffset=((int64_t)stateCounter-stateMin)%numberAllStates;
+ if(currentOffset<0) currentOffset+=numberAllStates;
+ return (int32_t)((currentOffset-oldOffset+numberAllStates)%numberAllStates);
 }
 
 //_____is start of this state delayed?__________________________

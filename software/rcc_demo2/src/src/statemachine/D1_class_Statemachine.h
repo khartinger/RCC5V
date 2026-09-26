@@ -50,9 +50,9 @@ class Statemachine {
   //-----get values---------------------------------------------
   int32_t  getStateMin();              //
   int32_t  getStateMax();              //
-  int32_t  getStateDelay();            //
+  uint32_t getStateDelay();            //
   int32_t  getState();                 //
-  int32_t  getDuration();              //
+  uint32_t getDuration();              //
   uint32_t getDelayed();               // state(s) delayed in ms
   uint32_t getBeginMillis();           //
   //-----working methods----------------------------------------
