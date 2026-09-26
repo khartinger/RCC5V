@@ -1020,7 +1020,7 @@ Im Gegensatz zu den oben beschriebenen Blöcken besteht der Block **TUI** aus dr
 
 * [Zusätzliche Fahrstrom-Schalt-/Erkennungsplatine `RCC_TUI_EXT`](#x72)  
 * [Steuerungs-/Verbindungsplatine `RCC_TUI_STRG`](#x73)  
-* [Anzeigeplatine `RCC_TUI_LED`](#74)  
+* [Anzeigeplatine `RCC_TUI_LED`](#x74)  
 
 Die Anzeigeplatine `RCC_TUI_LED` gibt es in zwei gleichwertigen technischen Ausführungen:  
 * Aufbau mit **bipolaren Transistoren** `RCC_TUI_B_LED` (BC337, BC327)  
@@ -1365,7 +1365,7 @@ _Bild 80: Bestückte Platine `RCC_TUI_STRG`_
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
 |:------:|:-------------|:-----------------------|:------------------------|   
-| 1 | C1 | Kondensator 100 nF | C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
+| 1 | C1 | Kondensator 100 nF, 16 V, Raster 5,08 mm | C_Rect_L7.0mm_W2.0mm_P5.00mm_kh |   
 | 4 | D1, D2, D3, D4 | Schottky-Diode BAT48 | D_DO-35_P7.62mm_Horizontal_kh |   
 | 1 | D5 | Schottky-Diode BAT48 | D_DO-35_P12.7mm_Horizontal_kh |   
 | 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_kh |   
@@ -1436,11 +1436,74 @@ _Bild 83: KiCad-Schaltplan der "RCC_TUI_M_LED"-Platine mit MOSFET_
 
 <a name="x743"></a>   
 
-### 7.4.3 Bestückung
-Bild links: Schalten/Anzeige-Platine mit Transistoren (`RCC_TUI_B_LED_V1`), rechts mit MOSFET (`RCC_TUI_M_LED_V1`)  
+### 7.4.3 Bestückung mit bipolaren Transistoren
 
-![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_B_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms") ![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_M_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms")   
-_Bild 84: Platinen zum Schalten und Anzeige des Fahrstroms_   
+Bild: Schalten/Anzeige-Platine mit Transistoren (`RCC_TUI_B_LED_V1`)
+![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_B_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms") 
+_Bild 84: Platinen zum Schalten und Anzeige des Fahrstroms mit bipolaren Transistoren_   
+
+![RCC_TUI_B_LED](/images/300_RCC_TUI_B_LED_assembled.png "RCC_TUI_B_LED")   
+_Bild 85: Best&uuml;ckte Platine "RCC_TUI_B_LED"_   
+
+#### St&uuml;ckliste mit bipolaren Transistoren   
+| Anzahl | Referenz | Wert | Geh&auml;use |   
+|-----|-----|-----|-----|   
+| 1 | C1 | Kondensator 1 &micro;F, 16 V, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 1 | D1 | LED rot, 2 mA | LED_D3.0mm_kh |   
+| 4 | D2, D4, D5, D6 | LED gelb, 2 mA | LED_D3.0mm_kh |   
+| 1 | D3 | LED gr&uuml;n, 2 mA  | LED_D3.0mm_kh |   
+| 6 | D1,D2,D3,D4,D5,D6  | Buchsenleiste 2-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs  |   
+| 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
+| 5 | Q1, Q2, Q3, Q4, Q5 | Transistor BC337-40 | TO-92_Inline_Wide_custom |   
+| 1 | R15 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 1 | R16 | 47 &Omega; | R_Axial_DIN0207_L6.3mm_D2.5mm_P12.7mm_Horizontal_kh |   
+| 4 | R4, R21, R22, R23 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 2 | R11, R14 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 3 | R3, R10, R13 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R6 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 3 | R2, R7, R9 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 3 | R5, R8, R12 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R1 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 2 | SW1,SW2           | _*Schalter*_ SW_Push_DPDT_8x8 | _kh_library:SW_Push_DPDT_8x8 |   
+| 2 | SW1,SW2           | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe rot,
+
+#### Vorbereitung   
+1. Von einer langen, einreihigen Buchsenleiste 6x 2-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D6).   
+2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
+3. 10 mm-Tasterkn&ouml;pfe SW1 (rot), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
+
+#### Best&uuml;ckungsvorgang   
+1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1 bis D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
+
+Auf die _*Bauteilseite*_ l&ouml;ten:  
+
+2. Widerstand R16 (47 &Omega;, liegend)  
+3. Kondensator C1 (1 &micro;F, 16 V)  
+4. Transistor Q1 bis Q5 (BC337-40)  
+5. Widerstand R15 (47 &Omega;)  
+6. Widerst&auml;nde R4, R21, R22, R23; R11, R14 (1 k&Omega;)  
+7. Widerst&auml;nde R3, R10, R13; R6 (4,7 k&Omega;)  
+8. Widerst&auml;nde R2, R7, R9 (10 k&Omega;)  
+9. Widerst&auml;nde R5, R8, R12 (47 k&Omega;)  
+10. Widerstand R1 (100 k&Omega;)  
+11. Buchsenleisten J1 und J2 (8-polig, lange Kontakte)  
+
+Auf die _*L&ouml;tseite*_ l&ouml;ten:   
+
+12. __SCHALTER__ SW1, SW2 (Anleitung [siehe Kapitel 1.6](#x16))   
+
+<a name="x745"></a>   
+
+### 7.4.5 Versionen
+V1 (260905): OK  
+
+
+<a name="x746"></a>   
+
+### 7.4.6 Bestückung mit MOSFET-Transistoren
+Bild: Schalten/Anzeige-Platine mit MOSFET (`RCC_TUI_M_LED_V1`)  
+![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_M_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms")   
+_Bild 84: Platinen zum Schalten und Anzeige des Fahrstroms mit MOSFET_   
 
 ![RCC_TUI_M_LED](/images/300_RCC_TUI_M_LED_assembled.png "RCC_TUI_M_LED")   
 _Bild 85: Best&uuml;ckte Platine "RCC_TUI_M_LED"_   
@@ -1495,9 +1558,9 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 
 7. __SCHALTER__ SW1, SW2 (Anleitung [siehe Kapitel 1.6](#x16))   
 
-<a name="x744"></a>   
+<a name="x747"></a>   
 
-### 7.4.4 Versionen
+### 7.4.7 Versionen
 V1 (260905): OK  
 
 <a name="x75"></a>   
