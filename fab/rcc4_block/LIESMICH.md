@@ -1419,7 +1419,7 @@ Diese Platine ist das User-Interface zur Schaltplatine "RCC_TUI_STRG". Sie hat z
 ![Blockpanel RCC_TUI_LED](/images/300_rcc4_Blockpanel_TUI_LED.png "Blockpanel RCC_TUI_LED")   
 _Bild 84: Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
 
-* Im Ruhezustand sind beide _*Schalter*_ nicht gedr&uuml;ckt:  
+* Im Ruhezustand sind beide **Schalter** nicht gedr&uuml;ckt:  
   - 🟡 Die **linke, mittlere, gelbe** LED leuchtet: Fernsteuerung über DCC bzw. I²C (Remote).  
   - 🔴🟠🟢 Die **rote, (rechte) gelbe oder gr&uuml;ne** LED leuchtet, je nachdem, ob der Fahrstrom &uuml;ber DCC oder MQTT aus- oder eingeschaltet ist bzw. das Gleis frei ist.   
 
