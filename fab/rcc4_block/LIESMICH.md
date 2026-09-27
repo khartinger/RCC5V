@@ -1157,16 +1157,16 @@ _Bild 69: Schaltung zur Erzeugung des Gleis-Frei-Signals_
 <a name="x726"></a>   
 
 ### 7.2.6 DCC-Spannungserkennung
-Für die Gleisspannungserkennung wird das Gleissignal gleichgerichtet (1N4007), geglättet (100 &Omega;, 33 &micro;F) und einem Optokoppler zugeführt (1 k&Omega;, SFH615A). Der Optokoppler schaltet die **grüne LED** und mit T2 wird das Signal entkoppelt.   
-![dcc_track_U_detection_circuit](/images/300_rcc4_track_U_detection_circuit.png "dcc_track_U_detection_circuit")   
+Für die Gleisspannungserkennung wird das Gleissignal gleichgerichtet (1N4007), geglättet (100 &Omega;, 33 &micro;F) und einem Optokoppler zugeführt (1 k&Omega;, SFH615A). Der Optokoppler schaltet die **grüne LED** und das Rückmeldesignal TVn.  
+![dcc_track_U_detection_circuit](/images/300_rcc4_track_U_detection_TVn_circuit.png "dcc_track_U_detection_circuit")   
 _Bild 70: DCC-Gleis**spannungs**erkennung_
 
 <a name="x727"></a>   
 
 ### 7.2.7 Gesamtschaltung
 
-![RCC_TUI_EXT_V1_circuit](/images/600_RCC_TUI_EXT_V1_circuit.png "RCC_TUI_EXT_V1_circuit")   
-_Bild 71: KiCad-Schaltplan der "RCC_TUI_EXT_V1"-Platine_
+![RCC_TUI_EXT_V2_circuit](/images/600_RCC_TUI_EXT_V2_circuit.png "RCC_TUI_EXT_V2_circuit")   
+_Bild 71: KiCad-Schaltplan der "RCC_TUI_EXT_V2"-Platine_
 
 <a name="x728"></a>   
 
@@ -1277,15 +1277,16 @@ _Bild 75: INA-Board mit angelöteten Stiften_
 2. Relais K1 bestücken (auf Richtung achten)  
 2. INA333_Board aufstecken (mit Trimmer zum Print-Rand)  
 3. LEDs auf passende Länge kürzen (zB 10 mm) und in die Fassungen stecken (auf richtige Polung achten!)  
-![rcc4_LED_Polung](/images/200_rcc4_LED_Polung.png "rcc4_LED_Polung")   
 
+   ![rcc4_LED_Polung](/images/200_rcc4_LED_Polung.png "rcc4_LED_Polung")   
+   _Bild 76: LED-Polung_
 
 <a name="x729"></a>   
 
 ### 7.2.9 Inbetriebnahme und Test
 
 ![UI_pin_J5](/images/200_rcc4_TUI_pin_J5.png "UI_pin_J5")   
-_Bild 76: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
+_Bild 77: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
 
 1. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
    ► 🔴🟤 Die rote LED (FRE) leuchtet oder leuchtet nicht (siehe Punkt 6).   
@@ -1317,7 +1318,7 @@ _Bild 76: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
 2. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
 3. Funktionstest **Ausgang TVn** (Track Voltage):   
    ► DCC-Versorgung abgeschaltet oder abgeklemmt: TVn = 5 V (⚫ grüne LED aus).   
-   ► DCC-Versorgung am "Booster"-Eingang anschließen **und** J5-Pin 5 auf 0 V (TONn): TVn = 0,7 V (🟢 grüne LED ein).  
+   ► DCC-Versorgung am "Booster"-Eingang anschließen **und** J5-Pin 5 (TONn) auf 0 V: TVn = 0,7 V (🟢 grüne LED ein).  
 ---  
 4. Messgerät COM mit GND verbinden, V/Ω an **Pin 1** von J5 (FREn) anschließen.   
 5. Funktionstest **Ausgang FREn** (Track Free):   
@@ -1330,7 +1331,19 @@ _Bild 76: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
 <a name="x72A"></a>   
 
 ### 7.2.10 Versionen
-* V1 (260902): OK   
+#### * V1 (260902): Problematische Rückmeldung TVn  
+Durch die Emitter-Basis-Spannung des Transistors T2 ist die Ausgangsspannung nicht 0 V sondern 0,8 V. Das kann in nachfolgenden Stufen zu Problemen führen.  
+![TUI_EXT_circuitTVn](/images/300_rcc4_TUI_EXT_circuitTVn.png "TUI_EXT_circuitTVn")  
+_Bild 78: Verbesserung TVn-Rückmeldung_  
+
+**Lösung**: R17, R14 und T2 weglassen, Kollektor des Optokopplers SFH617 mit 47 &Omega;-Widerstand verbinden.  
+
+**Lösung auf der Leiterplatte:**  
+![TUI_EXT_printTVn](/images/300_rcc4_TUI_EXT_printTVn.png "TUI_EXT_printTVn")  
+_Bild 79: Verbindung auf Print `RCC_TUI_EXT_V1` (260902)_  
+
+
+#### * V2 (260926): OK
 
 <a name="x73"></a>   
 <a name="x731"></a>   
@@ -1345,22 +1358,22 @@ Zusätzlich werden die Datenleitungen geschützt:
 * **Ausgänge** (I²C-Rückmeldungen `RTVn`, `RFREn`): Diode und `4,7 kΩ`-Widerstand nach `+5 V`  
 
 ![TUI_STRG_circuit12](/images/300_rcc4_TUI_STRG_circuit12.png "TUI_STRG_circuit12") 
-_Bild 77: Schutzbeschaltung der Ein- und Ausgangsleitungen_
+_Bild 80: Schutzbeschaltung der Ein- und Ausgangsleitungen_
 
 Gesamtschaltung:  
 
 ![RCC_TUI_STRG_V1_circuit](/images/600_RCC_TUI_STRG_V1_circuit.png "RCC_TUI_STRG_V1_circuit")   
-_Bild 78: KiCad-Schaltplan der `RCC_TUI_STRG_V1`-Platine_  
+_Bild 81: KiCad-Schaltplan der `RCC_TUI_STRG_V1`-Platine_  
 
 <a name="x732"></a>   
 
 ### 7.3.2 Bestücken der Platine
 
 ![Platine zum Fahrstrom-Schalten und -Erkennen](/images/pcb_f/PCB_F_RCC_TUI_STRG_V1.png "Platine zum Fahrstrom-Schalten und -Erkennen")   
-_Bild 79: Platine `RCC_TUI_STRG_V1`_  
+_Bild 82: Platine `RCC_TUI_STRG_V1`_  
 
 ![Bestückte Platine RCC_TUI_STRG](/images/300_RCC_TUI_STRG_V1_assembled.png "Bestückte Platine RCC_TUI_STRG")   
-_Bild 80: Bestückte Platine `RCC_TUI_STRG`_  
+_Bild 83: Bestückte Platine `RCC_TUI_STRG`_  
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -1404,7 +1417,7 @@ V1 (260905): OK
 Diese Platine ist das User-Interface zur Schaltplatine "RCC_TUI_STRG". Sie hat zwei Schalter sowie sechs LEDs.    
 
 ![Blockpanel RCC_TUI_LED](/images/300_rcc4_Blockpanel_TUI_LED.png "Blockpanel RCC_TUI_LED")   
-_Bild 81: Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
+_Bild 84: Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
 
 * Im Ruhezustand sind beide _*Schalter*_ nicht gedr&uuml;ckt:  
   - 🟡 Die **linke, mittlere, gelbe** LED leuchtet: Fernsteuerung über DCC bzw. I²C (Remote).  
@@ -1428,22 +1441,21 @@ Den Schaltplan zum Schalten der LEDs gibt es in zwei Versionen:
 
 Mit Transistoren:   
 ![RCC_TUI_LED_B_circuit](/images/600_RCC_TUI_B_LED_circuit.png "RCC_TUI_LED_B_circuit")   
-_Bild 82: KiCad-Schaltplan der "RCC_TUI_B_LED"-Platine mit bipolaren Transistoren_   
+_Bild 85: KiCad-Schaltplan der "RCC_TUI_B_LED"-Platine mit bipolaren Transistoren_   
 
 Mit MOSFET:  
 ![RCC_TUI_LED_M_circuit](/images/600_RCC_TUI_M_LED_circuit.png "RCC_TUI_LED_M_circuit")   
-_Bild 83: KiCad-Schaltplan der "RCC_TUI_M_LED"-Platine mit MOSFET_   
+_Bild 86: KiCad-Schaltplan der "RCC_TUI_M_LED"-Platine mit MOSFET_   
 
 <a name="x743"></a>   
 
 ### 7.4.3 Bestückung mit bipolaren Transistoren
 
-Bild: Schalten/Anzeige-Platine mit Transistoren (`RCC_TUI_B_LED_V1`)
-![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_B_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms") 
-_Bild 84: Platinen zum Schalten und Anzeige des Fahrstroms mit bipolaren Transistoren_   
+![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_B_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms")  
+_Bild 87: Platinen zum Schalten und Anzeige des Fahrstroms mit bipolaren Transistoren_   
 
 ![RCC_TUI_B_LED](/images/300_RCC_TUI_B_LED_assembled.png "RCC_TUI_B_LED")   
-_Bild 85: Best&uuml;ckte Platine "RCC_TUI_B_LED"_   
+_Bild 88: Best&uuml;ckte Platine "RCC_TUI_B_LED"_   
 
 #### St&uuml;ckliste mit bipolaren Transistoren   
 | Anzahl | Referenz | Wert | Geh&auml;use |   
@@ -1503,10 +1515,10 @@ V1 (260905): OK
 ### 7.4.6 Bestückung mit MOSFET-Transistoren
 Bild: Schalten/Anzeige-Platine mit MOSFET (`RCC_TUI_M_LED_V1`)  
 ![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_M_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms")   
-_Bild 84: Platinen zum Schalten und Anzeige des Fahrstroms mit MOSFET_   
+_Bild 89: Platinen zum Schalten und Anzeige des Fahrstroms mit MOSFET_   
 
 ![RCC_TUI_M_LED](/images/300_RCC_TUI_M_LED_assembled.png "RCC_TUI_M_LED")   
-_Bild 85: Best&uuml;ckte Platine "RCC_TUI_M_LED"_   
+_Bild 90: Best&uuml;ckte Platine "RCC_TUI_M_LED"_   
 
 #### St&uuml;ckliste MOSFET-Version   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -1537,14 +1549,14 @@ _Bild 85: Best&uuml;ckte Platine "RCC_TUI_M_LED"_
 
 Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs.   
 ![RCC_TUI_M_LED_parts](/images/300_RCC_TUI_M_LED_parts.png "RCC_TUI_M_LED_parts")   
-_Bild 86: Bauteile der "RCC_TUI_M_LED"-Platine_   
+_Bild 91: Bauteile der "RCC_TUI_M_LED"-Platine_   
 
 #### Best&uuml;ckungsvorgang   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1 bis D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
 
 Auf die _*Bauteilseite*_ l&ouml;ten:  
 
-2. Widerstand R17 (47 &Omega;, liegend)  
+2. Widerstand R17 (47 &Omega;, 12,7 mm liegend)  
 3. Kondensator C1 (1 &micro;F, 16 V)  
 4. MOSFET Q1 bis Q4 (BS170)  
 5. Widerstand R16 (47 &Omega;)  
