@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>Herstellung von RCC Schaltbl&ouml;cken</h1><b><big>RCC4: Basis-Blöcke für das RCC-System</big></b><br>  
-Stand: 7.9.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 27.9.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -1235,6 +1235,7 @@ _Bild 74: Bauteile der "RCC_TUI_EXT_V1"-Platine_
 (4) 1x 2-polige Stiftleiste von Stiftleiste herunterschneiden (für J3)   
 (5) 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.   
 (6) 2x 4-polige Stiftleisten auf der Unterseite des INA333-Boards nach UNTEN anlöten (siehe Bild).   
+(7) Bei Print Version 1: Verbindung auf Print `RCC_TUI_EXT_V1`.  
 
 ![rcc6_INA333_Board](/images/300_rcc6_INA333_Board.png "rcc6_INA333_Board")   
 _Bild 75: INA-Board mit angelöteten Stiften_  
@@ -1257,15 +1258,15 @@ _Bild 75: INA-Board mit angelöteten Stiften_
 14. Widerst&auml;nde R16, R18 (47 &Omega;)   
 15. Widerstand R11 (100 &Omega;)   
 16. Widerst&auml;nde R4, R8, R10, R12, R13 (1 k&Omega;)   
-17. Widerst&auml;nde R14, R15 (4,7 k&Omega;)   
+17. Widerst&auml;nde ~~R14,~~ R15 (4,7 k&Omega;)   
 18. Widerst&auml;nde R2, R6, R7, R20, Rs1 (10 k&Omega;)   
 19. Widerstand R3 (22 k&Omega; oder 33 k&Omega;)   
-20. Widerst&auml;nde R9, R17 (47 k&Omega;)   
+20. Widerst&auml;nde R9, ~~R17~~ (47 k&Omega;)   
 21. Widerstand R19 (100 k&Omega;)   
 ---  
 22. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
 23. Transistor Q1 (BC337-40)   
-24. Transistor Q2, Q3 (BC327-40)   
+24. Transistor ~~Q2,~~ Q3 (BC327-40)   
 25. Stiftleiste 2-polig J3   
 26. Diode D1, D2 (SB240, auf Polung achten: Kathode unten beim Kreis)   
 27. Wannenstecker 6-polig J5 (auf Polung achten)   
@@ -1333,10 +1334,11 @@ _Bild 77: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
 ### 7.2.10 Versionen
 #### * V1 (260902): Problematische Rückmeldung TVn  
 Durch die Emitter-Basis-Spannung des Transistors T2 ist die Ausgangsspannung nicht 0 V sondern 0,8 V. Das kann in nachfolgenden Stufen zu Problemen führen.  
-![TUI_EXT_circuitTVn](/images/300_rcc4_TUI_EXT_circuitTVn.png "TUI_EXT_circuitTVn")  
-_Bild 78: Verbesserung TVn-Rückmeldung_  
 
 **Lösung**: R17, R14 und T2 weglassen, Kollektor des Optokopplers SFH617 mit 47 &Omega;-Widerstand verbinden.  
+
+![TUI_EXT_circuitTVn](/images/300_rcc4_TUI_EXT_circuitTVn.png "TUI_EXT_circuitTVn")  
+_Bild 78: Verbesserung TVn-Rückmeldung_  
 
 **Lösung auf der Leiterplatte:**  
 ![TUI_EXT_printTVn](/images/300_rcc4_TUI_EXT_printTVn.png "TUI_EXT_printTVn")  
@@ -1417,7 +1419,7 @@ V1 (260905): OK
 Diese Platine ist das User-Interface zur Schaltplatine "RCC_TUI_STRG". Sie hat zwei Schalter sowie sechs LEDs.    
 
 ![Blockpanel RCC_TUI_LED](/images/300_rcc4_Blockpanel_TUI_LED.png "Blockpanel RCC_TUI_LED")   
-_Bild 84: Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
+_Bild 84: (3D-gedrucktes) Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
 
 * Im Ruhezustand sind beide **Schalter** nicht gedr&uuml;ckt:  
   - 🟡 Die **linke, mittlere, gelbe** LED leuchtet: Fernsteuerung über DCC bzw. I²C (Remote).  

@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>Weitere RCC Komponenten</h1><b><big>RCC6: Optionale Komponenten für das RCC-System</big></b><br>  
-Stand: 16.9.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 27.9.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -47,7 +47,7 @@ Die LEDs zeigen den Zustand der Eingangssignale **TVn** und **FREn** an.
 - **TVn** – Gleisspannung vorhanden (*Track Voltage*, 0 V)  
 - **FREn** – Gleis frei (*Track Free*, 0 V)  
 
-Damit zeigt die Platine den Zustand eines Gleises an:  
+Damit zeigt die Platine zum Beispiel den Zustand eines Gleises an:  
 
 - 🟢 **Grün:** Gleis ist frei.
 - 🟡 **Gelb:** Gleis ist besetzt.
@@ -60,7 +60,7 @@ Zusätzlich zur LED-Anzeige stehen zwei Rückmeldesignale zur Verfügung:
 - **ROKn** – Rückmeldung ist gültig (*Response OK* = *Response Valid*, 0 V)  
 - **RFRE** – Gleis ist frei (*Response Track Free*, 5 V)  
 
-**Anmerkung**: Das Ausgangssignal RFRE wird gegenüber FREn invertiert.   
+**Anmerkung**: Das Ausgangssignal RFRE ist gegenüber FREn invertiert.   
 
 ![rcc6_RGY_TVn_LED_blockdiagram](/images/150_rcc6_RGY_TVn_LED_blockdiagram.png "rcc6_RGY_TVn_LED_blockdiagram")   
 
@@ -409,8 +409,8 @@ SET- und RESET-Eingang können auf 3 Arten getriggert werden:
 ### Ausgänge
 
 Die Pulsspeicher-Steuerungsplatine `RCC_PULS_TVn_STRG` erzeugt  
-* die Steuersignale `FRE` und `TVn` für die LED-Anzeige und   
-* leitet die LED-Anzeige-Rückmeldung `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
+* die Steuersignale `FREn` und `TVn` für die LED-Anzeige und   
+* leitet die LED-Anzeige-Rückmeldung `ROKn` und `RFRE` zum I²C-Stecker J4 weiter.   
 
 Zur Anzeige wird das Board `RCC_RGY_TVn_LED` verwendet.   
 
@@ -556,8 +556,11 @@ Die technische Funktion ist weitgehend identisch mit `RCC_TUI_EXT` (bis auf das 
 ### 4.2.2 Gesamtschaltung
 
 KiCad-Schaltplan der "dcc_track_UI_TVn"-Platine:   
-
+Version 1:  
 ![dcc_track_UI_TVn_V1_circuit](/images/600_dcc_track_UI_TVn_V1_circuit.png "dcc_track_UI_TVn_V1_circuit")   
+
+Version 2:  
+![dcc_track_UI_TVn_V2_circuit](/images/600_dcc_track_UI_TVn_V2_circuit.png "dcc_track_UI_TVn_V2_circuit")   
 
 <a name="x423"></a>   
 
@@ -616,6 +619,7 @@ Bauteile der "dcc_track_UI_TVn"-Platine (Version 1):
 (3) 1x 2-polige Stiftleiste von Stiftleiste herunterschneiden (für J3)  
 (4) 2x 4-polige Stiftleisten für das INA333-Board: Beiliegende 8-polige Stiftleiste in der Mitte auseinanderschneiden.  
 (5) 2x 4-polige Stiftleisten auf der Unterseite des INA333-Boards nach UNTEN anlöten (siehe Bild).  
+(6) Bei Print Version 1: Verbindung auf Print `dcc_track_UI_TVn_V1`.  
 
 ![rcc6_INA333_Board](/images/300_rcc6_INA333_Board.png "rcc6_INA333_Board")   
 _Bild: INA-Board mit angelöteten Stiften_  
@@ -636,13 +640,13 @@ _Bild: INA-Board mit angelöteten Stiften_
 12. Widerst&auml;nde R16, R18 (47 &Omega;)   
 13. Widerstand R11 (100 &Omega;)   
 14. Widerst&auml;nde R4, R8, R10, R12, R13 (1 k&Omega;)   
-15. Widerst&auml;nde R14, R15 (4,7 k&Omega;)   
+15. Widerst&auml;nde ~~R14,~~ R15 (4,7 k&Omega;)   
 16. Widerst&auml;nde R2, R6, R7, Rs1 (10 k&Omega;)   
 17. Widerstand R3 (22 k&Omega; oder 33 k&Omega;)   
-18. Widerst&auml;nde R9, R17 (47 k&Omega;)   
+18. Widerst&auml;nde R9, ~~R17~~ (47 k&Omega;)   
 19. Elko C6 (Elko 33 &micro;F, auf - Polung achten)   
 20. Transistor Q1 (BC337-40)   
-21. Transistor Q2 (BC327-40)   
+21. ~~Transistor Q2 (BC327-40)~~   
 22. Stiftleiste 2-polig J3   
 23. Diode D1, D2 (SB240, auf Polung achten: Kathode unten beim Kreis)   
 ---  
@@ -700,7 +704,20 @@ _Bild: INA-Board mit angelöteten Stiften_
 <a name="x425"></a>   
 
 ### 4.2.5 Versionen
-* V1 (260820): OK  
+#### * V1 (260820): Problematische Rückmeldung TVn  
+Durch die Emitter-Basis-Spannung des Transistors T2 ist die Ausgangsspannung nicht 0 V sondern 0,8 V. Das kann in nachfolgenden Stufen zu Problemen führen.  
+
+**Lösung**: R17, R14 und Q2 weglassen, Kollektor des Optokopplers SFH617 mit 47 &Omega;-Widerstand verbinden.  
+
+![TUI_EXT_circuitTVn](/images/300_rcc4_TUI_EXT_circuitTVn.png "TUI_EXT_circuitTVn")  
+_Bild ..: Verbesserung TVn-Rückmeldung_  
+
+**Lösung auf der Leiterplatte:**  
+![TUI_EXT_printTVn](/images/300_rcc4_TUI_EXT_printTVn.png "TUI_EXT_printTVn")  
+_Bild ..: Verbindung auf Print `dcc_track_UI_TVn_V1`_  
+
+#### * V2 (260926): OK
+
 
 <a name="x43"></a>   
 <a name="x431"></a>   
