@@ -71,6 +71,7 @@ String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
  } // END OF it is a uncoupler command (1 bit, 2cmds)...........
 
  if(aRcomp[iRcomp].type==RC_TYPE_DT || aRcomp[iRcomp].type==RC_TYPE_DD
+  || aRcomp[iRcomp].type==RC_TYPE_P1
   || aRcomp[iRcomp].type==RC_TYPE_TUI) {
   //...it is a disconn track command (1 bit, 1cmd)............
   if(iCmdValue==0) {                        // turn current off

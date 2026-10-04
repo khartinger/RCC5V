@@ -459,7 +459,7 @@ String simpleSet(String sTopic, String sPayload)
      }
      else
      { // NOT TO, TX, T3, P2, UI................................
-      if(aRcomp[i].type==RC_TYPE_TUI)
+      if(aRcomp[i].type==RC_TYPE_TUI || aRcomp[i].type==RC_TYPE_P1)
       { //......specifically for command type UI.................
         if(sPayload=="0" || sPayload == "off") iCmdValue=0;
         if(sPayload=="1" || sPayload == "on") iCmdValue=1;
@@ -561,10 +561,11 @@ String getValueForComp(strRcomp Rcomp_, strRcmd Rcmd_, bool byName) {
   if(Rcmd_.inValue) return T1_DPDT_1_NO;
   else return T1_DPDT_0_NC;
  }
- if(Rcomp_.type==RC_TYPE_UC) {
+ if(Rcomp_.type==RC_TYPE_UC || Rcomp_.type==RC_TYPE_P1) {
   if(Rcmd_.inValue) return byName ? T_ON : T1_ON;
   else return byName ? T_OFF : T1_OFF;
  }
+/*
  if(Rcomp_.type==RC_TYPE_P2 || Rcomp_.type==RC_TYPE_UI) {
   switch(Rcmd_.inValue) {
    case 0:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=00
@@ -574,7 +575,17 @@ String getValueForComp(strRcomp Rcomp_, strRcmd Rcmd_, bool byName) {
    default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
   }
  }
- if(Rcomp_.type==RC_TYPE_TUI) {
+*/
+ if(Rcomp_.type==RC_TYPE_P2 || Rcomp_.type==RC_TYPE_UI) {
+  switch(Rcmd_.inValue) {
+   case 0:  return byName ? T_TRACK_00V : T1_TRACK_00V; // BA=00
+   case 1:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=01
+   case 2:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=10
+   case 3:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=11
+   default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
+  }
+ }
+if(Rcomp_.type==RC_TYPE_TUI) {
   switch(Rcmd_.inValue) {
    case 0:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=00
    case 1:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=01

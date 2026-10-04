@@ -10,6 +10,7 @@
 // 2026-02-24 Add mac
 // 2026-08-17 Add dcc_config.cpp, Redesign constexpr, ...
 // 2026-09-13 Add RC_TYPE_TUI
+// 2026-10-02 Add RC_TYPE_P1
 // Released into the public domain.
 
 #ifndef DCC_CONFIG_H
@@ -24,8 +25,8 @@
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 
 //_______program version________________________________________
-constexpr char VERSION_99[] = "2026-09-13 rcc_demo2";
-constexpr char VERSION_99_1[] = "Version 2026-09-13";
+constexpr char VERSION_99[] = "2026-10-02 rcc_demo2";
+constexpr char VERSION_99_1[] = "Version 2026-10-02";
 
 //_______Network data___________________________________________
 #define _USE_WIFI_      true
@@ -103,9 +104,10 @@ constexpr int  RC_TYPE_DT = 4;    // disconnectable track (Fahrstrom)
 constexpr int  RC_TYPE_TX = 5;    // double slip turnout/switch (Doppelkreuzungsweiche)
 constexpr int  RC_TYPE_DD = 6;    // double pole, double throw (2x UM)
 constexpr int  RC_TYPE_TUI = 7;   // Track voltage current
-constexpr int  RC_TYPE_P2 = 8;    // pulse 2 inputs (reset, set)
-constexpr int  RC_TYPE_UI = 9;    // current (I)-voltage (U)-indicator
-constexpr int  RC_TYPE_BL = 10;   // blink light (Blinklicht)
+constexpr int  RC_TYPE_P1 = 8;    // pulse 1 input (set), reset by hardware
+constexpr int  RC_TYPE_P2 = 9;    // pulse 2 inputs (reset, set)
+constexpr int  RC_TYPE_UI = 10;   // current (I)-voltage (U)-indicator
+constexpr int  RC_TYPE_BL = 11;   // blink light (Blinklicht)
 
 //.......All properties of a railroad component.................
 struct strRcomp {
@@ -210,29 +212,44 @@ struct strRcomp {
 
 // -------------------------------------------------------------
 /**
- * @brief pulse with 2 inputs (reset, set)
- * Output: Pin 3 (B) = 0: simulate set pulse (200 ms) by software (active low!)
- *         Pin 2 (A) = 0: simulate reset pulse (200 mas) by software (active low!)
- * Input :
+ * @brief pulse with 1 input (set)
+ * The hardware automatically resets the pulse after a few milliseconds to seconds.
+ * The block contains two separate pulse inputs.
+ * Output: Pin 2 (A) = 0: simulate set pulse #1 by software (active low!)
+ *         Pin 3 (B) = 0: simulate set pulse #2 by software (active low!)
+ * Input : Pin 2 (A) = 0: pulse #1 is active (1 = no pulse)
+ *         Pin 3 (B) = 0: pulse #2 is active (1 = no pulse)
  */
- #define  RCOMP_7   RC_TYPE_P2,"P2", 71, EX2,PIN2,PIN3,   EX3,PIN2,PIN3, 200,0
+ #define  RCOMP_7a   RC_TYPE_P1,"P1", 71, EX2,PIN2,NO_PIN,   EX3,PIN2,NO_PIN, 0,0
+ #define  RCOMP_7b   RC_TYPE_P1,"P1", 72, EX2,PIN3,NO_PIN,   EX3,PIN3,NO_PIN, 0,0
 
-// ------voltage (U)-current (I)-indicator----------------------
-// No current flow means that the track is unoccupied (free).
-// Note: Input free: Pin=0, Output free: Pin=1 (i.e., inverted!)
-// Two pins and two consecutive DCC addresses are required for 
-// control and display:
-// The lower address for the current flow (or whether the track
-// is free), and the higher address for the track voltage or 
-// whether the current flow signal is correct (OK=1). 
-// Input: Two expander pins A for voltage (1) and free (I=0)
-// Output: Two expander pins A for free (1) and OK (1)
+// -------------------------------------------------------------
+/**
+ * @brief pulse with 2 inputs (reset, set)
+ * Output: Pin 5 (B) = 0: simulate set pulse (200 ms) by software (active low!)
+ *         Pin 4 (A) = 0: simulate reset pulse (200 ms) by software (active low!)
+ * Input : 
+ */
+ #define  RCOMP_8   RC_TYPE_P2,"P2", 81, EX2,PIN4,PIN5,   EX3,PIN4,PIN5, 200,0
 
- #define  RCOMP_8   RC_TYPE_UI,"UI1", 81, EX2,PIN4,PIN5,   EX3,PIN4,PIN5, 0,0
+// -------------------------------------------------------------
+/**
+ * @brief voltage (U)-current (I)-indicator
+ * No current flow means that the track is unoccupied (free).
+ * Note: Input free: Pin=0, Output free: Pin=1 (i.e., inverted!)
+ * Two pins and two consecutive DCC addresses are required for 
+ * control and display:
+ * The lower address for the current flow (or whether the track
+ * is free), and the higher address for the track voltage or 
+ * whether the current flow signal is correct (OK=1). 
+ * Input:  Two expander pins A for voltage (1) and free (I=0)
+ * Output: Two expander pins A for free (1) and OK (1)
+*/
+ #define  RCOMP_9   RC_TYPE_UI,"UI1", 91, EX2,PIN6,PIN7,   EX3,PIN6,PIN7, 0,0
 
 // ***** CHECK this! *******************************************
 //.......Preparing the Array of all railroad components..........
-#define  RCOMP_NUM  4
-#define  RCOMP_LIST {RCOMP_2},{RCOMP_6},{RCOMP_7},{RCOMP_8}
+#define  RCOMP_NUM  5
+#define  RCOMP_LIST {RCOMP_2},{RCOMP_6},{RCOMP_7a},{RCOMP_7b},{RCOMP_8}
 
 #endif

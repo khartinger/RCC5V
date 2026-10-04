@@ -133,7 +133,15 @@ String getSymbol4Line5(int iType, int iValue)
     default: return ERR;    // ?? impossible
    } // END OF switch(iValue)
    break;
-  case RC_TYPE_P2: case RC_TYPE_UI: // -------------------------
+  case RC_TYPE_P1: // ------------------------------------------
+   // pulse 2 inputs (reset, set), UI display
+   switch(iValue) { 
+    case 0: return "_i_ "; // "=0= " A=0
+    case 1: return "___ "; // "=1= " A=1
+    default: return ERR;    // ?? impossible
+   } // END OF switch(iValue)
+   break;
+   case RC_TYPE_P2: case RC_TYPE_UI: // -------------------------
    // pulse 2 inputs (reset, set), UI display
    switch(iValue) { 
     case 0: return "OCC "; // "=0= " BA=00

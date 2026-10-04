@@ -65,8 +65,8 @@
   " Weiter: Taste IO19  ", \
   "DCC 21 2-Weg-Weiche 2", \
   "DCC 61 Fahrspg ein UI", \
-  "DCC 71 Puls2         ", \
-  "DCC 81 IU-Anzeige    ", \
+  "DCC 71 Puls1         ", \
+  "DCC 81 Puls2         ", \
   " Weiter: Taste IO19  ", \
   "                  3/3", \
    " ",\
@@ -132,8 +132,8 @@
    " Next: Button IO19   ", \
    "DCC 21 2Way-Turnout 2", \
    "DCC 61 track voltage ", \
-   "DCC 71 Puls2         ", \
-   "DCC 81 IU-Display    ", \
+   "DCC 71 Puls1         ", \
+   "DCC 81 Puls2         ", \
    " Next: Button IO19   ", \
    "                  3/3", \
    " ",\
