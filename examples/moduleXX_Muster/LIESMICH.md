@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
-<h1>Modul 15: P20-Sub-D-Einspeisung auf 25 cm</h1><b><big>Modul mit doppelter Einspeisung durch 20polige und Sub-D-Stecker</big></b><br>  
-Stand: 7.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+<h1>Modul 15: P20-Sub-D-Einspeisung auf 25 cm</h1><b><big>Test für Gleisbesetztmeldung und Reedkontakte</big></b><br>  
+Stand: 8.9.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
