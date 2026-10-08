@@ -64,7 +64,7 @@ Das Bild zeigt die verschiedenen Stadien beim Vorbereiten der LEDs:
 ![LED_biegen_Schritte](/images/300_LED_biegen_Schritte.png "LED_biegen_Schritte")   
 _Bild 7: Die Arbeitsschritte beim Biegen der LEDs_   
 
-Alternativ kann auch eine [3D-gedruckte Biegelehre](https://github.com/khartinger/RCC5V/blob/main/fab/3d/LIESMICH.md#x50) verwendet werden:
+Alternativ kann auch eine [3D-gedruckte Biegelehre](https://github.com/khartinger/RCC5V/blob/main/fab/3d/LIESMICH.md#x50) verwendet werden:  
 ![Biegelehre f&uuml;r LEDs](/images/3d/300_Biegelehre_LED_FC.png "Biegelehre f&uuml;r LEDs")   
 _Bild 8: 3D-gedruckte Biegelehre_   
 
@@ -74,7 +74,7 @@ _Bild 8: 3D-gedruckte Biegelehre_
 ## 1.5 Anordnung von LEDs und Tastern auf der LED-Platine
 Das Basis-Layout der LED-Platinen ist f&uuml;r alle Bl&ouml;cke gleich. Es sind drei Positionen f&uuml;r Taster bzw. Schalter sowie sechs Positionen f&uuml;r LEDs vorgesehen:   
 ![LED- und Schalterpositionen](/images/300_block_cover.png "LED- und Schalterpositionen")   
-_Bild 8: LED- und Schalterpositionen bei einem Block (von vorne gesehen)_   
+_Bild 9: LED- und Schalterpositionen bei einem Block (von vorne gesehen)_   
 
 Die Bezeichnungen f&uuml;r die LEDs (D1 bis D6) und die Taster oder Schalter (SW1 bis SW3) werden bei allen LED-Platinen gleich verwendet.   
 
@@ -84,7 +84,7 @@ Die Bezeichnungen f&uuml;r die LEDs (D1 bis D6) und die Taster oder Schalter (SW
 Alle "LED"-Platinen enthalten Taster und Schalter, die im letzten Arbeitsschritt auf die L&ouml;tseite der Platine gel&ouml;tet werden. Damit sie beim Einl&ouml;ten nicht herausfallen, kann man sie mit Klebeband oder Klebstoff fixieren und die Platine h&ouml;her lagern. Zum Beispiel kann man sie auf die Kanten eines schmalen Einsatzes eines [RAACO Sortimentkoffers Assorter 55 A9](https://www.reichelt.de/at/de/sortimentseinsatz-a9-1-39-x-47-x-55-mm-raaco-a9-1-p29322.html?r=1) legen.
 
 ![solder_button1](/images/200_solder_button1.png "solder_button1") ![solder_button2](/images/200_solder_button2.png "solder_button2")   
-_Bild 9: L&ouml;ten von Tastern_   
+_Bild 10: L&ouml;ten von Tastern_   
 
 [Zum Seitenanfang](#up)   
 
@@ -97,13 +97,13 @@ _Bild 9: L&ouml;ten von Tastern_
 Diese Platine dient zum Schalten einer Zweiwegweiche (Richtung "Gerade" oder "Abzweig") von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt durch zwei Relais (siehe Bild unten).   
 
 ![RW_5V_W2_STRG_circuit](/images/600_RW_5V_W2_STRG_circuit.png "RW_5V_W2_STRG_circuit")   
-_Bild 10: Schaltplan der "RW_5V_W2_STRG"-Platine_   
+_Bild 11: Schaltplan der "RW_5V_W2_STRG"-Platine_   
 
 ![Platine Ansteuerung Zweiwegweiche](/images/pcb_f/PCB_F_RW_5V_W2_STRG_V2.png "Platine Ansteuerung Zweiwegweiche")   
-_Bild 11: Platine zur Ansteuerung einer Zweiwegweiche_   
+_Bild 12: Platine zur Ansteuerung einer Zweiwegweiche_   
 
 ![RW_5V_W2_STRG](/images/300_RW_5V_W2_STRG_V2.png "RW_5V_W2_STRG")   
-_Bild 12: Best&uuml;ckte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_   
+_Bild 13: Best&uuml;ckte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -122,7 +122,7 @@ _Bild 12: Best&uuml;ckte Platine "RW_5V_W2_STRG" zum Schalten einer Weiche_
    
 
 ![RW_5V_W2_STRG_parts](/images/300_RW_5V_W2_STRG_parts.png "RW_5V_W2_STRG_parts")   
-_Bild 13: Bauteile der "RW_5V_W2_STRG"-Platine_   
+_Bild 14: Bauteile der "RW_5V_W2_STRG"-Platine_   
 
 ### Best&uuml;ckung   
 1. Diode D1 und D3 (liegend, 5,08 mm)   
@@ -153,17 +153,17 @@ Diese Platine dient zum Schalten einer Zweiwegweiche (mit je einem Taster f&uuml
 darstellen kann.   
 
 ![RW_5V_W2_LED_circuit](/images/600_RW_5V_W2_LED_circuit.png "RW_5V_W2_LED_circuit")   
-_Bild 14: Schaltplan der "RW_5V_W2_LED"-Platine_   
+_Bild 15: Schaltplan der "RW_5V_W2_LED"-Platine_   
 
 ![RW_5V_W2_LED](/images/pcb_f/PCB_F_RW_5V_W2_LED_V1.png "RW_5V_W2_LED")   
-_Bild 15: Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 16: Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
 ![RW_5V_W2_LED_F](/images/300_RW_W2_LED_F.png "RW_5V_W2_LED_F")   
-_Bild 16: Bauteilseite der best&uuml;ckten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 17: Bauteilseite der best&uuml;ckten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
 Im folgenden Bild ist der Print f&uuml;r eine linke Weiche best&uuml;ckt, die bei der Fahrt von links nach rechts entweder "Gerade" (gr&uuml;ne LED leuchtet) oder "Abzweig" befahren werden kann (gelbe LED leuchtet).   
 ![RW_5V_W2_LED_B](/images/300_RW_W2_LED_B.png "RW_5V_W2_LED_B")   
-_Bild 17: L&ouml;tseite der best&uuml;ckten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung._   
+_Bild 18: L&ouml;tseite der best&uuml;ckten Platine "RW_5V_W2_LED" zum Schalten und zur Anzeige der Weichenstellung._   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -196,7 +196,7 @@ _Bild 17: L&ouml;tseite der best&uuml;ckten Platine "RW_5V_W2_LED" zum Schalten 
 3. 10 mm-Tasterkn&ouml;pfe SW1/SW3 (gelb), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ![RW_5V_W2_LED_parts](/images/300_RW_5V_W2_LED_parts.png "RW_5V_W2_STRG_parts")   
-_Bild 18: Bauteile der "RW_5V_W2_LED"-Platine_   
+_Bild 19: Bauteile der "RW_5V_W2_LED"-Platine_   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten (D1 bis D6) mit gedrehten Pins auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -223,7 +223,7 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 Das Ersatzschaltbild einer endabgeschalteten Weiche sind zwei Spulen mit einem Umschalter. Die Spule, die gerade geschaltet wurde (WB), ist von der R&uuml;ckleitung getrennt und die andere Spule (WA) ist nun bereit, geschaltet zu werden.   
 
 ![RW_5V_W2_equivalent_circuit](/images/200_W2_equivalent_circuit.png "RW_5V_W2_equivalent_circuit")   
-_Bild 19: Ersatzschaltbild Weichenantrieb_   
+_Bild 20: Ersatzschaltbild Weichenantrieb_   
 
 Das "Warten" auf den Schaltvorgang wird f&uuml;r die R&uuml;ckmeldung der Weichenstellung genutzt: In diesem Fall ist der Widerstand zwischen WA und W0 klein (nur der ohmsche Widerstand der Spule), der Widerstand zwischen WB und W0 unendlich.   
 Man unterscheidet daher zwei Zust&auml;nde:   
@@ -251,10 +251,10 @@ Die Verkabelung entsprechend dem Bild durchf&uuml;hren:
 
 
 ![W2 Testverkabelung](/images/300_W2_test_wiring_img.png "W2 Testverkabelung")   
-_Bild 20: Verkabelung zum Testen eines W2-Blocks_   
+_Bild 21: Verkabelung zum Testen eines W2-Blocks_   
 
 ![W2 Testverkabelung Schalten](/images/300_W2_test_wiring_switch.png "W2 Testverkabelung Schalten")   
-_Bild 21: Verkabelung zum Testen des Schaltvorgangs eines W2-Blocks_   
+_Bild 22: Verkabelung zum Testen des Schaltvorgangs eines W2-Blocks_   
 
 1. Anlegen der 5V-Spannung:   
    * Beide LED leuchten.   
@@ -281,7 +281,7 @@ Die Verkabelung entsprechend dem Bild durchf&uuml;hren:
 * schwarz: 0V (GND) von J4-5 zum Voltmeter COM (-)   
 
 ![W2 Testverkabelung R&uuml;ckmeldung](/images/300_W2_test_wiring_LED.png "W2 Testverkabelung R&uuml;ckmeldung")   
-_Bild 22: Verkabelung zum Testen der R&uuml;ckmeldung eines W2-Blocks_   
+_Bild 23: Verkabelung zum Testen der R&uuml;ckmeldung eines W2-Blocks_   
 
 1. Anlegen der 5V-Spannung:   
    * Beide LED leuchten.   
@@ -306,7 +306,7 @@ _Bild 22: Verkabelung zum Testen der R&uuml;ckmeldung eines W2-Blocks_
    * Weichensteuerung &uuml;ber DCC und MQTT ist m&ouml;glich.   
 
 ![Pinbelegung_W2-J5](/images/200_J5_pins_W2.png "Pinbelegung W2-J5")   
-_Bild 23: Pinbelegung des Steckers J5 von RW_5V_W2_STRG_   
+_Bild 24: Pinbelegung des Steckers J5 von RW_5V_W2_STRG_   
 
 ### Versionen
 * V1 (241104): OK
@@ -321,13 +321,13 @@ _Bild 23: Pinbelegung des Steckers J5 von RW_5V_W2_STRG_
 Diese Platine dient zum Schalten einer Dreiwegweiche (Richtung links - Mitte - rechts) von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt &uuml;ber Relais.   
 
 ![RW_5V_W3_STRG_circuit](/images/600_RW_5V_W3_STRG_circuit.png "RW_5V_W3_STRG_circuit")   
-_Bild 24: Schaltplan der "RW_5V_W3_STRG"-Platine_   
+_Bild 25: Schaltplan der "RW_5V_W3_STRG"-Platine_   
 
 ![Platine Ansteuerung Dreiwegweiche](/images/pcb_f/PCB_F_RW_5V_W3_STRG_V3.png "Platine Ansteuerung Dreiwegweiche")   
-_Bild 25: Platine zur Ansteuerung einer Dreiwegweiche_   
+_Bild 26: Platine zur Ansteuerung einer Dreiwegweiche_   
 
 ![RW_5V_W3_STRG](/images/300_RW_5V_W3_STRG_V3.png "RW_5V_W3_STRG")   
-_Bild 26: Best&uuml;ckte Platine "RW_5V_W3_STRG" zum Schalten der Weichen_   
+_Bild 27: Best&uuml;ckte Platine "RW_5V_W3_STRG" zum Schalten der Weichen_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -346,7 +346,7 @@ _Bild 26: Best&uuml;ckte Platine "RW_5V_W3_STRG" zum Schalten der Weichen_
 
 "RW_5V_W3_STRG"-Platine mit bereits vorgebogenen Bauteilen:   
 ![RW_5V_W3_STRG_parts](/images/300_RW_5V_W3_STRG_parts.png "RW_5V_W3_STRG_parts")   
-_Bild 27: Bauteile der "RW_5V_W3_STRG"-Platine_   
+_Bild 28: Bauteile der "RW_5V_W3_STRG"-Platine_   
 
 ### Best&uuml;ckung   
 1. Relais K1 bis K4   
@@ -371,13 +371,13 @@ _Bild 27: Bauteile der "RW_5V_W3_STRG"-Platine_
 Diese Platine dient zum Bedienen einer Dreiwegweiche (Richtung links - Mitte - rechts) und zur Anzeige der tats&auml;chlichen Weichenstellung.   
 
 ![RW_5V_W3_LED_circuit](/images/600_RW_5V_W3_LED_V4_circuit.png "RW_5V_W3_LED_circuit")   
-_Bild 28: Schaltplan der "RW_5V_W3_LED"-Platine_   
+_Bild 29: Schaltplan der "RW_5V_W3_LED"-Platine_   
 
 ![RW_5V_W3_LED](/images/pcb_f/PCB_F_RW_5V_W3_LED_V3.png "RW_5V_W3_LED")   
-_Bild 29: Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 30: Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
 ![RW_5V_W3_LED_V3](/images/300_RW_5V_W3_LED.png "RW_5V_W3_LED")   
-_Bild 30: Best&uuml;ckte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
+_Bild 31: Best&uuml;ckte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der Weichenstellung_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -407,7 +407,7 @@ _Bild 30: Best&uuml;ckte Platine "RW_5V_W3_LED" zum Schalten und zur Anzeige der
 3. 10 mm-Tasterkn&ouml;pfe SW1, SW3 (gelb), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ![RW_5V_W3_LED_parts](/images/300_RW_5V_W3_LED_parts.png "RW_5V_W3_STRG_parts")   
-_Bild 31: Bauteile der "RW_5V_W3_LED"-Platine_   
+_Bild 32: Bauteile der "RW_5V_W3_LED"-Platine_   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten (D1 bis D3 und/oder D4 bis D6) mit gedrehten Pins auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -452,7 +452,7 @@ Die Verkabelung entsprechend dem Bild durchf&uuml;hren:
 * V- von J5-3 zum Voltmeter COM (-)   
 
 ![W3 Testverkabelung Schalten](/images/300_W3_test_wiring_switch.png "W3 Testverkabelung Schalten")   
-_Bild 32: Verkabelung zum Testen des Schaltvorgangs eines W3-Blocks_   
+_Bild 33: Verkabelung zum Testen des Schaltvorgangs eines W3-Blocks_   
 
 1. Anlegen der 5V-Spannung:   
    * Alle drei LED leuchten.   
@@ -481,7 +481,7 @@ _Bild 32: Verkabelung zum Testen des Schaltvorgangs eines W3-Blocks_
 _Beachte_: Zur korrekten Funktion m&uuml;ssen immer zwei der drei Anschl&uuml;sse WR, WL und WM am Stecker J5 (= WML + WMR) auf 0 V liegen. Zum Verteilen der 0 V kann zB auch ein Steckbrett verwendet werden...   
 
 ![W3 Testverkabelung R&uuml;ckmeldung](/images/300_W3_test_wiring_LED.png "W3 Testverkabelung R&uuml;ckmeldung")   
-_Bild 33: Verkabelung zum Testen der R&uuml;ckmeldung eines W3-Blocks_   
+_Bild 34: Verkabelung zum Testen der R&uuml;ckmeldung eines W3-Blocks_   
 
 1. Anlegen der 5V-Spannung:   
    * Alle drei LED leuchten.   
@@ -514,7 +514,7 @@ _Bild 33: Verkabelung zum Testen der R&uuml;ckmeldung eines W3-Blocks_
    * Weichensteuerung &uuml;ber DCC und MQTT ist m&ouml;glich.   
 
 ![Pinbelegung_W3-J5](/images/200_J5_pins_W3.png "Pinbelegung W3-J5")   
-_Bild 34: Pinbelegung des Steckers J5 von RW_5V_W3_STRG_   
+_Bild 35: Pinbelegung des Steckers J5 von RW_5V_W3_STRG_   
 
 ### Versionen
 * V1 (240930): Keine Aufnahmebohrungen, VCCi2c auf J2-Pin 1 herausgef&uuml;hrt, Keine Jumper zum Tauschen der Funktion von SW1 mit SW3.   
@@ -533,13 +533,13 @@ _Bild 34: Pinbelegung des Steckers J5 von RW_5V_W3_STRG_
 Diese Platine dient zum Schalten der Versorgungsspannung f&uuml;r den Entkuppler von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber einen Optokoppler.   
 
 ![RW_5V_1OUT_STRG_circuit](/images/600_RW_5V_1OUT_STRG_circuit.png "RW_5V_1OUT_STRG_circuit")   
-_Bild 35: Schaltplan der "RW_5V_1OUT_STRG"-Platine_   
+_Bild 36: Schaltplan der "RW_5V_1OUT_STRG"-Platine_   
 
 ![RW_5V_1OUT_STRG](/images/pcb_f/PCB_F_RW_5V_1OUT_STRG_V1.png "RW_5V_1OUT_STRG_V1")   
-_Bild 36: Platine "RW_5V_1OUT_STRG" zum Bet&auml;tigen eines Entkupplers_   
+_Bild 37: Platine "RW_5V_1OUT_STRG" zum Bet&auml;tigen eines Entkupplers_   
 
 ![RW_5V_1OUT_STRG](/images/300_RW_5V_1OUT_STRG_V1.png "RW_5V_1OUT_STRG")   
-_Bild 37: Best&uuml;ckte Platine "RW_5V_1OUT_STRG" zum Bet&auml;tigen eines Entkupplers_   
+_Bild 38: Best&uuml;ckte Platine "RW_5V_1OUT_STRG" zum Bet&auml;tigen eines Entkupplers_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -564,7 +564,7 @@ _Bild 37: Best&uuml;ckte Platine "RW_5V_1OUT_STRG" zum Bet&auml;tigen eines Entk
    
 
 ![RW_5V_1OUT_STRG_parts](/images/300_RW_5V_1OUT_STRG_parts.png "RW_5V_1OUT_STRG_parts")   
-_Bild 38: Bauteile der "RW_5V_1OUT_STRG"-Platine (ein 4k7-Widerstand fehlt)_   
+_Bild 39: Bauteile der "RW_5V_1OUT_STRG"-Platine (ein 4k7-Widerstand fehlt)_   
 
 ### Best&uuml;ckung   
 1. IC-Fassung U1 4-polig (oder 2x Buchsenleiste mit 2 Pins)   
@@ -593,14 +593,14 @@ Im Ruhezustand leuchtet die rote LED (D1).
 Dr&uuml;ckt man den Taster, so leuchten die gelbe (D5) und gr&uuml;ne LED (D3) und J6-Pin 1 (S0) geht auf 0V.   
 
 ![RW_5V_1OUT_LED_circuit](/images/600_RW_5V_1OUT_LED_circuit.png "RW_5V_W3_1OUT_circuit")   
-_Bild 39: Schaltplan der "RW_5V_1OUT_LED"-Platine_   
+_Bild 40: Schaltplan der "RW_5V_1OUT_LED"-Platine_   
 
 ![RW_5V_1OUT_LED](/images//pcb_f/PCB_F_RW_5V_1OUT_LED_V2.png "RW_5V_1OUT_LED")   
-_Bild 40: Platine "RW_5V_1OUT_LED" zum Schalten und zur Anzeige des gedr&uuml;ckten Tasters_   
+_Bild 41: Platine "RW_5V_1OUT_LED" zum Schalten und zur Anzeige des gedr&uuml;ckten Tasters_   
 
 Das folgende Bild zeigt die best&uuml;ckte Platine "RW_5V_1OUT_LED". Auf der Unterseite sieht man Teile der gelben und roten LED sowie des gelben Knopfes des Tasters.   
 ![pcb RW_5V_1OUT_LED](/images/300_RW_5V_1OUT_LED.png "pcb RW_5V_1OUT_LED")   
-_Bild 41: Die best&uuml;ckte "RW_5V_1OUT_LED"-Platine_   
+_Bild 42: Die best&uuml;ckte "RW_5V_1OUT_LED"-Platine_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -624,7 +624,7 @@ _Bild 41: Die best&uuml;ckte "RW_5V_1OUT_LED"-Platine_
 3. 10 mm-Tasterknopf SW2 (wei&szlig;) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 ![RW_5V_1OUT_LED_parts](/images/300_RW_5V_1OUT_LED_parts.png "RW_5V_1OUT_LED_parts")   
-_Bild 42: Bauteile der "RW_5V_1OUT_LED"-Platine_   
+_Bild 43: Bauteile der "RW_5V_1OUT_LED"-Platine_   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D5) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -665,7 +665,7 @@ _Zum Beispiel:_
 * gelb: R1 von J4-7 zum Voltmeter COM (-)   
 
 ![1OUT Testverkabelung](/images/300_1OUT_test_wiring.png "1OUT Testverkabelung") &nbsp; ![1OUT Testverkabelung2](/images/300_1OUT_test_wiring_img2.png "1OUT Testverkabelung2")   
-_Bild 43: Verkabelung zum Testen des 1OUT-Blocks_   
+_Bild 44: Verkabelung zum Testen des 1OUT-Blocks_   
 
 Statt der beiden eingezeichneten Voltmeter kann nat&uuml;rlich auch nur eines verwendet werden.   
 
@@ -685,7 +685,7 @@ __Im Fehlerfall__, falls die Versorgungs-(Wechsel-)spannung V+ ausf&auml;llt, le
 3. Bet&auml;tigen des Tasters: der Entkuppler sollte arbeiten.   
 
 ![Pinbelegung_1OUT-J5](/images/200_J5_pins_1OUT.png "Pinbelegung 1OUT-J5")   
-_Bild 44: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_   
+_Bild 45: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_   
 
 ### Versionen
 * V1 (241022): spiegelverkehrte Anordnung der LEDs.   
@@ -702,13 +702,13 @@ _Bild 44: Pinbelegung des Steckers J5 von RW_5V_1OUT_STRG_
 Diese Platine dient zum Ein- und Ausschalten des Fahrstroms f&uuml;r ein Gleis von Hand oder &uuml;ber den I²C-Bus. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber einen Optokoppler.   
 
 ![RW_5V_2IO_STRG_circuit](/images/600_RW_5V_2IO_STRG_circuit.png "RW_5V_2IO_STRG_circuit")   
-_Bild 45: Schaltplan der "RW_5V_2IO_STRG"-Platine_   
+_Bild 46: Schaltplan der "RW_5V_2IO_STRG"-Platine_   
 
 ![Platine Fahrstrom-Abschaltung](/images/pcb_f/PCB_F_RW_5V_2IO_STRG_V1.png "Platine Fahrstrom-Abschaltung")   
-_Bild 46: Platine zum Schalten des Fahrstroms_   
+_Bild 47: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_STRG](/images/300_RW_5V_2IO_STRG_V1.png "RW_5V_2IO_STRG")   
-_Bild 47: Best&uuml;ckte Platine "300_RW_5V_2IO_STRG" zum Schalten des Fahrstroms_   
+_Bild 48: Best&uuml;ckte Platine "300_RW_5V_2IO_STRG" zum Schalten des Fahrstroms_   
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -733,7 +733,7 @@ __St&uuml;ckliste__
    
 
 ![RW_5V_2IO_STRG_parts](/images/300_RW_5V_2IO_STRG_parts.png "RW_5V_2IO_STRG_parts")   
-_Bild 48: Bauteile der "RW_5V_2IO_STRG"-Platine_   
+_Bild 49: Bauteile der "RW_5V_2IO_STRG"-Platine_   
 
 ### Best&uuml;ckung   
 1. IC-Fassung 4-polig (oder 2x Buchsenleiste mit 2 Pins)   
@@ -760,7 +760,7 @@ _Nicht vergessen_: Optokoppler U1 richtig herum in die Fassung stecken...
 Diese Platine ist das User-Interface zur Schaltplatine "RW_5V_2IO_STRG". Sie hat zwei Schalter sowie fünf LEDs.    
 
 ![Blockpanel DisconTrack](/images/300_rcc4_Blockpanel_DisconTrack2.png "Blockpanel DisconTrack")   
-_Bild 49: Bedienpanel für die Fahrstromabschaltung 2IO_   
+_Bild 50: Bedienpanel für die Fahrstromabschaltung 2IO_   
 
 * Im Ruhezustand sind beide _*Schalter*_ nicht gedr&uuml;ckt:  
   - 🟡 Die **mittlere, gelbe** LED leuchtet: Fernsteuerung über DCC bzw. I²C (Remote).  
@@ -777,13 +777,13 @@ _Bild 49: Bedienpanel für die Fahrstromabschaltung 2IO_
 #### Schaltplan
 
 ![RW_5V_2IO_LED_circuit](/images/600_RW_5V_2IO_LED_circuit.png "RW_5V_2IO_LED_circuit")   
-_Bild 50: KiCad-Schaltplan der "RW_5V_2IO_LED"-Platine_   
+_Bild 51: KiCad-Schaltplan der "RW_5V_2IO_LED"-Platine_   
 
 ![Platine 2-poliges Schalten](/images/pcb_f/PCB_F_RW_5V_2IO_LED_V2.png "Platine 2-poliges Schalten")   
-_Bild 51: Platine zum Schalten des Fahrstroms_   
+_Bild 52: Platine zum Schalten des Fahrstroms_   
 
 ![RW_5V_2IO_LED](/images/300_RW_5V_2IO_LED.png "RW_5V_2IO_LED")   
-_Bild 52: Best&uuml;ckte Platine "RW_5V_2IO_LED"_   
+_Bild 53: Best&uuml;ckte Platine "RW_5V_2IO_LED"_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -808,7 +808,7 @@ _Bild 52: Best&uuml;ckte Platine "RW_5V_2IO_LED"_
 
 Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs und Widerst&auml;nde.   
 ![RW_5V_2IO_LED_parts](/images/300_RW_5V_2IO_LED_parts.png "RW_5V_2IO_LED_parts")   
-_Bild 53: Bauteile der "RW_5V_2IO_LED"-Platine_   
+_Bild 54: Bauteile der "RW_5V_2IO_LED"-Platine_   
 
 ### Best&uuml;ckung   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1, D3, D4, D5, D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
@@ -852,7 +852,7 @@ _Zum Beispiel:_
 * gelb: R1 von J4-7 zum Voltmeter COM (-)   
 
 ![2IO Testverkabelung](/images/300_2IO_test_wiring.png "2IO Testverkabelung") &nbsp; ![2IO Testverkabelung2](/images/300_2IO_test_wiring_img.png "2IO Testverkabelung2")   
-_Bild 54: Verkabelung zum Testen des 2IO-Blocks_   
+_Bild 55: Verkabelung zum Testen des 2IO-Blocks_   
 
 Statt der beiden eingezeichneten Voltmeter kann nat&uuml;rlich auch nur eines verwendet werden.   
 
@@ -873,7 +873,7 @@ Das bedeutet: Kein Ausgangssignal ergibt die R&uuml;ckmeldung R1 = 0 V.
 4. Funktionstest: wie oben beschrieben.   
 
 ![Pinbelegung_2IO-J5](/images/200_J5_pins_2IO.png "Pinbelegung 2IO-J5")   
-_Bild 55: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
+_Bild 56: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_   
 
 ### Versionen
 * V1 (241022): spiegelverkehrte Anordnung der LEDs.   
@@ -889,13 +889,13 @@ _Bild 55: Pinbelegung des Steckers J5 von RW_5V_2IO_STRG_
 Diese Platine dient zum zweipoligen Umschalten 2x Um (engl. Double Pole Double Throw, kurz DPDT) einer Spannung. Der Schaltvorgang erfolgt &uuml;ber ein Relais, die R&uuml;ckmeldung erfolgt &uuml;ber zwei Optokoppler (je einer f&uuml;r den Zustand NC = normally closed und NO = normally open).   
 
 ![RW_5V_DPDT_STRG_circuit](/images/600_RW_5V_DPDT_STRG_circuit.png "RW_5V_DPDT_STRG_circuit")   
-_Bild 56: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
+_Bild 57: Schaltplan der "RW_5V_DPDT_STRG"-Platine_   
 
 ![Platine DPDT](/images/pcb_f/PCB_F_RW_5V_DPDT_STRG_V1.png "Platine DPDT")   
-_Bild 57: Platine zum zweipoligen Umschalten einer Spannung_   
+_Bild 58: Platine zum zweipoligen Umschalten einer Spannung_   
 
 ![RW_5V_DPDT_STRG](/images/300_RW_5V_DPDT_STRG_V1.png "RW_5V_DPDT_STRG")   
-_Bild 58: Best&uuml;ckte Platine "RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
+_Bild 59: Best&uuml;ckte Platine "RW_5V_DPDT_STRG" zum zweipoligen Umschalten_   
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -950,13 +950,13 @@ Diese Platine dient zum Ansteuern und Anzeigen der Zust&auml;nde der Schaltplati
 * eine gr&uuml;ne LED links unten zur Anzeige einer Ausgangsspannung an den Pins NO (normally open) J5-Pin 5 f&uuml;r Vout+ und J5-Pin 6 f&uuml;r Vout-
 
 ![RW_5V_DPDT_LED](/images/300_DPDT_LED_front.png "RW_5V_DPDT_LED") ![RW_5V_DPDT_LED](/images/300_DPDT_LED_back.png "RW_5V_DPDT_LED")     
-_Bild 59: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
+_Bild 60: Best&uuml;ckte Platine "RW_5V_DPDT_LED" (front und back)_   
 
 ![RW_5V_DPDT_LED_circuit](/images/600_RW_5V_DPDT_LED_circuit.png "RW_5V_DPDT_LED_circuit")   
-_Bild 60: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
+_Bild 61: Schaltplan der "RW_5V_DPDT_LED"-Platine_   
 
 ![Platine 2-poliges Umschalten](/images/pcb_f/PCB_F_RW_5V_DPDT_LED_V1.png "Platine 2-poliges Umschalten")   
-_Bild 61: Bedien-Platine zum 2-poligen Umschalten_   
+_Bild 62: Bedien-Platine zum 2-poligen Umschalten_   
 
 ### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -992,7 +992,7 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 ### Test   
 Die Eingangsspannung IN+ und IN- sowie die Ausgangsspannung NC ("Normally Closed") bzw. NO ("Normally Open") des DPDT-Blocks liegen am 6-poligen Stecker J5 von RW_5V_DPDT_STRG.   
 ![Pinbelegung_DPDT-J5](/images/200_J5_pins_DPDT.png "Pinbelegung DPDT-J5")   
-_Bild 62: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
+_Bild 63: Pinbelegung des Steckers J5 von RW_5V_DPDT_STRG_   
 
 1. Einstecken der LEDs: Die rot markierte Anode = Pluspol zeigt immer nach au&szlig;en zum Leiterplattenrand.   
 2. Aufsetzen des Prints _RW_5V_DPDT_LED_ auf die Steuerungsplatine _RW_5V_DPDT_STRG_.   
@@ -1047,7 +1047,7 @@ Der Status wird über **LEDs angezeigt** und steht zusätzlich an **zwei digital
 Die Stromversorgung, der digitale Eingang und die beiden digitalen Ausgänge sind über einen **6-poligen Stecker** angeschlossen.   
 
 ![UI_pin_J5](/images/200_rcc4_TUI_pin_J5.png "UI_pin_J5")   
-_Bild 62: Belegung des 6-poligen Anschlusses der `RCC_TUI_EXT`-Platine_
+_Bild 64: Belegung des 6-poligen Anschlusses der `RCC_TUI_EXT`-Platine_
 
 TONn ... Set Track Voltage ON (0V) = Schalte Fahrspannung ein (0V)  
 TVn ...... Track Voltage is ON (0V) = Fahrspannung ist ein (0V)   
@@ -1058,7 +1058,7 @@ FREn .... Track Free (0V) = Gleis frei (0V)
 ### 7.2.2 Schalten der Fahrspannung
 Das Schalten der Fahrspannung erfolgt mit einem monostabilen Relais IM03TS oder HFD4-3:  
 ![rcc4_TUI_EXT_relay](/images/300_rcc4_TUI_EXT_relay.png "rcc4_TUI_EXT_relay")   
-_Bild 63: Einschalten der Fahrspannung mit Relais_
+_Bild 65: Einschalten der Fahrspannung mit Relais_
 
 <a name="x723"></a>   
 
@@ -1066,7 +1066,7 @@ _Bild 63: Einschalten der Fahrspannung mit Relais_
 Der Fahrstrom (maximal 2 A) wird durch einen Shunt in eine Spannung umgewandelt:   
 
 ![Schaltung Fahrstromsignal](/images/300_rcc4_TUI_EXT_shunt.png "Schaltung Fahrstromsignal")   
-_Bild 64: Shunt zur Gewinnung des Fahr**strom**signals_
+_Bild 66: Shunt zur Gewinnung des Fahr**strom**signals_
 
 Für kleine DCC-Ströme ergibt der Laststrom einen Spannungsabfall an Rs1, für größere Ströme wird durch die Dioden eine Spannung von 0,3 V bis 0,5 V erzeugt. Durch die Antiparallelschaltung der Dioden wird die Spannung auf diesen Wert begrenzt.   
 Die Widerstände Rs2 und Rs3 sorgen dafür, dass nur die Differenzspannung verstärkt wird.   
@@ -1097,7 +1097,7 @@ Lässt man den Referenzpin VREF offen, so wird eine interne Referenzspannung von
 
 Ohne Beschaltung und ohne Last sieht ein typisches Ausgangssignal allerdings oft so aus:   
 ![Ausgangsspannung INA333 leer](/images/300_rcc6_ui_INA333_Uout_no_load.png "Ausgangsspannung INA333 leer")   
-_Bild 65: Verstärkte Shunt-Spannung ohne Last_
+_Bild 67: Verstärkte Shunt-Spannung ohne Last_
 
 Im Bild erkennt man eine Störspannung von 50 Hz mit diversen Überlagerungen.   
 **Beispielwerte**   
@@ -1109,7 +1109,7 @@ __Anmerkung__: Vertauscht man die Eingänge DCC1 und DCC2, so wird das Signal in
 
 Vergrößert man mit dem Trimmer auf dem INA333-Board die Verstärkung auf den Maximalwert, so erhält man folgendes Signal:   
 ![Ausgangsspannung INA333 leer vmax](/images/o_rcc6_ui_INA333_Uout_no_load_vmax.png "Ausgangsspannung INA333 leer vmax")   
-_Bild 66: Stark verstärkte Shunt-Spannung ohne Last_
+_Bild 68: Stark verstärkte Shunt-Spannung ohne Last_
 
 Im Bild erkennt man, dass der Verstärker übersteuert ist (unten bei der 0V-Linie).   
 **Beispielwerte**   
@@ -1120,7 +1120,7 @@ Pulsfrequenz: 50 Hz (alle 20 ms)
 
 Beschaltet man den Ausgang des INA333 mit einem Spitzenspannungsspeicher (D3-C1) und RC-Tiefpass, so ändert sich der Ausgang des INA333 nicht (d.h. es gibt keine Rückwirkung).   
 ![INA333 Schaltung Ausgangsfilter](/images/300_rcc6_ui_schematic_INA333_output_filter.png "INA333 Schaltung Ausgangsfilter")   
-_Bild 67: Spitzenspannungsspeicher_
+_Bild 69: Spitzenspannungsspeicher_
 
 Am Ausgang des Filters liegt eine Gleichspannung, die durch eine Störspannung überlagert ist (zB 0,26 mV). Die folgende Tabelle enthält einige Messwerte für die Spannung UF2.   
 
@@ -1140,7 +1140,7 @@ Am Ausgang des Filters liegt eine Gleichspannung, die durch eine Störspannung �
 Die grafische Darstellung der Werte zeigt, dass bei hohen Lastwiderständen der Shunt-Widerstand und bei kleinen Lastwiderständen die Shunt-Dioden für den Wert der Filterspannung verantwortlich sind.   
 ![INA333 Filterausgang lin](/images/300_rcc6_ui_INA333_filter_output_lin.png "INA333 Filterausgang lin")   
 ![INA333 Filterausgang log](/images/300_rcc6_ui_INA333_filter_output_log.png "INA333 Filterausgang log")   
-_Bild 68: Spitzenspannung in Abhängigkeit vom Lastwiderstand_
+_Bild 70: Spitzenspannung in Abhängigkeit vom Lastwiderstand_
 
 <a name="x725"></a>   
 
@@ -1157,32 +1157,32 @@ Die Ausgangsspannung wird (von einem Transistor invertiert) durch eine rote LED 
 * Rote LED aus = kein Fahrstrom = Gleis frei oder kein Fahrstrom.   
 
 ![LM393 Schaltung Digitalsignal](/images/300_rcc4_ui_schematic_LM393_comparator.png "LM393 Schaltung Digitalsignal")   
-_Bild 69: Schaltung zur Erzeugung des Gleis-Frei-Signals_
+_Bild 71: Schaltung zur Erzeugung des Gleis-Frei-Signals_
 
 <a name="x726"></a>   
 
 ### 7.2.6 DCC-Spannungserkennung
 Für die Gleisspannungserkennung wird das Gleissignal gleichgerichtet (1N4007), geglättet (100 &Omega;, 33 &micro;F) und einem Optokoppler zugeführt (1 k&Omega;, SFH615A). Der Optokoppler schaltet die **grüne LED** und das Rückmeldesignal TVn.  
 ![dcc_track_U_detection_circuit](/images/300_rcc4_track_U_detection_TVn_circuit.png "dcc_track_U_detection_circuit")   
-_Bild 70: DCC-Gleis**spannungs**erkennung_
+_Bild 72: DCC-Gleis**spannungs**erkennung_
 
 <a name="x727"></a>   
 
 ### 7.2.7 Gesamtschaltung
 
 ![RCC_TUI_EXT_V2_circuit](/images/600_RCC_TUI_EXT_V2_circuit.png "RCC_TUI_EXT_V2_circuit")   
-_Bild 71: KiCad-Schaltplan der "RCC_TUI_EXT_V2"-Platine_
+_Bild 73: KiCad-Schaltplan der "RCC_TUI_EXT_V2"-Platine_
 
 <a name="x728"></a>   
 
 ### 7.2.8 Bestücken der Platine
 Bild der Platine `RCC_TUI_EXT_V1` zur DCC-Gleis-Spannungs-/Strom-Erkennung:   
 ![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_RCC_TUI_EXT_V1.png "Platine Gleis-UI-Erkennung")   
-_Bild 72: Platine `RCC_TUI_EXT_V1` zur DCC-Gleis-Spannungs-/Strom-Erkennung_
+_Bild 74: Platine `RCC_TUI_EXT_V1` zur DCC-Gleis-Spannungs-/Strom-Erkennung_
 
 Best&uuml;ckte Platine "`RCC_TUI_EXT_V1`"   
 ![Bestückte Platine RCC_TUI_EXT_V1](/images/300_RCC_TUI_EXT_V1_assembled.png "Bestückte Platine RCC_TUI_EXT_V1")   
-_Bild 73: Best&uuml;ckte Platine `RCC_TUI_EXT_V1`_  
+_Bild 75: Best&uuml;ckte Platine `RCC_TUI_EXT_V1`_  
 
 #### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -1231,7 +1231,7 @@ _Bild 73: Best&uuml;ckte Platine `RCC_TUI_EXT_V1`_
 
 Bauteile der "RCC_TUI_EXT_V1"-Platine (Version 1):   
 ![rcc6_RCC_TUI_EXT_V1_parts](/images/300_rcc6_RCC_TUI_EXT_V1.png "rcc6_RCC_TUI_EXT_V1")   
-_Bild 74: Bauteile der "RCC_TUI_EXT_V1"-Platine_   
+_Bild 76: Bauteile der "RCC_TUI_EXT_V1"-Platine_   
 
 #### Vorbereitung   
 (1) 2x gedrehte, 2-polige Buchsen für die LEDs: Von einer (meist 40-poligen) Buchsenleiste herunterschneiden.   
@@ -1243,7 +1243,7 @@ _Bild 74: Bauteile der "RCC_TUI_EXT_V1"-Platine_
 (7) Bei Print Version 1: Verbindung auf Print `RCC_TUI_EXT_V1`.  
 
 ![rcc6_INA333_Board](/images/300_rcc6_INA333_Board.png "rcc6_INA333_Board")   
-_Bild 75: INA-Board mit angelöteten Stiften_  
+_Bild 77: INA-Board mit angelöteten Stiften_  
 
 #### Best&uuml;ckung  
 1. Widerstand R1 (liegend, möglichst flach, 10 k&Omega;)  
@@ -1285,14 +1285,14 @@ _Bild 75: INA-Board mit angelöteten Stiften_
 3. LEDs auf passende Länge kürzen (zB 10 mm) und in die Fassungen stecken (auf richtige Polung achten!)  
 
    ![rcc4_LED_Polung](/images/200_rcc4_LED_Polung.png "rcc4_LED_Polung")   
-   _Bild 76: LED-Polung_
+   _Bild 78: LED-Polung_
 
 <a name="x729"></a>   
 
 ### 7.2.9 Inbetriebnahme und Test
 
 ![UI_pin_J5](/images/200_rcc4_TUI_pin_J5.png "UI_pin_J5")   
-_Bild 77: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
+_Bild 79: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
 
 1. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
    ► 🔴🟤 Die rote LED (FRE) leuchtet oder leuchtet nicht (siehe Punkt 6).   
@@ -1343,11 +1343,11 @@ Durch die Emitter-Basis-Spannung des Transistors T2 ist die Ausgangsspannung nic
 **Lösung**: R17, R14 und T2 weglassen, Kollektor des Optokopplers SFH617 mit 47 &Omega;-Widerstand verbinden.  
 
 ![TUI_EXT_circuitTVn](/images/300_rcc4_TUI_EXT_circuitTVn.png "TUI_EXT_circuitTVn")  
-_Bild 78: Verbesserung TVn-Rückmeldung_  
+_Bild 80: Verbesserung TVn-Rückmeldung_  
 
 **Lösung auf der Leiterplatte:**  
 ![TUI_EXT_printTVn](/images/300_rcc4_TUI_EXT_printTVn.png "TUI_EXT_printTVn")  
-_Bild 79: Verbindung auf Print `RCC_TUI_EXT_V1` (260902)_  
+_Bild 81: Verbindung auf Print `RCC_TUI_EXT_V1` (260902)_  
 
 
 #### * V2 (260926): OK
@@ -1365,22 +1365,22 @@ Zusätzlich werden die Datenleitungen geschützt:
 * **Ausgänge** (I²C-Rückmeldungen `RTVn`, `RFREn`): Diode und `4,7 kΩ`-Widerstand nach `+5 V`  
 
 ![TUI_STRG_circuit12](/images/300_rcc4_TUI_STRG_circuit12.png "TUI_STRG_circuit12") 
-_Bild 80: Schutzbeschaltung der Ein- und Ausgangsleitungen_
+_Bild 82: Schutzbeschaltung der Ein- und Ausgangsleitungen_
 
 Gesamtschaltung:  
 
 ![RCC_TUI_STRG_V1_circuit](/images/600_RCC_TUI_STRG_V1_circuit.png "RCC_TUI_STRG_V1_circuit")   
-_Bild 81: KiCad-Schaltplan der `RCC_TUI_STRG_V1`-Platine_  
+_Bild 83: KiCad-Schaltplan der `RCC_TUI_STRG_V1`-Platine_  
 
 <a name="x732"></a>   
 
 ### 7.3.2 Bestücken der Platine
 
 ![Platine zum Fahrstrom-Schalten und -Erkennen](/images/pcb_f/PCB_F_RCC_TUI_STRG_V1.png "Platine zum Fahrstrom-Schalten und -Erkennen")   
-_Bild 82: Platine `RCC_TUI_STRG_V1`_  
+_Bild 84: Platine `RCC_TUI_STRG_V1`_  
 
 ![Bestückte Platine RCC_TUI_STRG](/images/300_RCC_TUI_STRG_V1_assembled.png "Bestückte Platine RCC_TUI_STRG")   
-_Bild 83: Bestückte Platine `RCC_TUI_STRG`_  
+_Bild 85: Bestückte Platine `RCC_TUI_STRG`_  
 
 __St&uuml;ckliste__   
 | Anzahl | Referenz     | Wert                   | Geh&auml;use            |   
@@ -1424,7 +1424,7 @@ V1 (260905): OK
 Diese Platine ist das User-Interface zur Schaltplatine "RCC_TUI_STRG". Sie hat zwei Schalter sowie sechs LEDs.    
 
 ![Blockpanel RCC_TUI_LED](/images/300_rcc4_Blockpanel_TUI_LED.png "Blockpanel RCC_TUI_LED")   
-_Bild 84: (3D-gedrucktes) Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
+_Bild 86: (3D-gedrucktes) Bedienpanel für die Fahrstromabschaltung und Besetztanzeige TUI_   
 
 * Im Ruhezustand sind beide **Schalter** nicht gedr&uuml;ckt:  
   - 🟡 Die **linke, mittlere, gelbe** LED leuchtet: Fernsteuerung über DCC bzw. I²C (Remote).  
@@ -1448,21 +1448,21 @@ Den Schaltplan zum Schalten der LEDs gibt es in zwei Versionen:
 
 Mit Transistoren:   
 ![RCC_TUI_LED_B_circuit](/images/600_RCC_TUI_B_LED_circuit.png "RCC_TUI_LED_B_circuit")   
-_Bild 85: KiCad-Schaltplan der "RCC_TUI_B_LED"-Platine mit bipolaren Transistoren_   
+_Bild 87: KiCad-Schaltplan der "RCC_TUI_B_LED"-Platine mit bipolaren Transistoren_   
 
 Mit MOSFET:  
 ![RCC_TUI_LED_M_circuit](/images/600_RCC_TUI_M_LED_circuit.png "RCC_TUI_LED_M_circuit")   
-_Bild 86: KiCad-Schaltplan der "RCC_TUI_M_LED"-Platine mit MOSFET_   
+_Bild 88: KiCad-Schaltplan der "RCC_TUI_M_LED"-Platine mit MOSFET_   
 
 <a name="x743"></a>   
 
 ### 7.4.3 Bestückung mit bipolaren Transistoren
 
 ![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_B_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms")  
-_Bild 87: Platinen zum Schalten und Anzeige des Fahrstroms mit bipolaren Transistoren_   
+_Bild 89: Platinen zum Schalten und Anzeige des Fahrstroms mit bipolaren Transistoren_   
 
 ![RCC_TUI_B_LED](/images/300_RCC_TUI_B_LED_assembled.png "RCC_TUI_B_LED")   
-_Bild 88: Best&uuml;ckte Platine "RCC_TUI_B_LED"_   
+_Bild 90: Best&uuml;ckte Platine "RCC_TUI_B_LED"_   
 
 #### St&uuml;ckliste mit bipolaren Transistoren   
 | Anzahl | Referenz | Wert | Geh&auml;use |   
@@ -1522,10 +1522,10 @@ V1 (260905): OK
 ### 7.4.6 Bestückung mit MOSFET-Transistoren
 Bild: Schalten/Anzeige-Platine mit MOSFET (`RCC_TUI_M_LED_V1`)  
 ![Platine zum Schalten/Anzeigen des Fahrstroms](/images/pcb_f/PCB_F_RCC_TUI_M_LED_V1.png "Platine zum Schalten/Anzeigen des Fahrstroms")   
-_Bild 89: Platinen zum Schalten und Anzeige des Fahrstroms mit MOSFET_   
+_Bild 91: Platinen zum Schalten und Anzeige des Fahrstroms mit MOSFET_   
 
 ![RCC_TUI_M_LED](/images/300_RCC_TUI_M_LED_assembled.png "RCC_TUI_M_LED")   
-_Bild 90: Best&uuml;ckte Platine "RCC_TUI_M_LED"_   
+_Bild 92: Best&uuml;ckte Platine "RCC_TUI_M_LED"_   
 
 #### St&uuml;ckliste MOSFET-Version   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -1556,7 +1556,7 @@ _Bild 90: Best&uuml;ckte Platine "RCC_TUI_M_LED"_
 
 Das folgende Bild zeigt die Bauteile und die bereits vorbereiteten LEDs.   
 ![RCC_TUI_M_LED_parts](/images/300_RCC_TUI_M_LED_parts.png "RCC_TUI_M_LED_parts")   
-_Bild 91: Bauteile der "RCC_TUI_M_LED"-Platine_   
+_Bild 93: Bauteile der "RCC_TUI_M_LED"-Platine_   
 
 #### Best&uuml;ckungsvorgang   
 1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1 bis D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
