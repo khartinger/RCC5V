@@ -64,6 +64,11 @@ Das Bild zeigt die verschiedenen Stadien beim Vorbereiten der LEDs:
 ![LED_biegen_Schritte](/images/300_LED_biegen_Schritte.png "LED_biegen_Schritte")   
 _Bild 7: Die Arbeitsschritte beim Biegen der LEDs_   
 
+Alternativ kann auch eine [3D-gedruckte Biegelehre](https://github.com/khartinger/RCC5V/blob/main/fab/3d/LIESMICH.md#x50) verwendet werden:
+![Biegelehre f&uuml;r LEDs](/images/3d/300_Biegelehre_LED_FC.png "Biegelehre f&uuml;r LEDs")   
+_Bild 8: 3D-gedruckte Biegelehre_   
+
+
 <a name="x15"></a>   
 
 ## 1.5 Anordnung von LEDs und Tastern auf der LED-Platine
