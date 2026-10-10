@@ -90,29 +90,29 @@ Die Teile des Rahmens k&ouml;nnen entweder aus Holz hergestellt oder mit dem 3D-
 | St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
 |:----------:|:------:|:-----------|:-----------------|   
 |      1     |        | Ponal      | Holzleim Express |   
-|      1     |  95962 | Noch       | Gleisbett-Rolle N 730 cm lang, 3,2 cm breit, 0,3 cm stark |   
-|      1     |        | [Amazon](https://www.amazon.de/dp/B07S188DRJ?ref=ppx_yo2ov_dt_b_product_details&th=1) | Selbstklebende Korkplatte 1 mm dick, 30 x 21 cm² |   
-|     28     |   |   | Senkkopfschrauben mit Kreuzschlitz 3,0 x 30mm |   
 |      1     | 4002364114016 | Albrecht   | Yacht- und Bootslack, farblos, hochgl&auml;nzend |   
 |      1     |   |   | Topfreiniger (Abwasch-Schwamm) |   
 |      2     |   |   | Paar Einmal-Handschuhe         |   
 |      1     |   |   | Schleifpapier K&ouml;rnung 240      |   
 
 ### 1.2.3 3D-Rahmen
-2x Seitenteile: [`Rahmen_SeiteEingleisig_260906`]()  
-1x Längsteil Nord: [``]()  
-1x Längsteil Süd: [``]()  
-
-Die Gelände-Grundplatte sollte aus Holz sein.
-
-#### Pappelsperrholz 10 mm
-| St&uuml;ck | Abmessung     | Kurzbezeichnung | Verwendung             |   
-|:-----:|:-------------:|:--------:|:-----------------------|   
-|   1   | 230 x 230 mm² |     -    | Gel&auml;nde-Grundplatte    |   
-
+* 2x Seitenteile: [`Rahmen_SeiteEingleisig_260906.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_SeiteEingleisig_260906.FCStd)  
+* 1x Längsteil Nord: [`Rahmen_Back_N__2xP20_230mm_261008.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_Back_N__2xP20_230mm_261008.FCStd)  
+* 1x Längsteil Süd: [`Rahmen_Back_S__230mm_261008.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_Back_S__230mm_261008.FCStd)  
+* Gelände-Grundplatte: Pappelsperrholz 10 mm, 230 x 230 mm²
 
 ### 1.2.4 Kleinteile
 8x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend [``]()  (zB Fa. Spax 4 003530 021251)   
+
+<a name="x13"></a>   
+
+## 1.3 Elektrische Komponenten
+### 1.3.1 P20-Anschluss in Nord
+Der Bau ist [hier]() beschrieben.  
+
+### 1.3.2 P20-Sub-D-Umsetzer
+
+
 
 <a name="x20"></a>   
 <a name="x21"></a>   

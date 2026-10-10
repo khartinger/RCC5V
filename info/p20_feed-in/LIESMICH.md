@@ -63,6 +63,9 @@ Es gibt zwei Arten:
 ### 2.1.1 20-poliger Stecker auf Schraubklemmen
 Das Board `CON_20_3x_Screw10_V1` wird verwendet, wenn das Modul keine Blöcke hat und lediglich die Fahrspannung und eventuell Licht etc. benötigt werden.  
 
+![]()   
+
+Der Bau ist []() beschreiben.  
 
 <a name="x212"></a>   
 

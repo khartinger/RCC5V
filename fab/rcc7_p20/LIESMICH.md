@@ -33,21 +33,41 @@ Dieses Kapitel beschreibt Komponenten für eine **Verdrahtung mit 20-poligen Kab
 
 ## 1.1 Einleitung
 
-Für den Übergang vom 25-poligen Sub-D-Stecker auf den 20-poligen Wannenstecker gibt es drei Varianten:  
+Für den Übergang vom 25-poligen Sub-D-Stecker auf den 20-poligen Wannenstecker gibt es vier Varianten:  
 
-(A) Sub-D-Stecker WEST auf Wannenstecker (`CON_20_SubD_W`)  
-(B) Sub-D-Stecker OST auf Wannenstecker (`CON_20_SubD_O`)  
-(C) Sub-D-Stecker OST **ausgekreuzt** auf Wannenstecker (`CON_20_SubD_OX`)  
+(A) **2x Sub-D-Stecker auf zwei Wannenstecker** (`PCB_F_CON_20_2x_2xSubD_V1`)  
+(B) Sub-D-Stecker WEST auf Wannenstecker (`CON_20_SubD_W`)  
+(C) Sub-D-Stecker OST auf Wannenstecker (`CON_20_SubD_O`)  
+(D) Sub-D-Stecker OST **ausgekreuzt** auf Wannenstecker (`CON_20_SubD_OX`)  
 
 <a name="x12"></a>   
 
-## 1.2 Sub-D-Stecker WEST auf Wannenstecker (`CON_20_SubD_W`)
+## 1.3 2x Sub-D-Stecker auf zwei Wannenstecker
+
+### Schaltplan
+![rcc7_CON_20_2x_2xSubD_V1_circuit](/images/600_rcc7_CON_20_2x_2xSubD_V1_circuit.png "rcc7_CON_20_2x_2xSubD_V1_circuit")   
+
+### Bestückung
+![rcc7_CON_20_2x_2xSubD_W_V1_pcb](/images/pcb_f/PCB_F_CON_20_2x_2xSubD_V1.png "rcc7_CON_20_2x_2xSubD_W_V1_pcb")   
+
+1. Wannenstecker J2, J3  
+2. Sub-D Stecker J1, J4  
+3. Draht J5-J6 und J7-J8  
+
+
+### Versionen
+* V1 (260825): OK  
+
+<a name="x13"></a>   
+
+## 1.3 Sub-D-Stecker WEST auf Wannenstecker (`CON_20_SubD_W`)
 
 ### Schaltplan
 ![rcc7_CON_20_SubD_W_V1_circuit](/images/600_rcc7_CON_20_SubD_W_V1_circuit.png "rcc7_CON_20_SubD_W_V1_circuit")   
 
 ### Bestückung
 ![rcc7_CON_20_SubD_W_V1_pcb](/images/pcb_f/PCB_F_CON_20_SubD_W_V1.png "rcc7_CON_20_SubD_W_V1_pcb")   
+
 1. Draht J3-J4  
 2. Wannenstecker J5  
 3. Sub-D Stecker J1  
@@ -55,25 +75,26 @@ Für den Übergang vom 25-poligen Sub-D-Stecker auf den 20-poligen Wannenstecker
 ### Versionen
 * V1 (260820): OK  
 
-<a name="x13"></a>   
+<a name="x14"></a>   
 
-## 1.3 Sub-D-Stecker OST auf Wannenstecker (`CON_20_SubD_O`)
+## 1.4 Sub-D-Stecker OST auf Wannenstecker (`CON_20_SubD_O`)
 
 ### Schaltplan
 ![rcc7_CON_20_SubD_O_V1_circuit](/images/600_rcc7_CON_20_SubD_O_V1_circuit.png "rcc7_CON_20_SubD_O_V1_circuit")   
 
 ### Bestückung
 ![rcc7_CON_20_SubD_O_V1_pcb](/images/pcb_f/PCB_F_CON_20_SubD_O_V1.png "rcc7_CON_20_SubD_O_V1_pcb")   
-1. Draht J3-J4  
-2. Wannenstecker J2  
-3. Sub-D Stecker J1  
+
+1. Wannenstecker J2  
+2. Sub-D Stecker J1  
+3. Draht J3-J4  
 
 ### Versionen
 * V1 (260820): OK  
 
-<a name="x14"></a>   
+<a name="x15"></a>   
 
-## 1.4 Sub-D-Stecker OST ausgekreuzt auf Wannenstecker (`CON_20_SubD_OX`)
+## 1.5 Sub-D-Stecker OST ausgekreuzt auf Wannenstecker (`CON_20_SubD_OX`)
 
 ### Schaltplan
 Die Schaltung entspricht der OST-Schaltung, lediglich der Wannenstecker ist um 180° verdreht.  
@@ -94,14 +115,33 @@ Die Schaltung entspricht der OST-Schaltung, lediglich der Wannenstecker ist um 1
 
 ## 2.1 Einleitung
 
-Für den Übergang vom 20-poligen Wannenstecker auf Schraubklemmen gibt es zwei Varianten:  
+Für den Übergang vom 20-poligen Wannenstecker auf Schraubklemmen gibt es drei Varianten:  
+(A) **Drei Wannenstecker mit allen Schraubklemmen auf einer Seite** (`PCB_F_CON_20_3x_Screw10`)  
+(B) Wannenstecker mit allen Schraubklemmen auf einer Seite (`CON_20_Screw10`)  
+(C) Wannenstecker mit 6 und 4 Schraubklemmen (`CON_20_Screw64`)  
 
-(A) Wannenstecker mit allen Schraubklemmen auf einer Seite (`CON_20_Screw10`)  
-(B) Wannenstecker mit 6 und 4 Schraubklemmen (`CON_20_Screw64`)  
 
 <a name="x22"></a>   
 
-## 2.2 Wannenstecker mit allen Schraubklemmen auf einer Seite (`CON_20_Screw10`)  
+## 2.2 Drei Wannenstecker mit allen Schraubklemmen auf einer Seite (`PCB_F_CON_20_3x_Screw10`)
+
+### Schaltplan
+![rcc7_CON_20_3x_Screw10_V1_circuit](/images/600_rcc7_PCB_F_CON_20_3x_Screw10_V1_circuit.png "rcc7_CON_20_Screw10_V1_circuit")   
+
+### Bestückung
+![rcc7_CON_20_3x_Screw10_V1_pcb](/images/pcb_f/PCB_F_CON_20_3x_Screw10_V1_jlc.png "rcc7_CON_20_3x_Screw10_V1_pcb")   
+
+Wird das Board auf der **Nordseite** eines Moduls verwendet, so wird es folgendermaßen bestückt:   
+1. Wannenstecker J1 und J7 auf die **Lötseite**  
+2. Wannenstecker J8 auf die **Bauteilseite**  
+3. Schraubklemmen J2 bis J6 auf die **Bauteilseite**  
+
+### Versionen
+* V1 (261006): OK  
+
+<a name="x23"></a>   
+
+## 2.3 Wannenstecker mit allen Schraubklemmen auf einer Seite (`CON_20_Screw10`)  
 
 ### Schaltplan
 ![rcc7_CON_20_Screw10_V1_circuit](/images/600_rcc7_CON_20_Screw10_V1_circuit.png "rcc7_CON_20_Screw10_V1_circuit")   
@@ -113,11 +153,11 @@ Für den Übergang vom 20-poligen Wannenstecker auf Schraubklemmen gibt es zwei 
 2. Schraubklemmen J2 bis J6  
 
 ### Versionen
-* V1 (260820): OK  
+* V1 (261006): OK  
 
-<a name="x23"></a>   
+<a name="x24"></a>   
 
-## 2.3 Wannenstecker mit 6 und 4 Schraubklemmen (`CON_20_Screw64`)  
+## 2.4 Wannenstecker mit 6 und 4 Schraubklemmen (`CON_20_Screw64`)  
 
 ### Schaltplan
 Der Schaltplan ist ähnlich wie bei `CON_20_Screw10`, lediglich bei J2 und J6 ist die Verdrahtung vertauscht.  
