@@ -12,15 +12,15 @@ Die 3mf-Dateien befinden sich im Unterverzeichnis `3mf`.
 
 # Modulseite eingleisig (Ost, West)
 __Fusion-Datei__:  ModulSeite_250209.3mf   
-__Freecad-Datei__: [ModulSeiteEingleisig_251109.FCStd](/fab/3d/ModulSeiteEingleisig_251109.FCStd)   
-![Modul Seitenteil](/images/3d/300_ModulSeite1.png "Modul Seitenteil") ![Modul Seitenteil eingleisig](/images/3d/300_ModulSeiteEingleisig_251109.png "Modul Seitenteil eingleisig")   
+__Freecad-Datei__: [Rahmen_SeiteEingleisig_260906.FCStd](/fab/3d/Rahmen_SeiteEingleisig_260906.FCStd)   
+![Modul Seitenteil](/images/3d/300_ModulSeite1.png "Modul Seitenteil") ![Modul Seitenteil eingleisig](/images/3d/300_Rahmen_SeiteEingleisig_260906.png "Modul Seitenteil eingleisig")   
 _Bild 1: Seitenteil (Ost, West) eines 25 cm breiten Moduls mit einem Gleis in der Mitte_   
 
 <a name="x15"></a>   
 
 # Modulseite zweigleisig (Ost, West)
-__Freecad-Datei__: [ModulSeiteZweigleisig_251109.FCStd](/fab/3d/ModulSeiteZweigleisig_251109.FCStd)   
-![Modul Seitenteil zweigleisig](/images/3d/300_ModulSeiteZweigleisig_251109.png "Modul Seitenteil zweigleisig")   
+__Freecad-Datei__: [Rahmen_SeiteZweigleisig_260906.FCStd](/fab/3d/Rahmen_SeiteZweigleisig_260906.FCStd)   
+![Modul Seitenteil zweigleisig](/images/3d/300_Rahmen_SeiteZweigleisig_260906.png "Modul Seitenteil zweigleisig")   
 _Bild 2: Seitenteil (Ost, West) eines 25 cm breiten Moduls mit zwei Gleisen in der Mitte_   
 
 <a name="x20"></a>   
@@ -110,5 +110,21 @@ _Bild 12: Hilfswerkzeug Klammer 265 mm_
 __Freecad-Datei__: [Bohrhilfe_klein_251114.FCStd](/fab/3d/Bohrhilfe_klein_251114.FCStd)   
 ![Bohrhilfe klein 0,8 mm](/images/3d/200_Bohrhilfe_klein_251114.png "Bohrhilfe klein 0,8 mm")   
 _Bild 13: Hilfswerkzeug Bohrhilfe klein 0,8 mm_   
+
+# Leerer Vorderteil eines 25 cm-Moduls
+__Freecad-Datei__: [Rahmen_Front_S__230mm_261008.FCStd](/fab/3d/Rahmen_Front_S__230mm_261008.FCStd)   
+![Rahmen_Front_S__230mm_261008](/images/3d/300_Rahmen_Front_S__230mm_261008.png "Rahmen_Front_S__230mm_261008")   
+_Bild 14: Leerer Vorderteil eines 25 cm-Moduls_   
+
+
+# Standard-Vorderteil eines 25 cm-Moduls
+__Freecad-Datei__: [Rahmen_Front_S_Oled_34_230mm_260906.FCStd](/fab/3d/Rahmen_Front_S_Oled_34_230mm_260906.FCStd)   
+![Rahmen_Front_S_Oled_34_230mm_260906](/images/3d/300_Rahmen_Front_S_Oled_34_230mm_260906.png "Rahmen_Front_S_Oled_34_230mm_260906")   
+_Bild 15: Standard-Vorderteil eines 25 cm-Moduls_   
+
+# Rückseite mit P2-Stecker-Ausnehmung eines 25 cm-Moduls
+__Freecad-Datei__: [Rahmen_Back_N__2xP20_230mm_261008.FCStd](/fab/3d/Rahmen_Back_N__2xP20_230mm_261008.FCStd)   
+![Rahmen_Back_N__2xP20_230mm_261008](/images/3d/300_Rahmen_Back_N__2xP20_230mm_261008.png "Rahmen_Back_N__2xP20_230mm_261008")   
+_Bild 16: Rückseite mit P2-Stecker-Ausnehmung eines 25 cm-Moduls_   
 
 [Zum Seitenanfang](#up)

@@ -42,7 +42,9 @@ Für den Übergang vom 25-poligen Sub-D-Stecker auf den 20-poligen Wannenstecker
 
 <a name="x12"></a>   
 
-## 1.3 2x Sub-D-Stecker auf zwei Wannenstecker
+## 1.2 2x Sub-D-Stecker auf zwei Wannenstecker
+
+![rcc7_CON_20_2x_2xSubD_V1_assembled](/images/300_rcc7_CON_20_2x_2xSubD_V1_assembled.png "rcc7_CON_20_2x_2xSubD_V1_assembled")   
 
 ### Schaltplan
 ![rcc7_CON_20_2x_2xSubD_V1_circuit](/images/600_rcc7_CON_20_2x_2xSubD_V1_circuit.png "rcc7_CON_20_2x_2xSubD_V1_circuit")   
@@ -124,6 +126,9 @@ Für den Übergang vom 20-poligen Wannenstecker auf Schraubklemmen gibt es drei 
 <a name="x22"></a>   
 
 ## 2.2 Drei Wannenstecker mit allen Schraubklemmen auf einer Seite (`PCB_F_CON_20_3x_Screw10`)
+
+![rcc7_CON_20_3x_Screw10_V1_assembled](/images/300_rcc7_PCB_F_CON_20_3x_Screw10_V1_assembled.png "rcc7_CON_20_Screw10_V1_assembled")   
+
 
 ### Schaltplan
 ![rcc7_CON_20_3x_Screw10_V1_circuit](/images/600_rcc7_PCB_F_CON_20_3x_Screw10_V1_circuit.png "rcc7_CON_20_Screw10_V1_circuit")   

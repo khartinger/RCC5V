@@ -15,10 +15,10 @@ Gemäß [NEM 908](https://github.com/khartinger/RCC5V/tree/main/info/con_NEM908/
 ### Nachteile
 
 * Die Kabel sind aufwendig zu löten (Sub-D-Buchsen).
-* Bei Modulen, die auf einer Unterlage stehen, ist das Abstecken der Stecker schwierig, da die Modulinnenseite ohne Anheben der Module nicht zugänglich ist.  
+* Bei Modulen, die auf einer Unterlage stehen, ist das Abstecken der Stecker schwierig, da das Modul-Innenleben ohne Anheben der Module nicht zugänglich ist.  
 
-Aus diesem Grund wird hier eine **alternative Modulversorgung mit 20-poligen Flachbandkabeln** vorgestellt. Diese Verbindung wird im Folgenden als **„P20“** bezeichnet. Sie ist nur für Zweileitersysteme geeignet.  
-
+Aus diesem Grund wird hier eine **alternative Modulversorgung mit 20-poligen Flachbandkabeln** vorgestellt. Diese Verbindung wird im Folgenden als **„P20“** bezeichnet.  
+**„P20“** ist nur für **Zweileitersysteme** geeignet, da keine Adern zur Mittelleiterversorgung vorgesehen sind. Für Dreileitersysteme müsste man das P20-System mit 26-poligen Steckern realisieren.  
 
 <a name="TableOfContents"></a>   
 ##  Inhalt
