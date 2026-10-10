@@ -15,6 +15,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 ## Eigenschaften des Moduls
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
+| Modulgröße     | 100 x 25 cm²                                       |   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit und ohne Schotterbett |   
 | Gleisbild      | 1x Dreiwegweiche, 2x Zweiwegweiche, 1x Entkuppler, 4x abschaltbarer Gleisabschnitt |   
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST) |   
@@ -28,7 +29,7 @@ _Bild 1: Rahmen mit Grundplatte und Gleisen._
 <a name="x05"></a>   
 
 # Inhaltsverzeichnis   
-* [1. Vorbereitung - Einkauf](#x10)   
+* [1. Vorbereitung und Einkauf](#x10)   
 * [2. Bau des Modul-Rahmens](#x20)   
 * [3. Aufbau des Gleisplans](#x30)   
 * [4. Elektrische Verdrahtung des Moduls](#x40)   

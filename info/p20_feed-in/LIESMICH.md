@@ -10,12 +10,12 @@ Stand: 7.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 
 ## Worum geht es?
 
-Gemäß [NEM 908](https://github.com/khartinger/RCC5V/tree/main/info/con_NEM908/LIESMICH.md) werden Eisenbahn-Module über 10- bis 13-polige Kabel und 25-polige Sub-D-Buchsen miteinander verbunden. Die Verbindung erfolgt an den Längsseiten der Module.
+Gemäß [NEM 908](https://github.com/khartinger/RCC5V/tree/main/info/con_NEM908/LIESMICH.md) werden Eisenbahn-Module über 10- bis 13-polige Kabel und 25-polige Sub-D-Buchsen miteinander verbunden. Die Verbindung erfolgt durch die Seitenteile der Module.
 
 ### Nachteile
 
-* Die Kabel sind aufwendig zu löten.
-* Bei Modulen, die auf einer Unterlage stehen, ist das Abstecken der Stecker schwierig.
+* Die Kabel sind aufwendig zu löten (Sub-D-Buchsen).
+* Bei Modulen, die auf einer Unterlage stehen, ist das Abstecken der Stecker schwierig, da die Modulinnenseite ohne Anheben der Module nicht zugänglich ist.  
 
 Aus diesem Grund wird hier eine **alternative Modulversorgung mit 20-poligen Flachbandkabeln** vorgestellt. Diese Verbindung wird im Folgenden als **„P20“** bezeichnet. Sie ist nur für Zweileitersysteme geeignet.  
 
@@ -62,6 +62,7 @@ Es gibt zwei Arten:
 
 ### 2.1.1 20-poliger Stecker auf Schraubklemmen
 Das Board `CON_20_3x_Screw10_V1` wird verwendet, wenn das Modul keine Blöcke hat und lediglich die Fahrspannung und eventuell Licht etc. benötigt werden.  
+
 
 <a name="x212"></a>   
 

@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>Herstellung von RCC Schaltbl&ouml;cken</h1><b><big>RCC4: Basis-Blöcke für das RCC-System</big></b><br>  
-Stand: 27.9.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 7.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -67,7 +67,7 @@ _Bild 7: Die Arbeitsschritte beim Biegen der LEDs_
 Alternativ kann auch eine [3D-gedruckte Biegelehre](https://github.com/khartinger/RCC5V/blob/main/fab/3d/LIESMICH.md#x50) verwendet werden:  
 ![Biegelehre f&uuml;r LEDs](/images/3d/300_Biegelehre_LED_FC.png "Biegelehre f&uuml;r LEDs")   
 _Bild 8: 3D-gedruckte Biegelehre_   
-
+Die Maße sind so gewählt, dass die LEDs und der Schrumpfschlauch richtig abeschnitten werden können (Länge 26 mm, Höhe 20 mm für die Bohrung).  
 
 <a name="x15"></a>   
 
