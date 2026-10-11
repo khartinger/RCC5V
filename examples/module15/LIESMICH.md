@@ -48,8 +48,8 @@ _Bild: Rahmen mit Grundplatte und Gleisen._
 ## 2.1 Schienenkauf
 ### 2.1.1 Entwurf des Gleisplans
 
-Auf der Westseite befindet sich ein ausziehbares Gleis, das das Verbinden mit anderen Modulen erleichtert.  
-Da die Modullänge von 25 cm nicht mit den Standardgleislängen von Fleischmann erreicht werden kann, muss ein gerades Gleis (z. B. 9103) auf **45,5 mm** gekürzt werden.  
+Auf der Westseite (links) befindet sich ein ausziehbares Gleis, das das Verbinden mit anderen Modulen erleichtert.  
+Zum leichteren Verbinden von Modulen ist auf der Westseite des Moduls ein ausziehbares Gleis (Ausgleichsgleis) angeordnet. Damit die 25 cm Modullänge erreicht werden, wird ein gerades Gleis (z. B. 9103) auf **45,5 mm** (9 Schwellen) gekürzt.  
 Der folgende Gleisplan wurde mit [AnyRail](https://www.anyrail.com/) erstellt.  
 
 ![M15 Gleisplan](./images/300_m15_gleisplan.png "M15 Gleisplan")  
@@ -74,29 +74,31 @@ Der 25 x 25 cm² gro&szlig;e Modulrahmen ist 6 cm hoch und besteht aus zwei Seit
 Die Teile des Rahmens k&ouml;nnen entweder aus Holz hergestellt oder mit dem 3D-Drucker gedruckt werden. Auch eine gemischte Bauweise ist m&ouml;glich, zB Seitenteile 3D-Drucken, L&auml;ngsteile aus Holz.   
 
 ### 2.2.2 Holz-Rahmen
-Material, das nur bei Verwendung eines Holzrahmens benötigt wird:  
 
-#### Pappelsperrholz 10 mm
-| St&uuml;ck | Abmessung     | Kurzbezeichnung | Verwendung             |   
-|:-----:|:-------------:|:--------:|:-----------------------|   
-|   1   | 230 x 230 mm² |     -    | Gel&auml;nde-Grundplatte    |   
-|   2   | 230 x 60 mm²  | Ra2, Ra4 | Rahmen au&szlig;en Nord, S&uuml;d |   
-|   2   | 250 x 70 mm²  | Ra1, Ra3 | Rahmen au&szlig;en West, Ost |   
-
-#### Holzrahmen: Kleinteile
-4x Pappelsperrholz 10 mm stark, 70 x 35 mm² f&uuml;r die Halterungen der Sub-D-Stecker.   
-4x kleine Holzst&uuml;cken 10 x 10 x 50 mm³ als zus&auml;tzliche Auflager f&uuml;r die Grundplatte. 
-
-#### Holzrahmen: Verbrauchsmaterial
-Zum Verleimen und Lackieren des Holzes:  
-
-| St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
-|:----------:|:------:|:-----------|:-----------------|   
-|      1     |        | Ponal      | Holzleim Express |   
-|      1     | 4002364114016 | Albrecht   | Yacht- und Bootslack, farblos, hochgl&auml;nzend |   
-|      1     |   |   | Topfreiniger (Abwasch-Schwamm) |   
-|      2     |   |   | Paar Einmal-Handschuhe         |   
-|      1     |   |   | Schleifpapier K&ouml;rnung 240      |   
+> Material, das nur bei Verwendung eines Holzrahmens benötigt wird:  
+>
+> #### Pappelsperrholz 10 mm
+> | St&uuml;ck | Abmessung     | Kurzbezeichnung | Verwendung             |   
+> |:-----:|:-------------:|:--------:|:-----------------------|   
+> |   1   | 230 x 230 mm² |     -    | Gel&auml;nde-Grundplatte    |   
+> |   2   | 230 x 60 mm²  | Ra2, Ra4 | Rahmen au&szlig;en Nord, S&uuml;d |   
+> |   2   | 250 x 70 mm²  | Ra1, Ra3 | Rahmen au&szlig;en West, Ost |   
+> 
+> #### Holzrahmen: Kleinteile
+> 4x Pappelsperrholz 10 mm stark, 70 x 35 mm² f&uuml;r die Halterungen der Sub-D-Stecker.   
+> 4x kleine Holzst&uuml;cken 10 x 10 x 50 mm³ als zus&auml;tzliche Auflager f&uuml;r die Grundplatte. 
+> 
+> #### Holzrahmen: Verbrauchsmaterial
+> Zum Verleimen und Lackieren des Holzes:  
+> 
+> | St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
+> |:----------:|:------:|:-----------|:-----------------|   
+> |      1     |        | Ponal      | Holzleim Express |   
+> |      1     | 4002364114016 | Albrecht   | Yacht- und Bootslack, farblos, > hochgl&auml;nzend |   
+> |      1     |   |   | Topfreiniger (Abwasch-Schwamm) |   
+> |      2     |   |   | Paar Einmal-Handschuhe         |   
+> |      1     |   |   | Schleifpapier K&ouml;rnung 240      |   
+>
 
 ### 2.2.3 3D-Rahmen
 Folgende vier Teile 3D-drucken:  
@@ -112,19 +114,19 @@ Der Bahnkörper für N-Spur hat folgenden Aufbau:
 
 Der Bahnkörper kann entweder traditionell aus Holz, Kork und Schaumstoff oder in 3D-Druck hergestellt werden.  
 
-<div style="background-color: #fdf7ef; padding: 8px;">
-<h4>Bahnkörper traditionell</h4>
-
-| St&uuml;ck | Abmessung     | Material | Anmerkung |   
-|:-----:|:-------------:|:----------|:----------|   
-|   1   | 50 x 250 mm² | Pappelsperrholz 5 mm (oder 4 mm) | Bahndamm  |   
-
-Sollte kein 5 mm Sperrholz zur Verf&uuml;gung stehen, kann man auch 4 mm starkes Sperrholz verwenden. In diesem Fall wird später ein 1 mm dicker, selbst klebender Kork aufgeklebt.   
-
-| St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
-|:----------:|:------:|:-----------|:-----------------|   
-|      1     |  95962 | Noch       | Gleisbett-Rolle N 730 cm lang, 3,2 cm breit, 0,3 cm stark |   
-</div>
+> 
+> #### Bahnkörper traditionell
+> 
+> | St&uuml;ck | Abmessung     | Material | Anmerkung |   
+> |:-----:|:-------------:|:----------|:----------|   
+> |   1   | 50 x 250 mm² | Pappelsperrholz 5 mm (oder 4 mm) | Bahndamm  |   
+> 
+> Sollte kein 5 mm Sperrholz zur Verf&uuml;gung stehen, kann man auch 4 mm starkes Sperrholz verwenden. In diesem Fall wird später ein 1 mm dicker, selbst klebender Kork aufgeklebt.   
+> 
+> | St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
+> |:----------:|:------:|:-----------|:-----------------|   
+> |      1     |  95962 | Noch       | Gleisbett-Rolle N 730 cm lang, 3,2 cm breit, 0,3 cm stark |   
+> 
 
 #### Bahnkörper im 3D-Druck
 * Gleisbett: [M15_track_ballast_1_260831.FCStd](https://github.com/khartinger/RCC5V/blob/main/examples/module15/3d/fcstd/M15_track_ballast_1_260831.FCStd)   
@@ -214,7 +216,7 @@ Größe der Ausnehmung für die P20-Stecker:
 
 # 4. Gleisbau
 ## 4.1 Stellprobe
-* __*Bei Holzbau*__: Gleisbild auf die "Bahndammplatte" (230 x 50 mm² Sperrholzplatte) zeichnen.  
+> * __*Bei Holzbau*__: Gleisbild auf die "Bahndammplatte" (230 x 50 mm² Sperrholzplatte) zeichnen.  
 * Falls auf dem Modul Gebäude etc. geplant sind: Alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufstellen.  
 * Die "Bahndammplatte" oder den 3D-gedruckten Bahnkörper zwischen die Seitenteile einpassen.  
 * Gleise auflegen.  
@@ -223,7 +225,7 @@ Größe der Ausnehmung für die P20-Stecker:
 <a name="x42"></a>   
 
 ## 4.2 Bahndamm
-__*Bei Holzbau*__: Die seitlichen Kanten des Sperrholzes unter 45° abschrägen.  
+> __*Bei Holzbau*__: Die seitlichen Kanten des Sperrholzes unter 45° abschrägen.  
 
 <a name="x43"></a>   
 
@@ -239,7 +241,8 @@ Modul 15 hat nur die Fahrstromanschlüsse, trotzdem kann man Ausnehmungen für R
 <a name="x44"></a>   
 
 ## 4.4 Gleisbett (Bettungskörper)
-__*Bei Holzbau*__: 3 mm hohes Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) auf den Bahndamm aufkleben.  
+> __*Bei Holzbau*__: 3 mm hohes Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) auf den Bahndamm aufkleben.  
+
 __*Bei 3D*__: Gleisbett auf den Bahndamm aufkleben.  
 
 <a name="x45"></a>   
@@ -268,8 +271,8 @@ Im Bild unten ist rechts unten die Kunststoffverbindung über dem Gleisverbinder
 * Alle Kabel in die Bohrungen einf&auml;deln und nach unten ziehen, bis die Gleise etwa 5 bis 10 cm Abstand zur zuk&uuml;nftigen Position haben. Die Grundplatte etwas schr&auml;g stellen, damit die Kabel nicht geknickt werden.   
 * Alle Bereiche markieren, auf die kein Leim aufgetragen werden darf (oder mit Klebeband abdecken):   
   * Ausgleichsgleis am linken Rand (West)   
-* __*Bei Holzbau*__: Gleisbett mit Weißleim versehen, **nicht** jedoch beim Ausgleichsgleis (!)  
-   __*Bei 3D*__: Doppelklebeband anbringen, **nicht** jedoch beim Ausgleichsgleis (!)  
+> * __*Bei Holzbau*__: Gleisbett mit Weißleim versehen, **nicht** jedoch beim Ausgleichsgleis (!)  
+* __*Bei 3D*__: Doppelklebeband anbringen, **nicht** jedoch beim Ausgleichsgleis (!)  
 * Gleise fertig zusammenstecken und vorsichtig an den Kabeln ziehen, bis die Gleise auf dem Leim liegen. 
 
 ### Ergänzungen
