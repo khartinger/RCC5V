@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
-<h1>Modul 15: Minimodul P20-Sub-D-Einspeisung</h1><b><big>Modul mit Einspeisung über Flachbandkabel oder Sub-D-Stecker</big></b><br>  
-Stand: 10.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+<h1>Modul 15: P20-Sub-D-Einspeisung</h1><b><big>Mini-Modul mit Fahrstrom-Einspeisung über Flachbandkabel oder Sub-D-Stecker</big></b><br>  
+Stand: 11.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -16,12 +16,17 @@ _Bild: Rahmen mit Grundplatte und Gleisen._
 
 <a name="TableOfContents"></a>   
 ##  Inhalt
-1. [Vorbereitung und Einkauf](#x10)  
-2. [Rahmenbau](#x20)  
-3. [Gleisbau](#x30)  
-4. [Elektrik](#x40)  
+1. [Eigenschaften des Moduls](#x10)  
+2. [Vorbereitung und Einkauf](#x20)  
+3. [Rahmenbau](#x30)  
+4. [Gleisbau](#x40)  
+5. [Elektrik](#x50)  
+6. [Probebetrieb](#x60)  
+7. [Abschließende Arbeiten](#x70)  
 
-## Eigenschaften des Moduls
+<a name="x10"></a>   
+
+# 1. Eigenschaften des Moduls
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
 | Modulgröße     | 25 x 25 cm²                                        |   
@@ -35,13 +40,13 @@ _Bild: Rahmen mit Grundplatte und Gleisen._
 | MQTT: IP-Adresse des Brokers (Host) | - |    
 | Sonstiges | * Einfaches Verbinden mit anderen Modulen durch ein ausziehbares Gleis am Segment-Ende |   
 
-<a name="x10"></a>   
-<a name="x11"></a>   
+<a name="x20"></a>   
+<a name="x21"></a>   
 
-# 1. Vorbereitung und Einkauf
+# 2. Vorbereitung und Einkauf
 
-## 1.1 Schienenkauf
-### 1.1.1 Entwurf des Gleisplans
+## 2.1 Schienenkauf
+### 2.1.1 Entwurf des Gleisplans
 
 Auf der Westseite befindet sich ein ausziehbares Gleis, das das Verbinden mit anderen Modulen erleichtert.  
 Da die Modullänge von 25 cm nicht mit den Standardgleislängen von Fleischmann erreicht werden kann, muss ein gerades Gleis (z. B. 9103) auf **45,5 mm** gekürzt werden.  
@@ -52,7 +57,7 @@ _Bild: Gleisplan Modul 15_
 
 Die braunen und roten Kreise markieren die Fahrstromeinspeisungen.  
 
-### 1.1.2 Schienenkauf - St&uuml;ckliste
+### 2.1.2 Schienenkauf - St&uuml;ckliste
 Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:   
 | Anzahl | Nummer | Name | Euro/Stk | Euro |   
 | :---: | :---: | :--- |  ---: |  ---: |   
@@ -61,14 +66,14 @@ Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:
 
 Gesamtkosten 2025: ca. 27,80 Euro   
 
-<a name="x12"></a>   
+<a name="x22"></a>   
 
-## 1.2 Rahmen
-### 1.2.1 Modulrahmen
+## 2.2 Rahmen
+### 2.2.1 Modulrahmen
 Der 25 x 25 cm² gro&szlig;e Modulrahmen ist 6 cm hoch und besteht aus zwei Seitenteilen ("Ost" und "West") und zwei L&auml;ngsteilen ("Nord" und "S&uuml;d") ohne Querstreben. Die Gel&auml;ndeplatte wird in den Rahmen eingelegt.   
 Die Teile des Rahmens k&ouml;nnen entweder aus Holz hergestellt oder mit dem 3D-Drucker gedruckt werden. Auch eine gemischte Bauweise ist m&ouml;glich, zB Seitenteile 3D-Drucken, L&auml;ngsteile aus Holz.   
 
-### 1.2.2 Holz-Rahmen
+### 2.2.2 Holz-Rahmen
 Material, das nur bei Verwendung eines Holzrahmens benötigt wird:  
 
 #### Pappelsperrholz 10 mm
@@ -93,14 +98,14 @@ Zum Verleimen und Lackieren des Holzes:
 |      2     |   |   | Paar Einmal-Handschuhe         |   
 |      1     |   |   | Schleifpapier K&ouml;rnung 240      |   
 
-### 1.2.3 3D-Rahmen
+### 2.2.3 3D-Rahmen
 Folgende vier Teile 3D-drucken:  
 * 2x Seitenteile: [`Rahmen_SeiteEingleisig_260906.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_SeiteEingleisig_260906.FCStd)  
 * 1x Längsteil Nord: [`Rahmen_Back_N__2xP20_230mm_261008.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_Back_N__2xP20_230mm_261008.FCStd)  
 * 1x Längsteil Süd: [`Rahmen_Back_S__230mm_261008.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_Back_S__230mm_261008.FCStd)  
 * Gelände-Grundplatte: **Pappelsperrholz 10 mm**, 230 x 230 mm²
 
-### 1.2.4 Bahnkörper
+### 2.2.4 Bahnkörper
 Der Bahnkörper für N-Spur hat folgenden Aufbau:
 
 ![Aufbau Bahnk&ouml;rper](/images/300_aufbau_bahnkoerper.png "Aufbau Bahnk&ouml;rper")   
@@ -128,32 +133,32 @@ Sollte kein 5 mm Sperrholz zur Verf&uuml;gung stehen, kann man auch 4 mm starkes
 * Bahndamm: [M15_embankment_1_260831.FCStd](https://github.com/khartinger/RCC5V/blob/main/examples/module15/3d/fcstd/M15_embankment_1_260831.FCStd)  
 ![M15 Bahndamm](./images/300_m15_embankment_1.png "M15 Bahndamm")  
 
-### 1.2.5 Kleinteile
+### 2.2.5 Kleinteile
 8x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend []()  (zB Fa. Spax 4 003530 021251)   
 
-<a name="x13"></a>   
+<a name="x23"></a>   
 
-## 1.3 Elektrische Komponenten
-### 1.3.1 P20-Anschluss in Nord
+## 2.3 Elektrische Komponenten
+### 2.3.1 P20-Anschluss in Nord
 Als Anschluss für eine 20-polige Flachbandkabel-Buchse ("P20") wird das Board `PCB_F_CON_20_3x_Screw10` verwendet.  
 
 ![rcc7_CON_20_3x_Screw10_V1_assembled](/images/300_rcc7_PCB_F_CON_20_3x_Screw10_V1_assembled.png "rcc7_CON_20_Screw10_V1_assembled")   
 
 Der Bau ist [hier](https://github.com/khartinger/RCC5V/blob/main/fab/rcc7_p20/LIESMICH.md#x22) beschrieben.  
 
-### 1.3.2 P20-Sub-D-Umsetzer
+### 2.3.2 P20-Sub-D-Umsetzer
 Zum Umsetzen von P20 auf Sub-D-Stecker wird das Board `PCB_F_CON_20_2x_2xSubD` verwendet.  
 
 ![rcc7_CON_20_2x_2xSubD_V1_assembled](/images/300_rcc7_CON_20_2x_2xSubD_V1_assembled.png "rcc7_CON_20_2x_2xSubD_V1_assembled")   
 
 Der Bau ist [hier](https://github.com/khartinger/RCC5V/blob/main/fab/rcc7_p20/LIESMICH.md#x12) beschrieben.  
 
-<a name="x20"></a>   
-<a name="x21"></a>   
+<a name="x30"></a>   
+<a name="x31"></a>   
 
-# 2. Rahmenbau
+# 3. Rahmenbau
 
-## 2.1 Einleitung
+## 3.1 Einleitung
 Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, die die Gleise und Landschaft tr&auml;gt. Zuerst erstellt man den Modul-Rahmen. Das hat zwei Vorteile:   
 1. Der Test, ob die Grundplatte in den Rahmen passt, kann mit der leeren Grundplatte erfolgen. Falls die Grundplatte zu gro&szlig; ist, kann sie einfach zugeschnitten oder zugeschliffen werden.   
 2. Beim Aufkleben der Gleise auf die Grundplatte sind an den Modul&uuml;berg&auml;ngen (Ost und West) bereits die Seitenteile mit den Gleisausnehmungen vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
@@ -163,9 +168,9 @@ Der Rahmen des Moduls 15 besteht aus vier Teilen:
 * 1x Leerer Vorderteil [`Rahmen_Front_S__230mm_260411`](/fab/3d/Rahmen_Front_S__230mm_261011.FCStd)  
 * 1x Rückteil [`Rahmen_Back_N__2xP20_230mm_261008`](/fab/3d/Rahmen_Back_N__2xP20_230mm_261008.FCStd)  
 
-<a name="x22"></a>   
+<a name="x32"></a>   
 
-## 2.2 Seitenteile `Rahmen_SeiteEingleisig_260906`  
+## 3.2 Seitenteile `Rahmen_SeiteEingleisig_260906`  
 Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   
 
 ![Modul Seitenteil eingleisig](/images/3d/300_Rahmen_SeiteEingleisig_260906.png "Modul Seitenteil eingleisig")  
@@ -178,9 +183,9 @@ _Bild: Ma&szlig;e f&uuml;r die Seitenteile Ost und West (Modulbreite 250mm, ein 
 * Die oberen zwei 2mm-Bohrungen dienen zum Fixieren der Gel&auml;nde-Grundplatte (falls erforderlich).   
 * Die 60x20 mm²-Ausnehmung dient zum Durchf&uuml;hren des 25-poligen Sub-D-Steckers.   
 
-<a name="x23"></a>   
+<a name="x33"></a>   
 
-## 2.3 Leerer Vorderteil `Rahmen_Front_S__230mm_260408`  
+## 3.3 Leerer Vorderteil `Rahmen_Front_S__230mm_260408`  
 
 ![Rahmen_Front_S__230mm_261011](/images/3d/300_Rahmen_Front_S__230mm_261011.png "Rahmen_Front_S__230mm_261011")   
 
@@ -188,41 +193,41 @@ Die beiden Sechskant-Ausnehmungen (Seitenlänge M 3 mm) dienen zur Befestigung e
 
 ![Rahmen_Front_S__230mm_Dimension](/images/300_Rahmen_Front_S__230mm_dim.png "Rahmen_Front_S__230mm_Dimension")   
 
-<a name="x24"></a>   
+<a name="x34"></a>   
 
-## 2.4 Nordteil `Rahmen_Back_N__2xP20_230mm_261008`
+## 3.4 Nordteil `Rahmen_Back_N__2xP20_230mm_261008`
 
 ![Rahmen_Back_N__2xP20_230mm_261008](/images/3d/300_Rahmen_Back_N__2xP20_230mm_261008.png "Rahmen_Back_N__2xP20_230mm_261008")   
 
 Größe der Ausnehmung für die P20-Stecker:  
 ![P20 Ausnehmung](/images/300_P20_frame_hole.png "P20 Ausnehmung")   
 
-<a name="x25"></a>   
+<a name="x35"></a>   
 
-## 2.5 Zusammenbau des Rahmens
+## 3.5 Zusammenbau des Rahmens
 1. Anordnen der Rahmenteile im Quadrat.  
 2. Gelände-Grundplatte auf die Rahmenteile legen.  
 3. Zusammenschrauben des Rahmens mit 8 Schrauben M3 x 30 mm (Senkkopf, Kreuzschlitz, selbstschneidend).  
 
-<a name="x30"></a>   
-<a name="x31"></a>   
+<a name="x40"></a>   
+<a name="x41"></a>   
 
-# 3. Gleisbau
-## 3.1 Stellprobe
+# 4. Gleisbau
+## 4.1 Stellprobe
 * __*Bei Holzbau*__: Gleisbild auf die "Bahndammplatte" (230 x 50 mm² Sperrholzplatte) zeichnen.  
 * Falls auf dem Modul Gebäude etc. geplant sind: Alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufstellen.  
 * Die "Bahndammplatte" oder den 3D-gedruckten Bahnkörper zwischen die Seitenteile einpassen.  
 * Gleise auflegen.  
 * Mit dem l&auml;ngsten Waggon h&auml;ndisch eine Probefahrt durchf&uuml;hren.  
 
-<a name="x32"></a>   
+<a name="x42"></a>   
 
-## 3.2 Bahndamm
+## 4.2 Bahndamm
 __*Bei Holzbau*__: Die seitlichen Kanten des Sperrholzes unter 45° abschrägen.  
 
-<a name="x33"></a>   
+<a name="x43"></a>   
 
-## 3.3 Ausnehmungen in der Gelände-Grundplatte
+## 4.3 Ausnehmungen in der Gelände-Grundplatte
 Ausnehmungen bzw. Bohrungen in der Grundplatte (und im Holz-Bahndamm) sind erforderlich für
 * Fahrstrom-Anschlussdrähte  
 * Unterflurantriebe für Weichen etc.  
@@ -231,20 +236,20 @@ Ausnehmungen bzw. Bohrungen in der Grundplatte (und im Holz-Bahndamm) sind erfor
 Modul 15 hat nur die Fahrstromanschlüsse, trotzdem kann man Ausnehmungen für Reed-Kontakte vorsehen:  
 ![Grundplatte Ausnehmungen](./images/300_m15_base_plate_holes.png "Grundplatte Ausnehmungen")   
 
-<a name="x34"></a>   
+<a name="x44"></a>   
 
-## 3.4 Gleisbett (Bettungskörper)
+## 4.4 Gleisbett (Bettungskörper)
 __*Bei Holzbau*__: 3 mm hohes Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) auf den Bahndamm aufkleben.  
 __*Bei 3D*__: Gleisbett auf den Bahndamm aufkleben.  
 
-<a name="x35"></a>   
+<a name="x45"></a>   
 
-## 3.5 Vorbereitung der Verdrahtung
+## 4.5 Vorbereitung der Verdrahtung
 Board `PCB_F_CON_20_3x_Screw10` an der Modulrückseite anschrauben (4 Stück M2,6 x 8 mm Schrauben)  
 
-<a name="x36"></a>   
+<a name="x46"></a>   
 
-## 3.6 Gleisbau
+## 4.6 Gleisbau
 ### Anbringen der Stromversorgung am Gleis
 
 Zur Stromversorgung kann man das Fleischmann-Anschlusskabel 22217 (2-polig, Spur N) verwenden oder selbst Drähte an die Gleisverbinder löten. Das funktioniert bei Fleischmann-Gleisen mit Schotterbett gut. Gleisverbinder ohne Schotterbett lassen sich dagegen kaum löten.  
@@ -270,17 +275,52 @@ Im Bild unten ist rechts unten die Kunststoffverbindung über dem Gleisverbinder
 ### Ergänzungen
 * Das Ausgleichsgleis wird beim Zusammenstecken von Modulen mechanisch in Längsrichtung beansprucht. Es sollte daher mit einem Gleisnagel zusätzlich fixiert werden. Der Gleisnagel wird auf der vom Modulrand abgewandten Seite eingeschlagen.  
 
-<a name="x40"></a>   
-<a name="x41"></a>   
+<a name="x50"></a>   
+<a name="x51"></a>   
 
-# 4. Elektrische Verdrahtung des Moduls   
-## 4.1 Verdrahtungsplan
+# 5. Elektrische Verdrahtung des Moduls   
+## 5.1 Verdrahtungsplan
 Das folgende Bild zeigt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwendeten Komponenten:   
+
 ![&Uuml;bersicht Verdrahtung M15](./images/480_m15_wiring_overview.png "&Uuml;bersicht Verdrahtung M15")   
 
-## 4.2 Test
+<a name="x52"></a>   
+
+## 5.2 Verdrahtung des Fahrstroms
 
 
+<a name="x60"></a>   
+<a name="x61"></a>   
 
+# 6. Probebetrieb
+## 6.1 Fahrstromversorgung über Sub-D-Stecker
+
+
+<a name="x62"></a>   
+
+## 6.2 Fahrstromversorgung über Flachbandkabel
+
+
+<a name="x70"></a>   
+<a name="x71"></a>   
+
+# 7. Abschließende Arbeiten
+
+## 7.1 Minimale Landschaftsgestaltung
+
+<a name="x72"></a>   
+
+## 7.2 Plexiglas-Abdeckung
+
+
+<a name="x73"></a>   
+
+## 7.3 Bodenabdeckung
+Um die Verkabelung zu sch&uuml;tzen, kann man auch Teile des Bodens mit durchsichtigen Folien (zB mit 1 mm St&auml;rke) abdecken.   
+
+<a name="x74"></a>   
+
+## 7.4 Modell-Hintergrundbild
+Das Modellhintergrundbild sollte bei 25 cm Modultiefe zumindest 15,5 cm hoch sein.   
 
 [Zum Seitenanfang](#up)   
