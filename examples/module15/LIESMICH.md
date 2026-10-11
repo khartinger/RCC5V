@@ -103,25 +103,27 @@ Folgende vier Teile 3D-drucken:
 ### 1.2.4 Bahnkörper
 Der Bahnkörper kann entweder traditionell aus Holz, Kork und Schaumstoff oder in 3D-Druck hergestellt werden.  
 
-#### Bahnkörper traditionell
+<div style="background-color: #fdf7ef; padding: 8px;">
+<h4>Bahnkörper traditionell</h4>
 
 | St&uuml;ck | Abmessung     | Material | Anmerkung |   
 |:-----:|:-------------:|:----------|:----------|   
 |   1   | 50 x 250 mm² | Pappelsperrholz 5 mm (oder 4 mm) | Bahndamm  |   
 
 Sollte kein 5 mm Sperrholz zur Verf&uuml;gung stehen, kann man auch 4 mm starkes Sperrholz verwenden. In diesem Fall wird später ein 1 mm dicker, selbst klebender Kork aufgeklebt.   
+Die seitlichen Kanten des Sperrholzes unter 45° abschrägen.  
 
 | St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
 |:----------:|:------:|:-----------|:-----------------|   
 |      1     |  95962 | Noch       | Gleisbett-Rolle N 730 cm lang, 3,2 cm breit, 0,3 cm stark |   
+</div>
 
 #### Bahnkörper im 3D-Druck
-Gleisbett: [M15_track_ballast_1_260831.FCStd]()   
+* Gleisbett: [M15_track_ballast_1_260831.FCStd](https://github.com/khartinger/RCC5V/blob/main/examples/module15/3d/fcstd/M15_track_ballast_1_260831.FCStd)   
 ![M15 Gleisbett](./images/300_m15_track_ballast_1.png "M15 Gleisbett")  
 
-Bahndamm: [M15_embankment_1_260831.FCStd]()  
+* Bahndamm: [M15_embankment_1_260831.FCStd](https://github.com/khartinger/RCC5V/blob/main/examples/module15/3d/fcstd/M15_embankment_1_260831.FCStd)  
 ![M15 Bahndamm](./images/300_m15_embankment_1.png "M15 Bahndamm")  
-
 
 ### 1.2.5 Kleinteile
 8x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend []()  (zB Fa. Spax 4 003530 021251)   
@@ -193,18 +195,32 @@ Größe der Ausnehmung für die P20-Stecker:
 <a name="x25"></a>   
 
 ## 2.5 Zusammenbau des Rahmens
-1. Anordnen der 3D-Teile im Quadrat.  
+1. Anordnen der Rahmenteile im Quadrat.  
 2. Gelände-Grundplatte auf die Rahmenteile legen.  
 3. Zusammenschrauben des Rahmens mit 8 Schrauben M3 x 30 mm (Senkkopf, Kreuzschlitz, selbstschneidend).  
-
-
-# ..ToDo.. ..ToDo.. ..ToDo..
 
 <a name="x30"></a>   
 <a name="x31"></a>   
 
 # 3. Gleisbau
+## 3.1 Stellprobe
+* Falls auf dem Modul Gebäude etc. geplant sind: Alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufstellen.  
+* Die 230 x 50 mm große Sperrholzplatte oder den 3D-gedruckten Bahnkörper zwischen die Seitenteile einpassen.  
+* Gleise auflegen.  
+* Mit dem l&auml;ngsten Waggon h&auml;ndisch eine Probefahrt durchf&uuml;hren.  
 
+## 3.2 Ausnehmungen in der Gelände-Grundplatte
+Ausnehmungen bzw. Bohrungen in der Grundplatte sind erforderlich für
+* Fahrstrom-Anschlussdrähte  
+* Unterflurantriebe für Weichen etc.  
+* Reed-Kontakte, Refelxkoppler und sonstige Sensoren  
+
+Modul 15 hat nur die Fahrstromanschlüsse, trotzdem kann man Ausnehmungen für Reed-Kontakte vorsehen:  
+![Grundplatte Ausnehmungen](./images/300_m15_base_plate_holes.png "Grundplatte Ausnehmungen")   
+
+
+
+# ..ToDo.. ..ToDo.. ..ToDo..
 
 <a name="x40"></a>   
 <a name="x41"></a>   
