@@ -25,8 +25,8 @@ _Bild: Rahmen mit Grundplatte und Gleisen._
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
 | Modulgröße     | 25 x 25 cm²                                        |   
-| Gleismaterial  | Fleischmann Spur-N-Gleis mit und ohne Schotterbett |   
-| Gleisbild      | 1x Ausgleichsgleis, 2x 55,5 mm, 1x 45,5 mm |   
+| Gleismaterial  | Fleischmann Spur-N-Gleis mit Schotterbett          |   
+| Gleisbild      | Gerade mit Ausgleichsgleis                         |   
 | Elektrischer Anschluss | * 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST)   <br>* 2x 20-poliger Wannenstecker (auf der Rückseite) |   
 | Fahrstrom     | Analog- oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | - |   
@@ -69,6 +69,7 @@ Der 25 x 25 cm² gro&szlig;e Modulrahmen ist 6 cm hoch und besteht aus zwei Seit
 Die Teile des Rahmens k&ouml;nnen entweder aus Holz hergestellt oder mit dem 3D-Drucker gedruckt werden. Auch eine gemischte Bauweise ist m&ouml;glich, zB Seitenteile 3D-Drucken, L&auml;ngsteile aus Holz.   
 
 ### 1.2.2 Holz-Rahmen
+Material, das nur bei Verwendung eines Holzrahmens benötigt wird:  
 
 #### Pappelsperrholz 10 mm
 | St&uuml;ck | Abmessung     | Kurzbezeichnung | Verwendung             |   
@@ -77,16 +78,13 @@ Die Teile des Rahmens k&ouml;nnen entweder aus Holz hergestellt oder mit dem 3D-
 |   2   | 230 x 60 mm²  | Ra2, Ra4 | Rahmen au&szlig;en Nord, S&uuml;d |   
 |   2   | 250 x 70 mm²  | Ra1, Ra3 | Rahmen au&szlig;en West, Ost |   
 
-#### Pappelsperrholz 5 mm (oder 4 mm)
-| St&uuml;ck | Abmessung     | Anmerkung |   
-|:-----:|:-------------:|:----------|   
-|   1   | 50 x 250 mm² | Bahndamm  |   
-
 #### Holzrahmen: Kleinteile
 4x Pappelsperrholz 10 mm stark, 70 x 35 mm² f&uuml;r die Halterungen der Sub-D-Stecker.   
 4x kleine Holzst&uuml;cken 10 x 10 x 50 mm³ als zus&auml;tzliche Auflager f&uuml;r die Grundplatte. 
 
 #### Holzrahmen: Verbrauchsmaterial
+Zum Verleimen und Lackieren des Holzes:  
+
 | St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
 |:----------:|:------:|:-----------|:-----------------|   
 |      1     |        | Ponal      | Holzleim Express |   
@@ -96,12 +94,36 @@ Die Teile des Rahmens k&ouml;nnen entweder aus Holz hergestellt oder mit dem 3D-
 |      1     |   |   | Schleifpapier K&ouml;rnung 240      |   
 
 ### 1.2.3 3D-Rahmen
+Folgende vier Teile 3D-drucken:  
 * 2x Seitenteile: [`Rahmen_SeiteEingleisig_260906.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_SeiteEingleisig_260906.FCStd)  
 * 1x Längsteil Nord: [`Rahmen_Back_N__2xP20_230mm_261008.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_Back_N__2xP20_230mm_261008.FCStd)  
 * 1x Längsteil Süd: [`Rahmen_Back_S__230mm_261008.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_Back_S__230mm_261008.FCStd)  
-* Gelände-Grundplatte: Pappelsperrholz 10 mm, 230 x 230 mm²
+* Gelände-Grundplatte: **Pappelsperrholz 10 mm**, 230 x 230 mm²
 
-### 1.2.4 Kleinteile
+### 1.2.4 Bahnkörper
+Der Bahnkörper kann entweder traditionell aus Holz, Kork und Schaumstoff oder in 3D-Druck hergestellt werden.  
+
+#### Bahnkörper traditionell
+
+| St&uuml;ck | Abmessung     | Material | Anmerkung |   
+|:-----:|:-------------:|:----------|:----------|   
+|   1   | 50 x 250 mm² | Pappelsperrholz 5 mm (oder 4 mm) | Bahndamm  |   
+
+Sollte kein 5 mm Sperrholz zur Verf&uuml;gung stehen, kann man auch 4 mm starkes Sperrholz verwenden. In diesem Fall wird später ein 1 mm dicker, selbst klebender Kork aufgeklebt.   
+
+| St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
+|:----------:|:------:|:-----------|:-----------------|   
+|      1     |  95962 | Noch       | Gleisbett-Rolle N 730 cm lang, 3,2 cm breit, 0,3 cm stark |   
+
+#### Bahnkörper im 3D-Druck
+Gleisbett: [M15_track_ballast_1_260831.FCStd]()   
+![M15 Gleisbett](./images/300_m15_track_ballast_1.png "M15 Gleisbett")  
+
+Bahndamm: [M15_embankment_1_260831.FCStd]()  
+![M15 Bahndamm](./images/300_m15_embankment_1.png "M15 Bahndamm")  
+
+
+### 1.2.5 Kleinteile
 8x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend []()  (zB Fa. Spax 4 003530 021251)   
 
 <a name="x13"></a>   
