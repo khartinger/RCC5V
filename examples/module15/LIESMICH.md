@@ -275,8 +275,8 @@ Im Bild unten ist rechts unten die Kunststoffverbindung über dem Gleisverbinder
 
 # 4. Elektrische Verdrahtung des Moduls   
 ## 4.1 Verdrahtungsplan
-Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwendeten Komponenten:   
-![&Uuml;bersicht Verdrahtung M15](./images/600_m15_wiring_overview.png "&Uuml;bersicht Verdrahtung M15")   
+Das folgende Bild zeigt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwendeten Komponenten:   
+![&Uuml;bersicht Verdrahtung M15](./images/480_m15_wiring_overview.png "&Uuml;bersicht Verdrahtung M15")   
 
 ## 4.2 Test
 
