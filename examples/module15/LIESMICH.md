@@ -101,6 +101,10 @@ Folgende vier Teile 3D-drucken:
 * Gelände-Grundplatte: **Pappelsperrholz 10 mm**, 230 x 230 mm²
 
 ### 1.2.4 Bahnkörper
+Der Bahnkörper für N-Spur hat folgenden Aufbau:
+
+![Aufbau Bahnk&ouml;rper](/images/300_aufbau_bahnkoerper.png "Aufbau Bahnk&ouml;rper")   
+
 Der Bahnkörper kann entweder traditionell aus Holz, Kork und Schaumstoff oder in 3D-Druck hergestellt werden.  
 
 <div style="background-color: #fdf7ef; padding: 8px;">
@@ -111,7 +115,6 @@ Der Bahnkörper kann entweder traditionell aus Holz, Kork und Schaumstoff oder i
 |   1   | 50 x 250 mm² | Pappelsperrholz 5 mm (oder 4 mm) | Bahndamm  |   
 
 Sollte kein 5 mm Sperrholz zur Verf&uuml;gung stehen, kann man auch 4 mm starkes Sperrholz verwenden. In diesem Fall wird später ein 1 mm dicker, selbst klebender Kork aufgeklebt.   
-Die seitlichen Kanten des Sperrholzes unter 45° abschrägen.  
 
 | St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
 |:----------:|:------:|:-----------|:-----------------|   
@@ -132,7 +135,7 @@ Die seitlichen Kanten des Sperrholzes unter 45° abschrägen.
 
 ## 1.3 Elektrische Komponenten
 ### 1.3.1 P20-Anschluss in Nord
-Als Anschluss für eine 20-polige Flachbandkabel-Buchse ("P20") wird das Board PCB_F_CON_20_3x_Screw10` verwendet.  
+Als Anschluss für eine 20-polige Flachbandkabel-Buchse ("P20") wird das Board `PCB_F_CON_20_3x_Screw10` verwendet.  
 
 ![rcc7_CON_20_3x_Screw10_V1_assembled](/images/300_rcc7_PCB_F_CON_20_3x_Screw10_V1_assembled.png "rcc7_CON_20_Screw10_V1_assembled")   
 
@@ -157,7 +160,7 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 
 Der Rahmen des Moduls 15 besteht aus vier Teilen:  
 * 2x Seitenteil [`Rahmen_SeiteEingleisig_260906`](/fab/3d/Rahmen_SeiteEingleisig_260906.FCStd)  
-* 1x Leerer Vorderteil [`Rahmen_Front_S__230mm_260408`](/fab/3d/Rahmen_Front_S__230mm_261008.FCStd)  
+* 1x Leerer Vorderteil [`Rahmen_Front_S__230mm_260411`](/fab/3d/Rahmen_Front_S__230mm_261011.FCStd)  
 * 1x Rückteil [`Rahmen_Back_N__2xP20_230mm_261008`](/fab/3d/Rahmen_Back_N__2xP20_230mm_261008.FCStd)  
 
 <a name="x22"></a>   
@@ -179,9 +182,11 @@ _Bild: Ma&szlig;e f&uuml;r die Seitenteile Ost und West (Modulbreite 250mm, ein 
 
 ## 2.3 Leerer Vorderteil `Rahmen_Front_S__230mm_260408`  
 
-![Rahmen_Front_S__230mm_261008](/images/3d/300_Rahmen_Front_S__230mm_261008.png "Rahmen_Front_S__230mm_261008")   
+![Rahmen_Front_S__230mm_261011](/images/3d/300_Rahmen_Front_S__230mm_261011.png "Rahmen_Front_S__230mm_261011")   
 
-Die beiden Sechskant-Ausnehmungen dienen zur Befestigung einer Plexiglasabdeckung.  
+Die beiden Sechskant-Ausnehmungen (Seitenlänge M 3 mm) dienen zur Befestigung einer Plexiglasabdeckung.  
+
+![Rahmen_Front_S__230mm_Dimension](/images/300_Rahmen_Front_S__230mm_dim.png "Rahmen_Front_S__230mm_Dimension")   
 
 <a name="x24"></a>   
 
@@ -204,13 +209,21 @@ Größe der Ausnehmung für die P20-Stecker:
 
 # 3. Gleisbau
 ## 3.1 Stellprobe
+* __*Bei Holzbau*__: Gleisbild auf die "Bahndammplatte" (230 x 50 mm² Sperrholzplatte) zeichnen.  
 * Falls auf dem Modul Gebäude etc. geplant sind: Alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufstellen.  
-* Die 230 x 50 mm große Sperrholzplatte oder den 3D-gedruckten Bahnkörper zwischen die Seitenteile einpassen.  
+* Die "Bahndammplatte" oder den 3D-gedruckten Bahnkörper zwischen die Seitenteile einpassen.  
 * Gleise auflegen.  
 * Mit dem l&auml;ngsten Waggon h&auml;ndisch eine Probefahrt durchf&uuml;hren.  
 
-## 3.2 Ausnehmungen in der Gelände-Grundplatte
-Ausnehmungen bzw. Bohrungen in der Grundplatte sind erforderlich für
+<a name="x32"></a>   
+
+## 3.2 Bahndamm
+__*Bei Holzbau*__: Die seitlichen Kanten des Sperrholzes unter 45° abschrägen.  
+
+<a name="x33"></a>   
+
+## 3.3 Ausnehmungen in der Gelände-Grundplatte
+Ausnehmungen bzw. Bohrungen in der Grundplatte (und im Holz-Bahndamm) sind erforderlich für
 * Fahrstrom-Anschlussdrähte  
 * Unterflurantriebe für Weichen etc.  
 * Reed-Kontakte, Refelxkoppler und sonstige Sensoren  
@@ -218,14 +231,54 @@ Ausnehmungen bzw. Bohrungen in der Grundplatte sind erforderlich für
 Modul 15 hat nur die Fahrstromanschlüsse, trotzdem kann man Ausnehmungen für Reed-Kontakte vorsehen:  
 ![Grundplatte Ausnehmungen](./images/300_m15_base_plate_holes.png "Grundplatte Ausnehmungen")   
 
+<a name="x34"></a>   
 
+## 3.4 Gleisbett (Bettungskörper)
+__*Bei Holzbau*__: 3 mm hohes Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) auf den Bahndamm aufkleben.  
+__*Bei 3D*__: Gleisbett auf den Bahndamm aufkleben.  
 
-# ..ToDo.. ..ToDo.. ..ToDo..
+<a name="x35"></a>   
+
+## 3.5 Vorbereitung der Verdrahtung
+Board `PCB_F_CON_20_3x_Screw10` an der Modulrückseite anschrauben (4 Stück M2,6 x 8 mm Schrauben)  
+
+<a name="x36"></a>   
+
+## 3.6 Gleisbau
+### Anbringen der Stromversorgung am Gleis
+
+Zur Stromversorgung kann man das Fleischmann-Anschlusskabel 22217 (2-polig, Spur N) verwenden oder selbst Drähte an die Gleisverbinder löten. Das funktioniert bei Fleischmann-Gleisen mit Schotterbett gut. Gleisverbinder ohne Schotterbett lassen sich dagegen kaum löten.  
+
+Als Anschlussdrähte verwendet man ca. 30 cm lange, braune und rote Volldrähte mit 0,32 mm² (22 AWG). **Braun** ist für die nördliche, **Rot** für die südliche Schiene vorgesehen.  
+
+Die Drähte werden an beiden Enden ca. 6 mm abisoliert. Für den Anschluss an den Gleisverbinder biegt man ein Ende hakenförmig, drückt es mit einer kleinen Zange etwas flach und verzinnt es.  
+
+Zum Löten fixiert man das Gleis am besten mit einem Klebestreifen. Anschließend schneidet man mit einem Stanley-Messer die kleine Kunststoffverbindung über dem Gleisverbinder heraus, damit dieser besser zugänglich ist. Danach verzinnt man den Gleisverbinder.  
+
+Im Bild unten ist rechts unten die Kunststoffverbindung über dem Gleisverbinder zu sehen. Rechts oben wurde sie bereits entfernt.  
+
+![Loeten_Gleisanschluss1](/images/300_loeten_gleisanschluss1.png "Loeten_Gleisanschluss1")
+
+### Gleise aufkleben
+* Alle Kabel in die Bohrungen einf&auml;deln und nach unten ziehen, bis die Gleise etwa 5 bis 10 cm Abstand zur zuk&uuml;nftigen Position haben. Die Grundplatte etwas schr&auml;g stellen, damit die Kabel nicht geknickt werden.   
+* Alle Bereiche markieren, auf die kein Leim aufgetragen werden darf (oder mit Klebeband abdecken):   
+  * Ausgleichsgleis am linken Rand (West)   
+* __*Bei Holzbau*__: Gleisbett mit Weißleim versehen, **nicht** jedoch beim Ausgleichsgleis (!)  
+   __*Bei 3D*__: Doppelklebeband anbringen, **nicht** jedoch beim Ausgleichsgleis (!)  
+* Gleise fertig zusammenstecken und vorsichtig an den Kabeln ziehen, bis die Gleise auf dem Leim liegen. 
+
+### Ergänzungen
+* Das Ausgleichsgleis wird beim Zusammenstecken von Modulen mechanisch in Längsrichtung beansprucht. Es sollte daher mit einem Gleisnagel zusätzlich fixiert werden. Der Gleisnagel wird auf der vom Modulrand abgewandten Seite eingeschlagen.  
 
 <a name="x40"></a>   
 <a name="x41"></a>   
 
-# 4. Elektrik
+# 4. Elektrische Verdrahtung des Moduls   
+## 4.1 Verdrahtungsplan
+Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwendeten Komponenten:   
+![&Uuml;bersicht Verdrahtung M15](./images/600_m15_wiring_overview.png "&Uuml;bersicht Verdrahtung M15")   
+
+## 4.2 Test
 
 
 
