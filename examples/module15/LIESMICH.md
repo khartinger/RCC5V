@@ -136,7 +136,25 @@ Der Bahnkörper kann entweder traditionell aus Holz, Kork und Schaumstoff oder i
 ![M15 Bahndamm](./images/300_m15_embankment_1.png "M15 Bahndamm")  
 
 ### 2.2.5 Kleinteile
-8x Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend []()  (zB Fa. Spax 4 003530 021251)   
+
+| St&uuml;ck | Bezeichnung | Anmerkung |  
+|:-----:|:--------------|:----------|  
+|  8  |  Schraube M3 x 30 mm Senkkopf, Kreuzschlitz, selbstschneidend  |  zB Fa. Spax 4 003530 021251  |  
+|  4  | Abstandsbolzen M3 x 10 + 6 mm, Messing  |  |  
+|  4  | Beilagscheiben M3, Da 9 mm, Edelstahl |  |  
+|  4  | Mutter M3 |  |  
+
+### 2.2.6 Staubabdeckung
+Falls eine Staubabdeckung gewünscht ist:  
+
+| St&uuml;ck | Bezeichnung | Anmerkung |  
+|:-----:|:--------------|:----------|  
+|  4  | Rändelschraube M3 x 10 |  |  
+|  1  | 5 mm Plexiglas 250 x 230 mm² | Vorne |  
+|  1  | 5 mm Plexiglas 250 x 265 mm² | "Deckel" |  
+|  1  | 10 mm Pappelsperrholz 250 x 230 mm² | Rückwand |  
+
+Siehe dazu auch [https://github.com/khartinger/RCC5V/blob/main/info/dust_cover/LIESMICH.md](https://github.com/khartinger/RCC5V/blob/main/info/dust_cover/LIESMICH.md)  
 
 <a name="x23"></a>   
 
@@ -195,13 +213,17 @@ Die beiden Sechskant-Ausnehmungen (Seitenlänge M 3 mm) dienen zur Befestigung e
 
 ![Rahmen_Front_S__230mm_Dimension](/images/300_Rahmen_Front_S__230mm_dim.png "Rahmen_Front_S__230mm_Dimension")   
 
+![Rahmen_Front_S__230mm_Dimension](/images/300_Rahmen_Front_S__230mm_dim.png "Rahmen_Front_S__230mm_Dimension")   
+
+
+
 <a name="x34"></a>   
 
 ## 3.4 Nordteil `Rahmen_Back_N__2xP20_230mm_261008`
 
 ![Rahmen_Back_N__2xP20_230mm_261008](/images/3d/300_Rahmen_Back_N__2xP20_230mm_261008.png "Rahmen_Back_N__2xP20_230mm_261008")   
 
-Größe der Ausnehmung für die P20-Stecker:  
+Maße der Ausnehmung für die P20-Stecker:  
 ![P20 Ausnehmung](/images/300_P20_frame_hole.png "P20 Ausnehmung")   
 
 <a name="x35"></a>   
