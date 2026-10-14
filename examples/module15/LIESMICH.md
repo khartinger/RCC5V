@@ -161,7 +161,7 @@ Siehe dazu auch [https://github.com/khartinger/RCC5V/blob/main/info/dust_cover/L
 ### 2.3.1 P20-Anschluss in Nord
 Als Anschluss für eine 20-polige Flachbandkabel-Buchse ("P20") wird das Board `PCB_F_CON_20_3x_Screw10` verwendet.  
 
-![rcc7_CON_20_3x_Screw10_V1_assembled](/images/300_rcc7_PCB_F_CON_20_3x_Screw10_V1_assembled.png "rcc7_CON_20_Screw10_V1_assembled")   
+![rcc7_CON_20_3x_Screw10_V1_assembled](/images/300_rcc7_CON_20_3x_Screw10_V1_assembled.png "rcc7_CON_20_Screw10_V1_assembled")   
 
 Der Bau ist [hier](https://github.com/khartinger/RCC5V/blob/main/fab/rcc7_p20/LIESMICH.md#x22) beschrieben.  
 
