@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>Modul 15: P20-Sub-D-Einspeisung</h1><b><big>Mini-Modul mit Fahrstrom-Einspeisung über Flachbandkabel oder Sub-D-Stecker</big></b><br>  
-Stand: 11.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 14.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -9,10 +9,10 @@ Stand: 11.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a name="x01"></a>   
 
 # Worum geht es?
-**Modul 15** ist ein gerades, nur **25 cm × 25 cm** großes Modul ohne Elektronik und Schaltblöcke. Es ermöglicht die Einspeisung des Fahrstroms sowohl über den 25-poligen Sub-D-Stecker als auch über den 20-poligen Flachbandstecker **„P20“**.  
+**Modul 15** ist ein gerades, nur **25 cm × 25 cm** großes Modul ohne Elektronik und Schaltblöcke. Es ermöglicht die Einspeisung des Fahrstroms sowohl über 25-polige Sub-D-Stecker als auch über den 20-poligen Flachbandstecker **„P20“**.  
 
-![Modul M15](./images/300_M15_Gleis_montiert1.png "Modul M15")   
-_Bild: Rahmen mit Grundplatte und Gleisen._   
+![Modul M15](./images/300_m15_Gleis_montiert1.png "Modul M15")   
+_Bild: Rahmen mit Grundplatte und Gleis_   
 
 <a name="TableOfContents"></a>   
 ##  Inhalt
@@ -106,6 +106,13 @@ Folgende vier Teile 3D-drucken:
 * 1x Längsteil Süd: [`frame_front_S__230mm_261013.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/frame_front_S__230mm_261013.FCStd)  
 * Gelände-Grundplatte: **Pappelsperrholz 10 mm**, 230 x 230 mm²
 
+#### 3D-Rahmen: Verbrauchsmaterial
+Zum Kleben der 3D-Teile:  
+
+| St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
+|:----------:|:------:|:-----------|:-----------------|   
+|      1     |        | Kraftprotz [(Amazon)](https://www.amazon.de/Sekundenkleber-3D-Druck-Gel-50/dp/B0CBSGWZRW?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=CYU745CNDNK&dib=eyJ2IjoiMSJ9.W5s5lhw4Zno1-SxDPW0cox7leaRGQ24ez8VxqJJ6MZ-bzI60hfXqha_ID6GSBfoYudWCvT7sI-iGo-KdEVf6ibbYWDtbqQ_KZhN_i0mzlvm4qbMmrJCQnv71omcqdKCVSpgbDyKKc9BIsqhrUIgOHUiGqJMONDmBxdaF_n8_VuM_-fIPwCiSXEsLu87UXrlW2We9bZbFalroOILby_mW--ApWpsVBaKH-P6YX1JGCPPlvFb-Bozk6iTX494l5ENx1G3MZGHwLcmovKPIodpkeWrZ0xVy9W_1lwDsV9nkXjo._WLstUNmlWC3w4Ng5KXDrLQ3m3r0ruJrsW306wKEC9s&dib_tag=se&keywords=3d%2Bdruck%2Bkraftprotz&qid=1791989113&sprefix=3d%2Bdruck%2Bkraftprot%2Caps%2C207&sr=8-1&th=1) | 3D Druck Sekundenkleber, Gel |   
+
 ### 2.2.4 Bahnkörper
 Der Bahnkörper für N-Spur hat folgenden Aufbau:
 
@@ -159,18 +166,24 @@ Siehe dazu auch [https://github.com/khartinger/RCC5V/blob/main/info/dust_cover/L
 
 ## 2.3 Elektrische Komponenten
 ### 2.3.1 P20-Anschluss in Nord
-Als Anschluss für eine 20-polige Flachbandkabel-Buchse ("P20") wird das Board `PCB_F_CON_20_3x_Screw10` verwendet.  
+Als Anschluss für eine 20-polige Flachbandkabel-Buchse ("P20") wird das Board `CON_20_3x_Screw10` verwendet.  
 
 ![rcc7_CON_20_3x_Screw10_V1_assembled](/images/300_rcc7_CON_20_3x_Screw10_V1_assembled.png "rcc7_CON_20_Screw10_V1_assembled")   
 
 Der Bau ist [hier](https://github.com/khartinger/RCC5V/blob/main/fab/rcc7_p20/LIESMICH.md#x22) beschrieben.  
 
 ### 2.3.2 P20-Sub-D-Umsetzer
-Zum Umsetzen von P20 auf Sub-D-Stecker wird das Board `PCB_F_CON_20_2x_2xSubD` verwendet.  
+Zum Umsetzen von P20 auf Sub-D-Stecker wird das Board `CON_20_2x_2xSubD` verwendet.  
 
 ![rcc7_CON_20_2x_2xSubD_V1_assembled](/images/300_rcc7_CON_20_2x_2xSubD_V1_assembled.png "rcc7_CON_20_2x_2xSubD_V1_assembled")   
 
 Der Bau ist [hier](https://github.com/khartinger/RCC5V/blob/main/fab/rcc7_p20/LIESMICH.md#x12) beschrieben.  
+
+### 2.3.3 Flachbandkabel
+Zum Verbinden der beiden Stecker wird ein 20-poliges Flachbandkabel verwendet.  
+
+# ..ToDo..
+
 
 <a name="x30"></a>   
 <a name="x31"></a>   
@@ -183,14 +196,14 @@ Jedes Modul besteht aus einem Rahmen mit Querverbindungen und der Grundplatte, d
 2. Beim Aufkleben der Gleise auf die Grundplatte sind an den Modul&uuml;berg&auml;ngen (Ost und West) bereits die Seitenteile mit den Gleisausnehmungen vorhanden. So sind die Gleise beim Aufkleben sicher an der richtigen Position.   
 
 Der Rahmen des Moduls 15 besteht aus vier Teilen:  
-* 2x Seitenteil [`Rahmen_SeiteEingleisig_260906`](/fab/3d/Rahmen_SeiteEingleisig_260906.FCStd)  
-* 1x Leerer Vorderteil [`Rahmen_Front_S__230mm_260411`](/fab/3d/Rahmen_Front_S__230mm_261011.FCStd)  
-* 1x Rückteil [`Rahmen_Back_N__2xP20_230mm_261008`](/fab/3d/Rahmen_Back_N__2xP20_230mm_261008.FCStd)  
+* 2x Seitenteile: [`frame_side_single-track_261013.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/frame_side_single-track_261013.FCStd)  
+* 1x Längsteil Nord: [`frame_back_N_2xP20_230mm_261013.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/frame_back_N_2xP20_230mm_261013.FCStd)  
+* 1x Längsteil Süd: [`frame_front_S__230mm_261013.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/frame_front_S__230mm_261013.FCStd)  
 
 <a name="x32"></a>   
 
-## 3.2 Seitenteile `Rahmen_SeiteEingleisig_260906`  
-Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil aber der NEM122 entspricht:   
+## 3.2 Seitenteile `frame_side_single-track`  
+Die Seitenteile sind an eine (ehemalige?) Norm von n-spur.at angelehnt, wobei das Bahnk&ouml;rper-Profil der NEM122 entspricht:   
 
 ![Modul Seitenteil eingleisig](/images/3d/300_Rahmen_SeiteEingleisig_260906.png "Modul Seitenteil eingleisig")  
 
@@ -204,7 +217,7 @@ _Bild: Ma&szlig;e f&uuml;r die Seitenteile Ost und West (Modulbreite 250mm, ein 
 
 <a name="x33"></a>   
 
-## 3.3 Leerer Vorderteil `Rahmen_Front_S__230mm_260408`  
+## 3.3 Leerer Vorderteil `frame_front_S__230mm`  
 
 ![Rahmen_Front_S__230mm_261011](/images/3d/300_Rahmen_Front_S__230mm_261011.png "Rahmen_Front_S__230mm_261011")   
 
@@ -212,25 +225,45 @@ Die beiden Sechskant-Ausnehmungen (Seitenlänge M 3 mm) dienen zur Befestigung e
 
 ![Rahmen_Front_S__230mm_Dimension](/images/300_Rahmen_Front_S__230mm_dim.png "Rahmen_Front_S__230mm_Dimension")   
 
-![Rahmen_Front_S__230mm_Dimension](/images/300_Rahmen_Front_S__230mm_dim.png "Rahmen_Front_S__230mm_Dimension")   
+<a name="spacerbolt"></a>   
 
+### Einsschlagen der Abstandsbolzen
+1. Abstandsbolzen M3 x 10 + 6 mm erwärmen  
+2. Abstandsbolzen von der Rahmenaußenseite her einschlagen  
+   **Wichtig:** zwei Holzstücke unterlegen, damit Gewinde auslaufen kann  
+
+Auf der Innenseite:  
+
+3. Beilagscheibe M3, Da 9 mm über Gewinde stülpen  
+4. Mutter M3 aufschrauben, mit 5,5 mm Schlüssel anziehen  
+
+![m15 Abstandsbolzen](/images/300_add_spacer_bolt1.png "m15 Abstandsbolzen")   
 
 
 <a name="x34"></a>   
 
-## 3.4 Nordteil `Rahmen_Back_N__2xP20_230mm_261008`
+## 3.4 Nordteil `frame_back_N_2xP20_230mm`
 
 ![Rahmen_Back_N__2xP20_230mm_261008](/images/3d/300_Rahmen_Back_N__2xP20_230mm_261008.png "Rahmen_Back_N__2xP20_230mm_261008")   
 
 Maße der Ausnehmung für die P20-Stecker:  
 ![P20 Ausnehmung](/images/300_P20_frame_hole.png "P20 Ausnehmung")   
 
+### Montage des `CON_20_3x_Screw10`-Boards
+Das `CON_20_3x_Screw10`-Board wird mit 4 Stück M 2,6 x 10 mm Schrauben auf das Rahmenteil geschraubt.  
+![CON_20_3x_Screw10 auf Rahmen](./images/300_m15_2xP20_on_frame.png "CON_20_3x_Screw10 auf Rahmen")   
+
+### Einsschlagen der Abstandsbolzen
+Wie [oben](#spacerbolt) beschreiben.  
+
 <a name="x35"></a>   
 
 ## 3.5 Zusammenbau des Rahmens
-1. Anordnen der Rahmenteile im Quadrat.  
+1. Anordnen der Rahmenteile auf einer ebenen Fläche im Quadrat.  
 2. Gelände-Grundplatte auf die Rahmenteile legen.  
 3. Zusammenschrauben des Rahmens mit 8 Schrauben M3 x 30 mm (Senkkopf, Kreuzschlitz, selbstschneidend).  
+
+![Rahmen mit Grundplatte](./images/300_m15_frame_with_base_plate.png "Rahmen mit Grundplatte")   
 
 <a name="x40"></a>   
 <a name="x41"></a>   
@@ -239,7 +272,7 @@ Maße der Ausnehmung für die P20-Stecker:
 ## 4.1 Stellprobe
 > * __*Bei Holzbau*__: Gleisbild auf die "Bahndammplatte" (230 x 50 mm² Sperrholzplatte) zeichnen.  
 * Falls auf dem Modul Gebäude etc. geplant sind: Alle bahnspezifischen Bauwerke (wie Bahnhof, Bahnsteige, Verladerampe) aufstellen.  
-* Die "Bahndammplatte" oder den 3D-gedruckten Bahnkörper zwischen die Seitenteile einpassen.  
+* Die "Bahndammplatte" oder den 3D-gedruckten Bahnkörper (Bahndamm und Schotterbett) zwischen die Seitenteile einpassen.  
 * Gleise auflegen.  
 * Mit dem l&auml;ngsten Waggon h&auml;ndisch eine Probefahrt durchf&uuml;hren.  
 
@@ -258,22 +291,20 @@ Ausnehmungen bzw. Bohrungen in der Grundplatte (und im Holz-Bahndamm) sind erfor
 
 Modul 15 hat nur die Fahrstromanschlüsse, trotzdem kann man Ausnehmungen für Reed-Kontakte vorsehen:  
 ![Grundplatte Ausnehmungen](./images/300_m15_base_plate_holes.png "Grundplatte Ausnehmungen")   
+Mit den Abnehmungen sind auch die Bohrungen für die Stromanschlüsse abgedeckt.  
 
 <a name="x44"></a>   
 
 ## 4.4 Gleisbett (Bettungskörper)
 > __*Bei Holzbau*__: 3 mm hohes Schaumstoff-Gleisbett (Fa. Noch Nr. 95962 oder Kork) auf den Bahndamm aufkleben.  
 
-__*Bei 3D*__: Gleisbett auf den Bahndamm aufkleben.  
+__*Bei 3D*__:  
+1. Den ausgedruckten Bahndamm auf das Schotterbett kleben = Gleisbett.  
+2. Das Gleisbett auf die Grundplatte kleben.  
 
 <a name="x45"></a>   
 
-## 4.5 Vorbereitung der Verdrahtung
-Board `PCB_F_CON_20_3x_Screw10` an der Modulrückseite anschrauben (4 Stück M2,6 x 8 mm Schrauben)  
-
-<a name="x46"></a>   
-
-## 4.6 Gleisbau
+## 4.5 Gleisbau
 ### Anbringen der Stromversorgung am Gleis
 
 Zur Stromversorgung kann man das Fleischmann-Anschlusskabel 22217 (2-polig, Spur N) verwenden oder selbst Drähte an die Gleisverbinder löten. Das funktioniert bei Fleischmann-Gleisen mit Schotterbett gut. Gleisverbinder ohne Schotterbett lassen sich dagegen kaum löten.  
@@ -311,6 +342,10 @@ Das folgende Bild zeigt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwen
 <a name="x52"></a>   
 
 ## 5.2 Verdrahtung des Fahrstroms
+
+<a name="x53"></a>   
+
+## 5.3 Verdrahtung des Fahrstroms
 
 
 <a name="x60"></a>   
