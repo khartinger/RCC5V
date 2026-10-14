@@ -2,7 +2,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>20-polige Verbindungskabel</h1><b><big>RCC7: Flachbandkabel statt Sub-D-Kabel</big></b><br>  
-Stand: 25.8.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 14.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -127,7 +127,7 @@ Für den Übergang vom 20-poligen Wannenstecker auf Schraubklemmen gibt es drei 
 
 ## 2.2 Drei Wannenstecker mit allen Schraubklemmen auf einer Seite (`PCB_F_CON_20_3x_Screw10`)
 
-![rcc7_CON_20_3x_Screw10_V1_assembled](/images/300_rcc7_PCB_F_CON_20_3x_Screw10_V1_assembled.png "rcc7_CON_20_Screw10_V1_assembled")   
+![rcc7_CON_20_3x_Screw10_V1_assembled](/images/300_rcc7_CON_20_3x_Screw10_V1_assembled.png "rcc7_CON_20_Screw10_V1_assembled")   
 
 
 ### Schaltplan
@@ -137,9 +137,13 @@ Für den Übergang vom 20-poligen Wannenstecker auf Schraubklemmen gibt es drei 
 ![rcc7_CON_20_3x_Screw10_V1_pcb](/images/pcb_f/PCB_F_CON_20_3x_Screw10_V1_jlc.png "rcc7_CON_20_3x_Screw10_V1_pcb")   
 
 Wird das Board auf der **Nordseite** eines Moduls verwendet, so wird es folgendermaßen bestückt:   
-1. Wannenstecker J1 und J7 auf die **Lötseite**  
-2. Wannenstecker J8 auf die **Bauteilseite**  
-3. Schraubklemmen J2 bis J6 auf die **Bauteilseite**  
+1. Wannenstecker J1 und J7 auf die **Lötseite** (auf Polung achten: Pin 1 und 2)  
+
+Auf die **Bauteilseite** löten:  
+
+2. Wannenstecker J8  
+3. Schraubklemmen J2 und J6 (schwarz)  
+4. Schraubklemmen J3 bis J5 (grün-rot-grün) zusammenstecken, löten  
 
 ### Versionen
 * V1 (261006): OK  

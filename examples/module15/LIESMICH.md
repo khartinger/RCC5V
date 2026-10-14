@@ -49,7 +49,7 @@ _Bild: Rahmen mit Grundplatte und Gleisen._
 ### 2.1.1 Entwurf des Gleisplans
 
 Auf der Westseite (links) befindet sich ein ausziehbares Gleis, das das Verbinden mit anderen Modulen erleichtert.  
-Zum leichteren Verbinden von Modulen ist auf der Westseite des Moduls ein ausziehbares Gleis (Ausgleichsgleis) angeordnet. Damit die 25 cm Modullänge erreicht werden, wird ein gerades Gleis (z. B. 9103) auf **45,5 mm** (9 Schwellen) gekürzt.  
+Damit die 25 cm Modullänge erreicht werden, wird ein gerades Gleis (z. B. 9103) auf **45,5 mm** (9 Schwellen) gekürzt.  
 Der folgende Gleisplan wurde mit [AnyRail](https://www.anyrail.com/) erstellt.  
 
 ![M15 Gleisplan](./images/300_m15_gleisplan.png "M15 Gleisplan")  
@@ -58,7 +58,6 @@ _Bild: Gleisplan Modul 15_
 Die braunen und roten Kreise markieren die Fahrstromeinspeisungen.  
 
 ### 2.1.2 Schienenkauf - St&uuml;ckliste
-Zum Bau des Moduls werden folgende Gleise und Zubeh&ouml;r ben&ouml;tigt:   
 | Anzahl | Nummer | Name | Euro/Stk | Euro |   
 | :---: | :---: | :--- |  ---: |  ---: |   
 | 1 | 9110 | Ausgleichsgleis gerade 83mm-111mm | 14,60 | 14,60 |   
@@ -102,9 +101,9 @@ Die Teile des Rahmens k&ouml;nnen entweder aus Holz hergestellt oder mit dem 3D-
 
 ### 2.2.3 3D-Rahmen
 Folgende vier Teile 3D-drucken:  
-* 2x Seitenteile: [`Rahmen_SeiteEingleisig_260906.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_SeiteEingleisig_260906.FCStd)  
-* 1x Längsteil Nord: [`Rahmen_Back_N__2xP20_230mm_261008.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_Back_N__2xP20_230mm_261008.FCStd)  
-* 1x Längsteil Süd: [`Rahmen_Back_S__230mm_261008.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/Rahmen_Back_S__230mm_261008.FCStd)  
+* 2x Seitenteile: [`frame_side_single-track_261013.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/frame_side_single-track_261013.FCStd)  
+* 1x Längsteil Nord: [`frame_back_N_2xP20_230mm_261013.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/frame_back_N_2xP20_230mm_261013.FCStd)  
+* 1x Längsteil Süd: [`frame_front_S__230mm_261013.FCStd`](https://github.com/khartinger/RCC5V/blob/main/fab/3d/frame_front_S__230mm_261013.FCStd)  
 * Gelände-Grundplatte: **Pappelsperrholz 10 mm**, 230 x 230 mm²
 
 ### 2.2.4 Bahnkörper
