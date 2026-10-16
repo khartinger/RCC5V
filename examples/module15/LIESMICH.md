@@ -342,18 +342,51 @@ Das folgende Bild zeigt eine &Uuml;bersicht &uuml;ber die Verdrahtung der verwen
 <a name="x52"></a>   
 
 ## 5.2 Verdrahtung des Fahrstroms
+Die Drähte vom Gleis werden auf eine Lüsterklemme verschraubt und von dort führen zwei Drähte zu den Anschlüssen NNG und SSG auf dem `CON_20_3x-Screw10`-Board.  
 
 <a name="x53"></a>   
 
-## 5.3 Verdrahtung des Fahrstroms
+## 5.3 Verdrahtung P20 - Sub-D
+Die Verbindung des P20-Anschlusses mit dem P20-Sub-D-Umsetzer erfolgt durch ein ca. 15 cm langes 20-poliges Flachbandkabel.  
 
+![Verdrahtung](./images/300_m15_wiring.png)  
+
+## 5.4 Elektrischer Test
+Zur Durchführung des elektrische Tests wird die Pin-Belegung der Stecker benötigt:  
+
+**Pinbelegung Sub-D-Stecker**  
+![wiring_25pol_plug-socket](/images/300_wiring_25pol_plug-socket.png "wiring_25pol_plug-socket")   
+
+**Pinbelegung P20-Stecker**  
+![P20_pins](/images/300_P20_Pins.png)  
+
+**Testvorbereitung**  
+1. Kabel mit 25-poligen Sub-D-Buchsen am **WEST**-Stecker des Moduls anstecken  
+2. 20-poliges Flachbandkabel am P20-Stecker anstecken  
+3. Drähte an die Klemmen des Ohmmeters anklemmen  
+
+Folgende Verbindungen sollten bestehen:  
+| Name | P20-Stecker  | Sub-D-Kabel<br>Buchse West |  
+|:----:|:-----:|------|  
+| NNG  |  1,2  |  13  |  
+| SNG  |  3,4  |  11  |  
+| WA   |  5,6  |  10  |  
+| WB   |  7,8  |   9  |  
+| AC-  |  9,10 |  8,6 |  
+| AC+  | 11,12 |   7  |  
+| OB   | 13,14 |   5  |  
+| OA   | 15,16 |   4  |  
+| NSG  | 17,18 |   3  |  
+| SSG  | 19,20 |   1  |  
+
+Weiters sollte NNG mit der nördlichen Schiene und SSG mit der südlichen Schiene verbunden sein.  
 
 <a name="x60"></a>   
 <a name="x61"></a>   
 
 # 6. Probebetrieb
 ## 6.1 Fahrstromversorgung über Sub-D-Stecker
-
+Anschluss der Standard-Versorgung am Sub-D-West-Anschluss. 
 
 <a name="x62"></a>   
 
