@@ -9,7 +9,7 @@ Stand: 14.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a name="x01"></a>   
 
 # Worum geht es?
-**Modul 15** ist ein gerades, nur **25 cm × 25 cm** großes Modul ohne Elektronik und Schaltblöcke. Es ermöglicht die Einspeisung des Fahrstroms sowohl über 25-polige Sub-D-Stecker als auch über den 20-poligen Flachbandstecker **„P20“**.  
+**Modul 15** ist ein gerades, nur **25 cm × 25 cm** großes Modul ohne Elektronik und Schaltblöcke. Es ermöglicht die Einspeisung des Fahrstroms sowohl über 25-polige Sub-D-Stecker als auch über den 20-poligen Flachbandstecker **„P20“** (auf der Rückseite des Moduls).  
 
 ![Modul M15](./images/300_m15_Gleis_montiert1.png "Modul M15")   
 _Bild: Rahmen mit Grundplatte und Gleis_   
@@ -48,8 +48,9 @@ _Bild: Rahmen mit Grundplatte und Gleis_
 ## 2.1 Schienenkauf
 ### 2.1.1 Entwurf des Gleisplans
 
-Auf der Westseite (links) befindet sich ein ausziehbares Gleis, das das Verbinden mit anderen Modulen erleichtert.  
-Damit die 25 cm Modullänge erreicht werden, wird ein gerades Gleis (z. B. 9103) auf **45,5 mm** (9 Schwellen) gekürzt.  
+Auf der Westseite (links) befindet sich ein Ausziehgleis, das das Verbinden mit anderen Modulen erleichtert.  
+Um die Modullänge von 25 cm zu erreichen, wird ein gerades Gleis (z. B. 9103) auf **45,5 mm (9 Schwellen)** gekürzt.  
+
 Der folgende Gleisplan wurde mit [AnyRail](https://www.anyrail.com/) erstellt.  
 
 ![M15 Gleisplan](./images/300_m15_gleisplan.png "M15 Gleisplan")  
@@ -179,11 +180,17 @@ Zum Umsetzen von P20 auf Sub-D-Stecker wird das Board `CON_20_2x_2xSubD` verwend
 
 Der Bau ist [hier](https://github.com/khartinger/RCC5V/blob/main/fab/rcc7_p20/LIESMICH.md#x12) beschrieben.  
 
-### 2.3.3 Flachbandkabel
-Zum Verbinden der beiden Stecker wird ein 20-poliges Flachbandkabel verwendet.  
+### 2.3.3 Elektrisches Kleinmaterial
+| St&uuml;ck | Bezeichnung | Anmerkung |  
+|:-----:|:--------------|:----------|  
+| 15 cm | 20-poliges Flachbandkabel, Rastermaß 1,27 mm | [1] |  
+|  2  | 20-polige IDC-Pfostenverbinder und Zugentlastung | [1] |  
+| ca. 50 cm | Volldraht 18 awg (oder 22 awg) braun (oder grün) | |  
+| ca. 50 cm | Volldraht 18 awg (oder 22 awg) rot | |  
+| 1 | Lüsterklemme 2-polig |  |  
+| 1 | Lötzinn 0,5 mm |  |  
 
-# ..ToDo..
-
+[1] Zum Verbinden der Stecker `P20-Anschluss` in Nord und `P20-Sub-D-Umsetzer`.  
 
 <a name="x30"></a>   
 <a name="x31"></a>   
@@ -228,16 +235,15 @@ Die beiden Sechskant-Ausnehmungen (Seitenlänge M 3 mm) dienen zur Befestigung e
 <a name="spacerbolt"></a>   
 
 ### Einsschlagen der Abstandsbolzen
-1. Abstandsbolzen M3 x 10 + 6 mm erwärmen  
-2. Abstandsbolzen von der Rahmenaußenseite her einschlagen  
-   **Wichtig:** zwei Holzstücke unterlegen, damit Gewinde auslaufen kann  
+1. Abstandsbolzen M3 x 10 + 6 mm erwärmen (zB mit einem Fön).  
+2. Abstandsbolzen von der Rahmenaußenseite her einschlagen.  
+   **Wichtig:** zwei Holzstücke unterlegen, damit das Gewinde auslaufen kann.  
+![m15 Abstandsbolzen](/images/300_add_spacer_bolt1.png "m15 Abstandsbolzen")   
 
 Auf der Innenseite:  
 
-3. Beilagscheibe M3, Da 9 mm über Gewinde stülpen  
-4. Mutter M3 aufschrauben, mit 5,5 mm Schlüssel anziehen  
-
-![m15 Abstandsbolzen](/images/300_add_spacer_bolt1.png "m15 Abstandsbolzen")   
+3. Beilagscheibe M3, Da 9 mm über Gewinde stülpen.  
+4. Mutter M3 aufschrauben, mit 5,5 mm Schlüssel anziehen.  
 
 
 <a name="x34"></a>   
@@ -309,7 +315,7 @@ __*Bei 3D*__:
 
 Zur Stromversorgung kann man das Fleischmann-Anschlusskabel 22217 (2-polig, Spur N) verwenden oder selbst Drähte an die Gleisverbinder löten. Das funktioniert bei Fleischmann-Gleisen mit Schotterbett gut. Gleisverbinder ohne Schotterbett lassen sich dagegen kaum löten.  
 
-Als Anschlussdrähte verwendet man ca. 30 cm lange, braune und rote Volldrähte mit 0,32 mm² (22 AWG). **Braun** ist für die nördliche, **Rot** für die südliche Schiene vorgesehen.  
+Als Anschlussdrähte verwendet man ca. 20 cm lange, braune und rote Volldrähte mit 0,32 mm² (22 AWG). **Braun** ist für die nördliche, **Rot** für die südliche Schiene vorgesehen.  
 
 Die Drähte werden an beiden Enden ca. 6 mm abisoliert. Für den Anschluss an den Gleisverbinder biegt man ein Ende hakenförmig, drückt es mit einer kleinen Zange etwas flach und verzinnt es.  
 
@@ -347,7 +353,8 @@ Die Drähte vom Gleis werden auf eine Lüsterklemme verschraubt und von dort fü
 <a name="x53"></a>   
 
 ## 5.3 Verdrahtung P20 - Sub-D
-Die Verbindung des P20-Anschlusses mit dem P20-Sub-D-Umsetzer erfolgt durch ein ca. 15 cm langes 20-poliges Flachbandkabel.  
+1. Festschrauben des `P20-Sub-D-Umsetzer`-Boards auf der Unterseite der Grundplatte mit M 2,6 x 12 mm Schrauben und Gummi-Abstandshaltern.  
+2. Verbinden des P20-Anschlusses mit dem P20-Sub-D-Umsetzer durch ein ca. 15 cm langes, 20-poliges Flachbandkabel.  
 
 ![Verdrahtung](./images/300_m15_wiring.png)  
 
@@ -361,23 +368,23 @@ Zur Durchführung des elektrische Tests wird die Pin-Belegung der Stecker benöt
 ![P20_pins](/images/300_P20_Pins.png)  
 
 **Testvorbereitung**  
-1. Kabel mit 25-poligen Sub-D-Buchsen am **WEST**-Stecker des Moduls anstecken  
-2. 20-poliges Flachbandkabel am P20-Stecker anstecken  
-3. Drähte an die Klemmen des Ohmmeters anklemmen  
+1. Kabel mit 25-poligen Sub-D-Buchsen am **WEST**-Stecker des Moduls anstecken.  
+2. 20-poliges Flachbandkabel am P20-Stecker anstecken.  
+3. Drähte an die Klemmen des Ohmmeters anklemmen.  
 
 Folgende Verbindungen sollten bestehen:  
-| Name | P20-Stecker  | Sub-D-Kabel<br>Buchse West |  
-|:----:|:-----:|------|  
-| NNG  |  1,2  |  13  |  
-| SNG  |  3,4  |  11  |  
-| WA   |  5,6  |  10  |  
-| WB   |  7,8  |   9  |  
-| AC-  |  9,10 |  8,6 |  
-| AC+  | 11,12 |   7  |  
-| OB   | 13,14 |   5  |  
-| OA   | 15,16 |   4  |  
-| NSG  | 17,18 |   3  |  
-| SSG  | 19,20 |   1  |  
+| Bezeichnung | P20-Stecker  | Sub-D-Kabel<br>Buchse West | Bedeutung |  
+|:----:|:----:|:-----:|------|  
+| NNG  |  1,2  |  13  | Nördliche Schiene des nördlichen Gleises (DCC Fahrstrom) |  
+| SNG  |  3,4  |  11  | Südliche Schiene des nördlichen Gleises (DCC Fahrstrom) |  
+| WA   |  5,6  |  10  | Steuerleitung West A (DCC Signal für Zubehör) |  
+| WB   |  7,8  |   9  | Steuerleitung West B (DCC Signal für Zubehör) |  
+| AC-  |  9,10 |  8,6 | Trafo Wechselspannung 18V~ oder Gleichspannung 24V- |  
+| AC+  | 11,12 |   7  | Trafo Wechselspannung 18V~ oder Gleichspannung 24V+ |  
+| OB   | 13,14 |   5  | Steuerleitung Ost B (nicht benutzt) |  
+| OA   | 15,16 |   4  | Steuerleitung Ost A (nicht benutzt) |  
+| NSG  | 17,18 |   3  | Nördliche Schiene des südlichen Gleises (DCC Fahrstrom) |  
+| SSG  | 19,20 |   1  | Südliche Schiene des südlichen Gleises (DCC Fahrstrom) |  
 
 Weiters sollte NNG mit der nördlichen Schiene und SSG mit der südlichen Schiene verbunden sein.  
 
@@ -386,12 +393,24 @@ Weiters sollte NNG mit der nördlichen Schiene und SSG mit der südlichen Schien
 
 # 6. Probebetrieb
 ## 6.1 Fahrstromversorgung über Sub-D-Stecker
-Anschluss der Standard-Versorgung am Sub-D-West-Anschluss. 
+### Teil 1: Funktionstest Modul 15
+1. Anstecken der (Standard-)Versorgung am Sub-D-West-Anschluss.  
+2. Einschalten der DCC-Versorgung.  
+3. Kurze Probefahrt mit einer Lok.  
+
+### Teil 2: Kompatibilitätstest
+Dieser Test dient zur Kontrolle, ob der Modul zu bereits bestehenden Modulen dazupasst.  
+
+1. Verbinden von Modul 15 mit einem bereits vorhandenen Modul mit Gleisen und Weichen mit Sub-D-Kabel.  
+2. Fahrtest mit einer Lok.  
+3. Schalten einer Weiche über DCC.  
 
 <a name="x62"></a>   
 
 ## 6.2 Fahrstromversorgung über Flachbandkabel
-
+1. Umsetzen der (Standard-)Versorgung auf ein 20-poliges Flachbandkabel mit einem `CON_20_SubD_W`-Board oder einem zweiten `P20-Sub-D-Umsetzer`.  
+2. Verbinden des Umsetzers mit dem P20-Eingang von Modul 15.  
+3. Durchführung der Tests wie oben beschrieben.  
 
 <a name="x70"></a>   
 <a name="x71"></a>   
@@ -399,11 +418,15 @@ Anschluss der Standard-Versorgung am Sub-D-West-Anschluss.
 # 7. Abschließende Arbeiten
 
 ## 7.1 Minimale Landschaftsgestaltung
+Die einfachste "Landschaftsgestaltung" besteht darin, den Rand der Gleise einzuschottern und das Gel&auml;nde mit gr&uuml;ner Farbe zu bemalen. Nimmt man verschiedene Gr&uuml;n- und Gelbt&ouml;ne, so ist das Ergebnis durchaus brauchbar.   
+![M15: Bemalte Grundplatte](./images/300_m15_painted.png "M15: Bemalte Grundplatte")   
+
+Im n&auml;chsten Schritt k&ouml;nnte man Grasflocken und B&auml;ume aufbringen oder Gebäude etc. hinzuf&uuml;gen. Das &Uuml;bermalen der gr&uuml;nen Farbe ist dabei kein Problem....   
 
 <a name="x72"></a>   
 
 ## 7.2 Plexiglas-Abdeckung
-
+Siehe dazu [https://github.com/khartinger/RCC5V/blob/main/info/dust_cover](https://github.com/khartinger/RCC5V/blob/main/info/dust_cover/LIESMICH.md).  
 
 <a name="x73"></a>   
 

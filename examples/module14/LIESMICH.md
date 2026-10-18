@@ -641,7 +641,7 @@ Die einfachste "Landschaftsgestaltung" besteht darin, den Rand der Gleise einzus
 ![Bemalte Grundplatte](./images/300_m14_painted.png "Bemalte Grundplatte")   
 _Bild 33: Bemalte Grundplatte_   
 
-Im n&auml;chsten Schritt k&ouml;nnte man Grasflocken und B&auml;ume aufbringen oder Geh&auml;use etc. hinzuf&uuml;gen. Das &Uuml;bermalen der gr&uuml;nen Farbe ist dabei kein Problem....   
+Im n&auml;chsten Schritt k&ouml;nnte man Grasflocken und B&auml;ume aufbringen oder Geb&auml;ude etc. hinzuf&uuml;gen. Das &Uuml;bermalen der gr&uuml;nen Farbe ist dabei kein Problem....   
 
 <a name="x74"></a>   
 
