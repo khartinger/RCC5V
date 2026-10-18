@@ -185,14 +185,42 @@ Der Schaltplan ist ähnlich wie bei `CON_20_Screw10`, lediglich bei J2 und J6 is
 
 ## 3.1 Einleitung
 
-Für den Wannenstecker mit Netzteil gibt es zwei Varianten:  
-
-(A) Wannenstecker mit Netzteil (`CON_20_2x6pol`)  
-(B) Zwei Wannenstecker mit Netzteil (`CON_20_2x_2x6pol`)  
+Für den Wannenstecker mit Netzteil gibt es mehrere Varianten, die sich durch die Anzahl an Wannensteckern (1 oder 2) und den Vorwiderstand (4,7 &Omega; oder PTC) unterscheiden. Die beste Version ist `CON_20_2x_2x6pol_R`, die zwei Wannenstecker hat und beide Vorwiderstandsvarianten ermöglicht.  
 
 <a name="x32"></a>   
 
-## 3.2 Wannenstecker mit Netzteil (`CON_20_2x6pol`)  
+## 3.2 Zwei Wannenstecker mit Netzteil (`CON_20_2x_2x6pol_R`)
+
+### Schaltplan
+![rcc7_CON_20_2x_2x6pol_R_V2_circuit](/images/600_rcc7_CON_20_2x_2x6pol_R_V2_circuit.png "rcc7_CON_20_2x_2x6pol_R_V2_circuit")   
+
+### Bestückung
+![rcc7_CON_20_2x_2x6pol_R_V2_pcb](/images/pcb_f/PCB_F_CON_20_2x_2x6pol_R_V2.png "rcc7_CON_20_2x_2x6pol_R_V2_pcb")   
+
+Auf die **Lötseite** löten  
+
+1. Wannenstecker J1 und J7 (20-polig, auf Polung achten: Pin 1 und 2)  
+
+Auf die **Bauteilseite** löten  
+
+2. Leistungswiderstand R1  
+3. Diode D1 (auf Polung achten)  
+4. 8-polige Stiftleisten J3, J5 und J6  
+5. 6-polige Wannenstecker J1, J2 (auf Polung achten)  
+6. Schraubklemmen J7 (grün)  
+7. Schraubklemmen J8, J9 (schwarz)  
+8. Elko C1  
+
+### Versionen
+* V1 (260820): Änderungen zu V2:  
+  * Schaltung: J3 entfernt, R1, J10 hinzugefügt.  
+  * Layout: 6-polige Stecker gedreht.  
+* V2 (261007): OK
+
+
+<a name="x33"></a>   
+
+## 3.3 Ein Wannenstecker mit Netzteil und 4,7 Ω Widerstand (`CON_20_2x6pol`)  
 
 ### Schaltplan
 ![rcc7_CON_20_2x6pol_V1_circuit](/images/600_rcc7_CON_20_2x6pol_V1_circuit.png "rcc7_CON_20_2x6pol_V1_circuit")   
