@@ -110,9 +110,9 @@ Folgende vier Teile 3D-drucken:
 #### 3D-Rahmen: Verbrauchsmaterial
 Zum Kleben der 3D-Teile:  
 
-| St&uuml;ck | Nummer | Lieferant  | Bezeichnung      |   
-|:----------:|:------:|:-----------|:-----------------|   
-|      1     |        | Kraftprotz [(Amazon)](https://www.amazon.de/Sekundenkleber-3D-Druck-Gel-50/dp/B0CBSGWZRW?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=CYU745CNDNK&dib=eyJ2IjoiMSJ9.W5s5lhw4Zno1-SxDPW0cox7leaRGQ24ez8VxqJJ6MZ-bzI60hfXqha_ID6GSBfoYudWCvT7sI-iGo-KdEVf6ibbYWDtbqQ_KZhN_i0mzlvm4qbMmrJCQnv71omcqdKCVSpgbDyKKc9BIsqhrUIgOHUiGqJMONDmBxdaF_n8_VuM_-fIPwCiSXEsLu87UXrlW2We9bZbFalroOILby_mW--ApWpsVBaKH-P6YX1JGCPPlvFb-Bozk6iTX494l5ENx1G3MZGHwLcmovKPIodpkeWrZ0xVy9W_1lwDsV9nkXjo._WLstUNmlWC3w4Ng5KXDrLQ3m3r0ruJrsW306wKEC9s&dib_tag=se&keywords=3d%2Bdruck%2Bkraftprotz&qid=1791989113&sprefix=3d%2Bdruck%2Bkraftprot%2Caps%2C207&sr=8-1&th=1) | 3D Druck Sekundenkleber, Gel |   
+| St&uuml;ck | Bezeichnung      | Lieferant  |  
+|:----------:|:-----------|:-----------------|   
+|      1     | 3D Druck Sekundenkleber, Gel | Kraftprotz [(Amazon)](https://www.amazon.de/Sekundenkleber-3D-Druck-Gel-50/dp/B0CBSGWZRW?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=CYU745CNDNK&dib=eyJ2IjoiMSJ9.W5s5lhw4Zno1-SxDPW0cox7leaRGQ24ez8VxqJJ6MZ-bzI60hfXqha_ID6GSBfoYudWCvT7sI-iGo-KdEVf6ibbYWDtbqQ_KZhN_i0mzlvm4qbMmrJCQnv71omcqdKCVSpgbDyKKc9BIsqhrUIgOHUiGqJMONDmBxdaF_n8_VuM_-fIPwCiSXEsLu87UXrlW2We9bZbFalroOILby_mW--ApWpsVBaKH-P6YX1JGCPPlvFb-Bozk6iTX494l5ENx1G3MZGHwLcmovKPIodpkeWrZ0xVy9W_1lwDsV9nkXjo._WLstUNmlWC3w4Ng5KXDrLQ3m3r0ruJrsW306wKEC9s&dib_tag=se&keywords=3d%2Bdruck%2Bkraftprotz&qid=1791989113&sprefix=3d%2Bdruck%2Bkraftprot%2Caps%2C207&sr=8-1&th=1) |  
 
 ### 2.2.4 Bahnkörper
 Der Bahnkörper für N-Spur hat folgenden Aufbau:
