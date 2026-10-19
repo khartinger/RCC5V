@@ -1,0 +1,12 @@
+"ID";"Bezeichner";"Footprint";"Stückzahl";"Bezeichnung";"Anbieter und Referenz";
+1;"C1";"CP_Radial_L16.8mm_D10.0mm_P5.08mm_Horizontal_small_2";1;"1000uF/35V";;;
+2;"D1";"D_DO-41_SOD81_P12.7mm_Horizontal_kh";1;"1N4007";;;
+3;"F1";"Fuse_PTC_P5.08mm_D12.8mm_Horizontal_kh";1;"RXEF110";;;
+4;"J1";"Box_02x03_P2.54mm_Vertical_kh";1;"Box_02x03_P2.54_Vertical";;;
+5;"J2";"Box_02x03_P2.54mm_Vertical_kh";1;"Box_02x03_P2.54_Vertical_kh";;;
+6;"J4, J10, J11";"Box_02x10_P2.54mm_Vertical_kh";3;"Box_02x10_P2.54_RCC";;;
+7;"J5, J6";"PinSocket_1x06_P2.54mm_Vertical_kh";2;"Conn_01x06";;;
+8;"J7, J8";"Screw_Terminal_01x02_P5";2;"Screw_Terminal_01x02_P5";;;
+9;"J9";"Screw_Terminal_01x02_P5_8";1;"Screw_Terminal_01x02_P5";;;
+10;"R1";"R_Axial_Power_L25.0mm_W6.4mm_P27.94mm_kh";1;"4,7";;;
+11;"U1";"DCDC_StepDown_LM2596_PinsOnly";1;"DCDC_StepDown_LM2596";;;
