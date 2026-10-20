@@ -11,6 +11,12 @@ Stand: 18.10.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 # Worum geht es?
 **Modul 16** ist ein gerades, nur **25 cm × 25 cm** großes Modul mit ESP32, OLED und zwei Plätzen für Schaltblöcke. Es ermöglicht die Einspeisung des Fahrstroms sowohl über 25-polige Sub-D-Stecker als auch über den 20-poligen Flachbandstecker **„P20“** (auf der Rückseite des Moduls).  
 
+&nbsp;   
+---  
+---  
+# --- ..ToDo.. --- In Arbeit --- ..ToDo.. --- In Arbeit ---  
+---  
+
 ![Modul M16](./images/300_m16_Gleis_montiert1.png "Modul M16")   
 _Bild: Rahmen mit Grundplatte und Gleis_   
 
