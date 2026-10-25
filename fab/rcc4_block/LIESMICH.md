@@ -1176,9 +1176,9 @@ _Bild 73: KiCad-Schaltplan der "RCC_TUI_EXT_V2"-Platine_
 <a name="x728"></a>   
 
 ### 7.2.8 Bestücken der Platine
-Bild der Platine `RCC_TUI_EXT_V1` zur DCC-Gleis-Spannungs-/Strom-Erkennung:   
-![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_RCC_TUI_EXT_V1.png "Platine Gleis-UI-Erkennung")   
-_Bild 74: Platine `RCC_TUI_EXT_V1` zur DCC-Gleis-Spannungs-/Strom-Erkennung_
+Bild der Platine `RCC_TUI_EXT_V2` zur DCC-Gleis-Spannungs-/Strom-Erkennung:   
+![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_RCC_TUI_EXT_V2.png "Platine Gleis-UI-Erkennung")   
+_Bild 74: Platine `RCC_TUI_EXT_V2` zur DCC-Gleis-Spannungs-/Strom-Erkennung_
 
 Best&uuml;ckte Platine "`RCC_TUI_EXT_V1`"   
 ![Bestückte Platine RCC_TUI_EXT_V1](/images/300_RCC_TUI_EXT_V1_assembled.png "Bestückte Platine RCC_TUI_EXT_V1")   
@@ -1204,7 +1204,7 @@ _Bild 75: Best&uuml;ckte Platine `RCC_TUI_EXT_V1`_
 | 1 | K1 | Monostabiles Relais IM03TS 3VDC oder HFD4/3 | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
 | 2 | K1 | Buchsenleiste (gedrehte Buchsen), 4-polig | (3)  |   
 | 1 | Q1 | npn-Transistor BC337-40 | TO-92_Inline_Wide_custom |   
-| 1 | Q2, Q3 | pnp-Transistor BC327-40 | TO-92_Inline_Wide_2.2225 |   
+| 1 | Q3 | pnp-Transistor BC327-40 | TO-92_Inline_Wide_2.2225 |   
 | 2 | R16, R18 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R11 | 100 &Omega;| R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 5 | R4, R8, R10, R12, R13 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
@@ -1218,10 +1218,10 @@ _Bild 75: Best&uuml;ckte Platine `RCC_TUI_EXT_V1`_
 | 2 | R9, R17 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R19 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | Rs4 | 220 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P10,16mm_Horizontal |   
-| 1 | RV1 | 10-Gang-Trimmer 10 k&Omega; stehend | Trim_Bourns_3296W_Vertical |   
+| 1 | RV1 | 10-Gang-Trimmer 10 k&Omega; stehend (W103) | Trim_Bourns_3296W_Vertical |   
 | 1 | U1 | INA333_Board | INA333-Board |   
-| 2 | U1 | Buchsenleiste 4-Pin, gedrehte Pins (4) |   |   
-| 2 | U1 | Stiftleiste 4-Pin, gedrehte Pins (5) |   |   
+| 2 | U1 | **Buchsen**leiste 4-Pin, gedrehte Pins (4) |   |   
+| 2 | U1 | **Stift**leiste 4-Pin, gedrehte Pins (5) |   |   
 | 1 | U2 | 2-fach-Komparator LM393 | DIP-8_W7.62mm_Socket_LongPads |   
 | 1 | U2 | Präzisionssockel 8 Pin (2x 4 Pin, Abstand 7,62 mm) |   |    
 | 1 | U3 | Optokoppler SFH615A | DIP-4_W7.62mm |   
@@ -1246,10 +1246,10 @@ _Bild 76: Bauteile der "RCC_TUI_EXT_V1"-Platine_
 _Bild 77: INA-Board mit angelöteten Stiften_  
 
 #### Best&uuml;ckung  
-1. Widerstand R1 (liegend, möglichst flach, 10 k&Omega;)  
-2. Widerst&auml;nde Rs2, Rs3 (liegend, möglichst flach, 100 k&Omega;)  
-3. Widerstand R5 (liegend, 47 k&Omega;)  
-4. Widerstand Rs4 (liegend, 220 k&Omega;)  
+1. Widerstand R1 (liegend, 7,62 mm, möglichst flach, 10 k&Omega;)  
+2. Widerst&auml;nde Rs2, Rs3 (liegend, 7,62 mm, möglichst flach, 100 k&Omega;)  
+3. Widerstand R5 (liegend, 7,62 mm, 47 k&Omega;)  
+4. Widerstand Rs4 (liegend, 10,16 mm, 220 k&Omega;)  
 5. Diode D3 (BAT48, liegend, auf Polung achten: Kathode bei weißer Linie)  
 6. Buchsenleisten 2x 4 Pin für U1 (INA333 Board)  
 7. gedrehte Buchsen 2x 2 Pin für die LEDs D4, D6  
@@ -1265,7 +1265,7 @@ _Bild 77: INA-Board mit angelöteten Stiften_
 16. Widerst&auml;nde R4, R8, R10, R12, R13 (1 k&Omega;)   
 17. Widerst&auml;nde ~~R14,~~ R15 (4,7 k&Omega;)   
 18. Widerst&auml;nde R2, R6, R7, R20, Rs1 (10 k&Omega;)   
-19. Widerstand R3 (22 k&Omega; oder 33 k&Omega;)   
+19. Widerstand R3 (**22 k&Omega;** oder 33 k&Omega;)   
 20. Widerst&auml;nde R9, ~~R17~~ (47 k&Omega;)   
 21. Widerstand R19 (100 k&Omega;)   
 ---  
@@ -1294,24 +1294,25 @@ _Bild 77: INA-Board mit angelöteten Stiften_
 ![UI_pin_J5](/images/200_rcc4_TUI_pin_J5.png "UI_pin_J5")   
 _Bild 79: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
 
-1. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
+1. Verstärkung des INA333-Boards voll aufdrehen:   
+   ► ⚙️ Potenziometer **fast** bis zum Anschlag **gegen den Uhrzeigersinn** drehen   
+
+2. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
    ► 🔴🟤 Die rote LED (FRE) leuchtet oder leuchtet nicht (siehe Punkt 6).   
    ► ⚫ Die grüne LED (DCC) leuchtet nicht.   
 
-2. DCC-Spannung am Eingang der Schaltung anlegen:   
+3. DCC-Spannung am Eingang der Schaltung ("BOOSTER") anlegen:   
    ► ⚫ Die grüne LED (DCC) leuchtet (noch) nicht.   
 
-3. DCC-Spannung durchschalten: GND (0 V) an Pin 5 von J5 anlegen.  
-   ► 🧲 Das Relais zieht an.   
+4. DCC-Spannung durchschalten: GND (0 V) an Pin 5 von J5 anlegen.  
+   ► 🧲 Das Relais zieht an. (Man hört ein Klicken)   
    ► 🟢 Die grüne LED (DCC) **leuchtet**.   
-
-4. Verstärkung des INA333-Boards voll aufdrehen:   
-   ► ⚙️ Potenziometer **fast** bis zum Anschlag **gegen den Uhrzeigersinn** drehen   
 
 5. Jumper J3 aufstecken   
 
 6. Je nach Trimmer-Stellung die Schaltschwelle einstellen:   
-   * 🔴 Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet.  
+   * 🔴 Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt. Sollte die LED nicht ausgehen: Verstärkung des INA333-Boards etwas verkleinern (Potenziometer etwas **im Uhrzeigersinn** drehen).  
+   Wenn LED aus ist: Trimmer etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet.  
    ► Jumper J3 abziehen: rote LED erlischt.   
    * 🟤 Wenn die rote LED __nicht leuchtet__: Trimmer __gegen den Uhrzeigersinn__ drehen, bis die rote LED zu leuchten beginnt.  
    ► Jumper J3 abziehen: rote LED erlischt.   
@@ -1396,7 +1397,7 @@ __St&uuml;ckliste__
 | 2 | R4, R5 | 4,7  k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 
 #### Best&uuml;ckung   
-1. Dioden D1 bis D5 (BAT48, liegend, auf Polung achten: Kathode bei weißer Linie)  
+1. Dioden D1 bis D5 (BAT48, liegend, 4x 7,62 mm, 1x 12,7 mm. Auf Polung achten: Kathode bei weißer Linie)  
 2. Kondensator C1 (100 nF)  
 3. Widerstände R1, R2, R3 (100 k&Omega;, stehend)  
 4. Widerstände R4, R5 (4,7 k&Omega;, stehend)  
@@ -1492,11 +1493,11 @@ _Bild 90: Best&uuml;ckte Platine "RCC_TUI_B_LED"_
 3. 10 mm-Tasterkn&ouml;pfe SW1 (rot), SW2 (gr&uuml;n) eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
 #### Best&uuml;ckungsvorgang   
-1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1 bis D6) auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
+1. Die zweipoligen Buchsenleisten mit gedrehten Pins (D1 bis D6) auf die **L&ouml;tseite** des Prints l&ouml;ten.   
 
-Auf die _*Bauteilseite*_ l&ouml;ten:  
+Auf die **Bauteilseite** l&ouml;ten:  
 
-2. Widerstand R16 (47 &Omega;, liegend)  
+2. Widerstand R16 (47 &Omega;, liegend, 12,7 mm)  
 3. Kondensator C1 (1 &micro;F, 16 V)  
 4. Transistor Q1 bis Q5 (BC337-40)  
 5. Widerstand R15 (47 &Omega;)  
