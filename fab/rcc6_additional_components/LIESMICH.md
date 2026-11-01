@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>Weitere RCC Komponenten</h1><b><big>RCC6: Optionale Komponenten für das RCC-System</big></b><br>  
-Stand: 27.9.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 1.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -13,13 +13,12 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 
 <a name="TableOfContents"></a>   
 ##  Inhalt
-1. [RGY-Anzeige `RCC_RGY_TVn_LED`](#x10)  
+1. [RGY-Anzeige `RCC_RGY_LED`](#x10)  
 2. [Pulsflanken-Erkennung Typ 1](#x20)  
 3. [Set-/Reset-Pulsflanken-Erkennung (Typ 2)](#x30)  
 4. [DCC-Fahrstromerkennung **ohne** Schalten](#x40)   
-5. [UI-Steuerungsplatine `RW_5V_UI_STRG`](#x50)   
 ---
-6. [Ältere Platinen mit Gleisspannungssignal TRV = 5 V](#xold)   
+5. [Ältere Platinen mit Gleisspannungssignal TRV = 5 V](#xold)   
 
 <a name="x10"></a>   
 <a name="x11"></a>   
@@ -28,7 +27,7 @@ Dieses Verzeichnis enthält optionale Komponenten für das RCC-System (RCC = Rai
 
 ## 1.1 Einleitung
 
-Das Board `RCC_RGY_TVn_LED` ist eine **41 × 41 mm²** große Anzeigeplatine passend zu RCC-Blöcken.  
+Das Board `RCC_RGY_LED` ist eine **41 × 41 mm²** große Anzeigeplatine passend zu RCC-Blöcken.  
 Sie enthält bis zu **drei parallel geschaltete rot/grün-Duo-LEDs** und optional zwei Taster.  
 
 ![rcc6_RGY_TVn_LED_Front](/images/300_rcc6_RGY_TVn_LED_assembledFront.png "rcc6_RGY_TVn_LED_Front")   
@@ -68,18 +67,49 @@ Zusätzlich zur LED-Anzeige stehen zwei Rückmeldesignale zur Verfügung:
 
 An den Positionen **SW1** und **SW3** können optional Taster oder Schalter eingebaut werden. Diese können von einer Steuerplatine ausgewertet werden, zum Beispiel zum Testen der **SET-** und **RESET-Eingänge** einer [Pulsspeicher-Steuerungsplatine `RCC_PULS2_STRG`](#x30).
 
+### Technische Ausführungen
+Das Board `RCC_RGY_LED` gibt es in zwei technischen Ausführungen:  
+* mit bipolaren Transistoren: `RCC_RGY_LED_V1B` oder  
+* mit MOSFETs (BS170): `RCC_RGY_LED_V1M`  
+
 <a name="x12"></a>   
 
-## 1.2 Schaltplan
+## 1.2 RGY-Anzeige mit bipolaren Transistoren
+
 Die RGY-Anzeige besteht aus drei Teilen:   
-1. Die LED-Anzeige   
-2. die Rückmeldeschaltung   
+1. Die LED-Ansteuerung   
+2. Die Rückmeldeschaltung   
 3. Zwei Taster für Testzwecke   
 
 ### Led-Anzeige
-![rcc6_RGY_LED_circuit](/images/300_rcc6_RGY_LED_circuit_V2.png "rcc6_RGY_LED_circuit")   
+Die **rote LED** soll immer leuchten,  
+* ausser die Eingänge TVn und FREn liegen auf 0 V.  
+  In diesem Fall liegt die Gleisspannung an und das Gleis ist frei. Dann soll die LED grün leuchten, d.h. rot muss **aus** sein.  
+
+Die **grüne LED** soll leuchten,  
+* wenn die Gleisspannung anliegt, d.h. TVn auf 0 V liegt.  
+
+Leuchten die grüne und rote LED gemeinsam, so ergibt das die LED-Farbe **orange**.
+
+![rcc6_RGY_LED_V1B_circuit](/images/300_rcc6_RGY_LED_V1B_circuit_V2.png "rcc6_RGY_LED_V1B_circuit")   
 
 Die Ansteuerung der Platine erfolgt über die Signale **TVn** (J1-Pin 7) und **FREn** (J1-Pin 8):   
+- Beide Eingänge offen:  
+  * Über R3/R4 und R6 schaltet Q4 durch → Q3 sperrt → Q1 schaltet durch → die rote LED leuchtet.  
+  * Über R3 und R11 schaltet Q5 durch → Q2 sperrt → die grüne LED leuchtet nicht.  
+
+- Beide Eingänge auf +5 V: Wirkung wie oben (rote LED leuchtet, grüne nicht).  
+
+- TVn = 5 V, FREn = 0 V: Wirkung wie oben (rote LED leuchtet, grüne nicht).  
+- TVn = 0 V, FREn = 5 V: 
+  * Über D5 und R6 schaltet Q4 durch → Q3 sperrt → Q1 schaltet durch → die rote LED leuchtet.  
+  * Q5 sperrt über R11 → Q2 leitet → grüne LED leuchtet.  
+
+- Beide Eingänge 0 V:
+  *  Q4 sperrt wegen R5, R6 → Q3 schaltet durch → Q1 sperrt → rote LED leuchtet nicht.  
+  * Q5 sperrt über R11 → Q2 leitet → grüne LED leuchtet.  
+
+
 - TVn = 5 V: Led leuchtet rot.  
   (Transistor T4 sperrt, T1 leitet → "LED rot"; T5 sperrt, T2 sperrt)  
 - TVn = 5 V und FREn = 5 V: LED leuchtet gelb.  
@@ -96,65 +126,67 @@ __Anmerkungen__
 
 #### OK-Rückmeldung (ROKn)
 
-Das interne Signal **ROKi** wird für den externen Ausgang (**ROKn**) etwas aufbereitet.   
+Die Rückmeldung ***ROKn** wird direkt aus dem Eingangssignal **TVn** erzeugt.  
 
-- Die Diode **D4** verhindert, dass die Duo-LED belastet wird, wenn der Transistor **T5** gesperrt ist. Gleichzeitig zieht **R10** den Ausgang **ROKn** auf **5 V**.   
-- Schaltet **T5** durch, begrenzt **R9** einen möglichen Fehlerstrom von außen.   
+- Die Diode **D6** zieht den Ausgang **ROKn** auf 0, wenn der Eingang **TVn** 0 ist.  
+- R12 zieht **ROKn** auf +5V.  
+- R14 ist ein Kurzschlussschutz.  
 
-#### Gleisfrei-Rückmeldung (RFR)
+#### Gleisfrei-Rückmeldung (RFRE)
 
-Das interne Signal **RFRi** wird mit dem Transistor **T6** invertiert und als **RFRE** ausgegeben.   
+Sind die Eingänge **TVn** und **FREn** beide auf 0V, sperrt Q4 und der Ausgang liegt auf + 5V (über R7/D7 und R13).  
 
 ### Optionale Taster oder Schalter
 
 Auf der Platine können an den Positionen **SW1** und **SW3** optional Taster oder Schalter eingebaut werden.  
 
-Im Ruhezustand sind die Ausgänge **offen**.  
+Im Ruhezustand sind die Ausgänge der Taster/schalter **offen**.  
 Beim Betätigen werden sie mit **0 V (Masse)** verbunden.  
 
 ### Gesamtschaltplan
 
-KiCad-Schaltplan der Platine **`RCC_RGY_TVn_LED`**:   
-![RCC_RGY_TVn_LED_circuit](/images/600_RCC_RGY_TVn_LED_circuit_V2.png "RCC_RGY_TVn_LED_circuit")  
+KiCad-Schaltplan der Platine **`RCC_RGY_LED_V1B`**:   
+![RCC_RGY_TVn_LED_V1B_circuit](/images/600_RCC_RGY_LED_V1B_circuit.png "RCC_RGY_TVn_LED_V1B_circuit")  
 
 Die Stromversorgung und alle Ein- und Ausgangssignale befinden sich an der Stiftleiste J1.  
 
-<a name="x13"></a>   
+### Bestückung der Platine
+Bild der Platine "`RCC_RGY_LED_V1B`":   
+![Platine RCC_RGY_LED_V1B](/images/pcb_f/PCB_F_RCC_RGY_LED_V1B.png "Platine RCC_RGY_LED_V1B")   
 
-## 1.3 Bestückung der Platine
-Bild der Platine "`RCC_RGY_TVn_LED`" (Version 1):   
-![Platine RW_5V_RGY_LED](/images/pcb_f/PCB_F_RCC_RGY_TVn_LED_V2.png "Platine RW_5V_RGY_LED")   
-
-Best&uuml;ckte Platine "`RCC_RGY_TVn_LED`"   
-![Bestückte Platine RW_5V_RGY_LED](/images/300_RCC_RGY_TVn_LED_assembled.png "Bestückte Platine RW_5V_RGY_LED")   
+Best&uuml;ckte Platine "`RCC_RGY_LED_V1B`"   
+![Bestückte Platine RCC_RGY_LED_V1B](/images/300_RCC_RGY_LED_V1B_assembled.png "Bestückte Platine RCC_RGY_LED_V1B")   
 
 ### St&uuml;ckliste   
 
 | Anzahl | Referenz | Wert | Geh&auml;use |   
 |-----|-----|-----|-----|   
-| 1 | C1 | Kondensator 1 &micro;F, 16 V, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
+| 1 | C1 | Kondensator 1 &micro;F, 16 V, Raster 5,08 mm | C_L4.3mm_D2.8mm_P5.08mm_kh |   
 | 3 | D1, D2, D3 | Dual-LED rot-gr&uuml;n, gemeinsame Kathode | LED_D5.0mm-3 |   
 | 3 | D1, D2, D3 | Buchsenleiste 3-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs |   
-| 1 | D4 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
+| 1 | D4 | Diode 1N4148 (oder BAT48) | D_DO-35_P3.81mm_Vertical_AnodeUp_kh |   
+| 1 | D5 | Diode 1N4148 (oder BAT48) | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
+| 2 | D6, D7 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp_kh |   
 | 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
-| 4 | Q1, Q6 | Transistor BC337-40 (npn) | TO-92_Inline_Wide_custom |   
-| 2 | Q2, Q3, Q4, Q5 | Transistor BC327-40 (pnp) | TO-92_Inline_Wide_custom |   
+| 5 | Q1, Q2, Q3, Q4, Q5 | Transistor BC337-40 (npn) | TO-92_Inline_Wide_custom |   
 | 1 | R1 | 680 &Omega;..1 k&Omega; (2) | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 1 | R11 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 1 | R3 | 3,9 k&Omega;..10 k&Omega; (3) | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 1 | R13 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 1 | R9 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 4 | R6, R8, R10, R12 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 1 | R7 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
-| 2 | R2, R5 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 3 | R4, R14, R15 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 4 | R2, R3, R9, R10 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R4 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P17.78mm_Horizontal |   
+| 2 | R5, R11 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R6 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R7 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R8 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 1 | R12 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R13 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 1 | R14 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R15 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 2 | SW1, SW3 | Taster SW_Push_DPDT_8x8 | SW_Push_DPDT_8x8 |   
 | 2 | SW1, SW3 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe je nach Anwendung |    
 
 ### Anmerkungen
 (1) Es ist sinnvoll, die 3-poligen Buchsenleisten an alle 3 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb weniger LEDs eingesetzt werden.  
 (2) Widerstand R1: **680 &Omega;** bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
-(3) Widerstand R3: **3,9 k&Omega;** bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
+(3) Widerstand R2: **3,9 k&Omega;** bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
    
 ### Vorbereitung
 1. Von einer langen, einreihigen Buchsenleiste 3x 3-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D3).   
@@ -167,31 +199,124 @@ Best&uuml;ckte Platine "`RCC_RGY_TVn_LED`"
 
 4. NUR wenn Taster verwendet werden: 10 mm-Tasterkn&ouml;pfe SW1, SW2 eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
 
-Bauteile der Platine "RW_5V_RGY_LED"   
-![RW_5V_RGY_LED_parts](/images/300_RW_5V_RGY_LED_parts.png "RW_5V_RGY_STRG_parts")   
+Bauteile der Platine "RCC_RGY_LED_V1B"   
+![RCC_RGY_LED_V1B_parts](/images/300_RCC_RGY_LED_V1B_parts.png "RCC_RGY_LED_V1B_parts")   
 
-### Best&uuml;ckung   
+### Best&uuml;ckungsvorgang    
 **Lötseite** (!):  
 
 1. Die dreipoligen Buchsenleisten (D1 bis D3) mit gedrehten Pins auf die **L&ouml;tseite** des Prints l&ouml;ten.   
 
-Auf die **Bauteilseite** l&ouml;ten:   
-
-2. Widerstände R1, R11 und R13 (liegend, **680 &Omega;** ... 1 k&Omega;, 100 k&Omega;, 47 &Omega;)   
-3. Transistoren Q1, Q6 (BC337-40)   
-4. Transistoren Q2, Q3, Q4, Q5 (BC327-40)   
-5. Kondensator C1 (1 &micro;F)   
-6. Diode D4 (BAT48, auf Polung achten: Kathode unten beim Kreis)   
-7. Widerstand R3 (**3,9 k&Omega;** ... 10 k&Omega;)   
-8. Widerstand R9 (47 &Omega;)
-9. Widerst&auml;nde R6, R7, R8, R10, R12 (4,7 k&Omega;, stehend)   
-10. Widerst&auml;nde R2, R5 (10 k&Omega;, stehend)   
-11. Widerst&auml;nde R4, R14, R15 (100 k&Omega;, stehend)   
-12. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
+Auf die **Bauteilseite** l&ouml;ten:  
+2. Widerstand R15 (liegend, 47 &Omega;, 7,6 mm)  
+3. Widerstand R7 (liegend, 10 k&Omega;, 7,6 mm)  
+4. Widerstand R4 (liegend, 10 k&Omega;, 17,8 mm)  
+5. Diode D4, D5 (1N4148, auf Polung achten: Kathode unten beim Kreis)  
+6. Diode D6, D7 (BAT48, auf Polung achten: Kathode unten beim Kreis)  
+7. Transistoren Q1 bis Q5 (BC337-40)  
+8. Kondensator C1 (1 &micro;F, 5,08 mm)  
+9. Widerstand R14 (47 &Omega;, stehend)  
+10. Widerstand R1 (**680 &Omega;** ... 1 k&Omega;)   
+11. Widerstand R2 (3,9 k&Omega; ... 10 k&Omega;)   
+12. Widerst&auml;nde R12, R13 (4,7 k&Omega;, stehend)   
+13. Widerst&auml;nde R3, R9, R10 (10 k&Omega;, stehend)   
+14. Widerst&auml;nde R5, R6, R8, R11 (100 k&Omega;, stehend)   
+15. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
 
 Optional: Auf die **L&ouml;tseite** l&ouml;ten:   
 
-13. Taster SW1, SW3   
+16. Taster SW1, SW3   
+
+### Print vervollständigen
+Duo-LED(s) einstecken (auf Polung achten).   
+
+<a name="x13"></a>   
+
+## 1.3 RGY-Anzeige mit MOSFET
+
+### Gesamtschaltplan
+
+KiCad-Schaltplan der Platine **`RCC_RGY_LED_V1M`**:   
+![RCC_RGY_TVn_LED_V1M_circuit](/images/600_RCC_RGY_LED_V1M_circuit.png "RCC_RGY_TVn_LED_V1M_circuit")  
+
+Die Stromversorgung und alle Ein- und Ausgangssignale befinden sich an der Stiftleiste J1.  
+
+### Bestückung der Platine
+Bild der Platine "`RCC_RGY_LED_V1M`":   
+![Platine RCC_RGY_LED_V1M](/images/pcb_f/PCB_F_RCC_RGY_LED_V1M.png "Platine RCC_RGY_LED_V1M")   
+
+Best&uuml;ckte Platine "`RCC_RGY_LED_V1M`"   
+![Bestückte Platine RCC_RGY_LED_V1M](/images/300_RCC_RGY_LED_V1M_assembled.png "Bestückte Platine RCC_RGY_LED_V1M")   
+
+### St&uuml;ckliste   
+
+| Anzahl | Referenz | Wert | Geh&auml;use |   
+|-----|-----|-----|-----|   
+| 1 | C1 | Kondensator 1 &micro;F, 16 V, Raster 5,08 mm | C_L4.3mm_D2.8mm_P5.08mm_kh |  
+| 3 | D1, D2, D3 | Dual-LED rot-gr&uuml;n, gemeinsame Kathode | LED_D5.0mm-3 |   
+| 3 | D1, D2, D3 | Buchsenleiste 3-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs |   
+| 1 | D4 | Diode 1N4148 (oder BAT48) | D_DO-35_P3.81mm_Vertical_AnodeUp_kh |   
+| 1 | D5 | Diode 1N4148 (oder BAT48) | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
+| 2 | D6, D7 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp_kh |   
+| 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
+| 5 | Q1, Q2, Q3, Q4, Q5 | MOSFET BS170 | TO-92_Inline_Wide_custom |   
+| 1 | R1 | 680 &Omega;..1 k&Omega; (2) | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 4 | R2, R3, R9, R10 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R4 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P17.78mm_Horizontal |   
+| 2 | R5, R8 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R6 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R7 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R11 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 1 | R12 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R13 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 1 | R14 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R15 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 2 | SW1, SW3 | Taster SW_Push_DPDT_8x8 | SW_Push_DPDT_8x8 |   
+| 2 | SW1, SW3 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe je nach Anwendung |    
+
+### Anmerkungen
+(1) Es ist sinnvoll, die 3-poligen Buchsenleisten an alle 3 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb weniger LEDs eingesetzt werden.  
+(2) Widerstand R1: **680 &Omega;** bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
+(3) Widerstand R2: **3,9 k&Omega;** bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
+   
+### Vorbereitung
+1. Von einer langen, einreihigen Buchsenleiste 3x 3-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D3).   
+2. Die äußeren LED-Anschl&uuml;sse farblich kennzeichnen:  
+   * kurzen Anschluss grün färben, mittellangen Anschluss rot  
+3. Schrumpfschlauch 11 mm auf jeden LED-Anschluss aufschrumpfen  
+4. LED-Anschl&uuml;sse auf 17 bis 18 mm abschneiden und Ecken biegen ("Feder", mittleren Anschluss nach vorne oder hinten). Länge dann ca. 13 mm.   
+![RW_5V_DUOLED1](/images/300_RW_5V_DUOLED1.png "RW_5V_DUOLED1") 
+![RW_5V_DUOLED2](/images/300_RW_5V_DUOLED2.png "RW_5V_DUOLED2")   
+
+4. NUR wenn Taster verwendet werden: 10 mm-Tasterkn&ouml;pfe SW1, SW2 eventuell verl&auml;ngern durch Aufkleben mit Sekundenkleber auf 7 mm-Tasterkn&ouml;pfe.   
+
+Bauteile der Platine "RCC_RGY_LED_V1M"   
+![RCC_RGY_LED_V1M_parts](/images/300_RCC_RGY_LED_V1M_parts.png "RCC_RGY_LED_V1M_parts")   
+
+### Best&uuml;ckungsvorgang    
+**Lötseite** (!):  
+
+1. Die dreipoligen Buchsenleisten (D1 bis D3) mit gedrehten Pins auf die **L&ouml;tseite** des Prints l&ouml;ten.   
+
+Auf die **Bauteilseite** l&ouml;ten:  
+2. Widerstand R15 (liegend, 47 &Omega;, 7,6 mm)  
+3. Widerstand R7 (liegend, 10 k&Omega;, 7,6 mm)  
+4. Widerstand R4 (liegend, 10 k&Omega;, 17,8 mm)  
+5. Diode D4, D5 (1N4148, auf Polung achten: Kathode unten beim Kreis)  
+6. Diode D6, D7 (BAT48, auf Polung achten: Kathode unten beim Kreis)  
+7. Transistoren Q1 bis Q5 (BS170)  
+8. Kondensator C1 (1 &micro;F, 5,08 mm)  
+9. Widerstand R14 (47 &Omega;, stehend)  
+10. Widerstand R1 (**680 &Omega;** ... 1 k&Omega;)   
+11. Widerstand R2 (3,9 k&Omega; ... 10 k&Omega;)   
+12. Widerst&auml;nde R12, R13 (4,7 k&Omega;, stehend)   
+13. Widerst&auml;nde R3, R9, R10 (10 k&Omega;, stehend)   
+14. Widerst&auml;nde R5, R6, R8, R11 (100 k&Omega;, stehend)   
+15. Buchsenleisten 8-polig mit langen Kontakten J1 und J2   
+
+Optional: Auf die **L&ouml;tseite** l&ouml;ten:   
+
+16. Taster SW1, SW3   
 
 ### Print vervollständigen
 Duo-LED(s) einstecken (auf Polung achten).   
@@ -203,7 +328,7 @@ Duo-LED(s) einstecken (auf Polung achten).
 * 5x Kabel Stecker-Buchse (schwarz, rot, gelb, grün, violett)   
 * Steckbrett zum Verteilen der 0V und 5V
 * Netzgerät 5 V   
-* Voltmeter (Bereich 20VDC)   
+* Voltmeter (Bereich 20 VDC)   
 
 ### Durchführung
 Print auf die Bauteilseite legen. Alle erforderlichen Anschlüsse befinden sich an den langen Kontakten der der Buchsenleiste J1:   
@@ -216,22 +341,22 @@ Print auf die Bauteilseite legen. Alle erforderlichen Anschlüsse befinden sich 
    ► 🔴🔴🔴 Die LEDs leuchten rot.   
 
 3. Voltmeter an GND anschließen. Messen:  
-   ► Pin 5 = ROKn = +5V  
-   ► Pin 6 = RFR = 0V   
+   ► Pin 5 = ROKn = +5 V (4,8 V)  
+   ► Pin 6 = RFR = 0 V (0,3 V)  
 
 4. Pin 7 = TVn mit 0 V verbinden (active low):   
    ► 🟡🟡🟡 Die LEDs leuchten gelb (orange).   
 
 5. Messen:  
-   ► Pin 5 = ROKn = 0,9V  
-   ► Pin 6 = RFRE = 0,1V  
+   ► Pin 5 = ROKn = 0,25 V  
+   ► Pin 6 = RFRE = 0,29 V  
 
 6. Pin 8 = FREn mit 0V verbinden:   
    ► 🟢🟢🟢 Die LEDs leuchten grün.   
 
 7. Messen:  
-   ► Pin 5 = ROKn = 0,9V  
-   ► Pin 6 = RFRE = 3,8V  
+   ► Pin 5 = ROKn = 0,25 V  
+   ► Pin 6 = RFRE = 4,9 V  
 
 <a name="x15"></a>   
 
@@ -521,14 +646,14 @@ Der Test der Platine `RCC_PULS2_TVn_STRG` erfolgt gemeinsam mit der Platine `RCC
 # 4. DCC-Fahrstromerkennung ohne Schalten
 ## 4.1 Einleitung
 Die DCC-Fahrstromerkennung **ohne Schalten** besteht aus drei Platinen:  
-* UI-Erkennung `dcc_track_UI_TVn_V1`  
+* UI-Erkennung `dcc_track_UI_TVn_V2`  
 * Steuerungsplatine (Anschlussplatine) `RCC_UI_TVn_STRG_V1`  
 * Anzeigeplatine `RCC_RGY_TVn_LED_V1`  
 
 <a name="x42"></a>   
 <a name="x421"></a>   
 
-## 4.2 UI-Erkennung `dcc_track_UI_TVn_V1` (ohne Schalten)
+## 4.2 UI-Erkennung `dcc_track_UI_TVn_V2` (ohne Schalten)
 
 ### 4.2.1 Funktion
 
@@ -536,11 +661,9 @@ Die DCC-Gleis-UI-Erkennung überwacht ein Gleis. Sie erkennt, ob
 1. **Gleisspannung** anliegt und ob  
 2. **Fahrstrom** fließt.
 
-Der Status wird über  
-- **LEDs angezeigt** und steht zusätzlich an 
-- **zwei digitalen Ausgängen** zur Verfügung.   
-
-So kann man erkennen, ob ein Gleis **besetzt** ist.   
+Der Status wird über **LEDs angezeigt** und steht zusätzlich an **zwei digitalen Ausgängen** zur Verfügung:   
+* **Gleisspannung (DCC)** liegt an: **grüne LED** leuchtet.  
+* **Fahrstrom** fließt: **rote LED** leuchtet, Gleis ist **besetzt**.   
 
 Die Stromversorgung und die beiden digitalen Ausgänge sind über einen **6-poligen Stecker** angeschlossen.   
 ![UI_pin_J5](/images/200_rcc6_UI_pin_J5.png "UI_pin_J5")   
@@ -562,14 +685,26 @@ Version 1:
 Version 2:  
 ![dcc_track_UI_TVn_V2_circuit](/images/600_dcc_track_UI_TVn_V2_circuit.png "dcc_track_UI_TVn_V2_circuit")   
 
+Die beiden Versionen unterscheiden sich in der Erzeugung des TVn-Rückmeldesignals. Die Verwendung des Transistors Q2 (BC327) ergibt durch die Emitter-Basis-Spannung eine zu hohe LOW-Spannung (0,8 V). Das führt in nachfolgenden Stufen zu Problemen bzw. Fehlern.   
+
+**Lösung**:
+R17, R14 und Q2 weglassen, Kollektor des Optokopplers SFH617 (= R14-Widerstandspin) direkt mit dem 47 &Omega;-Widerstand verbinden (Emitter-Pin von Q2).  
+
+![TUI_EXT_circuitTVn](/images/300_rcc4_TUI_EXT_circuitTVn.png "TUI_EXT_circuitTVn")  
+_Bild: Verbesserung TVn-Rückmeldung_  
+
+**Lösung auf der Leiterplatte:**  
+![dcc_track_UI_TVn_bridge](/images/300_rcc6_dcc_track_UI_TVn_bridge.png "dcc_track_UI_TVn_bridge")  
+_Bild: Verbindung auf Print `dcc_track_UI_TVn_V1`_  
+
 <a name="x423"></a>   
 
 ### 4.2.3 Bestücken der Platine
 Bild der Platine zur DCC-Gleis-Spannungs-/Strom-Erkennung (Version 2):   
-![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_dcc_track_UI_TVn_V1.png "Platine Gleis-UI-Erkennung")   
+![Platine Gleis-UI-Erkennung](/images/pcb_f/PCB_F_dcc_track_UI_TVn_V2.png "Platine Gleis-UI-Erkennung")   
 
-Best&uuml;ckte Platine "dcc_track_UI_TVn_V1"   
-![Bestückte Platine dcc_track_UI_TVn](/images/300_dcc_track_UI_TVn_V1_assembled.png "Bestückte Platine dcc_track_UI_TVn")   
+Best&uuml;ckte Platine "dcc_track_UI_TVn_V2"   
+![Bestückte Platine dcc_track_UI_TVn](/images/300_dcc_track_UI_TVn_V2_assembled.png "Bestückte Platine dcc_track_UI_TVn")   
 
 #### St&uuml;ckliste   
 | Anzahl | Referenz          | Wert                | Geh&auml;use            |   
@@ -588,18 +723,18 @@ Best&uuml;ckte Platine "dcc_track_UI_TVn_V1"
 | 1 | J3 | Jumper 2-polig |    |   
 | 1 | J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
 | 1 | Q1 | npn-Transistor BC337-40 | TO-92_Inline_Wide_custom |   
-| 1 | Q2 | pnp-Transistor BC327-40 | TO-92_Inline_Wide_custom |   
+| 0 | ~~Q2~~ | ~~pnp-Transistor BC327-40~~ | TO-92_Inline_Wide_custom |   
 | 2 | R16, R18 | 47 &Omega;| R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R11 | 100 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 | 4 | R4, R8, R10, R13 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R12 | 1 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
-| 2 | R14, R15 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | ~~R14,~~ R15 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 2 | Rs2, Rs3 | 100 k&Omega; (alt: 10 k&Omega;) | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 4 | R2, R6, R7, Rs1 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R3 | 33 k&Omega; oder 22 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | R5 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 2 | R9, R17 | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R9, ~~R17~~ | 47 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | Rs4 | 220 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | RV1 | 10-Gang-Trimmer 10 k&Omega; stehend | Trim_Bourns_3296W_Vertical |   
 | 1 | U1 | INA333_Board | INA333-Board |   
@@ -678,7 +813,8 @@ _Bild: INA-Board mit angelöteten Stiften_
 4. Jumper J3 aufstecken   
 
 5. Je nach Trimmer-Stellung die Schaltschwelle einstellen:   
-   * 🔴 Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt, dann etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet.  
+   * 🔴 Wenn die rote LED __leuchtet__: Trimmer __im Uhrzeigersinn__ drehen, bis die rote LED erlischt. Sollte die LED nicht ausgehen: Verstärkung des INA333-Boards etwas verkleinern (Potenziometer etwas **im Uhrzeigersinn** drehen).  
+   Wenn LED aus ist: Trimmer etwas gegen den Uhrzeigersinn drehen, bis die rote LED wieder leuchtet.  
    ► Jumper J3 abziehen: rote LED erlischt.   
    * 🟤 Wenn die rote LED __nicht leuchtet__: Trimmer __gegen den Uhrzeigersinn__ drehen, bis die rote LED zu leuchten beginnt.  
    ► Jumper J3 abziehen: rote LED erlischt.   
@@ -691,31 +827,21 @@ _Bild: INA-Board mit angelöteten Stiften_
 2. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
 3. Funktionstest **Ausgang TVn** (Track Voltage):   
    ► DCC-Versorgung abgeschaltet oder abgeklemmt: TVn = 5 V (⚫ grüne LED aus).   
-   ► DCC-Versorgung am "Booster"-Eingang anschließen: TVn = 0,7 V (🟢 grüne LED ein).  
+   ► DCC-Versorgung am "Booster"-Eingang anschließen: TVn = 0,1 V (🟢 grüne LED ein).  
 ---  
 4. Messgerät COM mit GND verbinden, V/Ω an **Pin 1** von J5 (FREn) anschließen.   
 5. Funktionstest **Ausgang FREn** (Track Free):   
    ► DCC-Versorgung am "Booster"-Eingang anschließen.  
    ► Jumper J3 offen: FREn = 0,2 V (🟤 rote LED aus),  
-   ► Jumper J3 gesteckt: FREn = 5 V (🔴 rote LED leuchtet).  
+   ► Jumper J3 gesteckt: FREn = 4,9 V (🔴 rote LED leuchtet).  
 
 ⚠️ **Ruhezustand**: Bei offenem Jumper und ohne Lok (bzw. Last, Waggon) am Gleis darf die **rote LED nicht** leuchten.   
 
 <a name="x425"></a>   
 
 ### 4.2.5 Versionen
-#### * V1 (260820): Problematische Rückmeldung TVn  
-Durch die Emitter-Basis-Spannung des Transistors T2 ist die Ausgangsspannung nicht 0 V sondern 0,8 V. Das kann in nachfolgenden Stufen zu Problemen führen.  
-
-**Lösung**: R17, R14 und Q2 weglassen, Kollektor des Optokopplers SFH617 mit 47 &Omega;-Widerstand verbinden.  
-
-![TUI_EXT_circuitTVn](/images/300_rcc4_TUI_EXT_circuitTVn.png "TUI_EXT_circuitTVn")  
-_Bild ..: Verbesserung TVn-Rückmeldung_  
-
-**Lösung auf der Leiterplatte:**  
-![TUI_EXT_printTVn](/images/300_rcc4_TUI_EXT_printTVn.png "TUI_EXT_printTVn")  
-_Bild ..: Verbindung auf Print `dcc_track_UI_TVn_V1`_  
-
+#### * V1 (260820): Problematische Rückmeldung TVn
+- R17, R14 und Q2 weglassen, Kollektor des Optokopplers SFH617 direkt mit dem 47 &Omega;-Widerstand verbinden (siehe oben).  
 #### * V2 (260926): OK
 
 
@@ -726,9 +852,9 @@ _Bild ..: Verbindung auf Print `dcc_track_UI_TVn_V1`_
 ### 4.3.1 Einleitung
 Die UI-Steuerungsplatine `RCC_UI_TVn_STRG` dient zum Anpassen der [UI-Erkennung `dcc_track_UI_TVn_V1` (ohne Schalten)](#x42) an das RCC-Blocksystem. Sie   
 
-* versorgt die `dcc_track_UI_TVn_V1`-Platine mit der 5V-Versorgungsspannung,   
-* leitet die Steuersignale `FRE1` und `TRV1` weiter zur LED-Anzeige und   
-* leitet die LED-Rückmeldesignale `ROK` und `RFRE` zum I²C-Stecker J4 weiter.   
+* versorgt die `dcc_track_UI_TVn`-Platine mit der **5V-Versorgungsspannung**,   
+* leitet die Steuersignale `FRE1` und `TRV1` weiter zur **LED-Anzeige** und   
+* leitet die LED-Rückmeldesignale `ROK` und `RFRE` zum **I²C-Stecker J4** weiter.   
 
 <a name="x432"></a>   
 
@@ -775,7 +901,7 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 ### 4.3.5 Inbetriebnahme und Test
 Da die Platine sehr einfach aufgebaut ist, erfolgt der Test gemeinsam mit den Platinen  
 * UI-Erkennung `dcc_track_UI_TVn_V1` und  
-* Anzeigeplatine `RCC_RGY_TVn_LED_V1`  
+* Anzeigeplatine `RCC_RGY_TVn_LED_V2`  
 
 Der Test ist [weiter unten](#x44) beschrieben.  
 

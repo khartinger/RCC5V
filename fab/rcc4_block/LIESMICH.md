@@ -1325,7 +1325,7 @@ _Bild 79: Belegung des 6-poligen Anschlusses J5 der `RCC_TUI_EXT`-Platine_
 2. Spannungsversorgung anlegen: +5 V an J5-Pin 4, 0 V = GND an J5-Pin 6  
 3. Funktionstest **Ausgang TVn** (Track Voltage):   
    ► DCC-Versorgung abgeschaltet oder abgeklemmt: TVn = 5 V (⚫ grüne LED aus).   
-   ► DCC-Versorgung am "Booster"-Eingang anschließen **und** J5-Pin 5 (TONn) auf 0 V: TVn = 0,7 V (🟢 grüne LED ein).  
+   ► DCC-Versorgung am "Booster"-Eingang anschließen **und** J5-Pin 5 (TONn) auf 0 V: TVn = 0,1 V (🟢 grüne LED ein).  
 ---  
 4. Messgerät COM mit GND verbinden, V/Ω an **Pin 1** von J5 (FREn) anschließen.   
 5. Funktionstest **Ausgang FREn** (Track Free):   
