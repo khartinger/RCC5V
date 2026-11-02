@@ -163,14 +163,15 @@ Best&uuml;ckte Platine "`RCC_RGY_LED_V1B`"
 |-----|-----|-----|-----|   
 | 1 | C1 | Kondensator 1 &micro;F, 16 V, Raster 5,08 mm | C_L4.3mm_D2.8mm_P5.08mm_kh |   
 | 3 | D1, D2, D3 | Dual-LED rot-gr&uuml;n, gemeinsame Kathode | LED_D5.0mm-3 |   
-| 3 | D1, D2, D3 | Buchsenleiste 3-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs |   
+| 3 | D1, D2, D3 | Buchsenleiste 3-polig mit gedrehten Pins  __*[1]*__ | "Fassung" f&uuml;r LEDs |   
 | 1 | D4 | Diode 1N4148 (oder BAT48) | D_DO-35_P3.81mm_Vertical_AnodeUp_kh |   
 | 1 | D5 | Diode 1N4148 (oder BAT48) | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
 | 2 | D6, D7 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp_kh |   
 | 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
 | 5 | Q1, Q2, Q3, Q4, Q5 | Transistor BC337-40 (npn) | TO-92_Inline_Wide_custom |   
-| 1 | R1 | 680 &Omega;..1 k&Omega; (2) | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 4 | R2, R3, R9, R10 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R1 | **680 &Omega;** ... 1 k&Omega;  __*[2]*__ | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R2 | **3,9 k&Omega;** ... 4,7 k&Omega; ... 10 k&Omega;  __*[3]*__ | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 3 | R3, R9, R10 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 | 1 | R4 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P17.78mm_Horizontal |   
 | 2 | R5, R11 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 | 1 | R6 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
@@ -184,9 +185,9 @@ Best&uuml;ckte Platine "`RCC_RGY_LED_V1B`"
 | 2 | SW1, SW3 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe je nach Anwendung |    
 
 ### Anmerkungen
-(1) Es ist sinnvoll, die 3-poligen Buchsenleisten an alle 3 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb weniger LEDs eingesetzt werden.  
-(2) Widerstand R1: **680 &Omega;** bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
-(3) Widerstand R2: **3,9 k&Omega;** bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
+__*[1]*__ Es ist sinnvoll, die 3-poligen Buchsenleisten an alle 3 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb weniger LEDs eingesetzt werden.  
+__*[2]*__ Widerstand R1: **680 &Omega;** bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
+__*[3]*__ Widerstand R2: **3,9 k&Omega;** (oder 4,7 k&Omega;) bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
    
 ### Vorbereitung
 1. Von einer langen, einreihigen Buchsenleiste 3x 3-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D3).   
@@ -254,14 +255,15 @@ Best&uuml;ckte Platine "`RCC_RGY_LED_V1M`"
 |-----|-----|-----|-----|   
 | 1 | C1 | Kondensator 1 &micro;F, 16 V, Raster 5,08 mm | C_L4.3mm_D2.8mm_P5.08mm_kh |  
 | 3 | D1, D2, D3 | Dual-LED rot-gr&uuml;n, gemeinsame Kathode | LED_D5.0mm-3 |   
-| 3 | D1, D2, D3 | Buchsenleiste 3-polig mit gedrehten Pins | "Fassung" f&uuml;r LEDs |   
+| 3 | D1, D2, D3 | Buchsenleiste 3-polig mit gedrehten Pins __*[1]*__ | "Fassung" f&uuml;r LEDs |   
 | 1 | D4 | Diode 1N4148 (oder BAT48) | D_DO-35_P3.81mm_Vertical_AnodeUp_kh |   
 | 1 | D5 | Diode 1N4148 (oder BAT48) | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
 | 2 | D6, D7 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp_kh |   
 | 2 | J1, J2 | Buchsenleiste 8-polig mit langen Kontakten (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_11mm_kh |   
 | 5 | Q1, Q2, Q3, Q4, Q5 | MOSFET BS170 | TO-92_Inline_Wide_custom |   
-| 1 | R1 | 680 &Omega;..1 k&Omega; (2) | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 4 | R2, R3, R9, R10 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R1 | **680 &Omega;** ... 1 k&Omega; __*[2]*__ | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R2 | **3,9 k&Omega;** ... 4,7 k&Omega; ... 10 k&Omega; __*[3]*__ | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 3 | R3, R9, R10 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 | 1 | R4 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P17.78mm_Horizontal |   
 | 2 | R5, R8 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 | 1 | R6 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
@@ -275,9 +277,9 @@ Best&uuml;ckte Platine "`RCC_RGY_LED_V1M`"
 | 2 | SW1, SW3 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe je nach Anwendung |    
 
 ### Anmerkungen
-(1) Es ist sinnvoll, die 3-poligen Buchsenleisten an alle 3 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb weniger LEDs eingesetzt werden.  
-(2) Widerstand R1: **680 &Omega;** bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
-(3) Widerstand R2: **3,9 k&Omega;** bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
+__*[1]*__ Es ist sinnvoll, die 3-poligen Buchsenleisten an alle 3 LED-Positionen zu l&ouml;ten, auch wenn im Betrieb weniger LEDs eingesetzt werden.  
+__*[2]*__ Widerstand R1: **680 &Omega;** bei drei Duo-LEDs, 1 k&Omega; bei einer Duo-LED   
+__*[3]*__ Widerstand R2: **3,9 k&Omega;** (oder 4,7 k&Omega;) bei drei Duo-LEDs, 10 k&Omega; bei einer Duo-LED   
    
 ### Vorbereitung
 1. Von einer langen, einreihigen Buchsenleiste 3x 3-polige St&uuml;cke abtrennen (f&uuml;r D1 bis D3).   
