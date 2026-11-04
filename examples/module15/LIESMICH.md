@@ -29,7 +29,7 @@ _Bild: Rahmen mit Grundplatte und Gleis_
 # 1. Eigenschaften des Moduls
 |                |                                                    |   
 |----------------|----------------------------------------------------|   
-| Modulgröße     | 25 x 25 cm²                                        |   
+| Modulgröße     | 25 x 25 cm², Höhe min. 7 cm                        |   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit Schotterbett          |   
 | Gleisbild      | Gerade mit Ausgleichsgleis                         |   
 | Elektrischer Anschluss | * 2x 25-poliger SUB-D-Stecker (entsprechend NEM 908D, je 1x WEST und OST)   <br>* 2x 20-poliger Wannenstecker (auf der Rückseite) |   

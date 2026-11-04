@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>Weitere RCC Komponenten</h1><b><big>RCC6: Optionale Komponenten für das RCC-System</big></b><br>  
-Stand: 1.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 3.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -246,8 +246,9 @@ Die Stromversorgung und alle Ein- und Ausgangssignale befinden sich an der Stift
 Bild der Platine "`RCC_RGY_LED_V1M`":   
 ![Platine RCC_RGY_LED_V1M](/images/pcb_f/PCB_F_RCC_RGY_LED_V1M.png "Platine RCC_RGY_LED_V1M")   
 
-Best&uuml;ckte Platine "`RCC_RGY_LED_V1M`"   
-![Bestückte Platine RCC_RGY_LED_V1M](/images/300_RCC_RGY_LED_V1M_assembled.png "Bestückte Platine RCC_RGY_LED_V1M")   
+Best&uuml;ckte Platine "`RCC_RGY_LED_V1M`" (Bauteil- und Lötseite)   
+![Bestückte Platine RCC_RGY_LED_V1M Bauteilseite](/images/300_RCC_RGY_LED_V1M_front_assembled.png "Bestückte Platine RCC_RGY_LED_V1M Bauteilseite") 
+![Bestückte Platine RCC_RGY_LED_V1M_Lötseite](/images/300_RCC_RGY_LED_V1M_back_assembled.png "Bestückte Platine RCC_RGY_LED_V1M_Lötseite")   
 
 ### St&uuml;ckliste   
 
@@ -263,16 +264,16 @@ Best&uuml;ckte Platine "`RCC_RGY_LED_V1M`"
 | 5 | Q1, Q2, Q3, Q4, Q5 | MOSFET BS170 | TO-92_Inline_Wide_custom |   
 | 1 | R1 | **680 &Omega;** ... 1 k&Omega; __*[2]*__ | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | R2 | **3,9 k&Omega;** ... 4,7 k&Omega; ... 10 k&Omega; __*[3]*__ | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
-| 3 | R3, R9, R10 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
-| 1 | R4 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P17.78mm_Horizontal |   
-| 2 | R5, R8 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
-| 1 | R6 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 1 | R7 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
-| 1 | R11 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
-| 1 | R12 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
-| 1 | R13 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 | 1 | R14 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 1 | R15 | 47 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 1 | R12 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R13 | 4,7 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
+| 3 | R3, R9, R10 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R4 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P17.78mm_Horizontal |   
+| 1 | R7 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
+| 2 | R5, R8 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
+| 1 | R6 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
+| 1 | R11 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P3.81mm_Vertical_kh |   
 | 2 | SW1, SW3 | Taster SW_Push_DPDT_8x8 | SW_Push_DPDT_8x8 |   
 | 2 | SW1, SW3 | Knopf f&uuml;r Taster/Schalter 8x8mm, L&auml;nge 10mm, Farbe je nach Anwendung |    
 
@@ -301,6 +302,7 @@ Bauteile der Platine "RCC_RGY_LED_V1M"
 1. Die dreipoligen Buchsenleisten (D1 bis D3) mit gedrehten Pins auf die **L&ouml;tseite** des Prints l&ouml;ten.   
 
 Auf die **Bauteilseite** l&ouml;ten:  
+![](/images/480_RCC_RGY_LED_V1M_parts_Fsilk_V2.png)  
 2. Widerstand R15 (liegend, 47 &Omega;, 7,6 mm)  
 3. Widerstand R7 (liegend, 10 k&Omega;, 7,6 mm)  
 4. Widerstand R4 (liegend, 10 k&Omega;, 17,8 mm)  
@@ -310,7 +312,7 @@ Auf die **Bauteilseite** l&ouml;ten:
 8. Kondensator C1 (1 &micro;F, 5,08 mm)  
 9. Widerstand R14 (47 &Omega;, stehend)  
 10. Widerstand R1 (**680 &Omega;** ... 1 k&Omega;)   
-11. Widerstand R2 (3,9 k&Omega; ... 10 k&Omega;)   
+11. Widerstand R2 (**3,9 k&Omega;** ... 10 k&Omega;)   
 12. Widerst&auml;nde R12, R13 (4,7 k&Omega;, stehend)   
 13. Widerst&auml;nde R3, R9, R10 (10 k&Omega;, stehend)   
 14. Widerst&auml;nde R5, R6, R8, R11 (100 k&Omega;, stehend)   
@@ -522,7 +524,7 @@ Führe den Test auch für Kanal 2 durch.
 
 ## 3.1 Prinzip
 
-Die Puls-Erkennung Typ 2 (kurz "PULS2") reagiert auf fallende Flanken am SET- und RESET-Eingang. Der letzte Zustand wird gespeichert und steht auch nach einem Stromausfall zur Verfügung.  
+Die Puls-Erkennung Typ 2 (kurz "PULS2") hat **zwei Eingänge**: SET und RESET. Sie reagiert auf eine **fallende Flanke** am SET- und RESET-Eingang. Der letzte Zustand wird gespeichert und steht auch nach einem Stromausfall zur Verfügung.  
 
 ### Eingänge
 
@@ -554,18 +556,18 @@ Die Puls-Steuerung besteht aus 5 Stufen:
 * H-Brücken-Treiber (DRV8833)  
 * Bistabiles Relais (IM41)  
 
-KiCad-Schaltplan der Platine "RCC_PULS2_TVn_STRG" (Version 1):   
+KiCad-Schaltplan der Platine "RCC_PULS2_TVn_STRG" (Version 2):   
 
-![RCC_PULS2_TVn_STRG_circuit](/images/600_RCC_PULS2_TVn_STRG_V1_circuit.png "RCC_PULS2_TVn_STRG_circuit")   
+![RCC_PULS2_TVn_STRG_circuit](/images/600_RCC_PULS2_TVn_STRG_V2_circuit.png "RCC_PULS2_TVn_STRG_circuit")   
 
 <a name="x322"></a>   
 
 ### 3.2.2 Bestückung der Platine
-Bild der Platine `RCC_PULS2_TVn_STRG` (Version 1):   
-![PULS2-Platine](/images/pcb_f/PCB_F_RCC_PULS2_TVn_STRG_V1.png "PULS2-Platine")   
+Bild der Platine `RCC_PULS2_TVn_STRG` (Version 2):   
+![PULS2-Platine](/images/pcb_f/PCB_F_RCC_PULS2_TVn_STRG_V2.png "PULS2-Platine")   
 
-Best&uuml;ckte Platine "RCC_PULS2_TVn_STRG_V1"   
-![RCC_PULS2_TVn_STRG bestückt1](/images/300_RCC_PULS2_TVn_STRG_V1_assembled1.png "RCC_PULS2_TVn_STRG")  
+Best&uuml;ckte Platine `RCC_PULS2_TVn_STRG_V2`   
+![RCC_PULS2_TVn_STRG bestückt1](/images/300_RCC_PULS2_TVn_STRG_V2_assembled1.png "RCC_PULS2_TVn_STRG")  
 
 #### St&uuml;ckliste   
 | Anzahl | Referenz | Wert | Geh&auml;use |   
@@ -573,62 +575,74 @@ Best&uuml;ckte Platine "RCC_PULS2_TVn_STRG_V1"
 | 3 | C1, C2, C4 | 100 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
 | 2 | C3, C5 | 10 nF, Raster 2,54 mm | C_L4mm_D3mm_P2.54mm_kh |   
 | 1 | C6 | Elko 10 &micro;F, 16 V, Raster 2,54 mm | ELKO_L7.88mm_D4.57mm_P2.54mm_kh |   
-| 3 | D1, D2, D4 | BAT48 | D_DO-35_P1.778mm_Vertical_AnodeUp_kh |   
-| 2 | D3, D6 | BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
-| 3 | D5, D8, D9 | BAT48 | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
-| 1 | D7 | BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
+| 3 | D1, D2, D4 | Diode BAT48 | D_DO-35_P1.778mm_Vertical_AnodeUp_kh |   
+| 2 | D3, D6 | Diode BAT48 | D_DO-35_SOD27_P5.08mm_Horizontal_kh |   
+| 3 | D5, D8, D9 | Diode BAT48 | D_DO-35_P2.0mm_Vertical_AnodeUp_kh |   
+| 1 | D7 | Diode BAT48 | D_DO-35_SOD27_P2.54mm_Vertical_AnodeUp |   
 | 2 | J1, J2 | Stiftleiste 8-polig (Conn_01x08_Pin) | PinSocket_1x08_P2.54mm_Vertical_Back_kh |   
 | 2 | J3, J5 | Wannenstecker 6-polig, stehend | Box_02x03_P2.54mm_Vertical_kh |   
 | 1 | J4 | Wannenstecker 10-polig, stehend | Box_02x05_P2.54mm_Vertical_kh |   
-| 1 | J6 | DRV8833_Board [1] | DRV8833_Board |   
-| 2 | J6 | Buchsenleiste 6 Pin [2] |   |   
-| 1 | J7 | Stiftleiste 2-polig (Jumper_2) [3] | PinSocket_1x02_P2.54mm_Vertical_kh |   
+| 1 | J6 | DRV8833 Dual-Motortreiber-Board __*[1]*__ | DRV8833_Board |   
+| 2 | J6 | Buchsenleiste 6 Pin, gedrehte Kontakte __*[2]*__ |   |   
+| 1 | J7 | Stiftleiste 2-polig (Jumper_2) __*[3]*__ | PinSocket_1x02_P2.54mm_Vertical_kh |   
 | 1 | J7 | Jumper (2-polig) |   |   
-| 1 | K1 | Relais IM41, 3 V, 2x UM, bistabil | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
+| 1 | K1 | Relais IM41, 3 V, 2x UM, **bistabil** | Relay_DPDT_AXICOM_IMSeries_Pitch5.08mm_rect_Pins |   
+| 2 | K1 | Buchsenleiste 4 Pin, gedrehte Kontakte __*[4]*__ |   |   
 | 2 | R21, R24 | 100 &Omega; | R_Axial_P1.778mm_Vertical_kh |   
 | 2 | R28, R29 | 100 &Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
-| 4 | R22, R23, R25, R26 | 100 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
+| 2 | R22, R25 | 10 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
+| 2 | R23, R26 | 220 k&Omega; | R_Axial_P1.778mm_Vertical_kh |   
 | 1 | R27 | 100 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal |   
 | 1 | U1 | 4-fach NAND mit Schmitt-Trigger HEF4093B | DIP-14_W7.62mm_Socket_kh |   
 | 1 | U1 | Fassung DIL 14 (2x7 Pin), gedrehte Kontakte |   |   
 
 Bauteile der Platine `RCC_PULS2_TVn_STRG`:   
-![RCC_PULS2_TVn_STRG_parts](/images/300_RCC_PULS2_TVn_STRG_parts_V1.png "RCC_PULS2_TVn_STRG_parts")   
+![RCC_PULS2_TVn_STRG_parts](/images/300_RCC_PULS2_TVn_STRG_parts_V2.png "RCC_PULS2_TVn_STRG_parts")   
 
 #### Vorbereitung
-[1] 1. Auf dem DRV8833_Board J6 die Verbindung bei J1 **auftrennen**.   
-&nbsp; &nbsp; &nbsp;2. 2x 6polige Stiftleisten zu den Bauteilen hin anlöten.   
-[2] Von einer flachen, einreihigen Buchsenleiste 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6) oder   
+__*[1]*__ 1. Auf dem DRV8833_Board J6 die Verbindung bei J1 **auftrennen**.   
+&nbsp; &nbsp; &nbsp; 2. 2x 6polige Stiftleisten zu den Bauteilen hin anlöten.   
+&nbsp; &nbsp; &nbsp; ![DRV8833_2](/images/150_DRV8833_2.png "DRV8833_2") ![DRV8833_1](/images/150_DRV8833_1.png "DRV8833_1")  
+__*[2]*__ Von einer flachen, einreihigen Buchsenleiste 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6) oder   
     zB eine DIL 14 Fassung mit Federkontakten auseinanderschneiden und 2x 6-polige St&uuml;cke abtrennen (f&uuml;r J6).   
-[3] Von einer langen, einreihigen Stiftleiste 1x 2-poliges St&uuml;ck abtrennen (f&uuml;r J7).   
+__*[3]*__ Von einer langen, einreihigen Stiftleiste 1x 2-poliges St&uuml;ck abtrennen (f&uuml;r J7).   
+__*[4]*__ Pin2 2 und 4 etwas nach innen verbiegen, da die Kontakte des Relais nicht genau im 2,54 mm Raster liegen.   
 
 #### Best&uuml;ckung   
-![](/images/480_RCC_PULS2_TVn_STRG_Fsilk_V1.png)  
+![](/images/480_RCC_PULS2_TVn_STRG_Fsilk_V2.png)  
 1. Widerstand R27 (100 k&Omega;, liegend)   
 2. Diode D3, D6 (BAT48, liegend, Kathode beim weißen Strich)   
 3. Elko C6 (10 &micro;F, liegend, auf Polung achten!)   
-4. Fassung U1 (DIL 14, auf Polung/Kerbe achten!)   
-5. Buchsenleisten J6 (2x 6 Pin)   
-6. **Bistabiles** Relais K1 (IM41, 3V, auf Polung achten)   
+4. Buchsenleisten J6 (2x 6 Pin)  
+   (Eventuell zum Löten DRV8833_Board aufstecken, danach wieder entfernen.)   
+5. Fassung U1 (DIL 14, auf Polung/Kerbe achten!)   
+---   
+6. **Bistabiles** Relais K1 (IM41, 3V, auf Polung achten) oder 2x4-polige Fassung   
 7. Diode D1, D2, D4, D5, D7, D8, D9 (BAT48, stehend, Kathode in den Kreis)   
 8. Kondensatoren C3, C5 (10 nF = 103, Raster 2,54 mm, stehend)   
 9. Kondensatoren C1, C2, C4 (100 nF = 104, Raster 2,54 mm, stehend)   
-10. Stiftleiste J7 (2-polig)   
-11. Widerst&auml;nde R21, R24, R28, R29 (100 &Omega;, stehend)   
-12. Widerst&auml;nde R22, R23, R25, R26 (100 k&Omega;, stehend)   
-13. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
-14. Kondensator C2 (100 nF = 104, Raster 2,54 mm, stehend)   
+---   
+10. Widerst&auml;nde R21, R24, R28, R29 (100 &Omega;, stehend)   
+11. Widerst&auml;nde R22, R25 (10 k&Omega;, stehend)   
+12. Widerst&auml;nde R23, R26 (220 k&Omega;, stehend)   
+13. Stiftleiste J7 (2-polig)   
+14. Wannenstecker J1 bis J3 (auf Polung achten - Pin 1)   
+---   
 15. Stiftleisten J1 und J2 **NACH UNTEN** anl&ouml;ten!   
 
 #### Print vervollständigen
 * Jumper auf Stifte J7 aufstecken.   
-* 4-fach NAND HEF4093B einstecken.   
-* DRV8833_Board aufstecken.   
+* Relais IM41 einstecken, falls eine Fassung verwendet wurde.  
+* 4-fach NAND HEF4093B einstecken (auf Richtung = Kerbe achten).   
+* DRV8833_Board aufstecken (unterbrochene Lötverbindung J1 zum Print-Rand).   
 
 <a name="x323"></a>   
 
 ## 3.2.3 Versionen
-* V1 (260727): OK.   
+* V1 (260820): Änderung von Bauteilwerten.  
+  - C4 ist 10n, soll 100n; C5 ist 100n, soll 10nF.  
+  - R22/R25 ist 100k, soll 10k; R23/R26 ist 100k, soll 220k.  
+* V2 (261003): OK  
 
 <a name="x33"></a>   
 

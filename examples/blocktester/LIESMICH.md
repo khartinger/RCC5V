@@ -1,21 +1,34 @@
-<table><tr><td><img src="./images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 29.3.2025 <a name="up"></a><br>   
-<h1>RCC-Blocktester</h1>
-<a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
-</td></tr></table>   
+<a name="up"></a>
+<table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
+<h1>RCC-Blocktester</h1><b><big> Aufbau eines Testsystems für RCC-Komponenten (Steuerblöcke)</big></b><br>  
+Stand: 4.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+<a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
+<a href="README.md">→ English version</a>
+</td></tr></table>
 
 [Link zur Inhalts&uuml;bersicht](#x05)   
 
 # Worum geht es hier?
-Diese Anleitung beschreibt den Aufbau eines Testsystems f&uuml;r RCC-Komponenten (RCC: Railroad Control Components). Damit k&ouml;nnen Zweiweg- und Dreiwegweichen sowie Entkuppler und Fahrstromabschaltungen von Gleisen getestet werden. Das Testsystem ist so aufgebaut, dass alle Funktionen bereits vorhanden sind und funktionieren. Zum Testen einer neu gebauten Komponente baut man diese ins Testsystem ein und schaut, ob das System weiter funktioniert.   
 
-![Ansicht Blocktester 1](./images/300_BT_view_front2.png "Ansicht Blocktester 1")   
-_Bild 1: Ansicht des Blocktesters_   
+Diese Anleitung beschreibt den Aufbau eines **Testsystems für RCC-Komponenten** (Railroad Control Components).  
 
-Die Gr&ouml;&szlig;e des Testsystems ist mit 31 x 22 cm² so gew&auml;hlt, dass es einfach in einer IKEA-Samla-Box 401.029.78 aufbewahrt werden kann.   
+Mit dem Testsystem lassen sich folgende Steuerblöcke überprüfen:  
 
-![Ansicht Blocktester IKEA](./images/300_BT_view_ikea.png "Ansicht Blocktester IKEA")   
-_Bild 2: Blocktester in einer IKEA-Box_   
+- Zweiweg- und Dreiwegweichen
+- Entkuppler
+- Fahrstromabschaltungen für Gleise
+
+Das Testsystem ist bereits vollständig aufgebaut und funktionsfähig. Zum Testen einer neu entwickelten oder gebauten Komponente wird diese einfach angeschlossen bzw. eingebaut. Anschließend lässt sich überprüfen, ob alle Funktionen weiterhin korrekt arbeiten.  
+
+![Ansicht des Blocktesters](./images/300_BT_view_front2.png "Ansicht des Blocktesters")
+
+*Bild 1: Ansicht des Blocktesters*
+
+Mit einer Größe von **31 × 22,3 cm** ist das Testsystem kompakt genug, um bequem in einer IKEA-SAMLA-Box (Artikelnummer 401.029.78) aufbewahrt zu werden.  
+
+![Blocktester in einer IKEA-Box](./images/300_BT_view_ikea.png "Blocktester in einer IKEA-Box")
+
+*Bild 2: Blocktester in einer IKEA-Box*
 
 ## Eigenschaften des Blocktesters
 Das folgende Bild zeigt den Blocktester von oben.   
@@ -29,6 +42,7 @@ _Bild 3: Blocktester von oben_
 ### &Uuml;bersicht &uuml;ber die System-Eigenschaften 
 |                |                                                    |   
 | -------------- | -------------------------------------------------- |   
+| Modulgröße     | 31 x 22,3 cm², Höhe 7 cm                           |   
 | Gleismaterial  | Fleischmann Spur-N-Gleis mit Schotterbett          |   
 | Gleisbild      | 1x Entkuppler <br> 1x Zweiwegweiche <br> 1x Dreiwegweiche <br> 1x Abschaltbares Gleis <br> 1x Blinklicht |   
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker <br>(entsprechend NEM 908D, je 1x WEST und OST) |   
@@ -37,7 +51,7 @@ _Bild 3: Blocktester von oben_
 | Bedienelemente mit R&uuml;ckmeldung | 1x Mikrocontroller mit OLED-Display und Taster <br> 1x Entkuppler (Block 1OUT, DCC 11) <br> 1x Zweiwegweiche (Block W2, DCC 21) <br> 1x Dreiwegweiche (Block W3, DCC 31 und 32) <br> 1x Abschaltbares Gleis bzw. Fahrstrom (Block 2IO, DCC 41)<br> 1x Blinklicht (DCC 51) |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 | MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
-| Sonstiges | * Als Steuersoftware dient die Demo-Software |   
+| Sonstiges | * Als Steuersoftware dient die Demo-Software 1 |   
 
 <a name="x05"></a>   
 
