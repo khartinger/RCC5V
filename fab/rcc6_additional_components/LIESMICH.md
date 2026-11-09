@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>Weitere RCC Komponenten</h1><b><big>RCC6: Optionale Komponenten für das RCC-System</big></b><br>  
-Stand: 3.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 5.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -383,8 +383,9 @@ Steht kein `RW_LEER_DUOLED`-Board zur Verfügung, kann man auch das `RW_LEER_LED
 
 ## 2.1 Prinzip
 
-Die Puls-Erkennung Typ 1 (kurz "PULS1") reagiert auf eine fallende Flanke am Eingang und erzeugt einen Puls vorgegebener Länge. Die Pulslänge ist mit einem Potenziometer zwischen Millisekunden und Sekunden einstellbar. Es sind zwei voneinander unabhängige Kanäle verfügbar.  
-Bleibt ein Impulseingang länger auf 0, so bleibt auch das Ausgangssignal auf 0.  
+Die Puls-Erkennung Typ 1 (**PULS1**) reagiert auf eine fallende Flanke am Eingang und erzeugt einen Puls mit einstellbarer Länge. Die Pulslänge lässt sich über einen Trimmer von wenigen Millisekunden bis zu mehreren Sekunden einstellen.  
+Pro Steuerblock stehen **zwei** voneinander **unabhängige Kanäle** zur Verfügung.  
+Bleibt der Eingang nach einer fallenden Flanke auf 0, so bleibt auch der Ausgang auf 0.  
 
 <a name="x22"></a>   
 
@@ -410,21 +411,24 @@ Bleibt ein Impulseingang länger auf 0, so bleibt auch das Ausgangssignal auf 0.
 | 2 | R1, R5 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical |   
 | 2 | R2, R6 | 10 k&Omega; | R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical_kh |   
 | 2 | RV1, RV2 | Trimmer 500 k&Omega; stehend | Trim_RM-063_Horizontal_kh |   
-| 1 | U1 | CD4538  Dual Precision Monostable Multivibrator (Monoflop), retriggerbar |  |   
+| 1 | U1 | CD4538 (CD14538BE)  Dual Precision Monostable Multivibrator (Monoflop), retriggerbar |  |   
 | 1 | U1 | IC-Fassung 16-polig, gedrehte Pins | DIP-16_W7.62mm_kh |   
 
 ### Bestückung
-1. IC-Fassung U1 (auf Polung = Kerbe achten)  
-2. Dioden D1 bis D10 (stehend, auf Polung achten: Kathode im weißen Kreis!)  
+1. IC-Fassung U1 (DIL 16, auf Polung = Kerbe achten)  
+2. Dioden D1 bis D10 (BAT48, stehend, auf Polung achten: Kathode im weißen Kreis!)  
 3. Transistoren Q1, Q2 (BC337)  
-4 Tantal-Elko C3, C4 (auf Polung achten!)  
-5 Trimmer RV1, RV2  
+4. Tantal-Elko C3, C4 (RM 2,54 mm, auf Polung achten!)  
+5. Trimmer RV1, RV2 (504 = 500 k&Omega;)  
 6. Alle Widerstände R1 bis R8  
 7. Kondensatoren C1, C2 (100 nF)  
 8. Wannenstecker J3 bis J5 (auf Polung achten!)  
 
-Auf die _*L&ouml;tseite*_ l&ouml;ten:   
+Auf die __*L&ouml;tseite*__ l&ouml;ten:   
 9. Stiftleisten J1 und J2 NACH UNTEN anl&ouml;ten!   
+
+### Board vervollständigen
+* IC CD14538BE einstecken.  
 
 ## Versionen
 * V1 (260824): OK  
@@ -458,9 +462,10 @@ Auf die _*L&ouml;tseite*_ l&ouml;ten:
 2. Die LED-Anschl&uuml;sse entsprechend [Kapitel 1.4](#x14) abschneiden und biegen.   
 
 ### Bestückung
-1. Die zweipoligen Buchsenleisten (D1, D2, D4, D5) mit gedrehten Pins auf die _L&ouml;tseite_ des Prints l&ouml;ten.   
+1. Die zweipoligen Buchsenleisten (D1, D2, D4, D5) mit gedrehten Pins auf die __*L&ouml;tseite*__ des Prints l&ouml;ten.   
 
-Auf die _*Bauteilseite*_ l&ouml;ten:   
+Auf die __*Bauteilseite*__ l&ouml;ten:   
+
 2. Widerstände R1, R6, R8 (1 k&Omega; liegend, 10 mm)  
 3. Widerstand R7 (100 k&Omega; liegend, 7,6 mm)  
 4. Transistoren Q1, Q2 (BC337)   
