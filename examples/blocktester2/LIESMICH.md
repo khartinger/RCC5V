@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>RCC-Blocktester 2</h1><b><big>Testsystem für weitere RCC-Komponenten (Steuerblöcke)</big></b><br>  
-Stand: 9.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 15.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -23,7 +23,7 @@ Das Testsystem ist bereits vollständig aufgebaut und funktionsfähig. Zum Teste
 
 Die Frontplatte ist mit 3D-Druck erstellt, sodass die Schaltblöcke leicht ein- und ausgebaut werden können.  
 
-![Ansicht des Blocktesters #2](./images/300_BT2_view_front2.png "Ansicht des Blocktesters #2")
+![Ansicht des Blocktesters #2](./images/300_BT2_view_front.png "Ansicht des Blocktesters #2")
 
 *Bild 1: Ansicht des Blocktesters #2*
 
