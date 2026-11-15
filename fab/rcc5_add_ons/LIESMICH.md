@@ -15,6 +15,7 @@ Folgende Erg&auml;nzungsplatinen sind hilfreich und werden auf dieser Seite besc
 * [Fahrstromschalter zweifach (CON_2xIO)](#x70)   
 * [Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_2x4)](#x80)   
 * [Alte Verteilerplatine von 10-poligem Kabel auf Pins (CON_10pol_PIN)](#x90)   
+* [4-fach Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin (CON_4x10pol_io16)](#x100)  
    
 <a name="x20"></a>   
 
@@ -277,5 +278,12 @@ _*Link zu den KiCad-Dateien*_: [/fab/kicad/CON_10pol_PIN_V2](/fab/kicad/CON_10po
 ### Best&uuml;ckung   
 1. Stiftleisten J2 bis J5   
 2. Wannenstecker J1   
+
+[Zum Seitenanfang](#up)   
+<a name="x100"></a>   
+
+# 10. 4-fach Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin (CON_4x10pol_io16)
+![4-fach Umsetzer 10polig](/images/pcb_f/PCB_F_CON_4x10pol_io16_V1.png "4-fach Umsetzer 10polig")   
+_Bild ..: Platine 4-fach Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin_   
 
 [Zum Seitenanfang](#up)   

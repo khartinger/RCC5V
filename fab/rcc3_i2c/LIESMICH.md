@@ -4,6 +4,8 @@ Letzte &Auml;nderung: 16.3.2025 <a name="up"></a><br>
 <a href="README.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
 </td></tr></table>   
 
+<a name="x10"></a>   
+
 # 1. Einleitung   
 Die Anbindung der [Steuerbl&ouml;cke](/fab/rcc4_block) an den [ESP32-Mikrocontroller](/fab/rcc2_esp32) erfolgt &uuml;ber die I/O-Pins von zugekauften I²C-PCF8574-I/O-Platinen:   
 
@@ -15,16 +17,25 @@ Mit den Jumpern kann die I²C-Adresse der Boards (im Bild links 0x20 und rechts 
 ---   
 
 Die hier beschriebenen Zusatzplatinen sind nicht unbedingt erforderlich, aber hilfreich, weil die PCF8574-Platinen zB keine Bohrungen f&uuml;r eine Befestigung haben und auch die Leitungen des I²C-Busses mit Pull-Up-Widerst&auml;nden abgeschlossen werden sollten.   
-Folgende Prints sind derzeit verf&uuml;gbar:   
-* [I²C-Halterung 20 mm](#x20)   
-* [I²C-Halterung 40 mm](#x30)   
-* [I2C-LED-Platine](#x40)   
-* [I²C-Verteiler](#x50)   
-* [I²C-Platine mit Pull-up-Widerst&auml;nden](#x60)   
+
+Folgende Prints sind derzeit verf&uuml;gbar:  
+* [I²C-Halterung 15mm und 20 mm](#x20)  
+* [I²C-Halterung 40 mm](#x30)  
+* [I2C-LED-Platine](#x40)  
+* [I²C-Verteiler](#x50)  
+* [I²C-Platine mit Pull-up-Widerst&auml;nden](#x60)  
+* [I²C-Verlängerungsplatine (CON_2x6pol_0)](#x70)  
 
 <a name="x20"></a>   
+<a name="x21"></a>   
 
-# 2. I²C-Halterung 20 mm   
+# 2. I²C-Halterung 15 mm und 20 mm
+
+## 2.1 I²C-Halterung 15 mm
+
+<a name="x22"></a>   
+
+## 2.2 I²C-Halterung 20 mm
 Auf den I²C-PCF8574-I/O-Platinen sind keine Befestigungsbohrungen vorgesehen. Die `CON_i2c_20mm`-Platine dient als 20 mm langes Zwischenst&uuml;ck zwischen zwei I²C-PCF8574-I/O-Platinen und hat eine Befestigungsbohrung.   
 
 ![CON_i2c_20mm_V1](/images/200_CON_i2c_20mm_V2.png "CON_i2c_20mm_V1")   
@@ -61,6 +72,7 @@ Kondensator einl&ouml;ten.
 <a name="x30"></a>   
 
 # 3. I²C-Halterung 40 mm   
+
 Auf den I²C-PCF8574-I/O-Platinen sind keine Befestigungsbohrungen vorgesehen. Die `CON_i2c_40mm`-Platine dient als 40 mm langes Zwischenst&uuml;ck zwischen zwei I²C-PCF8574-I/O-Platinen und hat zwei Befestigungsbohrungen.   
 
 ![CON_i2c_40mm_V1](/images/200_CON_i2c_40mm_V1.png "CON_i2c_40mm_V1")   
@@ -195,5 +207,17 @@ Die langen Kontakte der 4-poligen Buchsenleiste um 90° abbiegen.
 ## Versionen
 * V1 (250407): OK   
 * V2 (240426): R1 gestreckt, OK   
+
+[Zum Seitenanfang](#up)   
+<a name="x70"></a>   
+
+# 7. I²C-Verlängerungsplatine (CON_2x6pol_0)
+![Print CON_2x6pol_0](/images/pcb_f/PCB_F_CON_2x6pol_0_V1.png "CON_2x6pol_0")  
+_Bild 17: Platine zum Verlängern von 6-poligen Flachbandkabeln_   
+
+## Versionen
+
+* V1 (250106): OK   
+
 
 [Zum Seitenanfang](#up)   

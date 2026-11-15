@@ -70,10 +70,12 @@ _Bild 3: Blocktester #2 von oben_
 <a name="x10"></a>   
 
 # 1. Schaltung des Testsystems
-Das Testsystem ist so aufgebaut, dass einerseits alle Komponenten leicht ausgetauscht werden k&ouml;nnen und andererseits der Einsatz der verschiedenen Add-On-Platinen gezeigt wird.    
-Das folgende Bild gibt eine &Uuml;bersicht &uuml;ber die eingesetzten Komponenten:   
-![&Uuml;bersicht Testsystem](./images/600_overview_testsystem.png  "&Uuml;bersicht Testsystem")   
-_Bild 4: &Uuml;bersichtsplan des Testsystems_   
+Das Testsystem ist so aufgebaut, dass sich alle Komponenten leicht austauschen lassen. Gleichzeitig zeigt es den Einsatz der verschiedenen Add-on-Platinen.  
+
+Das folgende Bild gibt einen Überblick über die verwendeten Komponenten:  
+
+![&Uuml;bersicht Testsystem](./images/600_overview_blocktester2.png  "&Uuml;bersicht Testsystem")   
+_Bild 4: &Uuml;bersichtsplan Blocktester #2_   
 
 ## Bedeutung der einzelnen Komponenten
 Die folgende Liste enth&auml;lt Links zu Beschreibungen und zum Bau der Komponenten.   
@@ -83,25 +85,24 @@ Die folgende Liste enth&auml;lt Links zu Beschreibungen und zum Bau der Komponen
 
 -------   
 
-`1OUT ........` [Block zur Ausgabe der Wechselspannung](/fab/rcc4_block/LIESMICH.md#x40) zB f&uuml;r Entkuppler   
-`W2 ..........` [Block zum Schalten einer Zweiwegweiche](/fab/rcc4_block/LIESMICH.md#x20)   
-`W3 ..........` [Block zum Schalten einer Dreiwegweiche](/fab/rcc4_block/LIESMICH.md#x30)   
-`2IO..........` [Block zum Schalten eines abschaltbaren Gleises](/fab/rcc4_block/LIESMICH.md#x50)   
+`TUI .........` [Block zum Schalten und Anzeige des Fahrstroms](/fab/rcc4_block/LIESMICH.md#x70), zB zum Erkennen, ob ein Gleis besetzt ist.  
+`UI ..........` [Block zur Anzeige eines Fahrstroms](/fab/rcc6_additional_components/LIESMICH.md#x40), zB zum Erkennen, ob ein Gleis besetzt ist.  
+`PULS1 .......` [Block zur Anzeige von zwei unabhängigen Impulseingängen](/fab/rcc6_additional_components/LIESMICH.md#x20).  
+`PULS2 .......` [Block zur Anzeige eines Set/Reset-Impulseingangs](/fab/rcc6_additional_components/LIESMICH.md#x30).  
 
 -------   
 
 `10pol_PIN....` Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin [als &auml;ltere Version `CON_10pol_PIN`](/fab/rcc5_add_ons/LIESMICH.md#x90) bzw. [als neuere Version `CON_10pol_2x4`](/fab/rcc5_add_ons/LIESMICH.md#x80)   
-`CON_6pol-3 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 3 Pins](/fab/rcc5_add_ons/LIESMICH.md#x40) zum Beispiel f&uuml;r eine Zweiwegweiche _W2_ oder einen Entkuppler _1OUT_   
-`CON_6pol-6 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 6 Pins](/fab/rcc5_add_ons/LIESMICH.md#x50) zum Beispiel f&uuml;r eine Dreiwegweiche _W3_    
-`CON_1xIO ....` [Umsetzer vom 6-poligen Flachbandkabel auf Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x60) zum einfachen Anschluss des Fahrstromschalters _2IO_.   
+`CON_2x6pol-0 ` [ I²C-Verlängerungsplatine bzw. Umsetzer vom 6-poligen Flachbandkabel auf 6 Pins](/fab/rcc5_add_ons/LIESMICH.md#x70)
+`CON_6pol-6 ..` [Umsetzer vom 6-poligen Flachbandkabel auf 6 Schraubklemmen](/fab/rcc5_add_ons/LIESMICH.md#x50).  
+`CON_4x10pol_io16 ` [4-fach Umsetzer vom 10-poligen Flachbandkabel auf 2x4 Pin](/fab/rcc5_add_ons/LIESMICH.md#x100) zB als Ersatz von 4 Stück `10pol_PIN`.  
 
 -------   
 
-`i2c_40mm ....` [I²C-Halterung 40 mm](/fab/rcc3_i2c/LIESMICH.md#x30)   
+`i2c_20mm ....` [I²C-Halterung 20 mm](/fab/rcc3_i2c/LIESMICH.md#x20)   
 `PCF8574 .....` [I²C-PCF8574-I/O-Platinen](/fab/rcc3_i2c/LIESMICH.md)   
-`i2c_LED .....` [I2C-LED-Platine](/fab/rcc3_i2c/LIESMICH.md#x40)   
-
-Da Entkuppler beim Schalten St&ouml;rspannungen erzeugen, werden direkt beim Entkuppleranschluss (CON_6pol-3) und am Ende des 6-poligen Stromversorgungskabels (an den Wechselstromklemmen Pin 4 und Pin 6) 100nF-Kondensatoren angebracht.   
+`CON_i2c_Term.` [I²C-Platine mit Pull-up-Widerst&auml;nden](/fab/rcc3_i2c/LIESMICH.md#x60)   
+`i2c_15mm ....` [I²C-Halterung 15 mm](/fab/rcc3_i2c/LIESMICH.md#x20)   
 
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
