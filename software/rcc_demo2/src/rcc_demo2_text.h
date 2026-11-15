@@ -32,7 +32,11 @@
  constexpr char T1_TRACK_FRE[] = "21";
  constexpr char T1_TRACK__0V[] = "22";
  constexpr char T1_TRACK_00V[] = "23";
-// constexpr char T1_TRACK__NA[] = "24";
+ constexpr char T1_TRACK_RST[] = "30";
+ constexpr char T1_TRACK_SET[] = "31";
+ constexpr char T1_TRACK_ERR[] = "99";
+
+ // constexpr char T1_TRACK__NA[] = "24";
 // constexpr char T1_TRACK__OK[] = "25";
 // constexpr char T1_TRACK_NOK[] = "26";
  
@@ -54,19 +58,22 @@
   #define T_TRACK_FRE        "Gleis frei"
   #define T_TRACK__0V        "Keine Fahrspannung"
   #define T_TRACK_00V        "Keine Fahrspannung"
+  #define T_TRACK_ERR        "Fehler"
+  #define T_TRACK_RST        "Puls Reset"
+  #define T_TRACK_SET        "Puls Set"
 
   // "---------|---------|-" line length = 21
   #define  INFOLINES_NUM     15
   #define  INFOLINES { \
-  "Test von RCC-     1/3", \
+  "Test #2 von RCC-  1/3", \
   "Schaltbloecken mit   ", \
   "DCC - MQTT - Hand    ", \
   VERSION_99_1, \
   " Weiter: Taste IO19  ", \
-  "DCC 21 2-Weg-Weiche 2", \
-  "DCC 61 Fahrspg ein UI", \
-  "DCC 71 Puls1         ", \
-  "DCC 81 Puls2         ", \
+  "DCC 61 Fahrspg IO TUI", \
+  "DCC 71 Fahrspganzeige", \
+  "DCC 81,82 Puls1      ", \
+  "DCC 91 Puls2         ", \
   " Weiter: Taste IO19  ", \
   "                  3/3", \
    " ",\

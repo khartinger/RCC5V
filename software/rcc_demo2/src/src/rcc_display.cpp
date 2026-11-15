@@ -124,7 +124,17 @@ String getSymbol4Line5(int iType, int iValue)
    if(iValue != 0) return (String(T_ON)  + "    ").substring(0,4);
    return (String(T_OFF)  + "    ").substring(0,4);
    break;
-  case RC_TYPE_TUI: // track switch and UI indicator-------------
+   case RC_TYPE_UI: // -----------------------------------------
+   // pulse 2 inputs (reset, set), UI display
+   switch(iValue) { 
+    case 0: return "OCC "; // "=0= " OCC BA=00
+    case 1: return "=== "; // "=1= " FRE BA=01
+    case 2: return " 0V "; // "=2= "  0V BA=10
+    case 3: return "00V "; // "=3= " 00V BA=11
+    default: return ERR;    // ?? impossible
+   } // END OF switch(iValue)
+   break;
+   case RC_TYPE_TUI: // track switch and UI indicator-------------
    switch(iValue) { 
     case 0: return "=== "; // "FRE " BA=00   RTVn=0,  RFREn=0
     case 1: return "=|: "; // "NOU " BA=01   RTVn=5V, RFREn=0
@@ -141,11 +151,11 @@ String getSymbol4Line5(int iType, int iValue)
     default: return ERR;    // ?? impossible
    } // END OF switch(iValue)
    break;
-   case RC_TYPE_P2: case RC_TYPE_UI: // -------------------------
+   case RC_TYPE_P2: // -----------------------------------------
    // pulse 2 inputs (reset, set), UI display
    switch(iValue) { 
-    case 0: return "OCC "; // "=0= " BA=00
-    case 1: return "FRE "; // "=1= " BA=01
+    case 0: return "SET "; // "=0= " BA=00
+    case 1: return "RST "; // "=1= " BA=01
     case 2: return " 0V "; // "=2= " BA=10
     case 3: return "00V "; // "=3= " BA=11
     default: return ERR;    // ?? impossible

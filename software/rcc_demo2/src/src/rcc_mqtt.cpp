@@ -561,36 +561,38 @@ String getValueForComp(strRcomp Rcomp_, strRcmd Rcmd_, bool byName) {
   if(Rcmd_.inValue) return T1_DPDT_1_NO;
   else return T1_DPDT_0_NC;
  }
- if(Rcomp_.type==RC_TYPE_UC || Rcomp_.type==RC_TYPE_P1) {
+ if(Rcomp_.type==RC_TYPE_UC) {
   if(Rcmd_.inValue) return byName ? T_ON : T1_ON;
   else return byName ? T_OFF : T1_OFF;
  }
-/*
- if(Rcomp_.type==RC_TYPE_P2 || Rcomp_.type==RC_TYPE_UI) {
+ if(Rcomp_.type==RC_TYPE_P1) {
+  if(Rcmd_.inValue) return byName ? T_OFF : T1_OFF;
+  else return byName ? T_ON : T1_ON;
+ }
+ if(Rcomp_.type==RC_TYPE_P2) {
   switch(Rcmd_.inValue) {
-   case 0:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=00
-   case 1:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=01
+   case 0:  return byName ? T_TRACK_SET : T1_TRACK_SET; // OCC BA=10
+   case 1:  return byName ? T_TRACK_RST : T1_TRACK_RST; // FRE BA=11
    case 2:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=10
    case 3:  return byName ? T_TRACK_00V : T1_TRACK_00V; // BA=11
    default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
   }
  }
-*/
- if(Rcomp_.type==RC_TYPE_P2 || Rcomp_.type==RC_TYPE_UI) {
+ if(Rcomp_.type==RC_TYPE_UI) {
   switch(Rcmd_.inValue) {
-   case 0:  return byName ? T_TRACK_00V : T1_TRACK_00V; // BA=00
-   case 1:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=01
-   case 2:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=10
-   case 3:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=11
+   case 0:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=00
+   case 1:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=01
+   case 2:  return byName ? T_TRACK_00V : T1_TRACK_00V; // NOV BA=00
+   case 3:  return byName ? T_TRACK__0V : T1_TRACK__0V; // NOU BA=01
    default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
   }
  }
 if(Rcomp_.type==RC_TYPE_TUI) {
   switch(Rcmd_.inValue) {
-   case 0:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=00
-   case 1:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=01
-   case 2:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=10
-   case 3:  return byName ? T_TRACK_00V : T1_TRACK_00V; // BA=11
+   case 0:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // FRE BA=00
+   case 1:  return byName ? T_TRACK__0V : T1_TRACK__0V; // NOU BA=01
+   case 2:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // OCC BA=10
+   case 3:  return byName ? T_TRACK_00V : T1_TRACK_00V; // NOV BA=11
    default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
   }
  }

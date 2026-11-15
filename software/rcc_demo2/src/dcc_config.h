@@ -25,8 +25,8 @@
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 
 //_______program version________________________________________
-constexpr char VERSION_99[] = "2026-10-02 rcc_demo2";
-constexpr char VERSION_99_1[] = "Version 2026-10-02";
+constexpr char VERSION_99[] = "2026-11-14 rcc_demo2";
+constexpr char VERSION_99_1[] = "Version 2026-11-14";
 
 //_______Network data___________________________________________
 #define _USE_WIFI_      true
@@ -81,11 +81,15 @@ struct strRcmd {
 // Changes can be made in file dcc_config.cpp
 
 // ***** CHECK this! *******************************************
-#define  IOEX_NUM       4         // number of IO expander 2|4|6|8
+#define  IOEX_NUM       2         // number of IO expander 2|4|6|8
+
+// *****Especially for DEMO2: **********************************
+#define  IOEX_ADDRESS1  0x22      // pcf8574_out #2
+#define  IOEX_ADDRESS2  0x23      // pcf8574_in  #2
 
 //.......Suggested addresses....................................
-#define  IOEX_ADDRESS1  0x20      // pcf8574_out #1
-#define  IOEX_ADDRESS2  0x21      // pcf8574_in  #1
+//#define  IOEX_ADDRESS1  0x20      // pcf8574_out #1
+//#define  IOEX_ADDRESS2  0x21      // pcf8574_in  #1
 #define  IOEX_ADDRESS3  0x22      // pcf8574_out #2
 #define  IOEX_ADDRESS4  0x23      // pcf8574_in  #2
 #define  IOEX_ADDRESS5  0x24      // pcf8574_out #3
@@ -208,29 +212,7 @@ struct strRcomp {
  * Input  Pin 0: RTVn ... track voltage is on (0) or off (1)
  *        Pin 1: RFREn .. track is free (0) or occupied (1)
  */
-#define  RCOMP_6   RC_TYPE_TUI,"TUI", 61, EX2,PIN0,NO_PIN,   EX3,PIN0,PIN1, 0,0
-
-// -------------------------------------------------------------
-/**
- * @brief pulse with 1 input (set)
- * The hardware automatically resets the pulse after a few milliseconds to seconds.
- * The block contains two separate pulse inputs.
- * Output: Pin 2 (A) = 0: simulate set pulse #1 by software (active low!)
- *         Pin 3 (B) = 0: simulate set pulse #2 by software (active low!)
- * Input : Pin 2 (A) = 0: pulse #1 is active (1 = no pulse)
- *         Pin 3 (B) = 0: pulse #2 is active (1 = no pulse)
- */
- #define  RCOMP_7a   RC_TYPE_P1,"P1", 71, EX2,PIN2,NO_PIN,   EX3,PIN2,NO_PIN, 0,0
- #define  RCOMP_7b   RC_TYPE_P1,"P1", 72, EX2,PIN3,NO_PIN,   EX3,PIN3,NO_PIN, 0,0
-
-// -------------------------------------------------------------
-/**
- * @brief pulse with 2 inputs (reset, set)
- * Output: Pin 5 (B) = 0: simulate set pulse (200 ms) by software (active low!)
- *         Pin 4 (A) = 0: simulate reset pulse (200 ms) by software (active low!)
- * Input : 
- */
- #define  RCOMP_8   RC_TYPE_P2,"P2", 81, EX2,PIN4,PIN5,   EX3,PIN4,PIN5, 200,0
+#define  RCOMP_6   RC_TYPE_TUI,"TUI", 61, EX0,PIN0,NO_PIN,   EX1,PIN0,PIN1, 0,0
 
 // -------------------------------------------------------------
 /**
@@ -245,11 +227,33 @@ struct strRcomp {
  * Input:  Two expander pins A for voltage (1) and free (I=0)
  * Output: Two expander pins A for free (1) and OK (1)
 */
- #define  RCOMP_9   RC_TYPE_UI,"UI1", 91, EX2,PIN6,PIN7,   EX3,PIN6,PIN7, 0,0
+ #define  RCOMP_7   RC_TYPE_UI,"UI1", 71, EX0,PIN2,PIN3,   EX1,PIN2,PIN3, 0,0
+
+// -------------------------------------------------------------
+/**
+ * @brief pulse with 1 input (set)
+ * The hardware automatically resets the pulse after a few milliseconds to seconds.
+ * The block contains two separate pulse inputs.
+ * Output: Pin 2 (A) = 0: simulate set pulse #1 by software (active low!)
+ *         Pin 3 (B) = 0: simulate set pulse #2 by software (active low!)
+ * Input : Pin 2 (A) = 0: pulse #1 is active (1 = no pulse)
+ *         Pin 3 (B) = 0: pulse #2 is active (1 = no pulse)
+ */
+ #define  RCOMP_8a   RC_TYPE_P1,"P1", 81, EX0,PIN4,NO_PIN,   EX1,PIN4,NO_PIN, 0,0
+ #define  RCOMP_8b   RC_TYPE_P1,"P1", 82, EX0,PIN5,NO_PIN,   EX1,PIN5,NO_PIN, 0,0
+
+// -------------------------------------------------------------
+/**
+ * @brief pulse with 2 inputs (reset, set)
+ * Output: Pin 5 (B) = 0: simulate set pulse (500 ms) by software (active low!)
+ *         Pin 4 (A) = 0: simulate reset pulse (500 ms) by software (active low!)
+ * Input : 
+ */
+ #define  RCOMP_9   RC_TYPE_P2,"P2", 91, EX0,PIN6,PIN7,   EX1,PIN6,PIN7, 500,0
 
 // ***** CHECK this! *******************************************
 //.......Preparing the Array of all railroad components..........
 #define  RCOMP_NUM  5
-#define  RCOMP_LIST {RCOMP_2},{RCOMP_6},{RCOMP_7a},{RCOMP_7b},{RCOMP_8}
+#define  RCOMP_LIST {RCOMP_6},{RCOMP_7},{RCOMP_8a},{RCOMP_8b},{RCOMP_9}
 
 #endif
