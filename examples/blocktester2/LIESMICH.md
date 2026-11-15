@@ -34,9 +34,13 @@ Mit einer Größe von **31 × 22,3 cm** ist das Testsystem kompakt genug, um beq
 *Bild 2: Blocktester in einer IKEA-Box*
 
 ## Eigenschaften des Blocktesters #2
-Das folgende Bild zeigt den Blocktester von oben.   
-* 
-[Ansicht Blocktester 2 oben](./images/600_BT2_view_above.png "Ansicht Blocktester 2 oben")   
+Das folgende Bild zeigt den Blocktester #2 von oben.   
+
+- **Oben:** Gleis mit 3D-Bahnkörper und eingebauten Sensoren (Optokoppler, Reed-Kontakte).  
+- **Mitte:** Modulanschluss (Stromversorgung) links, Anschlussplatinen für die Eisenbahnkomponenten und I²C-Platinen.  
+- **Unten:** Mikrocontroller mit Shields (links) und die verschiedenen Steuerblöcke daneben.  
+
+![Ansicht Blocktester 2 oben](./images/600_BT2_view_above.png "Ansicht Blocktester 2 oben")   
 _Bild 3: Blocktester #2 von oben_   
 
 ### &Uuml;bersicht &uuml;ber die System-Eigenschaften 
@@ -48,7 +52,7 @@ _Bild 3: Blocktester #2 von oben_
 | Elektrischer Anschluss | 2x 25-poliger SUB-D-Stecker <br>(entsprechend NEM 908D, je 1x WEST und OST) |   
 | Fahrstrom     | Analog- oder DCC-Betrieb |   
 | Steuerung der Schaltkomponenten | * H&auml;ndisch direkt an der Modulvorderseite <br> * &uuml;ber DCC <br> * durch MQTT-Nachrichten (&uuml;ber WLAN) |   
-| Bedienelemente mit R&uuml;ckmeldung | 1x Mikrocontroller mit OLED-Display und Taster <br> 1x Abschaltbares Gleis bzw. Fahrstrom (Block TUI, DCC 61) <br> 1x Impulserkennung (DCC 81) <br> 2x Impulsspeicherung (DCC91)  |   
+| Bedienelemente mit R&uuml;ckmeldung | 1x Mikrocontroller mit OLED-Display und Taster <br> 1x Abschaltbares Gleis mit Fahrstromanzeige (Block TUI, DCC 61) <br> 1x Fahrstromanzeige (Block TU, DCC 71) <br> 1x Impulserkennung (DCC 81, DCC 82) <br> 1x Impulsspeicherung (DCC 91)  |   
 | WLAN           | SSID: &nbsp; &nbsp; &nbsp; `Raspi11` <br> Passwort: `12345678` |   
 | MQTT: IP-Adresse des Brokers (Host) | `10.1.1.1` |   
 | Sonstiges | * Als Steuersoftware dient die Demo-Software `Demo2` |   

@@ -31,10 +31,11 @@ Mit einer Größe von **31 × 22,3 cm** ist das Testsystem kompakt genug, um beq
 *Bild 2: Blocktester in einer IKEA-Box*
 
 ## Eigenschaften des Blocktesters
-Das folgende Bild zeigt den Blocktester von oben.   
-* Oben im Bild erkennt man die Gleise mit den Weichenantrieben und den Entkuppler (links).   
-* In der Mitte des Bildes sieht man links den Modulanschluss (Stromversorgung), die Anschlussplatinen f&uuml;r die Eisenbahn-Komponenten und die I²C-Platinen.   
-* Unten im Bild sieht man links der Mikrocontroller mit den Shields und daneben die verschiedenen Steuerbl&ouml;cke.   
+Das folgende Bild zeigt den Blocktester von oben:  
+
+- **Oben:** Gleise mit Weichenantrieben und Entkuppler (links).  
+- **Mitte:** Modulanschluss (Stromversorgung) links, Anschlussplatinen für die Eisenbahnkomponenten und I²C-Platinen.  
+- **Unten:** Mikrocontroller mit Shields (links) und die verschiedenen Steuerblöcke daneben.  
 
 ![Ansicht Blocktester oben](./images/600_BT_view_above.png "Ansicht Blocktester oben")   
 _Bild 3: Blocktester von oben_   
