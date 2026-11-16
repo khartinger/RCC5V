@@ -74,7 +74,7 @@ Das Testsystem ist so aufgebaut, dass sich alle Komponenten leicht austauschen l
 
 Das folgende Bild gibt einen Überblick über die verwendeten Komponenten:  
 
-![&Uuml;bersicht Testsystem](./images/600_overview_blocktester2.png  "&Uuml;bersicht Testsystem")   
+![&Uuml;bersicht Testsystem](./images/600_bt2_overview_circuit.png  "&Uuml;bersicht Testsystem")   
 _Bild 4: &Uuml;bersichtsplan Blocktester #2_   
 
 ## Bedeutung der einzelnen Komponenten
@@ -107,10 +107,12 @@ Die folgende Liste enth&auml;lt Links zu Beschreibungen und zum Bau der Komponen
 [Zum Seitenanfang](#up)   
 <a name="x20"></a>   
 
-# 2. Aufbau des Blocktesters
+# 2. Aufbau des Blocktesters #2
 ## 2.1 Rahmen
-Der Rahmen des Blocktesters besteht aus 10 mm-Pappelsperrholz. Die Grundplatte ist 31 x 22 cm² gro&szlig;, die Frontplatte 31 x 6 cm² und die beiden Seitenteile 5 x 5 cm².   
-Die "Deckplatte" besteht aus einer 31 x 3 cm² (oder 30 x 3 cm²) gro&szlig;en, 10 mm dicken [Acrylplatte](https://de.aliexpress.com/item/1005006407038394.html?spm=a2g0o.order_list.order_list_main.506.f9f35c5f0KKSc4&gatewayAdapt=glo2deu), damit man die Schaltbl&ouml;cke darunter sehen kann.   
+- **Grundplatte**: Größe 31 x 22 cm², 10 mm-Pappelsperrholz.  
+- **Frontplatte**: Größe 31 x 6 cm², 10 mm-Pappelsperrholz oder [3D-Druck (bt2_frame_front_S_Oled_3456_310mm_261107.FCStd)](./3d/fcstd/bt2_frame_front_S_Oled_3456_310mm_261107.FCStd).  
+- **Seitenteile**: Größe 5 x 5 cm², 10 mm-Pappelsperrholz oder [3D-Druck (bt2_side_261107.FCStd)](./3d/fcstd/bt2_side_261107.FCStd).  
+- **"Deckplatte"**: Größe 30 x 3 cm², 10 mm dicke [Acrylplatte](https://de.aliexpress.com/item/1005006407038394.html?spm=a2g0o.order_list.order_list_main.506.f9f35c5f0KKSc4&gatewayAdapt=glo2deu). So kann man die Schaltbl&ouml;cke darunter gut sehen.   
 
 ## 2.2 Frontplatte
 __OLED-Anzeige__   
@@ -119,58 +121,65 @@ F&uuml;r den OLED-Mikroprozessor-Block wird ein [3D-gedruckter Rahmen (OLED_Moun
 ![OLED- und Taster-Einsatz](/images/3d/300_OLED-Mount.png "OLED- und Taster-Einsatz")   
 _Bild 5: Halterung f&uuml;r die OLED-Anzeige und den Taster_   
 
-Dieser ben&ouml;tigt eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm². Da der Platz am Frontpanel beengt ist, betr&auml;gt der Abstand vom linken Rand nur 20 mm statt der sonst &uuml;blichen 30 mm.   
+Dieser ben&ouml;tigt eine rechteckf&ouml;rmige Aussparung der Gr&ouml;&szlig;e 80 x 43 mm². Da der Platz am Frontpanel beengt ist, betr&auml;gt der Abstand vom linken Rand nur 15 mm statt der sonst &uuml;blichen 30 mm.   
 
-![OLED_Button_frame](./images/300_BT_OLED_Button_frame.png "OLED_Button_frame")   
-_Bild 6: Ma&szlig;e f&uuml;r die Frontplatte_   
+![OLED_Button_frame](./images/300_BT2_OLED_Button_frame.png "OLED_Button_frame")   
+_Bild 6: Ma&szlig;e f&uuml;r die OLED-Ausnehmung in der Frontplatte_   
 
 __Steuerbl&ouml;cke__   
-Zum einfachen Bestimmen der Lage der Bohrungen f&uuml;r die Steuerbl&ouml;cke wird zuerst zB in __LibreOffice Draw__ die [Beschriftung](./odg/Blocktester_Cover_250317.odg) entworfen. W&auml;hlt man in der Zeichnung den Abstand zwischen zwei Blockbeschriftungen 9 mm, so kann man den ganzen Ausdruck direkt auf die Frontplatte kleben.   
+> Bei _*Holzfrontplatte*_: Zum einfachen Bestimmen der Lage der Bohrungen f&uuml;r die Steuerbl&ouml;cke wird zuerst zB in __LibreOffice Draw__ die [Beschriftung](./odg/BT2_block_cover_261115.odg) entworfen. W&auml;hlt man in der Zeichnung das Raster der Blockbeschriftungen 50 mm, so kann man den ganzen Ausdruck direkt auf die Frontplatte kleben.   
 
-![Blocktester Beschriftung](./images/300_BT_cover.png "Blocktester Beschriftung")   
-_Bild 7: Beschriftungen f&uuml;r die Steuerbl&ouml;cke_   
+> ![Blocktester2 Beschriftung](./images/300_BT2_cover.png "Blocktester2 Beschriftung")   
+> _Bild 7: Beschriftungen f&uuml;r die Steuerbl&ouml;cke_   
 
-Nach dem Aufkleben der Beschriftung werden die L&ouml;cher gebohrt. Der Bohrdurchmesser f&uuml;r die LED-Fassungen betr&auml;gt 5,6 mm, der f&uuml;r die Taster ca. 7 mm.   
+> Nach dem Aufkleben der Beschriftung werden die L&ouml;cher gebohrt. Der Bohrdurchmesser f&uuml;r die LED-Fassungen betr&auml;gt 5,6 mm, der f&uuml;r die Taster ca. 7 mm.   
 
-![Blocktester Sued](./images/300_BT_sued_310mm.png "Blocktester_Sued")   
-_Bild 8: Ma&szlig;e f&uuml;r die Frontplatte_   
+> ![Blocktester Sued](./images/300_BT2_sued_310mm.png "Blocktester_Sued")   
+> _Bild 8: Ma&szlig;e f&uuml;r die Frontplatte_   
 
-__LED-Fassungen__   
-Nach dem Bohren sind die Bohrungen zu entgraten (reinigen) und die LED-Fassungen einzupressen.   
-![LED holder](/images/parts/200_ledholder2.png "LED holder")   
-_Bild 9: LED-Fassung_   
+Bei 3D-Druck bzw. bei Verwendung von Steuerblöcken mit 3D-Blockpanel werden quadratische Ausnehmungen (42 x 42 mm²) benötigt.  
 
-__Halterungen f&uuml;r Steuerbl&ouml;cke__   
-Als N&auml;chstes kann man die Halterungen f&uuml;r die Steuerbl&ouml;cke mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
-Das Anziehen der Schrauben sollte nicht zu fest erfolgen, sodass sich die Sechskant-Distanzhalter nicht nach innen biegen!   
+![Blocktester Sued](./images/300_BT2_sued_3d_310mm.png "Blocktester_Sued")   
+_Bild 9: Ma&szlig;e f&uuml;r die 3D-Frontplatte_   
 
-![Block holder](./images/300_BT_blockholder.png "300_BT_Blockholder")   
-_Bild 10: Unbest&uuml;ckte und best&uuml;ckte (rechts) Block-Halterung_   
+
+> __LED-Fassungen__   
+> Bei _*Holzfrontplatte*_: Nach dem Bohren sind die Bohrungen zu entgraten (reinigen) und die LED-Fassungen einzupressen.   
+> ![LED holder](/images/parts/200_ledholder2.png "LED holder")   
+> _Bild 10: LED-Fassung_   
+
+>__Halterungen f&uuml;r Steuerbl&ouml;cke__   
+> Bei _*Holzfrontplatte*_: Als N&auml;chstes kann man die Halterungen f&uuml;r die Steuerbl&ouml;cke mit 2,6 x 8 mm Schrauben anschrauben. Der Abstand der Bl&ouml;cke von der Unterseite des Rahmens sollte 5,5 mm betragen, allerdings ist die Lage der Halterungen meist durch die LED-Fassungen bereits vorgegeben...   
+> Das Anziehen der Schrauben sollte nicht zu fest erfolgen, sodass sich die Sechskant-Distanzhalter nicht nach innen biegen!   
 
 ## 2.3 Zusammenbau des Rahmens
-Der Zusammenbau des Rahmens erfolgt so, wie es im _Bild 1_ zu sehen ist. Als Schrauben werden zB selbstschneidende Schrauben 3 x 20 mm verwendet.   
+Der Zusammenbau des Rahmens erfolgt so, wie es im _Bild 1_ zu sehen ist. Als Schrauben werden zB selbstschneidende Schrauben 3 x 25 mm verwendet.   
 Das Acrylglas wird mit Doppelklebeband befestigt und/oder mit Schrauben M 2 x 20 mm.   
 
 ## 2.4 Montage der Schaltbl&ouml;cke
-Die Schaltbl&ouml;cke werden auf die Blockhalterungen gesteckt und mit Schrauben M2 x 20 LEICHT angeschraubt.   
+Schaltblöcke mit 3D-Blockpanel werden in die quadratischen Ausnehmungen gesteckt.  
+
+> Bei _*Holzfrontplatte*_: Die Schaltbl&ouml;cke werden auf die Blockhalterungen gesteckt und mit Schrauben M2 x 20 LEICHT angeschraubt.   
 
 ## 2.5 I²C-Verbindungen
-F&uuml;r das Erstellen bzw. die Verwendung der Demo-Software ist die Kenntnis der Verdrahtung zwischen Schaltbl&ouml;cken und I²C-I/O-Expandern wichtig. Diese ist auch unter [`/software/rcc_demo1`](/software/rcc_demo1/LIESMICH.md) beschrieben.   
+F&uuml;r das Erstellen bzw. die Verwendung der Demo-Software ist die Kenntnis der Verdrahtung zwischen Schaltbl&ouml;cken und I²C-I/O-Expandern wichtig. Diese ist auch unter [`/software/rcc_demo2`](/software/rcc_demo2/LIESMICH.md) beschrieben.   
 
-1. DCC 11, IO-Expander Pin 0: Entkuppler (Schaltblock 1OUT)   
-2. DCC 21, IO-Expander Pin 1,2: Zweiwegweiche (mit Endabschaltung, Schaltblock W2)   
-3. DCC 31,32, IO-Expander Pin 3,4,5: Dreiwegweiche (mit Endabschaltung, Schaltblock W3)   
-4. DCC 41, IO-Expander Pin 6: Fahrstrom (Schaltblock 2IO)   
-5. DCC 51, IO-Expander Pin 7: Blinklicht   
+1. DCC 61, IO-Expander Pin 0,1: Fahrstromschalter (Schaltblock TUI)   
+2. DCC 71, IO-Expander Pin 2,3: Fahrstromanzeige (Schaltblock UI)   
+3. DCC 81,82, IO-Expander Pin 4,5: Impulsanzeige 2-fach (Schaltblock PULS1)   
+4. DCC 91, IO-Expander Pin 6,7: Impulsanzeige Set/Reset (Schaltblock PULS2)   
 
 Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung werden normalerweise auf die gleichen Pin-Nummern verdrahtet.   
 
-Die Umsetzung vom 10-poligen Schaltblock-Ausgang auf Einzelpins erfolgt mit 10pol_PIN-Platinen.   
-![Blocktester_i2c_Schaltplan](./images/480_rcc_demo1_i2c_2_circuit.png "Blocktester_i2c_Schaltplan")   
-_Bild 11: I²C-Verdrahtungsplan des Blocktesters_   
+Die Umsetzung vom 10-poligen Schaltblock-Ausgang auf Einzelpins erfolgt entweder mit einzelnen 10pol_PIN-Platinen oder dem 4-fach Umsetzer `CON_4x10pol_io16 `.  
+
+![Blocktester2_i2c_Schaltplan](./images/480_BT2_i2c_circuit.png "Blocktester2_i2c_Schaltplan")   
+_Bild 11: I²C-Verdrahtungsplan des Blocktesters #2_   
 
 [Zum Seitenanfang](#up)   
 <a name="x30"></a>   
+
+# === ..ToDo.. ===
 
 ## 3. Gleisbau
 ## 3.1 Montage der Gleise
