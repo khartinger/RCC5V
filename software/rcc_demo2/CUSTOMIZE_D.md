@@ -1,8 +1,12 @@
-<table><tr><td><img src="../../images/RCC5V_Logo_96.png"></img></td><td>
-Letzte &Auml;nderung: 4.1.2026 <a name="up"></a><br>   
-<h1>Anpassen des Demo-Programms an eigene Bed&uuml;rfnisse</h1>
-<a href="/software/rcc_demo2/CUSTOMIZE_E.md">==> English version</a>&nbsp; &nbsp; &nbsp; 
-</td></tr></table>   
+<a name="up"></a>
+<table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
+<h1>Anpassen des Demo-Programms an eigene Bed&uuml;rfnisse</h1><b><big>Demo-Software zum Steuern von Modellbahn-Komponenten</big></b><br>  
+Stand: 17.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+<a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
+<a href="README.md">→ English version</a>
+</td></tr></table>
+
+<a name="x10"></a>   
 
 # Einleitung
 F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src/dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `src/rcc_demo2.text.h`](#x30) anzupassen.   

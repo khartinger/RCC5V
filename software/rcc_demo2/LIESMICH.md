@@ -1,36 +1,91 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>RCC Demo-Software Version 2</h1><b><big>Überblick über die Demo-Software zum Steuern von Modellbahn-Komponenten</big></b><br>  
-Stand: 15.8.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 17.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
 
-# 1. Einführung
-Die Steuerung der Komponenten jedes Eisenbahn-Moduls erfolgt durch einen ESP32. Das ESP32-Programm `rcc_demo2.cpp` erweitert das Basisprogramm `rcc_demo1a.cpp` um weitere Steuerblöcke. Es dient zum Testen von selbst gebauten Steuerblöcken zum Beispiel mit der Hardware [RCC-Blocktester](https://github.com/khartinger/RCC5V/blob/main/examples/blocktester/LIESMICH.md).   
+<a name="x10"></a>   
 
-Folgende Blöcke werden durch die Software angesteuert:   
+# 1. Einführung
+Jedes Modellbahn-Modul besitzt einen eigenen **ESP32-Mikrocontroller** als zentrale Steuereinheit. Die **RCC-Demo-Software** bildet die Basis für diese Steuerung und lässt sich leicht an eigene Anforderungen anpassen.
+
+Die Software `rcc_demo2` kann direkt mit der Hardware [Blocktester2](https://github.com/khartinger/RCC5V/blob/main/examples/blocktester2/LIESMICH.md) verwendet werden.
+
+Diese Datei gibt einen Überblick über die RCC-Demo-Software. Weitere Informationen:  
+- **[CUSTOMIZE_D.md](./CUSTOMIZE_D.md):** Anpassung der Software an eigene Anforderungen
+- **[DETAILS_D.md](./DETAILS_D.md):** Technische Beschreibung der Software
+
+<a name="TableOfContents"></a>   
+
+## Inhaltsübersicht
+* [1. Einführung](#x10)  
+* [2. Kenntnisse über die Hardware](#x20)  
+* [3. Software-Überblick](#x30)  
+* [4. Software: Ergänzung eines Schaltblocks](#x40)   
+
+## Unterstützte Steuerblöcke
+
+Folgende Steuerblöcke können durch die Software angesteuert werden:   
 1. Entkuppler   
 2. Zweiwegweiche (mit Endabschaltung)   
 3. Dreiwegweiche (mit Endabschaltung)   
 4. Fahrstrom-Schalter   
 5. Blinklicht   
-6. Pulserkennung mit zwei Eingängen (set, reset).   
+6. Fahrstrom-Schalter mit Fahrstromerkennung  
 7. Gleis-Spannung und Gleisstrom-Anzeige (UI)   
+8. Pulserkennung, zweifach   
+9. Pulserkennung mit zwei Eingängen (set, reset)   
 
-Zum Verständnis der Software ist eine grundsätzliche Kenntnis der Funktion der Hardware erforderlich. Dies wird [weiter unten](#x10) beschrieben.   
-Details zur Software finden sich in https://github.com/khartinger/RCC5V/blob/main/software/rcc_demo2/DETAILS_D.md
+Zum Verständnis der Software ist weiters eine grundsätzliche Kenntnis der Funktion der Hardware erforderlich.
 
-<a name="TableOfContents"></a>   
+<a name="x20"></a>   
 
-## Inhaltsübersicht
-1. Hardware  
-2. Software  
-3. Software: Ergänzung eines Schaltblocks   
+# 2. Kenntnisse über die Hardware
+Die Ansteuerung von Schaltblöcken durch den ESP32 erfolgt über I²C-Bus und I²C-PCF8574-I/O-Expander-Boards. Die Anzahl der Boards ist stets gerade, da immer  
+* ein Board zur Ansteuerung der Komponenten (I2C-Adresse 0x20, IO-Expander #0) und   
+* ein Board f&uuml;r die R&uuml;ckmeldesignale (I2C-Adresse 0x21, IO-Expander #1)   
+verantwortlich ist.   
 
-# Ergänzung eines Schaltblocks
-Die Version 1a der Demosoftware ermöglicht das Ansteuern von Standard-Komponenten wie Weichen, Entkuppler usw.   
-In der Version 2 sind weitere Steuerblöcke wie zB zur Impulserkennung (P2) oder zur Gleisbesetztmeldung (UI) enthalten.   
+Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung werden normalerweise auf die gleichen Pin-Nummern verdrahtet.  
+
+Für die Software ist die Kenntnis der **Verdrahtung  zwischen Schaltbl&ouml;cken und I²C-I/O-Expandern** unbedingt erforderlich.  
+
+## Beispiel Demo-Software 2
+1. DCC 61, IO-Expander Pin 0,1: Fahrstromschalter (Schaltblock TUI)   
+2. DCC 71, IO-Expander Pin 2,3: Fahrstromanzeige (Schaltblock UI)   
+3. DCC 81,82, IO-Expander Pin 4,5: Impulsanzeige 2-fach (Schaltblock PULS1)   
+4. DCC 91, IO-Expander Pin 6,7: Impulsanzeige Set/Reset (Schaltblock PULS2)   
+
+![Blocktester2_i2c_Schaltplan](./images/480_BT2_i2c_circuit.png "Blocktester2_i2c_Schaltplan")   
+_Bild 1: I²C-Verdrahtungsplan des Blocktesters #2_   
+
+
+
+<a name="x30"></a>
+
+# 3. Software-Überblick
+
+## Funktionen der Software
+* Ansteuerung von Schaltblöcken.  
+* Anzeige des Schaltzustands der Komponenten auf einem 1,54"-OLED-Display.  
+* Mit dem Taster am Pin IO19 (D6) kann man die einzelnen Seiten der Informationsanzeige oder das Suchen nach dem WLAN überspringen.  
+* Dr&uuml;ckt man w&auml;hrend des Programmlaufs den Taster an IO19 f&uuml;r mehr als eine Sekunde, wird ein Reset ausgel&ouml;st. Dies kann zB dazu verwendet werden, um beim erneuten Hochfahren das WLAN zu aktivieren.  
+* Empfang von DCC-Befehlen.  
+* Empfang und Senden von MQTT-Nachrichten.  
+
+Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigenschaften, sind in einer Konfigurationsdatei `dcc_config.h` gespeichert.   
+
+## Entwicklungsumgebung
+Das Programm wird mit Visual Studio Code (VSC) und PlatformIO erstellt.  
+Nach dem Komplieren in VSC wird das Programm in VSC auf den ESP32 übertragen.   
+
+
+
+<a name="x40"></a>   
+
+# 4. Software: Ergänzung eines Schaltblocks
 
 Hier die Schritte zum Einbau einer neuen Komponente am Beispiel Pulserkennung mit zwei Eingängen (set, reset).   
 
@@ -187,140 +242,7 @@ In der Funktion `simpleSet(...)`
 ```  
 
 
-
-<a name="x10"></a>
-
-# 1. Hardware
-Die Ansteuerung der Schaltblöcke erfolgt über den I²C-Bus und I²C-PCF8574-I/O-Expander-Boards, wobei immer eine gerade Anzahl erforderlich ist. Dies ergibt sich daraus, dass immer   
-* ein Board zur Ansteuerung der Komponenten (I2C-Adresse 0x20, IO-Expander #0) und   
-* ein Board f&uuml;r die R&uuml;ckmeldesignale (I2C-Adresse 0x21, IO-Expander #1)   
-verantwortlich ist.   
-
-Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung werden normalerweise auf die gleichen Pin-Nummern verdrahtet.   
-
-Folgende Bl&ouml;cke und Pin-Nummern sind in der Demo-Software vorgesehen:   
-1. DCC 11, IO-Expander Pin 0: Entkuppler   
-2. DCC 21, IO-Expander Pin 1,2: Zweiwegweiche (mit Endabschaltung)   
-3. DCC 31,32, IO-Expander Pin 3,4,5: Dreiwegweiche (mit Endabschaltung)   
-4. DCC 41, IO-Expander Pin 6: Fahrstrom   
-5. DCC 51, IO-Expander Pin 7: Blinklicht   
-
-F&uuml;r die Ansteuerung durch den Mikrocontroller ist der 10-polige Anschluss J4 von Interesse.   
-
-**Beispiel:** Ansteuerung einer Zweiweg-Weiche:  
-![pinlayout_2-Weg-Weiche_J4](/images/150_sw_pinlayout_W2_J4.png "pinlayout_2-Weg-Weiche_J4")   
-
-<a name="x20"></a>
-
-# 2. Software
-
-
-
-__*Weitere Funktionen der Software:*__   
-* Der Schaltzustand der Komponenten wird auf einem 1,54"-OLED-Display angezeigt.   
-* Mit Hilfe eines Tasters am Pin IO19 (D6) kann man die einzelnen Seiten der Informationsanzeige oder das Suchen nach dem WLAN &uuml;berspringen.   
-* Dr&uuml;ckt man w&auml;hrend des Programmlaufs den Taster an IO19 f&uuml;r mehr als eine Sekunde, wird ein Reset ausgel&ouml;st. Dies kann zB dazu verwendet werden, um beim erneuten Hochfahren das WLAN zu aktivieren.   
-
-Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigenschaften, werden in einer Konfigurationsdatei `dcc_config.h` gespeichert.   
-
-# Erforderliche Hardware   
-F&uuml;r die erforderliche Hardware zur Demo-Software gibt es zwei M&ouml;glichkeiten:   
-* Nutzung des in Kapitel [`/examples/blocktester` beschriebenen Blocktesters](/examples/blocktester/LIESMICH.md) oder   
-* eine diskret zusammengebaute Hardware.   
-
-In diesem Beitrag wird erkl&auml;rt, wie man aus verschiedenen Teilen die Hardware f&uuml;r die Demo-Software zusammenbaut.   
-
-## Elektronische Bauteile   
-1. ESP32 D1 mini   
-2. 1x Selbstbau-Board "Shield_I2C_5V_3V3" oder "Shield_I2C_5V_3V3_big": Anschluss f&uuml;r die beiden I2C-Busse   
-3. 1x Selbstbau-Board "Shield_5V_DCC_6pol": Stromversorgung mit 5V, DCC-Signal und Anschluss f&uuml;r Taster an Pin D6 (IO19)   
-4. 1x OLED-Display mit SSD1309 controller (zB 1,54" oder 2,4" Display mit 128x64 Pixel Aufl&ouml;sung)   
-5. 2x I²C-Expander-Boards PCF8574 mit den (7-Bit-)Adressen 0x20 und 0x21   
-6. Taster am Pin D6 (IO19) mit Pullup-Widerstand (zB 10 kOhm) nach 3,3V (oder ein Draht)   
-7. Zu testende Schaltbl&ouml;cke   
-
-## Elektrische Bauteile
-Die ben&ouml;tigten elektrischen Bauteile sind abh&auml;ngig davon, was man testen will.    
-__Beispiel Zweiwegweiche:__   
-1. Eine Zweiweg-Weiche mit Endabschaltung   
-2. Selbstbau-Block "RW_5V_W2" bestehend aus den beiden Platinen `RW_5V_W2_STRG` und `RW_5V_W2_LED` und den LEDs zur Ansteuerung der Weiche mit 5V   
-3. Ein Trafo mit 16V Wechselspannung (V+, V-)   
-4. Eine 5V-Stromversorgung   
-5. Eine DCC-Quelle zum Senden von Weichenbefehlen (zB Roco MultiMAUS mit Digitalverst&auml;rker 10764 und Netzteil 10850)   
-6. Ein WLAN-Server (zB Raspberry Pi) mit installiertem MQTT-Broker   
-
-Sind der Trafo (Punkt 3.) und die DCC-Quelle (Punkt 5.) an einem 25-poligen Kabel nach NEM908D angeschlossen, so kann die Selbstbau-Platine "CON_SubD_Screw10_V1" (mit aufgesteckter Platine "AC_5V_6pol_DCC_V1" und LM2596-DC-DC-Wandler zur Erzeugung der 5V-Spannung) zur Versorgung des Test-Aufbaus verwendet werden. (Siehe Bild 2)   
-
-## Verkabelung
-1. Anstecken von zwei Dr&auml;hten (oder einem Taster) an den IO19-Anschl&uuml;ssen des Shields "Shield_5V_DCC_6pol"   
-2. Zusammenstecken der beiden I²C-Expander-Boards PCF8574 mit den (7-Bit-)Adressen 0x20 und 0x21   
-3. Verbinden der I²C-Expander-Boards mit der 4-poligen Stiftleiste am "Shield_I2C_5V_3V3" mit vier Kabeln   
-4. Verbinden des 6-poligen Steckers des "Shield_5V_DCC_6pol"-Shields mit dem DCC-Stecker an der "CON_SubD_Screw10_V1"-Platine   
-5. Verbinden des 6-poligen Power-Steckers des "RW_5V_W2"-Blocks mit dem "POWER"-Stecker an der "CON_SubD_Screw10_V1"-Platine   
-6. Verbinden der Weichendr&auml;hte mit den Klemmen auf der "CON_6pol_3"-Platine   
-7. Verbinden der "CON_6pol_3"-Platine mit dem 6-poligen Ausgang des "RW_5V_W2"-Blocks   
-8. Verbinden des 10-poligen Steckers des "RW_5V_W2"-Blocks mit der "CON_10pol_PIN"-Platine   
-9. Verbinden "CON_10pol_PIN"-Pin 1 (IN1) mit PCF8574-0-Pin 2 (OUT)   
-10. Verbinden "CON_10pol_PIN"-Pin 2 (IN2) mit PCF8574-0-Pin 3 (OUT)   
-11. Verbinden "CON_10pol_PIN"-Pin 7 (OUT1) mit PCF8574-1-Pin 2 (IN)   
-12. Verbinden "CON_10pol_PIN"-Pin 8 (OUT2) mit PCF8574-1-Pin 3 (IN)   
-13. Anstecken des 25-poligen Kabels an die "CON_SubD_Screw10_V1"-Platine
-
-# Erforderliche Software
-
-
-# Test 
-## Direktes Schalten
-## DCC
-## MQTT
-
-
-********************************
-= - = - = - = - = - = - = - = - = - = - = - = - = - = - = -   
-Ab hier: ToDo....
-
-## Verkabelung
-1. 1x Flachbandkabel Stecker-Buchse 2polig: PCF8574-0x20 Pin 0 und 1 mit U5_W-Platinen Pin WSA und WSB verbinden   
-2. 1x Flachbandkabel Stecker-Buchse 2polig: PCF8574-0x21 Pin 0 und 1 mit U5_W-Platinen Pin WRA und WRB verbinden   
-3. 1x Flachbandkabel Stecker-Buchse 2polig f&uuml;r die Stromversorgung vom PCF8574-Ausgang zu den U5_W-Platinen   
-4. 1x Flachbandkabel Stecker-Stecker 2polig f&uuml;r den Anschluss der 18V-Wechselspannung an den U5_W-Platinen   
-5. 1x Flachbandkabel Stecker-Stecker als Taster an IO19 gegen Masse   
-6. 1x Flachbandkabel Stecker-Stecker f&uuml;r das DCC-Signal   
-
-![Test_5V_W](./images/300_test_5V_W_DCC_240402.png "Test_5V_W")   
-_Bild 1: Testanordnung 5V_W-Weichensteuerung mit DCC-Signal_   
-
-# Kurzanleitung
-1. Die Weiche an die U5_W-Platinen anschlie&szlig;en (Leitungen WA, W0, WB).   
-2. Die U5_W-Platinen mit den I²C-Expander-Boards PCF8574 verbinden (Leitungen WSA, WSB, WRA, WRB).   
-3. Den Ausgang der DCC-Quelle an das Selbstbau-Board DCC_3V3 anschlie&szlig;en.   
-4. An die U5_W-Platinen die Versorgungsspannung anschlie&szlig;en (5V, 0V von den Expander-Boards).   
-5. An die U5_W-Platinen die Schaltspannung anschlie&szlig;en (V+ und V-).   
-6. Programm `ESP32_06_cmd_turnout_V1.cpp` compilieren und auf den ESP32 D1 mini hochladen.   
-   
-Nach dem Programmstart sucht der ESP32 nach dem WLAN, dessen Daten in der Konfigurationsdatei `dcc_config.h` stehen. Durch Dr&uuml;cken des Tasters IO19 (bzw. verbindet man IO19 kurz mit GND) kann man die WLAN-Suche abbrechen.   
-   
-## Steuerung per DCC
-Stellt man bei der ROCO Multimaus die DCC_Adresse 11 ein, so kann man die Weiche steuern.   
-
-## Steuern per MQTT
-Zum Steuern der Weiche &uuml;ber MQTT muss auf dem Rechner (bzw. Raspierry Pi) mit der IP 10.1.1.1 ein MQTT-Broker (zB `mosquitto`) laufen. Zum Senden der MQTT-Nachrichten an die Weiche kann man zB das Konsolen-Programm `mosquitto_pub` verwenden.   
-War das Verbinden mit dem WLAN und MQTT-Broker erfolgreich, so kann die Weiche durch folgende Befehle auf "Gerade" gestellt werden:   
-`mosquitto_pub -h 10.1.1.1 -t turnout/set/T1 -m 1`   
-oder   
-`mosquitto_pub -h 10.1.1.1 -t turnout/set/11 -m g`   
-Das Stellen auf "Abzweig" erfolgt zB durch   
-`mosquitto_pub -h 10.1.1.1 -t turnout/set/T1 -m 0`   
-
-# Schaltung (Verdrahtung)
-Die Verdrahtung erfolgt nach folgendem Schema:   
-![Wiring_5V_W_DCC](./images/300_test_5V_W_turnout_dcc_wiring_240402.png "Wiring_5V_W_DCC")   
-_Bild 2: Verdrahtung der 5V_W-Weichensteuerung mit DCC_ 
-
-# Programmdetails
-
-## Entwicklungsumgebung
-Das Programm wurde in Visual Studio Code und PlatformIO erstellt.   
+# === ALT === ALT ===
 
 ## Konfigurationsdatei
 Alle Definitionen, Konstanten, globale Variable und Objekte, die das Programm ben&ouml;tigt, werden entweder direkt in der cpp-Datei oder in einer Konfigurationsdatei definiert. Die Verteilung ist so gew&auml;hlt, dass projektspezifische Daten in der Konfigurationsdatei `dcc_config.h` stehen.   
