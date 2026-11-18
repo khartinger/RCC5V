@@ -1,4 +1,4 @@
-//_____dcc_config.h______________________________khartinger_____
+//_____rcc_config.h______________________________khartinger_____
 // Configure file for ESP32 railroad DCC decoder program
 // rcc_demo2
 // Created by Karl Hartinger, November 14, 2024
@@ -8,7 +8,7 @@
 // 2025-06-18 Add "signal"
 // 2026-01-08 Add RC_TYPE_TX, RC_TYPE_DD
 // 2026-02-24 Add mac
-// 2026-08-17 Add dcc_config.cpp, Redesign constexpr, ...
+// 2026-08-17 Add rcc_config.cpp, Redesign constexpr, ...
 // 2026-09-13 Add RC_TYPE_TUI
 // 2026-10-02 Add RC_TYPE_P1
 // Released into the public domain.
@@ -78,7 +78,7 @@ struct strRcmd {
 
 //_______Hardware: IO expander PCF8574__________________________
 // Assumption: IO boards on I2C bus #1, initial value 0xFF.
-// Changes can be made in file dcc_config.cpp
+// Changes can be made in file rcc_config.cpp
 
 // ***** CHECK this! *******************************************
 #define  IOEX_NUM       2         // number of IO expander 2|4|6|8

@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "dcc_config.h"                          // strRcomp
+#include "rcc_config.h"                          // strRcomp
 #include "rcc_demo2_text.h"                     // T_ON,..
 #include "rcc_hardwareaccess.h"                  // PIN_BUTTON
 #include "rcc_statemachine.h"                    // STATES_SCREEN_..

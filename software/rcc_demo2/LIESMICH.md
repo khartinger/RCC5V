@@ -13,7 +13,8 @@ Jedes Modellbahn-Modul besitzt einen eigenen **ESP32-Mikrocontroller** als zentr
 
 Die Software `rcc_demo2` kann direkt mit der Hardware [Blocktester2](https://github.com/khartinger/RCC5V/blob/main/examples/blocktester2/LIESMICH.md) verwendet werden.
 
-Diese Datei gibt einen Überblick über die RCC-Demo-Software. Weitere Informationen:  
+Diese Datei gibt einen Überblick über die RCC-Demo-Software.  
+Weitere Informationen:  
 - **[CUSTOMIZE_D.md](./CUSTOMIZE_D.md):** Anpassung der Software an eigene Anforderungen
 - **[DETAILS_D.md](./DETAILS_D.md):** Technische Beschreibung der Software
 
@@ -75,7 +76,7 @@ _Bild 1: I²C-Verdrahtungsplan des Blocktesters #2_
 * Empfang von DCC-Befehlen.  
 * Empfang und Senden von MQTT-Nachrichten.  
 
-Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigenschaften, sind in einer Konfigurationsdatei `dcc_config.h` gespeichert.   
+Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigenschaften, sind in einer Konfigurationsdatei `rcc_config.h` gespeichert.   
 
 ## Entwicklungsumgebung
 Das Programm wird mit Visual Studio Code (VSC) und PlatformIO erstellt.  
@@ -85,167 +86,11 @@ Nach dem Komplieren in VSC wird das Programm in VSC auf den ESP32 übertragen.
 
 <a name="x40"></a>   
 
-# 4. Software: Ergänzung eines Schaltblocks
-
-Hier die Schritte zum Einbau einer neuen Komponente am Beispiel Pulserkennung mit zwei Eingängen (set, reset).   
-
-## 1. Konfiguration anpassen `dcc_config.h`
-* Version, `_ESP_NAME_`, `TOPIC_BASE[]` anpassen.
-* IO-Expander-Zahl erhöhen  
-`#define  IOEX_NUM       4         // number of IO expander 2|4|6|8`
-* __Typ des neuen Blocks definieren__  
-`constexpr int  RC_TYPE_P2 = 7;    // pulse 2 inputs (reset, set)`
-* Hardware-Komponente definieren, zB  
-```
-// ------pulse with 2 inputs (reset, set)-----------------------
-// Two expander pins B | A for set | reset (active low!)
-// Pulse duration: 200 ms
-#define  RCOMP_6        RC_TYPE_P2,"P2", 61, EX2,PIN0,PIN1,   EX3,PIN0,PIN1, 200,0
-```
-* Komponenten-Array vorbereiten (zB Zweiwegweiche + Pulserkennung)  
-```
-//.......Preparing the Array of all railroad components..........
-#define  RCOMP_NUM  2
-#define  RCOMP_LIST {RCOMP_2},{RCOMP_6}
-```
-
-## 2. Texte definieren `rcc_demo2_text.h`
-### 2.1 Text-Konstante
-Deutsche Texte   
-```  
-  #define T_TRACK_OCC        "Gleis besetzt"
-  #define T_TRACK_FRE        "Gleis frei"
-  #define T_TRACK__0V        "Keine Fahrspannung"
-  #define T_TRACK_00V        "Keine Fahrspannung"
-```  
-
-Englische Texte
-```  
-  #define T_TRACK_OCC        "track occupied"
-  #define T_TRACK_FRE        "track free"
-  #define T_TRACK__0V        "no voltage"
-  #define T_TRACK_00V        "no voltage"
-```  
-
-Status Definitionen als String-Nummern:  
-```
- constexpr char T1_TRACK_OCC[] = "0";
- constexpr char T1_TRACK_FRE[] = "1";
- constexpr char T1_TRACK__0V[] = "2";
- constexpr char T1_TRACK_00V[] = "3";
-```
-
-
-### 2.2 Infotext anpassen
-Deutsch   
-```  
-  #define  INFOLINES_NUM     10
-  #define  INFOLINES { \
-  "Test von RCC-     1/2", \
-  "Schaltbloecken mit   ", \
-  "DCC - MQTT - Hand    ", \
-  VERSION_99_1, \
-  " Weiter: Taste IO19  ", \
-  "DCC 21 2-Weg-Weiche  ", \
-  "DCC 61 Puls2         ",\
-  "Es folgt: IO-Expander", \
-  " und Wifi-Suche      ", \
-  " Weiter: Taste IO19  ", \
-  }
-```  
-
-Englisch   
-```  
-  #define  INFOLINES_NUM     10
-  #define  INFOLINES { \
-   "Test of railway      ", \
-   "switch blocks by     ", \
-   "DCC - MQTT - Hand    ", \
-   VERSION_99_1, \
-   " Next: Button IO19   ", \
-   "DCC 21 2-Way-Turnout ", \
-   "DCC 61 Puls2         ", \
-   "Next up: IO-Expander ", \
-   " and Wifi search     ", \
-   " Next: Button IO19   ", \
-  }
-```  
-
-## 3. P2-Befehl einbauen `rcc_command.cpp`
-```  
- if(aRcomp[iRcomp].type==RC_TYPE_P2) {
-  //...it is a pulse 2 command (2 bits, 2 cmd)..................
-  if(iCmdValue==0) { // 0 = reset = LED green . . . . . . . . . 
-   aRcmd[iRcomp].stateToDo=STATE_NOW;
-   aRcmd[iRcomp].iCmd=CMD_BIT_BA_10;             //  reset
-   aRcmd[iRcomp].stateOffset==aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
-   if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1; // after some time
-   aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;     // ready for next pulse
-   return sReturn+String(" received");
-  } else 
-  {
-   if(iCmdValue==1) { // 1 = set = LED yellow . . . . . . . . . 
-    aRcmd[iRcomp].stateToDo=STATE_NOW;
-    aRcmd[iRcomp].iCmd=CMD_BIT_BA_01;            // set
-    aRcmd[iRcomp].stateOffset==aRcomp[iRcomp].msOn/static_cast<int32_t>(STATE_TICK_MS);
-   if(aRcmd[iRcomp].stateOffset<1) aRcmd[iRcomp].stateOffset=1; // after some time
-    aRcmd[iRcomp].iCmdOffset=CMD_BIT_BA_11;    // ready for next pulse
-    return sReturn+String(" received");
-   }
-  }
- } // END OF it is a turnout command (2 bits, 2cmds)............
-```  
-
-## 4. Textgrafik-Symbol `rcc_display.cpp`
-```
-  case RC_TYPE_P2: // -------pulse 2 inputs (reset, set)--------
-   switch(iValue) { 
-    case 0: return "OCC "; // "=0= " BA=00
-    case 1: return "FRE "; // "=1= " BA=01
-    case 2: return " 0V "; // "=2= " BA=10
-    case 3: return "00V "; // "=3= " BA=11
-    default: return ERR;    // ?? impossible
-   } // END OF switch(iValue)
-   break;
-```
-
-## 5. GET-Command `rcc_mqtt.cpp`
-In der Funktion `getValueForComp(...)`   
-```  
- if(Rcomp_.type==RC_TYPE_P2) {
-  switch(Rcmd_.inValue) {
-   case 0:  return byName ? T_TRACK_OCC : T1_TRACK_OCC; // BA=00
-   case 1:  return byName ? T_TRACK_FRE : T1_TRACK_FRE; // BA=01
-   case 2:  return byName ? T_TRACK__0V : T1_TRACK__0V; // BA=10
-   case 3:  return byName ? T_TRACK_00V : T1_TRACK_00V; // BA=11
-   default: return byName ? T_UNKNOWN : T1_UNKNOWN; // ?? impossible
-  }
- }
-```  
-
-## 5. SET-Command `rcc_mqtt.cpp`
-In der Funktion `simpleSet(...)`   
-```  
- { //.......NOT a turnout command..............................
-    if(aRcomp[i].type==RC_TYPE_P2)
-    { //......specifically for command type PULSE 2.............
-      if(sPayload=="0" || sPayload == "rst" || sPayload == "reset"
-         || sPayload == "fre" || sPayload == "green") iCmdValue=0;
-      if(sPayload=="1" || sPayload == "set"
-         || sPayload == "occ" || sPayload == "yellow") iCmdValue=1;
-    }
-    else
-    { //......for all other command types.......................
-     if(sPayload=="0") iCmdValue=0;
-     if(sPayload=="1") iCmdValue=1;
-    }
-```  
-
 
 # === ALT === ALT ===
 
 ## Konfigurationsdatei
-Alle Definitionen, Konstanten, globale Variable und Objekte, die das Programm ben&ouml;tigt, werden entweder direkt in der cpp-Datei oder in einer Konfigurationsdatei definiert. Die Verteilung ist so gew&auml;hlt, dass projektspezifische Daten in der Konfigurationsdatei `dcc_config.h` stehen.   
+Alle Definitionen, Konstanten, globale Variable und Objekte, die das Programm ben&ouml;tigt, werden entweder direkt in der cpp-Datei oder in einer Konfigurationsdatei definiert. Die Verteilung ist so gew&auml;hlt, dass projektspezifische Daten in der Konfigurationsdatei `rcc_config.h` stehen.   
 Die Konfigurationsdatei enth&auml;lt folgende Abschnitte:   
 * Netzwerk- und MQTT-Daten   
 * Display-Daten   
@@ -256,7 +101,7 @@ Die Konfigurationsdatei enth&auml;lt folgende Abschnitte:
    
 __Beispiel f&uuml;r eine Konfigurationsdatei:__   
 ```   
-//_____dcc_config.h______________________________khartinger_____
+//_____rcc_config.h______________________________khartinger_____
 // Configure file for ESP32 railroad DCC decoder
 //
 // Created by Karl Hartinger, April 02, 2024

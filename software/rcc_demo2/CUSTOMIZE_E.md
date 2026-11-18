@@ -5,14 +5,14 @@ Last modified: 2026-01-04 <a name="up"></a><br>
 </td></tr></table>    
 
 # Introduction
-For many applications of the RCC system, it is sufficient to specify the components used and their wiring in the [configuration file `src/dcc_config.h`](#x20) and to adapt the text of the information pages at program start in the [file `src/rcc_demo2.text.h`](#x30).   
+For many applications of the RCC system, it is sufficient to specify the components used and their wiring in the [configuration file `src/rcc_config.h`](#x20) and to adapt the text of the information pages at program start in the [file `src/rcc_demo2.text.h`](#x30).   
 The control program `rcc_demo2.cpp` does not normally need to be changed. If you want to extend the control system, you will find a detailed description of the demo software under [/software/rcc_demo2/DETAILS_E.md](/software/rcc_demo2/DETAILS_E.md).   
 
 <a name="x20"></a>   
 
-## The configuration file dcc_config.h
+## The configuration file rcc_config.h
 ## Overview
-In the configuration file `dcc_config.h` all essential project properties are defined such as   
+In the configuration file `rcc_config.h` all essential project properties are defined such as   
 * Version designation of the program (e.g. the date of the last update)   
 * Information on the network used (WLAN, WiFi)   
 * Implemented MQTT GET and SET messages   
@@ -38,7 +38,7 @@ _Figure 1: Wiring of the example `rcc_demo2`_
 The listing shows the configuration file for the demo program __with line numbers__. It then explains which lines need to be adapted.   
 
 ```   
-1	//_____dcc_config.h______________________________khartinger_____
+1	//_____rcc_config.h______________________________khartinger_____
 2	// Configure file for ESP32 railroad DCC decoder program
 3	// rcc_demo2
 4	//
@@ -148,8 +148,8 @@ The listing shows the configuration file for the demo program __with line number
 108	#endif
 ```   
 
-## Necessary adjustments in the dcc_config.h file
-The following table explains the meaning of the individual lines in the demo configuration file `dcc_config.h`. The column `Chg` (change) indicates whether the line(s) should be changed or not:   
+## Necessary adjustments in the rcc_config.h file
+The following table explains the meaning of the individual lines in the demo configuration file `rcc_config.h`. The column `Chg` (change) indicates whether the line(s) should be changed or not:   
  1 = must be changed or adapted   
  2 = line should be adjusted   
  3 = line can be changed   

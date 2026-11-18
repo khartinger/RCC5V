@@ -1,8 +1,8 @@
-//_____dcc_config.cpp____________________________khartinger_____
+//_____rcc_config.cpp____________________________khartinger_____
 // This file generates the objects that were declared or 
-// defined in the dcc_config.h file.
+// defined in the rcc_config.h file.
 
-#include "dcc_config.h"
+#include "rcc_config.h"
 
 //______________________________________________________________
 /**

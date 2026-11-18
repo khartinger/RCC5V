@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "dcc_config.h"                // strRcomp
+#include "rcc_config.h"                // strRcomp
 #include "rcc_hardwareaccess.h"        // actOnRcmdHardware
 #include "rcc_statemachine.h"          // STATE_TICK_MS;
 

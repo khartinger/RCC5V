@@ -9,14 +9,14 @@ Stand: 17.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a name="x10"></a>   
 
 # Einleitung
-F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src/dcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `src/rcc_demo2.text.h`](#x30) anzupassen.   
+F&uuml;r viele Eins&auml;tze des RCC-Systems reicht es, in der [Konfigurationsdatei `src/rcc_config.h`](#x20) die verwendeten Komponenten und ihre Verdrahtung anzugeben sowie den Text der Informationsseiten beim Programmstart in der [Datei `src/rcc_demo2.text.h`](#x30) anzupassen.   
 Das Steuerprogramm `rcc_demo2.cpp` muss im Normalfall nicht ver&auml;ndert werden. Falls man die Steuerung erweitern m&ouml;chte, so findet man eine detaillierte Beschreibung der Demo-Software unter [/software/rcc_demo2/DETAILS_D.md](/software/rcc_demo2/DETAILS_D.md).   
 
 <a name="x20"></a>   
 
-# Die Konfigurationsdatei dcc_config.h
+# Die Konfigurationsdatei rcc_config.h
 ## &Uuml;bersicht
-In der Konfigurationsdatei `dcc_config.h` werden alle wesentlichen Projekteigenschaften definiert wie   
+In der Konfigurationsdatei `rcc_config.h` werden alle wesentlichen Projekteigenschaften definiert wie   
 * Versionsbezeichnung des Programms (zB das Datum der letzten &Auml;nderung)   
 * Informationen zum verwendeten Netzwerk (WLAN)   
 * implementierte MQTT GET- und SET-Nachrichten   
@@ -42,7 +42,7 @@ _Bild 1: Verdrahtung des Beispiels `rcc_demo2`_
 Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeilennummern__. Danach wird erkl&auml;rt, welche Zeilen angepasst werden m&uuml;ssen.   
 
 ```   
-1	//_____dcc_config.h______________________________khartinger_____
+1	//_____rcc_config.h______________________________khartinger_____
 2	// Configure file for ESP32 railroad DCC decoder program
 3	// rcc_demo2
 4	//
@@ -152,8 +152,8 @@ Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeile
 108	#endif
 ```   
 
-## Erforderliche Anpassungen in der Datei dcc_config.h
-Die folgende Tabelle erkl&auml;rt die Bedeutung der einzelnen Zeilen in der Demo-Konfigurationsdatei `dcc_config.h`. Die Spalte `Chg` (change = &auml;ndern) gibt an, ob die Zeile(n) ge&auml;ndert werden sollen oder nicht:   
+## Erforderliche Anpassungen in der Datei rcc_config.h
+Die folgende Tabelle erkl&auml;rt die Bedeutung der einzelnen Zeilen in der Demo-Konfigurationsdatei `rcc_config.h`. Die Spalte `Chg` (change = &auml;ndern) gibt an, ob die Zeile(n) ge&auml;ndert werden sollen oder nicht:   
  1 = unbedingt &auml;ndern bzw. anpassen   
  2 = Zeile sollte angepasst werden   
  3 = Zeile kann ge&auml;ndert werden   
@@ -187,5 +187,7 @@ Die Texte k&ouml;nnen auch gel&ouml;scht werden, dann ist die Konstante `INFOLIN
 ```   
 #define  INFOLINES_NUM     0
 ```   
+
+
 
 [Zum Seitenanfang](#up)

@@ -30,7 +30,7 @@
 //
 // All project-specific data, such as WLAN access, MQTT commands
 // and hardware properties, are saved in a configuration file
-// `dcc_config.h`.
+// `rcc_config.h`.
 //
 // Required hardware
 // Electronic components
@@ -77,7 +77,7 @@
 
 #include "rcc_demo2_text.h"                // AFTER LANGUAGE
 #include "pre_config.h"                     // common defines
-#include "dcc_config.h"                     // hardware defines
+#include "rcc_config.h"                     // hardware defines
 #include <DccAccessoryDecoder.h>            // receive dcc commands
 #include "src/rcc_dcc.h"                    // struct DccCommand
 #include "src/rcc_hardwareaccess.h"         // IO Accesses

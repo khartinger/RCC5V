@@ -58,6 +58,7 @@ _Bild 3: Blocktester #2 von oben_
 | Sonstiges | * Als Steuersoftware dient die Demo-Software `Demo2` |   
 
 <a name="x05"></a>   
+<a name="TableOfContents"></a>   
 
 # Inhaltsverzeichnis   
 * [1. Schaltung des Test-Systems](#x10)   

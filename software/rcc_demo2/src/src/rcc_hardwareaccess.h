@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "dcc_config.h"                          // strRcomp
+#include "rcc_config.h"                          // strRcomp
 #include "src/pcf8574/D1_class_PCF8574.h"        // PCF8574
 #include "src/simplemqtt/D1_class_SimpleMqtt.h"  // SimpleMqtt
 #include "src/screen154/D1_class_Screen154.h"    // Screen154

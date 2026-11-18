@@ -35,7 +35,7 @@ __*Further functions of the software:*__
 * A button on pin D6 (IO19) can be used to skip the individual pages of the information display or to search for the WLAN.   
 * If you press the button for one second during the program run, a reset is triggered. This can be used, for example, to activate the WLAN when starting up again.   
 
-All project-specific data, such as WLAN access, MQTT commands and hardware properties, are saved in a configuration file `dcc_config.h`.   
+All project-specific data, such as WLAN access, MQTT commands and hardware properties, are saved in a configuration file `rcc_config.h`.   
 
 # Required hardware
 ## Electronic components   
@@ -84,7 +84,7 @@ _Figure 1: Test arrangement 5V_W turnout control with DCC signal_
 5. connect the switching voltage to the U5_W boards (V+ and V-).   
 6. compile the program `ESP32_06_cmd_turnout_V1.cpp` and upload it to the ESP32 D1 mini.   
    
-After starting the program, the ESP32 searches for the WLAN whose data is contained in the configuration file `dcc_config.h`. The WLAN search can be aborted by pressing the IO19 button (or by briefly connecting IO19 to GND).   
+After starting the program, the ESP32 searches for the WLAN whose data is contained in the configuration file `rcc_config.h`. The WLAN search can be aborted by pressing the IO19 button (or by briefly connecting IO19 to GND).   
    
 ## Control via DCC
 If you set the DCC_address 11 on the ROCO Multimaus, you can control the turnout.   
@@ -109,7 +109,7 @@ _Figure 2: Wiring of the 5V_W turnout control with DCC_
 The program was created in Visual Studio Code and PlatformIO.   
 
 ## Configuration file
-All definitions, constants, global variables and objects required by the program are defined either directly in the cpp file or in a configuration file. The distribution is chosen so that project-specific data is in the configuration file `dcc_config.h`.   
+All definitions, constants, global variables and objects required by the program are defined either directly in the cpp file or in a configuration file. The distribution is chosen so that project-specific data is in the configuration file `rcc_config.h`.   
 The configuration file contains the following sections:   
 * Network and MQTT data   
 * Display data   
@@ -120,7 +120,7 @@ The configuration file contains the following sections:
    
 __Example for a configuration file:__   
 ```   
-//_____dcc_config.h______________________________khartinger_____
+//_____rcc_config.h______________________________khartinger_____
 // Configure file for ESP32 railroad DCC decoder
 //
 // Created by Karl Hartinger, April 02, 2024

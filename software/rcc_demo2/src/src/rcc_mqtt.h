@@ -2,7 +2,7 @@
 
 #pragma once
 
- #include "dcc_config.h"                         // strRcomp
+ #include "rcc_config.h"                         // strRcomp
  #include "rcc_demo2_text.h"                    // T1_ON,...
  #include "rcc_hardwareaccess.h"                 // PIN_BUTTON
  #include "src/simplemqtt/D1_class_SimpleMqtt.h" // SimpleMqtt
