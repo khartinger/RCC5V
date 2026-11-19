@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>RCC Demo-Software Version 2</h1><b><big>Überblick über die Demo-Software zum Steuern von Modellbahn-Komponenten</big></b><br>  
-Stand: 18.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 19.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -39,7 +39,7 @@ Folgende Steuerblöcke können mit der Demo-Software angesteuert werden:
 9. Pulserkennung mit zwei Eingängen (set, reset)  
 10. Doppelkreuzungsweiche  
 
-Zur Konfiguration der Software sind einige Informationen zur Funktion der Hardware erforderlich.  
+Zur Konfiguration der Software sind Informationen zur Verdrahtung der Hardware erforderlich.  
 
 <a name="x20"></a>   
 
@@ -90,81 +90,7 @@ Die Konfigurationsdatei enth&auml;lt folgende Abschnitte:
 * Definition f&uuml;r Eisenbahn-Komponenten   
 * die Eisenbahn-Komponenten selbst   
    
-__Beispiel f&uuml;r eine Konfigurationsdatei:__   
-```   
-//_____rcc_config.h______________________________khartinger_____
-// Configure file for ESP32 railroad DCC decoder
-//
-// Created by Karl Hartinger, April 02, 2024
-// Changes:
-// 2024-04-02 New
-// Released into the public domain.
-
-#ifndef RCC_CONFIG_H
- #define RCC_CONFIG_H
- #include <Arduino.h>                  // String, int32_t
- #include "src/pcf8574/D1_class_PCF8574.h"
-
-//_______program version________________________________________
-#define  VERSION_06     "2024-04-02 ESP32_06_cmd_turnout"
-#define  VERSION_06_1   "Version 2024-04-02"
-
-//_______Network and MQTT data__________________________________
-#define  _USE_WIFI_     true
-#define  _SSID_         "Raspi11"
-#define  _PASS_         "12345678"
-#define  _HOST_         "10.1.1.1"
-#define  TOPIC_BASE     "turnout"
-#define  TOPIC_GET      "?,help,version,ip,topicbase,eeprom"
-#define  TOPIC_SET      "topicbase,eeprom0,byname,bydcc"
-#define  TOPIC_SUB      ""
-#define  TOPIC_PUB      ""
-
-//_______1.54" display data (SSD1309, 128x64 pixel, I2C)________
-#define  SCREEN_TITLE   "06_cmd_turnout"
-#define  SCREEN_LINE_MAX 6
-#define  SCREEN_LINE_LEN 21
-
-//_______DCCex__________________________________________________
-#define  DCC_OFFSET     4
-
-//_______Hardware: IO expander PCF8574__________________________
-#define  IOEX_NUM       2              // number of IO expander
-PCF8574  pcf8574_out(0x20);            // 8 digital OUT
-PCF8574  pcf8574_in (0x21);            // 8 digital IN
-PCF8574 *pIOEx[IOEX_NUM]={&pcf8574_out, &pcf8574_in}; // IO expander
-
-//_______Definitions for railroad components____________________
-//.......values for every railroad component....................
-// e.g. turnout, uncoupler, disconnectable track, ...
-#define  NO_PIN         -1   // pin @ PCF8574 (0...7)
-#define  RC_TYPE_TO     1    // turnout (Weiche)
-#define  RC_TYPE_UC     2    // uncoupler (Entkuppler)
-#define  RC_TYPE_DT     3    // disconnectable track (Fahrstrom)
-
-//.......All properties of a railroad component.................
-struct strRcomp {
-  int    type;          // RC_TYPE_TO, RC_TYPE_UC, RC_TYPE_DT
-  String name;          // short name like T1, U1, D1, W1, E1...
-  int    dcc;           // dcc address of the component
-  int    outPCF;        // aIOEx index of PCF8574 output device
-  int    outBitA;       // bit PCF8574 for turnout straight (Gerade)
-  int    outBitB;       // bit PCF8574 for turnout curved (Abzweig)
-  int    inPCF;         // aIOEx index of PCF8574 input device
-  int    inBitA;        // bit number at PCF8574 input straight=1
-  int    inBitB;        // bit number at PCF8574 input curved=1
-};
-
-//_______Railroad commands______________________________________
-// railroad components:  type,name,dcc,
-//                      pIOEx-out-index,outBitA,outBitB, 
-//                      pIOEx-in-index inBitA inBitB
-#define  RCOMP_1        RC_TYPE_TO,"T1",11, 0,0,1, 1,0,1
-//.......Array of all railroad components........................
-#define  RCOMP_MAX      1
-strRcomp aRcomp[RCOMP_MAX] = {{RCOMP_1}};
-#endif
-```   
+Weitere Infos zur Konfiguration stehen in **[CUSTOMIZE_D.md](./CUSTOMIZE_D.md):** Anpassung der Software an eigene Anforderungen   
 
 ## Programmversion
 Bei jeder &Auml;nderung am Programm sollte die Programmversion in der Konfigurationsdatei angepasst werden. `VERSION_99` sollte das Datum und den Dateinamen enthalten, `VERSION_99_1` den Text "Version" und das Datum.   
@@ -199,7 +125,7 @@ Bedeutung der weiteren Definitionen:
 Die Pins f&uuml;r den DCC-Eingang (18 = D5) und den Taster (19 = D6) werden in der cpp-Datei definiert und k&ouml;nnen - falls erforderlich - dort ge&auml;ndert werden.   
 
 ## Anzeige auf der seriellen Schnittstelle
-Ist der Debug-Modus eingeschaltet (`#define DEBUG_06 true`) wird im seriellen Monitor der Zustand jedes States angezeigt:   
+Ist der Debug-Modus eingeschaltet (`#define DEBUG_99 true`) wird im seriellen Monitor der Zustand jedes States angezeigt:   
 * state Nummer   
 * Zeitdauer f&uuml;r die Arbeiten in diesem State    
 Zus&auml;tzlich zu diesen Informationen werden weitere Meldungen ausgeben, falls sie auftreten:   
@@ -207,7 +133,7 @@ Zus&auml;tzlich zu diesen Informationen werden weitere Meldungen ausgeben, falls
 * Freigabe der Weichensteuerung (beide Pins wieder auf 1)   
 
 ## Statemachine
-Wird die maximale Zeit f&uuml;r einen State &uuml;berschritten, so wird diese Zeit in den nachfolgenden States aufgeholt (aber nicht mehr als maximal 100 kurze States).   
+Das Timing des Programms wird mit einer Statemachine realisiert. Wird die maximale Dauer eines States überschritten, so wird diese Zeit in den nachfolgenden States aufgeholt (aber nicht mehr als maximal 100 kurze States).   
 In der cpp-Datei wird f&uuml;r die State-Maschine eine Z&auml;hlschleifenzeit von einer Stunde mit 20 ms pro Schritt festgelegt und kann bei Bedarf auch ge&auml;ndert werden.   
 
 ## OLED-Display
@@ -223,6 +149,6 @@ Die Anzahl der Boards muss extra mit `#define  IOEX_NUM       2` definiert werde
 
 ## Eisenbahnkomponenten
 Die Eigenschaften jeder Eisenbahnkomponente (Weiche, Entkuppler, abschaltbares Gleis) werden als Struktur `strRcomp` definiert. F&uuml;r jede Komponente werden die Werte in einer `#define`-Anweisung festgelegt. Alle Komponenten werden in einem Feld `aRcomp[]` abgelegt.   
-Die Anzahl der Komponenten muss extra mit `#define  RCOMP_NUM      1` definiert werden. (Im Beispiel wird eine Komponente - die Weiche T1 - verwendet.)   
+Die Anzahl der Komponenten muss extra mit `#define  RCOMP_NUM      xx` definiert werden.  
 
 [Zum Seitenanfang](#up)

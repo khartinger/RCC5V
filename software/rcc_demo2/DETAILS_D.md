@@ -1,7 +1,7 @@
 <a name="up"></a>
 <table><tr><td><img src="/images/RCC5V_Logo_96.png"></img></td><td>
 <h1>Das Demo-Programm rcc_demo2 im Detail</h1><b><big>Details zur Demo-Software zum Steuern von Modellbahn-Komponenten</big></b><br>  
-Stand: 18.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
+Stand: 19.11.2026    &nbsp; &nbsp; &nbsp; &nbsp;
 <a href="#TableOfContents">→ Inhaltsverzeichnis</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="README.md">→ English version</a>
 </td></tr></table>
@@ -41,46 +41,194 @@ __*Beachte*__: Bei einem Standard-Projekt ohne spezielle Features müssen ledigl
 
 ## Inhaltsübersicht
 * [1. Übersicht über rcc_demo2](#x10)  
-* [2. Konfiguration](#x20)  
-* [3. Statemaschine](#x30)  
-* [4. DCC-Befehle](#x40)  
-* [5. RCC-Kommandos](#x50)  
-* [6. Hardware-Zugriff](#x60)  
-* [7. OLED-Anzeige](#x70)  
-* [8. MQTT-Befehle](#x80)  
-* [9. Beispiel: Ergänzung eines Schaltblocks](#x90)  
+* [2. Das Hauptprogramm rcc_demo2.cpp](#x20)  
+* [3. Konfiguration](#x30)  
+* [4. Statemachine](#x40)  
+* [5. DCC-Befehle](#x50)  
+* [6. RCC-Kommandos](#x60)  
+* [7. Hardware-Zugriff](#x70)  
+* [8. OLED-Anzeige](#x80)  
+* [9. MQTT-Befehle](#x90)  
+* [10. Beispiel: Ergänzung eines Schaltblocks](#x100)  
 
 <a name="x20"></a>   
+<a name="x21"></a>   
 
-# 2. Konfiguration
+# 2. Das Hauptprogramm rcc_demo2.cpp
+# 2.1 Funktion
+Das Hauptprogramm `rcc_demo2.cpp` definiert den Prozessortyp (ESP32), die Anzeigesprache (Deutsch) und bindet alle Header-Dateien und extern definierte Objekte (`screen_`, `stm`, `lastDCC`) ein. Es enthält die Standard-Funktionen `setup()` und `loop()`.
+
+<a name="x22"></a>   
+
+## 2.2 Funktion setup()
+
+<a name="x23"></a>   
+
+## 2.3 Funktion loop()
+
 
 <a name="x30"></a>   
+<a name="x31"></a>   
 
-# 3. Statemaschine
+# 3. Konfiguration
+Alle Definitionen, Konstanten, globale Variable und Objekte, die das Programm ben&ouml;tigt, werden entweder direkt in der cpp-Datei oder in einer Konfigurationsdatei definiert. Die Verteilung ist so gew&auml;hlt, dass projektspezifische Daten in der Konfigurationsdatei `rcc_config.h` stehen.   
+Die Konfigurationsdatei enth&auml;lt folgende Abschnitte:   
+* Netzwerk- und MQTT-Daten   
+* Display-Daten   
+* DCCex-Daten   
+* IO-Expander PCF8574-Daten   
+* Definition f&uuml;r Eisenbahn-Komponenten   
+* die Eisenbahn-Komponenten selbst   
+   
+Weitere Infos zur Konfiguration stehen in **[CUSTOMIZE_D.md](./CUSTOMIZE_D.md):** Anpassung der Software an eigene Anforderungen   
 
 <a name="x40"></a>   
+<a name="x41"></a>   
 
-# 4. DCC-Befehle
+# 4. Statemachine
+## 4.1 Funktion
+Das Timing des Programms wird mit einer Statemachine realisiert. Wird die maximale Dauer eines States überschritten, so wird diese Zeit in den nachfolgenden States aufgeholt (aber nicht mehr als maximal 100 kurze States).   
+
+<a name="x42"></a>   
+
+## 4.2 Header-Datei
+In der Header-Datei `rcc_statemachine.h` wird das zeitliche Verhalten des Programms festgelegt:  
+```
+ 8 |//------- Duration of intervals in milliseconds ----------------
+ 9 |constexpr uint32_t STATE_TICK_MS      = 20;      // state delay in ms
+10 |constexpr uint32_t RESET_DELAY_MS     = 1000;    // press button 1 s
+11 |constexpr uint32_t SCREEN_REFRESH_MS  = 5200;    // refresh screen
+12 |constexpr uint32_t SHOW_SCREEN_MIN_MS = 1500;
+13 |constexpr uint32_t BLINK_MS           = 500;     // 0.5 s
+14 |//------- Duration of intervals in state steps ---------------------------
+15 |constexpr uint32_t STATE_MAX          = 3600000 / STATE_TICK_MS; // 1h
+16 |constexpr uint32_t STATES_BEFORE_RESET = RESET_DELAY_MS / STATE_TICK_MS;
+17 |constexpr uint32_t STATES_SCREEN_REFRESH = SCREEN_REFRESH_MS / STATE_TICK_MS;
+18 |constexpr uint32_t STATES_SHOW_SCREEN_MIN = SHOW_SCREEN_MIN_MS / STATE_TICK_MS;
+19 |constexpr uint32_t STATES_BLINK = BLINK_MS / STATE_TICK_MS;
+
+```
+* _Zeile  9_: Dauer eines States in Millisekunden.  
+* _Zeile 10_: Dauer, wie lange der Taster (IO 19 = D6) für einen Programm-Reset gedrückt werden muss (in Millisekunden).  
+* _Zeile 11_: Dauer zwischen zwei Display-Refreshs (in Millisekunden), wenn es keine Zustandsänderungen gibt. Dies ist für die Lebensdauer von OLEDs wichtig.  
+* _Zeile 12_: Mindestdauer, wie lange ein Bildschirm angezeigt wird, bevor auf einen anderen umgeschaltet wird (falls es eine Zustandsänderung bei einem Schaltblock gegeben hat).
+* _Zeile 13_: Vorgabewert für Blinklichter.  
+* _Zeile 15_: Maximale Statenummer, bis zu der gezählt wird. Bei einer Stunde Zykluszeit und einer State-Zeit von 20 ms ergibt sich ein Wert von 180000.  
+* _Zeile 16 bis 19_: Alle Zeiten als State-Werte für die Statemachine.  
+
+<a name="x43"></a>   
+
+## 4.3 cpp-Datei
+Die Datei `rcc_statemachine.cpp` definiert lediglich ein Objekt der Klasse `Statemachine`:  
+```
+Statemachine stm(STATE_MAX, STATE_TICK_MS);  // 1 .. 180000
+```
+
+<a name="x44"></a>   
+
+## 4.4 Hilfsklasse `Statemachine`
+Im Unterverzeichnis `statemachine` wird eine Klasse `Statemachine` definiert. Diese enthält alle Methoden, die für eine Statemachine erforderlich sind wie zum Beispiel  
+|  |  |
+|------------------|-----|  
+| `Statemachine()` | Konstruktor |  
+| `loopBegin()`    | Aufruf am Beginn der loop()-Funktion. Liefert die Nummer des aktuellen States. |  
+| `loopEnd()`      | Aufruf am Ende der loop()-Funktion. Erhöht den State-Zähler und liefert die Dauer des aktuellen States. |  
+| `getState()`     | Liefert die Nummer des aktuellen States. |  
+| `add()`          | Addiert eine Anzahl States zur aktuellen Statezahl und gibt diesen Wert zurück. Die Methode ändert NICHT den Zählerstand! |  
+| `diff()`         | Dient zur Berechnung der State-Differenz zwischen dem Statezähler und dem angegebenen Wert. |  
 
 <a name="x50"></a>   
+<a name="x51"></a>   
 
-# 5. RCC-Kommandos
+# 5. DCC-Befehle
+
+## 5.1 Funktion
+Je nach verwendeten Komponenten kann es sein, dass DCC-Adressen unterschiedlich dekodiert werden. Dieser Offset kann mit der Konstanten `DCC_OFFSET` angepasst werden, wobei der Wert &uuml;blicherweise entweder 4 oder 0 sein kann.   
+
+<a name="x52"></a>   
+
+## 5.2 Header-Datei
+Die Header-Datei `rcc_dcc.h` definiert eine Struktur für DCC-Kommandos  
+```   
+struct DccCommand
+{
+    uint16_t address = 0;  ///< DCC address; 0 means no address assigned.
+    int value = -1;        ///< Command value: -1 = invalid, 0 = OFF, 1 = ON.
+};
+```   
+und deklariert die Callback-Funktion zum Empfang von DCC-Nachrichten:  
+`void onAccessoryPacket(unsigned int linearDecoderAddress, bool enabled);`  
+
+<a name="x53"></a>   
+
+## 5.3 cpp-Datei
+Die Datei `rcc_dcc.cpp` erzeugt ein Objekt zur Aufnahme der letzten DCC-Nachricht (Adresse, Wert)  
+`DccCommand lastDcc;`  
+und definiert die DCC-Callback-Funktion.
+```   
+21 |void onAccessoryPacket(unsigned int linearDecoderAddress, bool enabled) {
+22 | digitalWrite(BUILTIN_LED, enabled ? 1 : 0);
+23 | lastDcc.address=(int)linearDecoderAddress + DCC_OFFSET;
+24 | lastDcc.value=enabled ? 1 : 0;
+25 | //------is it a DCC address for this module?-------------------
+26 | for(int i=0; i<RCOMP_NUM; i++) {
+27 |  if(aRcomp[i].dcc==lastDcc.address) {
+28 |   //----railroad component found-------------------------------
+29 |   setRcmd(i, lastDcc.value, "");
+30 |  }
+31 | }
+32 |}
+```   
+
+_Zeile 22_: Zur Kontrolle: Anzeige des empfangenen DCC-Wertes durch die eingebaute LED des ESP32-Boards.  
+_Zeile 23_: Adresse der Nachricht merken  
+_Zeile 24_: Wert der Nachricht merken  
+_Zeile 26 bis 31_: Überprüfung, ob die Nachricht zu einer Adresse einer Komponente passt. Wenn ja, wird ein RCC-Befehl erzeugt.  
+
+<a name="x54"></a>   
+
+## 5.4 Einbinden der DCC-Callback-Funktion
+Damit DCC-Nachrichten empfangen werden können muss eine externe Bibliothek eingebunden werden. Dies geschieht in `platformio.ini`:  
+```   
+[env:wemos_d1_mini32]
+platform = espressif32
+board = wemos_d1_mini32
+framework = arduino
+monitor_speed = 115200
+lib_deps =
+  bblanchon/ArduinoJson@^6.21.1
+  https://github.com/enginorama/DccAccessoryDecoder
+```   
 
 <a name="x60"></a>   
+<a name="x61"></a>   
 
-# 6. Hardware-Zugriff
+# 6. RCC-Kommandos
+## 6.1 Funktion
+
+<a name="x62"></a>   
+
+## 6.2 Header-Datei
+
+<a name="x63"></a>   
+
+## 6.3 cpp-Datei
 
 <a name="x70"></a>   
 
-# 7. OLED-Anzeige
+# 7. Hardware-Zugriff
 
 <a name="x80"></a>   
 
-# 8. MQTT-Befehle
+# 8. OLED-Anzeige
 
 <a name="x90"></a>   
 
-# 9. Beispiel: Ergänzung eines Schaltblocks
+# 9. MQTT-Befehle
+
+<a name="x100"></a>   
+
+# 10. Beispiel: Ergänzung eines Schaltblocks
 
 Hier die Schritte zum Einbau einer neuen Komponente am Beispiel Pulserkennung mit zwei Eingängen (set, reset).   
 
