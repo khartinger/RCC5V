@@ -24,30 +24,30 @@ Weitere Informationen:
 * [1. Einführung](#x10)  
 * [2. Kenntnisse über die Hardware](#x20)  
 * [3. Software-Überblick](#x30)  
-* [4. Software: Ergänzung eines Schaltblocks](#x40)   
 
 ## Unterstützte Steuerblöcke
 
-Folgende Steuerblöcke können durch die Software angesteuert werden:   
-1. Entkuppler   
-2. Zweiwegweiche (mit Endabschaltung)   
-3. Dreiwegweiche (mit Endabschaltung)   
-4. Fahrstrom-Schalter   
-5. Blinklicht   
+Folgende Steuerblöcke können mit der Demo-Software angesteuert werden:  
+1. Entkuppler  
+2. Zweiwegweiche (mit Endabschaltung)  
+3. Dreiwegweiche (mit Endabschaltung)  
+4. Fahrstrom-Schalter  
+5. Blinklicht  
 6. Fahrstrom-Schalter mit Fahrstromerkennung  
-7. Gleis-Spannung und Gleisstrom-Anzeige (UI)   
-8. Pulserkennung, zweifach   
-9. Pulserkennung mit zwei Eingängen (set, reset)   
+7. Gleis-Spannung und Gleisstrom-Anzeige (UI)  
+8. Pulserkennung, zweifach  
+9. Pulserkennung mit zwei Eingängen (set, reset)  
+10. Doppelkreuzungsweiche  
 
-Zum Verständnis der Software ist weiters eine grundsätzliche Kenntnis der Funktion der Hardware erforderlich.
+Zur Konfiguration der Software sind einige Informationen zur Funktion der Hardware erforderlich.  
 
 <a name="x20"></a>   
 
 # 2. Kenntnisse über die Hardware
-Die Ansteuerung von Schaltblöcken durch den ESP32 erfolgt über I²C-Bus und I²C-PCF8574-I/O-Expander-Boards. Die Anzahl der Boards ist stets gerade, da immer  
-* ein Board zur Ansteuerung der Komponenten (I2C-Adresse 0x20, IO-Expander #0) und   
-* ein Board f&uuml;r die R&uuml;ckmeldesignale (I2C-Adresse 0x21, IO-Expander #1)   
-verantwortlich ist.   
+Die Ansteuerung von Schaltblöcken durch den ESP32 erfolgt über einen I²C-Bus und I²C-PCF8574-I/O-Expander-Boards. Die Anzahl der Boards ist üblicherweise eine gerade Zahl, da immer  
+* ein Board zur **Ansteuerung** der Komponenten (I2C-Adresse 0x20, IO-Expander #0) und  
+* ein Board f&uuml;r die **R&uuml;ckmeldesignale** (I2C-Adresse 0x21, IO-Expander #1)  
+verwendet wird.  
 
 Die IO-Pins zur Ansteuerung und zur R&uuml;ckmeldung werden normalerweise auf die gleichen Pin-Nummern verdrahtet.  
 
@@ -61,8 +61,6 @@ Für die Software ist die Kenntnis der **Verdrahtung  zwischen Schaltbl&ouml;cke
 
 ![Blocktester2_i2c_Schaltplan](./images/480_BT2_i2c_circuit.png "Blocktester2_i2c_Schaltplan")   
 _Bild 1: I²C-Verdrahtungsplan des Blocktesters #2_   
-
-
 
 <a name="x30"></a>
 
@@ -80,14 +78,7 @@ Alle projektspezifischen Daten, wie WLAN-Zugang, MQTT-Befehle und Hardware-Eigen
 
 ## Entwicklungsumgebung
 Das Programm wird mit Visual Studio Code (VSC) und PlatformIO erstellt.  
-Nach dem Komplieren in VSC wird das Programm in VSC auf den ESP32 übertragen.   
-
-
-
-<a name="x40"></a>   
-
-
-# === ALT === ALT ===
+Nach dem Kompilieren in VSC wird das Programm mit VSC auf den ESP32 übertragen.   
 
 ## Konfigurationsdatei
 Alle Definitionen, Konstanten, globale Variable und Objekte, die das Programm ben&ouml;tigt, werden entweder direkt in der cpp-Datei oder in einer Konfigurationsdatei definiert. Die Verteilung ist so gew&auml;hlt, dass projektspezifische Daten in der Konfigurationsdatei `rcc_config.h` stehen.   
@@ -109,8 +100,8 @@ __Beispiel f&uuml;r eine Konfigurationsdatei:__
 // 2024-04-02 New
 // Released into the public domain.
 
-#ifndef DCC_CONFIG_H
- #define DCC_CONFIG_H
+#ifndef RCC_CONFIG_H
+ #define RCC_CONFIG_H
  #include <Arduino.h>                  // String, int32_t
  #include "src/pcf8574/D1_class_PCF8574.h"
 
@@ -176,11 +167,11 @@ strRcomp aRcomp[RCOMP_MAX] = {{RCOMP_1}};
 ```   
 
 ## Programmversion
-Bei jeder &Auml;nderung am Programm sollte die Programmversion in der Konfigurationsdatei angepasst werden. `VERSION_06` sollte das Datum und den Dateinamen enthalten, `VERSION_06_1` den Text "Version" und das Datum.   
-Der Inhalt von `VERSION_06` wird als Antwort auf eine MQTT-Nachricht   
-`mosquitto_pub -h 10.1.1.1 -t turnout/get -m version`   
+Bei jeder &Auml;nderung am Programm sollte die Programmversion in der Konfigurationsdatei angepasst werden. `VERSION_99` sollte das Datum und den Dateinamen enthalten, `VERSION_99_1` den Text "Version" und das Datum.   
+Der Inhalt von `VERSION_99` wird als Antwort auf eine MQTT-Nachricht   
+`mosquitto_pub -h 10.1.1.1 -t rcc/demo2/get -m version`   
 angezeigt.   
-Der Inhalt von `VERSION_06_1` wird beim Start f&uuml;r eine Sekunde in der letzten Zeile des Displays angezeigt und sollte nicht l&auml;nger als 21 Zeichen (`SCREEN_LINE_LEN`) sein.   
+Der Inhalt von `VERSION_99_1` wird beim Start f&uuml;r eine Sekunde in der letzten Zeile des Displays angezeigt und sollte nicht l&auml;nger als 21 Zeichen (`SCREEN_LINE_LEN`) sein.   
 
 ## Netzwerk- und MQTT-Daten
 Die Definition von `_USE_WIFI_` legt grunds&auml;tzlich fest, ob WLAN und MQTT verwendet werden sollen (`true` = ja). Die Definitionen von `_SSID_`, `_PASS_` und `_HOST_` stellen die Netzwerkdaten zur Verf&uuml;gung und m&uuml;ssen an das eigene Netzwerk angepasst werden:   

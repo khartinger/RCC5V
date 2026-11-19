@@ -10,8 +10,8 @@
 // 2026-01-08 Add RC_TYPE_TX, RC_TYPE_DD
 // Released into the public domain.
 
-#ifndef DCC_CONFIG_H
- #define DCC_CONFIG_H
+#ifndef RCC_CONFIG_H
+ #define RCC_CONFIG_H
  #include <Arduino.h>                  // String, int32_t
  #include "src/pcf8574/D1_class_PCF8574.h"
 

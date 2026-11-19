@@ -3,8 +3,8 @@
 // rcc_module15_V1
 // Released into the public domain.
 
-#ifndef DCC_CONFIG_H
- #define DCC_CONFIG_H
+#ifndef RCC_CONFIG_H
+ #define RCC_CONFIG_H
  #include "pre_config.h"                    // common defines
  #include <Arduino.h>                       // String, int32_t
  #include "src/pcf8574/D1_class_PCF8574.h"  // PCF8574

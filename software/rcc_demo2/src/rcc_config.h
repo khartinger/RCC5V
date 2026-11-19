@@ -3,18 +3,11 @@
 // rcc_demo2
 // Created by Karl Hartinger, November 14, 2024
 // Changes:
-// 2024-11-28 Change program name
-// 2025-01-03 Change TOPIC_BASE
-// 2025-06-18 Add "signal"
-// 2026-01-08 Add RC_TYPE_TX, RC_TYPE_DD
-// 2026-02-24 Add mac
-// 2026-08-17 Add rcc_config.cpp, Redesign constexpr, ...
-// 2026-09-13 Add RC_TYPE_TUI
-// 2026-10-02 Add RC_TYPE_P1
+// 2026-11-19 Change file name
 // Released into the public domain.
 
-#ifndef DCC_CONFIG_H
- #define DCC_CONFIG_H
+#ifndef RCC_CONFIG_H
+ #define RCC_CONFIG_H
  #include "pre_config.h"                    // common defines
  #include <Arduino.h>                       // String, int32_t
  #include "src/pcf8574/D1_class_PCF8574.h"  // PCF8574
@@ -84,8 +77,8 @@ struct strRcmd {
 #define  IOEX_NUM       2         // number of IO expander 2|4|6|8
 
 // *****Especially for DEMO2: **********************************
-#define  IOEX_ADDRESS1  0x22      // pcf8574_out #2
-#define  IOEX_ADDRESS2  0x23      // pcf8574_in  #2
+#define  IOEX_ADDRESS1  0x22      // pcf8574_out #1
+#define  IOEX_ADDRESS2  0x23      // pcf8574_in  #1
 
 //.......Suggested addresses....................................
 //#define  IOEX_ADDRESS1  0x20      // pcf8574_out #1
@@ -128,8 +121,7 @@ struct strRcomp {
   int32_t msOff;        // ms off
 };
 
-// ***** CHECK this! *******************************************
-//_______Railroad components____________________________________
+//_______Demo Railroad components_______________________________
 /**
  * @brief Definition of all Railroad Components
  * 
@@ -145,7 +137,7 @@ struct strRcomp {
  * Output Pin 0: start uncoupler for 1500 ms (1) or stop it (0)
  * Input  Pin 0: status uncoupler (1=on, 0=off)
  */
-#define  RCOMP_1   RC_TYPE_UC,"UC", 11, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 1500,0
+//#define  RCOMP_1   RC_TYPE_UC,"UC", 11, EX0,PIN0,NO_PIN, EX1,PIN0,NO_PIN, 1500,0
 
 // -------------------------------------------------------------
 /**
@@ -155,7 +147,7 @@ struct strRcomp {
  * Input  The feedback from Pin 2 and Pin 1 yields the value BA:
  *        BA = 1 (01) = stright, BA = 2 (10) = curved
  */
-#define  RCOMP_2   RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
+//#define  RCOMP_2   RC_TYPE_TO,"T2", 21, EX0,PIN1,PIN2,   EX1,PIN1,PIN2, 500,0
 
 // -------------------------------------------------------------
 /**
@@ -167,8 +159,8 @@ struct strRcomp {
  *        Pin 4 (B) = 0 turnout straight
  *        Pin 5 (A) = 0 turnout curved (right)
  */
-#define  RCOMP_3L  RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
-#define  RCOMP_3R  RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
+//#define  RCOMP_3L  RC_TYPE_T3,"T3L",31, EX0,PIN3,PIN4,   EX1,PIN3,PIN4, 500,0
+//#define  RCOMP_3R  RC_TYPE_T3,"T3R",32, EX0,PIN5,PIN4,   EX1,PIN5,PIN4, 500,0
 
 // -------------------------------------------------------------
 /**
@@ -176,7 +168,7 @@ struct strRcomp {
  * Output Pin 6: 1 = on, 0 = off
  * Input  Pin 6: status track voltage (1 = on, 0 = off)
  */
-#define  RCOMP_4   RC_TYPE_DT,"DT", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
+//#define  RCOMP_4   RC_TYPE_DT,"DT", 41, EX0,PIN6,NO_PIN, EX1,PIN6,NO_PIN, 0,0
 
 // -------------------------------------------------------------
 /**
@@ -184,7 +176,7 @@ struct strRcomp {
  * Output Pin 7: 1 = on (500 ms), 0 = off (500 ms)
  * Input: none
  */
-#define  RCOMP_5   RC_TYPE_BL,"BL", 51, EX0,PIN7,NO_PIN, EX1,NO_PIN,NO_PIN, 500,500
+//#define  RCOMP_5   RC_TYPE_BL,"BL", 51, EX0,PIN7,NO_PIN, EX1,NO_PIN,NO_PIN, 500,500
 
 // -------------------------------------------------------------
 //...if you want to test TX and/or DD: replace RCOMP_2/RCOMP_4..
@@ -212,7 +204,7 @@ struct strRcomp {
  * Input  Pin 0: RTVn ... track voltage is on (0) or off (1)
  *        Pin 1: RFREn .. track is free (0) or occupied (1)
  */
-#define  RCOMP_6   RC_TYPE_TUI,"TUI", 61, EX0,PIN0,NO_PIN,   EX1,PIN0,PIN1, 0,0
+//#define  RCOMP_6   RC_TYPE_TUI,"TUI", 61, EX0,PIN0,NO_PIN,   EX1,PIN0,PIN1, 0,0
 
 // -------------------------------------------------------------
 /**
@@ -227,7 +219,7 @@ struct strRcomp {
  * Input:  Two expander pins A for voltage (1) and free (I=0)
  * Output: Two expander pins A for free (1) and OK (1)
 */
- #define  RCOMP_7   RC_TYPE_UI,"UI1", 71, EX0,PIN2,PIN3,   EX1,PIN2,PIN3, 0,0
+//#define  RCOMP_7   RC_TYPE_UI,"UI1", 71, EX0,PIN2,PIN3,   EX1,PIN2,PIN3, 0,0
 
 // -------------------------------------------------------------
 /**
@@ -239,8 +231,8 @@ struct strRcomp {
  * Input : Pin 2 (A) = 0: pulse #1 is active (1 = no pulse)
  *         Pin 3 (B) = 0: pulse #2 is active (1 = no pulse)
  */
- #define  RCOMP_8a   RC_TYPE_P1,"P1", 81, EX0,PIN4,NO_PIN,   EX1,PIN4,NO_PIN, 0,0
- #define  RCOMP_8b   RC_TYPE_P1,"P1", 82, EX0,PIN5,NO_PIN,   EX1,PIN5,NO_PIN, 0,0
+//#define  RCOMP_8a   RC_TYPE_P1,"P1", 81, EX0,PIN4,NO_PIN,   EX1,PIN4,NO_PIN, 0,0
+//#define  RCOMP_8b   RC_TYPE_P1,"P1", 82, EX0,PIN5,NO_PIN,   EX1,PIN5,NO_PIN, 0,0
 
 // -------------------------------------------------------------
 /**
@@ -249,9 +241,15 @@ struct strRcomp {
  *         Pin 4 (A) = 0: simulate reset pulse (500 ms) by software (active low!)
  * Input : 
  */
- #define  RCOMP_9   RC_TYPE_P2,"P2", 91, EX0,PIN6,PIN7,   EX1,PIN6,PIN7, 500,0
+//#define  RCOMP_9   RC_TYPE_P2,"P2", 91, EX0,PIN6,PIN7,   EX1,PIN6,PIN7, 500,0
 
 // ***** CHECK this! *******************************************
+#define  RCOMP_6   RC_TYPE_TUI,"TUI",61, EX0,PIN0,NO_PIN, EX1,PIN0,PIN1, 0,0
+#define  RCOMP_7   RC_TYPE_UI,"UI1", 71, EX0,PIN2,PIN3,   EX1,PIN2,PIN3, 0,0
+#define  RCOMP_8a  RC_TYPE_P1,"P1",  81, EX0,PIN4,NO_PIN, EX1,PIN4,NO_PIN, 0,0
+#define  RCOMP_8b  RC_TYPE_P1,"P1",  82, EX0,PIN5,NO_PIN, EX1,PIN5,NO_PIN, 0,0
+#define  RCOMP_9   RC_TYPE_P2,"P2",  91, EX0,PIN6,PIN7,   EX1,PIN6,PIN7, 500,0
+
 //.......Preparing the Array of all railroad components..........
 #define  RCOMP_NUM  5
 #define  RCOMP_LIST {RCOMP_6},{RCOMP_7},{RCOMP_8a},{RCOMP_8b},{RCOMP_9}

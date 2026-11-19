@@ -51,8 +51,8 @@ Das Listing zeigt die Konfigurationsdatei f&uuml;r das Demo-Programm __mit Zeile
 8	// 2025-01-03 Change TOPIC_BASE
 9	// Released into the public domain.
 10	
-11	#ifndef DCC_CONFIG_H
-12	 #define DCC_CONFIG_H
+11	#ifndef RCC_CONFIG_H
+12	 #define RCC_CONFIG_H
 13	 #include <Arduino.h>                  // String, int32_t
 14	 #include "src/pcf8574/D1_class_PCF8574.h"
 15	

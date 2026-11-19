@@ -50,8 +50,8 @@ The listing shows the configuration file for the demo program __with line number
 10	// 2026-01-04 Add RC_TYPE_TX, RC_TYPE_DD
 11	// Released into the public domain.
 12	
-13	#ifndef DCC_CONFIG_H
-14	 #define DCC_CONFIG_H
+13	#ifndef RCC_CONFIG_H
+14	 #define RCC_CONFIG_H
 15	 #include <Arduino.h>                  // String, int32_t
 16	 #include "src/pcf8574/D1_class_PCF8574.h"
 17	
