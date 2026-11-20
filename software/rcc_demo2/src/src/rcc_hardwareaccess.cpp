@@ -27,7 +27,7 @@ void initHardwareAccess1(Screen154 &screen_) {
  */
 void initHardwareAccess2(Screen154 &screen_) {
  initAllIOExpander();
- int iTemp=updateInputValues();
+ updateInputValues();
 }
 
 //______________________________________________________________
@@ -97,6 +97,12 @@ String actOnRcmdHardware(int iCmd_, int iOutPCF_,
  String sSerial_="";
  if(iOutPCF_ < 0 || iOutPCF_ >= IOEX_NUM) {
   return "Error: invalid IO expander";
+ }
+ if(outBitA_!=NO_PIN && (outBitA_<0 || outBitA_>7)) {
+  return "Error: invalid output pin A";
+ }
+ if(outBitB_!=NO_PIN && (outBitB_<0 || outBitB_>7)) {
+  return "Error: invalid output pin B";
  }
  switch(iCmd_){
   case CMD_NONE:                            // No command

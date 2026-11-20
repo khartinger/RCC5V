@@ -29,6 +29,12 @@ extern strRcmd   aRcmd[RCOMP_NUM];     // railroad commands
  */
 
 String setRcmd(int iRcomp, int iCmdValue, String sReturn) {
+ if(iRcomp<0 || iRcomp>=RCOMP_NUM) {
+  return sReturn+String(" - Error: invalid component");
+ }
+ if(iCmdValue!=0 && iCmdValue!=1) {
+  return sReturn+String(" - Error: invalid command");
+ }
  if(aRcomp[iRcomp].type==RC_TYPE_TO || aRcomp[iRcomp].type==RC_TYPE_TX 
     || aRcomp[iRcomp].type==RC_TYPE_T3) {
   //...it is a turnout command (2 bits, 2cmds)................

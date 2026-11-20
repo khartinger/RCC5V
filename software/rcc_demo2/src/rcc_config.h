@@ -67,7 +67,7 @@ struct strRcmd {
   int     iCmdOffset;   // command - what to do @ offset state
 };
 //.......Default values for all railroad commands...............
-#define RCMD_NONE       CMD_NONE,-1,STATE_NONE,STATE_NONE,CMD_NONE
+#define RCMD_NONE       CMD_NONE,-1,false,STATE_NONE,STATE_NONE,CMD_NONE
 
 //_______Hardware: IO expander PCF8574__________________________
 // Assumption: IO boards on I2C bus #1, initial value 0xFF.

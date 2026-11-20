@@ -191,13 +191,13 @@ _Zeile 26 bis 31_: Überprüfung, ob die Nachricht zu einer Adresse einer Kompon
 Damit DCC-Nachrichten empfangen werden können muss eine externe Bibliothek eingebunden werden. Dies geschieht in `platformio.ini`:  
 ```   
 [env:wemos_d1_mini32]
-platform = espressif32
+platform = espressif32@6.7.0
 board = wemos_d1_mini32
 framework = arduino
 monitor_speed = 115200
 lib_deps =
-  bblanchon/ArduinoJson@^6.21.1
-  https://github.com/enginorama/DccAccessoryDecoder
+  bblanchon/ArduinoJson@6.21.1
+  https://github.com/enginorama/DccAccessoryDecoder#ef3d884
 ```   
 
 <a name="x60"></a>   
