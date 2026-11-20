@@ -1,9 +1,9 @@
 //_____rcc_demo2_text.h_________________________khartinger_____
 // define text in English and German
+// Last Updated: 2026-11-20
 #ifndef RCC_DEMO2_TEXT_H
  #define RCC_DEMO2_TEXT_H
  #include <Arduino.h>                  // String, int32_t
-
 #ifndef LANGUAGE
  #define LANGUAGE            'd'
 #endif
@@ -36,10 +36,6 @@
  constexpr char T1_TRACK_SET[] = "31";
  constexpr char T1_TRACK_ERR[] = "99";
 
- // constexpr char T1_TRACK__NA[] = "24";
-// constexpr char T1_TRACK__OK[] = "25";
-// constexpr char T1_TRACK_NOK[] = "26";
- 
  #if LANGUAGE == 'd'
   // =========Deutsche Texte (German)===========================
   #define T_UNDEF0           "undefiniert_0?"
@@ -82,27 +78,6 @@
   " Weiter: Taste IO19  ", \
   }
 
-/*
-  #define  INFOLINES_NUM     15
-  #define  INFOLINES { \
-   "Test von RCC-     1/3", \
-   "Schaltbloecken mit   ", \
-   "DCC - MQTT - Hand    ", \
-   VERSION_99_1, \
-   " Weiter: Taste IO19  ", \
-   "DCC 11 Entkuppler 2/3", \
-   "DCC 21 Zweiwegweiche ", \
-   "DCC 31,32 3-Wegweiche", \
-   "DCC 41 Fahrstrom 1/0 ", \
-   " Weiter: Taste IO19  ", \
-   "DCC 51 Blinklicht 3/3", \
-   " ",\
-   "Es folgt: IO-Expander", \
-   " und Wifi-Suche      ", \
-   " Weiter: Taste IO19  ", \
-  }
-*/
-
  #else
 
   //==========English texts=====================================
@@ -125,9 +100,9 @@
   #define T_TRACK_FRE        "track free"
   #define T_TRACK__0V        "no voltage"
   #define T_TRACK_00V        "no voltage"
-//  #define T_TRACK__NA        "Not available"
-//  #define T_TRACK__OK        "OK"
-//  #define T_TRACK_NOK        "Not OK"
+  #define T_TRACK_ERR        "Error"
+  #define T_TRACK_RST        "Pulse Reset"
+  #define T_TRACK_SET        "Pulse Set"
 
 // "---------|---------|-" line length = 21
   #define  INFOLINES_NUM     15
@@ -137,10 +112,10 @@
    "DCC - MQTT - Hand    ", \
    VERSION_99_1, \
    " Next: Button IO19   ", \
-   "DCC 21 2Way-Turnout 2", \
-   "DCC 61 track voltage ", \
-   "DCC 71 Puls1         ", \
-   "DCC 81 Puls2         ", \
+   "DCC 61 track volts", \
+   "DCC 71 V/I indicator", \
+   "DCC 81,82 Pulse1", \
+   "DCC 91 Pulse2", \
    " Next: Button IO19   ", \
    "                  3/3", \
    " ",\
@@ -149,25 +124,5 @@
    " Next: Button IO19   ", \
   }
 
-/*
-#define  INFOLINES_NUM     15
-  #define  INFOLINES { \
-   "Test of railroad      ", \
-   "switch blocks by     ", \
-   "DCC - MQTT - Hand    ", \
-   VERSION_99_1, \
-   " Next: Button IO19   ", \
-   "DCC 11 Uncoupler     ", \
-   "DCC 21 2-Way-Turnout ", \
-   "DCC 31,32 3wayTurnout", \
-   "DCC 41 Disconn. Track", \
-   " Next: Button IO19   ", \
-   "DCC 51 Blink Light   ", \
-   " ",\
-   "Next up: IO-Expander ", \
-   " and Wifi search     ", \
-   " Next: Button IO19   ", \
-  }
-*/
  #endif
  #endif

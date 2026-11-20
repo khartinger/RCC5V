@@ -3,7 +3,7 @@
 // rcc_demo2
 // Created by Karl Hartinger, November 14, 2024
 // Changes:
-// 2026-11-19 Change file name
+// 2026-11-20 Change file name
 // Released into the public domain.
 
 #ifndef RCC_CONFIG_H
@@ -18,8 +18,8 @@
 #define  DEBUG_99_SHOW_ALL  false           // true OR false
 
 //_______program version________________________________________
-constexpr char VERSION_99[] = "2026-11-14 rcc_demo2";
-constexpr char VERSION_99_1[] = "Version 2026-11-14";
+constexpr char VERSION_99[] = "2026-11-20 rcc_demo2";
+constexpr char VERSION_99_1[] = "Version 2026-11-20";
 
 //_______Network data___________________________________________
 #define _USE_WIFI_      true

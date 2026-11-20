@@ -7,8 +7,6 @@ extern strRcmd aRcmd[RCOMP_NUM];
 extern String setRcmd(int iRcomp, int iCmdValue, String sReturn);
 extern void showLine(int line_, String text_);
 
-// extern const int PIN_BUTTON;
-
  //_______MQTT communication_____________________________________
  //SimpleMqtt client("..ssid..", "..password..","mqttservername");
  //SimpleMqtt client("Raspi11", "12345678","10.1.1.1", TOPIC_BASE);
@@ -351,6 +349,51 @@ String simpleGet(String sPayload)
  return p1;                                 // wrong Get command
 }
 
+//_______Validate and map SET payloads____________________________
+/**
+ * @brief Validate and map SET payloads
+ * 
+ * @details 
+ * Converts the payload to lowercase.
+ * Checks the allowed aliases based on the component type.
+ * Writes 0 or 1 to commandValue.
+ * @param componentType, payload, return commandValue (0|1)
+ * @return true if the payload is valid.
+ */
+bool parseSetCommandValue(int componentType, const String &payload, int &commandValue)
+{
+ String value=payload;
+ value.toLowerCase();
+
+ if(componentType==RC_TYPE_TO || componentType==RC_TYPE_TX ||
+    componentType==RC_TYPE_T3) {
+  if(value=="0" || value=="a" || value=="b") { commandValue=0; return true; }
+  if(value=="1" || value=="g") { commandValue=1; return true; }
+  return false;
+ }
+ if(componentType==RC_TYPE_P2) {
+  if(value=="0" || value=="rst" || value=="reset" ||
+     value=="fre" || value=="green") { commandValue=0; return true; }
+  if(value=="1" || value=="set" || value=="occ" ||
+     value=="yellow") { commandValue=1; return true; }
+  return false;
+ }
+ if(componentType==RC_TYPE_UI) {
+  if(value=="0" || value=="off" || value=="red") { commandValue=0; return true; }
+  if(value=="1" || value=="on") { commandValue=1; return true; }
+  return false;
+ }
+ if(componentType==RC_TYPE_TUI || componentType==RC_TYPE_P1) {
+  if(value=="0" || value=="off") { commandValue=0; return true; }
+  if(value=="1" || value=="on") { commandValue=1; return true; }
+  return false;
+ }
+
+ if(value=="0") { commandValue=0; return true; }
+ if(value=="1") { commandValue=1; return true; }
+ return false;
+}
+
 //_______Execute set requests___________________________________
 /**
  * @brief Processes SET request and generates a response
@@ -434,47 +477,10 @@ String simpleSet(String sTopic, String sPayload)
   s1.toLowerCase();
   if(sTopic==String(aRcomp[i].dcc) || sTopic==s1) {
    int iCmdValue=-1;
-   //...........................................................
-   if(aRcomp[i].type==RC_TYPE_TO || aRcomp[i].type==RC_TYPE_TX 
-     || aRcomp[i].type==RC_TYPE_T3) 
-   { //.......for turnout commands..............................
-    if(sPayload=="0" ||  sPayload=="a" || sPayload=="b") iCmdValue=0;
-    if(sPayload=="1" || sPayload=="g") iCmdValue=1;
-   } else 
-   { //.......NOT a turnout command TO, TX, T3..................
-    if(aRcomp[i].type==RC_TYPE_P2)
-    { //......specifically for command type PULSE 2.............
-      if(sPayload=="0" || sPayload == "rst" || sPayload == "reset"
-         || sPayload == "fre" || sPayload == "green") iCmdValue=0;
-      if(sPayload=="1" || sPayload == "set"
-         || sPayload == "occ" || sPayload == "yellow") iCmdValue=1;
-    } 
-    else
-    { // NOT TO, TX, T3, P2.....................................
-     if(aRcomp[i].type==RC_TYPE_UI)
-     { //......specifically for command type UI.................
-       if(sPayload=="0" || sPayload == "off"
-          || sPayload == "red") iCmdValue=0;
-       if(sPayload=="1" || sPayload == "on") iCmdValue=1;
-     }
-     else
-     { // NOT TO, TX, T3, P2, UI................................
-      if(aRcomp[i].type==RC_TYPE_TUI || aRcomp[i].type==RC_TYPE_P1)
-      { //......specifically for command type UI.................
-        if(sPayload=="0" || sPayload == "off") iCmdValue=0;
-        if(sPayload=="1" || sPayload == "on") iCmdValue=1;
-      }
-      else
-      { // NOT TO, TX, T3, P2, UI, TUI..........................
-       //***Insert additional SET commands *********************
-       // ..ToDo..
-       //.......for all other command types.......................
-       if(sPayload=="0") iCmdValue=0;
-       if(sPayload=="1") iCmdValue=1;
-      }
-     }
+    if(!parseSetCommandValue(aRcomp[i].type, sPayload, iCmdValue)) {
+     addJson(p1, String(aRcomp[i].dcc), "Error: invalid command");
+     return p1;
     }
-   } // END OF if(aRcomp[i].type==RC_TYPE_TO...
    addJson(p1, String(aRcomp[i].dcc), setRcmd(i, iCmdValue, sPayload));
    return p1;
   } // END OF if: set command for a railroad component

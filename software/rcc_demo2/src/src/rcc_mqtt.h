@@ -15,6 +15,7 @@ bool   validateWlanString(const String &s);
 
 String simpleGet(String sPayload);
 String simpleSet(String sTopic, String sPayload);
+bool parseSetCommandValue(int componentType, const String &payload, int &commandValue);
 void simpleSub(String sTopic, String sPayload);
 
 void loopMqtt(String &sSerial);
